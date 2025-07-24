@@ -1,0 +1,17 @@
+{
+  "name": "ai-models",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "check-types": "pnpm -r check-types",
+    "dev:native": "pnpm --filter native dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:server": "pnpm --filter server dev"
+  },
+  "packageManager": "pnpm@10.8.0"
+}
