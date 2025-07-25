@@ -26,6 +26,7 @@ const transformOpenRouterModel = (model) => {
     cost: {
       input: pricing.prompt ? Number(pricing.prompt) : null,
       output: pricing.completion ? Number(pricing.completion) : null,
+      input_cache_hit: null,
     },
     limit: {
       context: topProvider.context_length ?? model.context_length ?? null,

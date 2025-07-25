@@ -313,6 +313,7 @@ function parseFineTuneModels(markdown) {
         cost: {
           input: null,
           output: null,
+          input_cache_hit: null,
         },
         limit: {
           context: inputTokens,
@@ -383,6 +384,7 @@ function parseReasoningModels(markdown) {
         cost: {
           input: null,
           output: null,
+          input_cache_hit: null,
         },
         limit: {
           context: null,
@@ -473,6 +475,7 @@ function createModelFromData(modelId, description, contextWindow, maxOutput, tra
       cost: {
         input: null,
         output: null,
+        input_cache_hit: null,
       },
       limit: {
         context: contextLimit,
@@ -523,6 +526,7 @@ function createModelFromName(modelId, version, region) {
       cost: {
         input: null,
         output: null,
+        input_cache_hit: null,
       },
       limit: {
         context: null,

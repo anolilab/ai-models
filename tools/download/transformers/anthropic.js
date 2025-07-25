@@ -147,6 +147,7 @@ const transformAnthropicModels = (htmlContent) => {
       cost: {
         input: pricing.input,
         output: pricing.output,
+        input_cache_hit: null,
       },
       limit: {
         context: contextLimit,

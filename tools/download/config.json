@@ -29,6 +29,11 @@
       "name": "DeepSeek",
       "transformer": "./transformers/deepseek.js",
       "output": "./providers/deepseek"
+    },
+    {
+      "name": "GitHub Copilot",
+      "transformer": "./transformers/github-copilot.js",
+      "output": "./providers/github-copilot"
     }
   ]
 } 

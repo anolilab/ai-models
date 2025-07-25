@@ -22,6 +22,7 @@ const transformVercelModel = (model) => {
     cost: {
       input: get(model, 'pricing', {}).input ? Number(model.pricing.input) : null,
       output: get(model, 'pricing', {}).output ? Number(model.pricing.output) : null,
+      input_cache_hit: null,
     },
     limit: {
       context: get(model, 'context_window', null),

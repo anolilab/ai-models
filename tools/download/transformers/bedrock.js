@@ -106,6 +106,7 @@ const transformBedrockModels = (htmlContent) => {
               cost: {
                 input: null,
                 output: null,
+                input_cache_hit: null,
               },
               limit: {
                 context: null,
