@@ -179,7 +179,6 @@ async function fetchAnthropicModels() {
     
     const models = transformAnthropicModels(htmlContent);
     
-    console.log(`[Anthropic] Done. Models processed: ${models.length}, saved: ${models.length}, errors: 0`);
     return models;
     
   } catch (error) {

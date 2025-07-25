@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as cheerio from 'cheerio';
 import { z } from 'zod';
 
 const modelSchema = z.object({
@@ -37,15 +36,21 @@ const modelSchema = z.object({
 });
 
 async function fetchAzureModels() {
-  console.log('[Azure OpenAI] Fetching: https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md');
+  console.log('[Azure OpenAI] Fetching models from multiple sources...');
   
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md');
-    const markdown = response.data;
+    // Fetch both the main models document and the fine-tuning models document
+    const [modelsResponse, fineTuneResponse] = await Promise.all([
+      axios.get('https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md'),
+      axios.get('https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/24f9c9b6c5adee26883d634c716c12de13429e6d/articles/ai-foundry/openai/includes/fine-tune-models.md')
+    ]);
+    
+    const modelsMarkdown = modelsResponse.data;
+    const fineTuneMarkdown = fineTuneResponse.data;
     
     const models = [];
     
-    // Parse different model categories from the markdown
+    // Parse different model categories from the main models markdown
     const modelCategories = [
       { name: 'GPT-4.1 Series', pattern: /## GPT 4\.1 series[\s\S]*?(?=## |$)/ },
       { name: 'GPT-4o and GPT-4 Turbo', pattern: /## GPT-4o and GPT-4 Turbo[\s\S]*?(?=## |$)/ },
@@ -59,7 +64,7 @@ async function fetchAzureModels() {
     ];
     
     for (const category of modelCategories) {
-      const match = markdown.match(category.pattern);
+      const match = modelsMarkdown.match(category.pattern);
       if (match) {
         const section = match[0];
         const sectionModels = parseModelSection(section, category.name);
@@ -67,22 +72,17 @@ async function fetchAzureModels() {
       }
     }
     
-    // Parse region availability tables
-    const regionModels = parseRegionAvailability(markdown);
+    // Parse region availability tables from main models document
+    const regionModels = parseRegionAvailability(modelsMarkdown);
     models.push(...regionModels);
     
-    // Remove duplicates based on model ID
-    const uniqueModels = [];
-    const seenIds = new Set();
+    // Parse fine-tuning models to get input/output details
+    const fineTuneModels = parseFineTuneModels(fineTuneMarkdown);
+    models.push(...fineTuneModels);
     
-    for (const model of models) {
-      if (!seenIds.has(model.id)) {
-        seenIds.add(model.id);
-        uniqueModels.push(model);
-      }
-    }
+    // Remove duplicates based on model ID and merge information
+    const uniqueModels = mergeModelInformation(models);
     
-    console.log(`[Azure OpenAI] Done. Models processed: ${uniqueModels.length}, saved: ${uniqueModels.length}, errors: 0`);
     return uniqueModels;
     
   } catch (error) {
@@ -215,6 +215,199 @@ function parseRegionAvailability(markdown) {
   return models;
 }
 
+function parseFineTuneModels(markdown) {
+  const models = [];
+  // Find the fine-tuning models table
+  const tableMatch = markdown.match(/\|  Model ID  \|.*?\n\|.*?\n((?:\|.*?\n)*)/);
+  if (!tableMatch) {
+    return models;
+  }
+  const tableRows = tableMatch[1].trim().split('\n');
+  for (const row of tableRows) {
+    const cells = row.split('|').map(cell => cell.trim()).filter(cell => cell);
+    if (cells.length >= 6) {
+      const modelIdCell = cells[0];
+      const standardRegions = cells[1];
+      const globalTraining = cells[2];
+      const maxRequestTokens = cells[3];
+      const trainingData = cells[4];
+      const modality = cells[5];
+      // Skip separator rows
+      if (modelIdCell.match(/^[-:]+$/) || modelIdCell === 'Model ID') {
+        continue;
+      }
+      // Extract model ID and version from format like "`gpt-35-turbo` (1106)"
+      const modelMatch = modelIdCell.match(/`([^`]+)`\s*\(([^)]+)\)/);
+      if (!modelMatch) {
+        continue;
+      }
+      let baseId = modelMatch[1];
+      const version = modelMatch[2];
+      // Canonicalize prefix for gpt-3.5-turbo variants
+      if (/^gpt-?3[\.-]?5-?turbo$/i.test(baseId) || baseId === 'gpt-35-turbo') {
+        baseId = 'gpt-3.5-turbo';
+      }
+      const id = `${baseId}-${version}`;
+      // Parse training regions
+      const regions = [];
+      if (standardRegions && standardRegions !== '-') {
+        const regionMatches = standardRegions.matchAll(/([A-Za-z\s]+)(?:<br>|$)/g);
+        for (const match of regionMatches) {
+          const region = match[1].trim();
+          if (region && region !== '-') {
+            regions.push(region);
+          }
+        }
+      }
+      // Parse max request tokens
+      let inputTokens = null;
+      let outputTokens = null;
+      if (maxRequestTokens) {
+        const inputMatch = maxRequestTokens.match(/Input:\s*([\d,]+)/);
+        const outputMatch = maxRequestTokens.match(/Output:\s*([\d,]+)/);
+        if (inputMatch) {
+          inputTokens = parseInt(inputMatch[1].replace(/,/g, ''));
+        }
+        if (outputMatch) {
+          outputTokens = parseInt(outputMatch[1].replace(/,/g, ''));
+        }
+        if (!inputMatch && !outputMatch) {
+          const singleMatch = maxRequestTokens.match(/([\d,]+)/);
+          if (singleMatch) {
+            inputTokens = parseInt(singleMatch[1].replace(/,/g, ''));
+            outputTokens = inputTokens;
+          }
+        }
+      }
+      // Determine modalities
+      const inputModalities = [];
+      const outputModalities = [];
+      if (modality) {
+        const mod = modality.toLowerCase();
+        if (mod.includes('text to text')) {
+          inputModalities.push('text');
+          outputModalities.push('text');
+        } else if (mod.includes('text & vision to text')) {
+          inputModalities.push('text');
+          inputModalities.push('image');
+          outputModalities.push('text');
+        }
+      }
+      if (inputModalities.length === 0) inputModalities.push('text');
+      if (outputModalities.length === 0) outputModalities.push('text');
+      // Determine capabilities based on model ID
+      const hasReasoning = baseId.includes('o1') || baseId.includes('o2') || baseId.includes('o4');
+      const hasToolCall = true;
+      const hasTemperature = true;
+      const model = {
+        id,
+        name: id,
+        release_date: null,
+        last_updated: null,
+        attachment: false,
+        reasoning: hasReasoning,
+        temperature: hasTemperature,
+        knowledge: trainingData,
+        tool_call: hasToolCall,
+        open_weights: false,
+        cost: {
+          input: null,
+          output: null,
+        },
+        limit: {
+          context: inputTokens,
+          output: outputTokens,
+        },
+        modalities: {
+          input: inputModalities,
+          output: outputModalities,
+        },
+        provider: 'Microsoft',
+        regions: regions,
+        streaming_supported: true,
+        deployment_type: 'fine-tuned',
+        training_data_cutoff: trainingData,
+        max_request_tokens: inputTokens,
+        version: version,
+        global_training_supported: globalTraining === '✅',
+      };
+      models.push(model);
+    }
+  }
+  return models;
+}
+
+function parseReasoningModels(markdown) {
+  const models = [];
+
+  // Find the API & feature support table
+  const tableMatch = markdown.match(/\|  Model ID  \|.*?\n\|.*?\n((?:\|.*?\n)*)/);
+  if (!tableMatch) {
+    console.log('[Azure OpenAI] No API & feature support table found for reasoning models');
+    return models;
+  }
+
+  const tableRows = tableMatch[1].trim().split('\n');
+  console.log(`[Azure OpenAI] Found API & feature support table with ${tableRows.length} rows`);
+
+  for (const row of tableRows) {
+    const cells = row.split('|').map(cell => cell.trim()).filter(cell => cell);
+
+    if (cells.length >= 2) {
+      const modelIdCell = cells[0];
+      const reasoningSupport = cells[1];
+
+      // Skip separator rows
+      if (modelIdCell.match(/^[-:]+$/) || modelIdCell === 'Model ID') {
+        continue;
+      }
+
+      // Extract model ID
+      const modelId = modelIdCell.replace(/`/g, '').trim();
+
+      // Determine reasoning support
+      const hasReasoning = reasoningSupport === '✅';
+
+      // Create a model entry
+      const model = {
+        id: modelId,
+        name: modelId,
+        release_date: null,
+        last_updated: null,
+        attachment: false,
+        reasoning: hasReasoning,
+        temperature: true, // Reasoning models are typically not temperature-controlled
+        knowledge: null,
+        tool_call: true,
+        open_weights: false,
+        cost: {
+          input: null,
+          output: null,
+        },
+        limit: {
+          context: null,
+          output: null,
+        },
+        modalities: {
+          input: ['text'],
+          output: ['text'],
+        },
+        provider: 'Microsoft',
+        regions: [], // Reasoning models are generally global
+        streaming_supported: true,
+        deployment_type: 'standard',
+        training_data_cutoff: null,
+        max_request_tokens: null,
+      };
+
+      models.push(model);
+    }
+  }
+
+  console.log(`[Azure OpenAI] Parsed ${models.length} reasoning models`);
+  return models;
+}
+
 function createModelFromData(modelId, description, contextWindow, maxOutput, trainingData, category) {
   try {
     // Parse context window
@@ -337,6 +530,70 @@ function createModelFromName(modelId, version, region) {
     console.error(`[Azure OpenAI] Error creating model from name ${modelId}:`, error.message);
     return null;
   }
+}
+
+function mergeModelInformation(models) {
+  // Map of id -> model
+  const modelMap = new Map();
+
+  for (const model of models) {
+    const key = model.id;
+    if (modelMap.has(key)) {
+      // Merge information with existing model
+      const existing = modelMap.get(key);
+      const merged = { ...existing };
+      // Merge regions
+      if (model.regions && model.regions.length > 0) {
+        if (!merged.regions) merged.regions = [];
+        merged.regions = [...new Set([...merged.regions, ...model.regions])];
+      }
+      // For fine-tune models (with suffix), override all relevant fields
+      // If the id is the same, prefer the most recently seen (fine-tune comes after base)
+      // This ensures fine-tune fields override for that file
+      if (model.deployment_type === 'fine-tuned' || /\d{4}$/.test(model.id)) {
+        Object.assign(merged, model);
+        // But still merge regions
+        if (model.regions && model.regions.length > 0) {
+          merged.regions = [...new Set([...merged.regions, ...model.regions])];
+        }
+      } else {
+        // For base models, only fill in missing fields
+        if (model.limit.context && !merged.limit.context) {
+          merged.limit.context = model.limit.context;
+        }
+        if (model.limit.output && !merged.limit.output) {
+          merged.limit.output = model.limit.output;
+        }
+        if (model.training_data_cutoff && !merged.training_data_cutoff) {
+          merged.training_data_cutoff = model.training_data_cutoff;
+        }
+        if (model.max_request_tokens && !merged.max_request_tokens) {
+          merged.max_request_tokens = model.max_request_tokens;
+        }
+        if (model.version && !merged.version) {
+          merged.version = model.version;
+        }
+        if (model.global_training_supported) {
+          merged.global_training_supported = true;
+        }
+        if (model.modalities) {
+          if (model.modalities.input && model.modalities.input.length > 0) {
+            if (!merged.modalities.input) merged.modalities.input = [];
+            merged.modalities.input = [...new Set([...merged.modalities.input, ...model.modalities.input])];
+          }
+          if (model.modalities.output && model.modalities.output.length > 0) {
+            if (!merged.modalities.output) merged.modalities.output = [];
+            merged.modalities.output = [...new Set([...merged.modalities.output, ...model.modalities.output])];
+          }
+        }
+      }
+      modelMap.set(key, merged);
+    } else {
+      // Add new model
+      modelMap.set(key, model);
+    }
+  }
+  return Array.from(modelMap.values());
 }
 
 export {

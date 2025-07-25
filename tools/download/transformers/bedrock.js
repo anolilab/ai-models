@@ -143,7 +143,6 @@ async function fetchBedrockModels() {
     
     const models = transformBedrockModels(htmlContent);
     
-    console.log(`[Amazon Bedrock] Done. Models processed: ${models.length}, saved: ${models.length}, errors: 0`);
     return models;
     
   } catch (error) {

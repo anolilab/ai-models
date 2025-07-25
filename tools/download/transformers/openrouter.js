@@ -53,7 +53,6 @@ async function fetchOpenRouterModels() {
     const models = Array.isArray(data.data) ? data.data : [];
     const transformedModels = models.map(transformOpenRouterModel);
     
-    console.log(`[OpenRouter] Done. Models processed: ${transformedModels.length}, saved: ${transformedModels.length}, errors: 0`);
     return transformedModels;
     
   } catch (error) {

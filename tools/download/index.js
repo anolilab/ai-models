@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { fetch } from 'node-fetch-native';
+// Using built-in fetch (available in Node.js 18+)
 import { ModelSchema } from './schema.js';
 
 const __filename = fileURLToPath(import.meta.url);

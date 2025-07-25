@@ -46,10 +46,9 @@ async function fetchVercelModels() {
     const response = await axios.get('https://ai-gateway.vercel.sh/v1/models');
     const data = response.data;
     
-    const models = Array.isArray(data.models) ? data.models : [];
+    const models = Array.isArray(data.data) ? data.data : [];
     const transformedModels = models.map(transformVercelModel);
     
-    console.log(`[VercelGateway] Done. Models processed: ${transformedModels.length}, saved: ${transformedModels.length}, errors: 0`);
     return transformedModels;
     
   } catch (error) {
