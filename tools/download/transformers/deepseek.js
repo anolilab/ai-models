@@ -46,6 +46,32 @@ const transformDeepSeekModels = (htmlContent) => {
     }
   });
 
+  // Extract release dates from the sidebar menu
+  const releaseDates = {};
+  
+  // Look for the sidebar menu with release information
+  $('ul.menu__list li').each((index, element) => {
+    const $li = $(element);
+    const $link = $li.find('a.menu__link');
+    
+    if ($link.length > 0) {
+      const linkText = $link.text().trim();
+      
+      // Look for specific model releases
+      if (linkText.includes('DeepSeek-V3-0324')) {
+        const dateMatch = linkText.match(/(\d{4}\/\d{2}\/\d{2})/);
+        if (dateMatch) {
+          releaseDates['DeepSeek-V3-0324'] = dateMatch[1];
+        }
+      } else if (linkText.includes('DeepSeek-R1-0528')) {
+        const dateMatch = linkText.match(/(\d{4}\/\d{2}\/\d{2})/);
+        if (dateMatch) {
+          releaseDates['DeepSeek-R1-0528'] = dateMatch[1];
+        }
+      }
+    }
+  });
+
   // Parse the pricing table - look for the specific table with pricing information
   $('table').each((tableIndex, tableElement) => {
     const $table = $(tableElement);
@@ -59,15 +85,16 @@ const transformDeepSeekModels = (htmlContent) => {
     
     let modelNames = [];
     let pricingData = {};
+    let inStandardPriceSection = false;
     
     $rows.each((rowIndex, rowElement) => {
       const $cells = $(rowElement).find('td, th');
+      const rowText = $(rowElement).text().trim();
       
       // Check if this is the header row with model names
       if ($cells.length >= 3 && $cells.eq(0).text().trim().includes('MODEL')) {
         
         // Handle colspan in the first cell - extract all text content from the row
-        const rowText = $(rowElement).text().trim();
         
         // Extract model names using regex - look for both the API names and the actual model names
         const modelMatches = rowText.match(/deepseek-chat|deepseek-reasoner|DeepSeek-V3-0324|DeepSeek-R1-0528/g);
@@ -76,12 +103,12 @@ const transformDeepSeekModels = (htmlContent) => {
         }
       }
       
-      // Parse pricing rows
-      if (modelNames.length > 0 && $cells.length >= 3) {
-        const rowText = $(rowElement).text().trim();
+      // Check if we're entering the STANDARD PRICE section
+      if (rowText.includes('STANDARD PRICE')) {
+        inStandardPriceSection = true;
         
-        if (rowText.includes('1M TOKENS INPUT (CACHE HIT)')) {
-          // Extract all prices from the row using regex
+        // Check if this row also contains INPUT CACHE HIT pricing
+        if (rowText.includes('INPUT') && rowText.includes('CACHE HIT') && modelNames.length > 0) {
           const prices = rowText.match(/\$[\d.]+/g);
           if (prices && prices.length >= modelNames.length) {
             for (let i = 0; i < modelNames.length; i++) {
@@ -92,20 +119,47 @@ const transformDeepSeekModels = (htmlContent) => {
               }
             }
           }
-        } else if (rowText.includes('1M TOKENS INPUT (CACHE MISS)')) {
-          // Extract all prices from the row using regex
+        }
+        return;
+      }
+      
+      // Check if we're entering the DISCOUNT PRICE section (stop processing)
+      if (rowText.includes('DISCOUNT PRICE')) {
+        inStandardPriceSection = false;
+        return;
+      }
+      
+      // Parse pricing rows - only in STANDARD PRICE section
+      if (inStandardPriceSection && modelNames.length > 0 && $cells.length >= 3) {
+        
+        // Look for input pricing (cache hit)
+        if (rowText.includes('INPUT') && rowText.includes('CACHE HIT')) {
           const prices = rowText.match(/\$[\d.]+/g);
           if (prices && prices.length >= modelNames.length) {
             for (let i = 0; i < modelNames.length; i++) {
               const price = parseFloat(prices[i].replace('$', ''));
               if (!isNaN(price)) {
                 if (!pricingData[modelNames[i]]) pricingData[modelNames[i]] = {};
-                pricingData[modelNames[i]].input_cache_miss = price;
+                pricingData[modelNames[i]].input_cache_hit = price;
               }
             }
           }
-        } else if (rowText.includes('1M TOKENS OUTPUT')) {
-          // Extract all prices from the row using regex
+        } 
+        // Look for input pricing (cache miss) - this maps to 'input' field
+        else if (rowText.includes('INPUT') && rowText.includes('CACHE MISS')) {
+          const prices = rowText.match(/\$[\d.]+/g);
+          if (prices && prices.length >= modelNames.length) {
+            for (let i = 0; i < modelNames.length; i++) {
+              const price = parseFloat(prices[i].replace('$', ''));
+              if (!isNaN(price)) {
+                if (!pricingData[modelNames[i]]) pricingData[modelNames[i]] = {};
+                pricingData[modelNames[i]].input = price; // Map to 'input' field
+              }
+            }
+          }
+        } 
+        // Look for output pricing
+        else if (rowText.includes('OUTPUT')) {
           const prices = rowText.match(/\$[\d.]+/g);
           if (prices && prices.length >= modelNames.length) {
             for (let i = 0; i < modelNames.length; i++) {
@@ -144,22 +198,24 @@ const transformDeepSeekModels = (htmlContent) => {
       
       // If we found pricing data, create the model
       if (pricing) {
-        models.push({
+        const actualModelName = modelMappings[apiModel.id] || apiModel.id;
+        const releaseDate = releaseDates[actualModelName] || null;
+        
+        const model = {
           id: apiModel.id,
-          name: modelMappings[apiModel.id] || apiModel.id,
-          release_date: null,
+          name: actualModelName,
+          release_date: releaseDate,
           last_updated: null,
           attachment: false,
           reasoning: apiModel.reasoning,
           temperature: true,
           knowledge: null,
           tool_call: true,
-          open_weights: true,
+          open_weights: false,
           cost: {
-            input: pricing.input_cache_hit || null,
+            input: pricing.input || null,
             output: pricing.output || null,
             input_cache_hit: pricing.input_cache_hit || null,
-            input_cache_miss: pricing.input_cache_miss || null,
           },
           limit: {
             context: 64000, // Default context length for DeepSeek models
@@ -171,7 +227,9 @@ const transformDeepSeekModels = (htmlContent) => {
           },
           provider: 'DeepSeek',
           cache_read: true, // DeepSeek supports context caching
-        });
+        };
+        
+        models.push(model);
       }
     });
   });

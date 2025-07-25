@@ -15,7 +15,6 @@ export const ModelSchema = z.object({
     input: z.number().nullable(),
     output: z.number().nullable(),
     input_cache_hit: z.number().nullable(),
-    input_cache_miss: z.number().nullable(),
   }),
   limit: z.object({
     context: z.number().nullable(),
