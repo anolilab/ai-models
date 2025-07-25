@@ -14,6 +14,8 @@ export const ModelSchema = z.object({
   cost: z.object({
     input: z.number().nullable(),
     output: z.number().nullable(),
+    input_cache_hit: z.number().nullable(),
+    input_cache_miss: z.number().nullable(),
   }),
   limit: z.object({
     context: z.number().nullable(),
@@ -33,4 +35,6 @@ export const ModelSchema = z.object({
   training_cutoff: z.string().nullable().optional(),
   // Amazon Bedrock-specific fields
   launch_date: z.string().optional(),
+  // DeepSeek-specific fields
+  cache_read: z.boolean().optional(),
 }); 

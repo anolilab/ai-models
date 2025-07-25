@@ -24,6 +24,11 @@
       "name": "Azure OpenAI",
       "transformer": "./transformers/azure.js",
       "output": "./providers/azure"
+    },
+    {
+      "name": "DeepSeek",
+      "transformer": "./transformers/deepseek.js",
+      "output": "./providers/deepseek"
     }
   ]
 } 

@@ -497,9 +497,21 @@ function createModelFromData(modelId, description, contextWindow, maxOutput, tra
 
 function createModelFromName(modelId, version, region) {
   try {
+    // Handle version-only model IDs (like "0125", "0613", "1106") by prefixing with gpt-3-5-turbo
+    // Also handle Preview versions (like "0125-Preview", "1106-Preview")
+    let finalModelId = modelId;
+    if (/^\d{4}$/.test(modelId)) {
+      finalModelId = `gpt-3.5-turbo-${modelId}`;
+    } else if (/^\d{4}-Preview$/.test(modelId)) {
+      const version = modelId.replace('-Preview', '');
+      finalModelId = `gpt-3.5-turbo-${version}-Preview`;
+    } else if (/^turbo-\d{4}-\d{2}-\d{2}$/.test(modelId)) {
+      finalModelId = `gpt-4-${modelId}`;
+    }
+    
     return {
-      id: modelId,
-      name: modelId,
+      id: finalModelId,
+      name: finalModelId,
       release_date: null,
       last_updated: null,
       attachment: false,

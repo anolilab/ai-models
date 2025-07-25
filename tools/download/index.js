@@ -82,6 +82,7 @@ const processProvider = async (providerConfig) => {
                        transformerModule.fetchVercelModels || 
                        transformerModule.fetchBedrockModels || 
                        transformerModule.fetchAnthropicModels ||
+                       transformerModule.fetchDeepSeekModels ||
                        transformerModule.default;
 
   if (!fetchFunction) {
