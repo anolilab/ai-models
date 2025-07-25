@@ -1,0 +1,13 @@
+{
+  "name": "ai-models-download",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "download": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch-native": "1.6.6",
+    "rss-parser": "3.13.0",
+    "zod": "^4.0.2"
+  }
+}

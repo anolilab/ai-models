@@ -1,0 +1,26 @@
+import { z } from 'zod';
+
+export const ModelSchema = z.object({
+  id: z.string(),
+  name: z.string().nullable(),
+  release_date: z.string().nullable(),
+  last_updated: z.string().nullable(),
+  attachment: z.boolean(),
+  reasoning: z.boolean(),
+  temperature: z.boolean(),
+  knowledge: z.string().nullable(),
+  tool_call: z.boolean(),
+  open_weights: z.boolean(),
+  cost: z.object({
+    input: z.number().nullable(),
+    output: z.number().nullable(),
+  }),
+  limit: z.object({
+    context: z.number().nullable(),
+    output: z.number().nullable(),
+  }),
+  modalities: z.object({
+    input: z.array(z.string()),
+    output: z.array(z.string()),
+  }),
+}); 

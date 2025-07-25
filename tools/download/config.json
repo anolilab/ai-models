@@ -1,0 +1,18 @@
+[
+  {
+    "name": "OpenRouter",
+    "url": "https://openrouter.ai/api/v1/models",
+    "output": "providers/openrouter",
+    "transform": "openrouter",
+    "env": {},
+    "npm": {}
+  },
+  {
+    "name": "VercelGateway",
+    "url": "https://ai-gateway.vercel.sh/v1/models",
+    "output": "providers/vercel",
+    "transform": "vercel",
+    "env": {},
+    "npm": {}
+  }
+] 

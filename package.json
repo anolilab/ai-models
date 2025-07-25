@@ -1,9 +1,11 @@
 {
   "name": "ai-models",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "tools/*"
   ],
   "scripts": {
     "dev": "pnpm -r dev",
