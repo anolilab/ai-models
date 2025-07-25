@@ -1,26 +1,29 @@
-[
-  {
-    "name": "OpenRouter",
-    "url": "https://openrouter.ai/api/v1/models",
-    "output": "providers/openrouter",
-    "transform": "openrouter",
-    "env": {},
-    "npm": {}
-  },
-  {
-    "name": "VercelGateway",
-    "url": "https://ai-gateway.vercel.sh/v1/models",
-    "output": "providers/vercel",
-    "transform": "vercel",
-    "env": {},
-    "npm": {}
-  },
-  {
-    "name": "Amazon Bedrock",
-    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html",
-    "output": "providers/amazon-bedrock",
-    "transform": "bedrock",
-    "env": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_REGION"],
-    "npm": "@ai-sdk/amazon-bedrock"
-  }
-] 
+{
+  "providers": [
+    {
+      "name": "OpenRouter",
+      "transformer": "./transformers/openrouter.js",
+      "output": "./providers/openrouter"
+    },
+    {
+      "name": "VercelGateway", 
+      "transformer": "./transformers/vercel.js",
+      "output": "./providers/vercel"
+    },
+    {
+      "name": "Amazon Bedrock",
+      "transformer": "./transformers/bedrock.js", 
+      "output": "./providers/amazon-bedrock"
+    },
+    {
+      "name": "Anthropic",
+      "transformer": "./transformers/anthropic.js",
+      "output": "./providers/anthropic"
+    },
+    {
+      "name": "Azure OpenAI",
+      "transformer": "./transformers/azure.js",
+      "output": "./providers/azure"
+    }
+  ]
+} 

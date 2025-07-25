@@ -25,6 +25,12 @@ export const ModelSchema = z.object({
   }),
   // Optional additional metadata fields
   provider: z.string().optional(),
-  regions: z.string().optional(),
-  streaming_supported: z.boolean().optional(),
+  regions: z.array(z.string()).optional(),
+  streaming_supported: z.boolean().nullable().optional(),
+  // Anthropic-specific fields
+  vision: z.boolean().optional(),
+  extended_thinking: z.boolean().optional(),
+  training_cutoff: z.string().nullable().optional(),
+  // Amazon Bedrock-specific fields
+  launch_date: z.string().optional(),
 }); 

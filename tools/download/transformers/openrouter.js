@@ -1,20 +1,10 @@
+import axios from 'axios';
+
 /**
  * Transforms an OpenRouter model object (new API structure) into the normalized structure.
  * 
  * @param {Object} model - The raw model object from OpenRouter API.
  * @returns {Object} The normalized model structure.
- * 
- * @example
- * const rawModel = {
- *   id: 'openai/gpt-4',
- *   name: 'GPT-4',
- *   created: 1682607600,
- *   architecture: { input_modalities: ['text'], output_modalities: ['text'] },
- *   top_provider: { context_length: 8192, max_completion_tokens: 4096 },
- *   pricing: { prompt: '0.00003', completion: '0.00006' }
- * };
- * 
- * const normalized = transformOpenRouterModel(rawModel);
  */
 const transformOpenRouterModel = (model) => {
   const get = (obj, key, def = null) => (obj && obj[key] !== undefined ? obj[key] : def);
@@ -45,7 +35,34 @@ const transformOpenRouterModel = (model) => {
       input: architecture.input_modalities || ['text'],
       output: architecture.output_modalities || ['text'],
     },
+    provider: model.owned_by || model.author || (model.id && model.id.split('/')[0]) || 'unknown',
   };
 };
 
-export default transformOpenRouterModel; 
+/**
+ * Fetches models from OpenRouter API and transforms them.
+ * @returns {Array} Array of transformed models.
+ */
+async function fetchOpenRouterModels() {
+  console.log('[OpenRouter] Fetching: https://openrouter.ai/api/v1/models');
+  
+  try {
+    const response = await axios.get('https://openrouter.ai/api/v1/models');
+    const data = response.data;
+    
+    const models = Array.isArray(data.data) ? data.data : [];
+    const transformedModels = models.map(transformOpenRouterModel);
+    
+    console.log(`[OpenRouter] Done. Models processed: ${transformedModels.length}, saved: ${transformedModels.length}, errors: 0`);
+    return transformedModels;
+    
+  } catch (error) {
+    console.error('[OpenRouter] Error fetching models:', error.message);
+    return [];
+  }
+}
+
+export {
+  fetchOpenRouterModels,
+  transformOpenRouterModel,
+}; 

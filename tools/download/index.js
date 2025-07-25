@@ -56,81 +56,50 @@ const getModelId = (model) => {
 };
 
 /**
- * Processes a single API endpoint: fetches data, transforms models, and saves them.
- * @param {Object} apiConfig - Configuration object for the API.
- * @param {string} apiConfig.name - Human-readable name for the API (used in logging).
- * @param {string} apiConfig.url - The URL to fetch model data from.
- * @param {string} apiConfig.output - Output directory path for transformed models.
- * @param {string} apiConfig.transform - Name of the transformer module to use.
+ * Processes a single provider: fetches data, transforms models, and saves them.
+ * @param {Object} providerConfig - Configuration object for the provider.
+ * @param {string} providerConfig.name - Human-readable name for the provider (used in logging).
+ * @param {string} providerConfig.transformer - Path to the transformer module to use.
+ * @param {string} providerConfig.output - Output directory path for transformed models.
  * @returns {Object} Result object containing processing statistics.
- * @example
- * const result = await processApi({
- *   name: 'OpenRouter',
- *   url: 'https://openrouter.ai/api/frontend/models',
- *   output: 'providers-openrouter',
- *   transform: 'openrouter'
- * });
  */
-const processApi = async (apiConfig) => {
-  const { name, url, output, transform } = apiConfig;
-  const transformerPath = path.join(__dirname, './transformers', `${transform}.js`);
+const processProvider = async (providerConfig) => {
+  const { name, transformer, output } = providerConfig;
+  const transformerPath = path.resolve(__dirname, transformer);
   
-  let transformer;
+  let transformerModule;
   
   try {
-    const transformerModule = await import(transformerPath);
-
-    transformer = transformerModule.default;
+    transformerModule = await import(transformerPath);
   } catch (e) {
-    console.error(`[${name}] ERROR: Could not load transformer '${transform}':`, e.message);
-
+    console.error(`[${name}] ERROR: Could not load transformer '${transformer}':`, e.message);
     return { name, error: e.message };
   }
 
-  console.log(`\n[${name}] Fetching: ${url}`);
+  // Get the fetch function from the transformer
+  const fetchFunction = transformerModule.fetchAzureModels || 
+                       transformerModule.fetchOpenRouterModels || 
+                       transformerModule.fetchVercelModels || 
+                       transformerModule.fetchBedrockModels || 
+                       transformerModule.fetchAnthropicModels ||
+                       transformerModule.default;
 
-  let data;
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    // Check if this is an HTML response (for Amazon Bedrock)
-    const contentType = response.headers.get('content-type');
-    if (contentType && contentType.includes('text/html')) {
-      data = await response.text(); // Get HTML as text
-    } else {
-      data = await response.json(); // Get JSON data
-    }
-  } catch (e) {
-    console.error(`[${name}] ERROR: Fetch failed:`, e.message);
-
-    return { name, error: e.message };
+  if (!fetchFunction) {
+    console.error(`[${name}] ERROR: No fetch function found in transformer`);
+    return { name, error: 'No fetch function found' };
   }
 
   let models = [];
   
-  // Handle different data formats
-  if (typeof data === 'string') {
-    // HTML content - use the transformer to parse it
-    try {
-      const transformerModule = await import(transformerPath);
-      const parseFunction = transformerModule.transformBedrockModels || transformerModule.default;
-      models = parseFunction(data);
-    } catch (e) {
-      console.error(`[${name}] ERROR: Failed to parse HTML content:`, e.message);
-      return { name, error: e.message };
-    }
-  } else {
-    // JSON content - extract models array
-    models = Array.isArray(data.data) ? data.data : (Array.isArray(data.models) ? data.models : []);
+  try {
+    models = await fetchFunction();
+  } catch (e) {
+    console.error(`[${name}] ERROR: Fetch failed:`, e.message);
+    return { name, error: e.message };
   }
 
   if (!models.length) {
-    console.warn(`[${name}] WARNING: No models found in response.`);
+    console.warn(`[${name}] WARNING: No models found.`);
     return { name, models: 0, saved: 0 };
   }
 
@@ -138,27 +107,24 @@ const processApi = async (apiConfig) => {
 
   for (const model of models) {
     try {
-      // For HTML content, models are already transformed
-      // For JSON content, we need to transform each model
-      const transformed = typeof data === 'string' ? model : transformer(model);
-      
       // Validate with Zod
-      const parseResult = ModelSchema.safeParse(transformed);
+      const parseResult = ModelSchema.safeParse(model);
       if (!parseResult.success) {
         errors++;
         console.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
         continue;
       }
+      
       const provider = getProvider(model);
       const modelId = getModelId(model);
       const outDir = path.join(__dirname, output, provider);
       ensureDirSync(outDir);
       const outPath = path.join(outDir, `${modelId}.json`);
-      fs.writeFileSync(outPath, JSON.stringify(transformed, null, 2));
+      fs.writeFileSync(outPath, JSON.stringify(model, null, 2));
       saved++;
     } catch (e) {
       errors++;
-      console.error(`[${name}] ERROR: Failed to transform/save model:`, e.message);
+      console.error(`[${name}] ERROR: Failed to save model:`, e.message);
     }
   }
   
@@ -168,30 +134,7 @@ const processApi = async (apiConfig) => {
 };
 
 /**
- * Main function that reads the batch configuration and processes all APIs.
- * 
- * @example
- * // Run with default config file (batch-config.json)
- * node scripts/fetch-and-transform-batch.js
- * 
- * // Run with custom config file
- * node scripts/fetch-and-transform-batch.js --config my-config.json
- * 
- * // Example batch-config.json:
- * [
- *   {
- *     "name": "OpenRouter",
- *     "url": "https://openrouter.ai/api/frontend/models",
- *     "output": "providers-openrouter",
- *     "transform": "openrouter"
- *   },
- *   {
- *     "name": "VercelGateway",
- *     "url": "https://ai-gateway.vercel.sh/v1/models",
- *     "output": "providers-vercel",
- *     "transform": "vercel"
- *   }
- * ]
+ * Main function that reads the configuration and processes all providers.
  */
 const main = async () => {
   let config;
@@ -200,22 +143,19 @@ const main = async () => {
     config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
   } catch (e) {
     console.error('ERROR: Failed to read config:', e.message);
-  
     process.exit(1);
   }
   
-  if (!Array.isArray(config)) {
-    console.error('ERROR: Config must be an array of API configs.');
-  
+  if (!config.providers || !Array.isArray(config.providers)) {
+    console.error('ERROR: Config must have a "providers" array.');
     process.exit(1);
   }
   
   const results = [];
   
-  for (const apiConfig of config) {
+  for (const providerConfig of config.providers) {
     // eslint-disable-next-line no-await-in-loop
-    const result = await processApi(apiConfig);
-  
+    const result = await processProvider(providerConfig);
     results.push(result);
   }
   
