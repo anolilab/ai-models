@@ -11,9 +11,19 @@
     "dev": "pnpm -r dev",
     "build": "pnpm -r build",
     "check-types": "pnpm -r check-types",
-    "dev:native": "pnpm --filter native dev",
-    "dev:web": "pnpm --filter web dev",
-    "dev:server": "pnpm --filter server dev"
+    "dev:native": "nx run native:dev",
+    "dev:web": "nx run web:dev",
+    "dev:server": "nx run server:dev",
+    "nx": "nx",
+    "nx:graph": "nx graph"
   },
-  "packageManager": "pnpm@10.8.0"
+  "nx": {
+    "affected": {
+      "defaultBase": "main"
+    }
+  },
+  "packageManager": "pnpm@10.8.0",
+  "devDependencies": {
+    "nx": "16.0.0"
+  }
 }

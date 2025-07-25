@@ -120,4 +120,3 @@ const transformBedrockModel = (model) => {
 };
 
 export default transformBedrockModel;
-export { transformBedrockModels }; 
