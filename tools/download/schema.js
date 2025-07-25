@@ -36,4 +36,15 @@ export const ModelSchema = z.object({
   launch_date: z.string().optional(),
   // DeepSeek-specific fields
   cache_read: z.boolean().optional(),
+  // Google-specific fields
+  code_execution: z.boolean().optional(),
+  search_grounding: z.boolean().optional(),
+  structured_outputs: z.boolean().optional(),
+  batch_mode: z.boolean().optional(),
+  audio_generation: z.boolean().optional(),
+  image_generation: z.boolean().optional(),
+  versions: z.object({
+    stable: z.string().nullable().optional(),
+    preview: z.string().nullable().optional(),
+  }).optional(),
 }); 

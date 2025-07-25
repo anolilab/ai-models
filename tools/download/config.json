@@ -34,6 +34,11 @@
       "name": "GitHub Copilot",
       "transformer": "./transformers/github-copilot.js",
       "output": "./providers/github-copilot"
+    },
+    {
+      "name": "Google",
+      "transformer": "./transformers/google.js",
+      "output": "./providers/google"
     }
   ]
 } 
