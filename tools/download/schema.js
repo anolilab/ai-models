@@ -23,4 +23,8 @@ export const ModelSchema = z.object({
     input: z.array(z.string()),
     output: z.array(z.string()),
   }),
+  // Optional additional metadata fields
+  provider: z.string().optional(),
+  regions: z.string().optional(),
+  streaming_supported: z.boolean().optional(),
 }); 

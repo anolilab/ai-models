@@ -31,10 +31,12 @@ const ensureDirSync = (dir) => {
  * @example
  * const provider = getProvider({ id: 'openai/gpt-4' }); // Returns 'openai'
  * const provider = getProvider({ owned_by: 'anthropic' }); // Returns 'anthropic'
+ * const provider = getProvider({ provider: 'AI21 Labs' }); // Returns 'AI21_Labs'
  */
 const getProvider = (model) => {
   if (model.owned_by) return model.owned_by.replace(/[^a-zA-Z0-9._-]/g, '_');
   if (model.author) return model.author.replace(/[^a-zA-Z0-9._-]/g, '_');
+  if (model.provider) return model.provider.replace(/[^a-zA-Z0-9._-]/g, '_');
   if (model.id && typeof model.id === 'string' && model.id.includes('/')) {
     return model.id.split('/')[0].replace(/[^a-zA-Z0-9._-]/g, '_');
   }
@@ -96,14 +98,36 @@ const processApi = async (apiConfig) => {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    data = await response.json();
+    // Check if this is an HTML response (for Amazon Bedrock)
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('text/html')) {
+      data = await response.text(); // Get HTML as text
+    } else {
+      data = await response.json(); // Get JSON data
+    }
   } catch (e) {
     console.error(`[${name}] ERROR: Fetch failed:`, e.message);
 
     return { name, error: e.message };
   }
 
-  const models = Array.isArray(data.data) ? data.data : (Array.isArray(data.models) ? data.models : []);
+  let models = [];
+  
+  // Handle different data formats
+  if (typeof data === 'string') {
+    // HTML content - use the transformer to parse it
+    try {
+      const transformerModule = await import(transformerPath);
+      const parseFunction = transformerModule.transformBedrockModels || transformerModule.default;
+      models = parseFunction(data);
+    } catch (e) {
+      console.error(`[${name}] ERROR: Failed to parse HTML content:`, e.message);
+      return { name, error: e.message };
+    }
+  } else {
+    // JSON content - extract models array
+    models = Array.isArray(data.data) ? data.data : (Array.isArray(data.models) ? data.models : []);
+  }
 
   if (!models.length) {
     console.warn(`[${name}] WARNING: No models found in response.`);
@@ -114,30 +138,26 @@ const processApi = async (apiConfig) => {
 
   for (const model of models) {
     try {
-      const transformed = transformer(model);
+      // For HTML content, models are already transformed
+      // For JSON content, we need to transform each model
+      const transformed = typeof data === 'string' ? model : transformer(model);
+      
       // Validate with Zod
       const parseResult = ModelSchema.safeParse(transformed);
-      
       if (!parseResult.success) {
         errors++;
         console.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
         continue;
       }
-
       const provider = getProvider(model);
       const modelId = getModelId(model);
       const outDir = path.join(__dirname, output, provider);
-  
       ensureDirSync(outDir);
-  
       const outPath = path.join(outDir, `${modelId}.json`);
-  
       fs.writeFileSync(outPath, JSON.stringify(transformed, null, 2));
-  
       saved++;
     } catch (e) {
       errors++;
-  
       console.error(`[${name}] ERROR: Failed to transform/save model:`, e.message);
     }
   }
