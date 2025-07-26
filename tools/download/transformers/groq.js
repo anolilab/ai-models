@@ -11,7 +11,7 @@ const transformGroqModels = async (modelsHtml) => {
   const $ = cheerio.load(modelsHtml);
   const models = [];
   
-  console.log('[Groq] Starting to parse models page...');
+
   
   // Extract all model detail URLs from the page
   const modelDetailUrls = [];
@@ -34,8 +34,7 @@ const transformGroqModels = async (modelsHtml) => {
     }
   });
   
-  console.log(`[Groq] Found ${modelDetailUrls.length} detail URLs and ${modelIds.length} model IDs`);
-  console.log('[Groq] Model IDs found:', modelIds);
+
   
   // Create a set of unique model URLs to fetch
   const uniqueModelUrls = new Set();
@@ -58,22 +57,17 @@ const transformGroqModels = async (modelsHtml) => {
     uniqueModelUrls.add(detailUrl);
   });
   
-  console.log(`[Groq] Will fetch details for ${uniqueModelUrls.size} models:`);
-  Array.from(uniqueModelUrls).forEach(url => {
-    console.log(`[Groq] - ${url}`);
-  });
+
   
   // Fetch details for each model
   for (const detailUrl of uniqueModelUrls) {
     try {
-      console.log(`[Groq] Fetching details from: ${detailUrl}`);
       const detailResponse = await axios.get(detailUrl);
       const detailHtml = detailResponse.data;
       
       const modelData = parseModelDetailPage(detailHtml, detailUrl);
       if (modelData) {
         models.push(modelData);
-        console.log(`[Groq] Successfully parsed model: ${modelData.id}`);
       }
       
       // Add a small delay to be respectful to the server
@@ -84,7 +78,6 @@ const transformGroqModels = async (modelsHtml) => {
     }
   }
   
-  console.log(`[Groq] Successfully parsed ${models.length} models`);
   return models;
 };
 
@@ -241,22 +234,63 @@ function parseCapabilities($) {
   const capabilities = {
     tool_call: false,
     reasoning: false,
-    input_modalities: ['text'],
-    output_modalities: ['text']
+    input_modalities: [],
+    output_modalities: []
   };
   
-  // Look for tool use capability
-  $('a[href*="tool-use"]').each((index, element) => {
+  // Look for the Tool Use capability by finding the wrench icon
+  // The lucide lucide-wrench w-4 h-4 class indicates Tool Use capability
+  $('svg.lucide.lucide-wrench').each((index, element) => {
     capabilities.tool_call = true;
   });
   
-  // Look for reasoning/extended thinking capability
-  $('div').each((index, element) => {
-    const text = $(element).text();
-    if (text.includes('reasoning') || text.includes('thinking')) {
-      capabilities.reasoning = true;
+  // Look for reasoning capability by finding the brain icon
+  // The lucide lucide-brain w-4 h-4 class indicates reasoning capability
+  $('svg.lucide.lucide-brain').each((index, element) => {
+    capabilities.reasoning = true;
+  });
+  
+  // Parse input modalities based on the capabilities grid structure
+  // Look for the specific div structure with INPUT/OUTPUT sections
+  $('div.flex.flex-col.items-center.text-center').each((index, element) => {
+    const $element = $(element);
+    
+    // Find the header text (INPUT/OUTPUT)
+    const $header = $element.find('div.font-medium.text-sm.text-muted-foreground.font-montserrat.mb-4');
+    const headerText = $header.text().trim().toLowerCase();
+    
+    // Find the text label below the icon
+    const $label = $element.find('div.text-xs.mt-3');
+    const labelText = $label.text().trim().toLowerCase();
+    
+    if (headerText === 'input') {
+      // Parse input modalities
+      if (labelText === 'text' && !capabilities.input_modalities.includes('text')) {
+        capabilities.input_modalities.push('text');
+      } else if (labelText === 'image' && !capabilities.input_modalities.includes('image')) {
+        capabilities.input_modalities.push('image');
+      } else if (labelText === 'audio' && !capabilities.input_modalities.includes('audio')) {
+        capabilities.input_modalities.push('audio');
+      }
+    } else if (headerText === 'output') {
+      // Parse output modalities
+      if (labelText === 'text' && !capabilities.output_modalities.includes('text')) {
+        capabilities.output_modalities.push('text');
+      } else if (labelText === 'image' && !capabilities.output_modalities.includes('image')) {
+        capabilities.output_modalities.push('image');
+      } else if (labelText === 'audio' && !capabilities.output_modalities.includes('audio')) {
+        capabilities.output_modalities.push('audio');
+      }
     }
   });
+  
+  // Ensure we have at least text as default if no modalities found
+  if (capabilities.input_modalities.length === 0) {
+    capabilities.input_modalities = ['text'];
+  }
+  if (capabilities.output_modalities.length === 0) {
+    capabilities.output_modalities = ['text'];
+  }
   
   return capabilities;
 }
@@ -267,28 +301,28 @@ function parseCapabilities($) {
  * @returns {string} Provider name
  */
 function parseProvider($) {
-  // Look for provider information
+  // Look for provider information with case-insensitive detection
   $('div').each((index, element) => {
-    const text = $(element).text();
-    if (text.includes('Meta') || text.includes('meta')) {
+    const text = $(element).text().toLowerCase();
+    if (text.includes('meta')) {
       return 'Meta';
     }
-    if (text.includes('Google') || text.includes('google')) {
+    if (text.includes('google')) {
       return 'Google';
     }
-    if (text.includes('OpenAI') || text.includes('openai')) {
+    if (text.includes('openai')) {
       return 'OpenAI';
     }
-    if (text.includes('DeepSeek') || text.includes('deepseek')) {
+    if (text.includes('deepseek')) {
       return 'DeepSeek';
     }
-    if (text.includes('Moonshot') || text.includes('moonshot')) {
+    if (text.includes('moonshot')) {
       return 'Moonshot AI';
     }
-    if (text.includes('Alibaba') || text.includes('alibaba')) {
+    if (text.includes('alibaba')) {
       return 'Alibaba Cloud';
     }
-    if (text.includes('PlayAI') || text.includes('playai')) {
+    if (text.includes('playai')) {
       return 'PlayAI';
     }
   });
@@ -301,8 +335,6 @@ function parseProvider($) {
  * @returns {Array} Array of transformed models.
  */
 async function fetchGroqModels() {
-  console.log('[Groq] Fetching models from Groq documentation...');
-  
   try {
     const response = await axios.get('https://console.groq.com/docs/models');
     const modelsHtml = response.data;
