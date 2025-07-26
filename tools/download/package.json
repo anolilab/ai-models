@@ -3,13 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "download": "node index.js"
+    "download": "node index.js",
+    "postinstall": "npx puppeteer browsers install chrome"
   },
   "dependencies": {
     "axios": "^1.11.0",
     "cheerio": "^1.1.2",
     "puppeteer": "^24.15.0",
     "rss-parser": "3.13.0",
-    "zod": "^4.0.2"
+    "zod": "^4.0.10"
   }
 }

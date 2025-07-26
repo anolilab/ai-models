@@ -8,12 +8,8 @@
     "tools/*"
   ],
   "scripts": {
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build",
-    "check-types": "pnpm -r check-types",
-    "dev:native": "nx run native:dev",
     "dev:web": "nx run web:dev",
-    "dev:server": "nx run server:dev",
+    "download": "pnpm -r run download",
     "nx": "nx",
     "nx:graph": "nx graph"
   },
@@ -22,8 +18,8 @@
       "defaultBase": "main"
     }
   },
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.13.1",
   "devDependencies": {
-    "nx": "16.0.0"
+    "nx": "21.3.7"
   }
 }

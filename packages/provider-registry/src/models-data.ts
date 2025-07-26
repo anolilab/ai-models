@@ -5660,7 +5660,7 @@ export const allModels: Model[] = [
     "attachment": false,
     "reasoning": false,
     "temperature": true,
-    "tool_call": false,
+    "tool_call": true,
     "open_weights": true,
     "knowledge": null,
     "cost": {
@@ -5684,7 +5684,7 @@ export const allModels: Model[] = [
     "owned_by": "MiniMaxAI",
     "original_model_id": "MiniMaxAI/MiniMax-M1-80k",
     "provider_status": "live",
-    "supports_tools": false,
+    "supports_tools": true,
     "supports_structured_output": false
   },
   {
@@ -6054,7 +6054,7 @@ export const allModels: Model[] = [
     "release_date": "2025-03-05T14:16:59.000Z",
     "last_updated": "2025-03-05T14:16:59.000Z",
     "attachment": false,
-    "reasoning": true,
+    "reasoning": false,
     "temperature": true,
     "tool_call": false,
     "open_weights": true,
@@ -6081,7 +6081,7 @@ export const allModels: Model[] = [
     "original_model_id": "Qwen/QwQ-32B",
     "provider_status": "live",
     "supports_tools": false,
-    "supports_structured_output": true
+    "supports_structured_output": false
   },
   {
     "id": "Qwen/Qwen2-72B-Instruct@featherless-ai",
@@ -6379,7 +6379,7 @@ export const allModels: Model[] = [
     "release_date": "2024-09-16T11:56:31.000Z",
     "last_updated": "2024-09-16T11:56:31.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "tool_call": true,
     "open_weights": true,
@@ -6406,7 +6406,7 @@ export const allModels: Model[] = [
     "original_model_id": "Qwen/Qwen2.5-72B-Instruct",
     "provider_status": "live",
     "supports_tools": true,
-    "supports_structured_output": false
+    "supports_structured_output": true
   },
   {
     "id": "Qwen/Qwen2.5-72B-Instruct@together",
@@ -7285,7 +7285,7 @@ export const allModels: Model[] = [
     "attachment": false,
     "reasoning": false,
     "temperature": true,
-    "tool_call": false,
+    "tool_call": true,
     "open_weights": true,
     "knowledge": null,
     "cost": {
@@ -7309,7 +7309,7 @@ export const allModels: Model[] = [
     "owned_by": "Qwen",
     "original_model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
     "provider_status": "live",
-    "supports_tools": false,
+    "supports_tools": true,
     "supports_structured_output": false
   },
   {
@@ -7463,7 +7463,7 @@ export const allModels: Model[] = [
     "release_date": "2025-04-27T03:53:46.000Z",
     "last_updated": "2025-04-27T03:53:46.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "tool_call": false,
     "open_weights": true,
@@ -7490,7 +7490,7 @@ export const allModels: Model[] = [
     "original_model_id": "Qwen/Qwen3-235B-A22B",
     "provider_status": "live",
     "supports_tools": false,
-    "supports_structured_output": false
+    "supports_structured_output": true
   },
   {
     "id": "Qwen/Qwen3-235B-A22B@together",
@@ -7499,9 +7499,9 @@ export const allModels: Model[] = [
     "release_date": "2025-04-27T03:53:46.000Z",
     "last_updated": "2025-04-27T03:53:46.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
-    "tool_call": false,
+    "tool_call": true,
     "open_weights": true,
     "knowledge": null,
     "cost": {
@@ -7525,8 +7525,8 @@ export const allModels: Model[] = [
     "owned_by": "Qwen",
     "original_model_id": "Qwen/Qwen3-235B-A22B",
     "provider_status": "live",
-    "supports_tools": false,
-    "supports_structured_output": false
+    "supports_tools": true,
+    "supports_structured_output": true
   },
   {
     "id": "Qwen/Qwen3-30B-A3B@fireworks-ai",
@@ -9193,7 +9193,7 @@ export const allModels: Model[] = [
     "release_date": "2025-01-20T09:13:33.000Z",
     "last_updated": "2025-01-20T09:13:33.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "tool_call": false,
     "open_weights": false,
@@ -9220,7 +9220,7 @@ export const allModels: Model[] = [
     "original_model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
     "provider_status": "live",
     "supports_tools": false,
-    "supports_structured_output": false
+    "supports_structured_output": true
   },
   {
     "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B@sambanova",
@@ -9517,7 +9517,7 @@ export const allModels: Model[] = [
     "release_date": "2025-01-20T09:18:27.000Z",
     "last_updated": "2025-01-20T09:18:27.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "tool_call": false,
     "open_weights": true,
@@ -9544,7 +9544,7 @@ export const allModels: Model[] = [
     "original_model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
     "provider_status": "live",
     "supports_tools": false,
-    "supports_structured_output": false
+    "supports_structured_output": true
   },
   {
     "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B@novita",
@@ -9589,7 +9589,7 @@ export const allModels: Model[] = [
     "release_date": "2025-01-20T09:19:00.000Z",
     "last_updated": "2025-01-20T09:19:00.000Z",
     "attachment": false,
-    "reasoning": true,
+    "reasoning": false,
     "temperature": true,
     "tool_call": false,
     "open_weights": true,
@@ -9616,7 +9616,7 @@ export const allModels: Model[] = [
     "original_model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
     "provider_status": "live",
     "supports_tools": false,
-    "supports_structured_output": true
+    "supports_structured_output": false
   },
   {
     "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B@featherless-ai",
@@ -9987,7 +9987,7 @@ export const allModels: Model[] = [
     "attachment": false,
     "reasoning": true,
     "temperature": true,
-    "tool_call": true,
+    "tool_call": false,
     "open_weights": true,
     "knowledge": null,
     "cost": {
@@ -10011,7 +10011,7 @@ export const allModels: Model[] = [
     "owned_by": "deepseek-ai",
     "original_model_id": "deepseek-ai/DeepSeek-V3-0324",
     "provider_status": "live",
-    "supports_tools": true,
+    "supports_tools": false,
     "supports_structured_output": true
   },
   {
@@ -10093,9 +10093,9 @@ export const allModels: Model[] = [
     "release_date": "2025-03-24T09:28:22.000Z",
     "last_updated": "2025-03-24T09:28:22.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
-    "tool_call": false,
+    "tool_call": true,
     "open_weights": true,
     "knowledge": null,
     "cost": {
@@ -10119,8 +10119,8 @@ export const allModels: Model[] = [
     "owned_by": "deepseek-ai",
     "original_model_id": "deepseek-ai/DeepSeek-V3-0324",
     "provider_status": "live",
-    "supports_tools": false,
-    "supports_structured_output": false
+    "supports_tools": true,
+    "supports_structured_output": true
   },
   {
     "id": "deepseek-ai/DeepSeek-V3@fireworks-ai",
@@ -10633,7 +10633,7 @@ export const allModels: Model[] = [
     "release_date": "2024-07-16T18:24:44.000Z",
     "last_updated": "2024-07-16T18:24:44.000Z",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "tool_call": true,
     "open_weights": false,
@@ -10660,7 +10660,7 @@ export const allModels: Model[] = [
     "original_model_id": "meta-llama/Llama-3.1-405B-Instruct",
     "provider_status": "live",
     "supports_tools": true,
-    "supports_structured_output": false
+    "supports_structured_output": true
   },
   {
     "id": "meta-llama/Llama-3.1-405B-Instruct@sambanova",
@@ -10771,9 +10771,9 @@ export const allModels: Model[] = [
     "supports_structured_output": false
   },
   {
-    "id": "meta-llama/Llama-3.1-70B-Instruct@hyperbolic",
-    "name": "Llama-3.1-70B-Instruct (hyperbolic)",
-    "provider": "hyperbolic",
+    "id": "meta-llama/Llama-3.1-70B-Instruct@nebius",
+    "name": "Llama-3.1-70B-Instruct (nebius)",
+    "provider": "nebius",
     "release_date": "2024-07-16T16:07:46.000Z",
     "last_updated": "2024-07-16T16:07:46.000Z",
     "attachment": false,
@@ -10802,45 +10802,9 @@ export const allModels: Model[] = [
     "streaming_supported": true,
     "owned_by": "meta-llama",
     "original_model_id": "meta-llama/Llama-3.1-70B-Instruct",
-    "provider_status": "staging",
+    "provider_status": "live",
     "supports_tools": false,
     "supports_structured_output": false
-  },
-  {
-    "id": "meta-llama/Llama-3.1-70B-Instruct@nebius",
-    "name": "Llama-3.1-70B-Instruct (nebius)",
-    "provider": "nebius",
-    "release_date": "2024-07-16T16:07:46.000Z",
-    "last_updated": "2024-07-16T16:07:46.000Z",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": true,
-    "tool_call": true,
-    "open_weights": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "input_cache_hit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streaming_supported": true,
-    "owned_by": "meta-llama",
-    "original_model_id": "meta-llama/Llama-3.1-70B-Instruct",
-    "provider_status": "live",
-    "supports_tools": true,
-    "supports_structured_output": true
   },
   {
     "id": "meta-llama/Llama-3.1-8B-Instruct@cerebras",
@@ -11248,7 +11212,7 @@ export const allModels: Model[] = [
     "attachment": false,
     "reasoning": false,
     "temperature": true,
-    "tool_call": false,
+    "tool_call": true,
     "open_weights": false,
     "knowledge": null,
     "cost": {
@@ -11272,7 +11236,7 @@ export const allModels: Model[] = [
     "owned_by": "meta-llama",
     "original_model_id": "meta-llama/Llama-3.2-3B-Instruct",
     "provider_status": "live",
-    "supports_tools": false,
+    "supports_tools": true,
     "supports_structured_output": false
   },
   {
@@ -12040,7 +12004,7 @@ export const allModels: Model[] = [
     "attachment": false,
     "reasoning": false,
     "temperature": true,
-    "tool_call": true,
+    "tool_call": false,
     "open_weights": false,
     "knowledge": null,
     "cost": {
@@ -12064,7 +12028,7 @@ export const allModels: Model[] = [
     "owned_by": "meta-llama",
     "original_model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
     "provider_status": "live",
-    "supports_tools": true,
+    "supports_tools": false,
     "supports_structured_output": false
   },
   {
@@ -21004,8 +20968,8 @@ export const allModels: Model[] = [
     "open_weights": true,
     "knowledge": null,
     "cost": {
-      "input": 1.3e-7,
-      "output": 6e-7,
+      "input": 1.179e-7,
+      "output": 1.179e-7,
       "input_cache_hit": null
     },
     "limit": {

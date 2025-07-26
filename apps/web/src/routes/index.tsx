@@ -1,17 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import type { ColumnDef } from "@tanstack/react-table";
-import {
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
 import { FileText, Image as ImageIcon, Video, ScatterChart } from "lucide-react";
 import {
@@ -20,11 +8,12 @@ import {
   TooltipContent,
   TooltipProvider,
 } from "@/components/ui/tooltip";
-
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
-}
+import { DataTable } from "@/components/data-table/data-table";
+import { DataTableAdvancedToolbar } from "@/components/data-table/data-table-advanced-toolbar";
+import { DataTableSortList } from "@/components/data-table/data-table-sort-list";
+import { DataTableFilterMenu } from "@/components/data-table/data-table-filter-menu"; 
+import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
+import { useDataTable } from "@/hooks/use-data-table";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -32,64 +21,6 @@ const modalityIconMap: Record<string, React.ReactNode> = {
   video: <Video className="inline size-4" />,
   embedding: <ScatterChart className="inline size-4" />,
 };
-
-const DataTable = <TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) => {
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  })
- 
-  return (
-    <div className="overflow-hidden rounded-md border">
-      <Table>
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </div>
-  )
-}
 
 const HomeComponent = () => {
   // Get all models from the provider registry
@@ -128,17 +59,97 @@ const HomeComponent = () => {
     releaseDate: model.release_date || 'N/A',
     lastUpdated: model.last_updated || 'N/A',
   }));
+
   const columns: ColumnDef<typeof tableData[0]>[] = [
-    { accessorKey: "provider", header: () => <>Provider <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "model", header: () => <>Model <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "providerId", header: () => <>Provider ID <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "modelId", header: () => <>Model ID <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "toolCall", header: () => <>Tool Call <span className="sort-indicator" /></>, meta: { type: "boolean" } },
-    { accessorKey: "reasoning", header: () => <>Reasoning <span className="sort-indicator" /></>, meta: { type: "boolean" } },
+    { 
+      accessorKey: "provider", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Provider" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Provider",
+        variant: "text",
+        placeholder: "Filter providers..."
+      }
+    },
+    { 
+      accessorKey: "model", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Model" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Model",
+        variant: "text",
+        placeholder: "Filter models..."
+      }
+    },
+    { 
+      accessorKey: "providerId", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Provider ID" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Provider ID",
+        variant: "text",
+        placeholder: "Filter provider IDs..."
+      }
+    },
+    { 
+      accessorKey: "modelId", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Model ID" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Model ID",
+        variant: "text",
+        placeholder: "Filter model IDs..."
+      }
+    },
+    { 
+      accessorKey: "toolCall", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Tool Call" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Tool Call",
+        variant: "select",
+        options: [
+          { label: "Yes", value: "Yes" },
+          { label: "No", value: "No" }
+        ]
+      }
+    },
+    { 
+      accessorKey: "reasoning", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Reasoning" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Reasoning",
+        variant: "select",
+        options: [
+          { label: "Yes", value: "Yes" },
+          { label: "No", value: "No" }
+        ]
+      }
+    },
     {
       accessorKey: "input",
-      header: () => <>Input <span className="sort-indicator" /></>,
-      meta: { type: "modalities" },
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Input" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Input Modalities",
+        variant: "text",
+        placeholder: "Filter input modalities..."
+      },
       cell: ({ row }) => {
         const modalities = row.original.input.split(',').map((m: string) => m.trim());
         return (
@@ -161,8 +172,15 @@ const HomeComponent = () => {
     },
     {
       accessorKey: "output",
-      header: () => <>Output <span className="sort-indicator" /></>,
-      meta: { type: "modalities" },
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Output" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Output Modalities",
+        variant: "text",
+        placeholder: "Filter output modalities..."
+      },
       cell: ({ row }) => {
         const modalities = row.original.output.split(',').map((m: string) => m.trim());
         return (
@@ -183,18 +201,154 @@ const HomeComponent = () => {
         );
       },
     },
-    { accessorKey: "inputCost", header: () => <div className="header-container"><span className="header-text">Input Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
-    { accessorKey: "outputCost", header: () => <div className="header-container"><span className="header-text">Output Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
-    { accessorKey: "cacheReadCost", header: () => <div className="header-container"><span className="header-text">Cache Read Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
-    { accessorKey: "cacheWriteCost", header: () => <div className="header-container"><span className="header-text">Cache Write Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
-    { accessorKey: "contextLimit", header: () => <>Context Limit <span className="sort-indicator" /></>, meta: { type: "number" } },
-    { accessorKey: "outputLimit", header: () => <>Output Limit <span className="sort-indicator" /></>, meta: { type: "number" } },
-    { accessorKey: "temperature", header: () => <>Temperature <span className="sort-indicator" /></>, meta: { type: "boolean" } },
-    { accessorKey: "weights", header: () => <>Weights <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "knowledge", header: () => <>Knowledge <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "releaseDate", header: () => <>Release Date <span className="sort-indicator" /></>, meta: { type: "text" } },
-    { accessorKey: "lastUpdated", header: () => <>Last Updated <span className="sort-indicator" /></>, meta: { type: "text" } },
+    { 
+      accessorKey: "inputCost", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Input Cost" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Input Cost",
+        variant: "number",
+        placeholder: "Filter input cost...",
+        unit: "$"
+      }
+    },
+    { 
+      accessorKey: "outputCost", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Output Cost" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Output Cost",
+        variant: "number",
+        placeholder: "Filter output cost...",
+        unit: "$"
+      }
+    },
+    { 
+      accessorKey: "cacheReadCost", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Cache Read Cost" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Cache Read Cost",
+        variant: "number",
+        placeholder: "Filter cache read cost...",
+        unit: "$"
+      }
+    },
+    { 
+      accessorKey: "cacheWriteCost", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Cache Write Cost" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Cache Write Cost",
+        variant: "text",
+        placeholder: "Filter cache write cost..."
+      }
+    },
+    { 
+      accessorKey: "contextLimit", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Context Limit" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Context Limit",
+        variant: "number",
+        placeholder: "Filter context limit..."
+      }
+    },
+    { 
+      accessorKey: "outputLimit", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Output Limit" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Output Limit",
+        variant: "number",
+        placeholder: "Filter output limit..."
+      }
+    },
+    { 
+      accessorKey: "temperature", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Temperature" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Temperature",
+        variant: "select",
+        options: [
+          { label: "Yes", value: "Yes" },
+          { label: "No", value: "No" }
+        ]
+      }
+    },
+    { 
+      accessorKey: "weights", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Weights" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Weights",
+        variant: "select",
+        options: [
+          { label: "Open", value: "Open" },
+          { label: "Closed", value: "Closed" }
+        ]
+      }
+    },
+    { 
+      accessorKey: "knowledge", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Knowledge" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Knowledge",
+        variant: "text",
+        placeholder: "Filter knowledge..."
+      }
+    },
+    { 
+      accessorKey: "releaseDate", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Release Date" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Release Date",
+        variant: "text",
+        placeholder: "Filter release date..."
+      }
+    },
+    { 
+      accessorKey: "lastUpdated", 
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Last Updated" />
+      ),
+      enableColumnFilter: true,
+      meta: { 
+        label: "Last Updated",
+        variant: "text",
+        placeholder: "Filter last updated..."
+      }
+    },
   ];
+
+  const { table } = useDataTable({
+    data: tableData,
+    columns,
+    pageCount: Math.ceil(tableData.length / 10), // Assuming 10 items per page
+  });
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -217,7 +371,12 @@ const HomeComponent = () => {
           </div>
         </header>
         <main className="w-full">
-          <DataTable columns={columns} data={tableData} />
+          <DataTable table={table}>
+            <DataTableAdvancedToolbar table={table}>
+              <DataTableFilterMenu table={table} />
+              <DataTableSortList table={table} />
+            </DataTableAdvancedToolbar>
+          </DataTable>
         </main>
       </div>
     </TooltipProvider>

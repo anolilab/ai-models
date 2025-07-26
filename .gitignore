@@ -1,4 +1,5 @@
 node_modules
-.turbo
+.nx
+
 tools/download/providers
 tools/download/all-models.json
