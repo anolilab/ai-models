@@ -44,6 +44,16 @@
       "name": "Groq",
       "transformer": "./transformers/groq.js",
       "output": "./providers/groq"
+    },
+    {
+      "name": "Hugging Face",
+      "transformer": "./transformers/huggingface.js",
+      "output": "./providers/huggingface"
+    },
+    {
+      "name": "Llama",
+      "transformer": "./transformers/llama.js",
+      "output": "./providers/llama"
     }
   ]
 } 

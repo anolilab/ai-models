@@ -97,6 +97,22 @@ const getModelId = (model) => {
  */
 const processProvider = async (providerConfig) => {
   const { name, transformer, output } = providerConfig;
+  
+  // Validate provider name
+  if (!name || typeof name !== 'string' || name.trim() === '') {
+    throw new Error(`Invalid provider name: "${name}". Provider name must be a non-empty string.`);
+  }
+  
+  // Validate transformer path
+  if (!transformer || typeof transformer !== 'string' || transformer.trim() === '') {
+    throw new Error(`Invalid transformer path for provider "${name}": "${transformer}". Transformer path must be a non-empty string.`);
+  }
+  
+  // Validate output path
+  if (!output || typeof output !== 'string' || output.trim() === '') {
+    throw new Error(`Invalid output path for provider "${name}": "${output}". Output path must be a non-empty string.`);
+  }
+  
   const transformerPath = path.resolve(__dirname, transformer);
   
   let transformerModule;
@@ -104,8 +120,9 @@ const processProvider = async (providerConfig) => {
   try {
     transformerModule = await import(transformerPath);
   } catch (e) {
-    console.error(`[${name}] ERROR: Could not load transformer '${transformer}':`, e.message);
-    return { name, error: e.message };
+    const error = new Error(`Could not load transformer '${transformer}' for provider "${name}": ${e.message}`);
+    console.error(`[${name}] ERROR: ${error.message}`);
+    return { name, error: error.message };
   }
 
   // Get the fetch function from the transformer
@@ -118,6 +135,8 @@ const processProvider = async (providerConfig) => {
                        transformerModule.fetchGitHubCopilotModels ||
                        transformerModule.fetchGoogleModels ||
                        transformerModule.fetchGroqModels ||
+                       transformerModule.fetchHuggingFaceModels ||
+                       transformerModule.fetchLlamaModels ||
                        transformerModule.default;
 
   if (!fetchFunction) {
@@ -183,19 +202,38 @@ const main = async () => {
   }
   
   if (!config.providers || !Array.isArray(config.providers)) {
-    console.error('ERROR: Config must have a "providers" array.');
-    process.exit(1);
+    throw new Error('Config must have a "providers" array.');
+  }
+  
+  // Validate each provider in the config
+  for (let i = 0; i < config.providers.length; i++) {
+    const provider = config.providers[i];
+    if (!provider || typeof provider !== 'object') {
+      throw new Error(`Provider at index ${i} is invalid: must be an object`);
+    }
+    if (!provider.name || typeof provider.name !== 'string' || provider.name.trim() === '') {
+      throw new Error(`Provider at index ${i} has invalid name: "${provider.name}". Name must be a non-empty string.`);
+    }
+    if (!provider.transformer || typeof provider.transformer !== 'string' || provider.transformer.trim() === '') {
+      throw new Error(`Provider "${provider.name}" has invalid transformer path: "${provider.transformer}". Transformer path must be a non-empty string.`);
+    }
+    if (!provider.output || typeof provider.output !== 'string' || provider.output.trim() === '') {
+      throw new Error(`Provider "${provider.name}" has invalid output path: "${provider.output}". Output path must be a non-empty string.`);
+    }
   }
   
   // Filter providers if a specific provider name is provided
   let providersToProcess = config.providers;
   if (PROVIDER_NAME) {
-    providersToProcess = config.providers.filter(p => p.name === PROVIDER_NAME);
+    // Validate that the provided provider name is correct
+    if (!PROVIDER_NAME || typeof PROVIDER_NAME !== 'string' || PROVIDER_NAME.trim() === '') {
+      throw new Error(`Invalid provider name: "${PROVIDER_NAME}". Provider name must be a non-empty string.`);
+    }
+    
+    providersToProcess = config.providers.filter(p => p.name.toLowerCase() === PROVIDER_NAME.toLowerCase());
     if (providersToProcess.length === 0) {
-      console.error(`ERROR: Provider "${PROVIDER_NAME}" not found in config.`);
-      console.log('Available providers:');
-      config.providers.forEach(p => console.log(`  - ${p.name}`));
-      process.exit(1);
+      const availableProviders = config.providers.map(p => p.name.toLowerCase()).join(', ');
+      throw new Error(`Provider "${PROVIDER_NAME}" not found in config. Available providers: ${availableProviders}`);
     }
     console.log(`Processing provider: ${PROVIDER_NAME}`);
   } else {
@@ -223,4 +261,10 @@ const main = async () => {
   }
 };
 
-main(); 
+// Wrap main function call in try-catch to handle thrown errors
+try {
+  main();
+} catch (error) {
+  console.error('ERROR:', error.message);
+  process.exit(1);
+} 
