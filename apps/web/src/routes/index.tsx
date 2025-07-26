@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {   Table,
+import { Table,
   TableBody,
   TableCell,
   TableHead,
@@ -11,12 +11,27 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
+import { getAllModels, type Model } from "@anolilab/provider-registry";
+import { FileText, Image as ImageIcon, Video, ScatterChart } from "lucide-react";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
 }
+
+const modalityIconMap: Record<string, React.ReactNode> = {
+  text: <FileText className="inline size-4" />,
+  image: <ImageIcon className="inline size-4" />,
+  video: <Video className="inline size-4" />,
+  embedding: <ScatterChart className="inline size-4" />,
+};
 
 const DataTable = <TData, TValue>({
   columns,
@@ -77,37 +92,97 @@ const DataTable = <TData, TValue>({
 }
 
 const HomeComponent = () => {
-  // Table columns matching the provided HTML
-  type Model = {
-    provider: string;
-    model: string;
-    providerId: string;
-    modelId: string;
-    toolCall: boolean;
-    reasoning: boolean;
-    input: string;
-    output: string;
-    inputCost: string;
-    outputCost: string;
-    cacheReadCost: string;
-    cacheWriteCost: string;
-    contextLimit: string;
-    outputLimit: string;
-    temperature: string;
-    weights: string;
-    knowledge: string;
-    releaseDate: string;
-    lastUpdated: string;
+  // Get all models from the provider registry
+  const allModels = getAllModels();
+  
+  // Helper function to format cost as currency
+  const formatCost = (cost: number | null): string => {
+    if (cost === null || cost === undefined) return 'N/A';
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 4,
+    }).format(cost);
   };
-  const columns: ColumnDef<Model>[] = [
+
+  // Transform the data to match our table structure
+  const tableData = allModels.map((model: Model) => ({
+    provider: model.provider || 'Unknown',
+    model: model.name || model.id,
+    providerId: model.provider || 'Unknown',
+    modelId: model.id,
+    toolCall: model.tool_call,
+    reasoning: model.reasoning,
+    input: model.modalities.input.join(', '),
+    output: model.modalities.output.join(', '),
+    inputCost: formatCost(model.cost.input),
+    outputCost: formatCost(model.cost.output),
+    cacheReadCost: formatCost(model.cost.input_cache_hit),
+    cacheWriteCost: 'N/A', // Not available in our data
+    contextLimit: model.limit.context ? model.limit.context.toLocaleString() : 'N/A',
+    outputLimit: model.limit.output ? model.limit.output.toLocaleString() : 'N/A',
+    temperature: model.temperature ? 'Yes' : 'No',
+    weights: model.open_weights ? 'Open' : 'Closed',
+    knowledge: model.knowledge || 'N/A',
+    releaseDate: model.release_date || 'N/A',
+    lastUpdated: model.last_updated || 'N/A',
+  }));
+  const columns: ColumnDef<typeof tableData[0]>[] = [
     { accessorKey: "provider", header: () => <>Provider <span className="sort-indicator" /></>, meta: { type: "text" } },
     { accessorKey: "model", header: () => <>Model <span className="sort-indicator" /></>, meta: { type: "text" } },
     { accessorKey: "providerId", header: () => <>Provider ID <span className="sort-indicator" /></>, meta: { type: "text" } },
     { accessorKey: "modelId", header: () => <>Model ID <span className="sort-indicator" /></>, meta: { type: "text" } },
     { accessorKey: "toolCall", header: () => <>Tool Call <span className="sort-indicator" /></>, meta: { type: "boolean" } },
     { accessorKey: "reasoning", header: () => <>Reasoning <span className="sort-indicator" /></>, meta: { type: "boolean" } },
-    { accessorKey: "input", header: () => <>Input <span className="sort-indicator" /></>, meta: { type: "modalities" } },
-    { accessorKey: "output", header: () => <>Output <span className="sort-indicator" /></>, meta: { type: "modalities" } },
+    {
+      accessorKey: "input",
+      header: () => <>Input <span className="sort-indicator" /></>,
+      meta: { type: "modalities" },
+      cell: ({ row }) => {
+        const modalities = row.original.input.split(',').map((m: string) => m.trim());
+        return (
+          <span className="flex gap-1 items-center">
+            {modalities.map((modality: string) =>
+              modalityIconMap[modality] ? (
+                <Tooltip key={modality}>
+                  <TooltipTrigger asChild>
+                    <span>{modalityIconMap[modality]}</span>
+                  </TooltipTrigger>
+                  <TooltipContent>{modality.charAt(0).toUpperCase() + modality.slice(1)}</TooltipContent>
+                </Tooltip>
+              ) : (
+                <span key={modality}>{modality}</span>
+              )
+            )}
+          </span>
+        );
+      },
+    },
+    {
+      accessorKey: "output",
+      header: () => <>Output <span className="sort-indicator" /></>,
+      meta: { type: "modalities" },
+      cell: ({ row }) => {
+        const modalities = row.original.output.split(',').map((m: string) => m.trim());
+        return (
+          <span className="flex gap-1 items-center">
+            {modalities.map((modality: string) =>
+              modalityIconMap[modality] ? (
+                <Tooltip key={modality}>
+                  <TooltipTrigger asChild>
+                    <span>{modalityIconMap[modality]}</span>
+                  </TooltipTrigger>
+                  <TooltipContent>{modality.charAt(0).toUpperCase() + modality.slice(1)}</TooltipContent>
+                </Tooltip>
+              ) : (
+                <span key={modality}>{modality}</span>
+              )
+            )}
+          </span>
+        );
+      },
+    },
     { accessorKey: "inputCost", header: () => <div className="header-container"><span className="header-text">Input Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
     { accessorKey: "outputCost", header: () => <div className="header-container"><span className="header-text">Output Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
     { accessorKey: "cacheReadCost", header: () => <div className="header-container"><span className="header-text">Cache Read Cost<br /><span className="desc">per 1M tokens</span></span><span className="sort-indicator" /></div>, meta: { type: "number" } },
@@ -120,32 +195,32 @@ const HomeComponent = () => {
     { accessorKey: "releaseDate", header: () => <>Release Date <span className="sort-indicator" /></>, meta: { type: "text" } },
     { accessorKey: "lastUpdated", header: () => <>Last Updated <span className="sort-indicator" /></>, meta: { type: "text" } },
   ];
-  // Example data (empty for now)
-  const data: Model[] = [];
 
   return (
-    <div className="min-h-screen w-full bg-background">
-      <header className="flex items-center justify-between px-3 py-2 border-b" style={{ height: '56px' }}>
-        <div className="left flex items-center gap-2 min-w-0">
-          <h1 className="font-bold text-lg uppercase tracking-tight">Models.dev</h1>
-          <span className="slash" />
-          <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
-        </div>
-        <div className="right flex items-center gap-3">
-          <a className="github" target="_blank" rel="noopener noreferrer" href="https://github.com/sst/models.dev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"></path></svg>
-          </a>
-          <div className="search-container relative min-w-[12.5rem]">
-            <input type="text" id="search" placeholder="Filter by model" className="w-full text-sm px-3 py-2 rounded border" style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)', background: 'none' }} />
-            <span className="search-shortcut absolute right-2 top-1/2 -translate-y-1/2 text-xs text-[var(--color-text-tertiary)] pointer-events-none">⌘K</span>
+    <TooltipProvider delayDuration={100}>
+      <div className="min-h-screen w-full bg-background">
+        <header className="flex items-center justify-between px-3 py-2 border-b" style={{ height: '56px' }}>
+          <div className="left flex items-center gap-2 min-w-0">
+            <h1 className="font-bold text-lg uppercase tracking-tight">Models.dev</h1>
+            <span className="slash" />
+            <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
           </div>
-          <button id="help" className="bg-[var(--color-brand)] text-[var(--color-text-invert)] text-sm px-3 py-2 rounded">How to use</button>
-        </div>
-      </header>
-      <main className="w-full">
-        <DataTable columns={columns} data={data} />
-      </main>
-    </div>
+          <div className="right flex items-center gap-3">
+            <a className="github" target="_blank" rel="noopener noreferrer" href="https://github.com/sst/models.dev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"></path></svg>
+            </a>
+            <div className="search-container relative min-w-[12.5rem]">
+              <input type="text" id="search" placeholder="Filter by model" className="w-full text-sm px-3 py-2 rounded border" style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)', background: 'none' }} />
+              <span className="search-shortcut absolute right-2 top-1/2 -translate-y-1/2 text-xs text-[var(--color-text-tertiary)] pointer-events-none">⌘K</span>
+            </div>
+            <button id="help" className="bg-[var(--color-brand)] text-[var(--color-text-invert)] text-sm px-3 py-2 rounded">How to use</button>
+          </div>
+        </header>
+        <main className="w-full">
+          <DataTable columns={columns} data={tableData} />
+        </main>
+      </div>
+    </TooltipProvider>
   );
 }
 
