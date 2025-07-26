@@ -9,9 +9,41 @@ import { ModelSchema } from './schema.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CONFIG_PATH = process.argv.includes('--config')
-  ? process.argv[process.argv.indexOf('--config') + 1]
-  : './config.json';
+// Parse command line arguments
+const args = process.argv.slice(2);
+let CONFIG_PATH = './config.json';
+let PROVIDER_NAME = null;
+
+// Parse --config argument
+const configIndex = args.indexOf('--config');
+if (configIndex !== -1 && configIndex + 1 < args.length) {
+  CONFIG_PATH = args[configIndex + 1];
+}
+
+// Parse --provider argument
+const providerIndex = args.indexOf('--provider');
+if (providerIndex !== -1 && providerIndex + 1 < args.length) {
+  PROVIDER_NAME = args[providerIndex + 1];
+}
+
+// Show help if --help is provided
+if (args.includes('--help') || args.includes('-h')) {
+  console.log(`
+Usage: node index.js [options]
+
+Options:
+  --config <path>     Path to config file (default: ./config.json)
+  --provider <name>   Process only the specified provider
+  --help, -h         Show this help message
+
+Examples:
+  node index.js                           # Process all providers
+  node index.js --provider "OpenRouter"   # Process only OpenRouter
+  node index.js --config ./custom.json    # Use custom config file
+  node index.js --provider "Anthropic" --config ./custom.json
+`);
+  process.exit(0);
+}
 
 /**
  * Ensures a directory exists, creating it recursively if necessary.
@@ -85,6 +117,7 @@ const processProvider = async (providerConfig) => {
                        transformerModule.fetchDeepSeekModels ||
                        transformerModule.fetchGitHubCopilotModels ||
                        transformerModule.fetchGoogleModels ||
+                       transformerModule.fetchGroqModels ||
                        transformerModule.default;
 
   if (!fetchFunction) {
@@ -154,16 +187,32 @@ const main = async () => {
     process.exit(1);
   }
   
+  // Filter providers if a specific provider name is provided
+  let providersToProcess = config.providers;
+  if (PROVIDER_NAME) {
+    providersToProcess = config.providers.filter(p => p.name === PROVIDER_NAME);
+    if (providersToProcess.length === 0) {
+      console.error(`ERROR: Provider "${PROVIDER_NAME}" not found in config.`);
+      console.log('Available providers:');
+      config.providers.forEach(p => console.log(`  - ${p.name}`));
+      process.exit(1);
+    }
+    console.log(`Processing provider: ${PROVIDER_NAME}`);
+  } else {
+    console.log(`Processing all ${config.providers.length} providers...`);
+  }
+  
   const results = [];
   
-  for (const providerConfig of config.providers) {
+  for (const providerConfig of providersToProcess) {
     // eslint-disable-next-line no-await-in-loop
     const result = await processProvider(providerConfig);
     results.push(result);
   }
   
   // Print summary
-  console.log('\n=== Batch Summary ===');
+  const summaryTitle = PROVIDER_NAME ? `=== ${PROVIDER_NAME} Summary ===` : '=== Batch Summary ===';
+  console.log(`\n${summaryTitle}`);
   
   for (const r of results) {
     if (r.error) {

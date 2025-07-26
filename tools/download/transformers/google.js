@@ -4,14 +4,19 @@ import * as cheerio from 'cheerio';
 /**
  * Transforms Google Gemini model data from their documentation page into the normalized structure.
  * 
- * @param {string} htmlContent - The HTML content from the Google Gemini models page.
+ * @param {string} modelsHtml - The HTML content from the Google Gemini models page.
+ * @param {string} pricingHtml - The HTML content from the Google Gemini pricing page.
  * @returns {Array} Array of normalized model objects.
  */
-const transformGoogleModels = (htmlContent) => {
-  const $ = cheerio.load(htmlContent);
+const transformGoogleModels = (modelsHtml, pricingHtml) => {
+  const $ = cheerio.load(modelsHtml);
+  const $pricing = cheerio.load(pricingHtml);
   const models = [];
   const currentDate = new Date();
-
+  
+  // Parse pricing data from the pricing page
+  const pricingData = parsePricingData($pricing);
+  
   // Find all <section> elements with <devsite-expandable>
   $('section').each((sectionIndex, sectionElement) => {
     const $section = $(sectionElement);
@@ -206,26 +211,34 @@ const transformGoogleModels = (htmlContent) => {
         }
       }
 
-      // Create the normalized model object
-      if (modelData.modelCode) {
-        const modelId = modelData.modelCode.replace('models/', '');
-        
-        const model = {
-          id: modelId,
-          name: modelData.name,
-          release_date: null, // Not provided in the structure
-          last_updated: modelData.latestUpdate ? parseDateToISO(modelData.latestUpdate) : null,
-          attachment: false,
-          reasoning: modelData.capabilities.thinking || false,
-          temperature: true, // Assume true for Google models
-          knowledge: modelData.knowledgeCutoff,
-          tool_call: modelData.capabilities.function_calling || false,
-          open_weights: false, // Google models are not open weights
-          cost: {
-            input: null, // Not provided in the structure
-            output: null,
-            input_cache_hit: null,
-          },
+              // Create the normalized model object
+        if (modelData.modelCode) {
+          const modelId = modelData.modelCode.replace('models/', '');
+          
+          // Get pricing data for this model
+          const modelPricing = getModelPricing(modelData.name, pricingData);
+          
+          const model = {
+            id: modelId,
+            name: modelData.name,
+            release_date: null, // Not provided in the structure
+            last_updated: modelData.latestUpdate ? parseDateToISO(modelData.latestUpdate) : null,
+            attachment: false,
+            reasoning: modelData.capabilities.thinking || false,
+            temperature: true, // Assume true for Google models
+            knowledge: modelData.knowledgeCutoff,
+            tool_call: modelData.capabilities.function_calling || false,
+            open_weights: false, // Google models are not open weights
+            cost: {
+              input: modelPricing.input,
+              output: modelPricing.output,
+              input_cache_hit: modelPricing.input_cache_hit,
+              image_generation: modelPricing.image_generation,
+              image_generation_ultra: modelPricing.image_generation_ultra,
+              video_generation: modelPricing.video_generation,
+              video_generation_with_audio: modelPricing.video_generation_with_audio,
+              video_generation_without_audio: modelPricing.video_generation_without_audio,
+            },
           limit: {
             context: modelData.tokenLimits.input,
             output: modelData.tokenLimits.output,
@@ -257,6 +270,214 @@ const transformGoogleModels = (htmlContent) => {
 
   return models;
 };
+
+/**
+ * Parses pricing data from the pricing page
+ * @param {Object} $ - Cheerio object for the pricing page
+ * @returns {Object} Object mapping model names to pricing data
+ */
+function parsePricingData($) {
+  const pricingData = {};
+  
+  // Find all pricing tables and their positions
+  const pricingTables = [];
+  $('table.pricing-table').each((tableIndex, tableElement) => {
+    const $table = $(tableElement);
+    pricingTables.push({
+      table: $table,
+      index: tableIndex
+    });
+  });
+  
+  console.log(`[Google] Found ${pricingTables.length} pricing tables`);
+  
+  // Find all h2 elements that contain model names
+  const modelHeadings = [];
+  $('h2').each((headingIndex, headingElement) => {
+    const $heading = $(headingElement);
+    const modelName = $heading.text().trim();
+    
+    // Check if this is a model heading (contains "Gemini", "Imagen", "Veo", etc.)
+    if (modelName.includes('Gemini') || modelName.includes('Imagen') || modelName.includes('Veo') || modelName.includes('Gemma')) {
+      modelHeadings.push({
+        name: modelName,
+        element: $heading,
+        index: headingIndex
+      });
+      console.log(`[Google] Found pricing heading: "${modelName}"`);
+    }
+  });
+  
+  // Map each heading to its corresponding pricing table by index
+  modelHeadings.forEach((heading, headingIndex) => {
+    const modelName = heading.name;
+    
+    // Find the pricing table that corresponds to this heading
+    let closestTable = null;
+    let selectedTableIndex = -1;
+    
+    // Simple mapping: heading index maps to table index
+    if (headingIndex < pricingTables.length) {
+      selectedTableIndex = headingIndex;
+      closestTable = pricingTables[headingIndex].table;
+    }
+    
+    if (closestTable) {
+      // Parse pricing from the table based on model type
+      const pricing = {
+        input: null,
+        output: null,
+        input_cache_hit: null,
+        image_generation: null,
+        image_generation_ultra: null,
+        video_generation: null,
+        video_generation_with_audio: null,
+        video_generation_without_audio: null
+      };
+      
+      // Determine model type for pricing structure
+      const isImageModel = modelName.includes('Imagen');
+      const isVideoModel = modelName.includes('Veo');
+      
+      closestTable.find('tr').each((rowIndex, rowElement) => {
+        const $row = $(rowElement);
+        const $cells = $row.find('td, th');
+        
+        if ($cells.length >= 3) {
+          const rowText = $row.text().trim();
+          
+          if (isImageModel) {
+            // Parse image generation pricing
+            if (rowText.includes('Standard image price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.image_generation = parseFloat(priceMatch[1]);
+              }
+            } else if (rowText.includes('Ultra image price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.image_generation_ultra = parseFloat(priceMatch[1]);
+              }
+            } else if (rowText.includes('Image price')) {
+              // Handle simpler pricing structure (e.g., Imagen 3)
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.image_generation = parseFloat(priceMatch[1]);
+              }
+            }
+          } else if (isVideoModel) {
+            // Parse video generation pricing
+            if (rowText.includes('Video with audio price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.video_generation_with_audio = parseFloat(priceMatch[1]);
+              }
+            } else if (rowText.includes('Video without audio price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.video_generation_without_audio = parseFloat(priceMatch[1]);
+              }
+            } else if (rowText.includes('Video price')) {
+              // Handle simpler pricing structure (e.g., Veo 2)
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.video_generation = parseFloat(priceMatch[1]);
+              }
+            }
+          } else {
+            // Parse text model pricing (existing logic)
+            if (rowText.includes('Input price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const textPriceMatch = priceText.match(/\$([\d.]+)\s*\(text/);
+              if (textPriceMatch) {
+                pricing.input = parseFloat(textPriceMatch[1]);
+              } else {
+                const priceMatch = priceText.match(/\$([\d.]+)/);
+                if (priceMatch) {
+                  pricing.input = parseFloat(priceMatch[1]);
+                }
+              }
+            } else if (rowText.includes('Output price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const priceMatch = priceText.match(/\$([\d.]+)/);
+              if (priceMatch) {
+                pricing.output = parseFloat(priceMatch[1]);
+              }
+            } else if (rowText.includes('Context caching price')) {
+              const paidTierCell = $cells.eq(2);
+              const priceText = paidTierCell.text().trim();
+              const textPriceMatch = priceText.match(/\$([\d.]+)\s*\(text/);
+              if (textPriceMatch) {
+                pricing.input_cache_hit = parseFloat(textPriceMatch[1]);
+              } else {
+                const priceMatch = priceText.match(/\$([\d.]+)/);
+                if (priceMatch) {
+                  pricing.input_cache_hit = parseFloat(priceMatch[1]);
+                }
+              }
+            }
+          }
+        }
+      });
+      
+      // Store pricing data for this model
+      pricingData[modelName] = pricing;
+    }
+  });
+  
+  return pricingData;
+}
+
+/**
+ * Maps model names to pricing headings to handle naming mismatches
+ * @param {string} modelName - The model name from the models page
+ * @param {Object} pricingData - The pricing data object
+ * @returns {Object} The pricing data for the model
+ */
+function getModelPricing(modelName, pricingData) {
+  // Direct match first
+  if (pricingData[modelName]) {
+    return pricingData[modelName];
+  }
+  
+  // Handle specific mismatches
+  const pricingMappings = {
+    'Imagen 4': 'Imagen 4 Preview',
+    'Veo 3': 'Veo 3 Preview',
+    // Add more mappings as needed
+  };
+  
+  const mappedName = pricingMappings[modelName];
+  if (mappedName && pricingData[mappedName]) {
+    return pricingData[mappedName];
+  }
+  
+  // Return default pricing structure
+  return {
+    input: null,
+    output: null,
+    input_cache_hit: null,
+    image_generation: null,
+    image_generation_ultra: null,
+    video_generation: null,
+    video_generation_with_audio: null,
+    video_generation_without_audio: null
+  };
+}
 
 /**
  * Parse a date string to a Date object
@@ -301,13 +522,19 @@ function parseDateToISO(dateStr) {
  * @returns {Array} Array of transformed models.
  */
 async function fetchGoogleModels() {
-  console.log('[Google] Fetching: https://ai.google.dev/gemini-api/docs/models');
+  console.log('[Google] Fetching models and pricing from Google Gemini documentation...');
   
   try {
-    const response = await axios.get('https://ai.google.dev/gemini-api/docs/models');
-    const htmlContent = response.data;
+    // Fetch both models and pricing data
+    const [modelsResponse, pricingResponse] = await Promise.all([
+      axios.get('https://ai.google.dev/gemini-api/docs/models'),
+      axios.get('https://ai.google.dev/gemini-api/docs/pricing')
+    ]);
     
-    const models = transformGoogleModels(htmlContent);
+    const modelsHtml = modelsResponse.data;
+    const pricingHtml = pricingResponse.data;
+    
+    const models = transformGoogleModels(modelsHtml, pricingHtml);
     
     return models;
     

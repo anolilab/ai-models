@@ -15,6 +15,13 @@ export const ModelSchema = z.object({
     input: z.number().nullable(),
     output: z.number().nullable(),
     input_cache_hit: z.number().nullable(),
+    // Image generation pricing
+    image_generation: z.number().nullable().optional(),
+    image_generation_ultra: z.number().nullable().optional(),
+    // Video generation pricing
+    video_generation: z.number().nullable().optional(),
+    video_generation_with_audio: z.number().nullable().optional(),
+    video_generation_without_audio: z.number().nullable().optional(),
   }),
   limit: z.object({
     context: z.number().nullable(),
