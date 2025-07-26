@@ -8,3 +8,4 @@ onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild
   - nx
+  - oxc-resolver

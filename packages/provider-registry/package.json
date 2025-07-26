@@ -1,0 +1,81 @@
+{
+  "name": "@anolilab/provider-registry",
+  "description": "Unified registry for AI model providers and their metadata",
+  "version": "0.0.0",
+  "homepage": "https://github.com/anolilab/ai-models",
+  "bugs": {
+      "url": "https://github.com/anolilab/ai-models/issues"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/anolilab/ai-models.git",
+      "directory": "packages/agent"
+  },
+  "funding": [
+      {
+          "type": "github",
+          "url": "https://github.com/sponsors/prisis"
+      },
+      {
+          "type": "consulting",
+          "url": "https://anolilab.com/support"
+      }
+  ],
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./schema": {
+      "import": "./dist/schema.mjs",
+      "types": "./dist/schema.d.ts"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
+  "keywords": [
+    "ai",
+    "models",
+    "providers",
+    "registry",
+    "metadata"
+  ],
+  "author": "AnoliLab",
+    "scripts": {
+    "aggregate": "node ../../scripts/aggregate-providers.js",
+    "build": "pnpm run aggregate && packem build --development",
+    "build:prod": "pnpm run aggregate && packem build --production",
+    "clean": "rimraf node_modules dist .eslintcache",
+    "lint:attw": "attw --pack",
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "test": "vitest run --typecheck",
+    "test:coverage": "vitest run --coverage --coverage.reporter=text"
+  },
+  "devDependencies": {
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@visulima/packem": "2.0.0-alpha.2",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "prettier": "3.6.2",
+    "semantic-release": "^24.2.7",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "zod": "^4.0.10"
+  },
+  "engines": {
+      "node": ">=20"
+  },
+  "publishConfig": {
+      "access": "public",
+      "provenance": true
+  }
+} 

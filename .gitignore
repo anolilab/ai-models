@@ -1,3 +1,4 @@
 node_modules
 .turbo
 tools/download/providers
+tools/download/all-models.json
