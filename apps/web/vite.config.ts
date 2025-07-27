@@ -23,4 +23,13 @@ export default defineConfig({
       },
     }),
   ],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./__tests__/setup.ts'],
+    css: true,
+  },
+  define: {
+    __DEV__: true,
+  },
 });

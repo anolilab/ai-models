@@ -352,6 +352,8 @@ input[type="week"] {
 @layer components {
   .table-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .table-container .sticky {
@@ -360,6 +362,7 @@ input[type="week"] {
     z-index: 10;
     background: var(--background);
     border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
   }
 
   /* Ensure proper table layout for static headers */

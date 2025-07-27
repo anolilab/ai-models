@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
 import { FileText, Image as ImageIcon, Video, ScatterChart } from "lucide-react";
+import { useMemo } from "react";
 import {
   Tooltip,
   TooltipTrigger,
@@ -34,7 +35,7 @@ const HomeComponent = () => {
   };
 
   // Transform the data to match our table structure
-  const tableData = allModels.map((model: Model) => ({
+  const tableData = useMemo(() => allModels.map((model: Model) => ({
     provider: model.provider || 'Unknown',
     model: model.name || model.id,
     providerId: model.provider || 'Unknown',
@@ -54,7 +55,7 @@ const HomeComponent = () => {
     knowledge: model.knowledge || 'N/A',
     releaseDate: model.release_date || 'N/A',
     lastUpdated: model.last_updated || 'N/A',
-  }));
+  })), [allModels]);
 
   const getColumns = (): ColumnDef<typeof tableData[0]>[] => [
     { 
@@ -66,6 +67,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Provider" />
       ),
       enableColumnFilter: true,
+      sortingFn: "text",
       meta: { 
         label: "Provider",
         variant: "text",
@@ -81,6 +83,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Model" />
       ),
       enableColumnFilter: true,
+      sortingFn: "text",
       meta: { 
         label: "Model",
         variant: "text",
@@ -123,6 +126,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Tool Call" />
       ),
       enableColumnFilter: true,
+      sortingFn: "basic",
       meta: { 
         label: "Tool Call",
         variant: "select",
@@ -138,6 +142,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Reasoning" />
       ),
       enableColumnFilter: true,
+      sortingFn: "basic",
       meta: { 
         label: "Reasoning",
         variant: "select",
@@ -159,19 +164,23 @@ const HomeComponent = () => {
         placeholder: "Filter input modalities..."
       },
       cell: ({ row }) => {
-        const modalities = row.original.input.split(',').map((m: string) => m.trim());
+        const modalities = useMemo(() => 
+          row.original.input.split(',').map((m: string) => m.trim()),
+          [row.original.input]
+        );
+        
         return (
           <span className="flex gap-1 items-center">
-            {modalities.map((modality: string) =>
+            {modalities.map((modality: string, index: number) =>
               modalityIconMap[modality] ? (
-                <Tooltip key={modality}>
+                <Tooltip key={`input-${modality}-${index}`}>
                   <TooltipTrigger asChild>
                     <span>{modalityIconMap[modality]}</span>
                   </TooltipTrigger>
                   <TooltipContent>{modality.charAt(0).toUpperCase() + modality.slice(1)}</TooltipContent>
                 </Tooltip>
               ) : (
-                <span key={modality}>{modality}</span>
+                <span key={`input-${modality}-${index}`}>{modality}</span>
               )
             )}
           </span>
@@ -190,19 +199,23 @@ const HomeComponent = () => {
         placeholder: "Filter output modalities..."
       },
       cell: ({ row }) => {
-        const modalities = row.original.output.split(',').map((m: string) => m.trim());
+        const modalities = useMemo(() => 
+          row.original.output.split(',').map((m: string) => m.trim()),
+          [row.original.output]
+        );
+        
         return (
           <span className="flex gap-1 items-center">
-            {modalities.map((modality: string) =>
+            {modalities.map((modality: string, index: number) =>
               modalityIconMap[modality] ? (
-                <Tooltip key={modality}>
+                <Tooltip key={`output-${modality}-${index}`}>
                   <TooltipTrigger asChild>
                     <span>{modalityIconMap[modality]}</span>
                   </TooltipTrigger>
                   <TooltipContent>{modality.charAt(0).toUpperCase() + modality.slice(1)}</TooltipContent>
                 </Tooltip>
               ) : (
-                <span key={modality}>{modality}</span>
+                <span key={`output-${modality}-${index}`}>{modality}</span>
               )
             )}
           </span>
@@ -218,6 +231,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Input Cost" />
       ),
       enableColumnFilter: true,
+      sortingFn: "alphanumeric",
       meta: { 
         label: "Input Cost",
         variant: "number",
@@ -234,6 +248,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Output Cost" />
       ),
       enableColumnFilter: true,
+      sortingFn: "alphanumeric",
       meta: { 
         label: "Output Cost",
         variant: "number",
@@ -272,6 +287,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Context Limit" />
       ),
       enableColumnFilter: true,
+      sortingFn: "alphanumeric",
       meta: { 
         label: "Context Limit",
         variant: "number",
@@ -284,6 +300,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Output Limit" />
       ),
       enableColumnFilter: true,
+      sortingFn: "alphanumeric",
       meta: { 
         label: "Output Limit",
         variant: "number",
@@ -296,6 +313,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Temperature" />
       ),
       enableColumnFilter: true,
+      sortingFn: "basic",
       meta: { 
         label: "Temperature",
         variant: "select",
@@ -311,6 +329,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Weights" />
       ),
       enableColumnFilter: true,
+      sortingFn: "basic",
       meta: { 
         label: "Weights",
         variant: "select",
@@ -353,6 +372,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Last Updated" />
       ),
       enableColumnFilter: true,
+      sortingFn: "datetime",
       meta: { 
         label: "Last Updated",
         variant: "text",
@@ -461,6 +481,19 @@ const HomeComponent = () => {
             enableColumnVisibility: true,
             enableToolbar: true,
             enableStaticHeader: true,
+            // Performance optimizations
+            enableRowVirtualization: true,
+            estimatedRowHeight: 40,
+            virtualizationOverscan: 5,
+            enableDebouncedSearch: true,
+            searchDebounceDelay: 300,
+            enableLazyLoading: false,
+            lazyLoadingBatchSize: 100,
+          }}
+          virtualizationOptions={{
+            estimatedRowHeight: 40,
+            overscan: 5,
+            containerHeight: 600,
           }}
         />
         </main>

@@ -413,7 +413,6 @@ export const CalendarDatePicker = React.forwardRef<
               )}
               size="default"
               onClick={handleTogglePopover}
-              suppressHydrationWarning
             >
               <CalendarIcon className="mr-2 h-4 w-4" />
               <span>

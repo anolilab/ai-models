@@ -14,6 +14,7 @@ import {
   type ColumnDef,
   type ColumnResizeMode
 } from "@tanstack/react-table";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import { useEffect, useCallback, useMemo, useRef, useState } from "react";
 
 import {
@@ -28,6 +29,7 @@ import {
 import { DataTablePagination } from "./pagination";
 import { DataTableToolbar } from "./toolbar";
 import { useTableConfig, type TableConfig } from "./utils/table-config";
+import { usePerformanceMonitor } from "./utils/performance-utils";
 
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 
@@ -81,6 +83,13 @@ interface DataTableProps<TData extends ExportableData, TValue> {
     totalSelectedCount: number;
     resetSelection: () => void;
   }) => React.ReactNode;
+
+  // Virtualization options (only used when enableRowVirtualization is true)
+  virtualizationOptions?: {
+    estimatedRowHeight?: number;
+    overscan?: number;
+    containerHeight?: number;
+  };
 }
 
 export function DataTable<TData extends ExportableData, TValue>({
@@ -90,8 +99,12 @@ export function DataTable<TData extends ExportableData, TValue>({
   exportConfig,
   idField = 'id' as keyof TData,
   pageSizeOptions,
-  renderToolbarContent
+  renderToolbarContent,
+  virtualizationOptions = {}
 }: DataTableProps<TData, TValue>) {
+  // Performance monitoring
+  usePerformanceMonitor('DataTable');
+
   // Load table configuration with any overrides
   const tableConfig = useTableConfig(config);
 
@@ -117,67 +130,139 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
 
-  // PERFORMANCE FIX: Use only one selection state as the source of truth
-  const [selectedItemIds, setSelectedItemIds] = useState<Record<string | number, boolean>>({});
+  // PERFORMANCE FIX: Use Set for selection state when virtualization is enabled, Record otherwise
+  const [selectedItemIds, setSelectedItemIds] = useState<Record<string | number, boolean> | Set<string>>(
+    tableConfig.enableRowVirtualization ? new Set() : {}
+  );
+
+  // Helper functions to handle both Record and Set selection states
+  const isItemSelected = useCallback((itemId: string): boolean => {
+    if (tableConfig.enableRowVirtualization) {
+      return (selectedItemIds as Set<string>).has(itemId);
+    } else {
+      return !!(selectedItemIds as Record<string, boolean>)[itemId];
+    }
+  }, [selectedItemIds, tableConfig.enableRowVirtualization]);
+
+  const addSelectedItem = useCallback((itemId: string) => {
+    if (tableConfig.enableRowVirtualization) {
+      setSelectedItemIds(prev => {
+        const next = new Set(prev as Set<string>);
+        next.add(itemId);
+        return next;
+      });
+    } else {
+      setSelectedItemIds(prev => ({
+        ...(prev as Record<string, boolean>),
+        [itemId]: true
+      }));
+    }
+  }, [tableConfig.enableRowVirtualization]);
+
+  const removeSelectedItem = useCallback((itemId: string) => {
+    if (tableConfig.enableRowVirtualization) {
+      setSelectedItemIds(prev => {
+        const next = new Set(prev as Set<string>);
+        next.delete(itemId);
+        return next;
+      });
+    } else {
+      setSelectedItemIds(prev => {
+        const next = { ...(prev as Record<string, boolean>) };
+        delete next[itemId];
+        return next;
+      });
+    }
+  }, [tableConfig.enableRowVirtualization]);
+
+  const clearAllSelections = useCallback(() => {
+    setSelectedItemIds(tableConfig.enableRowVirtualization ? new Set() : {});
+  }, [tableConfig.enableRowVirtualization]);
+
+  const getSelectedCount = useCallback((): number => {
+    if (tableConfig.enableRowVirtualization) {
+      return (selectedItemIds as Set<string>).size;
+    } else {
+      return Object.keys(selectedItemIds as Record<string, boolean>).length;
+    }
+  }, [selectedItemIds, tableConfig.enableRowVirtualization]);
+
+  const getSelectedIds = useCallback((): (string | number)[] => {
+    if (tableConfig.enableRowVirtualization) {
+      return Array.from(selectedItemIds as Set<string>);
+    } else {
+      return Object.keys(selectedItemIds as Record<string, boolean>);
+    }
+  }, [selectedItemIds, tableConfig.enableRowVirtualization]);
 
   // Convert the sorting to the format TanStack Table expects
   const sorting = useMemo(() => createSortingState(sortBy, sortOrder), [sortBy, sortOrder]);
 
-  // Get current data items with date filtering - memoize to avoid recalculations
+  // Get current data items with date filtering - optimized for React Compiler
   const dataItems = useMemo(() => {
     if (!data || data.length === 0) return [];
     
-    // If no date range is set, return all data
+    // If no date range is set, return all data (fast path)
     if (!dateRange.from_date && !dateRange.to_date) {
       return data;
     }
     
-    // Filter data based on date range
-    return data.filter(item => {
-      // Check if item has date fields to filter on
+    // Pre-compile date objects to avoid repeated Date constructor calls
+    const fromDate = dateRange.from_date ? new Date(dateRange.from_date) : null;
+    const toDate = dateRange.to_date ? new Date(dateRange.to_date) : null;
+    
+    // Use a more efficient filtering approach
+    const filteredData = [];
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
       const itemDate = (item as any).lastUpdated || (item as any).releaseDate;
-      if (!itemDate || itemDate === 'N/A') return true; // Include items without dates
       
-      try {
-        const itemDateObj = new Date(itemDate);
-        if (isNaN(itemDateObj.getTime())) return true; // Include items with invalid dates
-        
-        const fromDate = dateRange.from_date ? new Date(dateRange.from_date) : null;
-        const toDate = dateRange.to_date ? new Date(dateRange.to_date) : null;
-        
-        // Check if item date is within range
-        if (fromDate && itemDateObj < fromDate) return false;
-        if (toDate && itemDateObj > toDate) return false;
-        
-        return true;
-      } catch (error) {
-        // If date parsing fails, include the item
-        return true;
+      // Fast path for items without dates
+      if (!itemDate || itemDate === 'N/A') {
+        filteredData.push(item);
+        continue;
       }
-    });
-  }, [data, dateRange]);
+      
+      // Parse date once and reuse
+      const itemDateObj = new Date(itemDate);
+      if (isNaN(itemDateObj.getTime())) {
+        filteredData.push(item);
+        continue;
+      }
+      
+      // Check date range
+      if (fromDate && itemDateObj < fromDate) continue;
+      if (toDate && itemDateObj > toDate) continue;
+      
+      filteredData.push(item);
+    }
+    
+    return filteredData;
+  }, [data, dateRange.from_date, dateRange.to_date]);
 
-  // PERFORMANCE FIX: Derive rowSelection from selectedItemIds using memoization
+  // PERFORMANCE FIX: Derive rowSelection from selectedItemIds - React Compiler optimized
   const rowSelection = useMemo(() => {
     if (!dataItems.length) return {};
 
-    // Map selectedItemIds to row indices for the table
+    // Use a more efficient approach for React Compiler
     const selection: Record<string, boolean> = {};
-
-    dataItems.forEach((item, index) => {
+    const dataLength = dataItems.length;
+    
+    for (let i = 0; i < dataLength; i++) {
+      const item = dataItems[i];
       const itemId = String(item[idField]);
-      if (selectedItemIds[itemId]) {
-        selection[String(index)] = true;
+      if (isItemSelected(itemId)) {
+        selection[String(i)] = true;
       }
-    });
+    }
 
     return selection;
-  }, [dataItems, selectedItemIds, idField]);
+  }, [dataItems, isItemSelected, idField]);
 
   // Calculate total selected items - memoize to avoid recalculation
   const totalSelectedItems = useMemo(() =>
-    Object.keys(selectedItemIds).length,
-    [selectedItemIds]
+    getSelectedCount(),
+    [getSelectedCount]
   );
 
   // PERFORMANCE FIX: Optimized row deselection handler
@@ -189,19 +274,9 @@ export function DataTable<TData extends ExportableData, TValue>({
 
     if (item) {
       const itemId = String(item[idField]);
-      setSelectedItemIds(prev => {
-        // Remove this item ID from selection
-        const next = { ...prev };
-        delete next[itemId];
-        return next;
-      });
+      removeSelectedItem(itemId);
     }
-  }, [dataItems, idField]);
-
-  // Clear all selections
-  const clearAllSelections = useCallback(() => {
-    setSelectedItemIds({});
-  }, []);
+  }, [dataItems, idField, removeSelectedItem]);
 
   // PERFORMANCE FIX: Optimized row selection handler
   const handleRowSelectionChange = useCallback((updaterOrValue: RowSelectionUpdater | Record<string, boolean>) => {
@@ -210,57 +285,56 @@ export function DataTable<TData extends ExportableData, TValue>({
       ? updaterOrValue(rowSelection)
       : updaterOrValue;
 
-    // Batch update selectedItemIds based on the new row selection
-    setSelectedItemIds(prev => {
-      const next = { ...prev };
+    // Process changes for current page
+    if (dataItems.length) {
+      // First handle explicit selections in newRowSelection
+      for (const [rowId, isSelected] of Object.entries(newRowSelection)) {
+        const rowIndex = Number.parseInt(rowId, 10);
+        if (rowIndex >= 0 && rowIndex < dataItems.length) {
+          const item = dataItems[rowIndex];
+          const itemId = String(item[idField]);
 
-      // Process changes for current page
-      if (dataItems.length) {
-        // First handle explicit selections in newRowSelection
-        for (const [rowId, isSelected] of Object.entries(newRowSelection)) {
-          const rowIndex = Number.parseInt(rowId, 10);
-          if (rowIndex >= 0 && rowIndex < dataItems.length) {
-            const item = dataItems[rowIndex];
-            const itemId = String(item[idField]);
-
-            if (isSelected) {
-              next[itemId] = true;
-            } else {
-              delete next[itemId];
-            }
+          if (isSelected) {
+            addSelectedItem(itemId);
+          } else {
+            removeSelectedItem(itemId);
           }
         }
-
-        // Then handle implicit deselection (rows that were selected but aren't in newRowSelection)
-        dataItems.forEach((item, index) => {
-          const itemId = String(item[idField]);
-          const rowId = String(index);
-
-          // If item was selected but isn't in new selection, deselect it
-          if (prev[itemId] && newRowSelection[rowId] === undefined) {
-            delete next[itemId];
-          }
-        });
       }
 
-      return next;
-    });
-  }, [dataItems, rowSelection, idField]);
+      // Then handle implicit deselection (rows that were selected but aren't in newRowSelection)
+      dataItems.forEach((item, index) => {
+        const itemId = String(item[idField]);
+        const rowId = String(index);
 
-  // Get selected items data
+        // If item was selected but isn't in new selection, deselect it
+        if (isItemSelected(itemId) && newRowSelection[rowId] === undefined) {
+          removeSelectedItem(itemId);
+        }
+      });
+    }
+  }, [dataItems, rowSelection, idField, addSelectedItem, removeSelectedItem, isItemSelected]);
+
+  // Get selected items data - React Compiler optimized
   const getSelectedItems = useCallback(async () => {
     // If nothing is selected, return empty array
     if (totalSelectedItems === 0) {
       return [];
     }
 
-    // Find items from current data that are selected
-    const selectedItems = dataItems.filter(item =>
-      selectedItemIds[String(item[idField])]
-    );
+    // Use a more efficient approach for React Compiler
+    const selectedItems: typeof dataItems = [];
+    const dataLength = dataItems.length;
+    
+    for (let i = 0; i < dataLength; i++) {
+      const item = dataItems[i];
+      if (isItemSelected(String(item[idField]))) {
+        selectedItems.push(item);
+      }
+    }
 
     return selectedItems;
-  }, [dataItems, selectedItemIds, totalSelectedItems, idField]);
+  }, [dataItems, isItemSelected, totalSelectedItems, idField]);
 
   // Get all items
   const getAllItems = useCallback((): TData[] => {
@@ -280,11 +354,13 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Ref for the table container for keyboard navigation
   const tableContainerRef = useRef<HTMLDivElement>(null);
 
-  // Get columns with the deselection handler (memoize to avoid recreation on render)
+  // Get columns with the deselection handler - React Compiler will optimize this
   const columns = useMemo(() => {
     // Only pass deselection handler if row selection is enabled
     return getColumns(tableConfig.enableRowSelection ? handleRowDeselection : null);
   }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection]);
+
+
 
   // Create event handlers using utility functions
   // Create wrapper functions that match the expected SetStateFunction signature
@@ -404,8 +480,21 @@ export function DataTable<TData extends ExportableData, TValue>({
     setDateRange,
   ]);
 
-  // Set up the table with memoized configuration
+  // Set up the table with memoized configuration - React Compiler will optimize this
   const table = useReactTable<TData>(tableOptions);
+
+  // VIRTUALIZATION SETUP (only when enabled)
+  const { rows } = table.getRowModel();
+  
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => tableContainerRef.current,
+    estimateSize: () => virtualizationOptions.estimatedRowHeight || tableConfig.estimatedRowHeight,
+    overscan: virtualizationOptions.overscan || tableConfig.virtualizationOverscan,
+  });
+
+  const virtualRows = rowVirtualizer.getVirtualItems();
+  const totalSize = rowVirtualizer.getTotalSize();
 
   // Create keyboard navigation handler
   const handleKeyDown = useCallback(
@@ -478,8 +567,8 @@ export function DataTable<TData extends ExportableData, TValue>({
           headers={exportConfig.headers}
           transformFunction={exportConfig.transformFunction}
           customToolbarComponent={renderToolbarContent?.({
-            selectedRows: dataItems.filter((item) => selectedItemIds[String(item[idField])]),
-            allSelectedIds: Object.keys(selectedItemIds),
+            selectedRows: dataItems.filter((item) => isItemSelected(String(item[idField]))),
+            allSelectedIds: getSelectedIds(),
             totalSelectedCount: totalSelectedItems,
             resetSelection: clearAllSelections
           })}
@@ -488,7 +577,12 @@ export function DataTable<TData extends ExportableData, TValue>({
 
       {tableConfig.enableStaticHeader ? (
         // Static header layout - header stays fixed, body scrolls
-        <div className="rounded-md border table-container">
+        <div 
+          className="rounded-md border table-container"
+          style={tableConfig.enableRowVirtualization ? {
+            height: (virtualizationOptions.containerHeight || 400) + 50, // Add extra space for header
+          } : undefined}
+        >
           {/* Static Header */}
           <div className="sticky top-0 z-10 bg-background border-b">
             <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
@@ -499,7 +593,7 @@ export function DataTable<TData extends ExportableData, TValue>({
                   >
                     {headerGroup.headers.map((header) => (
                       <TableHead
-                        className="px-2 py-2 relative text-left group/th"
+                        className="p-2 relative text-left group/th"
                         key={header.id}
                         colSpan={header.colSpan}
                         scope="col"
@@ -529,14 +623,271 @@ export function DataTable<TData extends ExportableData, TValue>({
           {/* Scrollable Body */}
           <div
             ref={tableContainerRef}
-            className="overflow-y-auto"
+            className="overflow-y-auto flex-1"
             aria-label="Data table body"
             onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+            style={tableConfig.enableRowVirtualization ? {
+              height: virtualizationOptions.containerHeight || 400,
+            } : undefined}
           >
+            {tableConfig.enableRowVirtualization && virtualRows.length > 0 ? (
+              // Virtualized layout for static header
+              <div
+                style={{
+                  height: `${totalSize}px`,
+                  width: '100%',
+                  position: 'relative',
+                }}
+              >
+                <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+                  <TableBody>
+                    {virtualRows.map((virtualRow) => {
+                      const row = rows[virtualRow.index];
+                      return (
+                        <TableRow
+                          key={row.id}
+                          id={`row-${virtualRow.index}`}
+                          data-row-index={virtualRow.index}
+                          data-state={row.getIsSelected() ? "selected" : undefined}
+                          tabIndex={0}
+                          aria-selected={row.getIsSelected()}
+                          onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
+                          onFocus={(e) => {
+                            // Add a data attribute to the currently focused row
+                            for (const el of document.querySelectorAll('[data-focused="true"]')) {
+                              el.removeAttribute('data-focused');
+                            }
+                            e.currentTarget.setAttribute('data-focused', 'true');
+                          }}
+                          ref={rowVirtualizer.measureElement}
+                          data-index={virtualRow.index}
+                          style={{
+                            height: `${virtualRow.size}px`,
+                            transform: `translateY(${virtualRow.start}px)`,
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                          }}
+                        >
+                          {row.getVisibleCells().map((cell, cellIndex) => (
+                            <TableCell
+                              className="p-2 truncate text-left"
+                              key={cell.id}
+                              id={`cell-${virtualRow.index}-${cellIndex}`}
+                              data-cell-index={cellIndex}
+                              style={{
+                                width: cell.column.getSize() + 5,
+                              }}
+                            >
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext(),
+                              )}
+                            </TableCell>
+                          ))}
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </div>
+            ) : (
+              // Non-virtualized layout for static header (fallback when virtualization fails or is disabled)
+              <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+                <TableBody>
+                  {table.getRowModel().rows?.length ? (
+                    // Data rows
+                    table.getRowModel().rows.map((row, rowIndex) => (
+                      <TableRow
+                        key={row.id}
+                        id={`row-${rowIndex}`}
+                        data-row-index={rowIndex}
+                        data-state={row.getIsSelected() ? "selected" : undefined}
+                        tabIndex={0}
+                        aria-selected={row.getIsSelected()}
+                        onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
+                        onFocus={(e) => {
+                          // Add a data attribute to the currently focused row
+                          for (const el of document.querySelectorAll('[data-focused="true"]')) {
+                            el.removeAttribute('data-focused');
+                          }
+                          e.currentTarget.setAttribute('data-focused', 'true');
+                        }}
+                      >
+                        {row.getVisibleCells().map((cell, cellIndex) => (
+                          <TableCell
+                            className="p-2 truncate text-left"
+                            key={cell.id}
+                            id={`cell-${rowIndex}-${cellIndex}`}
+                            data-cell-index={cellIndex}
+                            style={{
+                              width: cell.column.getSize() + 5,
+                            }}
+                          >
+                            {flexRender(
+                              cell.column.columnDef.cell,
+                              cell.getContext(),
+                            )}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))
+                  ) : (
+                    // No results
+                    <TableRow>
+                      <TableCell
+                        colSpan={columns.length}
+                        className="h-24 text-left truncate"
+                      >
+                        No results.
+                      </TableCell>
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Table>
+            )}
+          </div>
+        </div>
+      ) : (
+        // Regular layout - entire table scrolls together
+        <div
+          ref={tableContainerRef}
+          className="overflow-y-auto rounded-md border table-container"
+          aria-label="Data table"
+          onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+          style={tableConfig.enableRowVirtualization ? {
+            height: virtualizationOptions.containerHeight || 400,
+          } : undefined}
+        >
+          {tableConfig.enableRowVirtualization && virtualRows.length > 0 ? (
+            // Virtualized layout
+            <div
+              style={{
+                height: `${totalSize}px`,
+                width: '100%',
+                position: 'relative',
+              }}
+            >
+              <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+                <TableHeader>
+                  {table.getHeaderGroups().map((headerGroup) => (
+                    <TableRow
+                      key={headerGroup.id}
+                    >
+                      {headerGroup.headers.map((header) => (
+                        <TableHead
+                          className="p-2 relative text-left group/th"
+                          key={header.id}
+                          colSpan={header.colSpan}
+                          scope="col"
+                          tabIndex={-1}
+                          style={{
+                            width: header.getSize(),
+                          }}
+                          data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
+                        >
+                          {header.isPlaceholder
+                            ? null
+                            : flexRender(
+                                header.column.columnDef.header,
+                                header.getContext(),
+                              )}
+                          {tableConfig.enableColumnResizing && header.column.getCanResize() && (
+                            <DataTableResizer header={header} />
+                          )}
+                        </TableHead>
+                      ))}
+                    </TableRow>
+                  ))}
+                </TableHeader>
+
+                <TableBody>
+                  {virtualRows.map((virtualRow) => {
+                    const row = rows[virtualRow.index];
+                    return (
+                      <TableRow
+                        key={row.id}
+                        data-index={virtualRow.index}
+                        ref={rowVirtualizer.measureElement}
+                        data-state={row.getIsSelected() ? "selected" : undefined}
+                        tabIndex={0}
+                        aria-selected={row.getIsSelected()}
+                        onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
+                        onFocus={(e) => {
+                          // Add a data attribute to the currently focused row
+                          for (const el of document.querySelectorAll('[data-focused="true"]')) {
+                            el.removeAttribute('data-focused');
+                          }
+                          e.currentTarget.setAttribute('data-focused', 'true');
+                        }}
+                        style={{
+                          height: `${virtualRow.size}px`,
+                          transform: `translateY(${virtualRow.start}px)`,
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                        }}
+                      >
+                        {row.getVisibleCells().map((cell, cellIndex) => (
+                          <TableCell
+                            className="p-2 truncate text-left"
+                            key={cell.id}
+                            data-cell-index={cellIndex}
+                            style={{
+                              width: cell.column.getSize() + 5,
+                            }}
+                          >
+                            {flexRender(
+                              cell.column.columnDef.cell,
+                              cell.getContext(),
+                            )}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+          ) : (
+            // Regular layout (non-virtualized)
             <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow
+                    key={headerGroup.id}
+                  >
+                    {headerGroup.headers.map((header) => (
+                      <TableHead
+                        className="p-2 relative text-left group/th"
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        scope="col"
+                        tabIndex={-1}
+                        style={{
+                          width: header.getSize(),
+                        }}
+                        data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext(),
+                            )}
+                        {tableConfig.enableColumnResizing && header.column.getCanResize() && (
+                          <DataTableResizer header={header} />
+                        )}
+                      </TableHead>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableHeader>
+
               <TableBody>
                 {table.getRowModel().rows?.length ? (
-                  // Data rows
                   table.getRowModel().rows.map((row, rowIndex) => (
                     <TableRow
                       key={row.id}
@@ -556,12 +907,12 @@ export function DataTable<TData extends ExportableData, TValue>({
                     >
                       {row.getVisibleCells().map((cell, cellIndex) => (
                         <TableCell
-                          className="px-4 py-2 truncate max-w-0 text-left"
+                          className="p-2 truncate text-left"
                           key={cell.id}
                           id={`cell-${rowIndex}-${cellIndex}`}
                           data-cell-index={cellIndex}
                           style={{
-                            width: cell.column.getSize(),
+                            width: cell.column.getSize() + 5,
                           }}
                         >
                           {flexRender(
@@ -585,100 +936,7 @@ export function DataTable<TData extends ExportableData, TValue>({
                 )}
               </TableBody>
             </Table>
-          </div>
-        </div>
-      ) : (
-        // Regular layout - entire table scrolls together
-        <div
-          ref={tableContainerRef}
-          className="overflow-y-auto rounded-md border table-container"
-          aria-label="Data table"
-          onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-        >
-          <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-            <TableHeader>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow
-                  key={headerGroup.id}
-                >
-                  {headerGroup.headers.map((header) => (
-                    <TableHead
-                      className="px-2 py-2 relative text-left group/th"
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      scope="col"
-                      tabIndex={-1}
-                      style={{
-                        width: header.getSize(),
-                      }}
-                      data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                      {tableConfig.enableColumnResizing && header.column.getCanResize() && (
-                        <DataTableResizer header={header} />
-                      )}
-                    </TableHead>
-                  ))}
-                </TableRow>
-              ))}
-            </TableHeader>
-
-            <TableBody>
-              {table.getRowModel().rows?.length ? (
-                // Data rows
-                table.getRowModel().rows.map((row, rowIndex) => (
-                  <TableRow
-                    key={row.id}
-                    id={`row-${rowIndex}`}
-                    data-row-index={rowIndex}
-                    data-state={row.getIsSelected() ? "selected" : undefined}
-                    tabIndex={0}
-                    aria-selected={row.getIsSelected()}
-                    onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                    onFocus={(e) => {
-                      // Add a data attribute to the currently focused row
-                      for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                        el.removeAttribute('data-focused');
-                      }
-                      e.currentTarget.setAttribute('data-focused', 'true');
-                    }}
-                  >
-                    {row.getVisibleCells().map((cell, cellIndex) => (
-                      <TableCell
-                        className="px-4 py-2 truncate max-w-0 text-left"
-                        key={cell.id}
-                        id={`cell-${rowIndex}-${cellIndex}`}
-                        data-cell-index={cellIndex}
-                        style={{
-                          width: cell.column.getSize(),
-                        }}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))
-              ) : (
-                // No results
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 text-left truncate"
-                  >
-                    No results.
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
+          )}
         </div>
       )}
 
@@ -694,3 +952,4 @@ export function DataTable<TData extends ExportableData, TValue>({
     </div>
   );
 }
+

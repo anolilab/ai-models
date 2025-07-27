@@ -43,6 +43,36 @@ export interface TableConfig {
   // sm: small, default: standard, lg: large
   size: 'sm' | 'default' | 'lg';
 
+  // PERFORMANCE OPTIONS
+  
+  // Enable row virtualization for large datasets
+  enableRowVirtualization: boolean;
+  
+
+  
+  // Estimated row height for virtualization (in pixels)
+  estimatedRowHeight: number;
+  
+  // Number of items to render outside the visible area (overscan)
+  virtualizationOverscan: number;
+  
+  // Enable debounced search for better performance
+  enableDebouncedSearch: boolean;
+  
+  // Search debounce delay in milliseconds
+  searchDebounceDelay: number;
+  
+  // Enable lazy loading for large datasets
+  enableLazyLoading: boolean;
+  
+  // Batch size for lazy loading operations
+  lazyLoadingBatchSize: number;
+  
+  // Enable column virtualization for wide tables
+  enableColumnVirtualization: boolean;
+  
+  // Estimated column width for column virtualization
+  estimatedColumnWidth: number;
   
   // Custom placeholder text for search input
   // If not provided, defaults to "Search {entityName}..."
@@ -70,9 +100,19 @@ const defaultConfig: TableConfig = {
   enableToolbar: true,            // Toolbar enabled by default
   enableStaticHeader: false,      // Static header disabled by default
   size: 'default',                // Default size for buttons and inputs
-  columnResizingTableId: undefined, // No table ID by default
   searchPlaceholder: undefined,   // No custom search placeholder by default
   allowExportNewColumns: true,    // Allow new columns from transform function by default
+  
+  // PERFORMANCE DEFAULTS
+  enableRowVirtualization: false,     // Disabled by default for backward compatibility
+  estimatedRowHeight: 40,             // Default row height estimate
+  virtualizationOverscan: 5,          // Default overscan for smooth scrolling
+  enableDebouncedSearch: true,        // Enabled by default for better UX
+  searchDebounceDelay: 300,           // 300ms debounce delay
+  enableLazyLoading: false,           // Disabled by default
+  lazyLoadingBatchSize: 100,          // Default batch size
+  enableColumnVirtualization: false,  // Disabled by default
+  estimatedColumnWidth: 150,          // Default column width estimate
 };
 
 /**

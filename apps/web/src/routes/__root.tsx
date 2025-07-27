@@ -47,7 +47,7 @@ function RootDocument() {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <div className="grid h-svh grid-rows-[auto_1fr]">
           {isFetching ? <Loader /> : <Outlet />}
         </div>

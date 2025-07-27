@@ -18,6 +18,7 @@ import { DataTableExport } from "./data-export";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import type { TableConfig } from "./utils/table-config";
 import { formatDate } from "./utils/date-format";
+import { useDebouncedSearch } from "./utils/performance-utils";
 
 // Helper functions for component sizing
 const getInputSizeClass = (size: 'sm' | 'default' | 'lg') => {
@@ -92,6 +93,13 @@ export function DataTableToolbar<TData extends ExportableData>({
   // Local search state
   const [localSearch, setLocalSearch] = useState("");
 
+  // Use debounced search if enabled
+  useDebouncedSearch(
+    localSearch,
+    (value) => setSearch(value.trim()),
+    config.enableDebouncedSearch ? config.searchDebounceDelay : 0
+  );
+
   // Local date state
   const [dates, setDates] = useState<{
     from: Date | undefined;
@@ -108,7 +116,11 @@ export function DataTableToolbar<TData extends ExportableData>({
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setLocalSearch(value);
-    setSearch(value.trim());
+    
+    // If debounced search is disabled, update immediately
+    if (!config.enableDebouncedSearch) {
+      setSearch(value.trim());
+    }
   };
 
   // Handle date selection for filtering
