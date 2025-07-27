@@ -84,7 +84,8 @@ vi.mock('@anolilab/provider-registry', () => ({
 }));
 
 // Import the component after mocking
-const { HomeComponent } = await import('../../src/routes/index');
+const { Route } = await import('../../src/routes/index');
+const HomeComponent = Route.component;
 
 describe('Data Table E2E Tests', () => {
   let user: ReturnType<typeof userEvent.setup>;

@@ -1,6 +1,6 @@
 "use client";
 
-import type * as React from "react";
+import * as React from "react";
 import {
   type ColumnSizingState,
   flexRender,
@@ -102,8 +102,10 @@ export function DataTable<TData extends ExportableData, TValue>({
   renderToolbarContent,
   virtualizationOptions = {}
 }: DataTableProps<TData, TValue>) {
-  // Performance monitoring
-  usePerformanceMonitor('DataTable');
+  // Performance monitoring (disabled in test environment)
+  if (process.env.NODE_ENV !== 'test') {
+    usePerformanceMonitor('DataTable');
+  }
 
   // Load table configuration with any overrides
   const tableConfig = useTableConfig(config);
