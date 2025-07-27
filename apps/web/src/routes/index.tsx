@@ -8,12 +8,8 @@ import {
   TooltipContent,
   TooltipProvider,
 } from "@/components/ui/tooltip";
+import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
-import { DataTableAdvancedToolbar } from "@/components/data-table/data-table-advanced-toolbar";
-import { DataTableSortList } from "@/components/data-table/data-table-sort-list";
-import { DataTableFilterMenu } from "@/components/data-table/data-table-filter-menu"; 
-import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
-import { useDataTable } from "@/hooks/use-data-table";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -60,9 +56,12 @@ const HomeComponent = () => {
     lastUpdated: model.last_updated || 'N/A',
   }));
 
-  const columns: ColumnDef<typeof tableData[0]>[] = [
+  const getColumns = (): ColumnDef<typeof tableData[0]>[] => [
     { 
       accessorKey: "provider", 
+      size: 150,
+      minSize: 100,
+      maxSize: 300,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Provider" />
       ),
@@ -75,6 +74,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "model", 
+      size: 200,
+      minSize: 120,
+      maxSize: 400,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Model" />
       ),
@@ -87,6 +89,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "providerId", 
+      size: 120,
+      minSize: 80,
+      maxSize: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Provider ID" />
       ),
@@ -99,6 +104,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "modelId", 
+      size: 180,
+      minSize: 100,
+      maxSize: 300,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Model ID" />
       ),
@@ -203,6 +211,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "inputCost", 
+      size: 120,
+      minSize: 80,
+      maxSize: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Input Cost" />
       ),
@@ -216,6 +227,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "outputCost", 
+      size: 120,
+      minSize: 80,
+      maxSize: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Cost" />
       ),
@@ -332,6 +346,9 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "lastUpdated", 
+      size: 140,
+      minSize: 100,
+      maxSize: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Last Updated" />
       ),
@@ -343,12 +360,6 @@ const HomeComponent = () => {
       }
     },
   ];
-
-  const { table } = useDataTable({
-    data: tableData,
-    columns,
-    pageCount: Math.ceil(tableData.length / 10), // Assuming 10 items per page
-  });
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -371,12 +382,86 @@ const HomeComponent = () => {
           </div>
         </header>
         <main className="w-full">
-          <DataTable table={table}>
-            <DataTableAdvancedToolbar table={table}>
-              <DataTableFilterMenu table={table} />
-              <DataTableSortList table={table} />
-            </DataTableAdvancedToolbar>
-          </DataTable>
+        <DataTable<typeof tableData[0], any>
+          getColumns={getColumns}
+          data={tableData}
+          idField="modelId"
+          exportConfig={{
+            entityName: "models",
+            columnMapping: {
+              provider: "Provider",
+              model: "Model",
+              providerId: "Provider ID",
+              modelId: "Model ID",
+              toolCall: "Tool Call",
+              reasoning: "Reasoning",
+              input: "Input",
+              output: "Output",
+              inputCost: "Input Cost",
+              outputCost: "Output Cost",
+              cacheReadCost: "Cache Read Cost",
+              cacheWriteCost: "Cache Write Cost",
+              contextLimit: "Context Limit",
+              outputLimit: "Output Limit",
+              temperature: "Temperature",
+              weights: "Weights",
+              knowledge: "Knowledge",
+              releaseDate: "Release Date",
+              lastUpdated: "Last Updated",
+            },
+            columnWidths: [
+              { wch: 15 }, // provider
+              { wch: 20 }, // model
+              { wch: 15 }, // providerId
+              { wch: 20 }, // modelId
+              { wch: 10 }, // toolCall
+              { wch: 10 }, // reasoning
+              { wch: 15 }, // input
+              { wch: 15 }, // output
+              { wch: 12 }, // inputCost
+              { wch: 12 }, // outputCost
+              { wch: 15 }, // cacheReadCost
+              { wch: 15 }, // cacheWriteCost
+              { wch: 12 }, // contextLimit
+              { wch: 12 }, // outputLimit
+              { wch: 10 }, // temperature
+              { wch: 10 }, // weights
+              { wch: 15 }, // knowledge
+              { wch: 12 }, // releaseDate
+              { wch: 12 }, // lastUpdated
+            ],
+            headers: [
+              "Provider",
+              "Model",
+              "Provider ID",
+              "Model ID",
+              "Tool Call",
+              "Reasoning",
+              "Input",
+              "Output",
+              "Input Cost",
+              "Output Cost",
+              "Cache Read Cost",
+              "Cache Write Cost",
+              "Context Limit",
+              "Output Limit",
+              "Temperature",
+              "Weights",
+              "Knowledge",
+              "Release Date",
+              "Last Updated",
+            ],
+          }}
+          config={{
+            enableRowSelection: false,
+            enableSearch: true,
+            enableDateFilter: true,
+            enablePagination: false,
+            enableColumnVisibility: true,
+            enableToolbar: true,
+            columnResizingTableId: "entity-table",
+          }}
+        />
         </main>
       </div>
     </TooltipProvider>
