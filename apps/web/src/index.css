@@ -373,4 +373,16 @@ input[type="week"] {
     width: 100%;
     table-layout: fixed;
   }
+
+  /* Ensure header and body cells have consistent widths */
+  .table-container th,
+  .table-container td {
+    box-sizing: border-box;
+  }
+
+  /* Prevent layout shifts during column resizing */
+  .table-container .resizable-table {
+    table-layout: fixed;
+    width: 100%;
+  }
 }

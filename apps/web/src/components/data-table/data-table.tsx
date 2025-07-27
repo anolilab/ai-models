@@ -560,6 +560,9 @@ export function DataTable<TData extends ExportableData, TValue>({
                           key={cell.id}
                           id={`cell-${rowIndex}-${cellIndex}`}
                           data-cell-index={cellIndex}
+                          style={{
+                            width: cell.column.getSize(),
+                          }}
                         >
                           {flexRender(
                             cell.column.columnDef.cell,
@@ -651,6 +654,9 @@ export function DataTable<TData extends ExportableData, TValue>({
                         key={cell.id}
                         id={`cell-${rowIndex}-${cellIndex}`}
                         data-cell-index={cellIndex}
+                        style={{
+                          width: cell.column.getSize(),
+                        }}
                       >
                         {flexRender(
                           cell.column.columnDef.cell,

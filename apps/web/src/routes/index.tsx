@@ -454,6 +454,7 @@ const HomeComponent = () => {
           }}
           config={{
             enableRowSelection: false,
+            enableColumnResizing: false,
             enableSearch: true,
             enableDateFilter: true,
             enablePagination: false,
