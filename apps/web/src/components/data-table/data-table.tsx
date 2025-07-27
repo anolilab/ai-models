@@ -581,6 +581,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         // Static header layout - header stays fixed, body scrolls
         <div 
           className="rounded-md border table-container"
+          data-testid="data-table"
           style={tableConfig.enableRowVirtualization ? {
             height: (virtualizationOptions.containerHeight || 400) + 50, // Add extra space for header
           } : undefined}
@@ -756,6 +757,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         <div
           ref={tableContainerRef}
           className="overflow-y-auto rounded-md border table-container"
+          data-testid="data-table"
           aria-label="Data table"
           onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
           style={tableConfig.enableRowVirtualization ? {

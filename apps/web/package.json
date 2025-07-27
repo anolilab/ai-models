@@ -6,8 +6,11 @@
     "serve": "vite preview", "dev": "vite dev --port 3000",
     "dev:e2e": "vite dev",
     "build": "vite build && tsc --noEmit",
+    "build:test": "vite build",
     "start": "node .output/server/index.mjs",
-    "test:e2e": "rm -rf port*.txt; playwright test --project=chromium"
+    "test:e2e": "rm -rf port*.txt; playwright test --project=chromium",
+    "test:e2e:ui": "rm -rf port*.txt; playwright test --project=chromium --ui",
+    "test:e2e:debug": "rm -rf port*.txt; playwright test --project=chromium --debug"
   },
   "dependencies": {
     "@anolilab/provider-registry": "workspace:*",
@@ -44,7 +47,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
     "tw-animate-css": "^1.3.6",
-    "vite-tsconfig-paths": "^5.1.4",
     "xlsx": "^0.18.5",
     "zod": "^4.0.10"
   },
@@ -70,6 +72,7 @@
     "typescript": "^5.8.3",
     "unplugin-fonts": "^1.4.0",
     "vite": "^7.0.6",
-    "web-vitals": "^5.0.3"
+    "web-vitals": "^5.0.3",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
