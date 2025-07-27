@@ -36,13 +36,13 @@ export interface TableConfig {
   // Enable/disable toolbar
   enableToolbar: boolean;
   
+  // Enable/disable static header (header stays fixed while scrolling)
+  enableStaticHeader: boolean;
+  
   // Control the size of buttons and inputs throughout the table
   // sm: small, default: standard, lg: large
   size: 'sm' | 'default' | 'lg';
-  
-  // Unique ID for storing column sizing in localStorage
-  // This allows multiple tables to have independent sizing states
-  columnResizingTableId?: string;
+
   
   // Custom placeholder text for search input
   // If not provided, defaults to "Search {entityName}..."
@@ -68,6 +68,7 @@ const defaultConfig: TableConfig = {
   enableExport: true,             // Data export enabled by default
   enableColumnResizing: true,     // Column resizing enabled by default
   enableToolbar: true,            // Toolbar enabled by default
+  enableStaticHeader: false,      // Static header disabled by default
   size: 'default',                // Default size for buttons and inputs
   columnResizingTableId: undefined, // No table ID by default
   searchPlaceholder: undefined,   // No custom search placeholder by default

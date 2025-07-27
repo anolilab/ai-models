@@ -24,7 +24,6 @@ export function extractDefaultColumnSizes<TData>(
  */
 export function initializeColumnSizes<TData>(
   columns: ColumnDef<TData, any>[],
-  tableId: string,
   setColumnSizing: (sizes: Record<string, number>) => void
 ): void {
   // Only proceed if we have columns to work with

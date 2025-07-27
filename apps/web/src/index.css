@@ -347,3 +347,30 @@ input[type="week"] {
     color: hsl(var(--primary)) !important;
   }
 }
+
+/* Static header styles */
+@layer components {
+  .table-container {
+    position: relative;
+  }
+
+  .table-container .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Ensure proper table layout for static headers */
+  .table-container .sticky table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  /* Ensure body table matches header table layout */
+  .table-container .overflow-y-auto table {
+    width: 100%;
+    table-layout: fixed;
+  }
+}

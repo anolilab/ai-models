@@ -30,7 +30,7 @@ import { DataTableToolbar } from "./toolbar";
 import { useTableConfig, type TableConfig } from "./utils/table-config";
 
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
-import { useTableColumnResize } from "./hooks/use-table-column-resize";
+
 import { DataTableResizer } from "./data-table-resizer";
 
 import {
@@ -95,14 +95,13 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Load table configuration with any overrides
   const tableConfig = useTableConfig(config);
 
-  // Table ID for column resizing - generate a default if not provided
-  const tableId = tableConfig.columnResizingTableId || 'data-table-default';
+  // Column sizing state (moved from useTableColumnResize hook)
+  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({});
 
-  // Use our custom hook for column resizing
-  const { columnSizing, setColumnSizing, resetColumnSizing } = useTableColumnResize(
-    tableId,
-    tableConfig.enableColumnResizing
-  );
+  // Memoized function to reset column sizes
+  const resetColumnSizing = useCallback(() => {
+    setColumnSizing({});
+  }, []);
 
   // Use regular React state for all table parameters (client-side only)
   const [page, setPage] = useState(1);
@@ -428,8 +427,8 @@ export function DataTable<TData extends ExportableData, TValue>({
 
   // Initialize default column sizes when columns are available and no saved sizes exist
   useEffect(() => {
-    initializeColumnSizes(columns, tableId, setColumnSizing);
-  }, [columns, tableId, setColumnSizing]);
+    initializeColumnSizes(columns, setColumnSizing);
+  }, [columns, setColumnSizing]);
 
   // Handle column resizing
   useEffect(() => {
@@ -487,94 +486,195 @@ export function DataTable<TData extends ExportableData, TValue>({
         />
       )}
 
-      <div
-        ref={tableContainerRef}
-        className="overflow-y-auto rounded-md border table-container"
-        aria-label="Data table"
-        onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-      >
-        <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow
-                key={headerGroup.id}
-              >
-                {headerGroup.headers.map((header) => (
-                  <TableHead
-                    className="px-2 py-2 relative text-left group/th"
-                    key={header.id}
-                    colSpan={header.colSpan}
-                    scope="col"
-                    tabIndex={-1}
-                    style={{
-                      width: header.getSize(),
-                    }}
-                    data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
+      {tableConfig.enableStaticHeader ? (
+        // Static header layout - header stays fixed, body scrolls
+        <div className="rounded-md border table-container">
+          {/* Static Header */}
+          <div className="sticky top-0 z-10 bg-background border-b">
+            <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow
+                    key={headerGroup.id}
                   >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
+                    {headerGroup.headers.map((header) => (
+                      <TableHead
+                        className="px-2 py-2 relative text-left group/th"
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        scope="col"
+                        tabIndex={-1}
+                        style={{
+                          width: header.getSize(),
+                        }}
+                        data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext(),
+                            )}
+                        {tableConfig.enableColumnResizing && header.column.getCanResize() && (
+                          <DataTableResizer header={header} />
                         )}
-                    {tableConfig.enableColumnResizing && header.column.getCanResize() && (
-                      <DataTableResizer header={header} />
-                    )}
-                  </TableHead>
+                      </TableHead>
+                    ))}
+                  </TableRow>
                 ))}
-              </TableRow>
-            ))}
-          </TableHeader>
-
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              // Data rows
-              table.getRowModel().rows.map((row, rowIndex) => (
-                <TableRow
-                  key={row.id}
-                  id={`row-${rowIndex}`}
-                  data-row-index={rowIndex}
-                  data-state={row.getIsSelected() ? "selected" : undefined}
-                  tabIndex={0}
-                  aria-selected={row.getIsSelected()}
-                  onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                  onFocus={(e) => {
-                    // Add a data attribute to the currently focused row
-                    for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                      el.removeAttribute('data-focused');
-                    }
-                    e.currentTarget.setAttribute('data-focused', 'true');
-                  }}
-                >
-                  {row.getVisibleCells().map((cell, cellIndex) => (
-                    <TableCell
-                      className="px-4 py-2 truncate max-w-0 text-left"
-                      key={cell.id}
-                      id={`cell-${rowIndex}-${cellIndex}`}
-                      data-cell-index={cellIndex}
+              </TableHeader>
+            </Table>
+          </div>
+          
+          {/* Scrollable Body */}
+          <div
+            ref={tableContainerRef}
+            className="overflow-y-auto"
+            aria-label="Data table body"
+            onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+          >
+            <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+              <TableBody>
+                {table.getRowModel().rows?.length ? (
+                  // Data rows
+                  table.getRowModel().rows.map((row, rowIndex) => (
+                    <TableRow
+                      key={row.id}
+                      id={`row-${rowIndex}`}
+                      data-row-index={rowIndex}
+                      data-state={row.getIsSelected() ? "selected" : undefined}
+                      tabIndex={0}
+                      aria-selected={row.getIsSelected()}
+                      onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
+                      onFocus={(e) => {
+                        // Add a data attribute to the currently focused row
+                        for (const el of document.querySelectorAll('[data-focused="true"]')) {
+                          el.removeAttribute('data-focused');
+                        }
+                        e.currentTarget.setAttribute('data-focused', 'true');
+                      }}
                     >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
+                      {row.getVisibleCells().map((cell, cellIndex) => (
+                        <TableCell
+                          className="px-4 py-2 truncate max-w-0 text-left"
+                          key={cell.id}
+                          id={`cell-${rowIndex}-${cellIndex}`}
+                          data-cell-index={cellIndex}
+                        >
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                ) : (
+                  // No results
+                  <TableRow>
+                    <TableCell
+                      colSpan={columns.length}
+                      className="h-24 text-left truncate"
+                    >
+                      No results.
                     </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      ) : (
+        // Regular layout - entire table scrolls together
+        <div
+          ref={tableContainerRef}
+          className="overflow-y-auto rounded-md border table-container"
+          aria-label="Data table"
+          onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+        >
+          <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow
+                  key={headerGroup.id}
+                >
+                  {headerGroup.headers.map((header) => (
+                    <TableHead
+                      className="px-2 py-2 relative text-left group/th"
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      scope="col"
+                      tabIndex={-1}
+                      style={{
+                        width: header.getSize(),
+                      }}
+                      data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+                      {tableConfig.enableColumnResizing && header.column.getCanResize() && (
+                        <DataTableResizer header={header} />
+                      )}
+                    </TableHead>
                   ))}
                 </TableRow>
-              ))
-            ) : (
-              // No results
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-left truncate"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
+              ))}
+            </TableHeader>
+
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                // Data rows
+                table.getRowModel().rows.map((row, rowIndex) => (
+                  <TableRow
+                    key={row.id}
+                    id={`row-${rowIndex}`}
+                    data-row-index={rowIndex}
+                    data-state={row.getIsSelected() ? "selected" : undefined}
+                    tabIndex={0}
+                    aria-selected={row.getIsSelected()}
+                    onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
+                    onFocus={(e) => {
+                      // Add a data attribute to the currently focused row
+                      for (const el of document.querySelectorAll('[data-focused="true"]')) {
+                        el.removeAttribute('data-focused');
+                      }
+                      e.currentTarget.setAttribute('data-focused', 'true');
+                    }}
+                  >
+                    {row.getVisibleCells().map((cell, cellIndex) => (
+                      <TableCell
+                        className="px-4 py-2 truncate max-w-0 text-left"
+                        key={cell.id}
+                        id={`cell-${rowIndex}-${cellIndex}`}
+                        data-cell-index={cellIndex}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                // No results
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-left truncate"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+      )}
 
       {tableConfig.enablePagination && (
         <DataTablePagination

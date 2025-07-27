@@ -459,7 +459,7 @@ const HomeComponent = () => {
             enablePagination: false,
             enableColumnVisibility: true,
             enableToolbar: true,
-            columnResizingTableId: "entity-table",
+            enableStaticHeader: true,
           }}
         />
         </main>
