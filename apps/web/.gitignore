@@ -57,3 +57,5 @@ dev-dist
 .dev.vars*
 
 .open-next
+test-results/
+port*.txt
