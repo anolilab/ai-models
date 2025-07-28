@@ -11,11 +11,11 @@ const Table = React.forwardRef<
 >(({ classNames, ...props }, ref) => {
   return (
     <div
+      ref={ref}
       data-slot="table-container"
       className={cn("relative w-full h-full", classNames?.container)}
     >
       <table
-        ref={ref}
         data-slot="table"
         className={cn("w-full caption-bottom text-sm", classNames?.table)}
         {...props}

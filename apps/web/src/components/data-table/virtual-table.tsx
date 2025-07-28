@@ -128,15 +128,21 @@ const VirtualizedTable = <TData extends ExportableData>({
       columnVirtualizer.getTotalSize() -
       (virtualColumns[virtualColumns.length - 1]?.end ?? 0)
   }
+
+  // Calculate total width for horizontal scrolling
+  const totalWidth = visibleColumns.reduce((sum, column) => sum + column.getSize(), 0)
   
-  /* Even though we're still using sematic table tags, we must use CSS grid and flexbox for dynamic row heights */
   return (
-      <BaseTable className={cn("grid overflow-y-auto", enableColumnResizing ? "resizable-table" : "", className)}
+      <BaseTable classNames={{
+        table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
+        container: "overflow-y-auto overflow-x-auto",
+      }}
       ref={tableContainerRef}
       onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
       style={{
         ...style,
         height: virtualizationOptions.containerHeight,
+        width: `${totalWidth}px`,
       }}>
         <TableHead
           columnVirtualizer={columnVirtualizer}

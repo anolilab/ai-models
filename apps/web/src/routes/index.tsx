@@ -2,7 +2,7 @@ import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
 import { FileText, Image as ImageIcon, Video, ScatterChart } from "lucide-react";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import {
   Tooltip,
   TooltipTrigger,
@@ -22,7 +22,20 @@ const modalityIconMap: Record<string, React.ReactNode> = {
 
 const HomeComponent = () => {
   const { allModels } = Route.useLoaderData();
-  
+  const [containerHeight, setContainerHeight] = useState(600);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setContainerHeight(window.innerHeight - 123);
+    };
+    
+    updateHeight();
+
+    window.addEventListener('resize', updateHeight);
+    
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   // Helper function to format cost as currency
   const formatCost = (cost: number | null): string => {
     if (cost === null || cost === undefined) return 'N/A';
@@ -500,7 +513,7 @@ const HomeComponent = () => {
                   enableToolbar: true,
                   enableStickyHeader: true,
                   // Performance optimizations
-                  enableRowVirtualization: false,
+                  enableRowVirtualization: true,
                   estimatedRowHeight: 40,
                   virtualizationOverscan: 5,
                   enableDebouncedSearch: true,
@@ -511,7 +524,7 @@ const HomeComponent = () => {
                 virtualizationOptions={{
                   estimatedRowHeight: 40,
                   overscan: 5,
-                  containerHeight: 600,
+                  containerHeight: containerHeight,
                 }}
               />
         </ClientOnly>
