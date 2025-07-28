@@ -162,8 +162,7 @@ export function DataTable<TData extends ExportableData, TValue>({
       return [];
     }
     
-    const converted = createTSTFilters(filters);
-    return converted;
+    return createTSTFilters(filters);
   }, [filters]);
 
   // Use converted filters as external column filters
@@ -431,6 +430,7 @@ export function DataTable<TData extends ExportableData, TValue>({
     } : {}),
     enableRowSelection: tableConfig.enableRowSelection,
     enableColumnResizing: tableConfig.enableColumnResizing,
+    enableColumnFilters: true,
     manualPagination: false,
     manualSorting: false,
     manualFiltering: false,
@@ -445,10 +445,10 @@ export function DataTable<TData extends ExportableData, TValue>({
     onGlobalFilterChange: setSearch,
     getCoreRowModel: getCoreRowModel<TData>(),
     getFilteredRowModel: getFilteredRowModel<TData>(),
+    getFacetedRowModel: getFacetedRowModel<TData>(),
+    getSortedRowModel: getSortedRowModel<TData>(),
     // Only use pagination row model if pagination is enabled
     ...(tableConfig.enablePagination ? { getPaginationRowModel: getPaginationRowModel<TData>() } : {}),
-    getSortedRowModel: getSortedRowModel<TData>(),
-    getFacetedRowModel: getFacetedRowModel<TData>(),
     getFacetedUniqueValues: getFacetedUniqueValues<TData>(),
   }), [
     dataItems,
@@ -558,6 +558,7 @@ export function DataTable<TData extends ExportableData, TValue>({
       )}
         {tableConfig.enableRowVirtualization ? (
           <VirtualizedTable 
+            key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}`}
             table={table} 
             onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
             enableStickyHeader={tableConfig.enableStickyHeader}

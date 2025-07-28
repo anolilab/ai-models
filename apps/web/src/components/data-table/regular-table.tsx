@@ -38,8 +38,11 @@ export function RegularTable<TData>({
   className,
 }: RegularTableProps<TData>) {
   return (
-    <BaseTable 
-      className={cn("overflow-auto relative", enableColumnResizing ? "resizable-table" : "", className)} 
+    <BaseTable
+      classNames={{
+        table: cn("relative", enableColumnResizing ? "resizable-table" : "", className),
+        container: "overflow-auto",
+      }}
       onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
       style={style}
     >
@@ -74,8 +77,8 @@ export function RegularTable<TData>({
       </TableHeader>
 
       <TableBody>
-        {table.getRowModel().rows?.length ? (
-          table.getRowModel().rows.map((row, rowIndex) => (
+        {table.getFilteredRowModel().rows?.length ? (
+          table.getFilteredRowModel().rows.map((row, rowIndex) => (
             <TableRow
               key={row.id}
               id={`row-${rowIndex}`}

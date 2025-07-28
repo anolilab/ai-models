@@ -135,7 +135,7 @@ const VirtualizedTable = <TData extends ExportableData>({
   return (
       <BaseTable classNames={{
         table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
-        container: "overflow-y-auto overflow-x-auto",
+        container: "overflow-auto",
       }}
       ref={tableContainerRef}
       onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
@@ -252,7 +252,7 @@ const TableBody = <TData extends ExportableData>({
   enableClickRowSelect = false,
   columns,
 }: TableBodyProps<TData>) => {
-  const { rows } = table.getRowModel()
+  const { rows } = table.getFilteredRowModel()
 
   const rowVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableRowElement>({
     count: rows.length,
@@ -272,7 +272,6 @@ const TableBody = <TData extends ExportableData>({
   // Force virtualizer to recalculate when container is available
   useEffect(() => {
     if (tableContainerRef.current && rows.length > 0) {
-
       rowVirtualizer.measure();
     }
   }, [tableContainerRef.current, rows.length, rowVirtualizer]);
