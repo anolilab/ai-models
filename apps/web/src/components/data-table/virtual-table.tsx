@@ -176,18 +176,20 @@ const TableHead = <TData extends ExportableData>({
   enableColumnResizing = false,
 }: TableHeadProps<TData>) => {
   return (
-    <TableHeader className={enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm" : ""}>
-      {table.getHeaderGroups().map(headerGroup => (
-        <TableHeadRow
-          columnVirtualizer={columnVirtualizer}
-          headerGroup={headerGroup}
-          key={headerGroup.id}
-          virtualPaddingLeft={virtualPaddingLeft}
-          virtualPaddingRight={virtualPaddingRight}
-          enableColumnResizing={enableColumnResizing}
-        />
-      ))}
-    </TableHeader>
+    <div className={enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm" : ""}>
+      <TableHeader>
+        {table.getHeaderGroups().map(headerGroup => (
+          <TableHeadRow
+            columnVirtualizer={columnVirtualizer}
+            headerGroup={headerGroup}
+            key={headerGroup.id}
+            virtualPaddingLeft={virtualPaddingLeft}
+            virtualPaddingRight={virtualPaddingRight}
+            enableColumnResizing={enableColumnResizing}
+          />
+        ))}
+      </TableHeader>
+    </div>
   )
 }
 

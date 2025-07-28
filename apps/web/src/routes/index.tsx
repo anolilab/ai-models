@@ -159,11 +159,6 @@ const HomeComponent = () => {
       enableColumnFilter: true,
       sortingFn: "text",
       filterFn: textFilterFn,
-      meta: { 
-        label: "Provider",
-        variant: "text",
-        placeholder: "Filter providers..."
-      }
     },
     { 
       id: "model",
@@ -177,11 +172,6 @@ const HomeComponent = () => {
       enableColumnFilter: true,
       sortingFn: "text",
       filterFn: textFilterFn,
-      meta: { 
-        label: "Model",
-        variant: "text",
-        placeholder: "Filter models..."
-      }
     },
     { 
       id: "providerId",
@@ -192,12 +182,10 @@ const HomeComponent = () => {
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Provider ID" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.providerId}</span>;
+      },
       enableColumnFilter: true,
-      meta: { 
-        label: "Provider ID",
-        variant: "text",
-        placeholder: "Filter provider IDs..."
-      }
     },
     { 
       id: "modelId",
@@ -208,12 +196,10 @@ const HomeComponent = () => {
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Model ID" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.modelId}</span>;
+      },
       enableColumnFilter: true,
-      meta: { 
-        label: "Model ID",
-        variant: "text",
-        placeholder: "Filter model IDs..."
-      }
     },
     { 
       id: "toolCall",
@@ -227,14 +213,6 @@ const HomeComponent = () => {
         const value = row.getValue<string>(columnId);
         return optionFilterFn(value, filterValue);
       },
-      meta: { 
-        label: "Tool Call",
-        variant: "select",
-        options: [
-          { label: "Yes", value: "Yes" },
-          { label: "No", value: "No" }
-        ]
-      }
     },
     { 
       id: "reasoning",
@@ -248,14 +226,6 @@ const HomeComponent = () => {
         const value = row.getValue<string>(columnId);
         return optionFilterFn(value, filterValue);
       },
-      meta: { 
-        label: "Reasoning",
-        variant: "select",
-        options: [
-          { label: "Yes", value: "Yes" },
-          { label: "No", value: "No" }
-        ]
-      }
     },
     {
       accessorKey: "input",
@@ -263,11 +233,6 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Input" />
       ),
       enableColumnFilter: true,
-      meta: { 
-        label: "Input Modalities",
-        variant: "text",
-        placeholder: "Filter input modalities..."
-      },
       cell: ({ row }) => {
         const modalities = useMemo(() => 
           row.original.input.split(',').map((m: string) => m.trim()),
@@ -278,9 +243,10 @@ const HomeComponent = () => {
         const modalityComponents = useMemo(() => 
           modalities.map((modality: string, index: number) => {
             const icon = modalityIconMap[modality];
+
             if (icon) {
               return (
-                <span key={`input-${modality}-${index}`} title={modality.charAt(0).toUpperCase() + modality.slice(1)}>
+                <span key={`input-${modality}-${index}`} title={modality.charAt(0).toUpperCase() + modality.slice(1)} className="border border-border py-0.5 px-1 text-muted-foreground">
                   {icon}
                 </span>
               );
@@ -303,11 +269,6 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Output" />
       ),
       enableColumnFilter: true,
-      meta: { 
-        label: "Output Modalities",
-        variant: "text",
-        placeholder: "Filter output modalities..."
-      },
       cell: ({ row }) => {
         const modalities = useMemo(() => 
           row.original.output.split(',').map((m: string) => m.trim()),
@@ -349,12 +310,6 @@ const HomeComponent = () => {
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
       filterFn: numberFilterFn,
-      meta: { 
-        label: "Input Cost",
-        variant: "number",
-        placeholder: "Filter input cost...",
-        unit: "$"
-      }
     },
     { 
       id: "outputCost",
@@ -368,12 +323,6 @@ const HomeComponent = () => {
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
       filterFn: numberFilterFn,
-      meta: { 
-        label: "Output Cost",
-        variant: "number",
-        placeholder: "Filter output cost...",
-        unit: "$"
-      }
     },
     { 
       accessorKey: "cacheReadCost", 
@@ -381,12 +330,6 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Cache Read Cost" />
       ),
       enableColumnFilter: true,
-      meta: { 
-        label: "Cache Read Cost",
-        variant: "number",
-        placeholder: "Filter cache read cost...",
-        unit: "$"
-      }
     },
     { 
       accessorKey: "cacheWriteCost", 
@@ -394,11 +337,6 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Cache Write Cost" />
       ),
       enableColumnFilter: true,
-      meta: { 
-        label: "Cache Write Cost",
-        variant: "text",
-        placeholder: "Filter cache write cost..."
-      }
     },
     { 
       accessorKey: "contextLimit", 
@@ -407,11 +345,6 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
-      meta: { 
-        label: "Context Limit",
-        variant: "number",
-        placeholder: "Filter context limit..."
-      }
     },
     { 
       accessorKey: "outputLimit", 
@@ -420,67 +353,48 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
-      meta: { 
-        label: "Output Limit",
-        variant: "number",
-        placeholder: "Filter output limit..."
-      }
     },
     { 
       accessorKey: "temperature", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Temperature" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.temperature}</span>;
+      },
       enableColumnFilter: true,
       sortingFn: "basic",
-      meta: { 
-        label: "Temperature",
-        variant: "select",
-        options: [
-          { label: "Yes", value: "Yes" },
-          { label: "No", value: "No" }
-        ]
-      }
     },
     { 
       accessorKey: "weights", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Weights" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.weights}</span>;
+      },
       enableColumnFilter: true,
       sortingFn: "basic",
-      meta: { 
-        label: "Weights",
-        variant: "select",
-        options: [
-          { label: "Open", value: "Open" },
-          { label: "Closed", value: "Closed" }
-        ]
-      }
     },
     { 
       accessorKey: "knowledge", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Knowledge" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.knowledge}</span>;
+      },
       enableColumnFilter: true,
-      meta: { 
-        label: "Knowledge",
-        variant: "text",
-        placeholder: "Filter knowledge..."
-      }
     },
     { 
       accessorKey: "releaseDate", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Release Date" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.releaseDate}</span>;
+      },
       enableColumnFilter: true,
-      meta: { 
-        label: "Release Date",
-        variant: "text",
-        placeholder: "Filter release date..."
-      }
     },
     { 
       id: "lastUpdated",
@@ -491,14 +405,12 @@ const HomeComponent = () => {
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Last Updated" />
       ),
+      cell: ({ row }) => {
+        return <span className="text-muted-foreground text-xs">{row.original.lastUpdated}</span>;
+      },
       enableColumnFilter: true,
       sortingFn: "datetime",
       filterFn: dateFilterFn,
-      meta: { 
-        label: "Last Updated",
-        variant: "text",
-        placeholder: "Filter last updated..."
-      }
     },
   ];
 
