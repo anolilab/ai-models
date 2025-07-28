@@ -1,7 +1,7 @@
 import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
-import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar } from "lucide-react";
+import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2 } from "lucide-react";
 import { useMemo, useState, useEffect } from "react";
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
@@ -16,6 +16,7 @@ const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
   image: <ImageIcon className="inline size-4" />,
   video: <Video className="inline size-4" />,
+  audio: <Volume2 className="inline size-4" />,
   embedding: <ScatterChart className="inline size-4" />,
 };
 
