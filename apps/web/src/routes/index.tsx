@@ -281,7 +281,7 @@ const HomeComponent = () => {
             const icon = modalityIconMap[modality];
             if (icon) {
               return (
-                <span key={`output-${modality}-${index}`} title={modality.charAt(0).toUpperCase() + modality.slice(1)}>
+                <span key={`output-${modality}-${index}`} title={modality.charAt(0).toUpperCase() + modality.slice(1)} className="border border-border py-0.5 px-1 text-muted-foreground">
                   {icon}
                 </span>
               );
