@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useCallback } from 'react'
+import { useEffect, useRef } from 'react'
+import type { RefObject } from 'react'
 import {
   flexRender,
 } from '@tanstack/react-table'
@@ -67,7 +68,7 @@ interface TableHeadCellProps<TData extends ExportableData> {
 interface TableBodyProps<TData extends ExportableData> {
   columnVirtualizer: Virtualizer<HTMLDivElement, HTMLTableCellElement>
   table: Table<TData>
-  tableContainerRef: React.RefObject<HTMLDivElement | null>
+  tableContainerRef: RefObject<HTMLDivElement | null>
   virtualPaddingLeft: number | undefined
   virtualPaddingRight: number | undefined
   virtualizationOptions: Required<VirtualizationOptions>
@@ -102,7 +103,7 @@ const VirtualizedTable = <TData extends ExportableData>({
   enableStickyHeader = true,
 }: VirtualizedTableProps<TData>) => {
   const visibleColumns = table.getVisibleLeafColumns()
-  const tableContainerRef = React.useRef<HTMLTableElement>(null)
+  const tableContainerRef = useRef<HTMLTableElement>(null)
 
   //we are using a slightly different virtualization strategy for columns (compared to virtual rows) in order to support dynamic row heights
   const columnVirtualizer = useVirtualizer<
@@ -133,36 +134,36 @@ const VirtualizedTable = <TData extends ExportableData>({
   const totalWidth = visibleColumns.reduce((sum, column) => sum + column.getSize(), 0)
   
   return (
-      <BaseTable classNames={{
-        table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
-        container: "overflow-auto",
-      }}
-      ref={tableContainerRef}
-      onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
-      style={{
-        ...style,
-        height: virtualizationOptions.containerHeight,
-        width: `${totalWidth}px`,
-      }}>
-        <TableHead
-          columnVirtualizer={columnVirtualizer}
-          table={table}
-          virtualPaddingLeft={virtualPaddingLeft}
-          virtualPaddingRight={virtualPaddingRight}
-          enableStickyHeader={enableStickyHeader}
-          enableColumnResizing={enableColumnResizing}
-        />
-        <TableBody
-          columnVirtualizer={columnVirtualizer}
-          table={table}
-          tableContainerRef={tableContainerRef}
-          virtualPaddingLeft={virtualPaddingLeft}
-          virtualPaddingRight={virtualPaddingRight}
-          virtualizationOptions={virtualizationOptions}
-          enableClickRowSelect={enableClickRowSelect}
-          columns={columns}
-        />
-      </BaseTable>
+    <BaseTable classNames={{
+      table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
+      container: cn("overflow-auto", enableStickyHeader && "relative"),
+    }}
+    ref={tableContainerRef}
+    onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
+    style={{
+      ...style,
+      height: virtualizationOptions.containerHeight,
+      width: `${totalWidth}px`,
+    }}>
+      <TableHead
+        columnVirtualizer={columnVirtualizer}
+        table={table}
+        virtualPaddingLeft={virtualPaddingLeft}
+        virtualPaddingRight={virtualPaddingRight}
+        enableStickyHeader={enableStickyHeader}
+        enableColumnResizing={enableColumnResizing}
+      />
+      <TableBody
+        columnVirtualizer={columnVirtualizer}
+        table={table}
+        tableContainerRef={tableContainerRef}
+        virtualPaddingLeft={virtualPaddingLeft}
+        virtualPaddingRight={virtualPaddingRight}
+        virtualizationOptions={virtualizationOptions}
+        enableClickRowSelect={enableClickRowSelect}
+        columns={columns}
+      />
+    </BaseTable>
   )
 }
 
@@ -175,7 +176,7 @@ const TableHead = <TData extends ExportableData>({
   enableColumnResizing = false,
 }: TableHeadProps<TData>) => {
   return (
-    <TableHeader className={cn("grid", enableStickyHeader && "sticky top-0 z-10")}>
+    <TableHeader className={enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm" : ""}>
       {table.getHeaderGroups().map(headerGroup => (
         <TableHeadRow
           columnVirtualizer={columnVirtualizer}
@@ -223,7 +224,7 @@ const TableHeadCell = <TData extends ExportableData>({
   return (
     <BaseTableHead
       key={header.id}
-      className="p-2 relative text-left group/th flex"
+      className="p-2 relative text-left group/th bg-background flex"
       colSpan={header.colSpan}
       scope="col"
       tabIndex={-1}

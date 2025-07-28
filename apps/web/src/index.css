@@ -3,94 +3,154 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-}
-
 :root {
-  --radius: 0.625rem;
+  /* Base radius */
+  --radius: 0.75rem;
+  
+  /* Primary color palette based on oklch(0.93 0.24 116) */
+  --primary: oklch(0.93 0.24 116);
+  --primary-foreground: oklch(0.98 0.02 116);
+  --primary-muted: oklch(0.95 0.18 116);
+  --primary-subtle: oklch(0.97 0.12 116);
+  
+  /* Neutral colors for data tables - lighter backgrounds */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.15 0.02 116);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.15 0.02 116);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.15 0.02 116);
+  
+  /* Secondary colors */
+  --secondary: oklch(0.98 0.01 116);
+  --secondary-foreground: oklch(0.25 0.02 116);
+  --muted: oklch(0.98 0.01 116);
+  --muted-foreground: oklch(0.55 0.02 116);
+  --accent: oklch(0.96 0.02 116);
+  --accent-foreground: oklch(0.25 0.02 116);
+  
+  /* Semantic colors */
+  --destructive: oklch(0.65 0.25 27);
+  --destructive-foreground: oklch(0.98 0.02 116);
+  --success: oklch(0.75 0.20 142);
+  --success-foreground: oklch(0.98 0.02 116);
+  --warning: oklch(0.85 0.18 85);
+  --warning-foreground: oklch(0.25 0.02 116);
+  --info: oklch(0.75 0.15 220);
+  --info-foreground: oklch(0.98 0.02 116);
+  
+  /* Border and input colors */
+  --border: oklch(0.92 0.02 116);
+  --input: oklch(0.94 0.02 116);
+  --ring: oklch(0.93 0.24 116 / 0.3);
+  
+  /* Chart colors for data visualization */
+  --chart-1: oklch(0.93 0.24 116);
+  --chart-2: oklch(0.75 0.20 142);
+  --chart-3: oklch(0.65 0.25 27);
+  --chart-4: oklch(0.75 0.15 220);
+  --chart-5: oklch(0.85 0.18 85);
+  --chart-6: oklch(0.70 0.22 280);
+  --chart-7: oklch(0.80 0.16 45);
+  --chart-8: oklch(0.65 0.20 180);
+  
+  /* Sidebar colors */
+  --sidebar: oklch(0.99 0.005 116);
+  --sidebar-foreground: oklch(0.15 0.02 116);
+  --sidebar-primary: oklch(0.93 0.24 116);
+  --sidebar-primary-foreground: oklch(0.98 0.02 116);
+  --sidebar-accent: oklch(0.96 0.02 116);
+  --sidebar-accent-foreground: oklch(0.25 0.02 116);
+  --sidebar-border: oklch(0.92 0.02 116);
+  --sidebar-ring: oklch(0.93 0.24 116 / 0.3);
+  
+  /* Data table specific colors - lighter */
+  --table-header: oklch(0.99 0.005 116);
+  --table-row-hover: oklch(0.97 0.01 116);
+  --table-row-selected: oklch(0.93 0.24 116 / 0.08);
+  --table-border: oklch(0.90 0.02 116);
+  --table-stripe: oklch(0.995 0.002 116);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark mode color palette - using provided hex values */
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.07 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.07 0 0);
+  --popover-foreground: oklch(1 0 0);
+  
+  /* Secondary colors */
+  --secondary: oklch(0.20 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.20 0 0);
+  --muted-foreground: oklch(0.67 0 0);
+  --accent: oklch(0.25 0 0);
+  --accent-foreground: oklch(1 0 0);
+  
+  /* Semantic colors */
+  --destructive: oklch(0.70 0.25 27);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.80 0.20 142);
+  --success-foreground: oklch(0.07 0 0);
+  --warning: oklch(0.90 0.18 85);
+  --warning-foreground: oklch(0.07 0 0);
+  --info: oklch(0.80 0.15 220);
+  --info-foreground: oklch(1 0 0);
+  
+  /* Border and input colors */
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.20 0 0);
+  --ring: oklch(0.93 0.24 116 / 0.4);
+  
+  /* Chart colors for dark mode */
+  --chart-1: oklch(0.93 0.24 116);
+  --chart-2: oklch(0.80 0.20 142);
+  --chart-3: oklch(0.70 0.25 27);
+  --chart-4: oklch(0.80 0.15 220);
+  --chart-5: oklch(0.90 0.18 85);
+  --chart-6: oklch(0.75 0.22 280);
+  --chart-7: oklch(0.85 0.16 45);
+  --chart-8: oklch(0.70 0.20 180);
+  
+  /* Sidebar colors */
+  --sidebar: oklch(0.07 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.93 0.24 116);
+  --sidebar-primary-foreground: oklch(0.07 0 0);
+  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.93 0.24 116 / 0.4);
+  
+  /* Data table specific colors - using provided hex values */
+  --table-header: oklch(0.20 0 0);
+  --table-row-hover: oklch(0.25 0 0);
+  --table-row-selected: oklch(0.93 0.24 116 / 0.12);
+  --table-border: oklch(0.25 0 0);
+  --table-stripe: oklch(0.12 0 0);
+}
+
+/* Debug: Force border color in dark mode */
+.dark * {
+  border-color: var(--border) !important;
+}
+
+.dark th,
+.dark td {
+  border-bottom-color: var(--table-border) !important;
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+  
+  /* Color mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -99,6 +159,8 @@ body {
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-subtle: var(--primary-subtle);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -106,14 +168,28 @@ body {
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  
+  /* Chart colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  
+  /* Sidebar colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -122,16 +198,244 @@ body {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Data table colors */
+  --color-table-header: var(--table-header);
+  --color-table-row-hover: var(--table-row-hover);
+  --color-table-row-selected: var(--table-row-selected);
+  --color-table-border: var(--table-border);
+  --color-table-stripe: var(--table-stripe);
+  
+  /* Typography scale optimized for data tables */
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  
+  /* Font sizes optimized for data tables */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.125rem;
+  --font-size-2xl: 1.25rem;
+  --font-size-3xl: 1.5rem;
+  
+  /* Line heights for better readability */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    /* Critical base styles - loaded first */
+    html {
+        font-family: var(--font-family-sans);
+        color-scheme: light dark;
+        font-display: swap;
+        scroll-behavior: smooth;
+        font-size: 16px;
+        line-height: var(--line-height-normal);
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        font-family: var(--font-family-sans);
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-normal);
+        font-weight: var(--font-weight-normal);
+        color: var(--color-foreground);
+        background-color: var(--color-background);
+        
+        /* Prevent layout shift during font loading */
+        font-feature-settings:
+            "kern" 1,
+            "liga" 1,
+            "calt" 1,
+            "ss01" 1,
+            "ss02" 1,
+            "ss03" 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        
+        /* Improve performance for large data tables */
+        contain: layout style paint;
+    }
+
+    /* Typography hierarchy for data tables */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-sans);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-tight);
+        color: var(--color-foreground);
+        margin: 0;
+    }
+
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+    h4 { font-size: var(--font-size-lg); }
+    h5 { font-size: var(--font-size-base); }
+    h6 { font-size: var(--font-size-sm); }
+
+    /* Monospace for data and code */
+    code, pre, kbd, samp {
+        font-family: var(--font-family-mono);
+        font-size: 0.875em;
+        font-weight: var(--font-weight-normal);
+    }
+
+    /* Improve focus visibility for accessibility */
+    *:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* Performance optimizations for large DOM */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Optimize animations for better performance */
+    @media (prefers-reduced-motion: no-preference) {
+        [data-state="open"],
+        [data-state="closed"] {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+    }
+
+    /* Optimize images for better loading */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        image-rendering: auto;
+    }
+
+    /* Data table specific base styles */
+    table {
+        font-family: var(--font-family-sans);
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-snug);
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        font-weight: var(--font-weight-semibold);
+        text-align: left;
+        background-color: var(--color-table-header);
+        color: var(--color-foreground);
+        padding: 0.75rem 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    td {
+        padding: 0.75rem 1rem;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: var(--color-table-row-hover);
+    }
+
+    tr[data-selected="true"] {
+        background-color: var(--color-table-row-selected);
+    }
+
+    /* Zebra striping for better readability */
+    tr:nth-child(even) {
+        background-color: var(--color-table-stripe);
+    }
+
+    tr:nth-child(even):hover {
+        background-color: var(--color-table-row-hover);
+    }
 }
+
+/* Optimized text selection - using layer for better cascade control */
+@layer utilities {
+    /* Modern text selection */
+    ::selection {
+        background: var(--color-primary);
+        color: var(--color-primary-foreground);
+        text-shadow: none;
+    }
+
+    /* For Mozilla Firefox */
+    ::-moz-selection {
+        background: var(--color-primary);
+        color: var(--color-primary-foreground);
+        text-shadow: none;
+    }
+
+    /* Improved scrollbar styling for webkit browsers */
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-muted);
+        border-radius: var(--radius-sm);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: var(--radius-sm);
+        border: 2px solid var(--color-muted);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary);
+    }
+
+    /* Print styles optimization */
+    @media print {
+        .no-print {
+            display: none !important;
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+        }
+
+        table {
+            page-break-inside: avoid;
+        }
+    }
+}
+
 /* Custom cursor pointer for interactive elements in the data table */
 button,
 .rdp-button,
@@ -281,10 +585,6 @@ input[type="week"] {
     pointer-events: none !important;
   }
 
-  body[data-resizing="true"] * {
-    cursor: col-resize !important;
-  }
-
   /* Remove transition during active resize for instant feedback */
   .resizable-table th[data-column-resizing="true"] {
     transition: none !important;
@@ -344,7 +644,7 @@ input[type="week"] {
 
   .resizable-table [data-resizing]:hover svg {
     opacity: 1 !important;
-    color: hsl(var(--primary)) !important;
+    color: var(--color-primary) !important;
   }
 }
 
@@ -360,8 +660,8 @@ input[type="week"] {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--background);
-    border-bottom: 1px solid var(--border);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
     flex-shrink: 0;
   }
 
@@ -387,5 +687,82 @@ input[type="week"] {
   .table-container .resizable-table {
     table-layout: fixed;
     width: 100%;
+  }
+}
+
+/* Data table performance optimizations */
+@layer components {
+  /* Virtual scrolling optimizations */
+  .virtual-table {
+    contain: layout style paint;
+    will-change: transform;
+  }
+
+  .virtual-table-row {
+    contain: layout style;
+    will-change: transform;
+  }
+
+  /* Loading states */
+  .table-loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .table-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: -1rem 0 0 -1rem;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Empty state styling */
+  .table-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--color-muted-foreground);
+  }
+
+  .table-empty-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    opacity: 0.5;
+  }
+
+  /* Monospace text for technical identifiers */
+  .font-mono-id {
+    font-family: var(--font-family-mono);
+    font-size: 0.875em;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+
+  .font-mono-id-light {
+    font-family: var(--font-family-mono);
+    font-size: 0.875em;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    opacity: 0.8;
+  }
+
+  .font-mono-id-bold {
+    font-family: var(--font-family-mono);
+    font-size: 0.875em;
+    font-weight: 600;
+    letter-spacing: 0.025em;
   }
 }

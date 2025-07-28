@@ -75,6 +75,7 @@ export function DataTableFilter<TData>({
           locale={locale}
         />
       </div>
+
       <FilterActions
         hasFilters={filters.length > 0}
         actions={actions}

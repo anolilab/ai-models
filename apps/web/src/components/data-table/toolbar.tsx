@@ -101,16 +101,16 @@ export function DataTableToolbar<TData extends ExportableData>({
   const allItems = getAllItems ? getAllItems() : [];
 
   return (
-    <div className={cn("flex flex-wrap items-center justify-between", className)}>
-      <div className="flex flex-1 flex-wrap items-center gap-2">
+    <div className={cn("flex flex-wrap items-center justify-between p-2", className)}>
+      <div>
         {filterColumnsData && filterColumnsData.length > 0 && filterActions && (
-          <DataTableFilter
-            columns={filterColumnsData}
-            filters={filterState}
-            actions={filterActions}
-            strategy={filterStrategy}
-          />
-        )}
+            <DataTableFilter
+              columns={filterColumnsData}
+              filters={filterState}
+              actions={filterActions}
+              strategy={filterStrategy}
+            />
+          )}
       </div>
 
       <div className="flex items-center gap-2">

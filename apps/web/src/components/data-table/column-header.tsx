@@ -29,7 +29,7 @@ export function DataTableColumnHeader<TData, TValue>({
   className
 }: DataTableColumnHeaderProps<TData, TValue>) {
   if (!column.getCanSort()) {
-    return <div className={cn(className)}>{title}</div>;
+    return <div className={cn("uppercase font-medium", className)}>{title}</div>;
   }
 
   // Get the current sort direction for this column
@@ -57,7 +57,7 @@ export function DataTableColumnHeader<TData, TValue>({
             size="sm"
             className="data-[state=open]:bg-accent h-8 focus-visible:ring-0 focus-visible:ring-offset-0"
           >
-            <span>{title}</span>
+            <span className="uppercase font-medium">{title}</span>
             {currentDirection === "desc" ? (
               <ArrowDownIcon className="ml-2 h-4 w-4" />
             ) : currentDirection === "asc" ? (

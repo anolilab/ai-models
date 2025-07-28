@@ -605,7 +605,7 @@ export function DataTable<TData extends ExportableData, TValue>({
   }, [table]);
 
   return (
-    <div className={cn("space-y-4", classes.root)}>
+    <div className={classes.root}>
       {tableConfig.enableToolbar && (
         <DataTableToolbar
           table={table}

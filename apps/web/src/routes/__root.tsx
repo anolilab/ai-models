@@ -8,8 +8,10 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import appCss from "../index.css?url";
 import Loader from "@/components/loader";
+
+import appCss from "../index.css?url";
+import 'unfonts.css'
 
 export interface RouterAppContext {
 }
@@ -43,11 +45,11 @@ function RootDocument() {
   const isFetching = useRouterState({ select: (s) => s.isLoading });
 
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
-      <body suppressHydrationWarning={true} className="h-screen w-screen bg-background">
+      <body suppressHydrationWarning={true} className="h-screen w-screen">
           {isFetching ? <Loader /> : <Outlet />}
         <Toaster richColors />
         <TanStackRouterDevtools position="bottom-left" />
