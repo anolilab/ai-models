@@ -4,17 +4,20 @@ import { cn } from "@/lib/utils"
 
 const Table = React.forwardRef<
   HTMLTableElement,
-  React.ComponentProps<"table">
->(({ className, ...props }, ref) => {
+  Omit<React.ComponentProps<"table">, "className"> & { classNames?: {
+    container?: string;
+    table?: string;
+  } }
+>(({ classNames, ...props }, ref) => {
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      className={cn("relative w-full h-full", classNames?.container)}
     >
       <table
         ref={ref}
         data-slot="table"
-        className={cn("w-full caption-bottom text-sm", className)}
+        className={cn("w-full caption-bottom text-sm", classNames?.table)}
         {...props}
       />
     </div>

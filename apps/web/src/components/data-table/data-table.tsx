@@ -42,6 +42,7 @@ import {
   trackColumnResizing,
   cleanupColumnResizing
 } from "./utils/column-sizing";
+import { cn } from "@/lib/utils";
 
 type ColumnOrderUpdater = (prev: string[]) => string[];
 type RowSelectionUpdater = (prev: Record<string, boolean>) => Record<string, boolean>;
@@ -85,9 +86,8 @@ interface DataTableProps<TData extends ExportableData, TValue> {
     overscan?: number;
     containerHeight?: number;
   };
-
-  // Custom CSS classes for styling
   classes?: {
+    root?: string;
     table?: string;
     toolbar?: string;
   };
@@ -528,7 +528,7 @@ export function DataTable<TData extends ExportableData, TValue>({
   }, [table]);
 
   return (
-    <div className="space-y-4">
+    <div className={cn("space-y-4", classes.root)}>
       {tableConfig.enableToolbar && (
         <DataTableToolbar
           table={table}

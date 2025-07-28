@@ -35,10 +35,11 @@ export function RegularTable<TData>({
   onKeyDown,
   style,
   enableStickyHeader = true,
+  className,
 }: RegularTableProps<TData>) {
   return (
     <BaseTable 
-      className={enableColumnResizing ? "resizable-table" : ""} 
+      className={cn("overflow-auto relative", enableColumnResizing ? "resizable-table" : "", className)} 
       onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
       style={style}
     >

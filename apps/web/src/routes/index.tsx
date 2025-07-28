@@ -500,7 +500,7 @@ const HomeComponent = () => {
                   enableToolbar: true,
                   enableStickyHeader: true,
                   // Performance optimizations
-                  enableRowVirtualization: true,
+                  enableRowVirtualization: false,
                   estimatedRowHeight: 40,
                   virtualizationOverscan: 5,
                   enableDebouncedSearch: true,
