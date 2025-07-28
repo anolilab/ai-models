@@ -73,7 +73,7 @@ export function ActiveFilter<TData, TType extends ColumnDataType>({
   locale = 'en',
 }: ActiveFilterProps<TData, TType>) {
   return (
-    <div className="flex h-7 items-center rounded-2xl border border-border bg-background shadow-xs text-xs">
+    <div className="flex h-7 items-center border border-border bg-background shadow-xs text-xs">
       <FilterSubject column={column} />
       <Separator orientation="vertical" />
       <FilterOperator
@@ -93,7 +93,7 @@ export function ActiveFilter<TData, TType extends ColumnDataType>({
       <Separator orientation="vertical" />
       <Button
         variant="ghost"
-        className="rounded-none rounded-r-2xl text-xs w-7 h-full"
+        className="text-xs w-7 h-full"
         onClick={() => actions.removeFilter(filter.columnId)}
       >
         <X className="size-4 -translate-x-0.5" />

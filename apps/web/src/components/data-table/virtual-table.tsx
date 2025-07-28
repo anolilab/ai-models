@@ -267,7 +267,7 @@ const TableBody = <TData extends ExportableData>({
     overscan: virtualizationOptions.overscan,
     // Ensure virtualization works even with small containers
     scrollPaddingEnd: 0,
-    scrollPaddingStart: 0,
+    scrollPaddingStart: 40, // Add header height as scroll padding
   })
 
   // Force virtualizer to recalculate when container is available
@@ -330,6 +330,7 @@ const TableBody = <TData extends ExportableData>({
       className="grid relative"
       style={{
         height: `${rowVirtualizer.getTotalSize()}px`, //tells scrollbar how big the table is
+        paddingTop: '40px', // Add padding to push content below sticky header
       }}
     >
       {virtualRows.map(virtualRow => {

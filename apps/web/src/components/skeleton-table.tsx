@@ -9,7 +9,7 @@ export const SkeletonTable = ({ rows = 10, columns = 19 }: SkeletonTableProps) =
   return (
     <div className="w-full">
       {/* Table Container */}
-      <div className="border rounded-lg">
+      <div className="border">
         {/* Table Header */}
         <div className="border-b bg-muted/50">
           <div className="flex items-center px-4 py-3">
