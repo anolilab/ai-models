@@ -27,6 +27,11 @@ import { useTableConfig, type TableConfig } from "./utils/table-config";
 import { usePerformanceMonitor } from "./utils/performance-utils";
 
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
+import type { 
+  ColumnConfig, 
+  FilterStrategy, 
+  FiltersState 
+} from "./filter/core/types";
 
 import { RegularTable } from "./regular-table";
 
@@ -91,6 +96,14 @@ interface DataTableProps<TData extends ExportableData, TValue> {
     table?: string;
     toolbar?: string;
   };
+  // External column filters (for data-table-filter integration)
+  externalColumnFilters?: Array<{ id: string; value: unknown }>;
+  
+  // New filter system props
+  filterColumns?: ColumnConfig<TData>[];
+  filterStrategy?: FilterStrategy;
+  onFiltersChange?: (filters: FiltersState) => void;
+  filters?: FiltersState;
 }
 
 export function DataTable<TData extends ExportableData, TValue>({
@@ -102,7 +115,12 @@ export function DataTable<TData extends ExportableData, TValue>({
   pageSizeOptions,
   renderToolbarContent,
   virtualizationOptions = {},
-  classes = {}
+  classes = {},
+  externalColumnFilters,
+  filterColumns,
+  filterStrategy = 'client',
+  onFiltersChange,
+  filters
 }: DataTableProps<TData, TValue>) {
   // Performance monitoring (disabled in test environment)
   if (process.env.NODE_ENV !== 'test') {
@@ -124,12 +142,14 @@ export function DataTable<TData extends ExportableData, TValue>({
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [search, setSearch] = useState("");
-  const [dateRange, setDateRange] = useState<{ from_date: string; to_date: string }>({ from_date: "", to_date: "" });
   const [sortBy, setSortBy] = useState("lastUpdated");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>({});
   // Use regular React state for columnFilters since they contain complex objects
   const [columnFilters, setColumnFilters] = useState<Array<{ id: string; value: unknown }>>([]);
+  
+  // Use external column filters if provided, otherwise use internal state
+  const effectiveColumnFilters = externalColumnFilters || columnFilters;
 
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
@@ -202,53 +222,11 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Convert the sorting to the format TanStack Table expects
   const sorting = useMemo(() => createSortingState(sortBy, sortOrder), [sortBy, sortOrder]);
 
-  // Get current data items with date filtering - optimized for React Compiler
-  const dataItems = useMemo(() => {
-    if (!data || data.length === 0) return [];
-    
-    // If no date range is set, return all data (fast path)
-    if (!dateRange.from_date && !dateRange.to_date) {
-      return data;
-    }
-    
-    // Pre-compile date objects to avoid repeated Date constructor calls
-    const fromDate = dateRange.from_date ? new Date(dateRange.from_date) : null;
-    const toDate = dateRange.to_date ? new Date(dateRange.to_date) : null;
-    
-    // Use a more efficient filtering approach
-    const filteredData = [];
-    for (let i = 0; i < data.length; i++) {
-      const item = data[i];
-      const itemDate = (item as any).lastUpdated || (item as any).releaseDate;
-      
-      // Fast path for items without dates
-      if (!itemDate || itemDate === 'N/A') {
-        filteredData.push(item);
-        continue;
-      }
-      
-      // Parse date once and reuse
-      const itemDateObj = new Date(itemDate);
-      if (isNaN(itemDateObj.getTime())) {
-        filteredData.push(item);
-        continue;
-      }
-      
-      // Check date range
-      if (fromDate && itemDateObj < fromDate) continue;
-      if (toDate && itemDateObj > toDate) continue;
-      
-      filteredData.push(item);
-    }
-    
-    return filteredData;
-  }, [data, dateRange.from_date, dateRange.to_date]);
+  const dataItems = useMemo(() => data || [], [data]);
 
-  // PERFORMANCE FIX: Derive rowSelection from selectedItemIds - React Compiler optimized
   const rowSelection = useMemo(() => {
     if (!dataItems.length) return {};
 
-    // Use a more efficient approach for React Compiler
     const selection: Record<string, boolean> = {};
     const dataLength = dataItems.length;
     
@@ -269,7 +247,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     [getSelectedCount]
   );
 
-  // PERFORMANCE FIX: Optimized row deselection handler
   const handleRowDeselection = useCallback((rowId: string) => {
     if (!dataItems.length) return;
 
@@ -282,7 +259,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     }
   }, [dataItems, idField, removeSelectedItem]);
 
-  // PERFORMANCE FIX: Optimized row selection handler
   const handleRowSelectionChange = useCallback((updaterOrValue: RowSelectionUpdater | Record<string, boolean>) => {
     // Determine the new row selection value
     const newRowSelection = typeof updaterOrValue === 'function'
@@ -423,7 +399,7 @@ export function DataTable<TData extends ExportableData, TValue>({
       sorting,
       columnVisibility,
       rowSelection,
-      columnFilters,
+      columnFilters: effectiveColumnFilters,
       // Only include pagination state if pagination is enabled
       ...(tableConfig.enablePagination ? { pagination } : {}),
       columnSizing,
@@ -443,6 +419,10 @@ export function DataTable<TData extends ExportableData, TValue>({
     manualPagination: false,
     manualSorting: false,
     manualFiltering: false,
+    getRowId: (row: TData) => {
+      const id = row[idField];
+      return id != null ? String(id) : '';
+    },
     onRowSelectionChange: handleRowSelectionChange,
     onSortingChange: handleSortingChange,
     onColumnFiltersChange: setColumnFilters,
@@ -461,13 +441,12 @@ export function DataTable<TData extends ExportableData, TValue>({
     sorting,
     columnVisibility,
     rowSelection,
-    columnFilters,
+    effectiveColumnFilters,
     // Only include pagination-related dependencies if pagination is enabled
     ...(tableConfig.enablePagination ? [pagination, pageSize, handlePaginationChange] : []),
     columnSizing,
     columnOrder,
     search,
-    dateRange,
     handleColumnSizingChange,
     handleColumnOrderChange,
     tableConfig.enableRowSelection,
@@ -476,7 +455,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     handleSortingChange,
     setColumnFilters,
     setSearch,
-    setDateRange,
   ]);
 
   // Set up the table with memoized configuration - React Compiler will optimize this
@@ -484,7 +462,7 @@ export function DataTable<TData extends ExportableData, TValue>({
 
   // Create keyboard navigation handler
   const handleKeyDown = useCallback(
-    createKeyboardNavigationHandler(table, (row, rowIndex) => {
+    createKeyboardNavigationHandler(table, () => {
       // Example action on keyboard activation
     }),
     []
@@ -532,8 +510,6 @@ export function DataTable<TData extends ExportableData, TValue>({
       {tableConfig.enableToolbar && (
         <DataTableToolbar
           table={table}
-          setSearch={setSearch}
-          setDateRange={setDateRange}
           totalSelectedItems={totalSelectedItems}
           deleteSelection={clearAllSelections}
           getSelectedItems={getSelectedItems}
@@ -559,6 +535,10 @@ export function DataTable<TData extends ExportableData, TValue>({
             resetSelection: clearAllSelections
           })}
           className={classes.toolbar}
+          filterColumns={filterColumns}
+          filterStrategy={filterStrategy}
+          onFiltersChange={onFiltersChange}
+          filters={filters}
         />
       )}
         {tableConfig.enableRowVirtualization ? (

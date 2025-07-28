@@ -1,7 +1,7 @@
 import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
-import { FileText, Image as ImageIcon, Video, ScatterChart } from "lucide-react";
+import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar } from "lucide-react";
 import { useMemo, useState, useEffect } from "react";
 import {
   Tooltip,
@@ -12,6 +12,9 @@ import {
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
 import { SkeletonTable } from "@/components/skeleton-table";
+import { useDataTableFilters, DataTableFilter } from "@/components/data-table";
+import { createTSTColumns, createTSTFilters } from "@/components/data-table/filter/integrations/tanstack-table";
+import type { ColumnConfig } from "@/components/data-table/filter/core/types";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -74,8 +77,86 @@ const HomeComponent = () => {
     return processed;
   }, [allModels]);
 
-  const getColumns = (): ColumnDef<typeof tableData[0]>[] => [
+  // Column configurations for data-table-filter - only the ones we want to filter
+  const columnConfigs: ColumnConfig<typeof tableData[0]>[] = useMemo(() => [
+    {
+      id: 'provider',
+      accessor: (row) => row.provider,
+      displayName: 'Provider',
+      icon: Search,
+      type: 'text',
+    },
+    {
+      id: 'model',
+      accessor: (row) => row.model,
+      displayName: 'Model',
+      icon: Search,
+      type: 'text',
+    },
+    {
+      id: 'inputCost',
+      accessor: (row) => {
+        const cost = row.inputCost.replace(/[^0-9.]/g, '');
+        return cost === 'N/A' ? 0 : parseFloat(cost);
+      },
+      displayName: 'Input Cost',
+      icon: Search,
+      type: 'number',
+    },
+    {
+      id: 'outputCost',
+      accessor: (row) => {
+        const cost = row.outputCost.replace(/[^0-9.]/g, '');
+        return cost === 'N/A' ? 0 : parseFloat(cost);
+      },
+      displayName: 'Output Cost',
+      icon: Search,
+      type: 'number',
+    },
+    {
+      id: 'lastUpdated',
+      accessor: (row) => {
+        if (row.lastUpdated === 'N/A') return null;
+        return new Date(row.lastUpdated);
+      },
+      displayName: 'Last Updated',
+      icon: Calendar,
+      type: 'date',
+    },
+    {
+      id: 'toolCall',
+      accessor: (row) => row.toolCall,
+      displayName: 'Tool Call',
+      icon: Search,
+      type: 'option',
+      options: [
+        { label: 'Yes', value: 'Yes' },
+        { label: 'No', value: 'No' },
+      ],
+    },
+    {
+      id: 'reasoning',
+      accessor: (row) => row.reasoning,
+      displayName: 'Reasoning',
+      icon: Search,
+      type: 'option',
+      options: [
+        { label: 'Yes', value: 'Yes' },
+        { label: 'No', value: 'No' },
+      ],
+    },
+  ], []);
+
+  // Set up data-table-filter
+  const { columns: filterColumns, filters, actions, strategy } = useDataTableFilters({
+    strategy: 'client',
+    data: tableData,
+    columnsConfig: columnConfigs,
+  });
+
+  const baseColumns: ColumnDef<typeof tableData[0]>[] = [
     { 
+      id: "provider",
       accessorKey: "provider", 
       size: 150,
       minSize: 100,
@@ -92,6 +173,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "model",
       accessorKey: "model", 
       size: 200,
       minSize: 120,
@@ -108,6 +190,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "providerId",
       accessorKey: "providerId", 
       size: 120,
       minSize: 80,
@@ -123,6 +206,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "modelId",
       accessorKey: "modelId", 
       size: 180,
       minSize: 100,
@@ -138,6 +222,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "toolCall",
       accessorKey: "toolCall", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Tool Call" />
@@ -154,6 +239,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "reasoning",
       accessorKey: "reasoning", 
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Reasoning" />
@@ -240,6 +326,7 @@ const HomeComponent = () => {
       },
     },
     { 
+      id: "inputCost",
       accessorKey: "inputCost", 
       size: 120,
       minSize: 80,
@@ -257,6 +344,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "outputCost",
       accessorKey: "outputCost", 
       size: 120,
       minSize: 80,
@@ -381,6 +469,7 @@ const HomeComponent = () => {
       }
     },
     { 
+      id: "lastUpdated",
       accessorKey: "lastUpdated", 
       size: 140,
       minSize: 100,
@@ -397,6 +486,18 @@ const HomeComponent = () => {
       }
     },
   ];
+
+  // Create integrated columns with TST filter functions
+  const columns = useMemo(() => 
+    createTSTColumns({
+      columns: baseColumns,
+      configs: filterColumns,
+    }),
+    [baseColumns, filterColumns]
+  );
+
+  // Create TST-compatible filters
+  const tstFilters = useMemo(() => createTSTFilters(filters), [filters]);
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -433,9 +534,18 @@ const HomeComponent = () => {
         </header>
         <main>
             <ClientOnly fallback={<SkeletonTable rows={15} columns={19} />}>
+              <div className="p-4">
+                <DataTableFilter
+                  columns={filterColumns}
+                  filters={filters}
+                  actions={actions}
+                  strategy={strategy}
+                />
+              </div>
               <DataTable<typeof tableData[0], any>
-                getColumns={getColumns}
-                      data={tableData}
+                getColumns={() => columns}
+                data={tableData}
+                externalColumnFilters={tstFilters}
                 idField="modelId"
                 exportConfig={{
                   entityName: "models",
@@ -506,8 +616,8 @@ const HomeComponent = () => {
                 config={{
                   enableRowSelection: false,
                   enableColumnResizing: false,
-                  enableSearch: true,
-                  enableDateFilter: true,
+                  enableSearch: false, // Disable old search since we're using data-table-filter
+                  enableDateFilter: false, // Disable old date filter since we're using data-table-filter
                   enablePagination: false,
                   enableColumnVisibility: true,
                   enableToolbar: true,
