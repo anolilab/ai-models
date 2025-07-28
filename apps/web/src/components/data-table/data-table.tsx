@@ -29,9 +29,9 @@ import { usePerformanceMonitor } from "./utils/performance-utils";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import type { 
   ColumnConfig, 
-  FilterStrategy, 
-  FiltersState 
+  FilterStrategy
 } from "./filter/core/types";
+import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
 
 import { RegularTable } from "./regular-table";
 
@@ -102,8 +102,6 @@ interface DataTableProps<TData extends ExportableData, TValue> {
   // New filter system props
   filterColumns?: ColumnConfig<TData>[];
   filterStrategy?: FilterStrategy;
-  onFiltersChange?: (filters: FiltersState) => void;
-  filters?: FiltersState;
 }
 
 export function DataTable<TData extends ExportableData, TValue>({
@@ -118,9 +116,7 @@ export function DataTable<TData extends ExportableData, TValue>({
   classes = {},
   externalColumnFilters,
   filterColumns,
-  filterStrategy = 'client',
-  onFiltersChange,
-  filters
+  filterStrategy = 'client'
 }: DataTableProps<TData, TValue>) {
   // Performance monitoring (disabled in test environment)
   if (process.env.NODE_ENV !== 'test') {
@@ -153,6 +149,14 @@ export function DataTable<TData extends ExportableData, TValue>({
 
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
+
+  // Set up data-table-filter if filterColumns are provided
+  const filterData = useMemo(() => data, [data]);
+  const { columns: filterColumnsData, filters, actions, strategy: filterStrategyData } = useDataTableFilters({
+    strategy: filterStrategy,
+    data: filterData,
+    columnsConfig: filterColumns || [],
+  });
 
   // PERFORMANCE FIX: Use Set for selection state when virtualization is enabled, Record otherwise
   const [selectedItemIds, setSelectedItemIds] = useState<Record<string | number, boolean> | Set<string>>(
@@ -535,10 +539,10 @@ export function DataTable<TData extends ExportableData, TValue>({
             resetSelection: clearAllSelections
           })}
           className={classes.toolbar}
-          filterColumns={filterColumns}
-          filterStrategy={filterStrategy}
-          onFiltersChange={onFiltersChange}
+          filterColumns={filterColumnsData}
+          filterStrategy={filterStrategyData}
           filters={filters}
+          filterActions={actions}
         />
       )}
         {tableConfig.enableRowVirtualization ? (

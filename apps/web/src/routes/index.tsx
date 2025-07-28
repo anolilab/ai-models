@@ -12,8 +12,6 @@ import {
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
 import { SkeletonTable } from "@/components/skeleton-table";
-import { useDataTableFilters, DataTableFilter } from "@/components/data-table";
-import { createTSTColumns, createTSTFilters } from "@/components/data-table/filter/integrations/tanstack-table";
 import type { ColumnConfig } from "@/components/data-table/filter/core/types";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
@@ -147,12 +145,6 @@ const HomeComponent = () => {
     },
   ], []);
 
-  // Set up data-table-filter
-  const { columns: filterColumns, filters, actions, strategy } = useDataTableFilters({
-    strategy: 'client',
-    data: tableData,
-    columnsConfig: columnConfigs,
-  });
 
   const baseColumns: ColumnDef<typeof tableData[0]>[] = [
     { 
@@ -487,17 +479,8 @@ const HomeComponent = () => {
     },
   ];
 
-  // Create integrated columns with TST filter functions
-  const columns = useMemo(() => 
-    createTSTColumns({
-      columns: baseColumns,
-      configs: filterColumns,
-    }),
-    [baseColumns, filterColumns]
-  );
-
-  // Create TST-compatible filters
-  const tstFilters = useMemo(() => createTSTFilters(filters), [filters]);
+  // Use base columns directly since DataTable handles filtering internally
+  const columns = useMemo(() => baseColumns, [baseColumns]);
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -534,19 +517,12 @@ const HomeComponent = () => {
         </header>
         <main>
             <ClientOnly fallback={<SkeletonTable rows={15} columns={19} />}>
-              <div className="p-4">
-                <DataTableFilter
-                  columns={filterColumns}
-                  filters={filters}
-                  actions={actions}
-                  strategy={strategy}
-                />
-              </div>
               <DataTable<typeof tableData[0], any>
                 getColumns={() => columns}
                 data={tableData}
-                externalColumnFilters={tstFilters}
                 idField="modelId"
+                filterColumns={columnConfigs}
+                filterStrategy="client"
                 exportConfig={{
                   entityName: "models",
                   columnMapping: {

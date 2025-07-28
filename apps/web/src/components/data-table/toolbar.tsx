@@ -17,7 +17,9 @@ import type { TableConfig } from "./utils/table-config";
 import type { 
   ColumnConfig, 
   FiltersState, 
-  FilterStrategy
+  FilterStrategy,
+  Column,
+  DataTableFilterActions
 } from "./filter/core/types";
 import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
 import { cn } from "@/lib/utils";
@@ -54,11 +56,11 @@ interface DataTableToolbarProps<TData extends ExportableData> {
   transformFunction?: DataTransformFunction<TData>;
   customToolbarComponent?: React.ReactNode;
   className?: string;
-  // New filter props
-  filterColumns?: ColumnConfig<TData>[];
+  // New filter props - processed data from DataTable
+  filterColumns?: Column<TData>[];
   filterStrategy?: FilterStrategy;
-  onFiltersChange?: (filters: FiltersState) => void;
   filters?: FiltersState;
+  filterActions?: DataTableFilterActions;
 }
 
 export function DataTableToolbar<TData extends ExportableData>({
@@ -79,18 +81,12 @@ export function DataTableToolbar<TData extends ExportableData>({
   className,
   filterColumns,
   filterStrategy = 'client',
-  onFiltersChange,
   filters,
+  filterActions,
 }: DataTableToolbarProps<TData>) {
-  // Set up filter system if filter columns are provided
-  const filterData = getAllItems ? getAllItems() : [];
-  const { filters: filterState, actions: filterActions, columns: filterColumnsData } = useDataTableFilters({
-    strategy: filterStrategy,
-    data: filterData,
-    columnsConfig: filterColumns || [],
-    filters,
-    onFiltersChange: onFiltersChange as React.Dispatch<React.SetStateAction<FiltersState>> | undefined,
-  });
+  // Use filter data passed from DataTable
+  const filterState = filters || [];
+  const filterColumnsData = filterColumns || [];
 
 
 
@@ -107,7 +103,7 @@ export function DataTableToolbar<TData extends ExportableData>({
   return (
     <div className={cn("flex flex-wrap items-center justify-between", className)}>
       <div className="flex flex-1 flex-wrap items-center gap-2">
-        {filterColumnsData && filterColumnsData.length > 0 && (
+        {filterColumnsData && filterColumnsData.length > 0 && filterActions && (
           <DataTableFilter
             columns={filterColumnsData}
             filters={filterState}
