@@ -13,6 +13,9 @@ import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
 import { SkeletonTable } from "@/components/skeleton-table";
 import type { ColumnConfig } from "@/components/data-table/filter/core/types";
+import { createTSTColumns } from "@/components/data-table/filter/integrations/tanstack-table";
+import { textFilterFn, numberFilterFn, dateFilterFn } from "@/components/data-table/filter/integrations/tanstack-table/filter-fns";
+import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -159,6 +162,7 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "text",
+      filterFn: textFilterFn,
       meta: { 
         label: "Provider",
         variant: "text",
@@ -176,6 +180,7 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "text",
+      filterFn: textFilterFn,
       meta: { 
         label: "Model",
         variant: "text",
@@ -222,6 +227,10 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "basic",
+      filterFn: (row, columnId, filterValue) => {
+        const value = row.getValue<string>(columnId);
+        return optionFilterFn(value, filterValue);
+      },
       meta: { 
         label: "Tool Call",
         variant: "select",
@@ -239,6 +248,10 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "basic",
+      filterFn: (row, columnId, filterValue) => {
+        const value = row.getValue<string>(columnId);
+        return optionFilterFn(value, filterValue);
+      },
       meta: { 
         label: "Reasoning",
         variant: "select",
@@ -329,6 +342,7 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
+      filterFn: numberFilterFn,
       meta: { 
         label: "Input Cost",
         variant: "number",
@@ -347,6 +361,7 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "alphanumeric",
+      filterFn: numberFilterFn,
       meta: { 
         label: "Output Cost",
         variant: "number",
@@ -472,6 +487,7 @@ const HomeComponent = () => {
       ),
       enableColumnFilter: true,
       sortingFn: "datetime",
+      filterFn: dateFilterFn,
       meta: { 
         label: "Last Updated",
         variant: "text",
@@ -598,7 +614,7 @@ const HomeComponent = () => {
                   enableToolbar: true,
                   enableStickyHeader: true,
                   // Performance optimizations
-                  enableRowVirtualization: false,
+                  enableRowVirtualization: true,
                   estimatedRowHeight: 40,
                   virtualizationOverscan: 5,
                 }}

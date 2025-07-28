@@ -32,6 +32,7 @@ import type {
   FilterStrategy
 } from "./filter/core/types";
 import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
+import { createTSTFilters } from "./filter/integrations/tanstack-table";
 
 import { RegularTable } from "./regular-table";
 
@@ -144,9 +145,6 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Use regular React state for columnFilters since they contain complex objects
   const [columnFilters, setColumnFilters] = useState<Array<{ id: string; value: unknown }>>([]);
   
-  // Use external column filters if provided, otherwise use internal state
-  const effectiveColumnFilters = externalColumnFilters || columnFilters;
-
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
 
@@ -157,6 +155,19 @@ export function DataTable<TData extends ExportableData, TValue>({
     data: filterData,
     columnsConfig: filterColumns || [],
   });
+
+  // Convert filter system filters to TanStack Table column filters
+  const convertedColumnFilters = useMemo(() => {
+    if (!filters || filters.length === 0) {
+      return [];
+    }
+    
+    const converted = createTSTFilters(filters);
+    return converted;
+  }, [filters]);
+
+  // Use converted filters as external column filters
+  const effectiveColumnFilters = convertedColumnFilters.length > 0 ? convertedColumnFilters : (externalColumnFilters || columnFilters);
 
   // PERFORMANCE FIX: Use Set for selection state when virtualization is enabled, Record otherwise
   const [selectedItemIds, setSelectedItemIds] = useState<Record<string | number, boolean> | Set<string>>(

@@ -26,6 +26,7 @@ export function DataTableFilter<TData>({
   locale = 'en',
 }: DataTableFilterProps<TData>) {
   const isMobile = useIsMobile()
+  
   if (isMobile) {
     return (
       <div className="flex w-full items-start justify-between gap-2">
