@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   type ColumnSizingState,
-  flexRender,
   getCoreRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
@@ -14,17 +13,13 @@ import {
   type ColumnDef,
   type ColumnResizeMode
 } from "@tanstack/react-table";
-import { useVirtualizer } from "@tanstack/react-virtual";
-import { useEffect, useCallback, useMemo, useRef, useState } from "react";
+
+import { useEffect, useCallback, useMemo, useState } from "react";
 
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+  VirtualizedTable,
+  type VirtualizationOptions
+} from "@/components/data-table/virtual-table";
 
 import { DataTablePagination } from "./pagination";
 import { DataTableToolbar } from "./toolbar";
@@ -33,7 +28,7 @@ import { usePerformanceMonitor } from "./utils/performance-utils";
 
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 
-import { DataTableResizer } from "./data-table-resizer";
+import { RegularTable } from "./regular-table";
 
 import {
   createSortingHandler,
@@ -90,6 +85,12 @@ interface DataTableProps<TData extends ExportableData, TValue> {
     overscan?: number;
     containerHeight?: number;
   };
+
+  // Custom CSS classes for styling
+  classes?: {
+    table?: string;
+    toolbar?: string;
+  };
 }
 
 export function DataTable<TData extends ExportableData, TValue>({
@@ -100,7 +101,8 @@ export function DataTable<TData extends ExportableData, TValue>({
   idField = 'id' as keyof TData,
   pageSizeOptions,
   renderToolbarContent,
-  virtualizationOptions = {}
+  virtualizationOptions = {},
+  classes = {}
 }: DataTableProps<TData, TValue>) {
   // Performance monitoring (disabled in test environment)
   if (process.env.NODE_ENV !== 'test') {
@@ -353,9 +355,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     [page, pageSize]
   );
 
-  // Ref for the table container for keyboard navigation
-  const tableContainerRef = useRef<HTMLDivElement>(null);
-
   // Get columns with the deselection handler - React Compiler will optimize this
   const columns = useMemo(() => {
     // Only pass deselection handler if row selection is enabled
@@ -415,8 +414,6 @@ export function DataTable<TData extends ExportableData, TValue>({
 
     setColumnOrder(newColumnOrder);
   }, [columnOrder]);
-
-
 
   // Memoize table configuration to prevent unnecessary re-renders
   const tableOptions = useMemo(() => ({
@@ -484,19 +481,6 @@ export function DataTable<TData extends ExportableData, TValue>({
 
   // Set up the table with memoized configuration - React Compiler will optimize this
   const table = useReactTable<TData>(tableOptions);
-
-  // VIRTUALIZATION SETUP (only when enabled)
-  const { rows } = table.getRowModel();
-  
-  const rowVirtualizer = useVirtualizer({
-    count: rows.length,
-    getScrollElement: () => tableContainerRef.current,
-    estimateSize: () => virtualizationOptions.estimatedRowHeight || tableConfig.estimatedRowHeight,
-    overscan: virtualizationOptions.overscan || tableConfig.virtualizationOverscan,
-  });
-
-  const virtualRows = rowVirtualizer.getVirtualItems();
-  const totalSize = rowVirtualizer.getTotalSize();
 
   // Create keyboard navigation handler
   const handleKeyDown = useCallback(
@@ -574,375 +558,30 @@ export function DataTable<TData extends ExportableData, TValue>({
             totalSelectedCount: totalSelectedItems,
             resetSelection: clearAllSelections
           })}
+          className={classes.toolbar}
         />
       )}
-
-      {tableConfig.enableStaticHeader ? (
-        // Static header layout - header stays fixed, body scrolls
-        <div 
-          className="rounded-md border table-container"
-          data-testid="data-table"
-          style={tableConfig.enableRowVirtualization ? {
-            height: (virtualizationOptions.containerHeight || 400) + 50, // Add extra space for header
-          } : undefined}
-        >
-          {/* Static Header */}
-          <div className="sticky top-0 z-10 bg-background border-b">
-            <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-              <TableHeader>
-                {table.getHeaderGroups().map((headerGroup) => (
-                  <TableRow
-                    key={headerGroup.id}
-                  >
-                    {headerGroup.headers.map((header) => (
-                      <TableHead
-                        className="p-2 relative text-left group/th"
-                        key={header.id}
-                        colSpan={header.colSpan}
-                        scope="col"
-                        tabIndex={-1}
-                        style={{
-                          width: header.getSize(),
-                        }}
-                        data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                        {tableConfig.enableColumnResizing && header.column.getCanResize() && (
-                          <DataTableResizer header={header} />
-                        )}
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableHeader>
-            </Table>
-          </div>
-          
-          {/* Scrollable Body */}
-          <div
-            ref={tableContainerRef}
-            className="overflow-y-auto flex-1"
-            aria-label="Data table body"
+        {tableConfig.enableRowVirtualization ? (
+          <VirtualizedTable 
+            table={table} 
             onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-            style={tableConfig.enableRowVirtualization ? {
-              height: virtualizationOptions.containerHeight || 400,
-            } : undefined}
-          >
-            {tableConfig.enableRowVirtualization && virtualRows.length > 0 ? (
-              // Virtualized layout for static header
-              <div
-                style={{
-                  height: `${totalSize}px`,
-                  width: '100%',
-                  position: 'relative',
-                }}
-              >
-                <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-                  <TableBody>
-                    {virtualRows.map((virtualRow) => {
-                      const row = rows[virtualRow.index];
-                      return (
-                        <TableRow
-                          key={row.id}
-                          id={`row-${virtualRow.index}`}
-                          data-row-index={virtualRow.index}
-                          data-state={row.getIsSelected() ? "selected" : undefined}
-                          tabIndex={0}
-                          aria-selected={row.getIsSelected()}
-                          onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                          onFocus={(e) => {
-                            // Add a data attribute to the currently focused row
-                            for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                              el.removeAttribute('data-focused');
-                            }
-                            e.currentTarget.setAttribute('data-focused', 'true');
-                          }}
-                          ref={rowVirtualizer.measureElement}
-                          data-index={virtualRow.index}
-                          style={{
-                            height: `${virtualRow.size}px`,
-                            transform: `translateY(${virtualRow.start}px)`,
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                          }}
-                        >
-                          {row.getVisibleCells().map((cell, cellIndex) => (
-                            <TableCell
-                              className="p-2 truncate text-left"
-                              key={cell.id}
-                              id={`cell-${virtualRow.index}-${cellIndex}`}
-                              data-cell-index={cellIndex}
-                              style={{
-                                width: cell.column.getSize() + 5,
-                              }}
-                            >
-                              {flexRender(
-                                cell.column.columnDef.cell,
-                                cell.getContext(),
-                              )}
-                            </TableCell>
-                          ))}
-                        </TableRow>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
-              </div>
-            ) : (
-              // Non-virtualized layout for static header (fallback when virtualization fails or is disabled)
-              <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-                <TableBody>
-                  {table.getRowModel().rows?.length ? (
-                    // Data rows
-                    table.getRowModel().rows.map((row, rowIndex) => (
-                      <TableRow
-                        key={row.id}
-                        id={`row-${rowIndex}`}
-                        data-row-index={rowIndex}
-                        data-state={row.getIsSelected() ? "selected" : undefined}
-                        tabIndex={0}
-                        aria-selected={row.getIsSelected()}
-                        onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                        onFocus={(e) => {
-                          // Add a data attribute to the currently focused row
-                          for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                            el.removeAttribute('data-focused');
-                          }
-                          e.currentTarget.setAttribute('data-focused', 'true');
-                        }}
-                      >
-                        {row.getVisibleCells().map((cell, cellIndex) => (
-                          <TableCell
-                            className="p-2 truncate text-left"
-                            key={cell.id}
-                            id={`cell-${rowIndex}-${cellIndex}`}
-                            data-cell-index={cellIndex}
-                            style={{
-                              width: cell.column.getSize() + 5,
-                            }}
-                          >
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext(),
-                            )}
-                          </TableCell>
-                        ))}
-                      </TableRow>
-                    ))
-                  ) : (
-                    // No results
-                    <TableRow>
-                      <TableCell
-                        colSpan={columns.length}
-                        className="h-24 text-left truncate"
-                      >
-                        No results.
-                      </TableCell>
-                    </TableRow>
-                  )}
-                </TableBody>
-              </Table>
-            )}
-          </div>
-        </div>
-      ) : (
-        // Regular layout - entire table scrolls together
-        <div
-          ref={tableContainerRef}
-          className="overflow-y-auto rounded-md border table-container"
-          data-testid="data-table"
-          aria-label="Data table"
-          onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-          style={tableConfig.enableRowVirtualization ? {
-            height: virtualizationOptions.containerHeight || 400,
-          } : undefined}
-        >
-          {tableConfig.enableRowVirtualization && virtualRows.length > 0 ? (
-            // Virtualized layout
-            <div
-              style={{
-                height: `${totalSize}px`,
-                width: '100%',
-                position: 'relative',
-              }}
-            >
-              <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-                <TableHeader>
-                  {table.getHeaderGroups().map((headerGroup) => (
-                    <TableRow
-                      key={headerGroup.id}
-                    >
-                      {headerGroup.headers.map((header) => (
-                        <TableHead
-                          className="p-2 relative text-left group/th"
-                          key={header.id}
-                          colSpan={header.colSpan}
-                          scope="col"
-                          tabIndex={-1}
-                          style={{
-                            width: header.getSize(),
-                          }}
-                          data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
-                        >
-                          {header.isPlaceholder
-                            ? null
-                            : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext(),
-                              )}
-                          {tableConfig.enableColumnResizing && header.column.getCanResize() && (
-                            <DataTableResizer header={header} />
-                          )}
-                        </TableHead>
-                      ))}
-                    </TableRow>
-                  ))}
-                </TableHeader>
-
-                <TableBody>
-                  {virtualRows.map((virtualRow) => {
-                    const row = rows[virtualRow.index];
-                    return (
-                      <TableRow
-                        key={row.id}
-                        data-index={virtualRow.index}
-                        ref={rowVirtualizer.measureElement}
-                        data-state={row.getIsSelected() ? "selected" : undefined}
-                        tabIndex={0}
-                        aria-selected={row.getIsSelected()}
-                        onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                        onFocus={(e) => {
-                          // Add a data attribute to the currently focused row
-                          for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                            el.removeAttribute('data-focused');
-                          }
-                          e.currentTarget.setAttribute('data-focused', 'true');
-                        }}
-                        style={{
-                          height: `${virtualRow.size}px`,
-                          transform: `translateY(${virtualRow.start}px)`,
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                        }}
-                      >
-                        {row.getVisibleCells().map((cell, cellIndex) => (
-                          <TableCell
-                            className="p-2 truncate text-left"
-                            key={cell.id}
-                            data-cell-index={cellIndex}
-                            style={{
-                              width: cell.column.getSize() + 5,
-                            }}
-                          >
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext(),
-                            )}
-                          </TableCell>
-                        ))}
-                      </TableRow>
-                    )
-                  })}
-                </TableBody>
-              </Table>
-            </div>
-          ) : (
-            // Regular layout (non-virtualized)
-            <Table className={tableConfig.enableColumnResizing ? "resizable-table" : ""}>
-              <TableHeader>
-                {table.getHeaderGroups().map((headerGroup) => (
-                  <TableRow
-                    key={headerGroup.id}
-                  >
-                    {headerGroup.headers.map((header) => (
-                      <TableHead
-                        className="p-2 relative text-left group/th"
-                        key={header.id}
-                        colSpan={header.colSpan}
-                        scope="col"
-                        tabIndex={-1}
-                        style={{
-                          width: header.getSize(),
-                        }}
-                        data-column-resizing={header.column.getIsResizing() ? "true" : undefined}
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                        {tableConfig.enableColumnResizing && header.column.getCanResize() && (
-                          <DataTableResizer header={header} />
-                        )}
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableHeader>
-
-              <TableBody>
-                {table.getRowModel().rows?.length ? (
-                  table.getRowModel().rows.map((row, rowIndex) => (
-                    <TableRow
-                      key={row.id}
-                      id={`row-${rowIndex}`}
-                      data-row-index={rowIndex}
-                      data-state={row.getIsSelected() ? "selected" : undefined}
-                      tabIndex={0}
-                      aria-selected={row.getIsSelected()}
-                      onClick={tableConfig.enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                      onFocus={(e) => {
-                        // Add a data attribute to the currently focused row
-                        for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                          el.removeAttribute('data-focused');
-                        }
-                        e.currentTarget.setAttribute('data-focused', 'true');
-                      }}
-                    >
-                      {row.getVisibleCells().map((cell, cellIndex) => (
-                        <TableCell
-                          className="p-2 truncate text-left"
-                          key={cell.id}
-                          id={`cell-${rowIndex}-${cellIndex}`}
-                          data-cell-index={cellIndex}
-                          style={{
-                            width: cell.column.getSize() + 5,
-                          }}
-                        >
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </TableCell>
-                      ))}
-                    </TableRow>
-                  ))
-                ) : (
-                  // No results
-                  <TableRow>
-                    <TableCell
-                      colSpan={columns.length}
-                      className="h-24 text-left truncate"
-                    >
-                      No results.
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
-          )}
-        </div>
-      )}
+            enableStickyHeader={tableConfig.enableStickyHeader}
+            virtualizationOptions={virtualizationOptions as Required<VirtualizationOptions>}
+            columns={columns}
+            className={classes.table}
+          />
+        ) : (
+          <RegularTable 
+            table={table} 
+            enableColumnResizing={tableConfig.enableColumnResizing}
+            enableClickRowSelect={tableConfig.enableClickRowSelect}
+            enableKeyboardNavigation={tableConfig.enableKeyboardNavigation}
+            columns={columns}
+            onKeyDown={handleKeyDown}
+            enableStickyHeader={tableConfig.enableStickyHeader}
+            className={classes.table}
+          />
+        )}
 
       {tableConfig.enablePagination && (
         <DataTablePagination

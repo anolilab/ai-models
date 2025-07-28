@@ -3,3 +3,4 @@ node_modules
 
 tools/download/providers
 tools/download/all-models.json
+port-*.text

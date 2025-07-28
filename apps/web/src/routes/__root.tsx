@@ -43,14 +43,12 @@ function RootDocument() {
   const isFetching = useRouterState({ select: (s) => s.isLoading });
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body suppressHydrationWarning>
-        <div className="grid h-svh grid-rows-[auto_1fr]">
+      <body suppressHydrationWarning={true} className="h-screen w-screen bg-background">
           {isFetching ? <Loader /> : <Outlet />}
-        </div>
         <Toaster richColors />
         <TanStackRouterDevtools position="bottom-left" />
         <Scripts />

@@ -19,6 +19,7 @@ import type { DataTransformFunction, ExportableData } from "./utils/export-utils
 import type { TableConfig } from "./utils/table-config";
 import { formatDate } from "./utils/date-format";
 import { useDebouncedSearch } from "./utils/performance-utils";
+import { cn } from "@/lib/utils";
 
 // Helper functions for component sizing
 const getInputSizeClass = (size: 'sm' | 'default' | 'lg') => {
@@ -68,6 +69,7 @@ interface DataTableToolbarProps<TData extends ExportableData> {
   headers?: string[];
   transformFunction?: DataTransformFunction<TData>;
   customToolbarComponent?: React.ReactNode;
+  className?: string;
 }
 
 export function DataTableToolbar<TData extends ExportableData>({
@@ -87,6 +89,7 @@ export function DataTableToolbar<TData extends ExportableData>({
   headers,
   transformFunction,
   customToolbarComponent,
+  className,
 }: DataTableToolbarProps<TData>) {
   const tableFiltered = table.getState().columnFilters.length > 0;
 
@@ -167,7 +170,7 @@ export function DataTableToolbar<TData extends ExportableData>({
   const allItems = getAllItems ? getAllItems() : [];
 
   return (
-    <div className="flex flex-wrap items-center justify-between">
+    <div className={cn("flex flex-wrap items-center justify-between", className)}>
       <div className="flex flex-1 flex-wrap items-center gap-2">
         {config.enableSearch && (
           <Input
@@ -175,6 +178,7 @@ export function DataTableToolbar<TData extends ExportableData>({
             value={localSearch}
             onChange={handleSearchChange}
             className={`w-[150px] lg:w-[250px] ${getInputSizeClass(config.size)}`}
+            autoComplete="off"
           />
         )}
 
