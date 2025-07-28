@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useCallback } from 'react'
 import {
   flexRender,
 } from '@tanstack/react-table'
@@ -362,12 +362,13 @@ const TableBodyRow = <TData extends ExportableData>({
 }: TableBodyRowProps<TData>) => {
   const visibleCells = row.getVisibleCells()
   const virtualColumns = columnVirtualizer.getVirtualItems()
+
   return (
     <BaseTableRow
-      data-index={virtualRow.index} //needed for dynamic row height measurement
       ref={node => rowVirtualizer.measureElement(node)} //measure dynamic row height
       key={row.id}
       id={`row-${virtualRow.index}`}
+      data-index={virtualRow.index} //needed for dynamic row height measurement
       data-row-index={virtualRow.index}
       data-state={row.getIsSelected() ? "selected" : undefined}
       tabIndex={0}

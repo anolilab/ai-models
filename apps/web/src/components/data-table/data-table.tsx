@@ -50,6 +50,37 @@ import {
 } from "./utils/column-sizing";
 import { cn } from "@/lib/utils";
 
+// Error boundary component for table rendering
+class TableErrorBoundary extends React.Component<
+  { children: React.ReactNode; fallback?: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: React.ReactNode; fallback?: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(): { hasError: boolean } {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Table rendering error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        <div className="p-4 text-center text-muted-foreground">
+          Something went wrong rendering the table. Please refresh the page.
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 type ColumnOrderUpdater = (prev: string[]) => string[];
 type RowSelectionUpdater = (prev: Record<string, boolean>) => Record<string, boolean>;
 
@@ -148,6 +179,9 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
 
+  // Loading state for table operations
+  const [isLoading, setIsLoading] = useState(false);
+
   // Set up data-table-filter if filterColumns are provided
   const filterData = useMemo(() => data, [data]);
   const { columns: filterColumnsData, filters, actions, strategy: filterStrategyData } = useDataTableFilters({
@@ -165,8 +199,16 @@ export function DataTable<TData extends ExportableData, TValue>({
     return createTSTFilters(filters);
   }, [filters]);
 
-  // Use converted filters as external column filters
-  const effectiveColumnFilters = convertedColumnFilters.length > 0 ? convertedColumnFilters : (externalColumnFilters || columnFilters);
+  // Use converted filters as external column filters with better memoization
+  const effectiveColumnFilters = useMemo(() => {
+    if (convertedColumnFilters.length > 0) {
+      return convertedColumnFilters;
+    }
+    if (externalColumnFilters && externalColumnFilters.length > 0) {
+      return externalColumnFilters;
+    }
+    return columnFilters;
+  }, [convertedColumnFilters, externalColumnFilters, columnFilters]);
 
   // PERFORMANCE FIX: Use Set for selection state when virtualization is enabled, Record otherwise
   const [selectedItemIds, setSelectedItemIds] = useState<Record<string | number, boolean> | Set<string>>(
@@ -279,6 +321,9 @@ export function DataTable<TData extends ExportableData, TValue>({
       ? updaterOrValue(rowSelection)
       : updaterOrValue;
 
+    // Use a more efficient batch update approach
+    const updates = new Map<string, boolean>();
+    
     // Process changes for current page
     if (dataItems.length) {
       // First handle explicit selections in newRowSelection
@@ -287,12 +332,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         if (rowIndex >= 0 && rowIndex < dataItems.length) {
           const item = dataItems[rowIndex];
           const itemId = String(item[idField]);
-
-          if (isSelected) {
-            addSelectedItem(itemId);
-          } else {
-            removeSelectedItem(itemId);
-          }
+          updates.set(itemId, isSelected);
         }
       }
 
@@ -303,11 +343,38 @@ export function DataTable<TData extends ExportableData, TValue>({
 
         // If item was selected but isn't in new selection, deselect it
         if (isItemSelected(itemId) && newRowSelection[rowId] === undefined) {
-          removeSelectedItem(itemId);
+          updates.set(itemId, false);
         }
       });
     }
-  }, [dataItems, rowSelection, idField, addSelectedItem, removeSelectedItem, isItemSelected]);
+
+    // Apply all updates in a single batch
+    if (tableConfig.enableRowVirtualization) {
+      setSelectedItemIds(prev => {
+        const next = new Set(prev as Set<string>);
+        updates.forEach((isSelected, itemId) => {
+          if (isSelected) {
+            next.add(itemId);
+          } else {
+            next.delete(itemId);
+          }
+        });
+        return next;
+      });
+    } else {
+      setSelectedItemIds(prev => {
+        const next = { ...(prev as Record<string, boolean>) };
+        updates.forEach((isSelected, itemId) => {
+          if (isSelected) {
+            next[itemId] = true;
+          } else {
+            delete next[itemId];
+          }
+        });
+        return next;
+      });
+    }
+  }, [dataItems, rowSelection, idField, isItemSelected, tableConfig.enableRowVirtualization]);
 
   // Get selected items data - React Compiler optimized
   const getSelectedItems = useCallback(async () => {
@@ -348,7 +415,19 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Get columns with the deselection handler - React Compiler will optimize this
   const columns = useMemo(() => {
     // Only pass deselection handler if row selection is enabled
-    return getColumns(tableConfig.enableRowSelection ? handleRowDeselection : null);
+    const columnDefs = getColumns(tableConfig.enableRowSelection ? handleRowDeselection : null);
+    
+    // Pre-compute column metadata for better performance
+    return columnDefs.map(column => ({
+      ...column,
+      // Add computed properties for better performance
+      meta: {
+        ...column.meta,
+        // Cache the accessor function result for better performance
+        _cachedAccessor: 'accessorFn' in column ? column.accessorFn : 
+                        'accessorKey' in column ? column.accessorKey : undefined,
+      }
+    }));
   }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection]);
 
 
@@ -406,51 +485,55 @@ export function DataTable<TData extends ExportableData, TValue>({
   }, [columnOrder]);
 
   // Memoize table configuration to prevent unnecessary re-renders
-  const tableOptions = useMemo(() => ({
-    data: dataItems,
-    columns,
-    state: {
-      sorting,
-      columnVisibility,
-      rowSelection,
-      columnFilters: effectiveColumnFilters,
-      // Only include pagination state if pagination is enabled
-      ...(tableConfig.enablePagination ? { pagination } : {}),
-      columnSizing,
-      columnOrder,
-      globalFilter: search,
-    },
-    columnResizeMode: 'onChange' as ColumnResizeMode,
-    onColumnSizingChange: handleColumnSizingChange,
-    onColumnOrderChange: handleColumnOrderChange,
-    // Only include pagination-related options if pagination is enabled
-    ...(tableConfig.enablePagination ? {
-      pageCount: Math.ceil(dataItems.length / pageSize),
-      onPaginationChange: handlePaginationChange,
-    } : {}),
-    enableRowSelection: tableConfig.enableRowSelection,
-    enableColumnResizing: tableConfig.enableColumnResizing,
-    enableColumnFilters: true,
-    manualPagination: false,
-    manualSorting: false,
-    manualFiltering: false,
-    getRowId: (row: TData) => {
-      const id = row[idField];
-      return id != null ? String(id) : '';
-    },
-    onRowSelectionChange: handleRowSelectionChange,
-    onSortingChange: handleSortingChange,
-    onColumnFiltersChange: setColumnFilters,
-    onColumnVisibilityChange: setColumnVisibility,
-    onGlobalFilterChange: setSearch,
-    getCoreRowModel: getCoreRowModel<TData>(),
-    getFilteredRowModel: getFilteredRowModel<TData>(),
-    getFacetedRowModel: getFacetedRowModel<TData>(),
-    getSortedRowModel: getSortedRowModel<TData>(),
-    // Only use pagination row model if pagination is enabled
-    ...(tableConfig.enablePagination ? { getPaginationRowModel: getPaginationRowModel<TData>() } : {}),
-    getFacetedUniqueValues: getFacetedUniqueValues<TData>(),
-  }), [
+  const tableOptions = useMemo(() => {
+    const baseOptions = {
+      data: dataItems,
+      columns,
+      state: {
+        sorting,
+        columnVisibility,
+        rowSelection,
+        columnFilters: effectiveColumnFilters,
+        // Only include pagination state if pagination is enabled
+        ...(tableConfig.enablePagination ? { pagination } : {}),
+        columnSizing,
+        columnOrder,
+        globalFilter: search,
+      },
+      columnResizeMode: 'onChange' as ColumnResizeMode,
+      onColumnSizingChange: handleColumnSizingChange,
+      onColumnOrderChange: handleColumnOrderChange,
+      // Only include pagination-related options if pagination is enabled
+      ...(tableConfig.enablePagination ? {
+        pageCount: Math.ceil(dataItems.length / pageSize),
+        onPaginationChange: handlePaginationChange,
+      } : {}),
+      enableRowSelection: tableConfig.enableRowSelection,
+      enableColumnResizing: tableConfig.enableColumnResizing,
+      enableColumnFilters: true,
+      manualPagination: false,
+      manualSorting: false,
+      manualFiltering: false,
+      getRowId: (row: TData) => {
+        const id = row[idField];
+        return id != null ? String(id) : '';
+      },
+      onRowSelectionChange: handleRowSelectionChange,
+      onSortingChange: handleSortingChange,
+      onColumnFiltersChange: setColumnFilters,
+      onColumnVisibilityChange: setColumnVisibility,
+      onGlobalFilterChange: setSearch,
+      getCoreRowModel: getCoreRowModel<TData>(),
+      getFilteredRowModel: getFilteredRowModel<TData>(),
+      getFacetedRowModel: getFacetedRowModel<TData>(),
+      getSortedRowModel: getSortedRowModel<TData>(),
+      // Only use pagination row model if pagination is enabled
+      ...(tableConfig.enablePagination ? { getPaginationRowModel: getPaginationRowModel<TData>() } : {}),
+      getFacetedUniqueValues: getFacetedUniqueValues<TData>(),
+    };
+
+    return baseOptions;
+  }, [
     dataItems,
     columns,
     sorting,
@@ -470,6 +553,7 @@ export function DataTable<TData extends ExportableData, TValue>({
     handleSortingChange,
     setColumnFilters,
     setSearch,
+    idField,
   ]);
 
   // Set up the table with memoized configuration - React Compiler will optimize this
@@ -557,26 +641,30 @@ export function DataTable<TData extends ExportableData, TValue>({
         />
       )}
         {tableConfig.enableRowVirtualization ? (
-          <VirtualizedTable 
-            key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}`}
-            table={table} 
-            onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-            enableStickyHeader={tableConfig.enableStickyHeader}
-            virtualizationOptions={virtualizationOptions as Required<VirtualizationOptions>}
-            columns={columns}
-            className={classes.table}
-          />
+          <TableErrorBoundary fallback={<div className="p-4 text-center text-muted-foreground">Error loading virtual table.</div>}>
+            <VirtualizedTable 
+              key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}`}
+              table={table} 
+              onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+              enableStickyHeader={tableConfig.enableStickyHeader}
+              virtualizationOptions={virtualizationOptions as Required<VirtualizationOptions>}
+              columns={columns}
+              className={classes.table}
+            />
+          </TableErrorBoundary>
         ) : (
-          <RegularTable 
-            table={table} 
-            enableColumnResizing={tableConfig.enableColumnResizing}
-            enableClickRowSelect={tableConfig.enableClickRowSelect}
-            enableKeyboardNavigation={tableConfig.enableKeyboardNavigation}
-            columns={columns}
-            onKeyDown={handleKeyDown}
-            enableStickyHeader={tableConfig.enableStickyHeader}
-            className={classes.table}
-          />
+          <TableErrorBoundary fallback={<div className="p-4 text-center text-muted-foreground">Error loading regular table.</div>}>
+            <RegularTable 
+              table={table} 
+              enableColumnResizing={tableConfig.enableColumnResizing}
+              enableClickRowSelect={tableConfig.enableClickRowSelect}
+              enableKeyboardNavigation={tableConfig.enableKeyboardNavigation}
+              columns={columns}
+              onKeyDown={handleKeyDown}
+              enableStickyHeader={tableConfig.enableStickyHeader}
+              className={classes.table}
+            />
+          </TableErrorBoundary>
         )}
 
       {tableConfig.enablePagination && (
