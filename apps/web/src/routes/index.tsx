@@ -50,7 +50,8 @@ const HomeComponent = () => {
 
   // Transform the data to match our table structure
   const tableData = useMemo(() => {
-    const processed = allModels.map((model: Model) => ({
+    const processed = allModels.map((model: Model, index: number) => ({
+      id: index + model.id,
       provider: model.provider || 'Unknown',
       model: model.name || model.id,
       providerId: model.provider || 'Unknown',
@@ -520,7 +521,7 @@ const HomeComponent = () => {
               <DataTable<typeof tableData[0], any>
                 getColumns={() => columns}
                 data={tableData}
-                idField="modelId"
+                idField="id"
                 filterColumns={columnConfigs}
                 filterStrategy="client"
                 exportConfig={{
@@ -592,20 +593,14 @@ const HomeComponent = () => {
                 config={{
                   enableRowSelection: false,
                   enableColumnResizing: false,
-                  enableSearch: false, // Disable old search since we're using data-table-filter
-                  enableDateFilter: false, // Disable old date filter since we're using data-table-filter
                   enablePagination: false,
                   enableColumnVisibility: true,
                   enableToolbar: true,
                   enableStickyHeader: true,
                   // Performance optimizations
-                  enableRowVirtualization: true,
+                  enableRowVirtualization: false,
                   estimatedRowHeight: 40,
                   virtualizationOverscan: 5,
-                  enableDebouncedSearch: true,
-                  searchDebounceDelay: 300,
-                  enableLazyLoading: false,
-                  lazyLoadingBatchSize: 100,
                 }}
                 virtualizationOptions={{
                   estimatedRowHeight: 40,
