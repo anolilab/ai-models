@@ -685,9 +685,40 @@ input[type="week"] {
 
   /* Prevent layout shifts during column resizing */
   .table-container .resizable-table {
-    table-layout: fixed;
-    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
   }
+}
+
+/* Sticky header container styles */
+.sticky-container {
+  position: relative;
+}
+
+.sticky-container thead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.sticky-container thead th {
+  background-color: var(--background);
+  position: sticky;
+  top: 0;
+}
+
+/* Sticky header class for direct application */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  min-height: 40px;
 }
 
 /* Data table performance optimizations */

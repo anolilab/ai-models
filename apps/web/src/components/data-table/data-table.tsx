@@ -647,7 +647,11 @@ export function DataTable<TData extends ExportableData, TValue>({
               table={table} 
               onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
               enableStickyHeader={tableConfig.enableStickyHeader}
-              virtualizationOptions={virtualizationOptions as Required<VirtualizationOptions>}
+              virtualizationOptions={{
+                estimatedRowHeight: virtualizationOptions.estimatedRowHeight ?? tableConfig.estimatedRowHeight,
+                overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
+                containerHeight: virtualizationOptions.containerHeight ?? 400, // Default fallback height
+              }}
               columns={columns}
               className={classes.table}
             />
