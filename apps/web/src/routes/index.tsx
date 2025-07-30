@@ -27,7 +27,7 @@ const HomeComponent = () => {
 
   useEffect(() => {
     const updateHeight = () => {
-      setContainerHeight(window.innerHeight - 170);
+      setContainerHeight(window.innerHeight - 160);
     };
     
     updateHeight();
@@ -614,11 +614,30 @@ const HomeComponent = () => {
           />
         </ClientOnly>
       </main>
-      <footer className="flex items-center justify-center py-3 gap-2">
+      <footer className="flex items-center justify-between py-3 px-4 gap-10">
+        <div className="flex items-center gap-2">
         <p className="text-sm text-[var(--color-text-tertiary)]">
           Powered by
         </p>
         <a href="https://anolilab.com" target="_blank" rel="noopener noreferrer"><AnolilabLogo className="fill-white h-6" /></a>
+        </div>
+        <ul className="text-sm flex items-center justify-center gap-2 text-white">
+            <li>
+                <a className="text-sm transition-colors hover:text-primary" href="https://anolilab.com/imprint" target="_blank" rel="noopener noreferrer">
+                    Imprint
+                </a>
+            </li>
+            <li>
+                <a className="text-sm transition-colors hover:text-primary" href="https://anolilab.com/terms" target="_blank" rel="noopener noreferrer">
+                    Terms of Service
+                </a>
+            </li>
+            <li>
+                <a className="text-sm transition-colors hover:text-primary" href="https://anolilab.com/privacy" target="_blank" rel="noopener noreferrer">
+                    Privacy Policy
+                </a>
+            </li>
+        </ul>
       </footer>
     </>
   );

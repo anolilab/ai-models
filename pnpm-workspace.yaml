@@ -6,6 +6,10 @@ packages:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
+  - core-js
   - esbuild
   - nx
   - oxc-resolver
+  - protobufjs
+  - sharp
+  - unrs-resolver

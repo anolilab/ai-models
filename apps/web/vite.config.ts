@@ -11,6 +11,7 @@ export default defineConfig({
     tsconfigPaths(),
     tailwindcss(),
     tanstackStart({
+      target: "netlify",
       customViteReactPlugin: true,
     }),
     react({
