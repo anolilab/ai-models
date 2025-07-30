@@ -51,6 +51,7 @@ interface TableHeadProps<TData extends ExportableData> {
   virtualPaddingRight: number
   enableStickyHeader?: boolean
   enableColumnResizing?: boolean
+  enableRowSelection?: boolean
 }
 
 interface TableHeadRowProps<TData extends ExportableData> {
@@ -76,6 +77,7 @@ interface TableBodyProps<TData extends ExportableData> {
   enableClickRowSelect?: boolean
   columns: any[]
   enableStickyHeader?: boolean
+  enableRowSelection?: boolean
 }
 
 interface TableBodyRowProps<TData extends ExportableData> {
@@ -108,14 +110,11 @@ const VirtualizedTable = <TData extends ExportableData>({
   const visibleColumns = table.getVisibleLeafColumns()
   const tableContainerRef = useRef<HTMLDivElement>(null)
   
-  // Create a comprehensive key that changes when filters, sorting, or data changes
-  const tableKey = useMemo(() => {
-    const { rows } = table.getFilteredRowModel()
-    const filterState = table.getState().columnFilters
-    const globalFilter = table.getState().globalFilter
-    const sorting = table.getState().sorting
-    return `virtual-table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`
-  }, [table])
+  // CRITICAL: Memoize expensive width calculation (React Compiler can't optimize this)
+  const totalWidth = useMemo(() => 
+    visibleColumns.reduce((sum, column) => sum + column.getSize(), 0),
+    [visibleColumns]
+  )
 
   // Column virtualization for horizontal scrolling
   const columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
@@ -143,9 +142,6 @@ const VirtualizedTable = <TData extends ExportableData>({
     ? columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0)
     : 0
 
-  // Calculate total width for horizontal scrolling
-  const totalWidth = visibleColumns.reduce((sum, column) => sum + column.getSize(), 0)
-
   return (
     <div 
       ref={tableContainerRef}
@@ -158,7 +154,6 @@ const VirtualizedTable = <TData extends ExportableData>({
       }}
     >
       <BaseTable 
-        key={tableKey}
         classNames={{
           table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
           container: "w-full",
@@ -176,9 +171,9 @@ const VirtualizedTable = <TData extends ExportableData>({
           virtualPaddingRight={virtualPaddingRight}
           enableStickyHeader={enableStickyHeader}
           enableColumnResizing={enableColumnResizing}
+          enableRowSelection={table.getState().rowSelection !== undefined}
         />
         <TableBody
-          key={tableKey}
           columnVirtualizer={columnVirtualizer}
           table={table}
           tableContainerRef={tableContainerRef}
@@ -188,6 +183,7 @@ const VirtualizedTable = <TData extends ExportableData>({
           enableClickRowSelect={enableClickRowSelect}
           columns={columns}
           enableStickyHeader={enableStickyHeader}
+          enableRowSelection={table.getState().rowSelection !== undefined}
         />
       </BaseTable>
     </div>
@@ -201,23 +197,32 @@ const TableHead = <TData extends ExportableData>({
   virtualPaddingRight,
   enableStickyHeader = true,
   enableColumnResizing = false,
+  enableRowSelection = false,
 }: TableHeadProps<TData>) => {
+  // Create a key that changes when selection state changes
+  const headerKey = enableRowSelection
+    ? `header-${JSON.stringify(table.getState().rowSelection)}`
+    : 'header-static';
+
   return (
     <TableHeader 
+      key={headerKey}
       className={cn(
         enableStickyHeader && "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10"
       )}
     >
-      {table.getHeaderGroups().map(headerGroup => (
-        <TableHeadRow
-          key={headerGroup.id}
-          columnVirtualizer={columnVirtualizer}
-          headerGroup={headerGroup}
-          virtualPaddingLeft={virtualPaddingLeft}
-          virtualPaddingRight={virtualPaddingRight}
-          enableColumnResizing={enableColumnResizing}
-        />
-      ))}
+      {table.getHeaderGroups().map(headerGroup => {
+        return (
+          <TableHeadRow
+            key={headerGroup.id}
+            columnVirtualizer={columnVirtualizer}
+            headerGroup={headerGroup}
+            virtualPaddingLeft={virtualPaddingLeft}
+            virtualPaddingRight={virtualPaddingRight}
+            enableColumnResizing={enableColumnResizing}
+          />
+        );
+      })}
     </TableHeader>
   )
 }
@@ -294,6 +299,7 @@ const TableBody = <TData extends ExportableData>({
   enableClickRowSelect = false,
   columns,
   enableStickyHeader = true,
+  enableRowSelection = false,
 }: TableBodyProps<TData>) => {
   const { rows } = table.getFilteredRowModel()
 
@@ -302,11 +308,10 @@ const TableBody = <TData extends ExportableData>({
     count: rows.length,
     estimateSize: () => virtualizationOptions.estimatedRowHeight,
     getScrollElement: () => tableContainerRef.current,
-    measureElement: (element) => {
+    measureElement: (element: HTMLTableRowElement | null) => {
       if (!element) {
         return virtualizationOptions.estimatedRowHeight
       }
-
       return element.getBoundingClientRect().height
     },
     overscan: virtualizationOptions.overscan,
@@ -348,18 +353,22 @@ const TableBody = <TData extends ExportableData>({
   
   return (
     <BaseTableBody
-      className="relative"
+      className="relative w-full"
       style={{
         height: `${rowVirtualizer.getTotalSize()}px`,
-        width: '100%',
-        position: 'relative',
       }}
     >
       {virtualRows.map(virtualRow => {
         const row = rows[virtualRow.index] as Row<TData>
+        
+        // Only include selection state in key if row selection is enabled
+        const rowKey = enableRowSelection
+          ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}`
+          : `${row.id}-${virtualRow.index}`;
+        
         return (
           <TableBodyRow
-            key={`${row.id}-${virtualRow.index}`}
+            key={rowKey}
             columnVirtualizer={columnVirtualizer}
             row={row}
             rowVirtualizer={rowVirtualizer}

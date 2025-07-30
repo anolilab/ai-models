@@ -302,58 +302,13 @@ export function DataTable<TData extends ExportableData, TValue>({
       ? updaterOrValue(rowSelectionRef.current)
       : updaterOrValue;
 
-    // Use a more efficient batch update approach
-    const updates = new Map<string, boolean>();
-    
-    // Process changes for current page
-    if (dataItems.length) {
-      // First handle explicit selections in newRowSelection
-      for (const [itemId, isSelected] of Object.entries(newRowSelection)) {
-        // Check if this itemId exists in our current data
-        const itemExists = dataItems.some(item => String(item[idField]) === itemId);
-        if (itemExists) {
-          updates.set(itemId, isSelected);
-        }
-      }
-
-      // Then handle implicit deselection (rows that were selected but aren't in newRowSelection)
-      dataItems.forEach((item) => {
-        const itemId = String(item[idField]);
-
-        // If item was selected but isn't in new selection, deselect it
-        if (isItemSelected(itemId) && newRowSelection[itemId] === undefined) {
-          updates.set(itemId, false);
-        }
-      });
-    }
-
-    // Apply all updates in a single batch
+    // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
     if (tableConfig.enableRowVirtualization) {
-      setSelectedItemIds(prev => {
-        const next = new Set(prev as Set<string>);
-        updates.forEach((isSelected, itemId) => {
-          if (isSelected) {
-            next.add(itemId);
-          } else {
-            next.delete(itemId);
-          }
-        });
-        return next;
-      });
+      setSelectedItemIds(new Set(Object.keys(newRowSelection)));
     } else {
-      setSelectedItemIds(prev => {
-        const next = { ...(prev as Record<string, boolean>) };
-        updates.forEach((isSelected, itemId) => {
-          if (isSelected) {
-            next[itemId] = true;
-          } else {
-            delete next[itemId];
-          }
-        });
-        return next;
-      });
+      setSelectedItemIds(newRowSelection);
     }
-  }, [dataItems, idField, isItemSelected, tableConfig.enableRowVirtualization]);
+  }, [tableConfig.enableRowVirtualization]);
 
   // Get selected items data - React Compiler optimized
   const getSelectedItems = useCallback(async () => {
@@ -614,7 +569,6 @@ export function DataTable<TData extends ExportableData, TValue>({
         {tableConfig.enableRowVirtualization ? (
           <TableErrorBoundary fallback={<div className="p-4 text-center text-muted-foreground">Error loading virtual table.</div>}>
             <VirtualizedTable 
-              key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}-${JSON.stringify(table.getState().rowSelection)}`}
               table={table} 
               onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
               enableStickyHeader={tableConfig.enableStickyHeader}

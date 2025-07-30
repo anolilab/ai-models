@@ -1,37 +1,26 @@
-import { useMemo, forwardRef } from "react";
-import type { ComponentProps, CSSProperties, KeyboardEvent } from "react";
+import { useMemo, useCallback } from 'react'
+import type { CSSProperties, KeyboardEvent } from 'react'
 import {
   flexRender,
-  type Table,
-} from "@tanstack/react-table";
+} from '@tanstack/react-table'
+import type {
+  Table,
+} from '@tanstack/react-table'
 import {
   Table as BaseTable,
   TableHeader,
   TableBody,
-  TableRow,
   TableHead,
-  TableCell as BaseTableCell,
+  TableRow,
+  TableCell,
 } from "@/components/ui/table";
-import { DataTableResizer } from "./data-table-resizer";
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
+import { DataTableResizer } from './data-table-resizer'
 
-// Custom TableCell that doesn't use flexbox
-const TableCell = forwardRef<
-  HTMLTableCellElement,
-  ComponentProps<"td">
->(({ className, ...props }, ref) => {
-  return (
-    <BaseTableCell
-      ref={ref}
-      className={cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
-      )}
-      {...props}
-    />
-  )
-})
-TableCell.displayName = "TableCell"
+// Define ExportableData type locally since it's not exported from the utils
+interface ExportableData {
+  [key: string]: any
+}
 
 export interface RegularTableProps<TData> {
     table: Table<TData>;
@@ -39,7 +28,7 @@ export interface RegularTableProps<TData> {
     enableClickRowSelect?: boolean;
     enableKeyboardNavigation?: boolean;
     columns: any[];
-    onKeyDown?: (event: KeyboardEvent) => void;
+    onKeyDown?: (event: KeyboardEvent<HTMLTableElement>) => void;
     className?: string;
     style?: CSSProperties;
     enableStickyHeader?: boolean;
@@ -58,21 +47,53 @@ export function RegularTable<TData>({
   className,
   containerHeight,
 }: RegularTableProps<TData>) {
-  const { rows } = table.getFilteredRowModel()
-  
-  // Create a more comprehensive key that changes when filters or data changes
+  const { rows } = table.getRowModel()
+
+  // Check if row selection is enabled
+  const enableRowSelection = table.getState().rowSelection !== undefined;
+
+  // OPTIMIZATION: Memoize table key to prevent unnecessary re-renders
   const tableKey = useMemo(() => {
+    const { rows } = table.getFilteredRowModel()
     const filterState = table.getState().columnFilters
     const globalFilter = table.getState().globalFilter
     const sorting = table.getState().sorting
-    return `table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`
-  }, [table, rows.length])
+    return `regular-table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`
+  }, [table])
 
-  return (<div 
-      className="relative w-full h-full overflow-auto"
-      style={{
-        height: containerHeight,
-      }}
+  // OPTIMIZATION: Memoize table styles
+  const tableStyles = useMemo(() => ({
+    height: containerHeight,
+  }), [containerHeight])
+
+  // OPTIMIZATION: Memoize header styles
+  const headerStyles = useMemo(() => enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10" : "", [enableStickyHeader])
+
+  // OPTIMIZATION: Memoize click handler
+  const handleRowClick = useCallback((row: any) => {
+    if (enableClickRowSelect) {
+      row.toggleSelected()
+    }
+  }, [enableClickRowSelect])
+
+  // OPTIMIZATION: Memoize focus handler
+  const handleRowFocus = useCallback((e: React.FocusEvent<HTMLTableRowElement>) => {
+    // Add a data attribute to the currently focused row
+    for (const el of document.querySelectorAll('[data-focused="true"]')) {
+      el.removeAttribute('data-focused');
+    }
+    e.currentTarget.setAttribute('data-focused', 'true');
+  }, [])
+
+  // Create header key that changes when selection state changes
+  const headerKey = enableRowSelection
+    ? `header-${JSON.stringify(table.getState().rowSelection)}`
+    : 'header-static';
+
+  return (
+    <div
+      className="relative w-full overflow-auto"
+      style={tableStyles}
     >
       <BaseTable
         key={tableKey}
@@ -84,9 +105,8 @@ export function RegularTable<TData>({
         style={style}
       >
                  <TableHeader 
-           className={cn(
-             enableStickyHeader && "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10"
-           )}
+           key={headerKey}
+           className={headerStyles}
          >
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -119,42 +139,45 @@ export function RegularTable<TData>({
 
         <TableBody key={tableKey}>
           {rows?.length ? (
-            rows.map((row, rowIndex) => (
-              <TableRow
-                key={`${row.id}-${rowIndex}`}
-                id={`row-${row.id}-${rowIndex}`}
-                data-row-index={rowIndex}
-                data-state={row.getIsSelected() ? "selected" : undefined}
-                tabIndex={0}
-                aria-selected={row.getIsSelected()}
-                onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
-                onFocus={(e) => {
-                  // Add a data attribute to the currently focused row
-                  for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                    el.removeAttribute('data-focused');
-                  }
-                  e.currentTarget.setAttribute('data-focused', 'true');
-                }}
-
-              >
-                {row.getVisibleCells().map((cell, cellIndex) => (
-                  <TableCell
-                    className="truncate text-left px-4"
-                    key={cell.id}
-                    id={`cell-${rowIndex}-${cellIndex}`}
-                    data-cell-index={cellIndex}
-                    style={{
-                      width: cell.column.getSize(),
-                    }}
-                  >
-                    {flexRender(
-                      cell.column.columnDef.cell,
-                      cell.getContext(),
-                    )}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
+            rows.map((row, rowIndex) => {
+              // OPTIMIZATION: Memoize row selection state
+              const isSelected = row.getIsSelected()
+              
+              // Only include selection state in key if row selection is enabled
+              const rowKey = enableRowSelection
+                ? `${row.id}-${rowIndex}-${isSelected}`
+                : `${row.id}-${rowIndex}`;
+              
+              return (
+                <TableRow
+                  key={rowKey}
+                  id={`row-${row.id}-${rowIndex}`}
+                  data-row-index={rowIndex}
+                  data-state={isSelected ? "selected" : undefined}
+                  tabIndex={0}
+                  aria-selected={isSelected}
+                  onClick={() => handleRowClick(row)}
+                  onFocus={handleRowFocus}
+                >
+                  {row.getVisibleCells().map((cell, cellIndex) => (
+                    <TableCell
+                      className="truncate text-left px-4"
+                      key={cell.id}
+                      id={`cell-${rowIndex}-${cellIndex}`}
+                      data-cell-index={cellIndex}
+                      style={{
+                        width: cell.column.getSize(),
+                      }}
+                    >
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              )
+            })
           ) : (
             // No results
             <TableRow>
