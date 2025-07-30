@@ -9,7 +9,7 @@
   
   /* Primary color palette based on oklch(0.93 0.24 116) */
   --primary: oklch(0.93 0.24 116);
-  --primary-foreground: oklch(0.98 0.02 116);
+  --primary-foreground: oklch(0.15 0.02 116);
   --primary-muted: oklch(0.95 0.18 116);
   --primary-subtle: oklch(0.97 0.12 116);
   
@@ -292,13 +292,6 @@
         font-family: var(--font-family-mono);
         font-size: 0.875em;
         font-weight: var(--font-weight-normal);
-    }
-
-    /* Improve focus visibility for accessibility */
-    *:focus-visible {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
-        border-radius: var(--radius-sm);
     }
 
     /* Reduce motion for users who prefer it */

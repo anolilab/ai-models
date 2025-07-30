@@ -9,7 +9,6 @@ export { DataTableResizer } from './data-table-resizer'
 export { RegularTable } from './regular-table'
 export { VirtualizedTable } from './virtual-table'
 
-// Filter components (merged from data-table-filter)
 export * from './filter'
 
 // Utility types and functions

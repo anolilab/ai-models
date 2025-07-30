@@ -39,7 +39,9 @@ export function ActiveFilters<TData>({
         const column = getColumn(columns, id)
 
         // Skip if no filter value
-        if (!filter.values) return null
+        if (!filter.values) {
+          return null
+        }
 
         return (
           <ActiveFilter
@@ -73,7 +75,7 @@ export function ActiveFilter<TData, TType extends ColumnDataType>({
   locale = 'en',
 }: ActiveFilterProps<TData, TType>) {
   return (
-    <div className="flex h-7 items-center border border-border bg-background shadow-xs text-xs">
+    <div className="flex items-center border border-border bg-background shadow-xs text-xs">
       <FilterSubject column={column} />
       <Separator orientation="vertical" />
       <FilterOperator
@@ -93,10 +95,10 @@ export function ActiveFilter<TData, TType extends ColumnDataType>({
       <Separator orientation="vertical" />
       <Button
         variant="ghost"
-        className="text-xs w-7 h-full"
+        className="text-xs h-full"
         onClick={() => actions.removeFilter(filter.columnId)}
       >
-        <X className="size-4 -translate-x-0.5" />
+        <X className="size-4" />
       </Button>
     </div>
   )

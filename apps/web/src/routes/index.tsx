@@ -453,14 +453,13 @@ const HomeComponent = () => {
     if (totalSelectedCount === 0) return null;
 
     return (
-      <div className="flex items-center gap-2 p-2 bg-muted/50 rounded-md">
+      <div className="flex items-center gap-2">
         <span className="text-sm font-medium">
           {totalSelectedCount} model{totalSelectedCount !== 1 ? 's' : ''} selected
         </span>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            size="sm"
             onClick={() => {
               // Copy selected model IDs to clipboard
               const modelIds = selectedRows.map(row => row.modelId).join('\n');
@@ -473,7 +472,6 @@ const HomeComponent = () => {
 
           <Button
             variant="outline"
-            size="sm"
             onClick={resetSelection}
           >
             <Trash2 className="h-4 w-4 mr-1" />
@@ -543,6 +541,15 @@ const HomeComponent = () => {
                 output: row.output,
                 inputCost: row.inputCost,
                 outputCost: row.outputCost,
+                cacheReadCost: row.cacheReadCost,
+                cacheWriteCost: row.cacheWriteCost,
+                contextLimit: row.contextLimit,
+                outputLimit: row.outputLimit,
+                temperature: row.temperature,
+                weights: row.weights,
+                knowledge: row.knowledge,
+                releaseDate: row.releaseDate,
+                lastUpdated: row.lastUpdated,
               }),
               columnWidths: [
                 { wch: 15 }, // provider
@@ -566,25 +573,25 @@ const HomeComponent = () => {
                 { wch: 15 }, // lastUpdated
               ],
               headers: [
-                "Provider",
-                "Model",
-                "Provider ID",
-                "Model ID",
-                "Tool Call",
-                "Reasoning",
-                "Input",
-                "Output",
-                "Input Cost",
-                "Output Cost",
-                "Cache Read Cost",
-                "Cache Write Cost",
-                "Context Limit",
-                "Output Limit",
-                "Temperature",
-                "Weights",
-                "Knowledge",
-                "Release Date",
-                "Last Updated",
+                "provider",
+                "model",
+                "providerId",
+                "modelId",
+                "toolCall",
+                "reasoning",
+                "input",
+                "output",
+                "inputCost",
+                "outputCost",
+                "cacheReadCost",
+                "cacheWriteCost",
+                "contextLimit",
+                "outputLimit",
+                "temperature",
+                "weights",
+                "knowledge",
+                "releaseDate",
+                "lastUpdated",
               ],
             }}
             config={{

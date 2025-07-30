@@ -119,8 +119,6 @@ function __FilterSelector<TData>({
                 filters={filters}
                 columns={columns}
                 actions={actions}
-                strategy={strategy}
-                locale={locale}
               />
             </CommandGroup>
           </CommandList>
@@ -140,7 +138,7 @@ function __FilterSelector<TData>({
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className={cn('h-7', hasFilters && 'w-fit !px-2')}
+          className={cn(hasFilters && 'w-fit')}
         >
           <FilterIcon className="size-4" />
           {!hasFilters && <span>{t('filter', locale)}</span>}
@@ -228,8 +226,6 @@ interface QuickSearchFiltersProps<TData> {
   filters: FiltersState
   columns: Column<TData>[]
   actions: DataTableFilterActions
-  strategy: FilterStrategy
-  locale?: Locale
 }
 
 export const QuickSearchFilters = memo(
@@ -241,8 +237,6 @@ function __QuickSearchFilters<TData>({
   filters,
   columns,
   actions,
-  strategy,
-  locale = 'en',
 }: QuickSearchFiltersProps<TData>) {
   if (!search || search.trim().length < 2) return null
 

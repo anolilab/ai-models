@@ -128,11 +128,18 @@ export function DataTableExport<TData extends ExportableData>({
         
         return allItems;
       } else {
-        // Otherwise use the provided data (current page data)
-        if (!data || data.length === 0) {
+        // Use the table's filtered data instead of the raw data
+        // This respects any filters, column visibility, and other table state
+        const filteredRows = table.getFilteredRowModel().rows;
+        
+        if (filteredRows.length === 0) {
           throw new Error("No data available for export");
         }
-        return selectedData && selectedData.length > 0 ? selectedData : data;
+        
+        // Extract the original data from the filtered rows
+        const filteredData = filteredRows.map(row => row.original);
+        
+        return selectedData && selectedData.length > 0 ? selectedData : filteredData;
       }
     };
 
@@ -241,16 +248,20 @@ export function DataTableExport<TData extends ExportableData>({
         id: "export-data-toast"
       });
       
-      // Fetch all data with server-side sorting
-      const allData = await getAllItems();
+      // Use the table's filtered data instead of all data
+      // This respects any filters, column visibility, and other table state
+      const filteredRows = table.getFilteredRowModel().rows;
       
-      if (allData.length === 0) {
+      if (filteredRows.length === 0) {
         toast.error("Export failed", {
           description: "No data available to export.",
           id: "export-data-toast"
         });
         return;
       }
+      
+      // Extract the original data from the filtered rows
+      const allData = filteredRows.map(row => row.original);
       
       // Get visible columns and apply export
       const visibleColumns = table.getAllColumns()
