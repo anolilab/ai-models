@@ -124,9 +124,18 @@ const VirtualizedTable = <TData extends ExportableData>({
     getScrollElement: () => tableContainerRef.current,
     horizontal: true,
     overscan: 3,
+    scrollPaddingEnd: 0,
+    scrollPaddingStart: 0,
   })
 
   const virtualColumns = columnVirtualizer.getVirtualItems()
+
+  // Force column virtualizer to recalculate when container changes
+  useEffect(() => {
+    if (tableContainerRef.current) {
+      columnVirtualizer.measure()
+    }
+  }, [tableContainerRef.current, columnVirtualizer])
 
   // Calculate virtual padding for smooth horizontal scrolling
   const virtualPaddingLeft = virtualColumns[0]?.start ?? 0
@@ -136,11 +145,11 @@ const VirtualizedTable = <TData extends ExportableData>({
 
   // Calculate total width for horizontal scrolling
   const totalWidth = visibleColumns.reduce((sum, column) => sum + column.getSize(), 0)
-  
+
   return (
     <div 
       ref={tableContainerRef}
-      className="relative w-full h-full overflow-auto"
+      className="relative overflow-auto"
       style={{
         height: virtualizationOptions.containerHeight,
         ...(enableStickyHeader && {
@@ -226,7 +235,7 @@ const TableHeadRow = <TData extends ExportableData>({
   // Use virtual columns when available, otherwise fall back to all headers
   const headersToRender = hasVirtualColumns 
     ? virtualColumns.map(vc => headerGroup.headers[vc.index])
-    : headerGroup.headers
+    : headerGroup.headers.filter(header => !header.isPlaceholder)
 
   return (
     <BaseTableRow className="flex w-full">
@@ -293,10 +302,13 @@ const TableBody = <TData extends ExportableData>({
     count: rows.length,
     estimateSize: () => virtualizationOptions.estimatedRowHeight,
     getScrollElement: () => tableContainerRef.current,
-    measureElement:
-      typeof window !== 'undefined' && navigator.userAgent.indexOf('Firefox') === -1
-        ? element => element?.getBoundingClientRect().height
-        : undefined,
+    measureElement: (element) => {
+      if (!element) {
+        return virtualizationOptions.estimatedRowHeight
+      }
+
+      return element.getBoundingClientRect().height
+    },
     overscan: virtualizationOptions.overscan,
     scrollPaddingEnd: 0,
     scrollPaddingStart: enableStickyHeader ? 40 : 0,
@@ -310,7 +322,7 @@ const TableBody = <TData extends ExportableData>({
   }, [tableContainerRef.current, rows.length, rowVirtualizer, table.getState().columnFilters, table.getState().globalFilter]);
 
   const virtualRows = rowVirtualizer.getVirtualItems()
-  
+
   // Force virtualizer to recalculate when container ref becomes available
   useEffect(() => {
     if (tableContainerRef.current) {
@@ -321,7 +333,7 @@ const TableBody = <TData extends ExportableData>({
   // Handle no results
   if (!rows.length) {
     return (
-      <BaseTableBody className="grid relative">
+      <BaseTableBody>
         <BaseTableRow>
           <BaseTableCell
             colSpan={columns.length}
@@ -336,9 +348,11 @@ const TableBody = <TData extends ExportableData>({
   
   return (
     <BaseTableBody
-      className="grid relative"
+      className="relative"
       style={{
         height: `${rowVirtualizer.getTotalSize()}px`,
+        width: '100%',
+        position: 'relative',
       }}
     >
       {virtualRows.map(virtualRow => {
@@ -377,8 +391,6 @@ const TableBodyRow = <TData extends ExportableData>({
       ref={node => rowVirtualizer.measureElement(node)}
       key={row.id}
       id={`row-${row.id}-${virtualRow.index}`}
-      data-index={virtualRow.index}
-      data-row-index={virtualRow.index}
       data-state={row.getIsSelected() ? "selected" : undefined}
       tabIndex={0}
       aria-selected={row.getIsSelected()}
@@ -390,8 +402,9 @@ const TableBodyRow = <TData extends ExportableData>({
         }
         e.currentTarget.setAttribute('data-focused', 'true')
       }}
-      className="flex absolute w-full"
+      className="absolute w-full flex left-0 right-0"
       style={{
+        height: `${virtualRow.size}px`,
         transform: `translateY(${virtualRow.start}px)`,
       }}
     >
@@ -422,7 +435,6 @@ const TableBodyCell = <TData extends ExportableData>({
     <BaseTableCell
       className="py-2 px-4.5 truncate text-left flex"
       id={`cell-${cellIndex}`}
-      data-cell-index={cellIndex}
       style={{
         width: cell.column.getSize(),
       }}
