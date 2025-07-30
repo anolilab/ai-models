@@ -412,7 +412,6 @@ export function createColumns<TData>(
             setTimeout(() => {
               const options = getOptions()
               column._prefetchedOptionsCache = options
-              // console.log(`Prefetched options for ${columnConfig.id}`)
               resolve(undefined)
             }, 0),
           )
@@ -424,8 +423,9 @@ export function createColumns<TData>(
           await new Promise((resolve) =>
             setTimeout(() => {
               const values = getValues()
+
               column._prefetchedValuesCache = values
-              // console.log(`Prefetched values for ${columnConfig.id}`)
+
               resolve(undefined)
             }, 0),
           )
@@ -438,9 +438,7 @@ export function createColumns<TData>(
             setTimeout(() => {
               const facetedMap = getUniqueValues()
               column._prefetchedFacetedUniqueValuesCache = facetedMap ?? null
-              // console.log(
-              //   `Prefetched faceted unique values for ${columnConfig.id}`,
-              // )
+
               resolve(undefined)
             }, 0),
           )
@@ -453,9 +451,7 @@ export function createColumns<TData>(
             setTimeout(() => {
               const value = getMinMaxValues()
               column._prefetchedFacetedMinMaxValuesCache = value ?? null
-              // console.log(
-              //   `Prefetched faceted min/max values for ${columnConfig.id}`,
-              // )
+
               resolve(undefined)
             }, 0),
           )

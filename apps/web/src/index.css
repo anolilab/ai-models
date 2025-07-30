@@ -266,9 +266,6 @@
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        
-        /* Improve performance for large data tables */
-        contain: layout style paint;
     }
 
     /* Typography hierarchy for data tables */
@@ -683,9 +680,6 @@ input[type="week"] {
   }
 }
 
-
-
-/* Data table performance optimizations */
 @layer components {
   /* Virtual scrolling optimizations */
   .virtual-table {

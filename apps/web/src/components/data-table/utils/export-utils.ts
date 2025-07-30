@@ -14,8 +14,7 @@ export type DataTransformFunction<T extends ExportableData> = (row: T) => Export
 function convertToCSV<T extends ExportableData>(
   data: T[], 
   headers: string[], 
-  columnMapping?: Record<string, string>,
-  transformFunction?: DataTransformFunction<T>
+  columnMapping?: Record<string, string>
 ): string {
   if (data.length === 0) {
     throw new Error("No data to export");
@@ -41,12 +40,9 @@ function convertToCSV<T extends ExportableData>(
 
   // Add data rows
   for (const item of data) {
-    // Apply transformation function if provided
-    const transformedItem = transformFunction ? transformFunction(item) : item;
-    
     const row = headers.map(header => {
-      // Get the value for this header from the transformed item
-      const value = transformedItem[header];
+      // Get the value for this header from the item
+      const value = item[header];
 
       // Convert all values to string and properly escape for CSV
       const cellValue = value === null || value === undefined ? "" : String(value);

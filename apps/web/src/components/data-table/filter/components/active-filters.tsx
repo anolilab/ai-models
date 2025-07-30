@@ -126,13 +126,6 @@ export function ActiveFiltersMobileContainer({
     }
   }
 
-  // Log blur states for debugging
-  // useEffect(() => {
-  //   console.log('left:', showLeftBlur, '  right:', showRightBlur)
-  // }, [showLeftBlur, showRightBlur])
-
-  // Set up ResizeObserver to monitor container size
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (scrollContainerRef.current) {
       const resizeObserver = new ResizeObserver(() => {

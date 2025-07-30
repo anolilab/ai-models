@@ -534,6 +534,7 @@ const HomeComponent = () => {
               transformFunction: (row) => ({
                 provider: row.provider,
                 model: row.model,
+                providerId: row.providerId,
                 modelId: row.modelId,
                 toolCall: row.toolCall,
                 reasoning: row.reasoning,
@@ -574,7 +575,7 @@ const HomeComponent = () => {
               ],
               headers: [
                 "provider",
-                "model",
+                "model", 
                 "providerId",
                 "modelId",
                 "toolCall",
@@ -584,7 +585,7 @@ const HomeComponent = () => {
                 "inputCost",
                 "outputCost",
                 "cacheReadCost",
-                "cacheWriteCost",
+                "cacheWriteCost", 
                 "contextLimit",
                 "outputLimit",
                 "temperature",

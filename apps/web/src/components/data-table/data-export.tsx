@@ -128,18 +128,11 @@ export function DataTableExport<TData extends ExportableData>({
         
         return allItems;
       } else {
-        // Use the table's filtered data instead of the raw data
-        // This respects any filters, column visibility, and other table state
-        const filteredRows = table.getFilteredRowModel().rows;
-        
-        if (filteredRows.length === 0) {
+        if (!data || data.length === 0) {
           throw new Error("No data available for export");
         }
         
-        // Extract the original data from the filtered rows
-        const filteredData = filteredRows.map(row => row.original);
-        
-        return selectedData && selectedData.length > 0 ? selectedData : filteredData;
+        return selectedData && selectedData.length > 0 ? selectedData : data;
       }
     };
 
