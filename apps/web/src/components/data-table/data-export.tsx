@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DownloadIcon, Loader2 } from "lucide-react";
 import type { Table } from "@tanstack/react-table";
-import { exportData, exportToCSV, exportToExcel } from "./utils/export-utils";
+import { exportData, exportToCSV, exportToExcel, exportToJSON } from "./utils/export-utils";
 import type { ExportableData, DataTransformFunction } from "./utils/export-utils";
 import type { TableConfig } from "./utils/table-config";
 import { type JSX, useState } from "react";
@@ -46,7 +46,7 @@ export function DataTableExport<TData extends ExportableData>({
 }: DataTableExportProps<TData>): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleExport = async (type: "csv" | "excel") => {
+  const handleExport = async (type: "csv" | "excel" | "json") => {
     if (isLoading) return; // Prevent multiple export requests
     
     // Create a data fetching function based on the current state
@@ -230,7 +230,7 @@ export function DataTableExport<TData extends ExportableData>({
     }
   };
 
-  const exportAllPages = async (type: "csv" | "excel") => {
+  const exportAllPages = async (type: "csv" | "excel" | "json") => {
     if (isLoading || !getAllItems) return;
     setIsLoading(true);
     
@@ -330,6 +330,8 @@ export function DataTableExport<TData extends ExportableData>({
       let success = false;
       if (type === "csv") {
         success = exportToCSV(allData, filename, exportHeaders, exportColumnMapping, transformFunction);
+      } else if (type === "json") {
+        success = exportToJSON(allData, filename, transformFunction);
       } else {
         success = exportToExcel(
           allData, 
@@ -388,6 +390,9 @@ export function DataTableExport<TData extends ExportableData>({
             <DropdownMenuItem onClick={() => handleExport("excel")} disabled={isLoading}>
               Export Selected as XLS
             </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleExport("json")} disabled={isLoading}>
+              Export Selected as JSON
+            </DropdownMenuItem>
           </>
         ) : (
           <>
@@ -396,6 +401,9 @@ export function DataTableExport<TData extends ExportableData>({
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => handleExport("excel")} disabled={isLoading}>
               Export Current Page as XLS
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleExport("json")} disabled={isLoading}>
+              Export Current Page as JSON
             </DropdownMenuItem>
             {getAllItems && (
               <>
@@ -410,6 +418,12 @@ export function DataTableExport<TData extends ExportableData>({
                   disabled={isLoading}
                 >
                   Export All Pages as XLS
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => exportAllPages("json")} 
+                  disabled={isLoading}
+                >
+                  Export All Pages as JSON
                 </DropdownMenuItem>
               </>
             )}

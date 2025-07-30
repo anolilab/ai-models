@@ -139,12 +139,12 @@ export function RegularTable<TData>({
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <TableCell
-                    className="truncate text-left"
+                    className="truncate text-left px-4"
                     key={cell.id}
                     id={`cell-${rowIndex}-${cellIndex}`}
                     data-cell-index={cellIndex}
                     style={{
-                      width: cell.column.getSize() + 5,
+                      width: cell.column.getSize(),
                     }}
                   >
                     {flexRender(

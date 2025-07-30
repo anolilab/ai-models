@@ -122,6 +122,39 @@ export function exportToCSV<T extends ExportableData>(
 }
 
 /**
+ * Export data to JSON file
+ */
+export function exportToJSON<T extends ExportableData>(
+  data: T[],
+  filename: string,
+  transformFunction?: DataTransformFunction<T>
+): boolean {
+  if (data.length === 0) {
+    console.error("No data to export");
+    return false;
+  }
+
+  try {
+    // Apply transformation function if provided
+    const processedData = data.map(item => {
+      return transformFunction ? transformFunction(item) : item;
+    });
+
+    // Convert to JSON string with pretty formatting
+    const jsonContent = JSON.stringify(processedData, null, 2);
+    
+    // Create blob and download
+    const blob = new Blob([jsonContent], { type: 'application/json' });
+    downloadFile(blob, `${filename}.json`);
+    
+    return true;
+  } catch (error) {
+    console.error("Error exporting to JSON:", error);
+    return false;
+  }
+}
+
+/**
  * Export data to Excel file using xlsx package
  */
 export function exportToExcel<T extends ExportableData>(
@@ -196,7 +229,7 @@ export function exportToExcel<T extends ExportableData>(
  * Unified export function that handles loading states and error handling
  */
 export async function exportData<T extends ExportableData>(
-  type: "csv" | "excel",
+  type: "csv" | "excel" | "json",
   getData: () => Promise<T[]>,
   onLoadingStart?: () => void,
   onLoadingEnd?: () => void,
@@ -258,6 +291,18 @@ export async function exportData<T extends ExportableData>(
       if (success) {
         toast.success("Export successful", {
           description: `Exported ${exportData.length} ${entityName} to CSV.`,
+          id: TOAST_ID
+        });
+      }
+    } else if (type === "json") {
+      success = exportToJSON(
+        exportData,
+        filename,
+        options?.transformFunction
+      );
+      if (success) {
+        toast.success("Export successful", {
+          description: `Exported ${exportData.length} ${entityName} to JSON.`,
           id: TOAST_ID
         });
       }

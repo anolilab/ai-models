@@ -14,7 +14,7 @@ import {
   type ColumnResizeMode
 } from "@tanstack/react-table";
 
-import { useEffect, useCallback, useMemo, useState } from "react";
+import { useEffect, useCallback, useMemo, useState, useRef } from "react";
 
 import {
   VirtualizedTable,
@@ -159,14 +159,6 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Load table configuration with any overrides
   const tableConfig = useTableConfig(config);
 
-  // Column sizing state (moved from useTableColumnResize hook)
-  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({});
-
-  // Memoized function to reset column sizes
-  const resetColumnSizing = useCallback(() => {
-    setColumnSizing({});
-  }, []);
-
   // Use regular React state for all table parameters (client-side only)
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -179,6 +171,12 @@ export function DataTable<TData extends ExportableData, TValue>({
   
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
+  
+  // Column sizing state
+  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({});
+  
+  // Ref to store current rowSelection to avoid circular dependency
+  const rowSelectionRef = useRef<Record<string, boolean>>({});
 
   // Set up data-table-filter if filterColumns are provided
   const filterData = useMemo(() => data, [data]);
@@ -215,27 +213,10 @@ export function DataTable<TData extends ExportableData, TValue>({
 
   // Helper functions to handle both Record and Set selection states
   const isItemSelected = useCallback((itemId: string): boolean => {
-    if (tableConfig.enableRowVirtualization) {
-      return (selectedItemIds as Set<string>).has(itemId);
-    } else {
-      return !!(selectedItemIds as Record<string, boolean>)[itemId];
-    }
+    return tableConfig.enableRowVirtualization
+      ? (selectedItemIds as Set<string>).has(itemId)
+      : !!(selectedItemIds as Record<string, boolean>)[itemId];
   }, [selectedItemIds, tableConfig.enableRowVirtualization]);
-
-  const addSelectedItem = useCallback((itemId: string) => {
-    if (tableConfig.enableRowVirtualization) {
-      setSelectedItemIds(prev => {
-        const next = new Set(prev as Set<string>);
-        next.add(itemId);
-        return next;
-      });
-    } else {
-      setSelectedItemIds(prev => ({
-        ...(prev as Record<string, boolean>),
-        [itemId]: true
-      }));
-    }
-  }, [tableConfig.enableRowVirtualization]);
 
   const removeSelectedItem = useCallback((itemId: string) => {
     if (tableConfig.enableRowVirtualization) {
@@ -288,12 +269,14 @@ export function DataTable<TData extends ExportableData, TValue>({
       const item = dataItems[i];
       const itemId = String(item[idField]);
       if (isItemSelected(itemId)) {
-        selection[String(i)] = true;
+        selection[itemId] = true;
       }
     }
 
+    // Update the ref with the current selection
+    rowSelectionRef.current = selection;
     return selection;
-  }, [dataItems, isItemSelected, idField]);
+  }, [dataItems, isItemSelected, idField, selectedItemIds]);
 
   // Calculate total selected items - memoize to avoid recalculation
   const totalSelectedItems = useMemo(() =>
@@ -316,7 +299,7 @@ export function DataTable<TData extends ExportableData, TValue>({
   const handleRowSelectionChange = useCallback((updaterOrValue: RowSelectionUpdater | Record<string, boolean>) => {
     // Determine the new row selection value
     const newRowSelection = typeof updaterOrValue === 'function'
-      ? updaterOrValue(rowSelection)
+      ? updaterOrValue(rowSelectionRef.current)
       : updaterOrValue;
 
     // Use a more efficient batch update approach
@@ -325,22 +308,20 @@ export function DataTable<TData extends ExportableData, TValue>({
     // Process changes for current page
     if (dataItems.length) {
       // First handle explicit selections in newRowSelection
-      for (const [rowId, isSelected] of Object.entries(newRowSelection)) {
-        const rowIndex = Number.parseInt(rowId, 10);
-        if (rowIndex >= 0 && rowIndex < dataItems.length) {
-          const item = dataItems[rowIndex];
-          const itemId = String(item[idField]);
+      for (const [itemId, isSelected] of Object.entries(newRowSelection)) {
+        // Check if this itemId exists in our current data
+        const itemExists = dataItems.some(item => String(item[idField]) === itemId);
+        if (itemExists) {
           updates.set(itemId, isSelected);
         }
       }
 
       // Then handle implicit deselection (rows that were selected but aren't in newRowSelection)
-      dataItems.forEach((item, index) => {
+      dataItems.forEach((item) => {
         const itemId = String(item[idField]);
-        const rowId = String(index);
 
         // If item was selected but isn't in new selection, deselect it
-        if (isItemSelected(itemId) && newRowSelection[rowId] === undefined) {
+        if (isItemSelected(itemId) && newRowSelection[itemId] === undefined) {
           updates.set(itemId, false);
         }
       });
@@ -372,7 +353,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         return next;
       });
     }
-  }, [dataItems, rowSelection, idField, isItemSelected, tableConfig.enableRowVirtualization]);
+  }, [dataItems, idField, isItemSelected, tableConfig.enableRowVirtualization]);
 
   // Get selected items data - React Compiler optimized
   const getSelectedItems = useCallback(async () => {
@@ -507,6 +488,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         onPaginationChange: handlePaginationChange,
       } : {}),
       enableRowSelection: tableConfig.enableRowSelection,
+      rowSelection,
       enableColumnResizing: tableConfig.enableColumnResizing,
       enableColumnFilters: true,
       manualPagination: false,
@@ -632,7 +614,7 @@ export function DataTable<TData extends ExportableData, TValue>({
         {tableConfig.enableRowVirtualization ? (
           <TableErrorBoundary fallback={<div className="p-4 text-center text-muted-foreground">Error loading virtual table.</div>}>
             <VirtualizedTable 
-              key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}`}
+              key={`virtual-${JSON.stringify(table.getState().columnFilters)}-${table.getFilteredRowModel().rows.length}-${JSON.stringify(table.getState().rowSelection)}`}
               table={table} 
               onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
               enableStickyHeader={tableConfig.enableStickyHeader}

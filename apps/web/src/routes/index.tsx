@@ -1,8 +1,8 @@
 import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
-import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2 } from "lucide-react";
-import { useMemo, useState, useEffect } from "react";
+import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2, Trash2, Copy, Download } from "lucide-react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
 import { SkeletonTable } from "@/components/skeleton-table";
@@ -11,6 +11,7 @@ import { textFilterFn, numberFilterFn, dateFilterFn } from "@/components/data-ta
 import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -147,6 +148,31 @@ const HomeComponent = () => {
 
 
   const baseColumns: ColumnDef<typeof tableData[0]>[] = [
+    {
+      id: "select",
+      header: ({ table }) => (
+        <div className="p-2">
+          <Checkbox
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && "indeterminate")
+            }
+            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            aria-label="Select all"
+          />
+        </div>
+      ),
+      cell: ({ row }) => (
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
+        />
+      ),
+      enableSorting: false,
+      enableHiding: false,
+      size: 60,
+    },
     { 
       id: "provider",
       accessorKey: "provider", 
@@ -412,8 +438,51 @@ const HomeComponent = () => {
     },
   ];
 
-  // Use base columns directly since DataTable handles filtering internally
-  const columns = useMemo(() => baseColumns, [baseColumns]);
+  // Create columns with row deselection handler
+  const getColumns = useCallback((handleRowDeselection: ((rowId: string) => void) | null | undefined) => {
+    return baseColumns;
+  }, [baseColumns]);
+
+  // Custom toolbar component for selection actions
+  const renderToolbarContent = useCallback(({ selectedRows, totalSelectedCount, resetSelection }: {
+    selectedRows: typeof tableData;
+    allSelectedIds: (string | number)[];
+    totalSelectedCount: number;
+    resetSelection: () => void;
+  }) => {
+    if (totalSelectedCount === 0) return null;
+
+    return (
+      <div className="flex items-center gap-2 p-2 bg-muted/50 rounded-md">
+        <span className="text-sm font-medium">
+          {totalSelectedCount} model{totalSelectedCount !== 1 ? 's' : ''} selected
+        </span>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              // Copy selected model IDs to clipboard
+              const modelIds = selectedRows.map(row => row.modelId).join('\n');
+              navigator.clipboard.writeText(modelIds);
+            }}
+          >
+            <Copy className="h-4 w-4 mr-1" />
+            Copy IDs
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={resetSelection}
+          >
+            <Trash2 className="h-4 w-4 mr-1" />
+            Clear
+          </Button>
+        </div>
+      </div>
+    );
+  }, []);
 
   return (
     <>
@@ -432,14 +501,15 @@ const HomeComponent = () => {
         </div>
       </header>
       <main>
-        <ClientOnly fallback={<SkeletonTable rows={15} columns={19} />}>
+        <ClientOnly fallback={<SkeletonTable rows={15} columns={20} />}>
           <DataTable<typeof tableData[0], any>
-            getColumns={() => columns}
+            getColumns={getColumns}
             data={tableData}
             idField="id"
             filterColumns={columnConfigs}
             filterStrategy="client"
             containerHeight={containerHeight}
+            renderToolbarContent={renderToolbarContent}
             exportConfig={{
               entityName: "models",
               columnMapping: {
@@ -463,6 +533,17 @@ const HomeComponent = () => {
                 releaseDate: "Release Date",
                 lastUpdated: "Last Updated",
               },
+              transformFunction: (row) => ({
+                provider: row.provider,
+                model: row.model,
+                modelId: row.modelId,
+                toolCall: row.toolCall,
+                reasoning: row.reasoning,
+                input: row.input,
+                output: row.output,
+                inputCost: row.inputCost,
+                outputCost: row.outputCost,
+              }),
               columnWidths: [
                 { wch: 15 }, // provider
                 { wch: 20 }, // model
@@ -507,14 +588,14 @@ const HomeComponent = () => {
               ],
             }}
             config={{
-              enableRowSelection: false,
+              enableRowSelection: true,
               enableColumnResizing: false,
               enablePagination: false,
               enableColumnVisibility: true,
               enableToolbar: true,
               enableStickyHeader: true,
               // Performance optimizations
-              enableRowVirtualization: false,
+              enableRowVirtualization: true,
               estimatedRowHeight: 40,
               virtualizationOverscan: 5,
             }}
