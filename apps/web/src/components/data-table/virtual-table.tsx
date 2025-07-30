@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 import type { RefObject } from 'react'
 import {
   flexRender,
@@ -109,24 +109,13 @@ const VirtualizedTable = <TData extends ExportableData>({
   const tableContainerRef = useRef<HTMLDivElement>(null)
   
   // Create a comprehensive key that changes when filters, sorting, or data changes
-  const tableKey = React.useMemo(() => {
+  const tableKey = useMemo(() => {
     const { rows } = table.getFilteredRowModel()
     const filterState = table.getState().columnFilters
     const globalFilter = table.getState().globalFilter
     const sorting = table.getState().sorting
     return `virtual-table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`
   }, [table])
-
-  // Debug effect to track when virtual table data changes
-  React.useEffect(() => {
-    const { rows } = table.getFilteredRowModel()
-    console.log('VirtualizedTable: Table data changed', {
-      rowsLength: rows.length,
-      tableKey,
-      filterState: table.getState().columnFilters,
-      globalFilter: table.getState().globalFilter
-    })
-  }, [tableKey, table])
 
   // Column virtualization for horizontal scrolling
   const columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
