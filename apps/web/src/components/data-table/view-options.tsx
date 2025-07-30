@@ -1,7 +1,7 @@
 "use client";
 
 import type { Table, Column } from "@tanstack/react-table";
-import { Check, GripVertical, Settings2, RotateCcw } from "lucide-react";
+import { Eye, EyeOff, GripVertical, Settings2, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -19,16 +19,13 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import * as React from "react";
-import { useCallback, useEffect, useState, useMemo } from "react";
+import { useCallback, useState, useMemo } from "react";
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;
   columnMapping?: Record<string, string>;
   size?: 'sm' | 'default' | 'lg';
 }
-
-// Local storage key for column order
-const COLUMN_ORDER_STORAGE_KEY = "data-table-column-order";
 
 export function DataTableViewOptions<TData>({
   table,
@@ -49,9 +46,15 @@ export function DataTableViewOptions<TData>({
 
   // State for drag and drop
   const [draggedColumnId, setDraggedColumnId] = useState<string | null>(null);
+  // State to force re-renders when visibility changes
+  const [visibilityUpdateTrigger, setVisibilityUpdateTrigger] = useState(0);
+  // State to force re-renders when column order changes
+  const [orderUpdateTrigger, setOrderUpdateTrigger] = useState(0);
 
   // Order columns based on the current table column order
   const columnOrder = table.getState().columnOrder;
+  const columnVisibility = table.getState().columnVisibility;
+  
   const orderedColumns = useMemo(() => {
     if (!columnOrder.length) {
       return columns;
@@ -70,28 +73,13 @@ export function DataTableViewOptions<TData>({
     });
   }, [columns, columnOrder]);
 
-  // Load column order from localStorage on initial render
-  useEffect(() => {
-    try {
-      const savedOrder = localStorage.getItem(COLUMN_ORDER_STORAGE_KEY);
-      if (savedOrder) {
-        const columnOrder = JSON.parse(savedOrder);
-        // Apply saved column order to the table
-        table.setColumnOrder(columnOrder);
-      }
-    } catch (error) {
-      console.error("Error loading column order:", error);
-    }
-  }, [table]);
-
-  // Save column order to localStorage when it changes
-  const saveColumnOrder = useCallback((columnOrder: string[]) => {
-    try {
-      localStorage.setItem(COLUMN_ORDER_STORAGE_KEY, JSON.stringify(columnOrder));
-    } catch (error) {
-      console.error("Error saving column order:", error);
-    }
-  }, []);
+  // Memo for columns with visibility state to force re-renders
+  const columnsWithVisibility = useMemo(() => {
+    return orderedColumns.map(column => ({
+      ...column,
+      isVisible: column.getIsVisible()
+    }));
+  }, [orderedColumns, columnVisibility, visibilityUpdateTrigger, orderUpdateTrigger]);
 
   // Handle column visibility toggle
   const handleColumnVisibilityToggle = useCallback((columnId: string) => {
@@ -102,6 +90,9 @@ export function DataTableViewOptions<TData>({
       ...currentVisibility,
       [columnId]: !isCurrentlyVisible,
     });
+    
+    // Force re-render by updating the trigger
+    setVisibilityUpdateTrigger(prev => prev + 1);
   }, [table]);
 
   // Handle drag start
@@ -145,18 +136,19 @@ export function DataTableViewOptions<TData>({
     // Update table column order
     table.setColumnOrder(newOrder);
 
-    // Save to localStorage
-    saveColumnOrder(newOrder);
+    // Force re-render for order changes
+    setOrderUpdateTrigger(prev => prev + 1);
 
     setDraggedColumnId(null);
-  }, [draggedColumnId, table, saveColumnOrder]);
+  }, [draggedColumnId, table]);
 
   // Reset column order
   const resetColumnOrder = useCallback(() => {
     // Clear order by setting empty array (table will use default order)
     table.setColumnOrder([]);
-    // Remove from localStorage
-    localStorage.removeItem(COLUMN_ORDER_STORAGE_KEY);
+    
+    // Force re-render for order changes
+    setOrderUpdateTrigger(prev => prev + 1);
   }, [table]);
 
   // Get column display label
@@ -190,7 +182,7 @@ export function DataTableViewOptions<TData>({
           <CommandList>
             <CommandEmpty>No columns found.</CommandEmpty>
             <CommandGroup>
-              {orderedColumns.map((column) => (
+              {columnsWithVisibility.map((column) => (
                 <CommandItem
                   key={column.id}
                   onSelect={() => handleColumnVisibilityToggle(column.id)}
@@ -207,12 +199,11 @@ export function DataTableViewOptions<TData>({
                   <span className="flex-grow truncate capitalize">
                     {getColumnLabel(column)}
                   </span>
-                  <Check
-                    className={cn(
-                      "ml-auto h-4 w-4",
-                      column.getIsVisible() ? "opacity-100" : "opacity-0",
-                    )}
-                  />
+                  {column.isVisible ? (
+                    <Eye className="ml-auto h-4 w-4" />
+                  ) : (
+                    <EyeOff className="ml-auto h-4 w-4" />
+                  )}
                 </CommandItem>
               ))}
             </CommandGroup>

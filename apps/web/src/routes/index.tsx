@@ -439,6 +439,7 @@ const HomeComponent = () => {
             idField="id"
             filterColumns={columnConfigs}
             filterStrategy="client"
+            containerHeight={containerHeight}
             exportConfig={{
               entityName: "models",
               columnMapping: {
@@ -513,14 +514,13 @@ const HomeComponent = () => {
               enableToolbar: true,
               enableStickyHeader: true,
               // Performance optimizations
-              enableRowVirtualization: true,
+              enableRowVirtualization: false,
               estimatedRowHeight: 40,
               virtualizationOverscan: 5,
             }}
             virtualizationOptions={{
               estimatedRowHeight: 40,
               overscan: 5,
-              containerHeight: containerHeight,
             }}
           />
         </ClientOnly>

@@ -121,7 +121,6 @@ interface DataTableProps<TData extends ExportableData, TValue> {
   virtualizationOptions?: {
     estimatedRowHeight?: number;
     overscan?: number;
-    containerHeight?: number;
   };
   classes?: {
     root?: string;
@@ -134,6 +133,7 @@ interface DataTableProps<TData extends ExportableData, TValue> {
   // New filter system props
   filterColumns?: ColumnConfig<TData>[];
   filterStrategy?: FilterStrategy;
+  containerHeight?: number;
 }
 
 export function DataTable<TData extends ExportableData, TValue>({
@@ -148,7 +148,8 @@ export function DataTable<TData extends ExportableData, TValue>({
   classes = {},
   externalColumnFilters,
   filterColumns,
-  filterStrategy = 'client'
+  filterStrategy = 'client',
+  containerHeight,
 }: DataTableProps<TData, TValue>) {
   // Performance monitoring (disabled in test environment)
   if (process.env.NODE_ENV !== 'test') {
@@ -178,9 +179,6 @@ export function DataTable<TData extends ExportableData, TValue>({
   
   // Column order state
   const [columnOrder, setColumnOrder] = useState<string[]>([]);
-
-  // Loading state for table operations
-  const [isLoading, setIsLoading] = useState(false);
 
   // Set up data-table-filter if filterColumns are provided
   const filterData = useMemo(() => data, [data]);
@@ -610,18 +608,9 @@ export function DataTable<TData extends ExportableData, TValue>({
         <DataTableToolbar
           table={table}
           totalSelectedItems={totalSelectedItems}
-          deleteSelection={clearAllSelections}
           getSelectedItems={getSelectedItems}
           getAllItems={getAllItems}
           config={tableConfig}
-          resetColumnSizing={() => {
-            resetColumnSizing();
-            // Force a small delay and then refresh the UI
-            setTimeout(() => {
-              window.dispatchEvent(new Event('resize'));
-            }, 100);
-          }}
-          resetColumnOrder={resetColumnOrder}
           entityName={exportConfig.entityName}
           columnMapping={exportConfig.columnMapping}
           columnWidths={exportConfig.columnWidths}
@@ -650,7 +639,7 @@ export function DataTable<TData extends ExportableData, TValue>({
               virtualizationOptions={{
                 estimatedRowHeight: virtualizationOptions.estimatedRowHeight ?? tableConfig.estimatedRowHeight,
                 overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
-                containerHeight: virtualizationOptions.containerHeight ?? 400, // Default fallback height
+                containerHeight: containerHeight ?? 400, // Default fallback height
               }}
               columns={columns}
               className={classes.table}
@@ -667,6 +656,7 @@ export function DataTable<TData extends ExportableData, TValue>({
               onKeyDown={handleKeyDown}
               enableStickyHeader={tableConfig.enableStickyHeader}
               className={classes.table}
+              containerHeight={containerHeight}
             />
           </TableErrorBoundary>
         )}

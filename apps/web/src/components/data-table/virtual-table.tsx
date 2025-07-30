@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import type { RefObject } from 'react'
 import {
   flexRender,
@@ -107,6 +107,26 @@ const VirtualizedTable = <TData extends ExportableData>({
 }: VirtualizedTableProps<TData>) => {
   const visibleColumns = table.getVisibleLeafColumns()
   const tableContainerRef = useRef<HTMLDivElement>(null)
+  
+  // Create a comprehensive key that changes when filters, sorting, or data changes
+  const tableKey = React.useMemo(() => {
+    const { rows } = table.getFilteredRowModel()
+    const filterState = table.getState().columnFilters
+    const globalFilter = table.getState().globalFilter
+    const sorting = table.getState().sorting
+    return `virtual-table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`
+  }, [table])
+
+  // Debug effect to track when virtual table data changes
+  React.useEffect(() => {
+    const { rows } = table.getFilteredRowModel()
+    console.log('VirtualizedTable: Table data changed', {
+      rowsLength: rows.length,
+      tableKey,
+      filterState: table.getState().columnFilters,
+      globalFilter: table.getState().globalFilter
+    })
+  }, [tableKey, table])
 
   // Column virtualization for horizontal scrolling
   const columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
@@ -131,15 +151,16 @@ const VirtualizedTable = <TData extends ExportableData>({
   return (
     <div 
       ref={tableContainerRef}
-      className={cn(
-        "relative w-full h-full overflow-auto",
-        enableStickyHeader && "sticky-container"
-      )}
+      className="relative w-full h-full overflow-auto"
       style={{
         height: virtualizationOptions.containerHeight,
+        ...(enableStickyHeader && {
+          position: 'relative',
+        }),
       }}
     >
       <BaseTable 
+        key={tableKey}
         classNames={{
           table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
           container: "w-full",
@@ -159,7 +180,7 @@ const VirtualizedTable = <TData extends ExportableData>({
           enableColumnResizing={enableColumnResizing}
         />
         <TableBody
-          key={`table-body-${table.getFilteredRowModel().rows.length}`}
+          key={tableKey}
           columnVirtualizer={columnVirtualizer}
           table={table}
           tableContainerRef={tableContainerRef}
@@ -184,7 +205,11 @@ const TableHead = <TData extends ExportableData>({
   enableColumnResizing = false,
 }: TableHeadProps<TData>) => {
   return (
-    <TableHeader className={enableStickyHeader ? "sticky-header" : ""}>
+    <TableHeader 
+      className={cn(
+        enableStickyHeader && "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10"
+      )}
+    >
       {table.getHeaderGroups().map(headerGroup => (
         <TableHeadRow
           key={headerGroup.id}
@@ -288,12 +313,12 @@ const TableBody = <TData extends ExportableData>({
     scrollPaddingStart: enableStickyHeader ? 40 : 0,
   })
 
-  // Force virtualizer to recalculate when container or data changes
+  // Force virtualizer to recalculate when container, data, or filters change
   useEffect(() => {
     if (tableContainerRef.current && rows.length > 0) {
       rowVirtualizer.measure()
     }
-  }, [tableContainerRef.current, rows.length, rowVirtualizer]);
+  }, [tableContainerRef.current, rows.length, rowVirtualizer, table.getState().columnFilters, table.getState().globalFilter]);
 
   const virtualRows = rowVirtualizer.getVirtualItems()
   
@@ -331,7 +356,7 @@ const TableBody = <TData extends ExportableData>({
         const row = rows[virtualRow.index] as Row<TData>
         return (
           <TableBodyRow
-            key={row.id}
+            key={`${row.id}-${virtualRow.index}`}
             columnVirtualizer={columnVirtualizer}
             row={row}
             rowVirtualizer={rowVirtualizer}
@@ -362,7 +387,7 @@ const TableBodyRow = <TData extends ExportableData>({
     <BaseTableRow
       ref={node => rowVirtualizer.measureElement(node)}
       key={row.id}
-      id={`row-${virtualRow.index}`}
+      id={`row-${row.id}-${virtualRow.index}`}
       data-index={virtualRow.index}
       data-row-index={virtualRow.index}
       data-state={row.getIsSelected() ? "selected" : undefined}

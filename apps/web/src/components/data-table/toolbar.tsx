@@ -43,12 +43,9 @@ const getButtonSizeClass = (size: 'sm' | 'default' | 'lg', isIcon = false) => {
 interface DataTableToolbarProps<TData extends ExportableData> {
   table: Table<TData>;
   totalSelectedItems?: number;
-  deleteSelection?: () => void;
   getSelectedItems?: () => Promise<TData[]>;
   getAllItems?: () => TData[];
   config: TableConfig;
-  resetColumnSizing?: () => void;
-  resetColumnOrder?: () => void;
   entityName?: string;
   columnMapping?: Record<string, string>;
   columnWidths?: Array<{ wch: number }>;
@@ -66,12 +63,9 @@ interface DataTableToolbarProps<TData extends ExportableData> {
 export function DataTableToolbar<TData extends ExportableData>({
   table,
   totalSelectedItems = 0,
-  deleteSelection,
   getSelectedItems,
   getAllItems,
   config,
-  resetColumnSizing,
-  resetColumnOrder,
   entityName = "items",
   columnMapping,
   columnWidths,
@@ -139,90 +133,6 @@ export function DataTableToolbar<TData extends ExportableData>({
             size={config.size}
           />
         )}
-
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className={getButtonSizeClass(config.size, true)}
-              title="Table Settings"
-            >
-              <Settings className="h-4 w-4" />
-              <span className="sr-only">Open table settings</span>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-60" align="end">
-            <div className="grid gap-4">
-              <div className="space-y-2">
-                <h4 className="font-medium leading-none">Table Settings</h4>
-              </div>
-
-              <div className="grid gap-2">
-                {config.enableColumnResizing && resetColumnSizing && (
-                  <Button
-                    variant="outline"
-                    size={config.size}
-                    className="justify-start"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      resetColumnSizing();
-                    }}
-                  >
-                    <Undo2 className="mr-2 h-4 w-4" />
-                    Reset Column Sizes
-                  </Button>
-                )}
-
-                {resetColumnOrder && (
-                  <Button
-                    variant="outline"
-                    size={config.size}
-                    className="justify-start"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      resetColumnOrder();
-                    }}
-                  >
-                    <MoveHorizontal className="mr-2 h-4 w-4" />
-                    Reset Column Order
-                  </Button>
-                )}
-
-                {config.enableRowSelection && (
-                  <Button
-                    variant="outline"
-                    size={config.size}
-                    className="justify-start"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      table.resetRowSelection();
-                      // Also call the parent component's deleteSelection function if available
-                      if (deleteSelection) {
-                        deleteSelection();
-                      }
-                    }}
-                  >
-                    <CheckSquare className="mr-2 h-4 w-4" />
-                    Clear Selection
-                  </Button>
-                )}
-
-                {!table.getIsAllColumnsVisible() && (
-                  <Button
-                    variant="outline"
-                    size={config.size}
-                    className="justify-start"
-                    onClick={() => table.resetColumnVisibility()}
-                  >
-                    <EyeOff className="mr-2 h-4 w-4" />
-                    Show All Columns
-                  </Button>
-                )}
-              </div>
-            </div>
-          </PopoverContent>
-        </Popover>
       </div>
     </div>
   );
