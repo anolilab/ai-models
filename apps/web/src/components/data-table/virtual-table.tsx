@@ -406,11 +406,11 @@ const TableBodyCell = <TData extends ExportableData>({
 }: TableBodyCellProps<TData>) => {
   return (
     <BaseTableCell
-      className="p-2 truncate text-left flex"
+      className="py-2 px-4.5 truncate text-left flex"
       id={`cell-${cellIndex}`}
       data-cell-index={cellIndex}
       style={{
-        width: cell.column.getSize() + 5,
+        width: cell.column.getSize(),
       }}
     >
       {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -151,8 +151,6 @@ const HomeComponent = () => {
       id: "provider",
       accessorKey: "provider", 
       size: 150,
-      minSize: 100,
-      maxSize: 300,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Provider" />
       ),
@@ -163,9 +161,7 @@ const HomeComponent = () => {
     { 
       id: "model",
       accessorKey: "model", 
-      size: 200,
-      minSize: 120,
-      maxSize: 400,
+      size: 300,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Model" />
       ),
@@ -176,34 +172,31 @@ const HomeComponent = () => {
     { 
       id: "providerId",
       accessorKey: "providerId", 
-      size: 120,
-      minSize: 80,
-      maxSize: 200,
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Provider ID" />
       ),
       cell: ({ row }) => {
-        return <span className="text-muted-foreground text-xs">{row.original.providerId}</span>;
+        return <span className="text-muted-foreground text-xs font-mono-id">{row.original.providerId}</span>;
       },
       enableColumnFilter: true,
     },
     { 
       id: "modelId",
       accessorKey: "modelId", 
-      size: 180,
-      minSize: 100,
-      maxSize: 300,
+      size: 420,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Model ID" />
       ),
       cell: ({ row }) => {
-        return <span className="text-muted-foreground text-xs">{row.original.modelId}</span>;
+        return <span className="text-muted-foreground text-xs font-mono-id">{row.original.modelId}</span>;
       },
       enableColumnFilter: true,
     },
     { 
       id: "toolCall",
       accessorKey: "toolCall", 
+      size: 130,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Tool Call" />
       ),
@@ -217,6 +210,7 @@ const HomeComponent = () => {
     { 
       id: "reasoning",
       accessorKey: "reasoning", 
+      size: 130,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Reasoning" />
       ),
@@ -229,6 +223,7 @@ const HomeComponent = () => {
     },
     {
       accessorKey: "input",
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Input" />
       ),
@@ -265,6 +260,7 @@ const HomeComponent = () => {
     },
     {
       accessorKey: "output",
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output" />
       ),
@@ -301,9 +297,7 @@ const HomeComponent = () => {
     { 
       id: "inputCost",
       accessorKey: "inputCost", 
-      size: 120,
-      minSize: 80,
-      maxSize: 150,
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Input Cost" />
       ),
@@ -314,9 +308,7 @@ const HomeComponent = () => {
     { 
       id: "outputCost",
       accessorKey: "outputCost", 
-      size: 120,
-      minSize: 80,
-      maxSize: 150,
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Cost" />
       ),
@@ -326,6 +318,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "cacheReadCost", 
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Cache Read Cost" />
       ),
@@ -333,6 +326,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "cacheWriteCost", 
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Cache Write Cost" />
       ),
@@ -340,6 +334,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "contextLimit", 
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Context Limit" />
       ),
@@ -348,6 +343,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "outputLimit", 
+      size: 160,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Limit" />
       ),
@@ -356,6 +352,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "temperature", 
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Temperature" />
       ),
@@ -367,6 +364,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "weights", 
+      size: 140,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Weights" />
       ),
@@ -378,6 +376,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "knowledge", 
+      size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Knowledge" />
       ),
@@ -388,6 +387,7 @@ const HomeComponent = () => {
     },
     { 
       accessorKey: "releaseDate", 
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Release Date" />
       ),
@@ -399,9 +399,7 @@ const HomeComponent = () => {
     { 
       id: "lastUpdated",
       accessorKey: "lastUpdated", 
-      size: 140,
-      minSize: 100,
-      maxSize: 200,
+      size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Last Updated" />
       ),
