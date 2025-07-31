@@ -1,7 +1,6 @@
 packages:
   - apps/*
   - packages/*
-  - tools/*
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
@@ -11,5 +10,6 @@ onlyBuiltDependencies:
   - nx
   - oxc-resolver
   - protobufjs
+  - puppeteer
   - sharp
   - unrs-resolver

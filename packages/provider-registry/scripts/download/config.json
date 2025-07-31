@@ -1,0 +1,59 @@
+{
+  "providers": [
+    {
+      "name": "OpenRouter",
+      "transformer": "./transformers/openrouter.ts",
+      "output": "openrouter"
+    },
+    {
+      "name": "VercelGateway", 
+      "transformer": "./transformers/vercel.ts",
+      "output": "vercel"
+    },
+    {
+      "name": "Amazon Bedrock",
+      "transformer": "./transformers/bedrock.ts", 
+      "output": "amazon-bedrock"
+    },
+    {
+      "name": "Anthropic",
+      "transformer": "./transformers/anthropic.ts",
+      "output": "anthropic"
+    },
+    {
+      "name": "Azure OpenAI",
+      "transformer": "./transformers/azure.ts",
+      "output": "azure"
+    },
+    {
+      "name": "DeepSeek",
+      "transformer": "./transformers/deepseek.ts",
+      "output": "deepseek"
+    },
+    {
+      "name": "GitHub Copilot",
+      "transformer": "./transformers/github-copilot.ts",
+      "output": "github-copilot"
+    },
+    {
+      "name": "Google",
+      "transformer": "./transformers/google.ts",
+      "output": "google"
+    },
+    {
+      "name": "Groq",
+      "transformer": "./transformers/groq.ts",
+      "output": "groq"
+    },
+    {
+      "name": "Hugging Face",
+      "transformer": "./transformers/huggingface.ts",
+      "output": "huggingface"
+    },
+    {
+      "name": "Llama",
+      "transformer": "./transformers/llama.ts",
+      "output": "llama"
+    }
+  ]
+} 

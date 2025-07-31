@@ -1,7 +1,7 @@
 import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
-import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2, Trash2, Copy, Download } from "lucide-react";
+import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2, Trash2, Copy, Download, File } from "lucide-react";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
@@ -19,6 +19,7 @@ const modalityIconMap: Record<string, React.ReactNode> = {
   video: <Video className="inline size-4" />,
   audio: <Volume2 className="inline size-4" />,
   embedding: <ScatterChart className="inline size-4" />,
+  file: <File className="inline size-4" />,
 };
 
 const HomeComponent = () => {
@@ -181,6 +182,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Provider" />
       ),
       enableColumnFilter: true,
+      enableSorting: true,
       sortingFn: "text",
       filterFn: textFilterFn,
     },
@@ -192,6 +194,7 @@ const HomeComponent = () => {
         <DataTableColumnHeader column={column} title="Model" />
       ),
       enableColumnFilter: true,
+      enableSorting: true,
       sortingFn: "text",
       filterFn: textFilterFn,
     },
@@ -206,6 +209,7 @@ const HomeComponent = () => {
         return <span className="text-muted-foreground text-xs font-mono-id">{row.original.providerId}</span>;
       },
       enableColumnFilter: true,
+      enableSorting: true,
     },
     { 
       id: "modelId",
@@ -322,24 +326,30 @@ const HomeComponent = () => {
     },
     { 
       id: "inputCost",
-      accessorKey: "inputCost", 
+      accessorFn: (row) => {
+        const cost = row.inputCost.replace(/[^0-9.]/g, '');
+        return cost === 'N/A' ? 0 : parseFloat(cost);
+      },
       size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Input Cost" />
       ),
       enableColumnFilter: true,
-      sortingFn: "alphanumeric",
+      sortingFn: "basic",
       filterFn: numberFilterFn,
     },
     { 
       id: "outputCost",
-      accessorKey: "outputCost", 
+      accessorFn: (row) => {
+        const cost = row.outputCost.replace(/[^0-9.]/g, '');
+        return cost === 'N/A' ? 0 : parseFloat(cost);
+      },
       size: 150,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Cost" />
       ),
       enableColumnFilter: true,
-      sortingFn: "alphanumeric",
+      sortingFn: "basic",
       filterFn: numberFilterFn,
     },
     { 
@@ -359,22 +369,30 @@ const HomeComponent = () => {
       enableColumnFilter: true,
     },
     { 
-      accessorKey: "contextLimit", 
+      id: "contextLimit",
+      accessorFn: (row) => {
+        const limit = row.contextLimit.replace(/[^0-9]/g, '');
+        return limit === 'N/A' ? 0 : parseInt(limit, 10);
+      },
       size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Context Limit" />
       ),
       enableColumnFilter: true,
-      sortingFn: "alphanumeric",
+      sortingFn: "basic",
     },
     { 
-      accessorKey: "outputLimit", 
+      id: "outputLimit",
+      accessorFn: (row) => {
+        const limit = row.outputLimit.replace(/[^0-9]/g, '');
+        return limit === 'N/A' ? 0 : parseInt(limit, 10);
+      },
       size: 160,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Limit" />
       ),
       enableColumnFilter: true,
-      sortingFn: "alphanumeric",
+      sortingFn: "basic",
     },
     { 
       accessorKey: "temperature", 
@@ -424,7 +442,10 @@ const HomeComponent = () => {
     },
     { 
       id: "lastUpdated",
-      accessorKey: "lastUpdated", 
+      accessorFn: (row) => {
+        if (row.lastUpdated === 'N/A') return null;
+        return new Date(row.lastUpdated);
+      },
       size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Last Updated" />

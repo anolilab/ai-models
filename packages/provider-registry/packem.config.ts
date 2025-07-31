@@ -7,6 +7,12 @@ export default defineConfig({
         license: {
             path: "./LICENSE.md",
         },
+        copy: {
+            targets: [{
+                src: "./assets/icons/providers/**",
+                dest: "./icons",
+            }],
+        },
     },
     transformer,
 }) as BuildConfig;

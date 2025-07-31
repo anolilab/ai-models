@@ -9,7 +9,7 @@
   "repository": {
       "type": "git",
       "url": "git+https://github.com/anolilab/ai-models.git",
-      "directory": "packages/agent"
+      "directory": "packages/provider-registry"
   },
   "funding": [
       {
@@ -26,13 +26,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/*",
       "types": "./dist/index.d.ts"
     },
     "./schema": {
       "import": "./dist/schema.mjs",
       "types": "./dist/schema.d.ts"
-    }
+    },
+    "./icons": "./dist/icons/*"
   },
   "files": [
     "./dist"
@@ -46,9 +47,11 @@
   ],
   "author": "AnoliLab",
     "scripts": {
-    "aggregate": "node ../../scripts/aggregate-providers.js",
+    "aggregate": "tsx ./scripts/aggregate-providers.ts",
     "build": "pnpm run aggregate && packem build --development",
     "build:prod": "pnpm run aggregate && packem build --production",
+    "download": "node ./scripts/download/index.ts",
+    "install:chrome": "npx puppeteer browsers install chrome",
     "clean": "rimraf node_modules dist .eslintcache",
     "lint:attw": "attw --pack",
     "lint:eslint": "eslint .",
@@ -66,7 +69,12 @@
     "semantic-release": "^24.2.7",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
+    "puppeteer": "^24.15.0",
+    "rss-parser": "3.13.0",
+    "zod": "^4.0.10"
   },
   "dependencies": {
     "zod": "^4.0.10"

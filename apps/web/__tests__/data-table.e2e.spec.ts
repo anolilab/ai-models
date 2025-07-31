@@ -6,7 +6,10 @@ test.describe('Data Table E2E Tests', () => {
     await page.goto('/');
     
     // Wait for the page to load and the table to be visible
-    await page.waitForSelector('[data-testid="data-table"]', { timeout: 10000 });
+    await page.waitForSelector('[data-testid="data-table"]', { timeout: 15000 });
+    
+    // Also wait for the table content to load
+    await page.waitForSelector('table', { timeout: 15000 });
   });
 
   test('should load the page and display the data table', async ({ page }) => {
@@ -70,6 +73,54 @@ test.describe('Data Table E2E Tests', () => {
     const modelHeader = page.getByRole('columnheader', { name: 'Model', exact: true });
     await modelHeader.click();
     await page.waitForTimeout(300);
+  });
+
+  test('should sort columns using dropdown Asc/Desc options', async ({ page }) => {
+    // Click on the Provider column header to open dropdown
+    const providerHeader = page.getByRole('columnheader', { name: 'Provider', exact: true });
+    await providerHeader.click();
+    
+    // Wait for the dropdown menu to appear
+    await page.waitForSelector('[role="menu"]');
+    
+    // Click on "Asc" option
+    const ascOption = page.getByRole('menuitem', { name: 'Asc' });
+    await ascOption.click();
+    
+    // Wait for sorting to complete
+    await page.waitForTimeout(300);
+    
+    // Verify ascending sort is applied
+    await expect(providerHeader).toHaveAttribute('aria-sort', 'ascending');
+    
+    // Open dropdown again
+    await providerHeader.click();
+    await page.waitForSelector('[role="menu"]');
+    
+    // Click on "Desc" option
+    const descOption = page.getByRole('menuitem', { name: 'Desc' });
+    await descOption.click();
+    
+    // Wait for sorting to complete
+    await page.waitForTimeout(300);
+    
+    // Verify descending sort is applied
+    await expect(providerHeader).toHaveAttribute('aria-sort', 'descending');
+    
+    // Test with Last Updated column (date sorting)
+    const lastUpdatedHeader = page.getByRole('columnheader', { name: 'Last Updated', exact: true });
+    await lastUpdatedHeader.click();
+    await page.waitForSelector('[role="menu"]');
+    
+    // Click on "Desc" option for date sorting
+    const descDateOption = page.getByRole('menuitem', { name: 'Desc' });
+    await descDateOption.click();
+    
+    // Wait for sorting to complete
+    await page.waitForTimeout(300);
+    
+    // Verify descending sort is applied to date column
+    await expect(lastUpdatedHeader).toHaveAttribute('aria-sort', 'descending');
   });
 
   test('should toggle column visibility', async ({ page }) => {

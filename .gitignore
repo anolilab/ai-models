@@ -1,6 +1,6 @@
 node_modules
 .nx
 
-tools/download/providers
-tools/download/all-models.json
+packages/provider-registry/data
+packages/provider-registry/src/models-data.ts
 port-*.text

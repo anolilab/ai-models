@@ -301,7 +301,7 @@ const TableBody = <TData extends ExportableData>({
   enableStickyHeader = true,
   enableRowSelection = false,
 }: TableBodyProps<TData>) => {
-  const { rows } = table.getFilteredRowModel()
+  const { rows } = table.getRowModel()
 
   // Row virtualization for vertical scrolling
   const rowVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableRowElement>({
@@ -319,12 +319,19 @@ const TableBody = <TData extends ExportableData>({
     scrollPaddingStart: enableStickyHeader ? 40 : 0,
   })
 
-  // Force virtualizer to recalculate when container, data, or filters change
+  // Force virtualizer to recalculate when container, data, filters, or sorting change
   useEffect(() => {
     if (tableContainerRef.current && rows.length > 0) {
       rowVirtualizer.measure()
     }
-  }, [tableContainerRef.current, rows.length, rowVirtualizer, table.getState().columnFilters, table.getState().globalFilter]);
+  }, [tableContainerRef.current, rows.length, rowVirtualizer, table.getState().columnFilters, table.getState().globalFilter, table.getState().sorting]);
+
+  // Force virtualizer to scroll to top when sorting changes
+  useEffect(() => {
+    if (tableContainerRef.current) {
+      rowVirtualizer.scrollToIndex(0)
+    }
+  }, [table.getState().sorting, rowVirtualizer]);
 
   const virtualRows = rowVirtualizer.getVirtualItems()
 
@@ -361,10 +368,11 @@ const TableBody = <TData extends ExportableData>({
       {virtualRows.map(virtualRow => {
         const row = rows[virtualRow.index] as Row<TData>
         
-        // Only include selection state in key if row selection is enabled
+        // Include sorting state in key to force re-render when sorting changes
+        const sortingState = table.getState().sorting.map(s => `${s.id}-${s.desc}`).join(',');
         const rowKey = enableRowSelection
-          ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}`
-          : `${row.id}-${virtualRow.index}`;
+          ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}-${sortingState}`
+          : `${row.id}-${virtualRow.index}-${sortingState}`;
         
         return (
           <TableBodyRow

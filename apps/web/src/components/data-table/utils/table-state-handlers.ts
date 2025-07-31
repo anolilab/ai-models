@@ -18,7 +18,7 @@ export function createSortingHandler(
       ? updaterOrValue([])
       : updaterOrValue;
     
-    // Only update if there's a valid sorting instruction
+    // Handle both sorting and clearing
     if (newSorting.length > 0) {
       const columnId = newSorting[0].id;
       const direction = newSorting[0].desc ? "desc" : "asc";
@@ -37,9 +37,11 @@ export function createSortingHandler(
         // If using regular state (non-Promise), just update sequentially
         setSortOrder(direction);
       }
+    } else {
+      // Clear sorting when newSorting is empty
+      setSortBy("");
+      setSortOrder("asc");
     }
-    // Don't reset to defaults when sort is explicitly cleared
-    // This prevents overriding user selections with default values
   };
 }
 

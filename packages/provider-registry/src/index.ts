@@ -1,5 +1,7 @@
-import { Model, ModelSchema } from './schema';
+import { ModelSchema } from './schema';
+import type { Model } from './schema';
 import { allModels } from './models-data';
+import type { z } from 'zod';
 
 /**
  * Get all available providers
@@ -129,6 +131,5 @@ export function getProviderStats(): Record<string, number> {
   return stats;
 }
 
-// Export types
 export type { Model };
 export { ModelSchema }; 

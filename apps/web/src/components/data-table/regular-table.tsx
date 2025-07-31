@@ -54,7 +54,7 @@ export function RegularTable<TData>({
 
   // OPTIMIZATION: Memoize table key to prevent unnecessary re-renders
   const tableKey = useMemo(() => {
-    const { rows } = table.getFilteredRowModel()
+    const { rows } = table.getRowModel()
     const filterState = table.getState().columnFilters
     const globalFilter = table.getState().globalFilter
     const sorting = table.getState().sorting
@@ -143,10 +143,11 @@ export function RegularTable<TData>({
               // OPTIMIZATION: Memoize row selection state
               const isSelected = row.getIsSelected()
               
-              // Only include selection state in key if row selection is enabled
+              // Include sorting state in key to force re-render when sorting changes
+              const sortingState = table.getState().sorting.map(s => `${s.id}-${s.desc}`).join(',');
               const rowKey = enableRowSelection
-                ? `${row.id}-${rowIndex}-${isSelected}`
-                : `${row.id}-${rowIndex}`;
+              ? `${row.id}-${rowIndex}-${row.getIsSelected()}-${sortingState}`
+              : `${row.id}-${rowIndex}-${sortingState}`;
               
               return (
                 <TableRow

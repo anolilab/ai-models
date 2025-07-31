@@ -168,10 +168,7 @@ export function DataTable<TData extends ExportableData, TValue>({
   const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>({});
   // Use regular React state for columnFilters since they contain complex objects
   const [columnFilters, setColumnFilters] = useState<Array<{ id: string; value: unknown }>>([]);
-  
-  // Column order state
-  const [columnOrder, setColumnOrder] = useState<string[]>([]);
-  
+    
   // Column sizing state
   const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({});
   
@@ -364,8 +361,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     }));
   }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection]);
 
-
-
   // Create event handlers using utility functions
   // Create wrapper functions that match the expected SetStateFunction signature
   const setSortByWrapper = useCallback((value: string | ((prev: string) => string)) => {
@@ -409,14 +404,6 @@ export function DataTable<TData extends ExportableData, TValue>({
     [setColumnSizingWrapper, columnSizing]
   );
 
-  // Column order change handler
-  const handleColumnOrderChange = useCallback((updaterOrValue: ColumnOrderUpdater | string[]) => {
-    const newColumnOrder = typeof updaterOrValue === 'function'
-      ? updaterOrValue(columnOrder)
-      : updaterOrValue;
-
-    setColumnOrder(newColumnOrder);
-  }, [columnOrder]);
 
   // Memoize table configuration to prevent unnecessary re-renders
   const tableOptions = useMemo(() => {
@@ -431,12 +418,10 @@ export function DataTable<TData extends ExportableData, TValue>({
         // Only include pagination state if pagination is enabled
         ...(tableConfig.enablePagination ? { pagination } : {}),
         columnSizing,
-        columnOrder,
         globalFilter: search,
       },
       columnResizeMode: 'onChange' as ColumnResizeMode,
       onColumnSizingChange: handleColumnSizingChange,
-      onColumnOrderChange: handleColumnOrderChange,
       // Only include pagination-related options if pagination is enabled
       ...(tableConfig.enablePagination ? {
         pageCount: Math.ceil(dataItems.length / pageSize),
@@ -446,6 +431,7 @@ export function DataTable<TData extends ExportableData, TValue>({
       rowSelection,
       enableColumnResizing: tableConfig.enableColumnResizing,
       enableColumnFilters: true,
+      enableMultiSort: false, // Only allow single column sorting
       manualPagination: false,
       manualSorting: false,
       manualFiltering: false,
@@ -478,10 +464,8 @@ export function DataTable<TData extends ExportableData, TValue>({
     // Only include pagination-related dependencies if pagination is enabled
     ...(tableConfig.enablePagination ? [pagination, pageSize, handlePaginationChange] : []),
     columnSizing,
-    columnOrder,
     search,
     handleColumnSizingChange,
-    handleColumnOrderChange,
     tableConfig.enableRowSelection,
     tableConfig.enableColumnResizing,
     handleRowSelectionChange,
@@ -532,15 +516,8 @@ export function DataTable<TData extends ExportableData, TValue>({
     };
   }, [table]);
 
-  // Reset column order
-  const resetColumnOrder = useCallback(() => {
-    // Reset to empty array (which resets to default order)
-    table.setColumnOrder([]);
-    setColumnOrder([]);
-  }, [table]);
-
   return (
-    <div className={classes.root}>
+    <div className={classes.root} data-testid="data-table">
       {tableConfig.enableToolbar && (
         <DataTableToolbar
           table={table}

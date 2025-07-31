@@ -5,6 +5,7 @@ import {
   EyeNoneIcon,
 } from "@radix-ui/react-icons";
 import type { Column } from "@tanstack/react-table";
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -35,21 +36,24 @@ export function DataTableColumnHeader<TData, TValue>({
   // Get the current sort direction for this column
   const currentDirection = column.getIsSorted();
 
-  // Use direct method to set sort with an explicit direction
-  const setSorting = (direction: "asc" | "desc" | false) => {
-    // If we're clearing sort, use an empty array
-    if (direction === false) {
-      column.toggleSorting(undefined, false);
-      return;
-    }
+  const [open, setOpen] = useState(false);
 
-    // Set explicit sort with the direction
-    // The second param (false) prevents multi-sort
-    column.toggleSorting(direction === "desc", false);
+  // Handle sorting with proper TanStack Table API
+  const handleSort = (direction: "asc" | "desc" | false) => {
+    if (direction === false) {
+      // Clear sorting
+      column.clearSorting();
+    } else {
+      // Clear any existing sorting first, then set the new sort
+      column.toggleSorting(direction === "desc", true);
+    }
+    
+    // Close the dropdown after sorting
+    setOpen(false);
   };
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
@@ -67,16 +71,16 @@ export function DataTableColumnHeader<TData, TValue>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <DropdownMenuItem onClick={() => setSorting("asc")}>
+        <DropdownMenuItem onClick={() => handleSort("asc")}>
           <ArrowUpIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
           Asc
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setSorting("desc")}>
+        <DropdownMenuItem onClick={() => handleSort("desc")}>
           <ArrowDownIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
           Desc
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem  onClick={() => column.toggleVisibility(false)}>
+        <DropdownMenuItem onClick={() => column.toggleVisibility(false)}>
           <EyeNoneIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
           Hide
         </DropdownMenuItem>
