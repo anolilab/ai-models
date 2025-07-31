@@ -1,5 +1,5 @@
 // Auto-generated file - do not edit manually
-// Generated from aggregated provider data with Helicone pricing
+// Generated from aggregated and synchronized provider data with Helicone pricing
 
 import type { Model } from './schema';
 
@@ -2740,7 +2740,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "claude-sonnet-3-5",
@@ -2781,7 +2782,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "claude-sonnet-3-7",
@@ -2822,7 +2824,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "claude-sonnet-4",
@@ -2863,7 +2866,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "audio",
@@ -3647,33 +3651,32 @@ export const allModels: Model[] = [
   {
     "id": "gpt-4",
     "name": "GPT-4",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2023-11-06",
+    "lastUpdated": "2024-04-09",
+    "attachment": true,
     "reasoning": false,
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
     "vision": false,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2023-11",
     "cost": {
-      "input": 0.005,
-      "output": 0.015,
+      "input": 10,
+      "output": 30,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 3,
-      "output": null
+      "context": 8192,
+      "output": 8192
     },
     "modalities": {
       "input": [
@@ -4796,37 +4799,37 @@ export const allModels: Model[] = [
   {
     "id": "o-1",
     "name": "o1",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2024-12-05",
+    "lastUpdated": "2024-12-05",
+    "attachment": true,
+    "reasoning": true,
+    "temperature": false,
+    "toolCall": true,
     "openWeights": false,
-    "vision": false,
+    "vision": true,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2023-09",
     "cost": {
-      "input": 0.015,
-      "output": 0.06,
-      "inputCacheHit": null
+      "input": 15,
+      "output": 60,
+      "inputCacheHit": 7.5
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 200000,
+      "output": 100000
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
@@ -4878,33 +4881,32 @@ export const allModels: Model[] = [
   {
     "id": "o-1-mini",
     "name": "o1-mini",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2024-09-12",
+    "lastUpdated": "2024-09-12",
     "attachment": false,
-    "reasoning": false,
-    "temperature": true,
+    "reasoning": true,
+    "temperature": false,
     "toolCall": false,
     "openWeights": false,
     "vision": false,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2023-09",
     "cost": {
-      "input": 0.015,
-      "output": 0.06,
-      "inputCacheHit": null
+      "input": 1.1,
+      "output": 4.4,
+      "inputCacheHit": 0.55
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 128000,
+      "output": 65536
     },
     "modalities": {
       "input": [
@@ -4960,33 +4962,32 @@ export const allModels: Model[] = [
   {
     "id": "o-1-preview",
     "name": "o1-preview",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2024-09-12",
+    "lastUpdated": "2024-09-12",
     "attachment": false,
-    "reasoning": false,
+    "reasoning": true,
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
     "vision": false,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2023-09",
     "cost": {
-      "input": 0.015,
-      "output": 0.06,
-      "inputCacheHit": null
+      "input": 15,
+      "output": 60,
+      "inputCacheHit": 7.5
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 128000,
+      "output": 32768
     },
     "modalities": {
       "input": [
@@ -5042,43 +5043,44 @@ export const allModels: Model[] = [
   {
     "id": "o-3",
     "name": "o3",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2025-04-16",
+    "lastUpdated": "2025-04-16",
+    "attachment": true,
+    "reasoning": true,
+    "temperature": false,
+    "toolCall": true,
     "openWeights": false,
-    "vision": false,
+    "vision": true,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2024-05",
     "cost": {
-      "input": 0.002,
-      "output": 0.008,
-      "inputCacheHit": null
+      "input": 2,
+      "output": 8,
+      "inputCacheHit": 0.5
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 200000,
+      "output": 100000
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "o-3-(2025-04-16)",
@@ -5124,33 +5126,32 @@ export const allModels: Model[] = [
   {
     "id": "o-3-mini",
     "name": "o3-mini",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2024-12-20",
+    "lastUpdated": "2025-01-29",
     "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
+    "reasoning": true,
+    "temperature": false,
+    "toolCall": true,
     "openWeights": false,
     "vision": false,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2024-05",
     "cost": {
-      "input": 0.0011,
-      "output": 0.0044,
-      "inputCacheHit": null
+      "input": 1.1,
+      "output": 4.4,
+      "inputCacheHit": 0.55
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 200000,
+      "output": 100000
     },
     "modalities": {
       "input": [
@@ -5206,37 +5207,37 @@ export const allModels: Model[] = [
   {
     "id": "o-3-pro",
     "name": "o3-pro",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2025-06-10",
+    "lastUpdated": "2025-06-10",
+    "attachment": true,
+    "reasoning": true,
+    "temperature": false,
+    "toolCall": true,
     "openWeights": false,
-    "vision": false,
+    "vision": true,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2024-05",
     "cost": {
-      "input": 0.02,
-      "output": 0.08,
+      "input": 20,
+      "output": 80,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 2,
-      "output": null
+      "context": 200000,
+      "output": 100000
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
@@ -5288,43 +5289,44 @@ export const allModels: Model[] = [
   {
     "id": "o-4-mini",
     "name": "o4-mini",
-    "provider": "Azure OpenAI",
-    "providerId": "azure-open-ai",
+    "provider": "OpenAI",
+    "providerId": "open-ai",
     "providerEnv": [
-      "AZURE_OPENAI_API_KEY",
-      "AZURE_OPENAI_ENDPOINT"
+      "OPENAI_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/azure-openai",
-    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-    "providerModelsDevId": "azure-openai",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2025-04-16",
+    "lastUpdated": "2025-04-16",
+    "attachment": true,
+    "reasoning": true,
+    "temperature": false,
+    "toolCall": true,
     "openWeights": false,
-    "vision": false,
+    "vision": true,
     "extendedThinking": false,
-    "knowledge": null,
+    "knowledge": "2024-05",
     "cost": {
-      "input": 0.0011,
-      "output": 0.0044,
-      "inputCacheHit": null
+      "input": 1.1,
+      "output": 4.4,
+      "inputCacheHit": 0.28
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 200000,
+      "output": 100000
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "cacheRead": false
   },
   {
     "id": "o-4-mini-(2025-04-16)",
@@ -8175,17 +8177,17 @@ export const allModels: Model[] = [
   },
   {
     "id": "deep-seek-v3",
-    "name": "DeepSeek V3",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "DeepSeek-V3",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-12-27",
+    "lastUpdated": "2025-02-24",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -8195,12 +8197,12 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.0009,
+      "output": 0.0009,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -8496,21 +8498,21 @@ export const allModels: Model[] = [
   {
     "id": "ernie-4-5-21b-a3b-pt",
     "name": "ERNIE-4.5-21B-A3B-PT",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-06-28",
+    "lastUpdated": "2025-07-24",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -8536,21 +8538,21 @@ export const allModels: Model[] = [
   {
     "id": "ernie-4-5-300b-a47b-pt",
     "name": "ERNIE-4.5-300B-A47B-PT",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-06-28",
+    "lastUpdated": "2025-07-25",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -9218,16 +9220,16 @@ export const allModels: Model[] = [
   {
     "id": "glm-4-5",
     "name": "GLM-4.5",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-20",
+    "lastUpdated": "2025-07-28",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -9237,12 +9239,12 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.55,
-      "output": 2.19,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -9338,17 +9340,17 @@ export const allModels: Model[] = [
   },
   {
     "id": "intern-vl-3-78b",
-    "name": "InternVL3 78B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "InternVL3-78B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-10",
+    "lastUpdated": "2025-05-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -9363,7 +9365,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 16384,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -9379,22 +9381,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "intern-vl-3-8b",
-    "name": "InternVL3 8B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "InternVL3-8B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-10",
+    "lastUpdated": "2025-05-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
@@ -9404,7 +9406,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 16384,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -9460,17 +9462,17 @@ export const allModels: Model[] = [
   },
   {
     "id": "kimi-k2-instruct",
-    "name": "Kimi K2 Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Kimi-K2-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-11",
+    "lastUpdated": "2025-07-22",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -9480,12 +9482,12 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.001,
+      "output": 0.003,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -10062,32 +10064,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "llama-3-2-1b",
-    "name": "Llama 3.2 1B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Llama-3.2-1B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-26",
+    "lastUpdated": "2024-10-24",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
+      "input": 0.00002,
+      "output": 0.00002,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -10102,32 +10104,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "llama-3-2-1b-instruct",
-    "name": "Llama 3.2 1B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Llama-3.2-1B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-26",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
+      "input": 0.00002,
+      "output": 0.00002,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -10182,32 +10184,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "llama-3-2-3b-instruct",
-    "name": "Llama 3.2 3B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Llama-3.2-3B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-26",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
+      "input": 0.000029999999999999997,
+      "output": 0.00005,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -10263,32 +10265,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "llama-3-3-70b-instruct",
-    "name": "Llama 3.3 70B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Llama-3.3-70B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-12-07",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
+      "input": 0.00045,
+      "output": 0.00045,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -10746,21 +10748,21 @@ export const allModels: Model[] = [
   {
     "id": "mini-max-m1-80-k",
     "name": "MiniMax-M1-80k",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-06-15",
+    "lastUpdated": "2025-07-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12186,22 +12188,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-0-5b-instruct",
-    "name": "Qwen2.5 0.5B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-0.5B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-16",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12211,7 +12213,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -12266,22 +12268,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-14b-instruct",
-    "name": "Qwen2.5 14B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-14B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-16",
+    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12291,7 +12293,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -12306,22 +12308,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-1-5b-instruct",
-    "name": "Qwen2.5 1.5B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-1.5B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-16",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12331,7 +12333,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -12386,22 +12388,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-32b-instruct",
-    "name": "Qwen2.5 32B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-32B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-17",
+    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12411,7 +12413,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -12506,32 +12508,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-7b",
-    "name": "Qwen2.5 7B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-7B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-15",
+    "lastUpdated": "2024-09-25",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.3,
+      "output": 0.3,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -12706,22 +12708,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-coder-14b-instruct",
-    "name": "Qwen2.5-Coder 14B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-Coder-14B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-11-06",
+    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -12731,7 +12733,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13146,32 +13148,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-coder-7b-instruct",
-    "name": "Qwen2.5-Coder 7B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-Coder-7B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-09-16",
+    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.0002,
+      "output": 0.0002,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13226,32 +13228,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-vl-32b-instruct",
-    "name": "Qwen2.5-VL 32B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-VL-32B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-03-22",
+    "lastUpdated": "2025-04-14",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.0009,
+      "output": 0.0009,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 128000,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13267,17 +13269,17 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-vl-3b-instruct",
-    "name": "Qwen2.5-VL 3B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-VL-3B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-01-26",
+    "lastUpdated": "2025-04-23",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -13287,12 +13289,12 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0,
+      "output": 0,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 128000,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13308,17 +13310,17 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-vl-72b-instruct",
-    "name": "Qwen2.5-VL 72B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-VL-72B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-01-27",
+    "lastUpdated": "2025-06-06",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -13328,12 +13330,12 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.0007,
+      "output": 0.0007,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 128000,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13349,22 +13351,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-5-vl-7b-instruct",
-    "name": "Qwen2.5-VL 7B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2.5-VL-7B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-01-26",
+    "lastUpdated": "2025-04-06",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
@@ -13374,7 +13376,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 128000,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13430,22 +13432,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-7b-instruct",
-    "name": "Qwen2 7B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2-7B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-06-04",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -13455,7 +13457,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13470,22 +13472,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-vl-2b-instruct",
-    "name": "Qwen2-VL 2B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2-VL-2B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-08-28",
+    "lastUpdated": "2025-02-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
@@ -13495,7 +13497,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13552,22 +13554,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-2-vl-7b-instruct",
-    "name": "Qwen2-VL 7B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen2-VL-7B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2024-08-28",
+    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
@@ -13577,7 +13579,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 32768,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13593,22 +13595,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-0-6b",
-    "name": "Qwen3 0.6B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-0.6B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -13618,7 +13620,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 40960,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13633,22 +13635,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-14b",
-    "name": "Qwen3 14B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-14B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -13658,7 +13660,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 40960,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13673,22 +13675,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-1-7b",
-    "name": "Qwen3 1.7B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-1.7B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -13698,7 +13700,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13833,32 +13835,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-235b-a22b",
-    "name": "Qwen3 235B A22B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-235B-A22B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.22,
-      "output": 0.88,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13873,32 +13875,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507",
-    "name": "Qwen3 235B A22B Instruct 2507",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-235B-A22B-Instruct-2507",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-21",
+    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.22,
-      "output": 0.88,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 262144,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13913,32 +13915,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-235b-a22b-thinking-2507",
-    "name": "Qwen3 235B A22B Thinking 2507",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-235B-A22B-Thinking-2507",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-25",
+    "lastUpdated": "2025-07-31",
     "attachment": false,
     "reasoning": true,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": true,
     "knowledge": null,
     "cost": {
-      "input": 0.22,
-      "output": 0.88,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 262144,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13953,32 +13955,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-30b-a3b",
-    "name": "Qwen3 30B-A3B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-30B-A3B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.15,
-      "output": 0.6,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -13994,21 +13996,21 @@ export const allModels: Model[] = [
   {
     "id": "qwen-3-30b-a3b-instruct-2507",
     "name": "Qwen3-30B-A3B-Instruct-2507",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-28",
+    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -14033,22 +14035,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-30b-a3b-thinking-2507",
-    "name": "Qwen3 30B A3B Thinking 2507",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-30B-A3B-Thinking-2507",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-29",
+    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": true,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": true,
     "knowledge": null,
@@ -14073,32 +14075,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-32b",
-    "name": "Qwen3 32B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-32B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": null,
-      "output": null,
+      "input": 0.00029,
+      "output": 0.0005899999999999999,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -14113,22 +14115,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-4b",
-    "name": "Qwen3 4B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-4B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -14138,7 +14140,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 40960,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -14153,22 +14155,22 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-8b",
-    "name": "Qwen3 8B",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-8B",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -14178,7 +14180,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": 40960,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -14193,32 +14195,32 @@ export const allModels: Model[] = [
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct",
-    "name": "Qwen3 Coder 480B A35B Instruct",
-    "provider": "Fireworks AI",
-    "providerId": "fireworks-ai",
+    "name": "Qwen3-Coder-480B-A35B-Instruct",
+    "provider": "ModelScope",
+    "providerId": "model-scope",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerNpm": "@ai-sdk/fireworks",
-    "providerDoc": "https://readme.fireworks.ai/",
-    "providerModelsDevId": "fireworks-ai",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerModelsDevId": "modelscope",
+    "releaseDate": "2025-07-23",
+    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
     "toolCall": false,
-    "openWeights": false,
+    "openWeights": true,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
     "cost": {
-      "input": 0.45,
-      "output": 1.8,
+      "input": null,
+      "output": null,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 262144,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -15073,136 +15075,8 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "claude-opus-4",
-    "name": "Claude Opus 4",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "cacheRead": false
-  },
-  {
-    "id": "claude-sonnet-3-5",
-    "name": "Claude Sonnet 3.5",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "cacheRead": false
-  },
-  {
-    "id": "claude-sonnet-3-7",
-    "name": "Claude Sonnet 3.7",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "cacheRead": false
-  },
-  {
     "id": "claude-sonnet-3-7-thinking",
     "name": "Claude Sonnet 3.7 Thinking",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "cacheRead": false
-  },
-  {
-    "id": "claude-sonnet-4",
-    "name": "Claude Sonnet 4",
     "provider": "GitHub Copilot",
     "providerId": "git-hub-copilot",
     "releaseDate": null,
@@ -15299,129 +15173,85 @@ export const allModels: Model[] = [
   {
     "id": "gpt-4-1",
     "name": "GPT-4.1",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
+    "provider": "OpenAI",
+    "providerId": "open-ai",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2025-04-14",
+    "lastUpdated": "2025-04-14",
+    "attachment": true,
     "reasoning": false,
     "temperature": true,
-    "toolCall": false,
+    "toolCall": true,
     "openWeights": false,
-    "knowledge": null,
+    "vision": true,
+    "extendedThinking": false,
+    "knowledge": "2024-04",
     "cost": {
-      "input": 0.03,
-      "output": 0.06,
-      "inputCacheHit": null
+      "input": 2,
+      "output": 8,
+      "inputCacheHit": 0.5
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 1047576,
+      "output": 32768
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
       ]
     },
+    "streamingSupported": true,
     "cacheRead": false
   },
   {
     "id": "gpt-4-o",
     "name": "GPT-4o",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
+    "provider": "OpenAI",
+    "providerId": "open-ai",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerNpm": "@ai-sdk/openai",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerModelsDevId": "openai",
+    "releaseDate": "2024-05-13",
+    "lastUpdated": "2024-05-13",
+    "attachment": true,
     "reasoning": false,
     "temperature": true,
-    "toolCall": false,
+    "toolCall": true,
     "openWeights": false,
-    "knowledge": null,
+    "vision": true,
+    "extendedThinking": false,
+    "knowledge": "2023-09",
     "cost": {
-      "input": 0.005,
-      "output": 0.015,
-      "inputCacheHit": null
+      "input": 2.5,
+      "output": 10,
+      "inputCacheHit": 1.25
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 128000,
+      "output": 16384
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
         "text"
       ]
     },
-    "cacheRead": false
-  },
-  {
-    "id": "o-3",
-    "name": "o3",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.002,
-      "output": 0.008,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "cacheRead": false
-  },
-  {
-    "id": "o-4-mini",
-    "name": "o4-mini",
-    "provider": "GitHub Copilot",
-    "providerId": "git-hub-copilot",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0011,
-      "output": 0.0044,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
+    "streamingSupported": true,
     "cacheRead": false
   },
   {
@@ -18898,37 +18728,38 @@ export const allModels: Model[] = [
   },
   {
     "id": "meta-llama/llama-guard-4-12b",
-    "name": "meta-llama/llama-guard-4-12b",
-    "provider": "Groq",
-    "providerId": "groq/meta",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "name": "Meta: Llama Guard 4 12B",
+    "provider": "OpenRouter",
+    "providerId": "open-router/meta-llama",
+    "releaseDate": "2025-04-30",
+    "lastUpdated": "2025-04-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "preview": false,
+    "toolCall": true,
+    "openWeights": true,
     "knowledge": null,
     "cost": {
-      "input": 0.0002,
-      "output": 0.0002,
+      "input": 5e-8,
+      "output": 5e-8,
       "inputCacheHit": null
     },
     "limit": {
-      "context": 131072,
-      "output": 1024
+      "context": 163840,
+      "output": null
     },
     "modalities": {
       "input": [
+        "image",
         "text"
       ],
       "output": [
         "text"
       ]
     },
+    "vision": false,
+    "extendedThinking": false,
+    "preview": false,
     "streamingSupported": true,
     "deploymentType": "cloud",
     "cacheRead": false,
@@ -18937,7 +18768,6 @@ export const allModels: Model[] = [
     "structuredOutputs": false,
     "batchMode": false,
     "audioGeneration": false,
-    "imageGeneration": false,
     "compoundSystem": false
   },
   {
@@ -21223,46 +21053,6 @@ export const allModels: Model[] = [
     },
     "limit": {
       "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "mistral-7b",
-    "name": "Mistral 7B",
-    "provider": "Mistral",
-    "providerId": "mistral",
-    "providerEnv": [
-      "MISTRAL_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/mistral",
-    "providerDoc": "https://docs.mistral.ai/getting-started/models/",
-    "providerModelsDevId": "mistral",
-    "releaseDate": null,
-    "lastUpdated": null,
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 2,
       "output": null
     },
     "modalities": {
@@ -24976,126 +24766,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "deep-seek-r1-distill-llama-70b",
-    "name": "DeepSeek-R1-Distill-Llama-70B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00075,
-      "output": 0.00099,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "deep-seek-r1-distill-llama-8b",
-    "name": "DeepSeek-R1-Distill-Llama-8B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00004,
-      "output": 0.00004,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32000,
-      "output": 32000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "deep-seek-r1-distill-qwen-14b",
-    "name": "DeepSeek-R1-Distill-Qwen-14B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00015,
-      "output": 0.00015,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 64000,
-      "output": 32000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "deep-seek-r1-distill-qwen-14b-gguf",
     "name": "DeepSeek-R1-Distill-Qwen-14B-GGUF",
     "provider": "ModelScope",
@@ -25136,46 +24806,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "deep-seek-r1-distill-qwen-1-5b",
-    "name": "DeepSeek-R1-Distill-Qwen-1.5B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00017999999999999998,
-      "output": 0.00017999999999999998,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "deep-seek-r1-distill-qwen-1-5b-gguf",
     "name": "DeepSeek-R1-Distill-Qwen-1.5B-GGUF",
     "provider": "ModelScope",
@@ -25204,46 +24834,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": null,
       "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "deep-seek-r1-distill-qwen-32b",
-    "name": "DeepSeek-R1-Distill-Qwen-32B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0003,
-      "output": 0.0003,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": 16384
     },
     "modalities": {
       "input": [
@@ -25336,46 +24926,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "deep-seek-r1-distill-qwen-7b",
-    "name": "DeepSeek-R1-Distill-Qwen-7B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-20",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "deep-seek-r1-distill-qwen-7b-gguf",
     "name": "DeepSeek-R1-Distill-Qwen-7B-GGUF",
     "provider": "ModelScope",
@@ -25439,46 +24989,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": null,
       "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "deep-seek-v3",
-    "name": "DeepSeek-V3",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-12-27",
-    "lastUpdated": "2025-02-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0009,
-      "output": 0.0009,
       "inputCacheHit": null
     },
     "limit": {
@@ -25952,86 +25462,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-06-28",
     "lastUpdated": "2025-07-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "ernie-4-5-21b-a3b-pt",
-    "name": "ERNIE-4.5-21B-A3B-PT",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-06-28",
-    "lastUpdated": "2025-07-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "ernie-4-5-300b-a47b-pt",
-    "name": "ERNIE-4.5-300B-A47B-PT",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-06-28",
-    "lastUpdated": "2025-07-25",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -27299,46 +26729,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "glm-4-5",
-    "name": "GLM-4.5",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-20",
-    "lastUpdated": "2025-07-28",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
     "vision": false,
     "extendedThinking": false,
     "knowledge": null,
@@ -28772,88 +28162,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "intern-vl-3-78b",
-    "name": "InternVL3-78B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-10",
-    "lastUpdated": "2025-05-30",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "intern-vl-3-8b",
-    "name": "InternVL3-8B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-10",
-    "lastUpdated": "2025-05-30",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "internlm-3-8-b-instruct",
     "name": "internlm3-8b-instruct",
     "provider": "ModelScope",
@@ -29241,46 +28549,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": null,
       "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "kimi-k2-instruct",
-    "name": "Kimi-K2-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-11",
-    "lastUpdated": "2025-07-22",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.001,
-      "output": 0.003,
       "inputCacheHit": null
     },
     "limit": {
@@ -29726,166 +28994,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": 0.0003,
       "output": 0.0003,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "llama-3-2-1b",
-    "name": "Llama-3.2-1B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-26",
-    "lastUpdated": "2024-10-24",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00002,
-      "output": 0.00002,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "llama-3-2-1b-instruct",
-    "name": "Llama-3.2-1B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-26",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00002,
-      "output": 0.00002,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "llama-3-2-3b-instruct",
-    "name": "Llama-3.2-3B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-26",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000029999999999999997,
-      "output": 0.00005,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "llama-3-3-70b-instruct",
-    "name": "Llama-3.3-70B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-12-07",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00045,
-      "output": 0.00045,
       "inputCacheHit": null
     },
     "limit": {
@@ -30783,46 +29891,6 @@ export const allModels: Model[] = [
       "input": [
         "text",
         "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "mini-max-m1-80-k",
-    "name": "MiniMax-M1-80k",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-06-15",
-    "lastUpdated": "2025-07-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
       ],
       "output": [
         "text"
@@ -33207,86 +32275,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-5-0-5b-instruct",
-    "name": "Qwen2.5-0.5B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-14b-instruct",
-    "name": "Qwen2.5-14B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-5-14b-instruct-1m",
     "name": "Qwen2.5-14B-Instruct-1M",
     "provider": "ModelScope",
@@ -33299,86 +32287,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-01-24",
     "lastUpdated": "2025-01-29",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-1-5b-instruct",
-    "name": "Qwen2.5-1.5B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-32b-instruct",
-    "name": "Qwen2.5-32B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-17",
-    "lastUpdated": "2025-03-07",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -33487,46 +32395,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-5-72b-instruct",
-    "name": "Qwen2.5-72B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 1.2,
-      "output": 1.2,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32768,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-5-72b-instruct-awq",
     "name": "Qwen2.5-72B-Instruct-AWQ",
     "provider": "ModelScope",
@@ -33567,86 +32435,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-5-7b",
-    "name": "Qwen2.5-7B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-15",
-    "lastUpdated": "2024-09-25",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.3,
-      "output": 0.3,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-7b-instruct",
-    "name": "Qwen2.5-7B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.3,
-      "output": 0.3,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32768,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-5-7b-instruct-gguf",
     "name": "Qwen2.5-7B-Instruct-GGUF",
     "provider": "ModelScope",
@@ -33670,126 +32458,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": null,
       "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-coder-14b-instruct",
-    "name": "Qwen2.5-Coder-14B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-11-06",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-coder-32b-instruct",
-    "name": "Qwen2.5-Coder-32B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-11-06",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.8,
-      "output": 0.8,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32768,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-coder-7b-instruct",
-    "name": "Qwen2.5-Coder-7B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-09-16",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0002,
-      "output": 0.0002,
       "inputCacheHit": null
     },
     "limit": {
@@ -33930,47 +32598,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-5-vl-32b-instruct",
-    "name": "Qwen2.5-VL-32B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-03-22",
-    "lastUpdated": "2025-04-14",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0009,
-      "output": 0.0009,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-5-vl-32b-instruct-awq",
     "name": "Qwen2.5-VL-32B-Instruct-AWQ",
     "provider": "ModelScope",
@@ -33994,47 +32621,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": null,
       "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-vl-3b-instruct",
-    "name": "Qwen2.5-VL-3B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-26",
-    "lastUpdated": "2025-04-23",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0,
-      "output": 0,
       "inputCacheHit": null
     },
     "limit": {
@@ -34094,47 +32680,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-5-vl-72b-instruct",
-    "name": "Qwen2.5-VL-72B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-27",
-    "lastUpdated": "2025-06-06",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0007,
-      "output": 0.0007,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-5-vl-72b-instruct-awq",
     "name": "Qwen2.5-VL-72B-Instruct-AWQ",
     "provider": "ModelScope",
@@ -34152,47 +32697,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-5-vl-7b-instruct",
-    "name": "Qwen2.5-VL-7B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-01-26",
-    "lastUpdated": "2025-04-06",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
     "vision": true,
     "extendedThinking": false,
     "knowledge": null,
@@ -34339,46 +32843,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-7b-instruct",
-    "name": "Qwen2-7B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-06-04",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-2-audio-7b",
     "name": "Qwen2-Audio-7B",
     "provider": "ModelScope",
@@ -34459,128 +32923,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-2-vl-2b-instruct",
-    "name": "Qwen2-VL-2B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-08-28",
-    "lastUpdated": "2025-02-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-2-vl-7b-instruct",
-    "name": "Qwen2-VL-7B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2024-08-28",
-    "lastUpdated": "2025-03-07",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-0-6b",
-    "name": "Qwen3-0.6B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-0-6b-base",
     "name": "Qwen3-0.6B-Base",
     "provider": "ModelScope",
@@ -34633,46 +32975,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-05-05",
     "lastUpdated": "2025-05-12",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-14b",
-    "name": "Qwen3-14B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -34901,46 +33203,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-1-7b",
-    "name": "Qwen3-1.7B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-1-7b-gguf",
     "name": "Qwen3-1.7B-GGUF",
     "provider": "ModelScope",
@@ -35061,46 +33323,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-235b-a22b",
-    "name": "Qwen3-235B-A22B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-235b-a22b-fp8",
     "name": "Qwen3-235B-A22B-FP8",
     "provider": "ModelScope",
@@ -35153,46 +33375,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-05-11",
     "lastUpdated": "2025-05-21",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-235b-a22b-instruct-2507",
-    "name": "Qwen3-235B-A22B-Instruct-2507",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-21",
-    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -35381,46 +33563,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-235b-a22b-thinking-2507",
-    "name": "Qwen3-235B-A22B-Thinking-2507",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-25",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": true,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-235b-a22b-thinking-2507-awq",
     "name": "Qwen3-235B-A22B-Thinking-2507-AWQ",
     "provider": "ModelScope",
@@ -35520,46 +33662,6 @@ export const allModels: Model[] = [
     "openWeights": true,
     "vision": false,
     "extendedThinking": true,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-30b-a3b",
-    "name": "Qwen3-30B-A3B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
     "knowledge": null,
     "cost": {
       "input": null,
@@ -35781,46 +33883,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-30b-a3b-instruct-2507",
-    "name": "Qwen3-30B-A3B-Instruct-2507",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-28",
-    "lastUpdated": "2025-07-30",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-30b-a3b-instruct-2507-fp8",
     "name": "Qwen3-30B-A3B-Instruct-2507-FP8",
     "provider": "ModelScope",
@@ -35941,46 +34003,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-30b-a3b-thinking-2507",
-    "name": "Qwen3-30B-A3B-Thinking-2507",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-29",
-    "lastUpdated": "2025-07-30",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": true,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-30b-a3b-thinking-2507-fp8",
     "name": "Qwen3-30B-A3B-Thinking-2507-FP8",
     "provider": "ModelScope",
@@ -36044,46 +34066,6 @@ export const allModels: Model[] = [
     "cost": {
       "input": null,
       "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-32b",
-    "name": "Qwen3-32B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00029,
-      "output": 0.0005899999999999999,
       "inputCacheHit": null
     },
     "limit": {
@@ -36261,46 +34243,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "qwen-3-4b",
-    "name": "Qwen3-4B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "qwen-3-4b-awq",
     "name": "Qwen3-4B-AWQ",
     "provider": "ModelScope",
@@ -36433,46 +34375,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-06-10",
     "lastUpdated": "2025-06-13",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-8b",
-    "name": "Qwen3-8B",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-07-26",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -36713,46 +34615,6 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "releaseDate": "2025-07-31",
     "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": true,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": null,
-    "cost": {
-      "input": null,
-      "output": null,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "qwen-3-coder-480b-a35b-instruct",
-    "name": "Qwen3-Coder-480B-A35B-Instruct",
-    "provider": "ModelScope",
-    "providerId": "model-scope",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerModelsDevId": "modelscope",
-    "releaseDate": "2025-07-23",
-    "lastUpdated": "2025-07-30",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -41648,87 +39510,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "gpt-4",
-    "name": "GPT-4",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2023-11-06",
-    "lastUpdated": "2024-04-09",
-    "attachment": true,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": "2023-11",
-    "cost": {
-      "input": 10,
-      "output": 30,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 8192,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "gpt-4-1",
-    "name": "GPT-4.1",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2025-04-14",
-    "lastUpdated": "2025-04-14",
-    "attachment": true,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2024-04",
-    "cost": {
-      "input": 2,
-      "output": 8,
-      "inputCacheHit": 0.5
-    },
-    "limit": {
-      "context": 1047576,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "gpt-4-1-mini",
     "name": "GPT-4.1 mini",
     "provider": "OpenAI",
@@ -41798,47 +39579,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": 1047576,
       "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "gpt-4-o",
-    "name": "GPT-4o",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2024-05-13",
-    "lastUpdated": "2024-05-13",
-    "attachment": true,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2023-09",
-    "cost": {
-      "input": 2.5,
-      "output": 10,
-      "inputCacheHit": 1.25
-    },
-    "limit": {
-      "context": 128000,
-      "output": 16384
     },
     "modalities": {
       "input": [
@@ -41934,127 +39674,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "o-1",
-    "name": "o1",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2024-12-05",
-    "lastUpdated": "2024-12-05",
-    "attachment": true,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2023-09",
-    "cost": {
-      "input": 15,
-      "output": 60,
-      "inputCacheHit": 7.5
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "o-1-mini",
-    "name": "o1-mini",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2024-09-12",
-    "lastUpdated": "2024-09-12",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": "2023-09",
-    "cost": {
-      "input": 1.1,
-      "output": 4.4,
-      "inputCacheHit": 0.55
-    },
-    "limit": {
-      "context": 128000,
-      "output": 65536
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "o-1-preview",
-    "name": "o1-preview",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2024-09-12",
-    "lastUpdated": "2024-09-12",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": true,
-    "toolCall": false,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": "2023-09",
-    "cost": {
-      "input": 15,
-      "output": 60,
-      "inputCacheHit": 7.5
-    },
-    "limit": {
-      "context": 128000,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "o-1-pro",
     "name": "o1-pro",
     "provider": "OpenAI",
@@ -42096,47 +39715,6 @@ export const allModels: Model[] = [
     "streamingSupported": true
   },
   {
-    "id": "o-3",
-    "name": "o3",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2025-04-16",
-    "lastUpdated": "2025-04-16",
-    "attachment": true,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2024-05",
-    "cost": {
-      "input": 2,
-      "output": 8,
-      "inputCacheHit": 0.5
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
     "id": "o-3-deep-research",
     "name": "o3-deep-research",
     "provider": "OpenAI",
@@ -42161,128 +39739,6 @@ export const allModels: Model[] = [
       "input": 10,
       "output": 40,
       "inputCacheHit": 2.5
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "o-3-mini",
-    "name": "o3-mini",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2024-12-20",
-    "lastUpdated": "2025-01-29",
-    "attachment": false,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": false,
-    "extendedThinking": false,
-    "knowledge": "2024-05",
-    "cost": {
-      "input": 1.1,
-      "output": 4.4,
-      "inputCacheHit": 0.55
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "o-3-pro",
-    "name": "o3-pro",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2025-06-10",
-    "lastUpdated": "2025-06-10",
-    "attachment": true,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2024-05",
-    "cost": {
-      "input": 20,
-      "output": 80,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "streamingSupported": true
-  },
-  {
-    "id": "o-4-mini",
-    "name": "o4-mini",
-    "provider": "OpenAI",
-    "providerId": "open-ai",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerNpm": "@ai-sdk/openai",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerModelsDevId": "openai",
-    "releaseDate": "2025-04-16",
-    "lastUpdated": "2025-04-16",
-    "attachment": true,
-    "reasoning": true,
-    "temperature": false,
-    "toolCall": true,
-    "openWeights": false,
-    "vision": true,
-    "extendedThinking": false,
-    "knowledge": "2024-05",
-    "cost": {
-      "input": 1.1,
-      "output": 4.4,
-      "inputCacheHit": 0.28
     },
     "limit": {
       "context": 200000,
@@ -46363,38 +43819,6 @@ export const allModels: Model[] = [
     }
   },
   {
-    "id": "meta-llama/llama-guard-4-12b",
-    "name": "Meta: Llama Guard 4 12B",
-    "provider": "OpenRouter",
-    "providerId": "open-router/meta-llama",
-    "releaseDate": "2025-04-30",
-    "lastUpdated": "2025-04-30",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 5e-8,
-      "output": 5e-8,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 163840,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
     "id": "microsoft/mai-ds-r1",
     "name": "Microsoft: MAI DS R1",
     "provider": "OpenRouter",
@@ -50467,37 +47891,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": 131072,
       "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "qwen/qwen3-32b",
-    "name": "Qwen: Qwen3 32B",
-    "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
-    "releaseDate": "2025-04-28",
-    "lastUpdated": "2025-04-28",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 2.7e-8,
-      "output": 2.7e-8,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 40960,
-      "output": null
     },
     "modalities": {
       "input": [
@@ -57443,161 +54836,6 @@ export const allModels: Model[] = [
     }
   },
   {
-    "id": "anthropic/claude-3.5-haiku",
-    "name": "Claude 3.5 Haiku",
-    "provider": "Vercel",
-    "providerId": "vercel/anthropic",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 8e-7,
-      "output": 0.000004,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "anthropic/claude-3.5-sonnet",
-    "name": "Claude 3.5 Sonnet",
-    "provider": "Vercel",
-    "providerId": "vercel/anthropic",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000003,
-      "output": 0.000015,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "anthropic/claude-3.7-sonnet",
-    "name": "Claude 3.7 Sonnet",
-    "provider": "Vercel",
-    "providerId": "vercel/anthropic",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000003,
-      "output": 0.000015,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 64000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "anthropic/claude-3-haiku",
-    "name": "Claude 3 Haiku",
-    "provider": "Vercel",
-    "providerId": "vercel/anthropic",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 2.5e-7,
-      "output": 0.00000125,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "anthropic/claude-3-opus",
-    "name": "Claude 3 Opus",
-    "provider": "Vercel",
-    "providerId": "vercel/anthropic",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000015,
-      "output": 0.000075,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
     "id": "anthropic/claude-4-opus",
     "name": "Claude 4 Opus",
     "provider": "Vercel",
@@ -57649,161 +54887,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": 200000,
       "output": 64000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "cohere/command-a",
-    "name": "Command A",
-    "provider": "Vercel",
-    "providerId": "vercel/cohere",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000025,
-      "output": 0.00001,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 256000,
-      "output": 8000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "cohere/command-r",
-    "name": "Command R",
-    "provider": "Vercel",
-    "providerId": "vercel/cohere",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 1.5e-7,
-      "output": 6e-7,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "cohere/command-r-plus",
-    "name": "Command R+",
-    "provider": "Vercel",
-    "providerId": "vercel/cohere",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000025,
-      "output": 0.00001,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "deepseek/deepseek-r1",
-    "name": "DeepSeek-R1",
-    "provider": "Vercel",
-    "providerId": "vercel/deepseek",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 5.5e-7,
-      "output": 0.00000219,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "deepseek/deepseek-r1-distill-llama-70b",
-    "name": "DeepSeek R1 Distill Llama 70B",
-    "provider": "Vercel",
-    "providerId": "vercel/deepseek",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 7.5e-7,
-      "output": 9.9e-7,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": 131072
     },
     "modalities": {
       "input": [
@@ -57897,68 +54980,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": 1048576,
       "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "google/gemini-2.5-flash",
-    "name": "Gemini 2.5 Flash",
-    "provider": "Vercel",
-    "providerId": "vercel/google",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 3e-7,
-      "output": 0.0000025,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 1000000,
-      "output": 65536
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "google/gemini-2.5-pro",
-    "name": "Gemini 2.5 Pro",
-    "provider": "Vercel",
-    "providerId": "vercel/google",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000025,
-      "output": 0.00001,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 1048576,
-      "output": 65536
     },
     "modalities": {
       "input": [
@@ -58734,595 +55755,6 @@ export const allModels: Model[] = [
     "limit": {
       "context": 128000,
       "output": 4000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "moonshotai/kimi-k2",
-    "name": "Kimi K2",
-    "provider": "Vercel",
-    "providerId": "vercel/moonshotai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 5.5e-7,
-      "output": 0.0000022,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 131072,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "morph/morph-v3-fast",
-    "name": "Morph V3 Fast",
-    "provider": "Vercel",
-    "providerId": "vercel/morph",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 8e-7,
-      "output": 0.0000012,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32768,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "morph/morph-v3-large",
-    "name": "Morph V3 Large",
-    "provider": "Vercel",
-    "providerId": "vercel/morph",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 9e-7,
-      "output": 0.0000019,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 32768,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-3.5-turbo",
-    "name": "GPT-3.5 Turbo",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 5e-7,
-      "output": 0.0000015,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 16385,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-3.5-turbo-instruct",
-    "name": "GPT-3.5 Turbo Instruct",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000015,
-      "output": 0.000002,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 8192,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4.1",
-    "name": "GPT-4.1",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000002,
-      "output": 0.000008,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 1047576,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4.1-mini",
-    "name": "GPT-4.1 mini",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 4e-7,
-      "output": 0.0000016,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 1047576,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4.1-nano",
-    "name": "GPT-4.1 nano",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 1e-7,
-      "output": 4e-7,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 1047576,
-      "output": 32768
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4o",
-    "name": "GPT-4o",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000025,
-      "output": 0.00001,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4o-mini",
-    "name": "GPT-4o mini",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 1.5e-7,
-      "output": 6e-7,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 16384
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/gpt-4-turbo",
-    "name": "GPT-4 Turbo",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.00001,
-      "output": 0.00003,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 128000,
-      "output": 4096
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/o1",
-    "name": "o1",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000015,
-      "output": 0.00006,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/o3",
-    "name": "o3",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000002,
-      "output": 0.000008,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/o3-mini",
-    "name": "o3-mini",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000011,
-      "output": 0.0000044,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "openai/o4-mini",
-    "name": "o4-mini",
-    "provider": "Vercel",
-    "providerId": "vercel/openai",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.0000011,
-      "output": 0.0000044,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 100000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "perplexity/sonar",
-    "name": "Sonar",
-    "provider": "Vercel",
-    "providerId": "vercel/perplexity",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000001,
-      "output": 0.000001,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 127000,
-      "output": 8000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "perplexity/sonar-pro",
-    "name": "Sonar Pro",
-    "provider": "Vercel",
-    "providerId": "vercel/perplexity",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000003,
-      "output": 0.000015,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 200000,
-      "output": 8000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "perplexity/sonar-reasoning",
-    "name": "Sonar Reasoning",
-    "provider": "Vercel",
-    "providerId": "vercel/perplexity",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000001,
-      "output": 0.000005,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 127000,
-      "output": 8000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    }
-  },
-  {
-    "id": "perplexity/sonar-reasoning-pro",
-    "name": "Sonar Reasoning Pro",
-    "provider": "Vercel",
-    "providerId": "vercel/perplexity",
-    "releaseDate": "2025-07-31",
-    "lastUpdated": "2025-07-31",
-    "attachment": false,
-    "reasoning": false,
-    "temperature": true,
-    "toolCall": true,
-    "openWeights": true,
-    "knowledge": null,
-    "cost": {
-      "input": 0.000002,
-      "output": 0.000008,
-      "inputCacheHit": null
-    },
-    "limit": {
-      "context": 127000,
-      "output": 8000
     },
     "modalities": {
       "input": [

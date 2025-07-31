@@ -422,6 +422,172 @@ const fillMissingFieldsFromReference = (modelData: any, referenceMap: Map<string
 };
 
 /**
+ * Fields that should NOT be synchronized (cost-related fields)
+ */
+const EXCLUDED_FIELDS = new Set([
+  'cost',
+  'input',
+  'output',
+  'inputCacheHit',
+  'imageGeneration',
+  'imageGenerationUltra',
+  'videoGeneration',
+  'videoGenerationWithAudio',
+  'videoGenerationWithoutAudio'
+]);
+
+/**
+ * Calculates the completeness score of a model (excluding cost fields)
+ * @param model - The model to score
+ * @returns A score from 0 to 1 indicating completeness
+ */
+function calculateCompletenessScore(model: Model): number {
+  const modelObj = model as Record<string, unknown>;
+  let totalFields = 0;
+  let filledFields = 0;
+
+  // Count all non-excluded fields
+  for (const [key, value] of Object.entries(modelObj)) {
+    if (EXCLUDED_FIELDS.has(key)) continue;
+    
+    totalFields++;
+    
+    // Check if field has meaningful data
+    if (value !== null && value !== undefined && value !== '') {
+      if (Array.isArray(value)) {
+        if (value.length > 0) filledFields++;
+      } else if (typeof value === 'object') {
+        // For nested objects, check if they have any non-null properties
+        const hasData = Object.values(value as Record<string, unknown>).some(v => 
+          v !== null && v !== undefined && v !== ''
+        );
+        if (hasData) filledFields++;
+      } else {
+        filledFields++;
+      }
+    }
+  }
+
+  return totalFields > 0 ? filledFields / totalFields : 0;
+}
+
+/**
+ * Merges two models, filling missing data from the source model
+ * @param target - The target model to enhance
+ * @param source - The source model to get data from
+ * @returns The enhanced target model
+ */
+function mergeModelData(target: Model, source: Model): Model {
+  const targetObj = target as Record<string, unknown>;
+  const sourceObj = source as Record<string, unknown>;
+  const merged = { ...targetObj };
+  let fieldsMerged = 0;
+
+  for (const [key, sourceValue] of Object.entries(sourceObj)) {
+    // Skip excluded fields (cost-related)
+    if (EXCLUDED_FIELDS.has(key)) continue;
+    
+    const targetValue = targetObj[key];
+    
+    // If target field is empty/null/undefined and source has data
+    if ((targetValue === null || targetValue === undefined || targetValue === '') && 
+        sourceValue !== null && sourceValue !== undefined && sourceValue !== '') {
+      
+      // Handle arrays
+      if (Array.isArray(sourceValue)) {
+        if (sourceValue.length > 0) {
+          merged[key] = sourceValue;
+          fieldsMerged++;
+        }
+      }
+      // Handle nested objects
+      else if (typeof sourceValue === 'object' && sourceValue !== null) {
+        const sourceObj = sourceValue as Record<string, unknown>;
+        const hasData = Object.values(sourceObj).some(v => 
+          v !== null && v !== undefined && v !== ''
+        );
+        if (hasData) {
+          merged[key] = sourceValue;
+          fieldsMerged++;
+        }
+      }
+      // Handle primitive values
+      else {
+        merged[key] = sourceValue;
+        fieldsMerged++;
+      }
+    }
+  }
+
+  if (fieldsMerged > 0) {
+    console.log(`[SYNC] Merged ${fieldsMerged} fields from ${source.provider} to ${target.provider} for model ${target.id}`);
+  }
+
+  return merged as Model;
+}
+
+/**
+ * Synchronizes data between models with the same ID
+ * @param models - Array of all models
+ * @returns Array of synchronized models
+ */
+function synchronizeModelData(models: Model[]): Model[] {
+  console.log(`[SYNC] Starting model data synchronization for ${models.length} models`);
+  
+  // Group models by ID
+  const modelsById = new Map<string, Model[]>();
+  
+  for (const model of models) {
+    const id = model.id;
+    if (!modelsById.has(id)) {
+      modelsById.set(id, []);
+    }
+    modelsById.get(id)!.push(model);
+  }
+  
+  console.log(`[SYNC] Found ${modelsById.size} unique model IDs`);
+  
+  const synchronizedModels: Model[] = [];
+  let modelsWithSync = 0;
+  
+  for (const [id, modelGroup] of modelsById) {
+    if (modelGroup.length === 1) {
+      // Single model, no synchronization needed
+      synchronizedModels.push(modelGroup[0]);
+      continue;
+    }
+    
+    console.log(`[SYNC] Processing ${modelGroup.length} models with ID: ${id}`);
+    
+    // Sort models by completeness score (excluding cost fields)
+    const scoredModels = modelGroup.map(model => ({
+      model,
+      score: calculateCompletenessScore(model)
+    })).sort((a, b) => b.score - a.score);
+    
+    // Use the most complete model as the base
+    const baseModel = scoredModels[0].model;
+    let enhancedModel = baseModel;
+    
+    // Merge data from other models into the base model
+    for (let i = 1; i < scoredModels.length; i++) {
+      const sourceModel = scoredModels[i].model;
+      enhancedModel = mergeModelData(enhancedModel, sourceModel);
+    }
+    
+    synchronizedModels.push(enhancedModel);
+    modelsWithSync++;
+    
+    console.log(`[SYNC] Synchronized model ${id} (${modelGroup.length} sources, base: ${baseModel.provider})`);
+  }
+  
+  console.log(`[SYNC] Completed synchronization: ${modelsWithSync} models synchronized`);
+  console.log(`[SYNC] Final count: ${synchronizedModels.length} models`);
+  
+  return synchronizedModels;
+}
+
+/**
  * Aggregates and validates model data from all JSON files in the providers directory
  * @returns Promise resolving to an array of validated Model objects
  */
@@ -529,17 +695,20 @@ const main = async (): Promise<void> => {
     
     // Enrich models with pricing data from Helicone
     const enrichedModels = await enrichModelsWithPricing(deduplicatedModels);
+    
+    // Synchronize data between models with the same ID
+    const synchronizedModels = synchronizeModelData(enrichedModels);
   
-    fs.writeFileSync(OUTPUT_JSON, JSON.stringify(enrichedModels, null, 2));
+    fs.writeFileSync(OUTPUT_JSON, JSON.stringify(synchronizedModels, null, 2));
   
-    console.log(`[DONE] Aggregated ${enrichedModels.length} models to ${OUTPUT_JSON}`);
+    console.log(`[DONE] Aggregated and synchronized ${synchronizedModels.length} models to ${OUTPUT_JSON}`);
 
     // Generate TypeScript data file for the package
-    const tsContent = `// Auto-generated file - do not edit manually\n// Generated from aggregated provider data with Helicone pricing\n\nimport type { Model } from './schema';\n\nexport const allModels: Model[] = ${JSON.stringify(enrichedModels, null, 2)} as Model[];\n`;
+    const tsContent = `// Auto-generated file - do not edit manually\n// Generated from aggregated and synchronized provider data with Helicone pricing\n\nimport type { Model } from './schema';\n\nexport const allModels: Model[] = ${JSON.stringify(synchronizedModels, null, 2)} as Model[];\n`;
   
     fs.writeFileSync(OUTPUT_TS, tsContent);
   
-    console.log(`[DONE] Generated ${OUTPUT_TS} with ${enrichedModels.length} models`);
+    console.log(`[DONE] Generated ${OUTPUT_TS} with ${synchronizedModels.length} models`);
   } catch (error) {
     console.error('Error during aggregation:', error);
   

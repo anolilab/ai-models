@@ -1,90 +1,200 @@
 # @anolilab/provider-registry
 
-A unified registry for AI model providers and their metadata. This package provides a comprehensive, tree-shakable interface to access model information from various AI providers including Meta, Anthropic, Google, Groq, and many others.
+[![npm version](https://badge.fury.io/js/@anolilab%2Fprovider-registry.svg)](https://badge.fury.io/js/@anolilab%2Fprovider-registry)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-blue.svg)](https://www.typescriptlang.org/)
 
-## Features
+A comprehensive, unified registry for AI model providers and their metadata. This package provides a tree-shakable interface to access model information from 50+ AI providers including OpenAI, Anthropic, Google, Meta, Groq, and many others.
 
-- **Unified Interface**: Access models from multiple providers through a single API
-- **Type Safety**: Full TypeScript support with Zod schema validation
-- **Tree Shaking**: Import only what you need to minimize bundle size
-- **Rich Metadata**: Comprehensive model information including capabilities, pricing, and limits
-- **Search & Filter**: Powerful search capabilities across all models
+## ✨ Features
 
-## Installation
+- **🔄 Unified Interface**: Access models from multiple providers through a single API
+- **🛡️ Type Safety**: Full TypeScript support with Zod schema validation
+- **📦 Tree Shaking**: Import only what you need to minimize bundle size
+- **💰 Rich Metadata**: Comprehensive model information including capabilities, pricing, and limits
+- **🔍 Powerful Search**: Advanced search and filtering capabilities across all models
+- **🔄 Auto-Sync**: Automatic data synchronization between models with the same ID
+- **💸 Pricing Integration**: Real-time pricing data from Helicone API (840+ models)
+- **📊 Provider Stats**: Detailed statistics and analytics
+
+## 📦 Installation
 
 ```bash
+# Using npm
 npm install @anolilab/provider-registry
+
+# Using yarn
+yarn add @anolilab/provider-registry
+
+# Using pnpm
+pnpm add @anolilab/provider-registry
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
 ```typescript
-import { getProviders, getModelsByProvider, getModelById, searchModels } from '@anolilab/provider-registry';
+import { 
+  getProviders, 
+  getModelsByProvider, 
+  getModelById, 
+  searchModels,
+  getAllModels 
+} from '@anolilab/provider-registry';
 
 // Get all available providers
 const providers = getProviders();
-console.log(providers); // ['Anthropic', 'Google', 'Groq', 'Meta', ...]
+console.log(providers);
+// ['Anthropic', 'Google', 'Groq', 'Meta', 'OpenAI', 'DeepSeek', ...]
 
 // Get all models from a specific provider
 const anthropicModels = getModelsByProvider('Anthropic');
-console.log(anthropicModels.length); // Number of Anthropic models
+console.log(`Found ${anthropicModels.length} Anthropic models`);
 
 // Get a specific model by ID
 const model = getModelById('claude-3-opus-20240229');
-console.log(model?.name); // "Claude 3 Opus"
+if (model) {
+  console.log(`Model: ${model.name}`);
+  console.log(`Provider: ${model.provider}`);
+  console.log(`Cost: $${model.cost.input}/1K input, $${model.cost.output}/1K output`);
+  console.log(`Context: ${model.limit.context?.toLocaleString()} tokens`);
+}
 
 // Search for models with specific capabilities
 const visionModels = searchModels({ vision: true });
 const reasoningModels = searchModels({ reasoning: true });
 const toolCallModels = searchModels({ tool_call: true });
+
+// Get all models for advanced filtering
+const allModels = getAllModels();
 ```
 
-## API Reference
+## 📚 API Reference
 
-### `getProviders(): string[]`
+### Core Functions
 
+#### `getProviders(): string[]`
 Returns an array of all available provider names.
 
-### `getModelsByProvider(provider: string): Model[]`
+```typescript
+const providers = getProviders();
+// ['Anthropic', 'Google', 'Groq', 'Meta', 'OpenAI', ...]
+```
 
+#### `getModelsByProvider(provider: string): Model[]`
 Returns all models for a specific provider.
 
-### `getModelById(id: string): Model | undefined`
+```typescript
+const openAIModels = getModelsByProvider('OpenAI');
+const anthropicModels = getModelsByProvider('Anthropic');
+```
 
+#### `getModelById(id: string): Model | undefined`
 Returns a specific model by its ID, or `undefined` if not found.
 
-### `searchModels(criteria: SearchCriteria): Model[]`
+```typescript
+const gpt4 = getModelById('gpt-4');
+const claude = getModelById('claude-3-opus-20240229');
+```
 
-Search models by various criteria:
+#### `getAllModels(): Model[]`
+Returns all models (useful for advanced filtering and custom logic).
+
+```typescript
+const allModels = getAllModels();
+const expensiveModels = allModels.filter(model => 
+  (model.cost.input || 0) > 0.1 || (model.cost.output || 0) > 0.1
+);
+```
+
+#### `getProviderStats(): Record<string, number>`
+Returns provider statistics with model counts.
+
+```typescript
+const stats = getProviderStats();
+console.log(stats);
+// {
+//   'OpenAI': 15,
+//   'Anthropic': 8,
+//   'Google': 12,
+//   'Meta': 25,
+//   ...
+// }
+```
+
+### Advanced Search
+
+#### `searchModels(criteria: SearchCriteria): Model[]`
+Search models by various criteria with powerful filtering options.
 
 ```typescript
 interface SearchCriteria {
+  // Capability filters
   vision?: boolean;
   reasoning?: boolean;
   tool_call?: boolean;
   streaming_supported?: boolean;
-  provider?: string;
   preview?: boolean;
+  
+  // Provider filter
+  provider?: string;
+  
+  // Modality filters
   modalities?: {
     input?: string[];
     output?: string[];
   };
+  
+  // Context window filters
   context_min?: number;
   context_max?: number;
+  
+  // Cost filters
+  max_input_cost?: number;
+  max_output_cost?: number;
 }
 ```
 
-### `getAllModels(): Model[]`
+#### Search Examples
 
-Returns all models (useful for advanced filtering).
+```typescript
+// Find all vision-capable models
+const visionModels = searchModels({ vision: true });
 
-### `getProviderStats(): Record<string, number>`
+// Find models with reasoning capabilities
+const reasoningModels = searchModels({ reasoning: true });
 
-Returns provider statistics with model counts.
+// Find models that support tool calling
+const toolCallModels = searchModels({ tool_call: true });
 
-## Model Schema
+// Find models from a specific provider
+const openAIModels = searchModels({ provider: 'OpenAI' });
 
-Each model follows this structure:
+// Find models with large context windows
+const largeContextModels = searchModels({ context_min: 100000 });
+
+// Find affordable models
+const affordableModels = searchModels({ 
+  max_input_cost: 0.01, 
+  max_output_cost: 0.02 
+});
+
+// Find models that accept text and image input
+const multimodalModels = searchModels({
+  modalities: {
+    input: ['text', 'image']
+  }
+});
+
+// Find models with streaming support
+const streamingModels = searchModels({ streaming_supported: true });
+
+// Find preview/beta models
+const previewModels = searchModels({ preview: true });
+```
+
+## 🏗️ Model Schema
+
+Each model follows a comprehensive schema with the following structure:
 
 ```typescript
 interface Model {
@@ -92,84 +202,216 @@ interface Model {
   id: string;
   name: string | null;
   provider?: string;
+  providerId?: string;
+  
+  // Provider metadata
+  providerEnv?: string[];
+  providerNpm?: string;
+  providerDoc?: string;
+  providerModelsDevId?: string;
+  
+  // Date information
+  releaseDate?: string | null;
+  lastUpdated?: string | null;
+  launchDate?: string;
+  trainingCutoff?: string | null;
   
   // Capabilities
-  vision?: boolean;
+  attachment: boolean;
   reasoning: boolean;
-  tool_call: boolean;
-  streaming_supported?: boolean;
+  temperature: boolean;
+  toolCall: boolean;
+  openWeights: boolean;
+  vision?: boolean;
+  extendedThinking?: boolean;
+  preview?: boolean;
   
-  // Pricing
+  // Knowledge and context
+  knowledge?: string | null;
+  
+  // Pricing structure
   cost: {
-    input: number | null;
-    output: number | null;
-    input_cache_hit: number | null;
+    input: number | null;           // per 1K tokens
+    output: number | null;          // per 1K tokens
+    inputCacheHit: number | null;   // cache hit pricing
+    imageGeneration?: number | null;
+    imageGenerationUltra?: number | null;
+    videoGeneration?: number | null;
+    videoGenerationWithAudio?: number | null;
+    videoGenerationWithoutAudio?: number | null;
   };
   
   // Limits
   limit: {
-    context: number | null;
-    output: number | null;
+    context: number | null;         // max tokens
+    output: number | null;          // max tokens
   };
   
   // Modalities
   modalities: {
-    input: string[];
-    output: string[];
+    input: string[];                // ['text', 'image', 'audio', ...]
+    output: string[];               // ['text', 'image', 'audio', ...]
   };
   
-  // ... and many more fields
+  // Infrastructure
+  regions?: string[];
+  streamingSupported?: boolean | null;
+  deploymentType?: string;
+  version?: string | null;
+  
+  // Provider-specific capabilities
+  cacheRead?: boolean;
+  codeExecution?: boolean;
+  searchGrounding?: boolean;
+  structuredOutputs?: boolean;
+  batchMode?: boolean;
+  audioGeneration?: boolean;
+  imageGeneration?: boolean;
+  compoundSystem?: boolean;
+  
+  // Version management
+  versions?: {
+    stable?: string | null;
+    preview?: string | null;
+  };
+  
+  // Additional metadata
+  description?: string;
+  ownedBy?: string;
+  originalModelId?: string;
+  providerStatus?: string;
+  supportsTools?: boolean;
+  supportsStructuredOutput?: boolean;
 }
 ```
 
-## Tree Shaking
+## 🌳 Tree Shaking
 
 The package supports tree shaking, so you can import only what you need:
 
 ```typescript
 // Only import specific functions
-import { getProviders } from '@anolilab/provider-registry';
+import { getProviders, getModelById } from '@anolilab/provider-registry';
 
 // Import schema for validation
 import { ModelSchema } from '@anolilab/provider-registry/schema';
+
+// Import icons (if needed)
+import { getProviderIcon } from '@anolilab/provider-registry/icons';
 ```
 
-## Supported Providers
+## 🏢 Supported Providers
 
-- **Anthropic** (Claude models)
-- **Google** (Gemini models)
-- **Meta** (Llama models)
-- **Groq** (Various models)
-- **Amazon** (Titan models)
-- **DeepSeek** (DeepSeek models)
+The registry includes models from 50+ providers:
+
+### Major Providers
+- **OpenAI** (GPT-4, GPT-3.5, O1, O3, etc.)
+- **Anthropic** (Claude 3.5, Claude 3, Claude 2.1, etc.)
+- **Google** (Gemini 2.5, Gemini 1.5, PaLM, etc.)
+- **Meta** (Llama 3, Llama 2, Code Llama, etc.)
+- **Groq** (Various models with ultra-fast inference)
+- **DeepSeek** (DeepSeek R1, DeepSeek V3, etc.)
+
+### Specialized Providers
+- **Mistral AI** (Mistral Large, Mixtral, etc.)
+- **Cohere** (Command R, Command A, etc.)
+- **Perplexity** (Sonar, Sonar Pro, etc.)
+- **Together AI** (Various open models)
+- **Fireworks AI** (Various models)
 - **Vercel** (v0 models)
-- **OpenRouter** (Various models)
-- **GitHub Copilot** (Various models)
-- **Azure** (OpenAI models)
+
+### Open Source & Research
 - **HuggingFace** (Various hosted models)
-- And many more...
+- **ModelScope** (Chinese models)
+- **OpenRouter** (Aggregated models)
+- **GitHub Copilot** (Code models)
+- **Azure** (OpenAI models)
 
-## Pricing Data Integration
+And many more...
 
-This package automatically includes pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs) during the aggregation process. When you run `npm run aggregate`, the system:
 
-1. **Fetches all models** from provider data
-2. **Retrieves pricing data** from Helicone API (840+ models)
-3. **Matches models** using smart algorithms
-4. **Enriches models** with missing pricing information
-5. **Generates output** with complete pricing data
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 20+
+- pnpm (recommended) or npm
+
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/anolilab/ai-models.git
+cd ai-models
+
+# Install dependencies
+pnpm install
+
+# Build the package
+pnpm run build
+
+# Run tests
+pnpm test
+```
+
+### Available Scripts
+```bash
+# Aggregate provider data (includes pricing enrichment and synchronization)
+pnpm run aggregate
+
+# Generate provider icons
+pnpm run generate-icons
+
+# Build the package
+pnpm run build
+
+# Build for production
+pnpm run build:prod
+
+# Run tests
+pnpm test
+
+# Run tests with coverage
+pnpm run test:coverage
+
+# Lint code
+pnpm run lint:eslint
+
+# Type check
+pnpm run lint:types
+```
+
+### Project Structure
+```
+packages/provider-registry/
+├── src/
+│   ├── index.ts          # Main exports
+│   ├── schema.ts         # Model schema definitions
+│   └── models-data.ts    # Generated model data
+├── scripts/
+│   ├── aggregate-providers.ts    # Data aggregation script
+│   ├── generate-svg-sprite.ts    # Icon generation
+│   └── download/                 # Provider data downloaders
+├── data/
+│   ├── all-models.json   # Generated model data
+│   └── providers/        # Raw provider data
+└── assets/
+    └── icons/            # Provider icons
+```
+
+## 💰 Pricing Data Integration
+
+This package automatically includes real-time pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs) during the aggregation process.
 
 ### Features
-
-- **Automatic Enrichment**: Pricing data is automatically added during aggregation
-- **Smart Matching**: Uses multiple strategies to match models with pricing data
-- **Non-Destructive**: Preserves existing pricing data while filling in missing values
-- **Cost Conversion**: Automatically converts from per 1M tokens to per 1K tokens format
+- **🔄 Automatic Enrichment**: Pricing data is automatically added during aggregation
+- **🎯 Smart Matching**: Uses multiple strategies to match models with pricing data
+- **🛡️ Non-Destructive**: Preserves existing pricing data while filling in missing values
+- **🔄 Cost Conversion**: Automatically converts from per 1M tokens to per 1K tokens format
+- **📊 840+ Models**: Covers pricing for 840+ models across all major providers
 
 ### Supported Pricing Providers
-
-Helicone provides pricing data for 840+ models across providers including:
-- OpenAI (GPT models)
+Helicone provides pricing data for models from:
+- OpenAI (GPT-4, GPT-3.5, O1, O3, etc.)
 - Anthropic (Claude models)
 - Google (Gemini models)
 - Meta (Llama models)
@@ -178,47 +420,101 @@ Helicone provides pricing data for 840+ models across providers including:
 - And many more...
 
 ### Usage
-
 ```bash
 # Aggregate all models with pricing data
-npm run aggregate
+pnpm run aggregate
 
 # Build the package (includes aggregation with pricing)
-npm run build
+pnpm run build
 ```
 
-### API Response
+## 🔄 Model Data Synchronization
 
-The Helicone API returns pricing data in this format:
+The provider registry includes a powerful data synchronization system that automatically merges missing data between models with the same ID across different providers.
+
+### How It Works
+1. **Groups models by ID**: Finds all models with the same ID across different providers
+2. **Calculates completeness scores**: Evaluates how complete each model's data is (excluding cost fields)
+3. **Uses the most complete model as base**: Selects the model with the highest data completeness
+4. **Merges missing data**: Fills in missing fields from other models with the same ID
+5. **Preserves cost data**: Never overwrites existing cost information
+
+### Protected Fields
+The following cost-related fields are **never synchronized** to preserve pricing accuracy:
+- `cost` (entire cost object)
+- `input` (input cost)
+- `output` (output cost)
+- `inputCacheHit` (cache hit pricing)
+- `imageGeneration` (image generation pricing)
+- `videoGeneration` (video generation pricing)
+
+### Example
+If you have the same model (e.g., `gpt-4`) from multiple providers:
+
+**OpenAI Provider:**
 ```json
 {
-  "provider": "OPENAI",
-  "model": "gpt-4",
-  "input_cost_per_1m": 30.0,
-  "output_cost_per_1m": 60.0,
-  "per_image": 0.0075,
-  "per_call": 0.01
+  "id": "gpt-4",
+  "name": "GPT-4",
+  "cost": { "input": 0.03, "output": 0.06 },
+  "description": null,
+  "releaseDate": "2023-03-14"
 }
 ```
 
-**Note**: All costs are per 1 million tokens and are automatically converted to per 1K tokens in the final output.
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Build the package
-npm run build
-
-# Development mode with watch
-npm run dev
-
-# Aggregate provider data (includes pricing enrichment)
-npm run aggregate
+**Azure Provider:**
+```json
+{
+  "id": "gpt-4", 
+  "name": null,
+  "cost": { "input": 0.03, "output": 0.06 },
+  "description": "GPT-4 is a large multimodal model",
+  "releaseDate": null
+}
 ```
 
-## License
+**Result after synchronization:**
+```json
+{
+  "id": "gpt-4",
+  "name": "GPT-4",
+  "cost": { "input": 0.03, "output": 0.06 },
+  "description": "GPT-4 is a large multimodal model",
+  "releaseDate": "2023-03-14"
+}
+```
 
-MIT 
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Adding New Providers
+1. Create a transformer in `scripts/download/transformers/`
+2. Add provider configuration to `scripts/config.ts`
+3. Run `pnpm run download --provider <provider-name>`
+4. Test with `pnpm run aggregate`
+
+### Reporting Issues
+Please use our [Issue Tracker](https://github.com/anolilab/ai-models/issues) to report bugs or request features.
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- [Helicone](https://helicone.ai/) for providing pricing data
+- [OpenRouter](https://openrouter.ai/) for reference data
+- All the AI providers for their amazing models
+- The open source community for inspiration and tools
+
+## 📞 Support
+
+- **Documentation**: [GitHub Wiki](https://github.com/anolilab/ai-models/wiki)
+- **Issues**: [GitHub Issues](https://github.com/anolilab/ai-models/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/anolilab/ai-models/discussions)
+- **Email**: support@anolilab.com
+
+---
+
+Made with ❤️ by [AnoliLab](https://anolilab.com) 

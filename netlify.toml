@@ -6,18 +6,11 @@
   publish = "apps/web/dist"
 
 [build.environment]
-  # Set Node.js version
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
   
   # Ensure we're using pnpm
   NPM_FLAGS = "--version"
   PNPM_FLAGS = "--version"
-
-# Redirects for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 # Headers for security and performance
 [[headers]]
