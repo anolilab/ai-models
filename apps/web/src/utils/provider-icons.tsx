@@ -22,9 +22,7 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({
     );
   }
 
-  // The providerIcon field contains the provider name directly (e.g., "amazon-bedrock", "openai")
-  const providerName = providerIcon;
-  if (!providerName) {
+  if (!providerIcon) {
     return (
       <div className={`${className} flex items-center justify-center bg-muted rounded`}>
         <span className="text-xs font-medium text-muted-foreground">
@@ -35,12 +33,11 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({
   }
 
   // Get the icon data from the provider registry
-  const iconData = getProviderIcon(providerName);
+  const iconData = getProviderIcon(providerIcon);
   
   if (iconData) {
-    // Check if it's an SVG icon (starts with #) or base64 icon
-    if (isSvgIcon(providerName)) {
-      // SVG icon - use sprite sheet
+    // Check if it's an SVG icon or base64 icon
+    if (isSvgIcon(providerIcon)) {
       return (
         <div className={`${className} flex items-center justify-center bg-muted rounded overflow-hidden`}>
           <svg className="w-full h-full">
@@ -66,7 +63,7 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({
   return (
     <div className={`${className} flex items-center justify-center bg-muted rounded`}>
       <span className="text-xs font-medium text-muted-foreground">
-        {providerName.toUpperCase().slice(0, 2)}
+        {providerIcon.toUpperCase().slice(0, 2)}
       </span>
     </div>
   );
@@ -78,9 +75,11 @@ export const IconSpriteSheet: React.FC = () => {
     // Inject the sprite sheet into the DOM if it doesn't exist
     if (!document.getElementById('icon-sprite-sheet')) {
       const spriteElement = document.createElement('div');
+      
       spriteElement.id = 'icon-sprite-sheet';
       spriteElement.innerHTML = spriteSheet;
       spriteElement.style.display = 'none';
+
       document.body.appendChild(spriteElement);
     }
   }, []);
