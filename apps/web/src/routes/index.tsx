@@ -41,7 +41,7 @@ const HomeComponent = () => {
 
   // Helper function to format cost as currency
   const formatCost = (cost: number | null): string => {
-    if (cost === null || cost === undefined) return 'N/A';
+    if (cost === null || cost === undefined) return '-';
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -66,14 +66,14 @@ const HomeComponent = () => {
       inputCost: formatCost(model.cost.input),
       outputCost: formatCost(model.cost.output),
       cacheReadCost: formatCost(model.cost.inputCacheHit),
-      cacheWriteCost: 'N/A', // Not available in our data
-      contextLimit: model.limit.context ? model.limit.context.toLocaleString() : 'N/A',
-      outputLimit: model.limit.output ? model.limit.output.toLocaleString() : 'N/A',
+      cacheWriteCost: '-', // Not available in our data
+      contextLimit: model.limit.context ? model.limit.context.toLocaleString() : '-',
+      outputLimit: model.limit.output ? model.limit.output.toLocaleString() : '-',
       temperature: model.temperature ? 'Yes' : 'No',
       weights: model.openWeights ? 'Open' : 'Closed',
-      knowledge: model.knowledge || 'N/A',
-      releaseDate: model.releaseDate || 'N/A',
-      lastUpdated: model.lastUpdated || 'N/A',
+      knowledge: model.knowledge || '-',
+      releaseDate: model.releaseDate || '-',
+      lastUpdated: model.lastUpdated || '-',
     }));
 
     return processed;
@@ -99,7 +99,7 @@ const HomeComponent = () => {
       id: 'inputCost',
       accessor: (row) => {
         const cost = row.inputCost.replace(/[^0-9.]/g, '');
-        return cost === 'N/A' ? 0 : parseFloat(cost);
+        return cost === '-' ? 0 : parseFloat(cost);
       },
       displayName: 'Input Cost',
       icon: Search,
@@ -109,7 +109,7 @@ const HomeComponent = () => {
       id: 'outputCost',
       accessor: (row) => {
         const cost = row.outputCost.replace(/[^0-9.]/g, '');
-        return cost === 'N/A' ? 0 : parseFloat(cost);
+        return cost === '-' ? 0 : parseFloat(cost);
       },
       displayName: 'Output Cost',
       icon: Search,
@@ -118,7 +118,7 @@ const HomeComponent = () => {
     {
       id: 'lastUpdated',
       accessor: (row) => {
-        if (row.lastUpdated === 'N/A') return null;
+        if (row.lastUpdated === '-') return null;
         return new Date(row.lastUpdated);
       },
       displayName: 'Last Updated',
@@ -347,7 +347,7 @@ const HomeComponent = () => {
       id: "inputCost",
       accessorFn: (row) => {
         const cost = row.inputCost.replace(/[^0-9.]/g, '');
-        return cost === 'N/A' ? 0 : parseFloat(cost);
+        return cost === '-' ? 0 : parseFloat(cost);
       },
       size: 150,
       header: ({ column }) => (
@@ -361,7 +361,7 @@ const HomeComponent = () => {
       id: "outputCost",
       accessorFn: (row) => {
         const cost = row.outputCost.replace(/[^0-9.]/g, '');
-        return cost === 'N/A' ? 0 : parseFloat(cost);
+        return cost === '-' ? 0 : parseFloat(cost);
       },
       size: 150,
       header: ({ column }) => (
@@ -391,12 +391,21 @@ const HomeComponent = () => {
       id: "contextLimit",
       accessorFn: (row) => {
         const limit = row.contextLimit.replace(/[^0-9]/g, '');
-        return limit === 'N/A' ? 0 : parseInt(limit, 10);
+        return limit === '-' ? 0 : parseInt(limit, 10);
       },
       size: 200,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Context Limit" />
       ),
+      cell: ({ row }) => {
+        const value = row.original.contextLimit;
+        if (value === '-') return <span className="text-muted-foreground text-xs">-</span>;
+        
+        // Parse the number and format with commas
+        const num = parseInt(value.replace(/[^0-9]/g, ''), 10);
+        const formatted = num.toLocaleString();
+        return <span>{formatted}</span>;
+      },
       enableColumnFilter: true,
       sortingFn: "basic",
     },
@@ -404,12 +413,21 @@ const HomeComponent = () => {
       id: "outputLimit",
       accessorFn: (row) => {
         const limit = row.outputLimit.replace(/[^0-9]/g, '');
-        return limit === 'N/A' ? 0 : parseInt(limit, 10);
+        return limit === '-' ? 0 : parseInt(limit, 10);
       },
       size: 160,
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Output Limit" />
       ),
+      cell: ({ row }) => {
+        const value = row.original.outputLimit;
+        if (value === '-') return <span className="text-muted-foreground text-xs">-</span>;
+        
+        // Parse the number and format with commas
+        const num = parseInt(value.replace(/[^0-9]/g, ''), 10);
+        const formatted = num.toLocaleString();
+        return <span>{formatted}</span>;
+      },
       enableColumnFilter: true,
       sortingFn: "basic",
     },
@@ -462,7 +480,7 @@ const HomeComponent = () => {
     { 
       id: "lastUpdated",
       accessorFn: (row) => {
-        if (row.lastUpdated === 'N/A') return null;
+        if (row.lastUpdated === '-') return null;
         return new Date(row.lastUpdated);
       },
       size: 200,
