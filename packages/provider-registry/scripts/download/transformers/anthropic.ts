@@ -12,6 +12,12 @@ interface ModelDetails {
   vision?: boolean;
   extended_thinking?: boolean;
   training_cutoff?: string;
+  multilingual?: boolean;
+  priority_tier?: boolean;
+  api_model_name?: string;
+  comparative_latency?: string;
+  description?: string;
+  strengths?: string;
 }
 
 /**
@@ -110,15 +116,15 @@ function transformAnthropicModels(htmlContent: string): Model[] {
     }
   });
   
-  // Second, extract model details from the third table (features table)
+  // Second, extract model details from the Model comparison table
   $('table').each((tableIndex, tableElement) => {
     const $table = $(tableElement);
     const $rows = $table.find('tbody tr');
     
-    // Check if this is the features table (has "Feature" in header and multiple model columns)
+    // Check if this is the Model comparison table (has "Feature" in header and multiple model columns)
     const $header = $table.find('thead tr th');
     if ($header.length > 3 && $header.eq(0).text().trim().includes('Feature')) {
-      // This is the features table - extract model details
+      // This is the Model comparison table - extract model details
       const modelColumns: ModelColumn[] = [];
       
       // Get model names from header (skip first column which is "Feature")
@@ -158,6 +164,18 @@ function transformAnthropicModels(htmlContent: string): Model[] {
             modelDetails[modelCol.name].extended_thinking = cellValue.toLowerCase() === 'yes';
           } else if (featureName.includes('Training data cut-off')) {
             modelDetails[modelCol.name].training_cutoff = cellValue;
+          } else if (featureName.includes('Multilingual')) {
+            modelDetails[modelCol.name].multilingual = cellValue.toLowerCase() === 'yes';
+          } else if (featureName.includes('Priority Tier')) {
+            modelDetails[modelCol.name].priority_tier = cellValue.toLowerCase() === 'yes';
+          } else if (featureName.includes('API model name')) {
+            modelDetails[modelCol.name].api_model_name = cellValue;
+          } else if (featureName.includes('Comparative latency')) {
+            modelDetails[modelCol.name].comparative_latency = cellValue;
+          } else if (featureName.includes('Description')) {
+            modelDetails[modelCol.name].description = cellValue;
+          } else if (featureName.includes('Strengths')) {
+            modelDetails[modelCol.name].strengths = cellValue;
           }
         });
       });
@@ -169,11 +187,24 @@ function transformAnthropicModels(htmlContent: string): Model[] {
     const details = modelDetails[modelName];
     const pricing = modelPricing[modelName] || { input: null, output: null };
     
-    // Parse context window (extract number from "200K tokens" format)
+    // Parse context window (extract number from "200K" format)
     const contextLimit = details.context_window ? parseTokenLimit(details.context_window) : null;
     
-    // Parse max output (extract number from "4K tokens" format)
-    const outputLimit = details.max_output ? parseTokenLimit(details.max_output) : null;
+    // Parse max output (extract number from "32000 tokens" format)
+    let outputLimit = null;
+    if (details.max_output) {
+      // Handle both "32000 tokens" and "32K" formats
+      const tokenMatch = details.max_output.match(/(\d+(?:\.\d+)?)\s*(?:tokens?|K|k)/);
+      if (tokenMatch) {
+        const value = parseFloat(tokenMatch[1]);
+        // Only multiply by 1000 if it's actually "K" (thousands), not "tokens"
+        if (details.max_output.toLowerCase().includes('k') && !details.max_output.toLowerCase().includes('token')) {
+          outputLimit = Math.round(value * 1000);
+        } else {
+          outputLimit = Math.round(value);
+        }
+      }
+    }
     
     // Determine input modalities
     const inputModalities = ['text'];

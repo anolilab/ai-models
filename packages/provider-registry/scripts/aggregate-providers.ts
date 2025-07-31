@@ -245,7 +245,7 @@ const fillMissingFieldsFromReference = (modelData: any, referenceMap: Map<string
       enhancedData.limit.context = referenceData.limit.context;
       fieldsFilled++;
     }
-    if (!enhancedData.limit.output && referenceData.limit?.output) {
+    if ((enhancedData.limit.output === null || enhancedData.limit.output === undefined) && referenceData.limit?.output) {
       enhancedData.limit.output = referenceData.limit.output;
       fieldsFilled++;
     }

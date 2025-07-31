@@ -3,6 +3,15 @@
  */
 
 /**
+ * Interface for provider configuration
+ */
+export interface ProviderConfig {
+  name: string;
+  transformer: string;
+  output: string;
+}
+
+/**
  * Maps provider names to their corresponding icon files
  * Uses lowercase provider names for consistency
  */
@@ -146,4 +155,65 @@ export const BRAND_NAME_MAP: Record<string, string> = {
   'llama': 'Meta',
   'openrouter': 'OpenRouter',
   'vercel': 'Vercel',
-}; 
+};
+
+/**
+ * Provider configurations for downloading and transforming provider data
+ */
+export const PROVIDERS_CONFIG: ProviderConfig[] = [
+  {
+    name: "OpenRouter",
+    transformer: "./transformers/openrouter.ts",
+    output: "openrouter"
+  },
+  {
+    name: "VercelGateway", 
+    transformer: "./transformers/vercel.ts",
+    output: "vercel"
+  },
+  {
+    name: "Amazon Bedrock",
+    transformer: "./transformers/bedrock.ts", 
+    output: "amazon-bedrock"
+  },
+  {
+    name: "Anthropic",
+    transformer: "./transformers/anthropic.ts",
+    output: "anthropic"
+  },
+  {
+    name: "Azure OpenAI",
+    transformer: "./transformers/azure.ts",
+    output: "azure"
+  },
+  {
+    name: "DeepSeek",
+    transformer: "./transformers/deepseek.ts",
+    output: "deepseek"
+  },
+  {
+    name: "GitHub Copilot",
+    transformer: "./transformers/github-copilot.ts",
+    output: "github-copilot"
+  },
+  {
+    name: "Google",
+    transformer: "./transformers/google.ts",
+    output: "google"
+  },
+  {
+    name: "Groq",
+    transformer: "./transformers/groq.ts",
+    output: "groq"
+  },
+  {
+    name: "Hugging Face",
+    transformer: "./transformers/huggingface.ts",
+    output: "huggingface"
+  },
+  {
+    name: "Llama",
+    transformer: "./transformers/llama.ts",
+    output: "llama"
+  }
+]; 

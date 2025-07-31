@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { kebabCase, snakeCase } from '@visulima/string';
 import { ModelSchema, type Model } from '../../src/schema.ts';
+import { PROVIDERS_CONFIG, type ProviderConfig } from '../config.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,18 +14,8 @@ const __dirname = path.dirname(__filename);
  * Command line arguments interface
  */
 interface CliArgs {
-  configPath: string;
   outputPath: string;
   providerName: string | null;
-}
-
-/**
- * Provider configuration interface
- */
-interface ProviderConfig {
-  name: string;
-  transformer: string;
-  output: string;
 }
 
 /**
@@ -37,13 +28,6 @@ interface ProcessingResult {
   errors?: number;
   output?: string;
   error?: string;
-}
-
-/**
- * Configuration file interface
- */
-interface Config {
-  providers: ProviderConfig[];
 }
 
 /**
@@ -70,15 +54,8 @@ interface TransformerModule {
  */
 function parseArgs(): CliArgs {
   const args = process.argv.slice(2);
-  let configPath = path.join(__dirname, 'config.json');
   const outputPath = path.join(__dirname, '../../data/providers');
   let providerName: string | null = null;
-
-  // Parse --config argument
-  const configIndex = args.indexOf('--config');
-  if (configIndex !== -1 && configIndex + 1 < args.length) {
-    configPath = args[configIndex + 1];
-  }
 
   // Parse --provider argument
   const providerIndex = args.indexOf('--provider');
@@ -86,7 +63,7 @@ function parseArgs(): CliArgs {
     providerName = args[providerIndex + 1];
   }
 
-  return { configPath, outputPath, providerName };
+  return { outputPath, providerName };
 }
 
 /**
@@ -97,15 +74,12 @@ function showHelp(): never {
 Usage: node index.js [options]
 
 Options:
-  --config <path>     Path to config file (default: ./config.json)
   --provider <name>   Process only the specified provider
   --help, -h         Show this help message
 
 Examples:
   node index.js                           # Process all providers
   node index.js --provider "OpenRouter"   # Process only OpenRouter
-  node index.js --config ./custom.json    # Use custom config file
-  node index.js --provider "Anthropic" --config ./custom.json
 `);
   process.exit(0);
 }
@@ -265,45 +239,10 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
   return { name, models: models.length, saved, errors, output };
 }
 
-/**
- * Validates the configuration object
- * @param config - The configuration object to validate
- * @throws Error if configuration is invalid
- */
-function validateConfig(config: unknown): asserts config is Config {
-  if (!config || typeof config !== 'object') {
-    throw new Error('Config must be an object');
-  }
-  
-  const configObj = config as Record<string, unknown>;
-  
-  if (!configObj.providers || !Array.isArray(configObj.providers)) {
-    throw new Error('Config must have a "providers" array.');
-  }
-  
-  // Validate each provider in the config
-  for (let i = 0; i < configObj.providers.length; i++) {
-    const provider = configObj.providers[i];
-    if (!provider || typeof provider !== 'object') {
-      throw new Error(`Provider at index ${i} is invalid: must be an object`);
-    }
-    
-    const providerObj = provider as Record<string, unknown>;
-    
-    if (!providerObj.name || typeof providerObj.name !== 'string' || providerObj.name.trim() === '') {
-      throw new Error(`Provider at index ${i} has invalid name: "${providerObj.name}". Name must be a non-empty string.`);
-    }
-    if (!providerObj.transformer || typeof providerObj.transformer !== 'string' || providerObj.transformer.trim() === '') {
-      throw new Error(`Provider "${providerObj.name}" has invalid transformer path: "${providerObj.transformer}". Transformer path must be a non-empty string.`);
-    }
-    if (!providerObj.output || typeof providerObj.output !== 'string' || providerObj.output.trim() === '') {
-      throw new Error(`Provider "${providerObj.output}" has invalid output path: "${providerObj.output}". Output path must be a non-empty string.`);
-    }
-  }
-}
+
 
 /**
- * Main function that reads the configuration and processes all providers.
+ * Main function that processes all providers using the imported configuration.
  */
 async function main(): Promise<void> {
   const args = parseArgs();
@@ -313,34 +252,22 @@ async function main(): Promise<void> {
     showHelp();
   }
   
-  let config: Config;
-  
-  try {
-    const configContent = fs.readFileSync(args.configPath, 'utf8');
-    const parsedConfig = JSON.parse(configContent);
-    validateConfig(parsedConfig);
-    config = parsedConfig;
-  } catch (e) {
-    console.error('ERROR: Failed to read config:', e instanceof Error ? e.message : String(e));
-    process.exit(1);
-  }
-  
   // Filter providers if a specific provider name is provided
-  let providersToProcess = config.providers;
+  let providersToProcess = PROVIDERS_CONFIG;
   if (args.providerName) {
     // Validate that the provided provider name is correct
     if (!args.providerName || typeof args.providerName !== 'string' || args.providerName.trim() === '') {
       throw new Error(`Invalid provider name: "${args.providerName}". Provider name must be a non-empty string.`);
     }
     
-    providersToProcess = config.providers.filter(p => p.name.toLowerCase() === args.providerName!.toLowerCase());
+    providersToProcess = PROVIDERS_CONFIG.filter(p => p.name.toLowerCase() === args.providerName!.toLowerCase());
     if (providersToProcess.length === 0) {
-      const availableProviders = config.providers.map(p => p.name.toLowerCase()).join(', ');
+      const availableProviders = PROVIDERS_CONFIG.map(p => p.name.toLowerCase()).join(', ');
       throw new Error(`Provider "${args.providerName}" not found in config. Available providers: ${availableProviders}`);
     }
     console.log(`Processing provider: ${args.providerName}`);
   } else {
-    console.log(`Processing all ${config.providers.length} providers...`);
+    console.log(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
   }
   
   const results: ProcessingResult[] = [];
