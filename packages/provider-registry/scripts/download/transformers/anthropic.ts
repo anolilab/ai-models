@@ -243,6 +243,11 @@ function transformAnthropicModels(htmlContent: string): Model[] {
       streamingSupported: true,
       vision: details.vision || false,
       extendedThinking: details.extended_thinking || false,
+      // Provider metadata
+      providerEnv: ['ANTHROPIC_API_KEY'],
+      providerNpm: '@ai-sdk/anthropic',
+      providerDoc: 'https://docs.anthropic.com/en/docs/about-claude/models',
+      providerModelsDevId: 'anthropic',
     });
   });
   

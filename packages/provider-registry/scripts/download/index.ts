@@ -45,6 +45,23 @@ interface TransformerModule {
   fetchGroqModels?: () => Promise<Model[]>;
   fetchHuggingFaceModels?: () => Promise<Model[]>;
   fetchLlamaModels?: () => Promise<Model[]>;
+  fetchOpenAIModels?: () => Promise<Model[]>;
+  fetchDeepInfraModels?: () => Promise<Model[]>;
+  fetchAlibabaModels?: () => Promise<Model[]>;
+  fetchFireworksAIModels?: () => Promise<Model[]>;
+  fetchGitHubModels?: () => Promise<Model[]>;
+  fetchGoogleVertexModels?: () => Promise<Model[]>;
+  fetchGoogleVertexAnthropicModels?: () => Promise<Model[]>;
+  fetchInferenceModels?: () => Promise<Model[]>;
+  fetchMistralModels?: () => Promise<Model[]>;
+  fetchMorphModels?: () => Promise<Model[]>;
+  fetchRequestyModels?: () => Promise<Model[]>;
+  fetchTogetherAIModels?: () => Promise<Model[]>;
+  fetchUpstageModels?: () => Promise<Model[]>;
+  fetchV0Models?: () => Promise<Model[]>;
+  fetchVeniceModels?: () => Promise<Model[]>;
+  fetchXAIModels?: () => Promise<Model[]>;
+  fetchModelScopeModels?: () => Promise<Model[]>;
   default?: () => Promise<Model[]>;
 }
 
@@ -143,6 +160,23 @@ function getFetchFunction(transformerModule: TransformerModule): (() => Promise<
          transformerModule.fetchGroqModels ||
          transformerModule.fetchHuggingFaceModels ||
          transformerModule.fetchLlamaModels ||
+         transformerModule.fetchOpenAIModels ||
+         transformerModule.fetchDeepInfraModels ||
+         transformerModule.fetchAlibabaModels ||
+         transformerModule.fetchFireworksAIModels ||
+         transformerModule.fetchGitHubModels ||
+         transformerModule.fetchGoogleVertexModels ||
+         transformerModule.fetchGoogleVertexAnthropicModels ||
+         transformerModule.fetchInferenceModels ||
+         transformerModule.fetchMistralModels ||
+         transformerModule.fetchMorphModels ||
+         transformerModule.fetchRequestyModels ||
+         transformerModule.fetchTogetherAIModels ||
+         transformerModule.fetchUpstageModels ||
+         transformerModule.fetchV0Models ||
+         transformerModule.fetchVeniceModels ||
+         transformerModule.fetchXAIModels ||
+         transformerModule.fetchModelScopeModels ||
          transformerModule.default ||
          null;
 }

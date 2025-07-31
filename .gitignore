@@ -3,4 +3,5 @@ node_modules
 
 packages/provider-registry/data
 packages/provider-registry/src/models-data.ts
+packages/provider-registry/src/icons-sprite.ts
 port-*.text

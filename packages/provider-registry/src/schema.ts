@@ -7,6 +7,12 @@ export const ModelSchema = z.object({
   provider: z.string().optional(),
   providerId: z.string().optional(),
   
+  // Provider metadata (from models.dev API)
+  providerEnv: z.array(z.string()).optional(), // Environment variables required
+  providerNpm: z.string().optional(), // NPM package name
+  providerDoc: z.string().optional(), // Documentation URL
+  providerModelsDevId: z.string().optional(), // ID from models.dev API
+  
   // Date fields
   releaseDate: z.string().nullable(),
   lastUpdated: z.string().nullable(),
