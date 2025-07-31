@@ -5,6 +5,7 @@ export const ModelSchema = z.object({
   id: z.string(),
   name: z.string().nullable(),
   provider: z.string().optional(),
+  providerId: z.string().optional(),
   
   // Date fields
   releaseDate: z.string().nullable(),
@@ -22,7 +23,7 @@ export const ModelSchema = z.object({
   extendedThinking: z.boolean().optional(),
   preview: z.boolean().optional(),
 
-  providerIcon: z.string().optional(),
+  providerIcon: z.string().nullable().optional(),
   
   // Knowledge and context
   knowledge: z.string().nullable(),

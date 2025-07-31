@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import { kebabCase } from '@visulima/string';
 import type { Model } from '../../../src/schema.js';
 
 /**
@@ -180,8 +181,8 @@ function transformAnthropicModels(htmlContent: string): Model[] {
       inputModalities.push('image');
     }
     
-    // Create model ID from name
-    const modelId = modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    // Create model ID from name using kebabCase
+    const modelId = kebabCase(modelName);
     
     models.push({
       id: modelId,

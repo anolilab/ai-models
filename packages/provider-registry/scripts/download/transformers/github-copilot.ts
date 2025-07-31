@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import { kebabCase, snakeCase } from '@visulima/string';
 import type { Model } from '../../../src/schema.js';
 
 /**
@@ -56,13 +57,13 @@ function transformGitHubCopilotModels(htmlContent: string): Model[] {
         const modelInfo: ModelInfo = {};
         
         headers.forEach((header, index) => {
-          modelInfo[header.toLowerCase().replace(/\s+/g, '_')] = row[index];
+          modelInfo[snakeCase(header)] = row[index];
         });
         
         // Create model object
         if (modelInfo.model_name) {
           const model: Model = {
-            id: modelInfo.model_name.toLowerCase().replace(/\s+/g, '-'),
+            id: kebabCase(modelInfo.model_name),
             name: modelInfo.model_name,
             releaseDate: null, // GitHub Copilot doesn't provide release dates in the table
             lastUpdated: null,

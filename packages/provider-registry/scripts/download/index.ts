@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { kebabCase, snakeCase } from '@visulima/string';
 import { ModelSchema, type Model } from '../../src/schema.ts';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -130,11 +131,11 @@ function ensureDirSync(dir: string): void {
  * const provider = getProvider({ provider: 'AI21 Labs' }); // Returns 'AI21_Labs'
  */
 function getProvider(model: Model): string {
-  if (model.owned_by) return model.owned_by.replace(/[^a-zA-Z0-9._-]/g, '_');
-  if ('author' in model && model.author) return model.author.replace(/[^a-zA-Z0-9._-]/g, '_');
-  if (model.provider) return model.provider.replace(/[^a-zA-Z0-9._-]/g, '_');
+  if (model.ownedBy) return snakeCase(model.ownedBy);
+  if ('author' in model && model.author) return snakeCase(model.author as string);
+  if (model.provider) return snakeCase(model.provider);
   if (model.id && typeof model.id === 'string' && model.id.includes('/')) {
-    return model.id.split('/')[0].replace(/[^a-zA-Z0-9._-]/g, '_');
+    return snakeCase(model.id.split('/')[0]);
   }
   return 'unknown';
 }
@@ -148,7 +149,7 @@ function getProvider(model: Model): string {
  * const modelId = getModelId({ name: 'Claude 3.5' }); // Returns 'Claude_3_5'
  */
 function getModelId(model: Model): string {
-  return (model.id || model.name || 'unknown-model').replace(/[^a-zA-Z0-9._-]/g, '_');
+  return snakeCase(model.id || model.name || 'unknown-model');
 }
 
 /**

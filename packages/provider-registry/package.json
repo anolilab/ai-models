@@ -26,11 +26,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
     "./schema": {
-      "import": "./dist/schema.mjs",
+      "import": "./dist/schema.js",
       "types": "./dist/schema.d.ts"
     },
     "./icons/*": "./dist/icons/*"
@@ -63,7 +63,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^24.1.0",
-    "@visulima/packem": "2.0.0-alpha.2",
+    "@visulima/packem": "2.0.0-alpha.4",
     "axios": "^1.11.0",
     "cheerio": "^1.1.2",
     "eslint": "^9.32.0",
@@ -75,10 +75,10 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vitest": "^3.2.4",
-    "zod": "^4.0.10"
+    "@visulima/string": "1.5.1"
   },
   "dependencies": {
-    "zod": "^4.0.10"
+    "zod": "^4.0.14"
   },
   "engines": {
     "node": ">=20"

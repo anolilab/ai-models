@@ -1,159 +1,106 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { kebabCase } from '@visulima/string';
 import type { Model } from '../src/schema.js';
 import { ModelSchema } from '../src/schema.js';
+import { PROVIDER_ICON_MAP, BRAND_NAME_MAP } from './config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PROVIDERS_DIR = path.resolve(__dirname, '../data/providers');
-const SCHEMA_PATH = path.join(__dirname, '../src/schema.ts');
 const OUTPUT_JSON = path.join(__dirname, '../data/all-models.json');
 const OUTPUT_TS = path.resolve(__dirname, '../src/models-data.ts');
-
-/**
- * Maps provider names to their corresponding icon files
- * Uses lowercase provider names for consistency
- */
-const PROVIDER_ICON_MAP: Record<string, string> = {
-  // Primary providers with specific icons
-  'anthropic': 'anthropic.svg',
-  'azure': 'azureai-color.svg',
-  'amazon': 'bedrock-color.svg',
-  'amazon-bedrock': 'bedrock-color.svg',
-  'claude': 'claude-color.svg',
-  'deepseek': 'deepseek-color.svg',
-  'fireworks': 'fireworks-color.svg',
-  'fireworks-ai': 'fireworks-color.svg',
-  'google': 'gemini-color.svg',
-  'github': 'github.svg',
-  'github copilot': 'githubcopilot.svg',
-  'grok': 'grok.svg',
-  'groq': 'groq.svg',
-  'huggingface': 'huggingface-color.svg',
-  'hf-inference': 'huggingface-color.svg',
-  'inference': 'inference.svg',
-  'meta': 'meta-color.svg',
-  'meta-llama': 'meta-color.svg',
-  'mistral': 'mistral-color.svg',
-  'mistralai': 'mistral-color.svg',
-  'mistral ai': 'mistral-color.svg',
-  'morph': 'morph.svg',
-  'ollama': 'ollama.svg',
-  'openai': 'openai.svg',
-  'openrouter': 'openrouter.svg',
-  'requesty': 'requesty.svg',
-  'upstage': 'upstage-color.svg',
-  'v0': 'v0.svg',
-  'venice': 'Venice.svg',
-  'vercel': 'vercel.svg',
-  'vertexai': 'vertexai-color.svg',
-  
-  'cohere': 'cohere.png',
-  'microsoft': 'azureai-color.svg',
-  'stability ai': 'stability-ai.png',
-  'perplexity': 'perplexity.png',
-  'together': 'together.svg',
-  'nvidia': 'nvidia.jpg',
-  'inflection': 'inflection.svg',
-  'x-ai': 'x-ai.png',
-  'xai': 'x-ai.png',
-  'writer': 'writer.png',
-  'luma': 'luma.svg',
-  'rekaai': 'rekaai.jpg',
-  'sambanova': 'sambanova.png',
-  'cerebras': 'cerebras.png',
-  'eleutherai': 'eleutherai.png',
-  'featherless': 'featherless.svg',
-  'featherless-ai': 'featherless.svg',
-  'hyperbolic': 'hyperbolic.png',
-  'infermatic': 'infermatic.png',
-  'liquid': 'liquid.png',
-  'minimax': 'minimax.png',
-  'nebius': 'nebius.png',
-  'nousresearch': 'nousresearch.png',
-  'novita': 'novita.png',
-  'nscale': 'nscale.png',
-  'opengvlab': 'opengvlab.png',
-  'qwen': 'qwen.png',
-  'sarvamai': 'sarvamai.png',
-  'tencent': 'tencent.png',
-  'aion-labs': 'aion-labs.png',
-  'arcee-ai': 'arcee-ai.png',
-  'baidu': 'baidu.ico',
-  'z-ai': 'z-ai.svg',
-  'zai': 'z-ai.svg',
-  
-  // Providers with newly downloaded icons
-  'moonshotai': 'moonshotai.png',
-  'inception': 'inception.png',
-  'mancer': 'mancer.png',
-  'miatral': '',
-  'neversleep': 'neversleep.png',
-  'nothingiisreal': 'nothingiisreal.png',
-  'pygmalionai': 'pygmalionai.png',
-  'raifle': 'raifle.png',
-  'sao10k': 'sao10k.png',
-  'scb10x': 'scb10x.png',
-  'shisa-ai': 'shisa-ai.png',
-  'sophosympatheia': 'sophosympatheia.png',
-  'switchpoint': 'switchpoint.png',
-  'thedrummer': 'thedrummer.png',
-  'thudm': 'thudm.png',
-  'tngtech': 'tngtech.png',
-  'undi95': 'undi95.png',
-  'agentica-org': 'agentica-org.png',
-  'alfredpros': 'alfredpros.png',
-  'alibaba': 'alibaba.png',
-  'alpindale': 'alpindale.png',
-  'anthracite-org': 'anthracite-org.png',
-  'arliai': 'arliai.png',
-  'bytedance': 'bytedance.png',
-  'cognitivecomputations': 'cognitivecomputations.png',
-  'gryphe': 'gryphe.png',
-  
-  // Additional providers with downloaded icons
-  'aionlabs': 'aionlabs.png',
-  'avian': 'avian.png',
-  'atlascloud': 'atlascloud.png',
-  'atoma': 'atoma.png',
-  'chutes': 'chutes.png',
-  'cloudflare': 'cloudflare.png',
-  'crusoe': 'crusoe.png',
-  'deepinfra': 'deepinfra.webp',
-  'enfer': 'enfer.png',
-  'friendli': 'friendli.png',
-  'gmicloud': 'gmicloud.png',
-  'inferencenet': 'inferencenet.png',
-  'kluster': 'kluster.png',
-  'lambda': 'lambda.png',
-  'nineteen': 'nineteen.png',
-  'ncompass': 'ncompass.png',
-  'openinference': 'openinference.png',
-  'parasail': 'parasail.png',
-  'phala': 'phala.png',
-  'targon': 'targon.png',
-  'ubicloud': 'ubicloud.png',
-};
 
 /**
  * Gets the icon filename for a given provider name
  * @param providerName - The provider name (case-insensitive)
  * @returns The icon filename or undefined if not found
  */
-function getProviderIcon(providerName: string): string | undefined {
+const getProviderIcon = (providerName: string): string | undefined => {
   const normalizedName = providerName.toLowerCase();
   
   return PROVIDER_ICON_MAP[normalizedName];
-}
+};
+
+/**
+ * Maps directory names to proper brand names
+ * @param directoryName - The directory name from the file path
+ * @returns The proper brand name
+ */
+const getBrandName = (directoryName: string): string => {
+  return BRAND_NAME_MAP[directoryName] || directoryName;
+};
+
+/**
+ * Extracts the main provider name from the file path
+ * @param filePath - The path to the JSON file
+ * @returns The main provider name or empty string if not found
+ */
+const getMainProviderFromPath = (filePath: string): string => {
+  // Path format: .../data/providers/{mainProvider}/{subProvider}/model.json
+  const pathParts = filePath.split(path.sep);
+  const providersIndex = pathParts.findIndex(part => part === 'providers');
+  
+  if (providersIndex === -1 || providersIndex + 1 >= pathParts.length) {
+    return '';
+  }
+  
+  const directoryName = pathParts[providersIndex + 1];
+  return getBrandName(directoryName);
+};
+
+/**
+ * Generates a normalized provider ID from the file path and provider field
+ * @param filePath - The path to the JSON file
+ * @param provider - The provider field from the model data
+ * @returns The normalized provider ID
+ */
+const generateProviderId = (filePath: string, provider?: string): string => {
+  // Extract the main provider from the file path
+  const mainProvider = getMainProviderFromPath(filePath);
+  const pathParts = filePath.split(path.sep);
+  const providersIndex = pathParts.findIndex(part => part === 'providers');
+  
+  if (providersIndex === -1 || providersIndex + 1 >= pathParts.length) {
+    return '';
+  }
+  
+  const subProvider = pathParts[providersIndex + 2];
+  
+  // Normalize the main provider name using kebabCase
+  const normalizedMainProvider = kebabCase(mainProvider);
+  
+  // If there's no sub-provider or it's the same as main provider, return just the main provider
+  if (!subProvider || subProvider === mainProvider) {
+    return normalizedMainProvider;
+  }
+  
+  // If there's a provider field, use it to determine the sub-provider
+  let subProviderName = subProvider;
+  if (provider) {
+    // Extract sub-provider from the provider field (e.g., "DeepSeek / Meta" -> "DeepSeek / Meta")
+    subProviderName = provider;
+  }
+  
+  // Normalize the sub-provider name using kebabCase
+  const normalizedSubProvider = kebabCase(subProviderName);
+  
+  // If main and sub provider are the same after normalization, return just the main provider
+  if (normalizedMainProvider === normalizedSubProvider) {
+    return normalizedMainProvider;
+  }
+  
+  return `${normalizedMainProvider}/${normalizedSubProvider}`;
+};
 
 /**
  * Converts snake_case object keys to camelCase recursively
  * @param obj - The object to convert
  * @returns The object with camelCase keys
  */
-function convertSnakeToCamel(obj: any): any {
+const convertSnakeToCamel = (obj: unknown): unknown => {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
@@ -162,22 +109,22 @@ function convertSnakeToCamel(obj: any): any {
     return obj.map(convertSnakeToCamel);
   }
   
-  const converted: Record<string, any> = {};
+  const converted: Record<string, unknown> = {};
   
-  for (const [key, value] of Object.entries(obj)) {
+  for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
     const camelKey = key.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
     converted[camelKey] = convertSnakeToCamel(value);
   }
   
   return converted;
-}
+};
 
 /**
  * Recursively finds all JSON files in a directory and its subdirectories
  * @param dir - The directory to search in
  * @returns Array of file paths to JSON files
  */
-function getAllJsonFiles(dir: string): string[] {
+const getAllJsonFiles = (dir: string): string[] => {
   let results: string[] = [];
   
   const list = fs.readdirSync(dir);
@@ -194,13 +141,13 @@ function getAllJsonFiles(dir: string): string[] {
   });
 
   return results;
-}
+};
 
 /**
  * Aggregates and validates model data from all JSON files in the providers directory
  * @returns Promise resolving to an array of validated Model objects
  */
-async function aggregateModels(): Promise<Model[]> {
+const aggregateModels = async (): Promise<Model[]> => {
   const allFiles = getAllJsonFiles(PROVIDERS_DIR);
   const models: Model[] = [];
   
@@ -210,11 +157,23 @@ async function aggregateModels(): Promise<Model[]> {
       const data = JSON.parse(raw);
       
       // Convert snake_case keys to camelCase
-      const convertedData = convertSnakeToCamel(data);
+      const convertedData = convertSnakeToCamel(data) as Record<string, unknown>;
+      
+      // Store the original provider field (sub-provider information) before overwriting
+      const originalProvider = convertedData.provider as string | undefined;
+      
+      // Set the provider field to the main provider name from the file path
+      const mainProvider = getMainProviderFromPath(file);
+      if (mainProvider) {
+        convertedData.provider = mainProvider;
+      }
+      
+      // Generate provider ID from file path and original provider field (sub-provider)
+      convertedData.providerId = generateProviderId(file, originalProvider);
       
       // Add provider icon if provider is specified
       if (convertedData.provider) {
-        const icon = getProviderIcon(convertedData.provider);
+        const icon = getProviderIcon(convertedData.provider as string);
         
         if (icon) {
           convertedData.providerIcon = `icons/${icon}`;
@@ -234,14 +193,14 @@ async function aggregateModels(): Promise<Model[]> {
   }
   
   return models;
-}
+};
 
 /**
  * Main function that orchestrates the aggregation process
  * Reads all provider JSON files, validates them against the schema,
  * and generates both JSON and TypeScript output files
  */
-async function main(): Promise<void> {
+const main = async (): Promise<void> => {
   try {
     // Aggregate and validate models
     const models = await aggregateModels();
@@ -261,6 +220,6 @@ async function main(): Promise<void> {
   
     process.exit(1);
   }
-}
+};
 
 main(); 

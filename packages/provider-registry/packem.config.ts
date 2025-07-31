@@ -15,4 +15,11 @@ export default defineConfig({
         },
     },
     transformer,
+    validation: {
+        packageJson: {
+            allowedExportExtensions: [".svg", ".png", ".jpg"],
+            exports: false,
+        },
+    },
+    ignoreExportKeys: ["icons"],
 }) as BuildConfig;

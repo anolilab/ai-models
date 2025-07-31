@@ -1,7 +1,7 @@
 import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { getAllModels, type Model } from "@anolilab/provider-registry";
-import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2, Trash2, Copy, Download, File } from "lucide-react";
+import { FileText, Image as ImageIcon, Video, ScatterChart, Search, Calendar, Volume2, Trash2, Copy, File } from "lucide-react";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { DataTableColumnHeader } from "@/components/data-table/column-header";
 import { DataTable } from "@/components/data-table/data-table";
@@ -54,24 +54,24 @@ const HomeComponent = () => {
     const processed = allModels.map((model: Model, index: number) => ({
       id: index + model.id,
       provider: model.provider || 'Unknown',
-      model: model.name || model.id,
-      providerId: model.provider || 'Unknown',
+      providerId: model.providerId || 'Unknown',
+      model: (model.name || model.id).toLowerCase(),
       modelId: model.id,
-      toolCall: model.tool_call,
+      toolCall: model.toolCall,
       reasoning: model.reasoning,
       input: model.modalities.input.join(', '),
       output: model.modalities.output.join(', '),
       inputCost: formatCost(model.cost.input),
       outputCost: formatCost(model.cost.output),
-      cacheReadCost: formatCost(model.cost.input_cache_hit),
+      cacheReadCost: formatCost(model.cost.inputCacheHit),
       cacheWriteCost: 'N/A', // Not available in our data
       contextLimit: model.limit.context ? model.limit.context.toLocaleString() : 'N/A',
       outputLimit: model.limit.output ? model.limit.output.toLocaleString() : 'N/A',
       temperature: model.temperature ? 'Yes' : 'No',
-      weights: model.open_weights ? 'Open' : 'Closed',
+      weights: model.openWeights ? 'Open' : 'Closed',
       knowledge: model.knowledge || 'N/A',
-      releaseDate: model.release_date || 'N/A',
-      lastUpdated: model.last_updated || 'N/A',
+      releaseDate: model.releaseDate || 'N/A',
+      lastUpdated: model.lastUpdated || 'N/A',
     }));
 
     return processed;
@@ -555,7 +555,7 @@ const HomeComponent = () => {
               transformFunction: (row) => ({
                 provider: row.provider,
                 model: row.model,
-                providerId: row.providerId,
+                providerId: row.provider.toLowerCase().replace(/\s+/g, '-'),
                 modelId: row.modelId,
                 toolCall: row.toolCall,
                 reasoning: row.reasoning,

@@ -59,7 +59,7 @@ function parseOutputModalities(modalitiesText: string): string[] {
  * @param regionsCell - Cheerio element containing regions data
  * @returns Array of parsed regions
  */
-function parseRegions(regionsCell: cheerio.Cheerio<cheerio.Element>): string[] {
+function parseRegions(regionsCell: cheerio.Cheerio<any>): string[] {
   const regionsArray: string[] = [];
   
   if (regionsCell.length > 0) {
@@ -197,8 +197,7 @@ function transformBedrockModels(htmlContent: string): Model[] {
                 input: inputMods.length > 0 ? inputMods : ['text'],
                 output: outputMods.length > 0 ? outputMods : ['text'],
               },
-              // Additional metadata from the table
-              provider: provider,
+              provider,
               regions: regionsArray.length > 0 ? regionsArray : undefined,
               streamingSupported: null, // Not available in this table
               launchDate: launchDate,
