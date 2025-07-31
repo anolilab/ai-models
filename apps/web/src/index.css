@@ -399,13 +399,28 @@
         border-radius: var(--radius-sm);
     }
 
+    /* When hovering over the track, make the thumb more visible */
+    ::-webkit-scrollbar-track:hover {
+        background: var(--color-accent);
+    }
+
     ::-webkit-scrollbar-thumb {
         background: var(--color-border);
         border-radius: var(--radius-sm);
         border: 2px solid var(--color-muted);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    :hover::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
     }
 
     ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary);
+    }
+
+    /* Enhanced scrollbar thumb visibility on hover */
+    ::-webkit-scrollbar-thumb:active {
         background: var(--color-primary);
     }
 
@@ -681,57 +696,6 @@ input[type="week"] {
 }
 
 @layer components {
-  /* Virtual scrolling optimizations */
-  .virtual-table {
-    contain: layout style paint;
-    will-change: transform;
-  }
-
-  .virtual-table-row {
-    contain: layout style;
-    will-change: transform;
-  }
-
-  /* Loading states */
-  .table-loading {
-    opacity: 0.6;
-    pointer-events: none;
-  }
-
-  .table-loading::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2rem;
-    height: 2rem;
-    margin: -1rem 0 0 -1rem;
-    border: 2px solid var(--color-border);
-    border-top-color: var(--color-primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Empty state styling */
-  .table-empty {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--color-muted-foreground);
-  }
-
-  .table-empty-icon {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto 1rem;
-    opacity: 0.5;
-  }
-
   /* Monospace text for technical identifiers */
   .font-mono-id {
     font-family: var(--font-family-mono);

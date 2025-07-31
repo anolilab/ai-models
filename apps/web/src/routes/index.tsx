@@ -671,11 +671,13 @@ const HomeComponent = () => {
                     Imprint
                 </a>
             </li>
+            <li className="text-muted-foreground">|</li>
             <li>
                 <a className="text-sm transition-colors hover:text-primary" href="https://anolilab.com/terms" target="_blank" rel="noopener noreferrer">
                     Terms of Service
                 </a>
             </li>
+            <li className="text-muted-foreground">|</li>
             <li>
                 <a className="text-sm transition-colors hover:text-primary" href="https://anolilab.com/privacy" target="_blank" rel="noopener noreferrer">
                     Privacy Policy
