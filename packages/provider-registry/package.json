@@ -26,14 +26,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/*",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     },
     "./schema": {
       "import": "./dist/schema.mjs",
       "types": "./dist/schema.d.ts"
     },
-    "./icons": "./dist/icons/*"
+    "./icons/*": "./dist/icons/*"
   },
   "files": [
     "./dist"
