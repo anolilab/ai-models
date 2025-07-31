@@ -293,20 +293,46 @@ describe('Provider Registry', () => {
       });
     });
 
-    it('should have unique model IDs', () => {
+    it('should have unique model IDs per provider', () => {
       const allModels = getAllModels();
-      const modelIds = allModels.map(model => model.id);
-      const uniqueIds = new Set(modelIds);
       
-      // Check for duplicate IDs and log them for debugging
-      const duplicates = modelIds.filter((id, index) => modelIds.indexOf(id) !== index);
-      if (duplicates.length > 0) {
-        console.warn('Duplicate model IDs found:', [...new Set(duplicates)]);
+      // Group models by provider
+      const modelsByProvider = new Map<string, Model[]>();
+      allModels.forEach(model => {
+        if (!modelsByProvider.has(model.provider)) {
+          modelsByProvider.set(model.provider, []);
+        }
+        modelsByProvider.get(model.provider)!.push(model);
+      });
+      
+      // Check for duplicates within each provider
+      const duplicatesByProvider = new Map<string, string[]>();
+      
+      for (const [provider, models] of modelsByProvider) {
+        const modelIds = models.map(model => model.id);
+        const uniqueIds = new Set(modelIds);
+        
+        if (modelIds.length !== uniqueIds.size) {
+          // Find the actual duplicates
+          const duplicates = modelIds.filter((id, index) => modelIds.indexOf(id) !== index);
+          duplicatesByProvider.set(provider, [...new Set(duplicates)]);
+        }
       }
       
-      // For now, we'll allow duplicates but log them
-      expect(modelIds.length).toBeGreaterThan(0);
-      expect(uniqueIds.size).toBeGreaterThan(0);
+      // Log any duplicates found
+      if (duplicatesByProvider.size > 0) {
+        console.warn('Duplicate model IDs found within providers:');
+        for (const [provider, duplicates] of duplicatesByProvider) {
+          console.warn(`  ${provider}:`, duplicates);
+        }
+      }
+      
+      // Assert that there are no duplicates within any provider
+      expect(duplicatesByProvider.size).toBe(0);
+      
+      // Also verify that we have models and they have IDs
+      expect(allModels.length).toBeGreaterThan(0);
+      expect(allModels.every(model => model.id && model.id.trim() !== '')).toBe(true);
     });
   });
 }); 

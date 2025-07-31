@@ -149,6 +149,60 @@ import { ModelSchema } from '@anolilab/provider-registry/schema';
 - **HuggingFace** (Various hosted models)
 - And many more...
 
+## Pricing Data Integration
+
+This package automatically includes pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs) during the aggregation process. When you run `npm run aggregate`, the system:
+
+1. **Fetches all models** from provider data
+2. **Retrieves pricing data** from Helicone API (840+ models)
+3. **Matches models** using smart algorithms
+4. **Enriches models** with missing pricing information
+5. **Generates output** with complete pricing data
+
+### Features
+
+- **Automatic Enrichment**: Pricing data is automatically added during aggregation
+- **Smart Matching**: Uses multiple strategies to match models with pricing data
+- **Non-Destructive**: Preserves existing pricing data while filling in missing values
+- **Cost Conversion**: Automatically converts from per 1M tokens to per 1K tokens format
+
+### Supported Pricing Providers
+
+Helicone provides pricing data for 840+ models across providers including:
+- OpenAI (GPT models)
+- Anthropic (Claude models)
+- Google (Gemini models)
+- Meta (Llama models)
+- Mistral (Mistral models)
+- Groq (Various models)
+- And many more...
+
+### Usage
+
+```bash
+# Aggregate all models with pricing data
+npm run aggregate
+
+# Build the package (includes aggregation with pricing)
+npm run build
+```
+
+### API Response
+
+The Helicone API returns pricing data in this format:
+```json
+{
+  "provider": "OPENAI",
+  "model": "gpt-4",
+  "input_cost_per_1m": 30.0,
+  "output_cost_per_1m": 60.0,
+  "per_image": 0.0075,
+  "per_call": 0.01
+}
+```
+
+**Note**: All costs are per 1 million tokens and are automatically converted to per 1K tokens in the final output.
+
 ## Development
 
 ```bash
@@ -161,7 +215,7 @@ npm run build
 # Development mode with watch
 npm run dev
 
-# Aggregate provider data
+# Aggregate provider data (includes pricing enrichment)
 npm run aggregate
 ```
 

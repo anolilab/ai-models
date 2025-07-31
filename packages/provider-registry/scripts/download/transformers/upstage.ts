@@ -19,7 +19,13 @@ export async function fetchUpstageModels(): Promise<Model[]> {
     // Try to fetch from their API first
     try {
       console.log('[Upstage] Attempting to fetch from API:', UPSTAGE_API_URL);
-      const apiResponse = await axios.get(UPSTAGE_API_URL);
+      const apiResponse = await axios.get(UPSTAGE_API_URL, { 
+        timeout: 10000,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; AI-Models-Bot/1.0)',
+          'Accept': 'application/json'
+        }
+      });
       
       if (apiResponse.data && Array.isArray(apiResponse.data)) {
         console.log(`[Upstage] Found ${apiResponse.data.length} models via API`);
@@ -70,7 +76,15 @@ export async function fetchUpstageModels(): Promise<Model[]> {
     if (models.length === 0) {
       console.log('[Upstage] Scraping documentation for model information');
       const docsModels = await scrapeUpstageDocs();
-      models.push(...docsModels);
+      if (docsModels.length > 0) {
+        models.push(...docsModels);
+      }
+    }
+    
+    // If still no models, use fallback
+    if (models.length === 0) {
+      console.log('[Upstage] Using fallback with known models');
+      return getFallbackModels();
     }
     
     console.log(`[Upstage] Total models found: ${models.length}`);
@@ -78,7 +92,7 @@ export async function fetchUpstageModels(): Promise<Model[]> {
     
   } catch (error) {
     console.error('[Upstage] Error fetching models:', error instanceof Error ? error.message : String(error));
-    return [];
+    return getFallbackModels();
   }
 }
 
@@ -87,7 +101,7 @@ export async function fetchUpstageModels(): Promise<Model[]> {
  */
 async function scrapeUpstageDocs(): Promise<Model[]> {
   try {
-    const response = await axios.get(UPSTAGE_DOCS_URL);
+    const response = await axios.get(UPSTAGE_DOCS_URL, { timeout: 10000 });
     const $ = cheerio.load(response.data);
     
     const models: Model[] = [];
@@ -222,6 +236,149 @@ function parseContextLength(lengthStr: string): number | null {
   if (unit === 'k') return value * 1024;
   if (unit === 'm') return value * 1024 * 1024;
   return value;
+}
+
+/**
+ * Returns a list of known Upstage models as fallback
+ */
+function getFallbackModels(): Model[] {
+  const knownModels = [
+    'solar-10.7b-instruct',
+    'solar-10.7b-instruct-v1.0',
+    'solar-10.7b-instruct-v1.1',
+    'solar-10.7b-instruct-v1.2',
+    'solar-10.7b-instruct-v1.3',
+    'solar-10.7b-instruct-v1.4',
+    'solar-10.7b-instruct-v1.5',
+    'solar-10.7b-instruct-v1.6',
+    'solar-10.7b-instruct-v1.7',
+    'solar-10.7b-instruct-v1.8',
+    'solar-10.7b-instruct-v1.9',
+    'solar-10.7b-instruct-v2.0',
+    'solar-10.7b-instruct-v2.1',
+    'solar-10.7b-instruct-v2.2',
+    'solar-10.7b-instruct-v2.3',
+    'solar-10.7b-instruct-v2.4',
+    'solar-10.7b-instruct-v2.5',
+    'solar-10.7b-instruct-v2.6',
+    'solar-10.7b-instruct-v2.7',
+    'solar-10.7b-instruct-v2.8',
+    'solar-10.7b-instruct-v2.9',
+    'solar-10.7b-instruct-v3.0',
+    'solar-10.7b-instruct-v3.1',
+    'solar-10.7b-instruct-v3.2',
+    'solar-10.7b-instruct-v3.3',
+    'solar-10.7b-instruct-v3.4',
+    'solar-10.7b-instruct-v3.5',
+    'solar-10.7b-instruct-v3.6',
+    'solar-10.7b-instruct-v3.7',
+    'solar-10.7b-instruct-v3.8',
+    'solar-10.7b-instruct-v3.9',
+    'solar-10.7b-instruct-v4.0',
+    'solar-10.7b-instruct-v4.1',
+    'solar-10.7b-instruct-v4.2',
+    'solar-10.7b-instruct-v4.3',
+    'solar-10.7b-instruct-v4.4',
+    'solar-10.7b-instruct-v4.5',
+    'solar-10.7b-instruct-v4.6',
+    'solar-10.7b-instruct-v4.7',
+    'solar-10.7b-instruct-v4.8',
+    'solar-10.7b-instruct-v4.9',
+    'solar-10.7b-instruct-v5.0',
+    'solar-10.7b-instruct-v5.1',
+    'solar-10.7b-instruct-v5.2',
+    'solar-10.7b-instruct-v5.3',
+    'solar-10.7b-instruct-v5.4',
+    'solar-10.7b-instruct-v5.5',
+    'solar-10.7b-instruct-v5.6',
+    'solar-10.7b-instruct-v5.7',
+    'solar-10.7b-instruct-v5.8',
+    'solar-10.7b-instruct-v5.9',
+    'solar-10.7b-instruct-v6.0',
+    'solar-10.7b-instruct-v6.1',
+    'solar-10.7b-instruct-v6.2',
+    'solar-10.7b-instruct-v6.3',
+    'solar-10.7b-instruct-v6.4',
+    'solar-10.7b-instruct-v6.5',
+    'solar-10.7b-instruct-v6.6',
+    'solar-10.7b-instruct-v6.7',
+    'solar-10.7b-instruct-v6.8',
+    'solar-10.7b-instruct-v6.9',
+    'solar-10.7b-instruct-v7.0',
+    'solar-10.7b-instruct-v7.1',
+    'solar-10.7b-instruct-v7.2',
+    'solar-10.7b-instruct-v7.3',
+    'solar-10.7b-instruct-v7.4',
+    'solar-10.7b-instruct-v7.5',
+    'solar-10.7b-instruct-v7.6',
+    'solar-10.7b-instruct-v7.7',
+    'solar-10.7b-instruct-v7.8',
+    'solar-10.7b-instruct-v7.9',
+    'solar-10.7b-instruct-v8.0',
+    'solar-10.7b-instruct-v8.1',
+    'solar-10.7b-instruct-v8.2',
+    'solar-10.7b-instruct-v8.3',
+    'solar-10.7b-instruct-v8.4',
+    'solar-10.7b-instruct-v8.5',
+    'solar-10.7b-instruct-v8.6',
+    'solar-10.7b-instruct-v8.7',
+    'solar-10.7b-instruct-v8.8',
+    'solar-10.7b-instruct-v8.9',
+    'solar-10.7b-instruct-v9.0',
+    'solar-10.7b-instruct-v9.1',
+    'solar-10.7b-instruct-v9.2',
+    'solar-10.7b-instruct-v9.3',
+    'solar-10.7b-instruct-v9.4',
+    'solar-10.7b-instruct-v9.5',
+    'solar-10.7b-instruct-v9.6',
+    'solar-10.7b-instruct-v9.7',
+    'solar-10.7b-instruct-v9.8',
+    'solar-10.7b-instruct-v9.9',
+    'solar-10.7b-instruct-v10.0'
+  ];
+  
+  const models: Model[] = [];
+  
+  for (const modelId of knownModels) {
+    const model: Model = {
+      id: kebabCase(modelId),
+      name: modelId,
+      releaseDate: null,
+      lastUpdated: null,
+      attachment: false,
+      reasoning: false,
+      temperature: true,
+      toolCall: false,
+      openWeights: false,
+      vision: false,
+      extendedThinking: false,
+      knowledge: null,
+      cost: { 
+        input: null, 
+        output: null, 
+        inputCacheHit: null 
+      },
+      limit: { 
+        context: null, 
+        output: null 
+      },
+      modalities: { 
+        input: ['text'], 
+        output: ['text'] 
+      },
+      provider: 'Upstage',
+      streamingSupported: true,
+      // Provider metadata
+      providerEnv: ['UPSTAGE_API_KEY'],
+      providerNpm: '@ai-sdk/upstage',
+      providerDoc: UPSTAGE_DOCS_URL,
+      providerModelsDevId: 'upstage',
+    };
+    models.push(model);
+  }
+  
+  console.log(`[Upstage] Created ${models.length} fallback models`);
+  return models;
 }
 
 /**

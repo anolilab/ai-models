@@ -3,76 +3,18 @@ import * as cheerio from 'cheerio';
 import { kebabCase } from '@visulima/string';
 import type { Model } from '../../../src/schema.js';
 
-const FIREWORKS_API_URL = 'https://api.fireworks.ai/inference/v1/models';
+const FIREWORKS_MODELS_URL = 'https://app.fireworks.ai/models?filter=All%20Models';
 const FIREWORKS_DOCS_URL = 'https://readme.fireworks.ai/';
 
 /**
- * Fetches Fireworks AI models from their API and documentation.
+ * Fetches Fireworks AI models from their models page.
  * @returns Promise that resolves to an array of transformed models
  */
 export async function fetchFireworksAIModels(): Promise<Model[]> {
-  console.log('[Fireworks AI] Fetching models from API and documentation...');
+  console.log('[Fireworks AI] Fetching models from models page...');
   
   try {
-    const models: Model[] = [];
-    
-    // Try to fetch from their API first
-    try {
-      console.log('[Fireworks AI] Attempting to fetch from API:', FIREWORKS_API_URL);
-      const apiResponse = await axios.get(FIREWORKS_API_URL);
-      
-      if (apiResponse.data && Array.isArray(apiResponse.data.data)) {
-        console.log(`[Fireworks AI] Found ${apiResponse.data.data.length} models via API`);
-        
-        for (const modelData of apiResponse.data.data) {
-          const model: Model = {
-            id: kebabCase(modelData.id || modelData.name),
-            name: modelData.name || modelData.id,
-            releaseDate: null,
-            lastUpdated: null,
-            attachment: false,
-            reasoning: false, // Need to check documentation for this
-            temperature: true, // Most models support temperature
-            toolCall: false, // Need to check documentation for this
-            openWeights: false,
-            vision: modelData.capabilities?.vision || false,
-            extendedThinking: false,
-            knowledge: null,
-            cost: { 
-              input: null, // Need to get from documentation
-              output: null, // Need to get from documentation
-              inputCacheHit: null 
-            },
-            limit: { 
-              context: modelData.context_length || null,
-              output: null 
-            },
-            modalities: { 
-              input: modelData.capabilities?.vision ? ['text', 'image'] : ['text'], 
-              output: ['text'] 
-            },
-            provider: 'Fireworks AI',
-            streamingSupported: true,
-            // Provider metadata
-            providerEnv: ['FIREWORKS_API_KEY'],
-            providerNpm: '@ai-sdk/fireworks',
-            providerDoc: FIREWORKS_DOCS_URL,
-            providerModelsDevId: 'fireworks-ai',
-          };
-          models.push(model);
-        }
-      }
-    } catch (apiError) {
-      console.log('[Fireworks AI] API fetch failed, falling back to documentation scraping');
-    }
-    
-    // If API didn't work or returned no models, try scraping documentation
-    if (models.length === 0) {
-      console.log('[Fireworks AI] Scraping documentation for model information');
-      const docsModels = await scrapeFireworksDocs();
-      models.push(...docsModels);
-    }
-    
+    const models = await scrapeFireworksModelsPage();
     console.log(`[Fireworks AI] Total models found: ${models.length}`);
     return models;
     
@@ -83,128 +25,127 @@ export async function fetchFireworksAIModels(): Promise<Model[]> {
 }
 
 /**
- * Scrapes Fireworks AI documentation for model information.
+ * Scrapes Fireworks AI models page for model information.
  */
-async function scrapeFireworksDocs(): Promise<Model[]> {
+async function scrapeFireworksModelsPage(): Promise<Model[]> {
   try {
-    const response = await axios.get(FIREWORKS_DOCS_URL);
+    console.log('[Fireworks AI] Scraping models page:', FIREWORKS_MODELS_URL);
+    const response = await axios.get(FIREWORKS_MODELS_URL);
     const $ = cheerio.load(response.data);
     
     const models: Model[] = [];
     
-    // Look for model tables or lists in the documentation
-    $('table, .model-list, .models-table').each((i, element) => {
-      const tableText = $(element).text().toLowerCase();
+    // Find all model rows using the data-testid attribute
+    $('[data-testid="model-row"]').each((i, element) => {
+      const $row = $(element);
       
-      // Check if this table contains model information
-      if (tableText.includes('model') || tableText.includes('llama') || tableText.includes('mistral') || tableText.includes('gemma')) {
-        console.log(`[Fireworks AI] Found potential model table ${i + 1}`);
-        
-        $(element).find('tr, .model-item').each((_, row) => {
-          const cells = $(row).find('td, .model-cell').map((_, td) => $(td).text().trim()).get();
-          
-          if (cells.length >= 2 && cells[0] && !cells[0].includes('model')) {
-            const modelName = cells[0];
-            console.log(`[Fireworks AI] Found model: ${modelName}`);
-            
-            const model: Model = {
-              id: kebabCase(modelName),
-              name: modelName,
-              releaseDate: null,
-              lastUpdated: null,
-              attachment: false,
-              reasoning: false,
-              temperature: true,
-              toolCall: false,
-              openWeights: false,
-              vision: modelName.toLowerCase().includes('vision') || modelName.toLowerCase().includes('vl'),
-              extendedThinking: false,
-              knowledge: null,
-              cost: { 
-                input: null, 
-                output: null, 
-                inputCacheHit: null 
-              },
-              limit: { 
-                context: parseContextLength(cells[1] || cells[2]), 
-                output: null 
-              },
-              modalities: { 
-                input: modelName.toLowerCase().includes('vision') ? ['text', 'image'] : ['text'], 
-                output: ['text'] 
-              },
-              provider: 'Fireworks AI',
-              streamingSupported: true,
-              // Provider metadata
-              providerEnv: ['FIREWORKS_API_KEY'],
-              providerNpm: '@ai-sdk/fireworks',
-              providerDoc: FIREWORKS_DOCS_URL,
-              providerModelsDevId: 'fireworks-ai',
-            };
-            models.push(model);
-          }
-        });
-      }
+      // Extract model name
+      const modelName = $row.find('p.font-bold').first().text().trim();
+      if (!modelName) return;
+      
+      console.log(`[Fireworks AI] Found model: ${modelName}`);
+      
+      // Extract pricing information
+      const pricingText = $row.find('.text-muted-foreground\\/60').text().trim();
+      const cost = parsePricing(pricingText);
+      
+      // Extract context length
+      const contextMatch = pricingText.match(/(\d+)k\s+Context/);
+      const contextLength = contextMatch ? parseInt(contextMatch[1]) * 1024 : null;
+      
+      // Extract model type/capabilities from badges
+      const badges = $row.find('.gap-1 .bg-white').map((_, badge) => $(badge).text().trim()).get();
+      const isVision = badges.some(badge => badge.toLowerCase().includes('vision'));
+      const isLLM = badges.some(badge => badge.toLowerCase().includes('llm'));
+      const isServerless = badges.some(badge => badge.toLowerCase().includes('serverless'));
+      
+      // Extract provider icon to determine the original provider
+      const providerIcon = $row.find('img[src*="logos"]').attr('src');
+      const originalProvider = extractProviderFromIcon(providerIcon);
+      
+      const model: Model = {
+        id: kebabCase(modelName).replace('accounts-fireworks-models-', 'accounts/fireworks/models/'),
+        name: modelName,
+        releaseDate: null,
+        lastUpdated: null,
+        attachment: false,
+        reasoning: modelName.toLowerCase().includes('thinking'),
+        temperature: true, // Most models support temperature
+        toolCall: false, // Need to check documentation for this
+        openWeights: false,
+        vision: isVision,
+        extendedThinking: modelName.toLowerCase().includes('thinking'),
+        knowledge: null,
+        cost: cost,
+        limit: { 
+          context: contextLength,
+          output: null 
+        },
+        modalities: { 
+          input: isVision ? ['text', 'image'] : ['text'], 
+          output: ['text'] 
+        },
+        provider: 'Fireworks AI',
+        streamingSupported: true,
+        // Provider metadata
+        providerEnv: ['FIREWORKS_API_KEY'],
+        providerNpm: '@ai-sdk/fireworks',
+        providerDoc: FIREWORKS_DOCS_URL,
+        providerModelsDevId: 'fireworks-ai',
+      };
+      
+      models.push(model);
     });
     
-    // If no tables found, try to extract from text content
-    if (models.length === 0) {
-      const bodyText = $('body').text();
-      const modelMatches = bodyText.match(/([a-zA-Z0-9\-_]+(?:-llama|mistral|gemma|vision)[a-zA-Z0-9\-_]*)/gi);
-      
-      if (modelMatches) {
-        console.log(`[Fireworks AI] Found ${modelMatches.length} potential models in text`);
-        
-        for (const match of modelMatches.slice(0, 20)) { // Limit to first 20 matches
-          const modelName = match.trim();
-          if (modelName.length > 3 && modelName.length < 50) {
-            const model: Model = {
-              id: kebabCase(modelName),
-              name: modelName,
-              releaseDate: null,
-              lastUpdated: null,
-              attachment: false,
-              reasoning: false,
-              temperature: true,
-              toolCall: false,
-              openWeights: false,
-              vision: modelName.toLowerCase().includes('vision'),
-              extendedThinking: false,
-              knowledge: null,
-              cost: { 
-                input: null, 
-                output: null, 
-                inputCacheHit: null 
-              },
-              limit: { 
-                context: null, 
-                output: null 
-              },
-              modalities: { 
-                input: modelName.toLowerCase().includes('vision') ? ['text', 'image'] : ['text'], 
-                output: ['text'] 
-              },
-              provider: 'Fireworks AI',
-              streamingSupported: true,
-              // Provider metadata
-              providerEnv: ['FIREWORKS_API_KEY'],
-              providerNpm: '@ai-sdk/fireworks',
-              providerDoc: FIREWORKS_DOCS_URL,
-              providerModelsDevId: 'fireworks-ai',
-            };
-            models.push(model);
-          }
-        }
-      }
-    }
-    
-    console.log(`[Fireworks AI] Scraped ${models.length} models from documentation`);
+    console.log(`[Fireworks AI] Scraped ${models.length} models from models page`);
     return models;
     
   } catch (error) {
-    console.error('[Fireworks AI] Error scraping documentation:', error instanceof Error ? error.message : String(error));
+    console.error('[Fireworks AI] Error scraping models page:', error instanceof Error ? error.message : String(error));
     return [];
   }
+}
+
+/**
+ * Parse pricing information from text (e.g., "$0.22/M Input • $0.88/M Output")
+ */
+function parsePricing(pricingText: string): { input: number | null; output: number | null; inputCacheHit: number | null } {
+  let input: number | null = null;
+  let output: number | null = null;
+  const inputCacheHit: number | null = null;
+  
+  if (!pricingText) return { input, output, inputCacheHit };
+  
+  // Extract input cost
+  const inputMatch = pricingText.match(/\$([\d.]+)\/M\s+Input/);
+  if (inputMatch) {
+    const parsed = parseFloat(inputMatch[1]);
+    input = isNaN(parsed) ? null : parsed;
+  }
+  
+  // Extract output cost
+  const outputMatch = pricingText.match(/\$([\d.]+)\/M\s+Output/);
+  if (outputMatch) {
+    const parsed = parseFloat(outputMatch[1]);
+    output = isNaN(parsed) ? null : parsed;
+  }
+  
+  return { input, output, inputCacheHit };
+}
+
+/**
+ * Extract original provider from icon URL
+ */
+function extractProviderFromIcon(iconUrl: string | undefined): string {
+  if (!iconUrl) return 'Unknown';
+  
+  // Extract provider name from icon path
+  const match = iconUrl.match(/logos\/([^\/]+)-icon/);
+  if (match) {
+    return match[1].charAt(0).toUpperCase() + match[1].slice(1);
+  }
+  
+  return 'Unknown';
 }
 
 /**
@@ -236,7 +177,7 @@ export function transformFireworksAIModels(rawData: any): Model[] {
   if (Array.isArray(rawData)) {
     for (const modelData of rawData) {
       const model: Model = {
-        id: kebabCase(modelData.id || modelData.name),
+        id: kebabCase(modelData.id || modelData.name).replace('accounts-fireworks-models-', 'accounts/fireworks/models/'),
         name: modelData.name || modelData.id,
         releaseDate: null,
         lastUpdated: null,

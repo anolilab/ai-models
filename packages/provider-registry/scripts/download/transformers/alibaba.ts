@@ -36,7 +36,7 @@ async function fetchDeepSeekModels(): Promise<Model[]> {
 
     const models: Model[] = [];
     
-    // Look for the model comparison table
+    // Look for the model comparison table - specifically the one with model names
     $('table').each((i, table) => {
       const tableText = $(table).text();
       
@@ -47,9 +47,9 @@ async function fetchDeepSeekModels(): Promise<Model[]> {
         $(table).find('tbody tr').each((_, row) => {
           const cells = $(row).find('td').map((_, td) => $(td).text().trim()).get();
           
-          // Filter for valid model rows (should have model name in first column)
-          if (cells.length >= 6 && cells[0] && cells[0].includes('deepseek-')) {
-            const modelName = cells[0];
+          // Filter for valid model rows - must have model name in first column and be a real model
+          if (cells.length >= 6 && cells[0] && isValidDeepSeekModel(cells[0])) {
+            const modelName = cleanDeepSeekModelName(cells[0]);
             const contextLength = cells[1];
             const maxInput = cells[2];
             const maxOutput = cells[4];
@@ -114,24 +114,23 @@ async function fetchKimiModels(): Promise<Model[]> {
 
     const models: Model[] = [];
     
-    // Look for the model comparison table
+    // Look for the model comparison table - specifically the one with Kimi model information
     $('table').each((i, table) => {
       const tableText = $(table).text();
       
       // Check if this table contains Kimi model information
-      if (tableText.includes('kimi') || tableText.includes('Kimi')) {
+      if (tableText.includes('Moonshot-Kimi-K2-Instruct')) {
         console.log(`[Alibaba] Found Kimi model table ${i + 1}`);
         
         $(table).find('tbody tr').each((_, row) => {
           const cells = $(row).find('td').map((_, td) => $(td).text().trim()).get();
           
-          // Filter for valid model rows (should have model name in first column)
-          if (cells.length >= 3 && cells[0] && cells[0].toLowerCase().includes('kimi')) {
-            const modelName = cells[0];
-            const contextLength = cells[1] || cells[2];
-            const maxOutput = cells[2] || cells[3];
-            const inputCost = cells[3] || cells[4];
-            const outputCost = cells[4] || cells[5];
+          // Filter for valid model rows - must have model name in first column and be a real model
+          if (cells.length >= 3 && cells[0] && isValidKimiModel(cells[0])) {
+            const modelName = cleanKimiModelName(cells[0]);
+            const contextLength = cells[1];
+            const inputCost = cells[2];
+            const outputCost = cells[3];
             
             console.log(`[Alibaba] Found Kimi model: ${modelName}`);
             
@@ -141,9 +140,9 @@ async function fetchKimiModels(): Promise<Model[]> {
               releaseDate: null,
               lastUpdated: null,
               attachment: false,
-              reasoning: false, // Kimi models may support reasoning, but need to verify
+              reasoning: false, // Kimi models don't support reasoning
               temperature: true, // Most models support temperature
-              toolCall: false, // Need to verify Kimi tool calling support
+              toolCall: false, // Kimi doesn't support tool calling
               openWeights: false,
               vision: false,
               extendedThinking: false,
@@ -155,7 +154,7 @@ async function fetchKimiModels(): Promise<Model[]> {
               },
               limit: { 
                 context: parseTokenLimit(contextLength), 
-                output: parseTokenLimit(maxOutput) 
+                output: null // Not specified in Kimi table
               },
               modalities: { input: ['text'], output: ['text'] },
               provider: 'Alibaba',
@@ -178,6 +177,79 @@ async function fetchKimiModels(): Promise<Model[]> {
     console.error('[Alibaba] Error fetching Kimi models:', error instanceof Error ? error.message : String(error));
     return [];
   }
+}
+
+/**
+ * Validates if a model name is a valid DeepSeek model (not documentation artifact)
+ */
+function isValidDeepSeekModel(modelName: string): boolean {
+  // Must contain deepseek and be a real model name
+  const validModels = [
+    'deepseek-r1',
+    'deepseek-r1-0528', 
+    'deepseek-v3',
+    'deepseek-r1-distill-qwen-1.5b',
+    'deepseek-r1-distill-qwen-7b',
+    'deepseek-r1-distill-qwen-14b',
+    'deepseek-r1-distill-qwen-32b',
+    'deepseek-r1-distill-llama-8b',
+    'deepseek-r1-distill-llama-70b'
+  ];
+  
+  return validModels.some(validModel => modelName.toLowerCase().includes(validModel.toLowerCase()));
+}
+
+/**
+ * Cleans a DeepSeek model name to remove Chinese text and extract only the model identifier
+ */
+function cleanDeepSeekModelName(modelName: string): string {
+  // Remove Chinese text and extract only the model identifier
+  const cleanName = modelName
+    .replace(/基于.*$/i, '') // Remove "基于..." (based on...)
+    .replace(/参数量为.*$/i, '') // Remove "参数量为..." (parameter count is...)
+    .replace(/满血版模型.*$/i, '') // Remove "满血版模型..." (full version model...)
+    .replace(/当前能力等同于.*$/i, '') // Remove "当前能力等同于..." (current capability equivalent to...)
+    .trim();
+  
+  // Map to standard names
+  if (cleanName.includes('deepseek-r1-distill-qwen-1.5b')) {
+    return 'deepseek-r1-distill-qwen-1.5b';
+  }
+  if (cleanName.includes('deepseek-r1-0528') || cleanName.includes('deepseek-r1-685b')) {
+    return 'deepseek-r1-0528';
+  }
+  if (cleanName.includes('deepseek-v3-0324')) {
+    return 'deepseek-v3-0324';
+  }
+  
+  return cleanName;
+}
+
+/**
+ * Validates if a model name is a valid Kimi model (not documentation artifact)
+ */
+function isValidKimiModel(modelName: string): boolean {
+  // Must contain kimi and be a real model name
+  const validModels = [
+    'Moonshot-Kimi-K2-Instruct'
+  ];
+  
+  return validModels.some(validModel => modelName.toLowerCase().includes(validModel.toLowerCase()));
+}
+
+/**
+ * Cleans a Kimi model name to extract only the model identifier
+ */
+function cleanKimiModelName(modelName: string): string {
+  // Map to standard names
+  if (modelName.includes('Moonshot-Kimi-K2-Instruct')) {
+    return 'Moonshot-Kimi-K2-Instruct';
+  }
+  if (modelName.includes('Kimi-K2-Instruct')) {
+    return 'Kimi-K2-Instruct';
+  }
+  
+  return modelName;
 }
 
 /**

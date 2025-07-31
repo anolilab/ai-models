@@ -26,6 +26,10 @@ export function getModelsByProvider(provider: string): Model[] {
  * Get a specific model by ID
  */
 export function getModelById(id: string): Model | undefined {
+  // Return undefined for empty IDs
+  if (!id || id.trim() === '') {
+    return undefined;
+  }
   return allModels.find(model => model.id === id);
 }
 

@@ -62,18 +62,18 @@ async function fetchLlamaModels(): Promise<Model[]> {
     const puppeteer = await import('puppeteer');
     const browser = await puppeteer.default.launch({ 
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
     });
     const page = await browser.newPage();
     
     // Set a longer timeout and wait for network to be idle
     await page.goto('https://llama.developer.meta.com/docs/models', {
       waitUntil: 'networkidle2',
-      timeout: 30000
+      timeout: 60000 // Increased timeout to 60 seconds
     });
     
-    // Wait for the table to load
-    await page.waitForSelector('table', { timeout: 15000 });
+    // Wait for the table to load with increased timeout
+    await page.waitForSelector('table', { timeout: 30000 }); // Increased to 30 seconds
     
     // Extract the model data from the table
     const models = await page.evaluate(() => {

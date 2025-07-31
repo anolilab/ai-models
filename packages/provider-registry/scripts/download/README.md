@@ -1,201 +1,105 @@
 # Provider Registry Download Scripts
 
-This directory contains TypeScript scripts for downloading and transforming AI model data from various providers into a normalized format.
+This directory contains scripts for downloading and transforming provider data from various sources.
 
-## Overview
+## Helicone Pricing Enrichment
 
-The download system consists of:
+The Helicone API integration allows you to enrich existing models with pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs).
 
-- **Main script** (`index.ts`) - Orchestrates the download process
-- **Configuration** (`config.json`) - Defines which providers to process
-- **Transformers** (`transformers/`) - Provider-specific data transformation logic
+### Features
 
-## Architecture
+- **Automatic Pricing Enrichment**: Fetches pricing data for models that are missing cost information
+- **Smart Model Matching**: Uses multiple strategies to match models with pricing data
+- **Provider-Specific Filtering**: Can fetch pricing data for specific providers
+- **Cost Conversion**: Automatically converts from per 1M tokens to per 1K tokens format
 
-### Main Script (`index.ts`)
+### Usage
 
-The main script provides:
-
-- Command-line argument parsing
-- Configuration validation
-- Provider processing orchestration
-- Error handling and reporting
-- Model validation using Zod schema
-
-### Transformers
-
-Each transformer is responsible for:
-
-1. **Fetching** raw data from a provider's API or documentation
-2. **Transforming** the data into the normalized `Model` schema
-3. **Exporting** a `fetch<Provider>Models()` function
-
-## Usage
-
-### Basic Usage
+#### Enrich All Providers
 
 ```bash
-# Process all providers
-node index.ts
-
-# Process a specific provider
-node index.ts --provider "Anthropic"
-
-# Use a custom config file
-node index.ts --config ./custom-config.json
-
-# Show help
-node index.ts --help
+# From the provider-registry package directory
+pnpm run enrich-pricing
 ```
 
-### Configuration
+#### Enrich Specific Provider
 
-The `config.json` file defines which providers to process:
+```bash
+# Enrich only OpenAI models
+pnpm run enrich-pricing --provider "OpenAI"
+```
+
+#### Download Helicone Data Only
+
+```bash
+# Download Helicone provider data (pricing only)
+pnpm run download --provider "Helicone"
+```
+
+### How It Works
+
+1. **Data Fetching**: The script fetches pricing data from `https://helicone.ai/api/llm-costs`
+2. **Model Matching**: Uses three strategies to match models with pricing:
+   - Exact provider-model match
+   - Model name contains match
+   - Provider match with model name similarity
+3. **Cost Conversion**: Converts Helicone's per 1M tokens pricing to per 1K tokens format
+4. **Enrichment**: Updates models with missing pricing data while preserving existing data
+
+### API Response Format
+
+The Helicone API returns data in this format:
 
 ```json
 {
-  "providers": [
+  "metadata": {
+    "total_models": 250,
+    "note": "All costs are per 1 million tokens unless otherwise specified"
+  },
+  "data": [
     {
-      "name": "Anthropic",
-      "transformer": "./transformers/anthropic.ts",
-      "output": "anthropic"
+      "provider": "OPENAI",
+      "model": "gpt-4",
+      "input_cost_per_1m": 30.0,
+      "output_cost_per_1m": 60.0,
+      "show_in_playground": true
     }
   ]
 }
 ```
 
-## TypeScript Features
+### Supported Providers
 
-### Type Safety
+The Helicone API provides pricing data for many providers including:
 
-All scripts use TypeScript with:
+- OpenAI
+- Anthropic
+- Google
+- Meta
+- Mistral
+- Groq
+- And many more...
 
-- **Strict type checking** - All variables and functions are properly typed
-- **Interface definitions** - Clear contracts for data structures
-- **Generic types** - Reusable type-safe utilities
-- **Zod validation** - Runtime type validation for the Model schema
+### Output
 
-### JSDoc Documentation
-
-All functions include comprehensive JSDoc documentation:
-
-```typescript
-/**
- * Transforms model data from provider format to normalized structure.
- * 
- * @param rawData - The raw data from the provider
- * @returns Array of normalized model objects
- * @example
- * const models = transformData(rawData);
- */
-function transformData(rawData: RawData): Model[] {
-  // Implementation
-}
-```
+Enriched models are saved to `data/providers-enriched/` with the same structure as the original data, but with updated pricing information.
 
 ### Error Handling
 
-Robust error handling with:
+- Network timeouts (30 seconds)
+- Invalid JSON responses
+- Missing or malformed data
+- Rate limiting (handled gracefully)
 
-- **Type-safe error messages** - Using `instanceof Error` checks
-- **Graceful degradation** - Individual provider failures don't stop the entire process
-- **Detailed logging** - Clear error messages with context
-- **Validation errors** - Zod schema validation with detailed issue reporting
+### Dependencies
 
-## Provider Transformers
+- `axios` for HTTP requests
+- `zod` for data validation
+- Node.js file system APIs
 
-### Completed Transformers
+### Notes
 
-- **Anthropic** (`anthropic.ts`) - Full implementation with HTML parsing
-- **OpenRouter** (`openrouter.ts`) - API-based with type-safe data extraction
-- **Vercel** (`vercel.ts`) - API-based with proper error handling
-- **Bedrock** (`bedrock.ts`) - HTML parsing with comprehensive data extraction
-- **Llama** (`llama.ts`) - Puppeteer-based with real-time data fetching
-- **DeepSeek** (`deepseek.ts`) - Complex HTML parsing with pricing extraction
-- **GitHub Copilot** (`github-copilot.ts`) - Table parsing with model information
-
-### Placeholder Transformers
-
-The following transformers have TypeScript structure but need full implementation:
-
-- **Azure OpenAI** (`azure.ts`) - Complex HTML parsing required
-- **Google** (`google.ts`) - Extensive pricing and capability parsing
-- **Groq** (`groq.ts`) - Multi-page data extraction needed
-- **HuggingFace** (`huggingface.ts`) - API-based with complex model analysis
-
-## Data Schema
-
-All transformers output data conforming to the `Model` schema defined in `../../../src/schema.ts`:
-
-```typescript
-interface Model {
-  id: string;
-  name: string | null;
-  releaseDate: string | null;
-  lastUpdated: string | null;
-  attachment: boolean;
-  reasoning: boolean;
-  temperature: boolean;
-  knowledge: string | null;
-  toolCall: boolean;
-  openWeights: boolean;
-  cost: {
-    input: number | null;
-    output: number | null;
-    inputCacheHit: number | null;
-  };
-  limit: {
-    context: number | null;
-    output: number | null;
-  };
-  modalities: {
-    input: string[];
-    output: string[];
-  };
-  provider: string;
-  // ... additional optional fields
-}
-```
-
-## Development
-
-### Adding a New Provider
-
-1. Create a new transformer file in `transformers/`
-2. Implement the `fetch<Provider>Models()` function
-3. Add proper TypeScript types and JSDoc documentation
-4. Add the provider to `config.json`
-5. Test with `node index.ts --provider "ProviderName"`
-
-### Testing
-
-```bash
-# Test a specific provider
-node index.ts --provider "Anthropic"
-
-# Test with custom config
-node index.ts --config ./test-config.json
-
-# Check for TypeScript errors
-npx tsc --noEmit
-```
-
-### Error Handling
-
-The system provides comprehensive error handling:
-
-- **Network errors** - Retry logic and graceful fallbacks
-- **Parsing errors** - Detailed error messages with context
-- **Validation errors** - Zod schema validation with issue details
-- **Configuration errors** - Clear error messages for invalid config
-
-## Dependencies
-
-- **axios** - HTTP requests
-- **cheerio** - HTML parsing
-- **puppeteer** - Browser automation (for Llama)
-- **zod** - Runtime type validation
-
-## Output
-
-Processed models are saved to `../../data/providers/{provider}/{model-id}.json` with the normalized structure. 
+- Helicone only provides pricing data, not model metadata
+- The enrichment process is non-destructive - existing pricing data is preserved
+- Models are matched using fuzzy logic to handle naming variations
+- All costs are converted from per 1M tokens to per 1K tokens for consistency 

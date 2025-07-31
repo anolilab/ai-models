@@ -1,7 +1,7 @@
 {
   "name": "@anolilab/provider-registry",
   "description": "Unified registry for AI model providers and their metadata",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/anolilab/ai-models",
   "bugs": {
     "url": "https://github.com/anolilab/ai-models/issues"

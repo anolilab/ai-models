@@ -2,6 +2,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { kebabCase } from '@visulima/string';
+import axios from 'axios';
 import type { Model } from '../src/schema.js';
 import { ModelSchema } from '../src/schema.js';
 import { BRAND_NAME_MAP } from './config.js';
@@ -13,6 +14,141 @@ const PROVIDERS_DIR = path.resolve(__dirname, '../data/providers');
 const OPENROUTER_DIR = path.resolve(__dirname, '../data/providers/openrouter');
 const OUTPUT_JSON = path.join(__dirname, '../data/all-models.json');
 const OUTPUT_TS = path.resolve(__dirname, '../src/models-data.ts');
+
+/**
+ * Helicone API response structure
+ */
+interface HeliconeCostData {
+  provider: string;
+  model: string;
+  operator: string;
+  input_cost_per_1m: number;
+  output_cost_per_1m: number;
+  per_image?: number;
+  per_call?: number;
+  show_in_playground: boolean;
+}
+
+interface HeliconeApiResponse {
+  metadata: {
+    total_models: number;
+    note: string;
+    operators_explained: Record<string, string>;
+  };
+  data: HeliconeCostData[];
+}
+
+/**
+ * Fetches pricing data from Helicone API
+ * @returns Promise that resolves to pricing data
+ */
+async function fetchHeliconePricing(): Promise<HeliconeCostData[]> {
+  const url = 'https://helicone.ai/api/llm-costs';
+  
+  console.log(`[Helicone] Fetching pricing data from: ${url}`);
+  
+  try {
+    const response = await axios.get<HeliconeApiResponse>(url, {
+      timeout: 30000, // 30 second timeout
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'AI-Models-Provider-Registry/1.0'
+      }
+    });
+    
+    console.log(`[Helicone] Successfully fetched ${response.data.data.length} pricing records`);
+    console.log(`[Helicone] Total models available: ${response.data.metadata.total_models}`);
+    
+    return response.data.data;
+    
+  } catch (error) {
+    console.error('[Helicone] Error fetching pricing data:', error instanceof Error ? error.message : String(error));
+    return [];
+  }
+}
+
+/**
+ * Enriches models with pricing data from Helicone
+ * @param models - Array of models to enrich
+ * @returns Promise that resolves to enriched models
+ */
+async function enrichModelsWithPricing(models: Model[]): Promise<Model[]> {
+  console.log(`[Helicone] Enriching ${models.length} models with pricing data`);
+  
+  // Fetch all pricing data from Helicone
+  const pricingData = await fetchHeliconePricing();
+  
+  if (!pricingData.length) {
+    console.warn('[Helicone] No pricing data available, returning original models');
+    return models;
+  }
+  
+  // Create a map for quick lookup
+  const pricingMap = new Map<string, HeliconeCostData>();
+  
+  for (const pricing of pricingData) {
+    const key = `${pricing.provider.toLowerCase()}-${pricing.model.toLowerCase()}`;
+    pricingMap.set(key, pricing);
+  }
+  
+  // Enrich models with pricing data
+  const enrichedModels = models.map(model => {
+    // Try to find matching pricing data
+    const modelName = model.name?.toLowerCase() || model.id.toLowerCase();
+    const providerName = model.provider?.toLowerCase() || '';
+    
+    // Try different matching strategies
+    let pricing: HeliconeCostData | undefined;
+    
+    // Strategy 1: Exact provider-model match
+    const exactKey = `${providerName}-${modelName}`;
+    pricing = pricingMap.get(exactKey);
+    
+    // Strategy 2: Model name contains match
+    if (!pricing) {
+      for (const [key, data] of pricingMap.entries()) {
+        if (key.includes(modelName) || modelName.includes(data.model.toLowerCase())) {
+          pricing = data;
+          break;
+        }
+      }
+    }
+    
+    // Strategy 3: Provider match and model name similarity
+    if (!pricing && providerName) {
+      for (const [key, data] of pricingMap.entries()) {
+        if (key.startsWith(providerName) && 
+            (modelName.includes(data.model.toLowerCase()) || data.model.toLowerCase().includes(modelName))) {
+          pricing = data;
+          break;
+        }
+      }
+    }
+    
+    // Update model with pricing data if found
+    if (pricing) {
+      return {
+        ...model,
+        cost: {
+          ...model.cost,
+          input: model.cost.input ?? pricing.input_cost_per_1m / 1000, // Convert from per 1M to per 1K tokens
+          output: model.cost.output ?? pricing.output_cost_per_1m / 1000, // Convert from per 1M to per 1K tokens
+        }
+      };
+    }
+    
+    return model;
+  });
+  
+  const enrichedCount = enrichedModels.filter((model, index) => 
+    model.cost.input !== models[index].cost.input || 
+    model.cost.output !== models[index].cost.output
+  ).length;
+  
+  console.log(`[Helicone] Enriched ${enrichedCount} models with pricing data`);
+  
+  return enrichedModels;
+}
 
 /**
  * Maps directory names to proper brand names
@@ -61,6 +197,11 @@ const generateProviderId = (filePath: string, provider?: string): string => {
   
   // Normalize the main provider name using kebabCase
   const normalizedMainProvider = kebabCase(mainProvider);
+  
+  // Special case for ModelScope - always return just the main provider
+  if (normalizedMainProvider === 'modelscope') {
+    return normalizedMainProvider;
+  }
   
   // If there's no sub-provider or it's the same as main provider, return just the main provider
   if (!subProvider || subProvider === mainProvider) {
@@ -311,6 +452,14 @@ const aggregateModels = async (): Promise<Model[]> => {
       // Generate provider ID from file path and original provider field (sub-provider)
       convertedData.providerId = generateProviderId(file, originalProvider);
       
+      // Fix empty IDs by using the name or filename as fallback
+      if (!convertedData.id || convertedData.id === '') {
+        const fileName = path.basename(file, '.json');
+        const modelName = convertedData.name as string || fileName;
+        convertedData.id = kebabCase(modelName);
+        console.log(`[INFO] Fixed empty ID for model "${modelName}" using "${convertedData.id}"`);
+      }
+      
       // Fill missing fields from OpenRouter reference data
       const enhancedData = fillMissingFieldsFromReference(convertedData, referenceMap);
       
@@ -332,23 +481,65 @@ const aggregateModels = async (): Promise<Model[]> => {
 /**
  * Main function that orchestrates the aggregation process
  * Reads all provider JSON files, validates them against the schema,
- * and generates both JSON and TypeScript output files
+ * enriches them with pricing data from Helicone, and generates both JSON and TypeScript output files
  */
 const main = async (): Promise<void> => {
   try {
     // Aggregate and validate models
     const models = await aggregateModels();
+    
+    console.log(`[INFO] Aggregated ${models.length} models from provider data`);
+    
+    // Deduplicate models per provider (not globally)
+    const providerModels = new Map<string, Map<string, Model>>();
+    let duplicatesRemoved = 0;
+    
+    for (const model of models) {
+      const provider = model.provider;
+      
+      // Skip models without a provider
+      if (!provider) {
+        console.warn(`[WARN] Model ${model.name} (${model.id}) has no provider, skipping`);
+        continue;
+      }
+      
+      if (!providerModels.has(provider)) {
+        providerModels.set(provider, new Map<string, Model>());
+      }
+      
+      const providerModelMap = providerModels.get(provider)!;
+      
+      if (providerModelMap.has(model.id)) {
+        duplicatesRemoved++;
+        console.log(`[INFO] Removing duplicate model with ID: ${model.id} (${model.name}) from provider: ${provider}`);
+      } else {
+        providerModelMap.set(model.id, model);
+      }
+    }
+    
+    // Flatten the provider models back into a single array
+    const deduplicatedModels: Model[] = [];
+    for (const [provider, modelMap] of providerModels) {
+      deduplicatedModels.push(...Array.from(modelMap.values()));
+    }
+    
+    if (duplicatesRemoved > 0) {
+      console.log(`[INFO] Removed ${duplicatesRemoved} duplicate models, keeping ${deduplicatedModels.length} unique models`);
+    }
+    
+    // Enrich models with pricing data from Helicone
+    const enrichedModels = await enrichModelsWithPricing(deduplicatedModels);
   
-    fs.writeFileSync(OUTPUT_JSON, JSON.stringify(models, null, 2));
+    fs.writeFileSync(OUTPUT_JSON, JSON.stringify(enrichedModels, null, 2));
   
-    console.log(`[DONE] Aggregated ${models.length} models to ${OUTPUT_JSON}`);
+    console.log(`[DONE] Aggregated ${enrichedModels.length} models to ${OUTPUT_JSON}`);
 
     // Generate TypeScript data file for the package
-    const tsContent = `// Auto-generated file - do not edit manually\n// Generated from aggregated provider data\n\nimport type { Model } from './schema';\n\nexport const allModels: Model[] = ${JSON.stringify(models, null, 2)} as Model[];\n`;
+    const tsContent = `// Auto-generated file - do not edit manually\n// Generated from aggregated provider data with Helicone pricing\n\nimport type { Model } from './schema';\n\nexport const allModels: Model[] = ${JSON.stringify(enrichedModels, null, 2)} as Model[];\n`;
   
     fs.writeFileSync(OUTPUT_TS, tsContent);
   
-    console.log(`[DONE] Generated ${OUTPUT_TS} with ${models.length} models`);
+    console.log(`[DONE] Generated ${OUTPUT_TS} with ${enrichedModels.length} models`);
   } catch (error) {
     console.error('Error during aggregation:', error);
   

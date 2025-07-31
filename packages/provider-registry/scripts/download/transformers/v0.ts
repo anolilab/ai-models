@@ -19,7 +19,12 @@ export async function fetchV0Models(): Promise<Model[]> {
     // Try to fetch from their API first
     try {
       console.log('[V0] Attempting to fetch from API:', V0_API_URL);
-      const apiResponse = await axios.get(V0_API_URL);
+      const apiResponse = await axios.get(V0_API_URL, { 
+        timeout: 10000,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; AI-Models-Bot/1.0)'
+        }
+      });
       
       if (apiResponse.data && Array.isArray(apiResponse.data)) {
         console.log(`[V0] Found ${apiResponse.data.length} models via API`);
@@ -87,7 +92,12 @@ export async function fetchV0Models(): Promise<Model[]> {
  */
 async function scrapeV0Docs(): Promise<Model[]> {
   try {
-    const response = await axios.get(V0_DOCS_URL);
+    const response = await axios.get(V0_DOCS_URL, { 
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; AI-Models-Bot/1.0)'
+      }
+    });
     const $ = cheerio.load(response.data);
     
     const models: Model[] = [];
