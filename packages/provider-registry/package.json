@@ -33,7 +33,10 @@
       "import": "./dist/schema.js",
       "types": "./dist/schema.d.ts"
     },
-    "./icons/*": "./dist/icons/*"
+    "./icons": {
+      "import": "./dist/icons-sprite.js",
+      "types": "./dist/icons-sprite.d.ts"
+    }
   },
   "files": [
     "./dist"
@@ -48,8 +51,9 @@
   "author": "AnoliLab",
   "scripts": {
     "aggregate": "tsx ./scripts/aggregate-providers.ts",
-    "build": "pnpm run aggregate && packem build --development",
-    "build:prod": "pnpm run aggregate && packem build --production",
+    "generate-icons": "tsx ./scripts/generate-svg-sprite.ts",
+    "build": "pnpm run aggregate && pnpm run generate-icons && packem build --development",
+    "build:prod": "pnpm run aggregate && pnpm run generate-icons && packem build --production",
     "download": "node ./scripts/download/index.ts",
     "install:chrome": "npx puppeteer browsers install chrome",
     "clean": "rimraf node_modules dist .eslintcache",

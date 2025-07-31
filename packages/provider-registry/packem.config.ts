@@ -7,19 +7,11 @@ export default defineConfig({
         license: {
             path: "./LICENSE.md",
         },
-        copy: {
-            targets: [{
-                src: "./assets/icons/providers/**",
-                dest: "./icons",
-            }],
-        },
     },
     transformer,
     validation: {
         packageJson: {
-            allowedExportExtensions: [".svg", ".png", ".jpg"],
             exports: false,
         },
     },
-    ignoreExportKeys: ["icons"],
 }) as BuildConfig;

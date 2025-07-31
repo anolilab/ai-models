@@ -12,6 +12,7 @@ import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ProviderIcon } from "@/utils/provider-icons";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
   text: <FileText className="inline size-4" />,
@@ -55,6 +56,7 @@ const HomeComponent = () => {
       id: index + model.id,
       provider: model.provider || 'Unknown',
       providerId: model.providerId || 'Unknown',
+      providerIcon: model.providerIcon || (model.providerId ? model.providerId.split('/')[0] : null),
       model: (model.name || model.id).toLowerCase(),
       modelId: model.id,
       toolCall: model.toolCall,
@@ -173,6 +175,23 @@ const HomeComponent = () => {
       enableSorting: false,
       enableHiding: false,
       size: 60,
+    },
+    { 
+      id: "providerIcon",
+      accessorKey: "providerIcon", 
+      size: 60,
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="" />
+      ),
+      cell: ({ row }) => (
+        <ProviderIcon 
+          providerIcon={row.original.providerIcon} 
+          provider={row.original.provider}
+          className="w-6 h-6"
+        />
+      ),
+      enableColumnFilter: false,
+      enableSorting: false,
     },
     { 
       id: "provider",
@@ -532,6 +551,7 @@ const HomeComponent = () => {
             exportConfig={{
               entityName: "models",
               columnMapping: {
+                providerIcon: "Provider Icon",
                 provider: "Provider",
                 model: "Model",
                 providerId: "Provider ID",
@@ -553,6 +573,7 @@ const HomeComponent = () => {
                 lastUpdated: "Last Updated",
               },
               transformFunction: (row) => ({
+                providerIcon: row.providerIcon,
                 provider: row.provider,
                 model: row.model,
                 providerId: row.provider.toLowerCase().replace(/\s+/g, '-'),
@@ -574,6 +595,7 @@ const HomeComponent = () => {
                 lastUpdated: row.lastUpdated,
               }),
               columnWidths: [
+                { wch: 10 }, // providerIcon
                 { wch: 15 }, // provider
                 { wch: 20 }, // model
                 { wch: 15 }, // providerId
@@ -595,6 +617,7 @@ const HomeComponent = () => {
                 { wch: 15 }, // lastUpdated
               ],
               headers: [
+                "providerIcon",
                 "provider",
                 "model", 
                 "providerId",

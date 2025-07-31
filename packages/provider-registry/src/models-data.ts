@@ -2080,8 +2080,8 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 163840,
+      "output": 163840
     },
     "modalities": {
       "input": [
@@ -2725,7 +2725,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": null,
+      "context": 131072,
       "output": null
     },
     "modalities": {
@@ -3849,8 +3849,8 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": null,
-      "output": null
+      "context": 163840,
+      "output": 163840
     },
     "modalities": {
       "input": [
@@ -4528,7 +4528,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null
     },
     "limit": {
-      "context": null,
+      "context": 131072,
       "output": null
     },
     "modalities": {
@@ -4928,7 +4928,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Aug 2023",
     "cost": {
       "input": 0.25,
@@ -4964,7 +4963,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "July 2024",
     "cost": {
       "input": 0.8,
@@ -5000,7 +4998,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Mar 2025",
     "cost": {
       "input": 15,
@@ -5036,7 +5033,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Apr 2024",
     "cost": {
       "input": 3,
@@ -5072,7 +5068,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Nov 20241",
     "cost": {
       "input": 3,
@@ -5108,7 +5103,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Mar 2025",
     "cost": {
       "input": 3,
@@ -5144,7 +5138,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Aug 2023",
     "cost": {
       "input": 0.25,
@@ -5180,7 +5173,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "July 2024",
     "cost": {
       "input": 0.8,
@@ -5216,7 +5208,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Mar 2025",
     "cost": {
       "input": 15,
@@ -5252,7 +5243,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": false,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Apr 2024",
     "cost": {
       "input": 3,
@@ -5288,7 +5278,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Nov 20241",
     "cost": {
       "input": 3,
@@ -5324,7 +5313,6 @@ export const allModels: Model[] = [
     "openWeights": false,
     "vision": true,
     "extendedThinking": true,
-    "providerIcon": "icons/anthropic.svg",
     "knowledge": "Mar 2025",
     "cost": {
       "input": 3,
@@ -6107,7 +6095,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/deepseek-color.svg",
     "knowledge": null,
     "cost": {
       "input": 0.27,
@@ -6134,13 +6121,12 @@ export const allModels: Model[] = [
     "provider": "DeepSeek",
     "providerId": "deep-seek",
     "releaseDate": "2025/05/28",
-    "lastUpdated": null,
+    "lastUpdated": "2025-05-28",
     "attachment": false,
     "reasoning": true,
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/deepseek-color.svg",
     "knowledge": null,
     "cost": {
       "input": 0.55,
@@ -6173,7 +6159,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6206,7 +6191,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6239,7 +6223,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6272,7 +6255,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6305,7 +6287,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6338,7 +6319,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6371,7 +6351,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6404,7 +6383,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6437,7 +6415,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6470,7 +6447,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6503,7 +6479,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6536,7 +6511,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6569,7 +6543,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6602,7 +6575,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6635,7 +6607,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6668,7 +6639,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6701,7 +6671,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6734,7 +6703,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6767,7 +6735,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6800,7 +6767,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6833,7 +6799,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6866,7 +6831,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/githubcopilot.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6899,7 +6863,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0375,
@@ -6949,7 +6912,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": null,
     "cost": {
       "input": 0.075,
@@ -6999,7 +6961,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": null,
     "cost": {
       "input": 1.25,
@@ -7049,7 +7010,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "August 2024",
     "cost": {
       "input": 0.075,
@@ -7099,7 +7059,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "August 2024",
     "cost": {
       "input": null,
@@ -7149,7 +7108,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "August 2024",
     "cost": {
       "input": null,
@@ -7200,7 +7158,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "August 2024",
     "cost": {
       "input": 0.1,
@@ -7250,7 +7207,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "January 2025",
     "cost": {
       "input": 0.1,
@@ -7302,7 +7258,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "January 2025",
     "cost": {
       "input": 0.5,
@@ -7351,7 +7306,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7400,7 +7354,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "January 2025",
     "cost": {
       "input": 0.3,
@@ -7452,7 +7405,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7501,7 +7453,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "January 2025",
     "cost": {
       "input": 1.25,
@@ -7551,7 +7502,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/gemini-color.svg",
     "knowledge": "January 2025",
     "cost": {
       "input": null,
@@ -7594,8 +7544,8 @@ export const allModels: Model[] = [
     "name": "qwen/qwen3-32b",
     "provider": "Groq",
     "providerId": "groq/alibaba-cloud",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "releaseDate": "2025-04-28",
+    "lastUpdated": "2025-04-28",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -7604,7 +7554,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7639,8 +7588,8 @@ export const allModels: Model[] = [
     "name": "deepseek-r1-distill-llama-70b",
     "provider": "Groq",
     "providerId": "groq/deep-seek-meta",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "releaseDate": "2025-01-23",
+    "lastUpdated": "2025-01-23",
     "attachment": false,
     "reasoning": false,
     "temperature": true,
@@ -7649,7 +7598,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7694,7 +7642,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7739,7 +7686,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7784,7 +7730,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7819,14 +7764,13 @@ export const allModels: Model[] = [
     "name": "DeepSeek R1 Distill Llama 70B",
     "provider": "Groq",
     "providerId": "groq",
-    "releaseDate": null,
-    "lastUpdated": null,
+    "releaseDate": "2025-01-23",
+    "lastUpdated": "2025-01-23",
     "attachment": false,
     "reasoning": true,
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.751,
@@ -7861,7 +7805,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.205,
@@ -7896,7 +7839,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 1.001,
@@ -7931,7 +7873,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.052,
@@ -7966,7 +7907,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.591,
@@ -8001,7 +7941,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.205,
@@ -8036,7 +7975,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.119,
@@ -8071,7 +8009,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.205,
@@ -8106,7 +8043,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0333,
@@ -8141,7 +8077,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0425,
@@ -8176,7 +8111,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8211,7 +8145,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8246,7 +8179,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": 0.293,
@@ -8281,7 +8213,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8316,7 +8247,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8354,7 +8284,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8399,7 +8328,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8444,7 +8372,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8489,7 +8416,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8534,7 +8460,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8579,7 +8504,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8624,7 +8548,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8669,7 +8592,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8714,7 +8636,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8760,7 +8681,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8806,7 +8726,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8852,7 +8771,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/groq.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16714,7 +16632,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16750,7 +16667,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16786,7 +16702,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16822,7 +16737,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16858,7 +16772,6 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16894,7 +16807,6 @@ export const allModels: Model[] = [
     "vision": true,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16931,7 +16843,6 @@ export const allModels: Model[] = [
     "vision": true,
     "extendedThinking": false,
     "preview": false,
-    "providerIcon": "icons/meta-color.svg",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -16965,7 +16876,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-8,
@@ -16997,7 +16907,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -17029,7 +16938,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -17061,7 +16969,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -17093,7 +17000,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-7,
@@ -17125,7 +17031,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000004,
@@ -17157,7 +17062,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -17189,7 +17093,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -17221,7 +17124,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000009,
@@ -17253,7 +17155,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -17286,7 +17187,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -17318,7 +17218,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -17351,7 +17250,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17383,7 +17281,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -17415,7 +17312,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -17448,7 +17344,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -17481,7 +17376,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -17514,7 +17408,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -17547,7 +17440,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17580,7 +17472,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -17613,7 +17504,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -17646,7 +17536,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -17679,7 +17568,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17712,7 +17600,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17745,7 +17632,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17778,7 +17664,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17811,7 +17696,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17844,7 +17728,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17877,7 +17760,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17910,7 +17792,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -17943,7 +17824,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -17976,7 +17856,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -18008,7 +17887,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -18040,7 +17918,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.8e-7,
@@ -18073,7 +17950,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-7,
@@ -18105,7 +17981,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-8,
@@ -18137,7 +18012,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18169,7 +18043,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.8e-7,
@@ -18201,7 +18074,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -18234,7 +18106,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18266,7 +18137,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -18298,7 +18168,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18330,7 +18199,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.3e-8,
@@ -18362,7 +18230,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18394,7 +18261,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -18426,7 +18292,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -18458,7 +18323,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -18490,7 +18354,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -18522,7 +18385,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -18554,7 +18416,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -18586,7 +18447,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -18618,7 +18478,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.75e-8,
@@ -18650,7 +18509,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -18682,7 +18540,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -18714,7 +18571,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18746,7 +18602,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.72e-7,
@@ -18778,7 +18633,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -18810,7 +18664,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-8,
@@ -18842,7 +18695,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18874,7 +18726,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.72e-7,
@@ -18906,7 +18757,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18938,7 +18788,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -18970,7 +18819,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19002,7 +18850,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-8,
@@ -19034,7 +18881,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.8e-7,
@@ -19066,7 +18912,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -19098,7 +18943,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19130,7 +18974,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -19162,7 +19005,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -19194,7 +19036,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -19226,7 +19067,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19258,7 +19098,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.02e-7,
@@ -19290,7 +19129,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -19322,7 +19160,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19354,7 +19191,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -19388,7 +19224,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19421,7 +19256,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -19455,7 +19289,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -19489,7 +19322,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -19523,7 +19355,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -19557,7 +19388,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19591,7 +19421,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00000125,
@@ -19625,7 +19454,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00000125,
@@ -19659,7 +19487,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00000125,
@@ -19693,7 +19520,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.75e-8,
@@ -19726,7 +19552,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -19759,7 +19584,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00000125,
@@ -19792,7 +19616,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -19824,7 +19647,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-9,
@@ -19856,7 +19678,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19888,7 +19709,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -19921,7 +19741,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -19954,7 +19773,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-8,
@@ -19987,7 +19805,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20020,7 +19837,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -20053,7 +19869,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20086,7 +19901,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20118,7 +19932,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -20150,7 +19963,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20182,7 +19994,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -20214,7 +20025,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -20246,7 +20056,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -20278,7 +20087,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -20310,7 +20118,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -20342,7 +20149,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -20374,7 +20180,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -20406,7 +20211,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -20438,7 +20242,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-8,
@@ -20470,7 +20273,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000015,
@@ -20502,7 +20304,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -20534,7 +20335,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -20566,7 +20366,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -20598,7 +20397,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20630,7 +20428,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -20662,7 +20459,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -20694,7 +20490,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-8,
@@ -20726,7 +20521,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4.9e-8,
@@ -20759,7 +20553,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20792,7 +20585,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-9,
@@ -20824,7 +20616,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-9,
@@ -20856,7 +20647,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20888,7 +20678,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000012,
@@ -20921,7 +20710,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.8e-8,
@@ -20953,7 +20741,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20985,7 +20772,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -21018,7 +20804,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -21051,7 +20836,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21083,7 +20867,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -21115,7 +20898,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -21148,7 +20930,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.02e-7,
@@ -21180,7 +20961,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21212,7 +20992,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -21244,7 +21023,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -21276,7 +21054,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -21308,7 +21085,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -21341,7 +21117,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-8,
@@ -21373,7 +21148,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -21405,7 +21179,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4.8e-7,
@@ -21437,7 +21210,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21470,7 +21242,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -21502,7 +21273,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -21534,7 +21304,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -21566,7 +21335,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -21598,7 +21366,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21630,7 +21397,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-8,
@@ -21662,7 +21428,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -21694,7 +21459,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -21726,7 +21490,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -21758,7 +21521,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-8,
@@ -21790,7 +21552,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -21822,7 +21583,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.1e-7,
@@ -21854,7 +21614,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21886,7 +21645,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.8e-8,
@@ -21918,7 +21676,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.8e-8,
@@ -21950,7 +21707,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21982,7 +21738,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -22014,7 +21769,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -22046,7 +21800,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -22078,7 +21831,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -22111,7 +21863,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-9,
@@ -22143,7 +21894,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22175,7 +21925,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -22207,7 +21956,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -22239,7 +21987,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22271,7 +22018,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.7e-8,
@@ -22304,7 +22050,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22337,7 +22082,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -22370,7 +22114,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22403,7 +22146,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -22435,7 +22177,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -22467,7 +22208,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -22499,7 +22239,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -22531,7 +22270,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -22564,7 +22302,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -22597,7 +22334,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22629,7 +22365,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8.78e-8,
@@ -22661,7 +22396,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22693,7 +22427,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.8e-8,
@@ -22726,7 +22459,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22759,7 +22491,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000012,
@@ -22791,7 +22522,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000012,
@@ -22823,7 +22553,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000012,
@@ -22855,7 +22584,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000004,
@@ -22887,7 +22615,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.8e-7,
@@ -22919,7 +22646,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -22951,7 +22677,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -22983,7 +22708,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -23015,7 +22739,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.41e-7,
@@ -23047,7 +22770,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-8,
@@ -23079,7 +22801,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-7,
@@ -23111,7 +22832,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -23143,7 +22863,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-7,
@@ -23175,7 +22894,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.2e-7,
@@ -23207,7 +22925,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-7,
@@ -23239,7 +22956,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -23271,7 +22987,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.3e-7,
@@ -23303,7 +23018,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000005,
@@ -23336,7 +23050,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000015,
@@ -23369,7 +23082,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -23401,7 +23113,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -23433,7 +23144,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000015,
@@ -23465,7 +23175,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -23497,7 +23206,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00003,
@@ -23529,7 +23237,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00001,
@@ -23561,7 +23268,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00001,
@@ -23593,7 +23299,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00001,
@@ -23626,7 +23331,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -23660,7 +23364,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -23694,7 +23397,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -23728,7 +23430,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00003,
@@ -23760,7 +23461,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000005,
@@ -23794,7 +23494,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -23828,7 +23527,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -23862,7 +23560,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -23896,7 +23593,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -23928,7 +23624,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -23962,7 +23657,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -23994,7 +23688,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -24028,7 +23721,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000006,
@@ -24062,7 +23754,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24094,7 +23785,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24126,7 +23816,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -24158,7 +23847,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -24190,7 +23878,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00015,
@@ -24223,7 +23910,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -24256,7 +23942,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24288,7 +23973,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24320,7 +24004,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00002,
@@ -24354,7 +24037,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -24388,7 +24070,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24422,7 +24103,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -24455,7 +24135,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -24488,7 +24167,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": -1,
@@ -24520,7 +24198,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -24553,7 +24230,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -24585,7 +24261,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -24617,7 +24292,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -24650,7 +24324,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -24683,7 +24356,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -24715,7 +24387,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -24748,7 +24419,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -24780,7 +24450,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -24812,7 +24481,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.01e-7,
@@ -24844,7 +24512,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -24876,7 +24543,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-8,
@@ -24908,7 +24574,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -24940,7 +24605,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -24972,7 +24636,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -25005,7 +24668,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000016,
@@ -25037,7 +24699,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -25069,7 +24730,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -25101,7 +24761,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -25134,7 +24793,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.1e-7,
@@ -25167,7 +24825,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -25200,7 +24857,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25233,7 +24889,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -25266,7 +24921,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25299,7 +24953,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -25331,7 +24984,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25363,7 +25015,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.179e-7,
@@ -25395,7 +25046,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.179e-7,
@@ -25427,7 +25077,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.3e-7,
@@ -25459,7 +25108,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25491,7 +25139,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -25523,7 +25170,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -25555,7 +25201,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25587,7 +25232,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.7e-8,
@@ -25619,7 +25263,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25651,7 +25294,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -25683,7 +25325,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25715,7 +25356,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -25747,7 +25387,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25779,7 +25418,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -25811,7 +25449,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -25843,7 +25480,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25875,7 +25511,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000045,
@@ -25907,7 +25542,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1.3e-8,
@@ -25939,7 +25573,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -25971,7 +25604,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -26003,7 +25635,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00000148,
@@ -26035,7 +25666,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -26067,7 +25697,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -26099,7 +25728,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -26131,7 +25759,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.2e-8,
@@ -26163,7 +25790,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26195,7 +25821,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8.8e-7,
@@ -26227,7 +25852,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -26259,7 +25883,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26291,7 +25914,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -26323,7 +25945,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8.5e-7,
@@ -26355,7 +25976,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -26387,7 +26007,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26419,7 +26038,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -26451,7 +26069,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -26483,7 +26100,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -26515,7 +26131,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7.28e-8,
@@ -26547,7 +26162,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -26579,7 +26193,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -26611,7 +26224,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2.4e-7,
@@ -26643,7 +26255,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26675,7 +26286,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -26708,7 +26318,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -26740,7 +26349,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26772,7 +26380,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26804,7 +26411,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3.02e-7,
@@ -26836,7 +26442,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -26868,7 +26473,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-7,
@@ -26900,7 +26504,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -26932,7 +26535,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -26964,7 +26566,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -26997,7 +26598,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27029,7 +26629,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -27061,7 +26660,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -27093,7 +26691,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27125,7 +26722,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27158,7 +26754,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000005,
@@ -27191,7 +26786,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -27223,7 +26817,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -27255,7 +26848,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -27287,7 +26879,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/openrouter.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -27319,7 +26910,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -27351,7 +26941,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -27383,7 +26972,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -27415,7 +27003,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -27447,7 +27034,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -27479,7 +27065,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -27511,7 +27096,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -27543,7 +27127,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -27575,7 +27158,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -27607,7 +27189,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -27639,7 +27220,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -27671,7 +27251,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27703,7 +27282,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27735,7 +27313,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -27767,7 +27344,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -27799,7 +27375,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -27831,7 +27406,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -27863,7 +27437,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -27895,7 +27468,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-7,
@@ -27927,7 +27499,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5.5e-7,
@@ -27959,7 +27530,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -27991,7 +27561,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -28023,7 +27592,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -28055,7 +27623,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -28087,7 +27654,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -28119,7 +27685,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -28151,7 +27716,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -28183,7 +27747,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5.9e-7,
@@ -28215,7 +27778,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -28247,7 +27809,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.2e-7,
@@ -28279,7 +27840,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -28311,7 +27871,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.6e-7,
@@ -28343,7 +27902,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -28375,7 +27933,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -28407,7 +27964,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.2e-7,
@@ -28439,7 +27995,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.2e-7,
@@ -28471,7 +28026,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -28503,7 +28057,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -28535,7 +28088,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -28567,7 +28119,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7e-8,
@@ -28599,7 +28150,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -28631,7 +28181,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -28663,7 +28212,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-8,
@@ -28695,7 +28243,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -28727,7 +28274,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -28759,7 +28305,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 7.9e-7,
@@ -28791,7 +28336,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -28823,7 +28367,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000012,
@@ -28855,7 +28398,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -28887,7 +28429,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -28919,7 +28460,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5.5e-7,
@@ -28951,7 +28491,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -28983,7 +28522,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -29015,7 +28553,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000015,
@@ -29047,7 +28584,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -29079,7 +28615,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.00001,
@@ -29111,7 +28646,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -29143,7 +28677,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -29175,7 +28708,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -29207,7 +28739,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 1.5e-7,
@@ -29239,7 +28770,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -29271,7 +28801,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000015,
@@ -29303,7 +28832,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -29335,7 +28863,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -29367,7 +28894,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.0000011,
@@ -29399,7 +28925,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -29431,7 +28956,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -29463,7 +28987,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -29495,7 +29018,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -29527,7 +29049,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -29559,7 +29080,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -29591,7 +29111,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -29623,7 +29142,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000002,
@@ -29655,7 +29173,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000005,
@@ -29687,7 +29204,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-7,
@@ -29719,7 +29235,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -29751,7 +29266,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -29783,7 +29297,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -29815,7 +29328,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -29847,7 +29359,6 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/vercel.svg",
     "knowledge": null,
     "cost": {
       "input": 6e-7,

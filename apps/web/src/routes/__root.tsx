@@ -15,6 +15,7 @@ import type { LinkHTMLAttributes, MetaHTMLAttributes } from "react";
 
 import { ConsentManagerProvider } from "@/providers/consent-manager";
 import { AnalyticsProvider } from "@/providers/posthog";
+import { IconSpriteSheet } from "@/utils/provider-icons";
 import { seo } from "@/utils/seo";
 
 import appCss from "../index.css?url";
@@ -124,6 +125,7 @@ function RootDocument() {
                 <AnalyticsProvider>
           {isFetching ? <Loader /> : <Outlet />}
                 </AnalyticsProvider>
+                <IconSpriteSheet />
             </ConsentManagerProvider>
         <Toaster richColors />
         <TanStackRouterDevtools position="bottom-left" />

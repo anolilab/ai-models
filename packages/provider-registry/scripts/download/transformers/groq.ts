@@ -179,7 +179,6 @@ function transformGroqModels(htmlContent: string): Model[] {
             vision: supportsVision(modelId),
             extendedThinking: false,
             preview: isPreviewModel(modelId),
-            providerIcon: null,
             knowledge: null,
             cost: {
               input: null, // Pricing not available in the documentation

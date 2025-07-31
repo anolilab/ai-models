@@ -23,7 +23,7 @@ export const ModelSchema = z.object({
   extendedThinking: z.boolean().optional(),
   preview: z.boolean().optional(),
 
-  providerIcon: z.string().nullable().optional(),
+
   
   // Knowledge and context
   knowledge: z.string().nullable(),

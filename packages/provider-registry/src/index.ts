@@ -131,4 +131,7 @@ export function getProviderStats(): Record<string, number> {
 }
 
 export type { Model };
-export { ModelSchema }; 
+export { ModelSchema };
+
+// Re-export icons for convenience
+export * from './icons-sprite'; 
