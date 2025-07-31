@@ -4,22 +4,22 @@
   "version": "0.0.0",
   "homepage": "https://github.com/anolilab/ai-models",
   "bugs": {
-      "url": "https://github.com/anolilab/ai-models/issues"
+    "url": "https://github.com/anolilab/ai-models/issues"
   },
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/anolilab/ai-models.git",
-      "directory": "packages/provider-registry"
+    "type": "git",
+    "url": "git+https://github.com/anolilab/ai-models.git",
+    "directory": "packages/provider-registry"
   },
   "funding": [
-      {
-          "type": "github",
-          "url": "https://github.com/sponsors/prisis"
-      },
-      {
-          "type": "consulting",
-          "url": "https://anolilab.com/support"
-      }
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/prisis"
+    },
+    {
+      "type": "consulting",
+      "url": "https://anolilab.com/support"
+    }
   ],
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -46,7 +46,7 @@
     "metadata"
   ],
   "author": "AnoliLab",
-    "scripts": {
+  "scripts": {
     "aggregate": "tsx ./scripts/aggregate-providers.ts",
     "build": "pnpm run aggregate && packem build --development",
     "build:prod": "pnpm run aggregate && packem build --production",
@@ -62,28 +62,29 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
-    "@visulima/packem": "2.0.0-alpha.2",
     "@types/node": "^24.1.0",
+    "@visulima/packem": "2.0.0-alpha.2",
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
     "eslint": "^9.32.0",
     "prettier": "3.6.2",
+    "puppeteer": "^24.15.0",
+    "rss-parser": "3.13.0",
     "semantic-release": "^24.2.7",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vitest": "^3.2.4",
-    "axios": "^1.11.0",
-    "cheerio": "^1.1.2",
-    "puppeteer": "^24.15.0",
-    "rss-parser": "3.13.0",
     "zod": "^4.0.10"
   },
   "dependencies": {
     "zod": "^4.0.10"
   },
   "engines": {
-      "node": ">=20"
+    "node": ">=20"
   },
   "publishConfig": {
-      "access": "public",
-      "provenance": true
+    "access": "public",
+    "provenance": true
   }
-} 
+}

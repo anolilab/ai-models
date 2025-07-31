@@ -5516,7 +5516,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.55,
@@ -5553,7 +5553,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.14,
@@ -5627,7 +5627,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -5664,7 +5664,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -5738,7 +5738,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -5812,7 +5812,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -5849,7 +5849,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -5960,7 +5960,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6072,7 +6072,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6146,7 +6146,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6183,7 +6183,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6257,7 +6257,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.38,
@@ -6331,7 +6331,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6405,7 +6405,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6442,7 +6442,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6627,7 +6627,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6701,7 +6701,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6813,7 +6813,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6889,7 +6889,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -6927,7 +6927,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7038,7 +7038,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7112,7 +7112,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7149,7 +7149,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.15,
@@ -7223,7 +7223,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.3,
@@ -7260,7 +7260,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.6,
@@ -7371,7 +7371,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.2,
@@ -7556,7 +7556,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.1,
@@ -7593,7 +7593,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.4,
@@ -7630,7 +7630,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -7741,7 +7741,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.1,
@@ -7889,7 +7889,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8037,7 +8037,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8074,7 +8074,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.95,
@@ -8148,7 +8148,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8185,7 +8185,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 1.48,
@@ -8222,7 +8222,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8259,7 +8259,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.05,
@@ -8296,7 +8296,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8333,7 +8333,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.05,
@@ -8444,7 +8444,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8481,7 +8481,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.62,
@@ -8518,7 +8518,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8555,7 +8555,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.07,
@@ -8592,7 +8592,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.28,
@@ -8629,7 +8629,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.14,
@@ -8667,7 +8667,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.42,
@@ -8705,7 +8705,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.7,
@@ -8742,7 +8742,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8779,7 +8779,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.06,
@@ -8853,7 +8853,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -8927,7 +8927,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.7,
@@ -9038,7 +9038,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9149,7 +9149,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.8,
@@ -9260,7 +9260,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9297,7 +9297,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.04,
@@ -9371,7 +9371,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9445,7 +9445,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9482,7 +9482,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.15,
@@ -9556,7 +9556,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.3,
@@ -9630,7 +9630,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9741,7 +9741,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -9815,7 +9815,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.7,
@@ -9963,7 +9963,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10037,7 +10037,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.28,
@@ -10222,7 +10222,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.4,
@@ -10296,7 +10296,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.9,
@@ -10370,7 +10370,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10481,7 +10481,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10555,7 +10555,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10777,7 +10777,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10851,7 +10851,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.1,
@@ -10888,7 +10888,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -10962,7 +10962,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -11036,7 +11036,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.02,
@@ -11147,7 +11147,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -11184,7 +11184,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -11221,7 +11221,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.03,
@@ -11295,7 +11295,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.85,
@@ -11406,7 +11406,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -11480,7 +11480,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.13,
@@ -11628,7 +11628,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.17,
@@ -11702,7 +11702,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": false,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.2,
@@ -11850,7 +11850,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": 0.65,
@@ -11961,7 +11961,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.1,
@@ -12109,7 +12109,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12183,7 +12183,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/hyperbolic.ico",
+    "providerIcon": "icons/hyperbolic.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12220,7 +12220,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.51,
@@ -12294,7 +12294,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12368,7 +12368,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": false,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.04,
@@ -12442,7 +12442,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12553,7 +12553,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.57,
@@ -12775,7 +12775,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12812,7 +12812,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.24,
@@ -12849,7 +12849,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.035,
@@ -12886,7 +12886,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/novita.ico",
+    "providerIcon": "icons/novita.png",
     "knowledge": null,
     "cost": {
       "input": 0.6,
@@ -12926,7 +12926,7 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -12961,7 +12961,7 @@ export const allModels: Model[] = [
     "vision": false,
     "extendedThinking": false,
     "preview": true,
-    "providerIcon": "icons/cerebras.svg",
+    "providerIcon": "icons/cerebras.png",
     "knowledge": null,
     "cost": {
       "input": null,
@@ -13170,6 +13170,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/agentica-org.png",
     "knowledge": null,
     "cost": {
       "input": 1.5e-8,
@@ -13200,6 +13201,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/agentica-org.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -13290,7 +13292,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/aion-labs.svg",
+    "providerIcon": "icons/aion-labs.png",
     "knowledge": null,
     "cost": {
       "input": 7e-7,
@@ -13321,7 +13323,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/aion-labs.svg",
+    "providerIcon": "icons/aion-labs.png",
     "knowledge": null,
     "cost": {
       "input": 0.000004,
@@ -13352,7 +13354,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/aion-labs.svg",
+    "providerIcon": "icons/aion-labs.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -13383,6 +13385,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alfredpros.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -13413,6 +13416,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alpindale.png",
     "knowledge": null,
     "cost": {
       "input": 0.000009,
@@ -13538,6 +13542,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/anthracite-org.png",
     "knowledge": null,
     "cost": {
       "input": 0.000003,
@@ -13568,6 +13573,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/anthracite-org.png",
     "knowledge": null,
     "cost": {
       "input": 0.0000025,
@@ -14267,6 +14273,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/arliai.png",
     "knowledge": null,
     "cost": {
       "input": 1.5e-8,
@@ -14297,6 +14304,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/arliai.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -14358,6 +14366,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/bytedance.png",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -14389,6 +14398,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/cognitivecomputations.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -14419,6 +14429,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/cognitivecomputations.png",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -14449,6 +14460,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/cognitivecomputations.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -14479,6 +14491,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/cognitivecomputations.png",
     "knowledge": null,
     "cost": {
       "input": 1.3e-8,
@@ -14509,6 +14522,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/cognitivecomputations.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -15407,7 +15421,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/eleutherai.jpg",
+    "providerIcon": "icons/eleutherai.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -15438,7 +15452,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/featherless.svg",
+    "providerIcon": "icons/featherless.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -16272,6 +16286,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/gryphe.png",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -16302,6 +16317,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/inception.png",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -16332,6 +16348,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/inception.png",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -16548,6 +16565,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/mancer.png",
     "knowledge": null,
     "cost": {
       "input": 0.0000015,
@@ -17484,7 +17502,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/minimaxi.png",
+    "providerIcon": "icons/minimax.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -17516,7 +17534,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/minimaxi.png",
+    "providerIcon": "icons/minimax.png",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -18608,6 +18626,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18638,6 +18657,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 8.78e-8,
@@ -18668,6 +18688,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18698,6 +18719,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 3.8e-8,
@@ -18729,6 +18751,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -18853,6 +18876,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/neversleep.png",
     "knowledge": null,
     "cost": {
       "input": 0.000004,
@@ -18883,6 +18907,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/neversleep.png",
     "knowledge": null,
     "cost": {
       "input": 1.8e-7,
@@ -18913,6 +18938,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/neversleep.png",
     "knowledge": null,
     "cost": {
       "input": 0.000001,
@@ -18943,6 +18969,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/nothingiisreal.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -20400,7 +20427,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/opengvlab.svg",
+    "providerIcon": "icons/opengvlab.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -20652,6 +20679,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/pygmalionai.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -20682,7 +20710,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 9e-7,
@@ -20713,7 +20741,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 1.01e-7,
@@ -20744,7 +20772,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20775,7 +20803,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 4e-8,
@@ -20806,7 +20834,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -20837,7 +20865,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -20868,7 +20896,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -20900,7 +20928,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0.0000016,
@@ -20931,7 +20959,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -20962,7 +20990,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 5e-8,
@@ -20993,7 +21021,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -21025,7 +21053,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2.1e-7,
@@ -21057,7 +21085,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21089,7 +21117,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21121,7 +21149,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -21153,7 +21181,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21185,7 +21213,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 6e-8,
@@ -21216,7 +21244,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21247,7 +21275,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 1.179e-7,
@@ -21278,7 +21306,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 1.179e-7,
@@ -21309,7 +21337,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 1.3e-7,
@@ -21340,7 +21368,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21371,7 +21399,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21402,7 +21430,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -21433,7 +21461,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21464,7 +21492,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2.7e-8,
@@ -21495,7 +21523,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21526,7 +21554,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -21557,7 +21585,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21588,7 +21616,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 3e-7,
@@ -21619,7 +21647,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21650,7 +21678,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -21681,7 +21709,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 7.5e-8,
@@ -21712,7 +21740,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/qwen.ico",
+    "providerIcon": "icons/qwen.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -21743,6 +21771,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/raifle.png",
     "knowledge": null,
     "cost": {
       "input": 0.0000045,
@@ -21835,6 +21864,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sao10k.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -21865,6 +21895,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sao10k.png",
     "knowledge": null,
     "cost": {
       "input": 0.00000148,
@@ -21895,6 +21926,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sao10k.png",
     "knowledge": null,
     "cost": {
       "input": 2e-8,
@@ -21925,6 +21957,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sao10k.png",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -21955,6 +21988,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sao10k.png",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -22047,6 +22081,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/scb10x.png",
     "knowledge": null,
     "cost": {
       "input": 8.8e-7,
@@ -22077,6 +22112,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/shisa-ai.png",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -22107,6 +22143,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/shisa-ai.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22137,6 +22174,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/sophosympatheia.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -22167,6 +22205,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/switchpoint.png",
     "knowledge": null,
     "cost": {
       "input": 8.5e-7,
@@ -22197,7 +22236,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/tencent.ico",
+    "providerIcon": "icons/tencent.png",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -22228,7 +22267,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
-    "providerIcon": "icons/tencent.ico",
+    "providerIcon": "icons/tencent.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22259,6 +22298,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -22289,6 +22329,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 5e-7,
@@ -22319,6 +22360,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -22349,6 +22391,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 7.28e-8,
@@ -22379,6 +22422,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -22409,6 +22453,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thedrummer.png",
     "knowledge": null,
     "cost": {
       "input": 6.5e-7,
@@ -22439,6 +22484,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thudm.png",
     "knowledge": null,
     "cost": {
       "input": 2.4e-7,
@@ -22469,6 +22515,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thudm.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22499,6 +22546,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thudm.png",
     "knowledge": null,
     "cost": {
       "input": 3.5e-8,
@@ -22530,6 +22578,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thudm.png",
     "knowledge": null,
     "cost": {
       "input": 3e-8,
@@ -22560,6 +22609,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/thudm.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22590,6 +22640,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/tngtech.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22620,6 +22671,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/tngtech.png",
     "knowledge": null,
     "cost": {
       "input": 3.02e-7,
@@ -22650,6 +22702,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/tngtech.png",
     "knowledge": null,
     "cost": {
       "input": 0,
@@ -22680,6 +22733,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/undi95.png",
     "knowledge": null,
     "cost": {
       "input": 7e-7,
@@ -22710,6 +22764,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/undi95.png",
     "knowledge": null,
     "cost": {
       "input": 8e-7,
@@ -23115,6 +23170,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alibaba.png",
     "knowledge": null,
     "cost": {
       "input": 8e-8,
@@ -23145,6 +23201,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alibaba.png",
     "knowledge": null,
     "cost": {
       "input": 2e-7,
@@ -23175,6 +23232,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alibaba.png",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -23205,6 +23263,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alibaba.png",
     "knowledge": null,
     "cost": {
       "input": 1e-7,
@@ -23235,6 +23294,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/alibaba.png",
     "knowledge": null,
     "cost": {
       "input": 4e-7,
@@ -23916,6 +23976,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/inception.png",
     "knowledge": null,
     "cost": {
       "input": 2.5e-7,
@@ -24659,6 +24720,7 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": true,
     "openWeights": true,
+    "providerIcon": "icons/moonshotai.png",
     "knowledge": null,
     "cost": {
       "input": 5.5e-7,
