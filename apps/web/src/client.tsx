@@ -1,6 +1,7 @@
-import { StrictMode, startTransition } from "react";
-import { hydrateRoot } from "react-dom/client";
 import { StartClient } from "@tanstack/react-start";
+import { startTransition, StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
+
 import { createRouter } from "@/router";
 import { initPerformanceMonitoring, performanceTracker } from "@/utils/performance";
 
@@ -10,6 +11,7 @@ initPerformanceMonitoring();
 // Measure router creation time
 performanceTracker.start("router-creation");
 const router = createRouter();
+
 performanceTracker.end("router-creation");
 
 // Measure hydration time

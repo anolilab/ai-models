@@ -1,9 +1,11 @@
-import { useMemo, useCallback } from "react";
-import type { CSSProperties, KeyboardEvent } from "react";
-import { flexRender } from "@tanstack/react-table";
 import type { Table } from "@tanstack/react-table";
-import { Table as BaseTable, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
+import { flexRender } from "@tanstack/react-table";
+import type { CSSProperties, KeyboardEvent } from "react";
+import { useCallback, useMemo } from "react";
+
+import { Table as BaseTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+
 import { DataTableResizer } from "./data-table-resizer";
 
 // Define ExportableData type locally since it's not exported from the utils
@@ -12,29 +14,29 @@ interface ExportableData {
 }
 
 export interface RegularTableProps<TData> {
-    table: Table<TData>;
-    enableColumnResizing?: boolean;
-    enableClickRowSelect?: boolean;
-    enableKeyboardNavigation?: boolean;
-    columns: any[];
-    onKeyDown?: (event: KeyboardEvent<HTMLTableElement>) => void;
     className?: string;
-    style?: CSSProperties;
-    enableStickyHeader?: boolean;
+    columns: any[];
     containerHeight?: number;
+    enableClickRowSelect?: boolean;
+    enableColumnResizing?: boolean;
+    enableKeyboardNavigation?: boolean;
+    enableStickyHeader?: boolean;
+    onKeyDown?: (event: KeyboardEvent<HTMLTableElement>) => void;
+    style?: CSSProperties;
+    table: Table<TData>;
 }
 
 export function RegularTable<TData>({
-    table,
-    enableColumnResizing = false,
-    enableClickRowSelect = false,
-    enableKeyboardNavigation = false,
+    className,
     columns,
+    containerHeight,
+    enableClickRowSelect = false,
+    enableColumnResizing = false,
+    enableKeyboardNavigation = false,
+    enableStickyHeader = true,
     onKeyDown,
     style,
-    enableStickyHeader = true,
-    className,
-    containerHeight,
+    table,
 }: RegularTableProps<TData>) {
     const { rows } = table.getRowModel();
 
@@ -45,16 +47,19 @@ export function RegularTable<TData>({
     const tableKey = useMemo(() => {
         const { rows } = table.getRowModel();
         const filterState = table.getState().columnFilters;
-        const globalFilter = table.getState().globalFilter;
-        const sorting = table.getState().sorting;
+        const { globalFilter } = table.getState();
+        const { sorting } = table.getState();
+
         return `regular-table-${rows.length}-${JSON.stringify(filterState)}-${globalFilter}-${JSON.stringify(sorting)}`;
     }, [table]);
 
     // OPTIMIZATION: Memoize table styles
     const tableStyles = useMemo(
-        () => ({
-            height: containerHeight,
-        }),
+        () => {
+            return {
+                height: containerHeight,
+            };
+        },
         [containerHeight],
     );
 
@@ -74,9 +79,10 @@ export function RegularTable<TData>({
     // OPTIMIZATION: Memoize focus handler
     const handleRowFocus = useCallback((e: React.FocusEvent<HTMLTableRowElement>) => {
         // Add a data attribute to the currently focused row
-        for (const el of document.querySelectorAll('[data-focused="true"]')) {
+        for (const el of document.querySelectorAll("[data-focused=\"true\"]")) {
             el.removeAttribute("data-focused");
         }
+
         e.currentTarget.setAttribute("data-focused", "true");
     }, []);
 
@@ -86,28 +92,28 @@ export function RegularTable<TData>({
     return (
         <div className="relative w-full overflow-auto" style={tableStyles}>
             <BaseTable
-                key={tableKey}
                 classNames={{
-                    table: cn("relative", enableColumnResizing ? "resizable-table" : "", className),
                     container: "overflow-auto",
+                    table: cn("relative", enableColumnResizing ? "resizable-table" : "", className),
                 }}
+                key={tableKey}
                 onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
                 style={style}
             >
-                <TableHeader key={headerKey} className={headerStyles}>
+                <TableHeader className={headerStyles} key={headerKey}>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map((header) => (
                                 <TableHead
                                     className="group/th relative p-2 text-left"
-                                    key={header.id}
                                     colSpan={header.colSpan}
+                                    data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
+                                    key={header.id}
                                     scope="col"
-                                    tabIndex={-1}
                                     style={{
                                         width: header.getSize(),
                                     }}
-                                    data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
+                                    tabIndex={-1}
                                 >
                                     {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                                     {enableColumnResizing && header.column.getCanResize() && <DataTableResizer header={header} />}
@@ -118,15 +124,16 @@ export function RegularTable<TData>({
                 </TableHeader>
 
                 <TableBody key={tableKey}>
-                    {rows?.length ? (
-                        rows.map((row, rowIndex) => {
+                    {rows?.length
+                        ? rows.map((row, rowIndex) => {
                             // OPTIMIZATION: Memoize row selection state
                             const isSelected = row.getIsSelected();
 
                             // Include sorting state in key to force re-render when sorting changes
                             const sortingState = table
                                 .getState()
-                                .sorting.map((s) => `${s.id}-${s.desc}`)
+                                .sorting
+                                .map((s) => `${s.id}-${s.desc}`)
                                 .join(",");
                             const rowKey = enableRowSelection
                                 ? `${row.id}-${rowIndex}-${row.getIsSelected()}-${sortingState}`
@@ -134,21 +141,21 @@ export function RegularTable<TData>({
 
                             return (
                                 <TableRow
-                                    key={rowKey}
-                                    id={`row-${row.id}-${rowIndex}`}
+                                    aria-selected={isSelected}
                                     data-row-index={rowIndex}
                                     data-state={isSelected ? "selected" : undefined}
-                                    tabIndex={0}
-                                    aria-selected={isSelected}
+                                    id={`row-${row.id}-${rowIndex}`}
+                                    key={rowKey}
                                     onClick={() => handleRowClick(row)}
                                     onFocus={handleRowFocus}
+                                    tabIndex={0}
                                 >
                                     {row.getVisibleCells().map((cell, cellIndex) => (
                                         <TableCell
                                             className="truncate px-4 text-left"
-                                            key={cell.id}
-                                            id={`cell-${rowIndex}-${cellIndex}`}
                                             data-cell-index={cellIndex}
+                                            id={`cell-${rowIndex}-${cellIndex}`}
+                                            key={cell.id}
                                             style={{
                                                 width: cell.column.getSize(),
                                             }}
@@ -159,14 +166,14 @@ export function RegularTable<TData>({
                                 </TableRow>
                             );
                         })
-                    ) : (
+                        : (
                         // No results
                         <TableRow>
-                            <TableCell colSpan={columns.length} className="h-24 truncate text-left">
+                            <TableCell className="h-24 truncate text-left" colSpan={columns.length}>
                                 No results.
                             </TableCell>
                         </TableRow>
-                    )}
+                        )}
                 </TableBody>
             </BaseTable>
         </div>

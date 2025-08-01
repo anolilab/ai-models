@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef } from "react";
+
 import { debounce } from "../components/data-table/filter/lib/debounce";
 import { useUnmount } from "./use-unmount";
 
 type DebounceOptions = {
     leading?: boolean;
-    trailing?: boolean;
     maxWait?: number;
+    trailing?: boolean;
 };
 
 type ControlFunctions = {
@@ -28,21 +29,15 @@ export function useDebounceCallback<T extends (...args: any) => ReturnType<T>>(f
     const debounced = useMemo(() => {
         const debouncedFuncInstance = debounce(func, delay, options);
 
-        const wrappedFunc: DebouncedState<T> = (...args: Parameters<T>) => {
-            return debouncedFuncInstance(...args);
-        };
+        const wrappedFunc: DebouncedState<T> = (...args: Parameters<T>) => debouncedFuncInstance(...args);
 
         wrappedFunc.cancel = () => {
             debouncedFuncInstance.cancel();
         };
 
-        wrappedFunc.isPending = () => {
-            return !!debouncedFunc.current;
-        };
+        wrappedFunc.isPending = () => !!debouncedFunc.current;
 
-        wrappedFunc.flush = () => {
-            return debouncedFuncInstance.flush();
-        };
+        wrappedFunc.flush = () => debouncedFuncInstance.flush();
 
         return wrappedFunc;
     }, [func, delay, options]);

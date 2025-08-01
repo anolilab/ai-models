@@ -2,16 +2,16 @@ import { ArrowDownIcon, ArrowUpIcon, CaretSortIcon, EyeNoneIcon } from "@radix-u
 import type { Column } from "@tanstack/react-table";
 import { useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes<HTMLDivElement> {
     column: Column<TData, TValue>;
     title: string;
 }
 
-export function DataTableColumnHeader<TData, TValue>({ column, title, className }: DataTableColumnHeaderProps<TData, TValue>) {
+export function DataTableColumnHeader<TData, TValue>({ className, column, title }: DataTableColumnHeaderProps<TData, TValue>) {
     if (!column.getCanSort()) {
         return <div className={cn("font-medium uppercase", className)}>{title}</div>;
     }
@@ -36,21 +36,25 @@ export function DataTableColumnHeader<TData, TValue>({ column, title, className 
     };
 
     return (
-        <DropdownMenu open={open} onOpenChange={setOpen}>
+        <DropdownMenu onOpenChange={setOpen} open={open}>
             <DropdownMenuTrigger asChild>
                 <Button
-                    variant="ghost"
-                    size="sm"
                     className={cn("data-[state=open]:bg-accent font-mono-id h-8 focus-visible:ring-0 focus-visible:ring-offset-0", className)}
+                    size="sm"
+                    variant="ghost"
                 >
                     <span className="font-medium uppercase">{title}</span>
-                    {currentDirection === "desc" ? (
+                    {currentDirection === "desc"
+                        ? (
                         <ArrowDownIcon className="ml-2 h-4 w-4" />
-                    ) : currentDirection === "asc" ? (
+                        )
+                        : currentDirection === "asc"
+                            ? (
                         <ArrowUpIcon className="ml-2 h-4 w-4" />
-                    ) : (
+                            )
+                            : (
                         <CaretSortIcon className="ml-2 h-4 w-4" />
-                    )}
+                            )}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">

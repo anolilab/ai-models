@@ -1,7 +1,9 @@
 import type { ContractsOutputs } from "@c15t/backend";
-import { ConsentManagerProvider as ClientConsentManagerProvider, type ConsentManagerProviderProps } from "@c15t/react";
+import type { ConsentManagerProviderProps } from "@c15t/react";
+import { ConsentManagerProvider as ClientConsentManagerProvider } from "@c15t/react";
 import { createIsomorphicFn } from "@tanstack/react-start";
 import { getHeaders } from "@tanstack/react-start/server";
+
 import { showBanner } from "@/lib/consent/show-banner";
 
 const LOCATION_HEADERS = [
@@ -24,6 +26,7 @@ function extractRelevantHeaders(headers: Record<string, string | undefined>): Re
 
     for (const headerName of LOCATION_HEADERS) {
         const value = headers[headerName];
+
         if (value) {
             relevantHeaders[headerName] = value;
         }
@@ -59,10 +62,10 @@ const getShowConsentBanner = createIsomorphicFn()
             return showBanner({});
         }
     })
-    .client(async (): Promise<ContractsOutputs["consent"]["showBanner"]> => {
+    .client(async (): Promise<ContractsOutputs["consent"]["showBanner"]> =>
         // On client side, return a fallback structure - consent will be managed by existing client-side logic
-        return showBanner({});
-    });
+        showBanner({}),
+    );
 
 /**
  * TanStack Start-compatible ConsentManagerProvider

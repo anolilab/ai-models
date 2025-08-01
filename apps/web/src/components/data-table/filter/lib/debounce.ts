@@ -6,8 +6,8 @@ type ControlFunctions = {
 
 type DebounceOptions = {
     leading?: boolean;
-    trailing?: boolean;
     maxWait?: number;
+    trailing?: boolean;
 };
 
 export function debounce<T extends (...args: any[]) => any>(
@@ -15,7 +15,7 @@ export function debounce<T extends (...args: any[]) => any>(
     wait: number,
     options: DebounceOptions = {},
 ): ((...args: Parameters<T>) => ReturnType<T> | undefined) & ControlFunctions {
-    const { leading = false, trailing = true, maxWait } = options;
+    const { leading = false, maxWait, trailing = true } = options;
     let timeout: NodeJS.Timeout | null = null;
     let lastArgs: Parameters<T> | null = null;
     let lastThis: any;
@@ -26,20 +26,27 @@ export function debounce<T extends (...args: any[]) => any>(
     const maxWaitTime = maxWait !== undefined ? Math.max(wait, maxWait) : null;
 
     function invokeFunc(time: number): ReturnType<T> | undefined {
-        if (lastArgs === null) return undefined;
+        if (lastArgs === null)
+            return undefined;
+
         const args = lastArgs;
         const thisArg = lastThis;
+
         lastArgs = null;
         lastThis = null;
         lastInvokeTime = time;
         result = func.apply(thisArg, args);
+
         return result;
     }
 
     function shouldInvoke(time: number): boolean {
-        if (lastCallTime === null) return false;
+        if (lastCallTime === null)
+            return false;
+
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;
+
         return lastCallTime === null || timeSinceLastCall >= wait || timeSinceLastCall < 0 || (maxWaitTime !== null && timeSinceLastInvoke >= maxWaitTime);
     }
 
@@ -48,34 +55,43 @@ export function debounce<T extends (...args: any[]) => any>(
     }
 
     function remainingWait(time: number): number {
-        if (lastCallTime === null) return wait;
+        if (lastCallTime === null)
+            return wait;
+
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;
         const timeWaiting = wait - timeSinceLastCall;
+
         return maxWaitTime !== null ? Math.min(timeWaiting, maxWaitTime - timeSinceLastInvoke) : timeWaiting;
     }
 
     function timerExpired() {
         const time = Date.now();
+
         if (shouldInvoke(time)) {
             return trailingEdge(time);
         }
+
         timeout = startTimer(timerExpired, remainingWait(time));
     }
 
     function leadingEdge(time: number): ReturnType<T> | undefined {
         lastInvokeTime = time;
         timeout = startTimer(timerExpired, wait);
+
         return leading ? invokeFunc(time) : undefined;
     }
 
     function trailingEdge(time: number): ReturnType<T> | undefined {
         timeout = null;
+
         if (trailing && lastArgs) {
             return invokeFunc(time);
         }
+
         lastArgs = null;
         lastThis = null;
+
         return result;
     }
 
@@ -91,14 +107,18 @@ export function debounce<T extends (...args: any[]) => any>(
             if (timeout === null) {
                 return leadingEdge(lastCallTime);
             }
+
             if (maxWaitTime !== null) {
                 timeout = startTimer(timerExpired, wait);
+
                 return invokeFunc(lastCallTime);
             }
         }
+
         if (timeout === null) {
             timeout = startTimer(timerExpired, wait);
         }
+
         return result;
     }
 
@@ -106,6 +126,7 @@ export function debounce<T extends (...args: any[]) => any>(
         if (timeout !== null) {
             clearTimeout(timeout);
         }
+
         lastInvokeTime = 0;
         lastArgs = null;
         lastThis = null;
@@ -113,13 +134,9 @@ export function debounce<T extends (...args: any[]) => any>(
         timeout = null;
     };
 
-    debounced.flush = () => {
-        return timeout === null ? result : trailingEdge(Date.now());
-    };
+    debounced.flush = () => (timeout === null ? result : trailingEdge(Date.now()));
 
-    debounced.isPending = () => {
-        return timeout !== null;
-    };
+    debounced.isPending = () => timeout !== null;
 
     return debounced;
 }

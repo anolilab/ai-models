@@ -1,5 +1,5 @@
-import { localDummyServer } from "./local-dummy-server";
 import { getDummyServerPort } from "./derive-port";
+import { localDummyServer } from "./local-dummy-server";
 
 export async function e2eStartDummyServer(input: string) {
     const port = await getDummyServerPort(input);

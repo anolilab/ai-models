@@ -28,31 +28,41 @@ class ColumnConfigBuilder<
 
     private clone(): ColumnConfigBuilder<TData, TType, TVal, TId> {
         const newInstance = new ColumnConfigBuilder<TData, TType, TVal, TId>(this.config.type as TType);
+
         newInstance.config = { ...this.config };
+
         return newInstance;
     }
 
     id<TNewId extends string>(value: TNewId): ColumnConfigBuilder<TData, TType, TVal, TNewId> {
         const newInstance = this.clone() as any; // We'll refine this
+
         newInstance.config.id = value;
+
         return newInstance as ColumnConfigBuilder<TData, TType, TVal, TNewId>;
     }
 
     accessor<TNewVal>(accessor: TAccessorFn<TData, TNewVal>): ColumnConfigBuilder<TData, TType, TNewVal, TId> {
         const newInstance = this.clone() as any;
+
         newInstance.config.accessor = accessor;
+
         return newInstance as ColumnConfigBuilder<TData, TType, TNewVal, TId>;
     }
 
     displayName(value: string): ColumnConfigBuilder<TData, TType, TVal, TId> {
         const newInstance = this.clone();
+
         newInstance.config.displayName = value;
+
         return newInstance;
     }
 
     icon(value: any): ColumnConfigBuilder<TData, TType, TVal, TId> {
         const newInstance = this.clone();
+
         newInstance.config.icon = value;
+
         return newInstance;
     }
 
@@ -60,8 +70,11 @@ class ColumnConfigBuilder<
         if (this.config.type !== "number") {
             throw new Error("min() is only applicable to number columns");
         }
+
         const newInstance = this.clone() as any;
+
         newInstance.config.min = value;
+
         return newInstance;
     }
 
@@ -69,8 +82,11 @@ class ColumnConfigBuilder<
         if (this.config.type !== "number") {
             throw new Error("max() is only applicable to number columns");
         }
+
         const newInstance = this.clone() as any;
+
         newInstance.config.max = value;
+
         return newInstance;
     }
 
@@ -78,8 +94,11 @@ class ColumnConfigBuilder<
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("options() is only applicable to option or multiOption columns");
         }
+
         const newInstance = this.clone() as any;
+
         newInstance.config.options = value;
+
         return newInstance;
     }
 
@@ -87,8 +106,11 @@ class ColumnConfigBuilder<
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("transformOptionFn() is only applicable to option or multiOption columns");
         }
+
         const newInstance = this.clone() as any;
+
         newInstance.config.transformOptionFn = fn;
+
         return newInstance;
     }
 
@@ -96,37 +118,48 @@ class ColumnConfigBuilder<
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("orderFn() is only applicable to option or multiOption columns");
         }
+
         const newInstance = this.clone() as any;
+
         newInstance.config.orderFn = fn;
+
         return newInstance;
     }
 
     build(): ColumnConfig<TData, TType, TVal, TId> {
-        if (!this.config.id) throw new Error("id is required");
-        if (!this.config.accessor) throw new Error("accessor is required");
-        if (!this.config.displayName) throw new Error("displayName is required");
-        if (!this.config.icon) throw new Error("icon is required");
+        if (!this.config.id)
+            throw new Error("id is required");
+
+        if (!this.config.accessor)
+            throw new Error("accessor is required");
+
+        if (!this.config.displayName)
+            throw new Error("displayName is required");
+
+        if (!this.config.icon)
+            throw new Error("icon is required");
+
         return this.config as ColumnConfig<TData, TType, TVal, TId>;
     }
 }
 
 // Update the helper interface
 interface FluentColumnConfigHelper<TData> {
-    text: () => ColumnConfigBuilder<TData, "text", string>;
-    number: () => ColumnConfigBuilder<TData, "number", number>;
     date: () => ColumnConfigBuilder<TData, "date", Date>;
-    option: () => ColumnConfigBuilder<TData, "option", string>;
     multiOption: () => ColumnConfigBuilder<TData, "multiOption", string[]>;
+    number: () => ColumnConfigBuilder<TData, "number", number>;
+    option: () => ColumnConfigBuilder<TData, "option", string>;
+    text: () => ColumnConfigBuilder<TData, "text", string>;
 }
 
 // Factory function remains mostly the same
 export function createColumnConfigHelper<TData>(): FluentColumnConfigHelper<TData> {
     return {
-        text: () => new ColumnConfigBuilder<TData, "text", string>("text"),
-        number: () => new ColumnConfigBuilder<TData, "number", number>("number"),
         date: () => new ColumnConfigBuilder<TData, "date", Date>("date"),
-        option: () => new ColumnConfigBuilder<TData, "option", string>("option"),
         multiOption: () => new ColumnConfigBuilder<TData, "multiOption", string[]>("multiOption"),
+        number: () => new ColumnConfigBuilder<TData, "number", number>("number"),
+        option: () => new ColumnConfigBuilder<TData, "option", string>("option"),
+        text: () => new ColumnConfigBuilder<TData, "text", string>("text"),
     };
 }
 
@@ -137,6 +170,7 @@ export function getColumnOptions<TData, TType extends ColumnDataType, TVal>(
 ): ColumnOption[] {
     if (!isAnyOf(column.type, ["option", "multiOption"])) {
         console.warn("Column options can only be retrieved for option and multiOption columns");
+
         return [];
     }
 
@@ -163,10 +197,12 @@ export function getColumnOptions<TData, TType extends ColumnDataType, TVal>(
             (deps) => deps[0].map((m) => column.transformOptionFn!(m as ElementType<NonNullable<TVal>>)),
             { key: `transform-${column.id}` },
         );
+
         return memoizedTransform();
     }
 
-    if (isColumnOptionArray(models)) return models;
+    if (isColumnOptionArray(models))
+        return models;
 
     throw new Error(
         `[data-table-filter] [${column.id}] Either provide static options, a transformOptionFn, or ensure the column data conforms to ColumnOption type`,
@@ -197,6 +233,7 @@ export function getColumnValues<TData, TType extends ColumnDataType, TVal>(colum
             (deps) => deps[0].map((v) => column.transformOptionFn!(v) as ElementType<NonNullable<TVal>>),
             { key: `transform-values-${column.id}` },
         );
+
         return memoizedTransform();
     }
 
@@ -216,6 +253,7 @@ export function getFacetedUniqueValues<TData, TType extends ColumnDataType, TVal
 ): Map<string, number> | undefined {
     if (!isAnyOf(column.type, ["option", "multiOption"])) {
         console.warn("Faceted unique values can only be retrieved for option and multiOption columns");
+
         return new Map<string, number>();
     }
 
@@ -228,11 +266,13 @@ export function getFacetedUniqueValues<TData, TType extends ColumnDataType, TVal
     if (isColumnOptionArray(values)) {
         for (const option of values) {
             const curr = acc.get(option.value) ?? 0;
+
             acc.set(option.value, curr + 1);
         }
     } else {
         for (const option of values) {
             const curr = acc.get(option as string) ?? 0;
+
             acc.set(option as string, curr + 1);
         }
     }
@@ -245,7 +285,8 @@ export function getFacetedMinMaxValues<TData, TType extends ColumnDataType, TVal
     data: TData[],
     strategy: FilterStrategy,
 ): [number, number] | undefined {
-    if (column.type !== "number") return undefined; // Only applicable to number columns
+    if (column.type !== "number")
+        return undefined; // Only applicable to number columns
 
     if (typeof column.min === "number" && typeof column.max === "number") {
         return [column.min, column.max];
@@ -300,19 +341,19 @@ export function createColumns<TData>(
         // Create the Column instance
         const column: Column<TData> = {
             ...columnConfig,
+            _prefetchedFacetedMinMaxValuesCache: null,
+            _prefetchedFacetedUniqueValuesCache: null,
+            _prefetchedOptionsCache: null, // Initialize private cache
+            _prefetchedValuesCache: null,
+            getFacetedMinMaxValues: getMinMaxValues,
+            getFacetedUniqueValues: getUniqueValues,
             getOptions,
             getValues,
-            getFacetedUniqueValues: getUniqueValues,
-            getFacetedMinMaxValues: getMinMaxValues,
+            prefetchFacetedMinMaxValues: async () => {},
+            prefetchFacetedUniqueValues: async () => {},
             // Prefetch methods will be added below
             prefetchOptions: async () => {}, // Placeholder, defined below
             prefetchValues: async () => {},
-            prefetchFacetedUniqueValues: async () => {},
-            prefetchFacetedMinMaxValues: async () => {},
-            _prefetchedOptionsCache: null, // Initialize private cache
-            _prefetchedValuesCache: null,
-            _prefetchedFacetedUniqueValuesCache: null,
-            _prefetchedFacetedMinMaxValuesCache: null,
         };
 
         if (strategy === "client") {
@@ -322,6 +363,7 @@ export function createColumns<TData>(
                     await new Promise((resolve) =>
                         setTimeout(() => {
                             const options = getOptions();
+
                             column._prefetchedOptionsCache = options;
                             resolve(undefined);
                         }, 0),
@@ -348,6 +390,7 @@ export function createColumns<TData>(
                     await new Promise((resolve) =>
                         setTimeout(() => {
                             const facetedMap = getUniqueValues();
+
                             column._prefetchedFacetedUniqueValuesCache = facetedMap ?? null;
 
                             resolve(undefined);
@@ -361,6 +404,7 @@ export function createColumns<TData>(
                     await new Promise((resolve) =>
                         setTimeout(() => {
                             const value = getMinMaxValues();
+
                             column._prefetchedFacetedMinMaxValuesCache = value ?? null;
 
                             resolve(undefined);

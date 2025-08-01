@@ -1,4 +1,4 @@
-export function memo<TDeps extends readonly any[], TResult>(getDeps: () => TDeps, compute: (deps: TDeps) => TResult): () => TResult {
+export function memo<TDeps extends ReadonlyArray<any>, TResult>(getDeps: () => TDeps, compute: (deps: TDeps) => TResult): () => TResult {
     let prevDeps: TDeps | undefined;
     let cachedResult: TResult | undefined;
 
@@ -15,7 +15,7 @@ export function memo<TDeps extends readonly any[], TResult>(getDeps: () => TDeps
     };
 }
 
-function shallowEqual<T>(arr1: readonly T[], arr2: readonly T[]): boolean {
+function shallowEqual<T>(arr1: ReadonlyArray<T>, arr2: ReadonlyArray<T>): boolean {
     if (arr1 === arr2) {
         return true;
     }
@@ -25,7 +25,8 @@ function shallowEqual<T>(arr1: readonly T[], arr2: readonly T[]): boolean {
     }
 
     for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] !== arr2[i]) return false;
+        if (arr1[i] !== arr2[i])
+            return false;
     }
 
     return true;

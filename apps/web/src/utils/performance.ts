@@ -5,25 +5,25 @@
 // Types for performance metrics
 export interface PerformanceMetric {
     name: string;
-    value: number;
     rating: "good" | "needs-improvement" | "poor";
     timestamp: number;
+    value: number;
 }
 
 export interface WebVitalsMetric {
-    name: "CLS" | "FCP" | "LCP" | "TTFB" | "INP";
-    value: number;
-    rating: "good" | "needs-improvement" | "poor";
     delta: number;
+    name: "CLS" | "FCP" | "LCP" | "TTFB" | "INP";
+    rating: "good" | "needs-improvement" | "poor";
+    value: number;
 }
 
 // Thresholds based on Core Web Vitals recommendations
 const THRESHOLDS = {
     CLS: { good: 0.1, poor: 0.25 },
     FCP: { good: 1800, poor: 3000 },
+    INP: { good: 200, poor: 500 },
     LCP: { good: 2500, poor: 4000 },
     TTFB: { good: 800, poor: 1800 },
-    INP: { good: 200, poor: 500 },
 } as const;
 
 /**
@@ -31,7 +31,8 @@ const THRESHOLDS = {
  * This function safely captures events only when analytics consent is given
  */
 function captureWithConsent(eventName: string, properties: Record<string, any> = {}): void {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined")
+        return;
 
     // Check if PostHog is available and consent is given
     // The AnalyticsProvider will handle consent checking, so if posthog is available, consent was given
@@ -49,8 +50,13 @@ function captureWithConsent(eventName: string, properties: Record<string, any> =
  */
 export function getPerformanceRating(metric: keyof typeof THRESHOLDS, value: number): "good" | "needs-improvement" | "poor" {
     const threshold = THRESHOLDS[metric];
-    if (value <= threshold.good) return "good";
-    if (value <= threshold.poor) return "needs-improvement";
+
+    if (value <= threshold.good)
+        return "good";
+
+    if (value <= threshold.poor)
+        return "needs-improvement";
+
     return "poor";
 }
 
@@ -59,10 +65,11 @@ export function getPerformanceRating(metric: keyof typeof THRESHOLDS, value: num
  * Dynamically imports web-vitals to avoid bundling in SSR
  */
 export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void): Promise<void> {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined")
+        return;
 
     try {
-        const { onCLS, onFCP, onLCP, onTTFB, onINP } = await import("web-vitals");
+        const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import("web-vitals");
 
         const handleMetric = (metric: any) => {
             const webVitalsMetric: WebVitalsMetric = {
@@ -82,10 +89,10 @@ export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void
 
             // Send to PostHog if available and consent given
             captureWithConsent("web_vital", {
-                metric_name: metric.name,
-                metric_value: metric.value,
-                metric_rating: webVitalsMetric.rating,
                 metric_delta: metric.delta,
+                metric_name: metric.name,
+                metric_rating: webVitalsMetric.rating,
+                metric_value: metric.value,
             });
         };
 
@@ -105,12 +112,14 @@ export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void
  */
 export class PerformanceTracker {
     private static instance: PerformanceTracker;
-    private metrics: Map<string, number> = new Map();
+
+    private metrics = new Map<string, number>();
 
     static getInstance(): PerformanceTracker {
         if (!PerformanceTracker.instance) {
             PerformanceTracker.instance = new PerformanceTracker();
         }
+
         return PerformanceTracker.instance;
     }
 
@@ -127,15 +136,19 @@ export class PerformanceTracker {
      * End measuring and return the duration
      */
     end(name: string): number | null {
-        if (typeof performance === "undefined") return null;
+        if (typeof performance === "undefined")
+            return null;
 
         const startTime = this.metrics.get(name);
+
         if (startTime === undefined) {
             console.warn(`[Performance] No start time found for metric: ${name}`);
+
             return null;
         }
 
         const duration = performance.now() - startTime;
+
         this.metrics.delete(name);
 
         // Log in development
@@ -145,8 +158,8 @@ export class PerformanceTracker {
 
         // Send to analytics with consent check
         captureWithConsent("custom_performance_metric", {
-            metric_name: name,
             duration_ms: duration,
+            metric_name: name,
         });
 
         return duration;
@@ -157,9 +170,12 @@ export class PerformanceTracker {
      */
     async measure<T>(name: string, fn: () => T | Promise<T>): Promise<T> {
         this.start(name);
+
         try {
             const result = await fn();
+
             this.end(name);
+
             return result;
         } catch (error) {
             this.end(name);
@@ -196,9 +212,11 @@ export function observeLongTasks(threshold: number = 50, onLongTask?: (duration:
         });
 
         observer.observe({ entryTypes: ["longtask"] });
+
         return observer;
     } catch (error) {
         console.warn("[Performance] Failed to initialize long task observer:", error);
+
         return null;
     }
 }
@@ -215,24 +233,24 @@ export function getPerformanceInfo(): Record<string, any> {
     const paint = performance.getEntriesByType("paint");
 
     return {
-        // Navigation timing
-        domContentLoaded: navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart,
-        loadComplete: navigation?.loadEventEnd - navigation?.loadEventStart,
-
-        // Paint timing
-        firstPaint: paint.find((entry) => entry.name === "first-paint")?.startTime,
-        firstContentfulPaint: paint.find((entry) => entry.name === "first-contentful-paint")?.startTime,
-
         // Connection info
         connectionType: (navigator as any)?.connection?.effectiveType,
+        // Navigation timing
+        domContentLoaded: navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart,
+
+        firstContentfulPaint: paint.find((entry) => entry.name === "first-contentful-paint")?.startTime,
+        // Paint timing
+        firstPaint: paint.find((entry) => entry.name === "first-paint")?.startTime,
+
+        loadComplete: navigation?.loadEventEnd - navigation?.loadEventStart,
 
         // Memory info (Chrome only)
         memoryUsage: (performance as any)?.memory
             ? {
-                  used: (performance as any).memory.usedJSHeapSize,
-                  total: (performance as any).memory.totalJSHeapSize,
-                  limit: (performance as any).memory.jsHeapSizeLimit,
-              }
+                limit: (performance as any).memory.jsHeapSizeLimit,
+                total: (performance as any).memory.totalJSHeapSize,
+                used: (performance as any).memory.usedJSHeapSize,
+            }
             : undefined,
     };
 }
@@ -241,7 +259,8 @@ export function getPerformanceInfo(): Record<string, any> {
  * Initialize performance monitoring
  */
 export function initPerformanceMonitoring(): void {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined")
+        return;
 
     // Initialize Web Vitals
     initWebVitals();

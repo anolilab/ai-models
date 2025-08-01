@@ -1,4 +1,5 @@
 import type { ColumnDef, ColumnFiltersState } from "@tanstack/react-table";
+
 import type { Column, FilterModel, FiltersState } from "../../core/types";
 import { multiOptionFilterFn, optionFilterFn } from "../../lib/filter-fns";
 import { isColumnOption, isColumnOptionArray, isStringArray } from "../../lib/helpers";
@@ -45,7 +46,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"option">) => {
                 const value = row.getValue<unknown>(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (typeof value === "string") {
                     return optionFilterFn(value, filterValue);
@@ -56,6 +58,7 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
                 }
 
                 const sanitizedValue = config.transformOptionFn!(value as never);
+
                 return optionFilterFn(sanitizedValue.value, filterValue);
             };
         }
@@ -64,7 +67,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"multiOption">) => {
                 const value = row.getValue(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (isStringArray(value)) {
                     return multiOptionFilterFn(value, filterValue);
@@ -93,5 +97,5 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
 }
 
 export function createTSTFilters(filters: FiltersState): ColumnFiltersState {
-    return filters.map((filter) => ({ id: filter.columnId, value: filter }));
+    return filters.map((filter) => { return { id: filter.columnId, value: filter }; });
 }

@@ -1,19 +1,19 @@
-import { Toaster } from "@/components/ui/sonner";
+import "unfonts.css";
 
-import { HeadContent, Outlet, Scripts, createRootRouteWithContext, useRouterState } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import Loader from "@/components/loader";
 import { ConsentManagerDialog, CookieBanner } from "@c15t/react";
 import { baseTranslations } from "@c15t/translations";
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import type { LinkHTMLAttributes, MetaHTMLAttributes } from "react";
 
+import Loader from "@/components/loader";
+import { Toaster } from "@/components/ui/sonner";
 import { ConsentManagerProvider } from "@/providers/consent-manager";
 import { AnalyticsProvider } from "@/providers/posthog";
 import { IconSpriteSheet } from "@/utils/provider-icons";
 import { seo } from "@/utils/seo";
 
 import appCss from "../index.css?url";
-import "unfonts.css";
 
 type LinkElement = LinkHTMLAttributes<HTMLLinkElement> & { rel: string };
 type MetaElement = MetaHTMLAttributes<HTMLMetaElement>;
@@ -26,17 +26,19 @@ if (siteBaseUrl && !siteBaseUrl.endsWith("/")) {
 
 const siteName = "Models | Anolilab";
 const defaultTitle = "Anolilab | Next-Gen AI, Web & Software Development Studio – Modern Solutions for Ambitious Brands";
-const defaultDescription =
-    "Anolilab delivers high-performance websites, web applications, AI solutions, and custom software with a focus on modern technology and user experience.";
+const defaultDescription
+    = "Anolilab delivers high-performance websites, web applications, AI solutions, and custom software with a focus on modern technology and user experience.";
 const twitterHandle = "@anolilab";
-const defaultKeywords =
-    "web development, software development, AI, artificial intelligence, react, typescript, nodejs, frontend, backend, headless cms, performance optimization, development studio";
+const defaultKeywords
+    = "web development, software development, AI, artificial intelligence, react, typescript, nodejs, frontend, backend, headless cms, performance optimization, development studio";
 const defaultOgImage = `${siteBaseUrl}/og_big.jpg`;
 const defaultTwitterImage = `${siteBaseUrl}/og.jpg`;
 
 export interface RouterAppContext {}
 
 export const Route = createRootRouteWithContext<RouterAppContext>()({
+    component: RootDocument,
+
     head: (context) => {
         const currentMatch = context.matches[context.matches.length - 1];
         const fullPath = currentMatch?.fullPath?.startsWith("/") ? currentMatch.fullPath.slice(1) : currentMatch?.fullPath || "";
@@ -84,19 +86,17 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             title: generatedTitle ?? defaultTitle,
         };
     },
-
-    component: RootDocument,
 });
 
 function RootDocument() {
     const isFetching = useRouterState({ select: (s) => s.isLoading });
 
     return (
-        <html lang="en" className="dark">
+        <html className="dark" lang="en">
             <head>
                 <HeadContent />
             </head>
-            <body suppressHydrationWarning={true} className="h-screen w-screen">
+            <body className="h-screen w-screen" suppressHydrationWarning={true}>
                 <ConsentManagerProvider
                     options={{
                         mode: "offline",

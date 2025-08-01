@@ -1,11 +1,15 @@
 import { endOfDay, isAfter, isBefore, isSameDay, isWithinInterval, startOfDay } from "date-fns";
+
 import { dateFilterOperators } from "../core/operators";
 import type { FilterModel } from "../core/types";
 import { intersection } from "./array";
 
 export function optionFilterFn<TData>(inputData: string, filterValue: FilterModel<"option">) {
-    if (!inputData) return false;
-    if (filterValue.values.length === 0) return true;
+    if (!inputData)
+        return false;
+
+    if (filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toString().toLowerCase();
 
@@ -15,37 +19,40 @@ export function optionFilterFn<TData>(inputData: string, filterValue: FilterMode
         case "is":
         case "is any of":
             return found;
-        case "is not":
         case "is none of":
+        case "is not":
             return !found;
     }
 }
 
 export function multiOptionFilterFn(inputData: string[], filterValue: FilterModel<"multiOption">) {
-    if (!inputData) return false;
+    if (!inputData)
+        return false;
 
-    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0) return true;
+    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0)
+        return true;
 
     const values = inputData;
     const filterValues = filterValue.values;
 
     switch (filterValue.operator) {
+        case "exclude":
+            return intersection(values, filterValues).length === 0;
+        case "exclude if all":
+            return !(intersection(values, filterValues).length === filterValues.length);
+        case "exclude if any of":
+            return !(intersection(values, filterValues).length > 0);
         case "include":
         case "include any of":
             return intersection(values, filterValues).length > 0;
-        case "exclude":
-            return intersection(values, filterValues).length === 0;
-        case "exclude if any of":
-            return !(intersection(values, filterValues).length > 0);
         case "include all of":
             return intersection(values, filterValues).length === filterValues.length;
-        case "exclude if all":
-            return !(intersection(values, filterValues).length === filterValues.length);
     }
 }
 
 export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"date">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     if (dateFilterOperators[filterValue.operator].target === "single" && filterValue.values.length > 1)
         throw new Error("Singular operators require at most one filter value");
@@ -62,36 +69,38 @@ export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"d
     switch (filterValue.operator) {
         case "is":
             return isSameDay(value, d1);
-        case "is not":
-            return !isSameDay(value, d1);
-        case "is before":
-            return isBefore(value, startOfDay(d1));
-        case "is on or after":
-            return isSameDay(value, d1) || isAfter(value, startOfDay(d1));
         case "is after":
             return isAfter(value, startOfDay(d1));
-        case "is on or before":
-            return isSameDay(value, d1) || isBefore(value, startOfDay(d1));
+        case "is before":
+            return isBefore(value, startOfDay(d1));
         case "is between":
             return isWithinInterval(value, {
-                start: startOfDay(d1),
                 end: endOfDay(d2),
+                start: startOfDay(d1),
             });
+        case "is not":
+            return !isSameDay(value, d1);
         case "is not between":
             return !isWithinInterval(value, {
-                start: startOfDay(filterValue.values[0]),
                 end: endOfDay(filterValue.values[1]),
+                start: startOfDay(filterValue.values[0]),
             });
+        case "is on or after":
+            return isSameDay(value, d1) || isAfter(value, startOfDay(d1));
+        case "is on or before":
+            return isSameDay(value, d1) || isBefore(value, startOfDay(d1));
     }
 }
 
 export function textFilterFn<TData>(inputData: string, filterValue: FilterModel<"text">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toLowerCase().trim();
     const filterStr = filterValue.values[0].toLowerCase().trim();
 
-    if (filterStr === "") return true;
+    if (filterStr === "")
+        return true;
 
     const found = value.includes(filterStr);
 
@@ -114,8 +123,12 @@ export function numberFilterFn<TData>(inputData: number, filterValue: FilterMode
     switch (filterValue.operator) {
         case "is":
             return value === filterVal;
-        case "is not":
-            return value !== filterVal;
+        case "is between": {
+            const lowerBound = filterValue.values[0];
+            const upperBound = filterValue.values[1];
+
+            return value >= lowerBound && value <= upperBound;
+        }
         case "is greater than":
             return value > filterVal;
         case "is greater than or equal to":
@@ -124,14 +137,12 @@ export function numberFilterFn<TData>(inputData: number, filterValue: FilterMode
             return value < filterVal;
         case "is less than or equal to":
             return value <= filterVal;
-        case "is between": {
-            const lowerBound = filterValue.values[0];
-            const upperBound = filterValue.values[1];
-            return value >= lowerBound && value <= upperBound;
-        }
+        case "is not":
+            return value !== filterVal;
         case "is not between": {
             const lowerBound = filterValue.values[0];
             const upperBound = filterValue.values[1];
+
             return value < lowerBound || value > upperBound;
         }
         default:

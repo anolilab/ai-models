@@ -1,4 +1,5 @@
 import { isBefore } from "date-fns";
+
 import type { Column, ColumnOption } from "../core/types";
 
 export function getColumn<TData>(columns: Column<TData>[], id: string) {
@@ -12,16 +13,28 @@ export function getColumn<TData>(columns: Column<TData>[], id: string) {
 }
 
 export function createNumberFilterValue(values: number[] | undefined): number[] {
-    if (!values || values.length === 0) return [];
-    if (values.length === 1) return [values[0]];
-    if (values.length === 2) return createNumberRange(values);
+    if (!values || values.length === 0)
+        return [];
+
+    if (values.length === 1)
+        return [values[0]];
+
+    if (values.length === 2)
+        return createNumberRange(values);
+
     return [values[0], values[1]];
 }
 
 export function createDateFilterValue(values: [Date, Date] | [Date] | [] | undefined) {
-    if (!values || values.length === 0) return [];
-    if (values.length === 1) return [values[0]];
-    if (values.length === 2) return createDateRange(values);
+    if (!values || values.length === 0)
+        return [];
+
+    if (values.length === 1)
+        return [values[0]];
+
+    if (values.length === 2)
+        return createDateRange(values);
+
     throw new Error("Cannot create date filter value from more than 2 values");
 }
 
@@ -36,7 +49,9 @@ export function createNumberRange(values: number[] | undefined) {
     let a = 0;
     let b = 0;
 
-    if (!values || values.length === 0) return [a, b];
+    if (!values || values.length === 0)
+        return [a, b];
+
     if (values.length === 1) {
         a = values[0];
     } else {
@@ -65,16 +80,19 @@ export function isColumnOptionMap(value: unknown): value is Map<string, number> 
     if (!(value instanceof Map)) {
         return false;
     }
+
     for (const key of value.keys()) {
         if (typeof key !== "string") {
             return false;
         }
     }
+
     for (const val of value.values()) {
         if (typeof val !== "number") {
             return false;
         }
     }
+
     return true;
 }
 

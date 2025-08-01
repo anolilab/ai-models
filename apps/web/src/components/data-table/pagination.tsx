@@ -2,34 +2,35 @@
 
 import { ChevronLeftIcon, ChevronRightIcon, DoubleArrowLeftIcon, DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import type { Table } from "@tanstack/react-table";
+
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const getButtonSizeClass = (size: "sm" | "default" | "lg") => {
     switch (size) {
-        case "sm":
-            return "h-7 w-7 p-0";
         case "lg":
             return "h-11 w-11 p-0";
+        case "sm":
+            return "h-7 w-7 p-0";
         default:
             return "h-8 w-8 p-0";
     }
 };
 
 interface DataTablePaginationProps<TData> {
+    pageSizeOptions?: number[]; // Custom page size options
+    size?: "sm" | "default" | "lg"; // Size prop for components
     table: Table<TData>;
     totalItems?: number; // Total number of items from API
     totalSelectedItems?: number; // Total selected items across all pages
-    pageSizeOptions?: number[]; // Custom page size options
-    size?: "sm" | "default" | "lg"; // Size prop for components
 }
 
 export function DataTablePagination<TData>({
+    pageSizeOptions = [10, 20, 30, 40, 50], // Default options if none provided
+    size = "default",
     table,
     totalItems = 0,
     totalSelectedItems = 0,
-    pageSizeOptions = [10, 20, 30, 40, 50], // Default options if none provided
-    size = "default",
 }: DataTablePaginationProps<TData>) {
     // Convert 'lg' size to 'default' for SelectTrigger since it only accepts 'sm' | 'default'
     const selectSize = size === "lg" ? "default" : size;
@@ -43,12 +44,13 @@ export function DataTablePagination<TData>({
                 <div className="flex items-center space-x-2">
                     <p className="text-sm font-medium whitespace-nowrap">Rows per page</p>
                     <Select
-                        value={`${table.getState().pagination.pageSize}`}
                         onValueChange={(value) => {
                             // Validate the input value
                             const numericValue = parseInt(value, 10);
+
                             if (isNaN(numericValue) || numericValue <= 0) {
                                 console.error(`Invalid page size value: ${value}`);
+
                                 return;
                             }
 
@@ -58,13 +60,14 @@ export function DataTablePagination<TData>({
                                 pageSize: numericValue,
                             });
                         }}
+                        value={`${table.getState().pagination.pageSize}`}
                     >
                         <SelectTrigger className="cursor-pointer" size={selectSize}>
                             <SelectValue placeholder={table.getState().pagination.pageSize} />
                         </SelectTrigger>
-                        <SelectContent side="top" className="cursor-pointer">
+                        <SelectContent className="cursor-pointer" side="top">
                             {pageSizeOptions.map((pageSize) => (
-                                <SelectItem key={pageSize} value={`${pageSize}`} className="cursor-pointer">
+                                <SelectItem className="cursor-pointer" key={pageSize} value={`${pageSize}`}>
                                     {pageSize}
                                 </SelectItem>
                             ))}
@@ -77,54 +80,54 @@ export function DataTablePagination<TData>({
                 <div className="flex items-center space-x-2">
                     <Button
                         aria-label="Go to first page"
-                        variant="outline"
                         className={`${getButtonSizeClass(size)} hidden cursor-pointer lg:flex`}
-                        onClick={() => table.setPagination({ pageIndex: 0, pageSize: table.getState().pagination.pageSize })}
                         disabled={!table.getCanPreviousPage()}
+                        onClick={() => table.setPagination({ pageIndex: 0, pageSize: table.getState().pagination.pageSize })}
+                        variant="outline"
                     >
-                        <DoubleArrowLeftIcon className="h-4 w-4" aria-hidden="true" />
+                        <DoubleArrowLeftIcon aria-hidden="true" className="h-4 w-4" />
                     </Button>
                     <Button
                         aria-label="Go to previous page"
-                        variant="outline"
                         className={`${getButtonSizeClass(size)} cursor-pointer`}
+                        disabled={!table.getCanPreviousPage()}
                         onClick={() =>
                             table.setPagination({
                                 pageIndex: table.getState().pagination.pageIndex - 1,
                                 pageSize: table.getState().pagination.pageSize,
                             })
                         }
-                        disabled={!table.getCanPreviousPage()}
+                        variant="outline"
                     >
-                        <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
+                        <ChevronLeftIcon aria-hidden="true" className="h-4 w-4" />
                     </Button>
                     <Button
                         aria-label="Go to next page"
-                        variant="outline"
                         className={`${getButtonSizeClass(size)} cursor-pointer`}
+                        disabled={!table.getCanNextPage()}
                         onClick={() =>
                             table.setPagination({
                                 pageIndex: table.getState().pagination.pageIndex + 1,
                                 pageSize: table.getState().pagination.pageSize,
                             })
                         }
-                        disabled={!table.getCanNextPage()}
+                        variant="outline"
                     >
-                        <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
+                        <ChevronRightIcon aria-hidden="true" className="h-4 w-4" />
                     </Button>
                     <Button
                         aria-label="Go to last page"
-                        variant="outline"
                         className={`${getButtonSizeClass(size)} hidden cursor-pointer lg:flex`}
+                        disabled={!table.getCanNextPage()}
                         onClick={() =>
                             table.setPagination({
                                 pageIndex: table.getPageCount() - 1,
                                 pageSize: table.getState().pagination.pageSize,
                             })
                         }
-                        disabled={!table.getCanNextPage()}
+                        variant="outline"
                     >
-                        <DoubleArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+                        <DoubleArrowRightIcon aria-hidden="true" className="h-4 w-4" />
                     </Button>
                 </div>
             </div>

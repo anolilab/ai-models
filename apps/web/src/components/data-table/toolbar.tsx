@@ -1,78 +1,80 @@
 "use client";
 
 import type { Table } from "@tanstack/react-table";
-import { Settings, Undo2, EyeOff, CheckSquare, MoveHorizontal } from "lucide-react";
+import { CheckSquare, EyeOff, MoveHorizontal, Settings, Undo2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { DataTableViewOptions } from "./view-options";
+import { cn } from "@/lib/utils";
+
 import { DataTableExport } from "./data-export";
 import { DataTableFilter } from "./filter/components/data-table-filter";
+import type { Column, ColumnConfig, DataTableFilterActions, FiltersState, FilterStrategy } from "./filter/core/types";
+import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import type { TableConfig } from "./utils/table-config";
-import type { ColumnConfig, FiltersState, FilterStrategy, Column, DataTableFilterActions } from "./filter/core/types";
-import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
-import { cn } from "@/lib/utils";
+import { DataTableViewOptions } from "./view-options";
 
 // Helper functions for component sizing
 const getButtonSizeClass = (size: "sm" | "default" | "lg", isIcon = false) => {
     if (isIcon) {
         switch (size) {
-            case "sm":
-                return "h-8 w-8";
             case "lg":
                 return "h-11 w-11";
+            case "sm":
+                return "h-8 w-8";
             default:
                 return "";
         }
     }
+
     switch (size) {
-        case "sm":
-            return "h-8 px-3";
         case "lg":
             return "h-11 px-5";
+        case "sm":
+            return "h-8 px-3";
         default:
             return "";
     }
 };
 
 interface DataTableToolbarProps<TData extends ExportableData> {
-    table: Table<TData>;
-    totalSelectedItems?: number;
-    getSelectedItems?: () => Promise<TData[]>;
-    getAllItems?: () => TData[];
-    config: TableConfig;
-    entityName?: string;
-    columnMapping?: Record<string, string>;
-    columnWidths?: Array<{ wch: number }>;
-    headers?: string[];
-    transformFunction?: DataTransformFunction<TData>;
-    customToolbarComponent?: React.ReactNode;
     className?: string;
+    columnMapping?: Record<string, string>;
+    columnWidths?: { wch: number }[];
+    config: TableConfig;
+    customToolbarComponent?: React.ReactNode;
+    entityName?: string;
+    filterActions?: DataTableFilterActions;
     // New filter props - processed data from DataTable
     filterColumns?: Column<TData>[];
-    filterStrategy?: FilterStrategy;
     filters?: FiltersState;
-    filterActions?: DataTableFilterActions;
+    filterStrategy?: FilterStrategy;
+    getAllItems?: () => TData[];
+    getSelectedItems?: () => Promise<TData[]>;
+    headers?: string[];
+    table: Table<TData>;
+    totalSelectedItems?: number;
+    transformFunction?: DataTransformFunction<TData>;
 }
 
 export function DataTableToolbar<TData extends ExportableData>({
-    table,
-    totalSelectedItems = 0,
-    getSelectedItems,
-    getAllItems,
-    config,
-    entityName = "items",
+    className,
     columnMapping,
     columnWidths,
-    headers,
-    transformFunction,
+    config,
     customToolbarComponent,
-    className,
-    filterColumns,
-    filterStrategy = "client",
-    filters,
+    entityName = "items",
     filterActions,
+    filterColumns,
+    filters,
+    filterStrategy = "client",
+    getAllItems,
+    getSelectedItems,
+    headers,
+    table,
+    totalSelectedItems = 0,
+    transformFunction,
 }: DataTableToolbarProps<TData>) {
     // Use filter data passed from DataTable
     const filterState = filters || [];
@@ -89,7 +91,7 @@ export function DataTableToolbar<TData extends ExportableData>({
         <div className={cn("flex flex-wrap items-center justify-between p-2", className)}>
             <div>
                 {filterColumnsData && filterColumnsData.length > 0 && filterActions && (
-                    <DataTableFilter columns={filterColumnsData} filters={filterState} actions={filterActions} strategy={filterStrategy} />
+                    <DataTableFilter actions={filterActions} columns={filterColumnsData} filters={filterState} strategy={filterStrategy} />
                 )}
             </div>
 
@@ -98,21 +100,21 @@ export function DataTableToolbar<TData extends ExportableData>({
 
                 {config.enableExport && (
                     <DataTableExport
-                        table={table}
-                        data={allItems}
-                        selectedData={selectedItems}
-                        getSelectedItems={getSelectedItems}
-                        entityName={entityName}
                         columnMapping={columnMapping}
                         columnWidths={columnWidths}
-                        headers={headers}
-                        transformFunction={transformFunction}
-                        size={config.size}
                         config={config}
+                        data={allItems}
+                        entityName={entityName}
+                        getSelectedItems={getSelectedItems}
+                        headers={headers}
+                        selectedData={selectedItems}
+                        size={config.size}
+                        table={table}
+                        transformFunction={transformFunction}
                     />
                 )}
 
-                {config.enableColumnVisibility && <DataTableViewOptions table={table} columnMapping={columnMapping} size={config.size} />}
+                {config.enableColumnVisibility && <DataTableViewOptions columnMapping={columnMapping} size={config.size} table={table} />}
             </div>
         </div>
     );

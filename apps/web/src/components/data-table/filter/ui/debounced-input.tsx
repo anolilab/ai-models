@@ -1,17 +1,19 @@
-import { Input } from "@/components/ui/input";
 import { useCallback, useEffect, useState } from "react";
+
+import { Input } from "@/components/ui/input";
+
 import { debounce } from "../lib/debounce";
 
 export function DebouncedInput({
-    value: initialValue,
-    onChange,
     debounceMs = 500, // This is the wait time, not the function
+    onChange,
+    value: initialValue,
     ...props
-}: {
-    value: string | number;
-    onChange: (value: string | number) => void;
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> & {
     debounceMs?: number;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange">) {
+    onChange: (value: string | number) => void;
+    value: string | number;
+}) {
     const [value, setValue] = useState(initialValue);
 
     // Sync with initialValue when it changes
@@ -29,9 +31,10 @@ export function DebouncedInput({
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;
+
         setValue(newValue); // Update local state immediately
         debouncedOnChange(newValue); // Call debounced version
     };
 
-    return <Input {...props} value={value} onChange={handleChange} />;
+    return <Input {...props} onChange={handleChange} value={value} />;
 }

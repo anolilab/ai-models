@@ -1,30 +1,31 @@
 import { useIsMobile } from "@/hooks/use-mobile";
-import type { Column, DataTableFilterActions, FilterStrategy, FiltersState } from "../core/types";
+
+import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
 import type { Locale } from "../lib/i18n";
 import { ActiveFilters, ActiveFiltersMobileContainer } from "./active-filters";
 import { FilterActions } from "./filter-actions";
 import { FilterSelector } from "./filter-selector";
 
 interface DataTableFilterProps<TData> {
+    actions: DataTableFilterActions;
     columns: Column<TData>[];
     filters: FiltersState;
-    actions: DataTableFilterActions;
-    strategy: FilterStrategy;
     locale?: Locale;
+    strategy: FilterStrategy;
 }
 
-export function DataTableFilter<TData>({ columns, filters, actions, strategy, locale = "en" }: DataTableFilterProps<TData>) {
+export function DataTableFilter<TData>({ actions, columns, filters, locale = "en", strategy }: DataTableFilterProps<TData>) {
     const isMobile = useIsMobile();
 
     if (isMobile) {
         return (
             <div className="flex w-full items-start justify-between gap-2">
                 <div className="flex gap-1">
-                    <FilterSelector columns={columns} filters={filters} actions={actions} strategy={strategy} locale={locale} />
-                    <FilterActions hasFilters={filters.length > 0} actions={actions} locale={locale} />
+                    <FilterSelector actions={actions} columns={columns} filters={filters} locale={locale} strategy={strategy} />
+                    <FilterActions actions={actions} hasFilters={filters.length > 0} locale={locale} />
                 </div>
                 <ActiveFiltersMobileContainer>
-                    <ActiveFilters columns={columns} filters={filters} actions={actions} strategy={strategy} locale={locale} />
+                    <ActiveFilters actions={actions} columns={columns} filters={filters} locale={locale} strategy={strategy} />
                 </ActiveFiltersMobileContainer>
             </div>
         );
@@ -33,11 +34,11 @@ export function DataTableFilter<TData>({ columns, filters, actions, strategy, lo
     return (
         <div className="flex w-full items-start justify-between gap-2">
             <div className="flex w-full flex-1 gap-2 md:flex-wrap">
-                <FilterSelector columns={columns} filters={filters} actions={actions} strategy={strategy} locale={locale} />
-                <ActiveFilters columns={columns} filters={filters} actions={actions} strategy={strategy} locale={locale} />
+                <FilterSelector actions={actions} columns={columns} filters={filters} locale={locale} strategy={strategy} />
+                <ActiveFilters actions={actions} columns={columns} filters={filters} locale={locale} strategy={strategy} />
             </div>
 
-            <FilterActions hasFilters={filters.length > 0} actions={actions} locale={locale} />
+            <FilterActions actions={actions} hasFilters={filters.length > 0} locale={locale} />
         </div>
     );
 }

@@ -18,8 +18,8 @@ const preLogMiddleware = createMiddleware({ type: "function" })
 
         return ctx.next({
             sendContext: {
-                serverTime,
                 durationToServer: serverTime.getTime() - ctx.context.clientTime.getTime(),
+                serverTime,
             },
         });
     });
@@ -33,8 +33,8 @@ export const logMiddleware = createMiddleware({ type: "function" })
 
         console.log("Client Req/Res:", {
             duration: res.context.clientTime.getTime() - now.getTime(),
-            durationToServer: res.context.durationToServer,
             durationFromServer: now.getTime() - res.context.serverTime.getTime(),
+            durationToServer: res.context.durationToServer,
         });
 
         return res;

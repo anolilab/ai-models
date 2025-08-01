@@ -1,4 +1,4 @@
-import type { SortingState, PaginationState, ColumnSizingState } from "@tanstack/react-table";
+import type { ColumnSizingState, PaginationState, SortingState } from "@tanstack/react-table";
 
 type SortingUpdater = (prev: SortingState) => SortingState;
 type StatePromise = Promise<URLSearchParams> | undefined;
@@ -65,6 +65,7 @@ export function createColumnSizingHandler(setColumnSizing: SetStateFunction<Colu
     return (updaterOrValue: ColumnSizingState | ((prev: ColumnSizingState) => ColumnSizingState)) => {
         // Handle both direct values and updater functions
         const newSizing = typeof updaterOrValue === "function" ? updaterOrValue(columnSizing) : updaterOrValue;
+
         setColumnSizing(newSizing);
     };
 }
@@ -73,5 +74,5 @@ export function createColumnSizingHandler(setColumnSizing: SetStateFunction<Colu
  * Convert URL sorting parameters to TanStack Table SortingState
  */
 export function createSortingState(sortBy?: string, sortOrder?: "asc" | "desc"): SortingState {
-    return sortBy && sortOrder ? [{ id: sortBy, desc: sortOrder === "desc" }] : [];
+    return sortBy && sortOrder ? [{ desc: sortOrder === "desc", id: sortBy }] : [];
 }

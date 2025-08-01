@@ -1,28 +1,30 @@
+import { ArrowRightIcon, ChevronRightIcon, FilterIcon } from "lucide-react";
+import React, { isValidElement, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { ArrowRightIcon, ChevronRightIcon, FilterIcon } from "lucide-react";
-import { isValidElement, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import React from "react";
-import type { Column, ColumnDataType, DataTableFilterActions, FilterStrategy, FiltersState } from "../core/types";
+
+import type { Column, ColumnDataType, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
 import { isAnyOf } from "../lib/array";
 import { getColumn } from "../lib/helpers";
-import { type Locale, t } from "../lib/i18n";
+import type { Locale } from "../lib/i18n";
+import { t } from "../lib/i18n";
 import { FilterValueController } from "./filter-value";
 
 interface FilterSelectorProps<TData> {
-    filters: FiltersState;
-    columns: Column<TData>[];
     actions: DataTableFilterActions;
-    strategy: FilterStrategy;
+    columns: Column<TData>[];
+    filters: FiltersState;
     locale?: Locale;
+    strategy: FilterStrategy;
 }
 
 export const FilterSelector = memo(__FilterSelector) as typeof __FilterSelector;
 
-function __FilterSelector<TData>({ filters, columns, actions, strategy, locale = "en" }: FilterSelectorProps<TData>) {
+function __FilterSelector<TData>({ actions, columns, filters, locale = "en", strategy }: FilterSelectorProps<TData>) {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const [property, setProperty] = useState<string | undefined>(undefined);
@@ -41,58 +43,64 @@ function __FilterSelector<TData>({ filters, columns, actions, strategy, locale =
     }, [property]);
 
     useEffect(() => {
-        if (!open) setTimeout(() => setValue(""), 150);
+        if (!open)
+            setTimeout(() => setValue(""), 150);
     }, [open]);
 
     // biome-ignore lint/correctness/useExhaustiveDependencies: need filters to be updated
     const content = useMemo(
         () =>
-            property && column ? (
+            (property && column
+                ? (
                 <FilterValueController
-                    filter={filter!}
-                    column={column as Column<TData, ColumnDataType>}
                     actions={actions}
-                    strategy={strategy}
+                    column={column as Column<TData, ColumnDataType>}
+                    filter={filter!}
                     locale={locale}
+                    strategy={strategy}
                 />
-            ) : (
+                )
+                : (
                 <Command
-                    loop
                     filter={(value, search, keywords) => {
                         const extendValue = `${value} ${keywords?.join(" ")}`;
+
                         return extendValue.toLowerCase().includes(search.toLowerCase()) ? 1 : 0;
                     }}
+                    loop
                 >
-                    <CommandInput value={value} onValueChange={setValue} ref={inputRef} placeholder={t("search", locale)} />
+                    <CommandInput onValueChange={setValue} placeholder={t("search", locale)} ref={inputRef} value={value} />
                     <CommandEmpty>{t("noresults", locale)}</CommandEmpty>
                     <CommandList className="max-h-fit">
                         <CommandGroup>
                             {columns.map((column) => (
-                                <FilterableColumn key={column.id} column={column} setProperty={setProperty} />
+                                <FilterableColumn column={column} key={column.id} setProperty={setProperty} />
                             ))}
-                            <QuickSearchFilters search={value} filters={filters} columns={columns} actions={actions} />
+                            <QuickSearchFilters actions={actions} columns={columns} filters={filters} search={value} />
                         </CommandGroup>
                     </CommandList>
                 </Command>
-            ),
+                )),
         [property, column, filter, filters, columns, actions, value],
     );
 
     return (
         <Popover
-            open={open}
             onOpenChange={async (value) => {
                 setOpen(value);
-                if (!value) setTimeout(() => setProperty(undefined), 100);
+
+                if (!value)
+                    setTimeout(() => setProperty(undefined), 100);
             }}
+            open={open}
         >
             <PopoverTrigger asChild>
-                <Button variant="outline" className={cn(hasFilters && "w-fit")}>
+                <Button className={cn(hasFilters && "w-fit")} variant="outline">
                     <FilterIcon className="size-4" />
                     {!hasFilters && <span>{t("filter", locale)}</span>}
                 </Button>
             </PopoverTrigger>
-            <PopoverContent align="start" side="bottom" className="w-fit origin-(--radix-popover-content-transform-origin) p-0">
+            <PopoverContent align="start" className="w-fit origin-(--radix-popover-content-transform-origin) p-0" side="bottom">
                 {content}
             </PopoverContent>
         </Popover>
@@ -113,6 +121,7 @@ export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
         if (isAnyOf(column.type, ["option", "multiOption"])) {
             column.prefetchOptions();
         }
+
         column.prefetchValues();
         column.prefetchFacetedUniqueValues();
         column.prefetchFacetedMinMaxValues();
@@ -121,22 +130,25 @@ export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
     useEffect(() => {
         const target = itemRef.current;
 
-        if (!target) return;
+        if (!target)
+            return;
 
         // Set up MutationObserver
         const observer = new MutationObserver((mutations) => {
             for (const mutation of mutations) {
                 if (mutation.type === "attributes") {
                     const isSelected = target.getAttribute("data-selected") === "true";
-                    if (isSelected) prefetch();
+
+                    if (isSelected)
+                        prefetch();
                 }
             }
         });
 
         // Set up observer
         observer.observe(target, {
-            attributes: true,
             attributeFilter: ["data-selected"],
+            attributes: true,
         });
 
         // Cleanup on unmount
@@ -145,18 +157,18 @@ export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
 
     return (
         <CommandItem
-            ref={itemRef}
-            value={column.id}
+            className="group"
             keywords={[column.displayName]}
+            onMouseEnter={prefetch}
             onSelect={() => {
                 setProperty(column.id);
             }}
-            className="group"
-            onMouseEnter={prefetch}
+            ref={itemRef}
+            value={column.id}
         >
             <div className="flex w-full items-center justify-between">
                 <div className="inline-flex items-center gap-1.5">
-                    {<column.icon strokeWidth={2.25} className="size-4" />}
+                    {<column.icon className="size-4" strokeWidth={2.25} />}
                     <span>{column.displayName}</span>
                 </div>
                 <ArrowRightIcon className="size-4 opacity-0 group-aria-selected:opacity-100" />
@@ -166,16 +178,17 @@ export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
 }
 
 interface QuickSearchFiltersProps<TData> {
-    search?: string;
-    filters: FiltersState;
-    columns: Column<TData>[];
     actions: DataTableFilterActions;
+    columns: Column<TData>[];
+    filters: FiltersState;
+    search?: string;
 }
 
 export const QuickSearchFilters = memo(__QuickSearchFilters) as typeof __QuickSearchFilters;
 
-function __QuickSearchFilters<TData>({ search, filters, columns, actions }: QuickSearchFiltersProps<TData>) {
-    if (!search || search.trim().length < 2) return null;
+function __QuickSearchFilters<TData>({ actions, columns, filters, search }: QuickSearchFiltersProps<TData>) {
+    if (!search || search.trim().length < 2)
+        return null;
 
     const cols = useMemo(() => columns.filter((c) => isAnyOf<ColumnDataType>(c.type, ["option", "multiOption"])), [columns]);
 
@@ -187,7 +200,8 @@ function __QuickSearchFilters<TData>({ search, filters, columns, actions }: Quic
                 const optionsCount = column.getFacetedUniqueValues();
 
                 function handleOptionSelect(value: string, check: boolean) {
-                    if (check) actions.addFilterValue(column, [value]);
+                    if (check)
+                        actions.addFilterValue(column, [value]);
                     else actions.removeFilterValue(column, [value]);
                 }
 
@@ -199,13 +213,13 @@ function __QuickSearchFilters<TData>({ search, filters, columns, actions }: Quic
 
                             return (
                                 <CommandItem
+                                    className="group"
                                     key={v.value}
-                                    value={v.value}
                                     keywords={[v.label, v.value]}
                                     onSelect={() => {
                                         handleOptionSelect(v.value, !checked);
                                     }}
-                                    className="group"
+                                    value={v.value}
                                 >
                                     <div className="group flex items-center gap-1.5">
                                         <Checkbox

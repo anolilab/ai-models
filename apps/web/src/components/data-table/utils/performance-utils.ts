@@ -1,4 +1,4 @@
-import { useCallback, useRef, useEffect, useState, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 /**
  * Custom hook for debounced search
@@ -52,12 +52,12 @@ export function useLazyLoading<T>(data: T[], batchSize: number = 100, initialBat
     const hasMore = loadedCount < data.length;
 
     return {
-        loadedData,
         hasMore,
         isLoading,
+        loadedCount,
+        loadedData,
         loadMore,
         totalCount: data.length,
-        loadedCount,
     };
 }
 
@@ -76,9 +76,11 @@ export function createOptimizedRowSelectionHandler<TData>(data: TData[], idField
             Object.entries(newRowSelection).forEach(([rowId, isSelected]) => {
                 if (isSelected) {
                     const rowIndex = parseInt(rowId, 10);
+
                     if (rowIndex >= 0 && rowIndex < data.length) {
                         const item = data[rowIndex];
                         const itemId = String(item[idField]);
+
                         selectedIds.add(itemId);
                     }
                 }
@@ -97,7 +99,7 @@ export function calculateVisibleRange(scrollTop: number, containerHeight: number
     const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
     const endIndex = Math.min(Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan, Number.MAX_SAFE_INTEGER);
 
-    return { startIndex, endIndex };
+    return { endIndex, startIndex };
 }
 
 /**
@@ -149,10 +151,12 @@ export function useMemoizedValue<T>(factory: () => T, deps: React.DependencyList
  * Shallow equality check for dependency arrays
  */
 function shallowEqual(a: React.DependencyList, b: React.DependencyList): boolean {
-    if (a.length !== b.length) return false;
+    if (a.length !== b.length)
+        return false;
 
     for (let i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) return false;
+        if (a[i] !== b[i])
+            return false;
     }
 
     return true;
@@ -227,10 +231,10 @@ export function useIntersectionObserver(callback: () => void, options: Intersect
 
 // Pre-computed sort functions for common data types
 const sortFunctions = {
-    text: (a: string, b: string) => a.localeCompare(b),
-    number: (a: number, b: number) => a - b,
-    date: (a: Date, b: Date) => a.getTime() - b.getTime(),
     boolean: (a: boolean, b: boolean) => Number(a) - Number(b),
+    date: (a: Date, b: Date) => a.getTime() - b.getTime(),
+    number: (a: number, b: number) => a - b,
+    text: (a: string, b: string) => a.localeCompare(b),
 };
 
 /**
@@ -242,20 +246,26 @@ export function createOptimizedSortFunction<T>(accessorKey: keyof T, dataType: "
         const valueB = b[accessorKey];
 
         // Handle null/undefined values
-        if (valueA == null && valueB == null) return 0;
-        if (valueA == null) return 1;
-        if (valueB == null) return -1;
+        if (valueA == null && valueB == null)
+            return 0;
+
+        if (valueA == null)
+            return 1;
+
+        if (valueB == null)
+            return -1;
 
         // Use pre-computed sort functions
         switch (dataType) {
-            case "number":
-                return sortFunctions.number(Number(valueA), Number(valueB));
+            case "boolean":
+                return sortFunctions.boolean(Boolean(valueA), Boolean(valueB));
             case "date":
                 const dateA = valueA instanceof Date ? valueA : new Date(String(valueA));
                 const dateB = valueB instanceof Date ? valueB : new Date(String(valueB));
+
                 return sortFunctions.date(dateA, dateB);
-            case "boolean":
-                return sortFunctions.boolean(Boolean(valueA), Boolean(valueB));
+            case "number":
+                return sortFunctions.number(Number(valueA), Number(valueB));
             case "text":
             default:
                 return sortFunctions.text(String(valueA), String(valueB));
@@ -266,7 +276,7 @@ export function createOptimizedSortFunction<T>(accessorKey: keyof T, dataType: "
 /**
  * Debounced sorting to prevent excessive re-sorting during rapid changes
  */
-export function useDebouncedSorting<T>(data: T[], sortConfig: { id: string; desc: boolean } | null, delay: number = 100) {
+export function useDebouncedSorting<T>(data: T[], sortConfig: { desc: boolean; id: string } | null, delay: number = 100) {
     const [debouncedSortConfig, setDebouncedSortConfig] = useState(sortConfig);
     const timeoutRef = useRef<number>();
 
@@ -292,15 +302,19 @@ export function useDebouncedSorting<T>(data: T[], sortConfig: { id: string; desc
 /**
  * Memoized sorting with stable references
  */
-export function useMemoizedSorting<T>(data: T[], sortConfig: { id: string; desc: boolean } | null, sortFunctions: Record<string, (a: T, b: T) => number>) {
+export function useMemoizedSorting<T>(data: T[], sortConfig: { desc: boolean; id: string } | null, sortFunctions: Record<string, (a: T, b: T) => number>) {
     return useMemo(() => {
-        if (!sortConfig || !data.length) return data;
+        if (!sortConfig || !data.length)
+            return data;
 
         const sortedData = [...data].sort((a, b) => {
             const sortFn = sortFunctions[sortConfig.id];
-            if (!sortFn) return 0;
+
+            if (!sortFn)
+                return 0;
 
             const result = sortFn(a, b);
+
             return sortConfig.desc ? -result : result;
         });
 
@@ -311,11 +325,12 @@ export function useMemoizedSorting<T>(data: T[], sortConfig: { id: string; desc:
 /**
  * Optimized column sorting configuration
  */
-export function createOptimizedColumnSorting<T>(columns: Array<{ accessorKey: keyof T; id: string; meta?: { sortType?: string } }>) {
+export function createOptimizedColumnSorting<T>(columns: { accessorKey: keyof T; id: string; meta?: { sortType?: string } }[]) {
     const sortFunctions: Record<string, (a: T, b: T) => number> = {};
 
     columns.forEach((column) => {
         const sortType = column.meta?.sortType || "text";
+
         sortFunctions[column.id] = createOptimizedSortFunction(column.accessorKey, sortType as any);
     });
 

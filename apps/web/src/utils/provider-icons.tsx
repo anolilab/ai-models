@@ -1,13 +1,13 @@
+import { getIcon, isSvgIcon, spriteSheet } from "@anolilab/provider-registry/icons";
 import React from "react";
-import { getIcon, spriteSheet, isSvgIcon } from "@anolilab/provider-registry/icons";
 
 interface ProviderIconProps {
-    providerIcon: string | null;
-    provider: string;
     className?: string;
+    provider: string;
+    providerIcon: string | null;
 }
 
-export const ProviderIcon: React.FC<ProviderIconProps> = ({ providerIcon, provider, className = "w-5 h-5" }) => {
+export const ProviderIcon: React.FC<ProviderIconProps> = ({ className = "w-5 h-5", provider, providerIcon }) => {
     if (!providerIcon) {
         return (
             <div className={`${className} bg-muted flex items-center justify-center rounded`}>
@@ -29,14 +29,14 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({ providerIcon, provid
                     </svg>
                 </div>
             );
-        } else {
-            // Base64 icon - use img tag
-            return (
-                <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
-                    <img src={iconData} alt={provider} className="h-full w-full object-contain" />
-                </div>
-            );
         }
+
+        // Base64 icon - use img tag
+        return (
+                <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
+                    <img alt={provider} className="h-full w-full object-contain" src={iconData} />
+                </div>
+        );
     }
 
     // Fallback to text if no icon is found

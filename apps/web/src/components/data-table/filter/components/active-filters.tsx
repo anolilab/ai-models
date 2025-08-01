@@ -1,8 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, FilterStrategy, FiltersState } from "../core/types";
+
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
+import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, FiltersState, FilterStrategy } from "../core/types";
 import { getColumn } from "../lib/helpers";
 import type { Locale } from "../lib/i18n";
 import { FilterOperator } from "./filter-operator";
@@ -10,14 +12,14 @@ import { FilterSubject } from "./filter-subject";
 import { FilterValue } from "./filter-value";
 
 interface ActiveFiltersProps<TData> {
+    actions: DataTableFilterActions;
     columns: Column<TData>[];
     filters: FiltersState;
-    actions: DataTableFilterActions;
-    strategy: FilterStrategy;
     locale?: Locale;
+    strategy: FilterStrategy;
 }
 
-export function ActiveFilters<TData>({ columns, filters, actions, strategy, locale = "en" }: ActiveFiltersProps<TData>) {
+export function ActiveFilters<TData>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>) {
     return (
         <>
             {filters.map((filter) => {
@@ -32,12 +34,12 @@ export function ActiveFilters<TData>({ columns, filters, actions, strategy, loca
 
                 return (
                     <ActiveFilter
-                        key={`active-filter-${filter.columnId}`}
-                        filter={filter}
-                        column={column}
                         actions={actions}
-                        strategy={strategy}
+                        column={column}
+                        filter={filter}
+                        key={`active-filter-${filter.columnId}`}
                         locale={locale}
+                        strategy={strategy}
                     />
                 );
             })}
@@ -46,24 +48,24 @@ export function ActiveFilters<TData>({ columns, filters, actions, strategy, loca
 }
 
 interface ActiveFilterProps<TData, TType extends ColumnDataType> {
-    filter: FilterModel<TType>;
-    column: Column<TData, TType>;
     actions: DataTableFilterActions;
-    strategy: FilterStrategy;
+    column: Column<TData, TType>;
+    filter: FilterModel<TType>;
     locale?: Locale;
+    strategy: FilterStrategy;
 }
 
 // Generic render function for a filter with type-safe value
-export function ActiveFilter<TData, TType extends ColumnDataType>({ filter, column, actions, strategy, locale = "en" }: ActiveFilterProps<TData, TType>) {
+export function ActiveFilter<TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) {
     return (
         <div className="border-border bg-background flex items-center border text-xs shadow-xs">
             <FilterSubject column={column} />
             <Separator orientation="vertical" />
-            <FilterOperator filter={filter} column={column} actions={actions} locale={locale} />
+            <FilterOperator actions={actions} column={column} filter={filter} locale={locale} />
             <Separator orientation="vertical" />
-            <FilterValue filter={filter} column={column} actions={actions} strategy={strategy} locale={locale} />
+            <FilterValue actions={actions} column={column} filter={filter} locale={locale} strategy={strategy} />
             <Separator orientation="vertical" />
-            <Button variant="ghost" className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)}>
+            <Button className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)} variant="ghost">
                 <X className="size-4" />
             </Button>
         </div>
@@ -78,7 +80,7 @@ export function ActiveFiltersMobileContainer({ children }: { children: React.Rea
     // Check if there's content to scroll and update blur states
     const checkScroll = () => {
         if (scrollContainerRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            const { clientWidth, scrollLeft, scrollWidth } = scrollContainerRef.current;
 
             // Show left blur if scrolled to the right
             setShowLeftBlur(scrollLeft > 0);
@@ -94,7 +96,9 @@ export function ActiveFiltersMobileContainer({ children }: { children: React.Rea
             const resizeObserver = new ResizeObserver(() => {
                 checkScroll();
             });
+
             resizeObserver.observe(scrollContainerRef.current);
+
             return () => {
                 resizeObserver.disconnect();
             };
@@ -115,7 +119,7 @@ export function ActiveFiltersMobileContainer({ children }: { children: React.Rea
             )}
 
             {/* Scrollable container */}
-            <div ref={scrollContainerRef} className="no-scrollbar flex gap-2 overflow-x-scroll" onScroll={checkScroll}>
+            <div className="no-scrollbar flex gap-2 overflow-x-scroll" onScroll={checkScroll} ref={scrollContainerRef}>
                 {children}
             </div>
 

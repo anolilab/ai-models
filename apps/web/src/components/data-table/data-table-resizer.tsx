@@ -1,8 +1,9 @@
 "use client";
 
+import { GripVertical } from "lucide-react";
+
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { GripVertical } from "lucide-react";
 
 // Simplified resizer component without complex types
 export function DataTableResizer({ header }: { header: any }) {
@@ -10,21 +11,21 @@ export function DataTableResizer({ header }: { header: any }) {
 
     return (
         <div
-            onMouseDown={header.getResizeHandler()}
-            onTouchStart={header.getResizeHandler()}
+            aria-hidden="true"
             className={cn(
                 "absolute top-0 right-0 flex h-full w-4 cursor-col-resize touch-none items-center justify-center select-none",
                 "z-10 opacity-0 group-hover/th:opacity-100",
                 isResizing && "opacity-100",
             )}
-            aria-hidden="true"
             data-resizing={isResizing ? "true" : undefined}
+            onMouseDown={header.getResizeHandler()}
+            onTouchStart={header.getResizeHandler()}
         >
             <div className="flex h-4/5 items-center justify-center">
                 <Separator
-                    orientation="vertical"
-                    decorative={false}
                     className={cn("h-4/5 w-0.5 transition-colors duration-200", isResizing ? "bg-primary" : "bg-border")}
+                    decorative={false}
+                    orientation="vertical"
                 />
 
                 {/* Use the GripVertical icon for better visual indication */}

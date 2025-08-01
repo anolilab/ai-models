@@ -15,7 +15,6 @@ export async function localDummyServer(port: number) {
         if (req.method === "OPTIONS") {
             res.writeHead(200);
             res.end();
-            return;
         }
     });
 
@@ -50,5 +49,6 @@ export async function localDummyServer(port: number) {
     await startServer;
 
     await new Promise((r) => setTimeout(r, 500));
+
     return server;
 }
