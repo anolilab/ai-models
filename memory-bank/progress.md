@@ -39,6 +39,20 @@
 - **Production build**: Successfully builds with 3.55 MB total size
 - **Per-provider uniqueness**: Models can have the same ID across different providers (e.g., "gpt-4" in OpenAI and other providers)
 - **Only 3 duplicates removed**: Only true duplicates within the same provider are removed
+- **Context Window Filtering Bug Fixed**: 
+  - **Critical Issue Resolved**: searchModels function now properly excludes models with null/undefined context values when filtering by context window range
+  - **Root Cause**: Previous logic only excluded models with context values that didn't meet criteria, but didn't handle null/undefined context values
+  - **Solution**: Updated filtering logic to properly exclude models with null/undefined context when context_min or context_max criteria are specified
+  - **Test Validation**: Previously failing test now passes, all 29 tests continue to pass
+- **JSDoc Documentation Enhanced**:
+  - **Complete Parameter Documentation**: Added @param tags for all function parameters
+  - **Return Value Documentation**: Added @returns tags for all functions
+  - **Detailed Descriptions**: Enhanced function descriptions to be more descriptive and follow proper JSDoc patterns
+  - **Nested Object Documentation**: Documented complex objects like criteria.modalities with their nested properties
+  - **Important Notes**: Documented special behavior like excluding null context values
+  - **Consistent Formatting**: All JSDoc comments follow the same style and format
+  - **Property Name Fixes**: Fixed property name mismatches (tool_call → toolCall, streaming_supported → streamingSupported)
+  - **Code Quality**: Merged nested if statements to reduce complexity and improve readability
 
 ## Web Application ✅ INTEGRATED
 - Modern React application with TanStack Router
@@ -59,6 +73,8 @@
 - **Data quality optimized**: Per-provider uniqueness ensures correct model representation
 - **Ready for production**: All tests passing, build successful, package version 1.0.0
 - **Comprehensive coverage**: 1,676 models from 25 providers with pricing data
+- **Critical bugs resolved**: Context window filtering bug fixed, all functionality working correctly
+- **Documentation complete**: All functions have comprehensive and valid JSDoc documentation
 
 ## Known Issues
-- None - all critical issues have been resolved 
+- None - all critical issues have been resolved including the context window filtering bug 
