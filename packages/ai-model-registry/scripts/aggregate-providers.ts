@@ -9,7 +9,9 @@ import type { Model } from "../src/schema.js";
 import { ModelSchema } from "../src/schema.js";
 import { BRAND_NAME_MAP, PROVIDER_ICON_MAP } from "./config.js";
 
+// eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
 const __dirname = dirname(__filename);
 
 const PROVIDERS_DIR = resolve(__dirname, "../data/providers");
@@ -770,7 +772,7 @@ const main = async (): Promise<void> => {
                 totalModels: synchronizedModels.length,
                 totalProviders: new Set(synchronizedModels.map(m => m.provider)).size,
                 lastUpdated: new Date().toISOString(),
-                version: "1.0.0",
+                version: "0.0.0-development",
                 description: "AI Models API - Comprehensive database of AI model specifications, pricing, and features"
             }
         };

@@ -14,7 +14,7 @@ export const HowToUseDialog = () => {
                     How to use
                 </Button>
             </DialogTrigger>
-            <DialogContent className="max-h-[80vh] flex flex-col" style={{ maxWidth: '896px' }}>
+            <DialogContent className="max-h-[80vh] flex flex-col" style={{ maxWidth: "896px" }}>
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold">How to use</DialogTitle>
                     <DialogDescription className="text-base">
@@ -26,7 +26,7 @@ export const HowToUseDialog = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-2">About</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            AI Models is a comprehensive, open-source database that automates the collection and organization of AI model metadata from 25+ providers. 
+                            AI Models is a comprehensive, open-source database that automates the collection and organization of AI model metadata from 25+ providers.
                             We solve the problem of scattered model information by providing a unified, always-up-to-date source of model specifications, pricing, and features.
                         </p>
                     </div>
@@ -95,10 +95,6 @@ export const HowToUseDialog = () => {
                                     <br />
                                     const model = getModelById('gpt-4');
                                     <br />
-                                    <br />
-                                    // Filter by provider
-                                    <br />
-                                    const openaiModels = allModels.filter(m => m.provider === 'OpenAI');
                                 </div>
                             </div>
                             <div>
@@ -185,4 +181,4 @@ export const HowToUseDialog = () => {
             </DialogContent>
         </Dialog>
     );
-}; 
+};

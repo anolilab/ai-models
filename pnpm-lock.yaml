@@ -337,21 +337,39 @@ importers:
       '@anolilab/prettier-config':
         specifier: ^6.0.3
         version: 6.0.3(prettier@3.6.2)
+      '@anolilab/semantic-release-clean-package-json':
+        specifier: 3.0.3
+        version: 3.0.3(yaml@2.8.0)
       '@anolilab/semantic-release-pnpm':
-        specifier: ^1.1.11
-        version: 1.1.12(@types/node@24.1.0)(yaml@2.8.0)
-      '@anolilab/semantic-release-preset':
-        specifier: ^10.0.5
-        version: 10.0.6(@anolilab/semantic-release-pnpm@1.1.12(@types/node@24.1.0)(yaml@2.8.0))(@semantic-release/npm@12.0.2(semantic-release@24.2.7(typescript@5.9.2)))(semantic-release@24.2.7(typescript@5.9.2))(yaml@2.8.0)
+        specifier: ^2.0.3
+        version: 2.0.3(@types/node@24.1.0)(yaml@2.8.0)
       '@arethetypeswrong/cli':
-        specifier: ^0.18.1
+        specifier: ^0.18.2
         version: 0.18.2
       '@lobehub/icons-static-svg':
         specifier: ^1.60.0
         version: 1.60.0
       '@secretlint/secretlint-rule-preset-recommend':
-        specifier: ^9.3.2
-        version: 9.3.4
+        specifier: ^10.2.1
+        version: 10.2.1
+      '@semantic-release/changelog':
+        specifier: ^6.0.3
+        version: 6.0.3(semantic-release@24.2.7(typescript@5.9.2))
+      '@semantic-release/commit-analyzer':
+        specifier: 13.0.1
+        version: 13.0.1(semantic-release@24.2.7(typescript@5.9.2))
+      '@semantic-release/exec':
+        specifier: ^7.1.0
+        version: 7.1.0(semantic-release@24.2.7(typescript@5.9.2))
+      '@semantic-release/git':
+        specifier: ^10.0.1
+        version: 10.0.1(semantic-release@24.2.7(typescript@5.9.2))
+      '@semantic-release/github':
+        specifier: ^11.0.3
+        version: 11.0.3(semantic-release@24.2.7(typescript@5.9.2))
+      '@semantic-release/release-notes-generator':
+        specifier: 14.0.3
+        version: 14.0.3(semantic-release@24.2.7(typescript@5.9.2))
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -371,8 +389,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       conventional-changelog-conventionalcommits:
-        specifier: 9.0.0
-        version: 9.0.0
+        specifier: 9.1.0
+        version: 9.1.0
       eslint:
         specifier: ^9.32.0
         version: 9.32.0(jiti@2.5.1)
@@ -389,11 +407,14 @@ importers:
         specifier: 3.13.0
         version: 3.13.0
       secretlint:
-        specifier: 9.3.2
-        version: 9.3.2
+        specifier: 10.2.1
+        version: 10.2.1
       semantic-release:
         specifier: ^24.2.7
         version: 24.2.7(typescript@5.9.2)
+      semantic-release-plugin-update-version-in-files:
+        specifier: ^2.0.0
+        version: 2.0.0
       sort-package-json:
         specifier: ^3.4.0
         version: 3.4.0
@@ -555,34 +576,17 @@ packages:
     peerDependencies:
       prettier: 3.6.2
 
-  '@anolilab/rc@1.1.8':
-    resolution: {integrity: sha512-bcjlqjI0As2oRQ4p+qB8mJ1aXDDKuWW+t37h98M4lpNSRWro5R7Ioxfiedax3AUuKuhwmJlOm9+aIS3JiqIxeQ==}
-    engines: {node: '>=18.17 <=24.*'}
+  '@anolilab/rc@2.0.3':
+    resolution: {integrity: sha512-yCuItvLNbGyp/uyVtd6oGHDIpohsT/Nlyqh1uccWK1HZdzkERoDaacb9NMpdrdCqrbw02IT40xqMYZIzaVZRFg==}
+    engines: {node: '>=20.8.1'}
 
-  '@anolilab/semantic-release-clean-package-json@2.0.3':
-    resolution: {integrity: sha512-OYFne2ZyQ4q6k7az/yG0XLDgA3wePbROgj1qoEpIm0/F09ZG7pFLb6ITxBx58i+o1XToKsP8KFd7ARNx+8DScQ==}
-    engines: {node: '>=18.17 <=24.*'}
+  '@anolilab/semantic-release-clean-package-json@3.0.3':
+    resolution: {integrity: sha512-4Yzf1YK6/ATebTv99Hwzzle9pxGD/hkJGyM1FlhBpsBSnawR8757ZG3YEp/YmayVcP2S6wPn8fi7hQX2c1KT9A==}
+    engines: {node: '>=20.8.1'}
 
-  '@anolilab/semantic-release-pnpm@1.1.12':
-    resolution: {integrity: sha512-4nJBWs52tJhNZobP4T586upXEYplwBeTJ9xT/oo6IGWHGuiYYgR/yj3XiByEzRTxYnaD464tOkFrlPxfO5P0LQ==}
-    engines: {node: '>=18.17 <=24.*'}
-
-  '@anolilab/semantic-release-preset@10.0.6':
-    resolution: {integrity: sha512-TxGgLizsgV7UcPLmN/9GhJHnFNXunJjQE75E69Jgf3oS2XGreMM72VBR7AQ9AElUEHBheEyCcGgv+zYS3MQCqg==}
-    engines: {node: '>=18.17 <=24.*'}
-    os: [darwin, linux, win32]
-    peerDependencies:
-      '@anolilab/semantic-release-pnpm': 1.1.12
-      '@semantic-release/npm': ^12.0.1
-      semantic-release: ^24.2.3
-      semantic-release-yarn: ^3.0.2
-    peerDependenciesMeta:
-      '@anolilab/semantic-release-pnpm':
-        optional: true
-      '@semantic-release/npm':
-        optional: true
-      semantic-release-yarn:
-        optional: true
+  '@anolilab/semantic-release-pnpm@2.0.3':
+    resolution: {integrity: sha512-7uaR6YSnHx62oBCxBsL5secRRE5/lEMYiRbVZWfapIlScVhYY7h12epV82YAYEwMDQvRGRhOLVyTwrb0juiLOA==}
+    engines: {node: '>=20.8.1'}
 
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
@@ -3589,77 +3593,39 @@ packages:
     resolution: {integrity: sha512-nyuRy8uo2+mXPIRLJ93wizD1HbcdDIsVfgCT01p/zGVFrtvmiL7wqsl4KgZH0QFBM/KRLDLeog3/eaM5ASjtvw==}
     engines: {node: '>=20.0.0'}
 
-  '@secretlint/config-creator@9.3.4':
-    resolution: {integrity: sha512-GRMYfHJ+rewwB26CC3USVObqSQ/mDLXzXcUMJw/wJisPr3HDZmdsYlcsNnaAcGN+EZmvqSDkgSibQm1hyZpzbg==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-
   '@secretlint/config-loader@10.2.1':
     resolution: {integrity: sha512-ob1PwhuSw/Hc6Y4TA63NWj6o++rZTRJOwPZG82o6tgEURqkrAN44fXH9GIouLsOxKa8fbCRLMeGmSBtJLdSqtw==}
     engines: {node: '>=20.0.0'}
-
-  '@secretlint/config-loader@9.3.4':
-    resolution: {integrity: sha512-sy+yWDWh4cbAbpQYLiO39DjwNGEK1EUhTqNamLLBo163BdJP10FIWhqpe8mtGQBSBXRtxr8Hg/gc3Xe4meIoww==}
-    engines: {node: ^14.13.1 || >=16.0.0}
 
   '@secretlint/core@10.2.1':
     resolution: {integrity: sha512-2sPp5IE7pM5Q+f1/NK6nJ49FKuqh+e3fZq5MVbtVjegiD4NMhjcoML1Cg7atCBgXPufhXRHY1DWhIhkGzOx/cw==}
     engines: {node: '>=20.0.0'}
 
-  '@secretlint/core@9.3.4':
-    resolution: {integrity: sha512-ErIVHI6CJd191qdNKuMkH3bZQo9mWJsrSg++bQx64o0WFuG5nPvkYrDK0p/lebf+iQuOnzvl5HrZU6GU9a6o+Q==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-
   '@secretlint/formatter@10.2.1':
     resolution: {integrity: sha512-0A7ho3j0Y4ysK0mREB3O6FKQtScD4rQgfzuI4Slv9Cut1ynQOI7JXAoIFm4XVzhNcgtmEPeD3pQB206VFphBgQ==}
     engines: {node: '>=20.0.0'}
-
-  '@secretlint/formatter@9.3.4':
-    resolution: {integrity: sha512-ARpoBOKz6WP3ocLITCFkR1/Lj636ugpBknylhlpc45r5aLdvmyvWAJqodlw5zmUCfgD6JXeAMf3Hi60aAiuqWQ==}
-    engines: {node: ^14.13.1 || >=16.0.0}
 
   '@secretlint/node@10.2.1':
     resolution: {integrity: sha512-MQFte7C+5ZHINQGSo6+eUECcUCGvKR9PVgZcTsRj524xsbpeBqF1q1dHsUsdGb9r2jlvf40Q14MRZwMcpmLXWQ==}
     engines: {node: '>=20.0.0'}
 
-  '@secretlint/node@9.3.4':
-    resolution: {integrity: sha512-S0u8i+CnPmyAKtuccgot9L5cmw6DqJc0F+b3hhVIALd8kkeLt3RIXOOej15tU7N0V1ISph90Gz92V72ovsprgQ==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-
   '@secretlint/profiler@10.2.1':
     resolution: {integrity: sha512-gOlfPZ1ASc5mP5cqsL809uMJGp85t+AJZg1ZPscWvB/m5UFFgeNTZcOawggb1S5ExDvR388sIJxagx5hyDZ34g==}
 
-  '@secretlint/profiler@9.3.4':
-    resolution: {integrity: sha512-99WmaHd4dClNIm5BFsG++E6frNIZ3qVwg6s804Ql/M19pDmtZOoVCl4/UuzWpwNniBqLIgn9rHQZ/iGlIW3wyw==}
-
   '@secretlint/resolver@10.2.1':
     resolution: {integrity: sha512-AuwehKwnE2uxKaJVv2Z5a8FzGezBmlNhtLKm70Cvsvtwd0oAtenxCSTKXkiPGYC0+S91fAw3lrX7CUkyr9cTCA==}
-
-  '@secretlint/resolver@9.3.4':
-    resolution: {integrity: sha512-L1lIrcjzqcspPzZttmOvMmOFDpJTYFyRBONg94TZBWrpv4x0w5G2SYR+K7EE1SbYQAiPxw1amoXT1YRP8cZF2A==}
 
   '@secretlint/secretlint-rule-preset-recommend@10.2.1':
     resolution: {integrity: sha512-/kj3UOpFbJt80dqoeEaUVv5nbeW1jPqPExA447FItthiybnaDse5C5HYcfNA2ywEInr399ELdcmpEMRe+ld1iQ==}
     engines: {node: '>=20.0.0'}
 
-  '@secretlint/secretlint-rule-preset-recommend@9.3.4':
-    resolution: {integrity: sha512-RvzrLNN2A0B2bYQgRSRjh2dkdaIDuhXjj4SO5bElK1iBtJNiD6VBTxSSY1P3hXYaBeva7MEF+q1PZ3cCL8XYOA==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-
   '@secretlint/source-creator@10.2.1':
     resolution: {integrity: sha512-1CgO+hsRx8KdA5R/LEMNTJkujjomwSQQVV0BcuKynpOefV/rRlIDVQJOU0tJOZdqUMC15oAAwQXs9tMwWLu4JQ==}
     engines: {node: '>=20.0.0'}
 
-  '@secretlint/source-creator@9.3.4':
-    resolution: {integrity: sha512-I9ZA1gm9HJNaAhZiQdInY9VM04VTAGDV4bappVbEJzMUDnK/LTbYqfQ88RPqgCGCqa6ee8c0/j5Bn7ypweouIw==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-
   '@secretlint/types@10.2.1':
     resolution: {integrity: sha512-F5k1qpoMoUe7rrZossOBgJ3jWKv/FGDBZIwepqnefgPmNienBdInxhtZeXiGwjcxXHVhsdgp6I5Fi/M8PMgwcw==}
     engines: {node: '>=20.0.0'}
-
-  '@secretlint/types@9.3.4':
-    resolution: {integrity: sha512-z9rdKHNeL4xa48+367RQJVw1d7/Js9HIQ+gTs/angzteM9osfgs59ad3iwVRhCGYbeUoUUDe2yxJG2ylYLaH3Q==}
-    engines: {node: ^14.13.1 || >=16.0.0}
 
   '@semantic-release/changelog@6.0.3':
     resolution: {integrity: sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==}
@@ -4168,32 +4134,17 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@textlint/ast-node-types@14.8.4':
-    resolution: {integrity: sha512-+fI7miec/r9VeniFV9ppL4jRCmHNsTxieulTUf/4tvGII3db5hGriKHC4p/diq1SkQ9Sgs7kg6UyydxZtpTz1Q==}
-
   '@textlint/ast-node-types@15.2.1':
     resolution: {integrity: sha512-20fEcLPsXg81yWpApv4FQxrZmlFF/Ta7/kz1HGIL+pJo5cSTmkc+eCki3GpOPZIoZk0tbJU8hrlwUb91F+3SNQ==}
-
-  '@textlint/linter-formatter@14.8.4':
-    resolution: {integrity: sha512-sZ0UfYRDBNHnfMVBqLqqYnqTB7Ec169ljlmo+SEHR1T+dHUPYy1/DZK4p7QREXlBSFL4cnkswETCbc9xRodm4Q==}
 
   '@textlint/linter-formatter@15.2.1':
     resolution: {integrity: sha512-oollG/BHa07+mMt372amxHohteASC+Zxgollc1sZgiyxo4S6EuureV3a4QIQB0NecA+Ak3d0cl0WI/8nou38jw==}
 
-  '@textlint/module-interop@14.8.4':
-    resolution: {integrity: sha512-1LdPYLAVpa27NOt6EqvuFO99s4XLB0c19Hw9xKSG6xQ1K82nUEyuWhzTQKb3KJ5Qx7qj14JlXZLfnEuL6A16Bw==}
-
   '@textlint/module-interop@15.2.1':
     resolution: {integrity: sha512-b/C/ZNrm05n1ypymDknIcpkBle30V2ZgE3JVqQlA9PnQV46Ky510qrZk6s9yfKgA3m1YRnAw04m8xdVtqjq1qg==}
 
-  '@textlint/resolver@14.8.4':
-    resolution: {integrity: sha512-nMDOgDAVwNU9ommh+Db0U+MCMNDPbQ/1HBNjbnHwxZkCpcT6hsAJwBe38CW/DtWVUv8yeR4R40IYNPT84srNwA==}
-
   '@textlint/resolver@15.2.1':
     resolution: {integrity: sha512-FY3aK4tElEcOJVUsaMj4Zro4jCtKEEwUMIkDL0tcn6ljNcgOF7Em+KskRRk/xowFWayqDtdz5T3u7w/6fjjuJQ==}
-
-  '@textlint/types@14.8.4':
-    resolution: {integrity: sha512-9nyY8vVXlr8hHKxa6+37omJhXWCwovMQcgMteuldYd4dOxGm14AK2nXdkgtKEUQnzLGaXy46xwLCfhQy7V7/YA==}
 
   '@textlint/types@15.2.1':
     resolution: {integrity: sha512-zyqNhSatK1cwxDUgosEEN43hFh3WCty9Zm2Vm3ogU566IYegifwqN54ey/CiRy/DiO4vMcFHykuQnh2Zwp6LLw==}
@@ -5463,10 +5414,6 @@ packages:
   conventional-changelog-conventionalcommits@7.0.2:
     resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
     engines: {node: '>=16'}
-
-  conventional-changelog-conventionalcommits@9.0.0:
-    resolution: {integrity: sha512-5e48V0+DsWvQBEnnbBFhYQwYDzFPXVrakGPP1uSxekDkr5d7YWrmaWsgJpKFR0SkXmxK6qQr9O42uuLb9wpKxA==}
-    engines: {node: '>=18'}
 
   conventional-changelog-conventionalcommits@9.1.0:
     resolution: {integrity: sha512-MnbEysR8wWa8dAEvbj5xcBgJKQlX/m0lhS8DsyAAWDHdfs2faDJxTgzRYlRYpXSe7UiKrIIlB4TrBKU9q9DgkA==}
@@ -7434,10 +7381,6 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
-  json-parse-even-better-errors@3.0.2:
-    resolution: {integrity: sha512-fi0NG4bPjCHunUJffmLd0gxssIgkNmArMvis4iNah6Owg1MCJjWhEcDLmsK6iGkJq3tHwbDkTlce70/tmXN4cQ==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -8467,10 +8410,6 @@ packages:
     resolution: {integrity: sha512-wPrq66Llhl7/4AGC6I+cqxT07LhXvWL08LNXz1fENOw0Ap4sRZZ/gZpTTJ5jpurzzzfS2W/Ge9BY3LgLjCShcw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  p-map@4.0.0:
-    resolution: {integrity: sha512-/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==}
-    engines: {node: '>=10'}
-
   p-map@7.0.3:
     resolution: {integrity: sha512-VkndIv2fIB99swvQoA65bm+fsmt6UNdGeIB0oxBs+WhAhdh08QA04JXpI7rbB9r08/nkbysKoya9rtDERYOYMA==}
     engines: {node: '>=18'}
@@ -8535,10 +8474,6 @@ packages:
   parse-json@5.2.0:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
-
-  parse-json@7.1.1:
-    resolution: {integrity: sha512-SgOTCX/EZXtZxBE5eJ97P4yGM5n37BwRU+YMsH4vNzFqJV/oWFXXCmwFlgWUM4PrakybVOueJJ6pwHqSVhTFDw==}
-    engines: {node: '>=16'}
 
   parse-json@8.3.0:
     resolution: {integrity: sha512-ybiGyvspI+fAoRQbIPRddCcSTV9/LsJbf0e/S85VLowVGzRmokfneg2kwVW/KU5rOXrPSbF1qAKPMgNTqqROQQ==}
@@ -8990,10 +8925,6 @@ packages:
     resolution: {integrity: sha512-MbgfoNPANMdb4oRBNg5eqLbB2t2r+o5Ua1pNt8BqGp4I0FJZhuVSOj3PaBPni4azWuSzEdNn2evevzVmEk1ohQ==}
     engines: {node: '>=18'}
 
-  read-pkg@8.1.0:
-    resolution: {integrity: sha512-PORM8AgzXeskHO/WEv312k9U03B8K9JSiWF/8N9sUuFjBa+9SF2u6K7VClzXwDXab51jCd8Nd36CNM+zR97ScQ==}
-    engines: {node: '>=16'}
-
   read-pkg@9.0.1:
     resolution: {integrity: sha512-9viLL4/n1BJUCT1NXVTdS1jtm80yDEgR5T4yCelII49Mbj0v1rZdKqj7zCiYdbB0CuCgdrvHcNogAKTFPBocFA==}
     engines: {node: '>=18'}
@@ -9249,10 +9180,9 @@ packages:
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  secretlint@9.3.2:
-    resolution: {integrity: sha512-IuFrtWMGeVFSWpuhn1T6JC0mgfwD9rbFNZG1aWtpkBKOUCbcKZ+RoJcJjdJ0DXv8oa9vRg/+DZUl6Q6omZdPQQ==}
-    engines: {node: ^14.13.1 || >=16.0.0}
-    hasBin: true
+  semantic-release-plugin-update-version-in-files@2.0.0:
+    resolution: {integrity: sha512-ovpBKjkygkbiTH0CG+vJb62O+eGFoI7PM5KCVuuy2I5Xaj5t9JzmwMtAAls3Ie+R06IQu556P4gIKjJ9FIDJZQ==}
+    engines: {node: '>=18'}
 
   semantic-release@24.2.7:
     resolution: {integrity: sha512-g7RssbTAbir1k/S7uSwSVZFfFXwpomUB9Oas0+xi9KStSCmeDXcA7rNhiskjLqvUe/Evhx8fVCT16OSa34eM5g==}
@@ -9661,10 +9591,6 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  supports-hyperlinks@2.3.0:
-    resolution: {integrity: sha512-RpsAZlpWcDwOPQA22aCH4J0t7L8JmAvsCxfOSEwm7cQs3LshN36QaTkwd70DnBOXDWGssw2eUoc8CaRWT0XunA==}
-    engines: {node: '>=8'}
-
   supports-hyperlinks@3.2.0:
     resolution: {integrity: sha512-zFObLMyZeEwzAoKCyu1B91U79K2t7ApXuQfo8OuxwXLDgcKxuwM+YvcbIhm6QWqz7mHUH1TVytR1PwVVjEuMig==}
     engines: {node: '>=14.18'}
@@ -9722,10 +9648,6 @@ packages:
   tempy@3.1.0:
     resolution: {integrity: sha512-7jDLIdD2Zp0bDe5r3D2qtkd1QOCacylBuL7oa4udvN6v2pqr4+LcCr67C8DR1zkpaZ8XosF5m1yQSabKAW6f2g==}
     engines: {node: '>=14.16'}
-
-  terminal-link@2.1.1:
-    resolution: {integrity: sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ==}
-    engines: {node: '>=8'}
 
   terminal-link@4.0.0:
     resolution: {integrity: sha512-lk+vH+MccxNqgVqSnkMVKx4VLJfnLjDBGzH16JVZjKE2DoxP57s6/vt6JmXV5I3jBcfGrxNrYtC+mPtU7WJztA==}
@@ -9928,10 +9850,6 @@ packages:
   type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
-
-  type-fest@3.13.1:
-    resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
-    engines: {node: '>=14.16'}
 
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
@@ -10793,7 +10711,7 @@ snapshots:
     dependencies:
       prettier: 3.6.2
 
-  '@anolilab/rc@1.1.8(yaml@2.8.0)':
+  '@anolilab/rc@2.0.3(yaml@2.8.0)':
     dependencies:
       '@visulima/fs': 3.1.5(yaml@2.8.0)
       '@visulima/path': 1.4.0
@@ -10802,7 +10720,7 @@ snapshots:
     transitivePeerDependencies:
       - yaml
 
-  '@anolilab/semantic-release-clean-package-json@2.0.3(yaml@2.8.0)':
+  '@anolilab/semantic-release-clean-package-json@3.0.3(yaml@2.8.0)':
     dependencies:
       '@semantic-release/error': 4.0.0
       '@visulima/fs': 3.1.5(yaml@2.8.0)
@@ -10810,9 +10728,9 @@ snapshots:
     transitivePeerDependencies:
       - yaml
 
-  '@anolilab/semantic-release-pnpm@1.1.12(@types/node@24.1.0)(yaml@2.8.0)':
+  '@anolilab/semantic-release-pnpm@2.0.3(@types/node@24.1.0)(yaml@2.8.0)':
     dependencies:
-      '@anolilab/rc': 1.1.8(yaml@2.8.0)
+      '@anolilab/rc': 2.0.3(yaml@2.8.0)
       '@semantic-release/error': 4.0.0
       '@visulima/fs': 3.1.5(yaml@2.8.0)
       '@visulima/package': 3.5.8(@types/node@24.1.0)(yaml@2.8.0)
@@ -10824,24 +10742,6 @@ snapshots:
       semver: 7.7.2
     transitivePeerDependencies:
       - '@types/node'
-      - yaml
-
-  '@anolilab/semantic-release-preset@10.0.6(@anolilab/semantic-release-pnpm@1.1.12(@types/node@24.1.0)(yaml@2.8.0))(@semantic-release/npm@12.0.2(semantic-release@24.2.7(typescript@5.9.2)))(semantic-release@24.2.7(typescript@5.9.2))(yaml@2.8.0)':
-    dependencies:
-      '@anolilab/semantic-release-clean-package-json': 2.0.3(yaml@2.8.0)
-      '@semantic-release/changelog': 6.0.3(semantic-release@24.2.7(typescript@5.9.2))
-      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@24.2.7(typescript@5.9.2))
-      '@semantic-release/exec': 7.1.0(semantic-release@24.2.7(typescript@5.9.2))
-      '@semantic-release/git': 10.0.1(semantic-release@24.2.7(typescript@5.9.2))
-      '@semantic-release/github': 11.0.3(semantic-release@24.2.7(typescript@5.9.2))
-      '@semantic-release/release-notes-generator': 14.0.3(semantic-release@24.2.7(typescript@5.9.2))
-      conventional-changelog-conventionalcommits: 9.0.0
-      semantic-release: 24.2.7(typescript@5.9.2)
-    optionalDependencies:
-      '@anolilab/semantic-release-pnpm': 1.1.12(@types/node@24.1.0)(yaml@2.8.0)
-      '@semantic-release/npm': 12.0.2(semantic-release@24.2.7(typescript@5.9.2))
-    transitivePeerDependencies:
-      - supports-color
       - yaml
 
   '@antfu/install-pkg@1.1.0':
@@ -13895,10 +13795,6 @@ snapshots:
     dependencies:
       '@secretlint/types': 10.2.1
 
-  '@secretlint/config-creator@9.3.4':
-    dependencies:
-      '@secretlint/types': 9.3.4
-
   '@secretlint/config-loader@10.2.1':
     dependencies:
       '@secretlint/profiler': 10.2.1
@@ -13910,30 +13806,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/config-loader@9.3.4':
-    dependencies:
-      '@secretlint/profiler': 9.3.4
-      '@secretlint/resolver': 9.3.4
-      '@secretlint/types': 9.3.4
-      ajv: 8.17.1
-      debug: 4.4.1
-      rc-config-loader: 4.1.3
-    transitivePeerDependencies:
-      - supports-color
-
   '@secretlint/core@10.2.1':
     dependencies:
       '@secretlint/profiler': 10.2.1
       '@secretlint/types': 10.2.1
-      debug: 4.4.1
-      structured-source: 4.0.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@secretlint/core@9.3.4':
-    dependencies:
-      '@secretlint/profiler': 9.3.4
-      '@secretlint/types': 9.3.4
       debug: 4.4.1
       structured-source: 4.0.0
     transitivePeerDependencies:
@@ -13955,22 +13831,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/formatter@9.3.4':
-    dependencies:
-      '@secretlint/resolver': 9.3.4
-      '@secretlint/types': 9.3.4
-      '@textlint/linter-formatter': 14.8.4
-      '@textlint/module-interop': 14.8.4
-      '@textlint/types': 14.8.4
-      chalk: 4.1.2
-      debug: 4.4.1
-      pluralize: 8.0.0
-      strip-ansi: 6.0.1
-      table: 6.9.0
-      terminal-link: 2.1.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@secretlint/node@10.2.1':
     dependencies:
       '@secretlint/config-loader': 10.2.1
@@ -13984,44 +13844,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/node@9.3.4':
-    dependencies:
-      '@secretlint/config-loader': 9.3.4
-      '@secretlint/core': 9.3.4
-      '@secretlint/formatter': 9.3.4
-      '@secretlint/profiler': 9.3.4
-      '@secretlint/source-creator': 9.3.4
-      '@secretlint/types': 9.3.4
-      debug: 4.4.1
-      p-map: 4.0.0
-    transitivePeerDependencies:
-      - supports-color
-
   '@secretlint/profiler@10.2.1': {}
-
-  '@secretlint/profiler@9.3.4': {}
 
   '@secretlint/resolver@10.2.1': {}
 
-  '@secretlint/resolver@9.3.4': {}
-
   '@secretlint/secretlint-rule-preset-recommend@10.2.1': {}
-
-  '@secretlint/secretlint-rule-preset-recommend@9.3.4': {}
 
   '@secretlint/source-creator@10.2.1':
     dependencies:
       '@secretlint/types': 10.2.1
       istextorbinary: 9.5.0
 
-  '@secretlint/source-creator@9.3.4':
-    dependencies:
-      '@secretlint/types': 9.3.4
-      istextorbinary: 9.5.0
-
   '@secretlint/types@10.2.1': {}
-
-  '@secretlint/types@9.3.4': {}
 
   '@semantic-release/changelog@6.0.3(semantic-release@24.2.7(typescript@5.9.2))':
     dependencies:
@@ -14789,28 +14623,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@textlint/ast-node-types@14.8.4': {}
-
   '@textlint/ast-node-types@15.2.1': {}
-
-  '@textlint/linter-formatter@14.8.4':
-    dependencies:
-      '@azu/format-text': 1.0.2
-      '@azu/style-format': 1.0.1
-      '@textlint/module-interop': 14.8.4
-      '@textlint/resolver': 14.8.4
-      '@textlint/types': 14.8.4
-      chalk: 4.1.2
-      debug: 4.4.1
-      js-yaml: 3.14.1
-      lodash: 4.17.21
-      pluralize: 2.0.0
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      table: 6.9.0
-      text-table: 0.2.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@textlint/linter-formatter@15.2.1':
     dependencies:
@@ -14831,17 +14644,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@textlint/module-interop@14.8.4': {}
-
   '@textlint/module-interop@15.2.1': {}
 
-  '@textlint/resolver@14.8.4': {}
-
   '@textlint/resolver@15.2.1': {}
-
-  '@textlint/types@14.8.4':
-    dependencies:
-      '@textlint/ast-node-types': 14.8.4
 
   '@textlint/types@15.2.1':
     dependencies:
@@ -16290,10 +16095,6 @@ snapshots:
       compare-func: 2.0.0
 
   conventional-changelog-conventionalcommits@7.0.2:
-    dependencies:
-      compare-func: 2.0.0
-
-  conventional-changelog-conventionalcommits@9.0.0:
     dependencies:
       compare-func: 2.0.0
 
@@ -18432,8 +18233,6 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
-  json-parse-even-better-errors@3.0.2: {}
-
   json-schema-traverse@0.4.1: {}
 
   json-schema-traverse@1.0.0: {}
@@ -19742,10 +19541,6 @@ snapshots:
     dependencies:
       p-limit: 4.0.0
 
-  p-map@4.0.0:
-    dependencies:
-      aggregate-error: 3.1.0
-
   p-map@7.0.3: {}
 
   p-queue@8.1.0:
@@ -19810,14 +19605,6 @@ snapshots:
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
-
-  parse-json@7.1.1:
-    dependencies:
-      '@babel/code-frame': 7.27.1
-      error-ex: 1.3.2
-      json-parse-even-better-errors: 3.0.2
-      lines-and-columns: 2.0.3
-      type-fest: 3.13.1
 
   parse-json@8.3.0:
     dependencies:
@@ -20283,13 +20070,6 @@ snapshots:
       read-pkg: 9.0.1
       type-fest: 4.41.0
 
-  read-pkg@8.1.0:
-    dependencies:
-      '@types/normalize-package-data': 2.4.4
-      normalize-package-data: 6.0.2
-      parse-json: 7.1.1
-      type-fest: 4.41.0
-
   read-pkg@9.0.1:
     dependencies:
       '@types/normalize-package-data': 2.4.4
@@ -20625,15 +20405,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  secretlint@9.3.2:
+  semantic-release-plugin-update-version-in-files@2.0.0:
     dependencies:
-      '@secretlint/config-creator': 9.3.4
-      '@secretlint/formatter': 9.3.4
-      '@secretlint/node': 9.3.4
-      '@secretlint/profiler': 9.3.4
       debug: 4.4.1
-      globby: 14.1.0
-      read-pkg: 8.1.0
+      glob: 10.4.5
     transitivePeerDependencies:
       - supports-color
 
@@ -21126,11 +20901,6 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  supports-hyperlinks@2.3.0:
-    dependencies:
-      has-flag: 4.0.0
-      supports-color: 7.2.0
-
   supports-hyperlinks@3.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -21203,11 +20973,6 @@ snapshots:
       temp-dir: 3.0.0
       type-fest: 2.19.0
       unique-string: 3.0.0
-
-  terminal-link@2.1.1:
-    dependencies:
-      ansi-escapes: 4.3.2
-      supports-hyperlinks: 2.3.0
 
   terminal-link@4.0.0:
     dependencies:
@@ -21383,8 +21148,6 @@ snapshots:
   type-fest@1.4.0: {}
 
   type-fest@2.19.0: {}
-
-  type-fest@3.13.1: {}
 
   type-fest@4.41.0: {}
 
