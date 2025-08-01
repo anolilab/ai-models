@@ -15,7 +15,7 @@ const __dirname = dirname(__filename);
 const PROVIDERS_DIR = resolve(__dirname, "../data/providers");
 const OPENROUTER_DIR = resolve(__dirname, "../data/providers/openrouter");
 const OUTPUT_JSON = join(__dirname, "../data/all-models.json");
-const OUTPUT_TS = resolve(__dirname, "../src/models-data.ts");
+const OUTPUT_API_JSON = join(__dirname, "../public/api.json");
 
 /**
  * Adds icon information to models based on their provider
@@ -763,21 +763,21 @@ const main = async (): Promise<void> => {
 
         console.log(`[DONE] Aggregated and synchronized ${synchronizedModels.length} models to ${OUTPUT_JSON}`);
 
-        // Generate TypeScript data file for the package
-        const tsContent = `/* Auto-generated file - do not edit manually
- * Generated from aggregated and synchronized provider data with Helicone pricing
- * 
- * To regenerate this file, run: pnpm run aggregate-providers
- */
+        // Generate API JSON file for CDN serving
+        const apiJson = {
+            models: synchronizedModels,
+            metadata: {
+                totalModels: synchronizedModels.length,
+                totalProviders: new Set(synchronizedModels.map(m => m.provider)).size,
+                lastUpdated: new Date().toISOString(),
+                version: "1.0.0",
+                description: "AI Models API - Comprehensive database of AI model specifications, pricing, and features"
+            }
+        };
 
-import type { Model } from './schema';
+        writeFileSync(OUTPUT_API_JSON, JSON.stringify(apiJson, null, 2));
 
-export const allModels: Model[] = ${JSON.stringify(synchronizedModels, null, 2)} as Model[];
-`;
-
-        writeFileSync(OUTPUT_TS, tsContent);
-
-        console.log(`[DONE] Generated ${OUTPUT_TS} with ${synchronizedModels.length} models`);
+        console.log(`[DONE] Generated API JSON at ${OUTPUT_API_JSON} with ${synchronizedModels.length} models`);
     } catch (error) {
         console.error("Error during aggregation:", error);
 

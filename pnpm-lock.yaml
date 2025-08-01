@@ -303,6 +303,9 @@ importers:
       react-compiler-runtime:
         specifier: 19.1.0-rc.2
         version: 19.1.0-rc.2(react@19.1.0)
+      sort-package-json:
+        specifier: ^3.4.0
+        version: 3.4.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -373,6 +376,9 @@ importers:
       semantic-release:
         specifier: ^24.2.7
         version: 24.2.7(typescript@5.9.2)
+      sort-package-json:
+        specifier: ^3.4.0
+        version: 3.4.0
       tsx:
         specifier: ^4.20.3
         version: 4.20.3

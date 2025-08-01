@@ -63,10 +63,12 @@
         "./icons": {
             "types": "./dist/icons-sprite.d.ts",
             "import": "./dist/icons-sprite.js"
-        }
+        },
+        "./api.json": "./public/api.json"
     },
     "files": [
-        "./dist"
+        "./dist",
+        "./public"
     ],
     "scripts": {
         "aggregate": "tsx ./scripts/aggregate-providers.ts",
@@ -106,6 +108,7 @@
         "puppeteer": "^24.15.0",
         "rss-parser": "3.13.0",
         "semantic-release": "^24.2.7",
+        "sort-package-json": "^3.4.0",
         "tsx": "^4.20.3",
         "typescript": "^5.9.2",
         "typescript-eslint": "^8.38.0",

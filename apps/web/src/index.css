@@ -522,7 +522,6 @@ nav button,
 /* Fixes for Select elements and dropdowns */
 [data-radix-select-trigger],
 [data-radix-popper-content-wrapper] *,
-[data-state="open"] *,
 [data-radix-collection-item],
 [data-value],
 [role="combobox"],

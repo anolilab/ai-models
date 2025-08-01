@@ -1,15 +1,24 @@
 # Active Context
 
 ## Current Work Focus
+- **API JSON Endpoint**: Successfully implemented static CDN API for model data
 - **How to Use Dialog**: Successfully implemented comprehensive help dialog
 - **Provider Registry NPM Package**: Successfully completed and ready for publication
 - **Per-Provider Uniqueness**: Implemented correct deduplication logic
 - **All Provider Issues Resolved**: Fixed Hugging Face, Upstage, and XAI transformers
 
 ## Recent Achievements
+- **API JSON Endpoint Implementation**:
+  - **Static CDN API**: Modified aggregate-providers.ts to generate public/api.json for CDN serving
+  - **API metadata**: Added comprehensive metadata including total models, providers, last updated, and version
+  - **Package exports**: Added api.json export to package.json for easy CDN access
+  - **Dual API endpoints**: 
+    - Unpkg CDN: https://unpkg.com/@anolilab/ai-model-registry/api.json
+    - Custom domain: https://ai-models.anolilab.com/api.json (Netlify redirect)
+  - **Netlify redirect**: Added /api.json redirect to Unpkg with CORS headers
 - **How to Use Dialog Implementation**:
   - **Comprehensive help dialog**: Created detailed dialog explaining project purpose and usage
-  - **NPM package integration**: Added information about @anolilab/ai-model-registry package
+  - **API & NPM package integration**: Added information about both API endpoint and @anolilab/ai-model-registry package
   - **Usage examples**: Included code examples for getting models and specific model lookups
   - **Contribution guidance**: Added links to GitHub and contribution information
   - **Current status display**: Shows 1,676+ models, 25+ providers, pricing data, and open source status
