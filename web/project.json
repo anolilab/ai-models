@@ -1,0 +1,8 @@
+{
+    "name": "web",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/web/src",
+    "projectType": "library",
+    "tags": ["web"],
+    "implicitDependencies": ["ai-model-registry"]
+}

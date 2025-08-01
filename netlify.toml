@@ -1,9 +1,9 @@
 [build]
   # Build command that builds the ai-model-registry package first, then the web app
-  command = "pnpm install && nx build @anolilab/ai-model-registry && nx build web"
+  command = "pnpm install && nx build web"
   
   # Publish directory - the web app's build output
-  publish = "apps/web/dist"
+  publish = "web/dist"
 
 [build.environment]
   NODE_VERSION = "22"
