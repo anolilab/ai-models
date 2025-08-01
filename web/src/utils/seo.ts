@@ -24,7 +24,7 @@ interface SeoOutput {
 /**
  * Generates title string, meta tags, and link tags for SEO.
  */
-export const seo = ({
+const seo = ({
     description,
     image,
     keywords,
@@ -81,3 +81,6 @@ export const seo = ({
         title, // Return title directly as a string
     };
 };
+
+
+export default seo;

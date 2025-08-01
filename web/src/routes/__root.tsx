@@ -12,7 +12,7 @@ import { Toaster } from "@/components/ui/sonner";
 import ConsentManagerProvider from "@/providers/consent-manager";
 import { AnalyticsProvider } from "@/providers/posthog";
 import { IconSpriteSheet } from "@/utils/provider-icons";
-import { seo } from "@/utils/seo";
+import seo from "@/utils/seo";
 
 import appCss from "../index.css?url";
 
@@ -119,7 +119,6 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             // Security and performance
             { content: "nosniff", httpEquiv: "X-Content-Type-Options" },
             { content: "1; mode=block", httpEquiv: "X-XSS-Protection" },
-            { content: "same-origin", httpEquiv: "X-Frame-Options" },
             { content: "max-age=31536000; includeSubDomains", httpEquiv: "Strict-Transport-Security" },
             {
                 content:
@@ -172,7 +171,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
                     type: "application/ld+json",
                 },
             ],
-            title: generatedTitle ?? defaultTitle,
+            title: generatedTitle,
         };
     },
 });
