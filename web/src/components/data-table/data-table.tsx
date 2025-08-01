@@ -643,30 +643,30 @@ const DataTable = <TData extends ExportableData, TValue>({
                 />
             )}
             {tableConfig.enableRowVirtualization ? (
-                    <VirtualizedTable
-                        className={classes.table}
-                        columns={columns}
-                        enableStickyHeader={tableConfig.enableStickyHeader}
-                        onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
-                        table={table}
-                        virtualizationOptions={{
-                            containerHeight: containerHeight ?? 400, // Default fallback height
-                            estimatedRowHeight: virtualizationOptions.estimatedRowHeight ?? tableConfig.estimatedRowHeight,
-                            overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
-                        }}
-                    />
+                <VirtualizedTable
+                    className={classes.table}
+                    columns={columns}
+                    enableStickyHeader={tableConfig.enableStickyHeader}
+                    onKeyDown={tableConfig.enableKeyboardNavigation ? handleKeyDown : undefined}
+                    table={table}
+                    virtualizationOptions={{
+                        containerHeight: containerHeight ?? 400, // Default fallback height
+                        estimatedRowHeight: virtualizationOptions.estimatedRowHeight ?? tableConfig.estimatedRowHeight,
+                        overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
+                    }}
+                />
             ) : (
-                    <RegularTable
-                        className={classes.table}
-                        columns={columns}
-                        containerHeight={containerHeight}
-                        enableClickRowSelect={tableConfig.enableClickRowSelect}
-                        enableColumnResizing={tableConfig.enableColumnResizing}
-                        enableKeyboardNavigation={tableConfig.enableKeyboardNavigation}
-                        enableStickyHeader={tableConfig.enableStickyHeader}
-                        onKeyDown={handleKeyDown}
-                        table={table}
-                    />
+                <RegularTable
+                    className={classes.table}
+                    columns={columns}
+                    containerHeight={containerHeight}
+                    enableClickRowSelect={tableConfig.enableClickRowSelect}
+                    enableColumnResizing={tableConfig.enableColumnResizing}
+                    enableKeyboardNavigation={tableConfig.enableKeyboardNavigation}
+                    enableStickyHeader={tableConfig.enableStickyHeader}
+                    onKeyDown={handleKeyDown}
+                    table={table}
+                />
             )}
 
             {tableConfig.enablePagination && (
@@ -680,6 +680,6 @@ const DataTable = <TData extends ExportableData, TValue>({
             )}
         </div>
     );
-}
+};
 
 export default DataTable;

@@ -1,50 +1,55 @@
 [build]
-  # Build command that builds the ai-model-registry package first, then the web app
-  command = "pnpm install && nx build web"
+# Build command that builds the ai-model-registry package first, then the web app
+command = "pnpm install && nx build web"
 
 [build.environment]
-  NODE_VERSION = "22"
-  
-  # Ensure we're using pnpm
-  NPM_FLAGS = "--version"
-  PNPM_FLAGS = "--version"
+NODE_VERSION = "22"
+
+# Ensure we're using pnpm
+NPM_FLAGS = "--version"
+PNPM_FLAGS = "--version"
 
 # Headers for security and performance
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 # Cache static assets
 [[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/assets/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 # Cache other static files
 [[headers]]
-  for = "*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "*.js"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "*.css"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "*.woff2"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 # API redirect to Unpkg CDN
 [[redirects]]
-  from = "/api.json"
-  to = "https://unpkg.com/@anolilab/ai-model-registry@latest/public/api.json"
-  status = 302
-  force = false
-  headers = {Access-Control-Allow-Origin = "*"} 
+from = "/api.json"
+to = "https://unpkg.com/@anolilab/ai-model-registry@latest/public/api.json"
+status = 302
+force = false
+headers = { Access-Control-Allow-Origin = "*" }

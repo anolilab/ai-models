@@ -28,44 +28,37 @@ interface ActiveFilterProps<TData, TType extends ColumnDataType> {
 }
 
 export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>) => (
-        <>
-            {filters.map((filter) => {
-                const id = filter.columnId;
+    <>
+        {filters.map((filter) => {
+            const id = filter.columnId;
 
-                const column = getColumn(columns, id);
+            const column = getColumn(columns, id);
 
-                // Skip if no filter value
-                if (!filter.values) {
-                    return null;
-                }
+            // Skip if no filter value
+            if (!filter.values) {
+                return null;
+            }
 
-                return (
-                    <ActiveFilter
-                        actions={actions}
-                        column={column}
-                        filter={filter}
-                        key={`active-filter-${filter.columnId}`}
-                        locale={locale}
-                        strategy={strategy}
-                    />
-                );
-            })}
-        </>
+            return (
+                <ActiveFilter actions={actions} column={column} filter={filter} key={`active-filter-${filter.columnId}`} locale={locale} strategy={strategy} />
+            );
+        })}
+    </>
 );
 
 // Generic render function for a filter with type-safe value
 export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) => (
-        <div className="border-border bg-background flex items-center border text-xs shadow-xs">
-            <FilterSubject column={column} />
-            <Separator orientation="vertical" />
-            <FilterOperator actions={actions} column={column} filter={filter} locale={locale} />
-            <Separator orientation="vertical" />
-            <FilterValue actions={actions} column={column} filter={filter} locale={locale} strategy={strategy} />
-            <Separator orientation="vertical" />
-            <Button className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)} variant="ghost">
-                <X className="size-4" />
-            </Button>
-        </div>
+    <div className="border-border bg-background flex items-center border text-xs shadow-xs">
+        <FilterSubject column={column} />
+        <Separator orientation="vertical" />
+        <FilterOperator actions={actions} column={column} filter={filter} locale={locale} />
+        <Separator orientation="vertical" />
+        <FilterValue actions={actions} column={column} filter={filter} locale={locale} strategy={strategy} />
+        <Separator orientation="vertical" />
+        <Button className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)} variant="ghost">
+            <X className="size-4" />
+        </Button>
+    </div>
 );
 
 export const ActiveFiltersMobileContainer = ({ children }: { children: React.ReactNode }) => {

@@ -15,10 +15,10 @@ interface FilterActionsProps {
 }
 
 const filterActionsFn = ({ actions, hasFilters, locale = "en" }: FilterActionsProps) => (
-        <Button className={!hasFilters ? "hidden" : ""} onClick={actions?.removeAllFilters} variant="destructive">
-            <X />
-            <span className="hidden md:block">{t("clear", locale)}</span>
-        </Button>
+    <Button className={!hasFilters ? "hidden" : ""} onClick={actions?.removeAllFilters} variant="destructive">
+        <X />
+        <span className="hidden md:block">{t("clear", locale)}</span>
+    </Button>
 );
 
 const FilterActions = memo(filterActionsFn);
