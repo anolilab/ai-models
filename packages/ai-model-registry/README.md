@@ -379,22 +379,22 @@ pnpm run build
 
 1. **Download (`pnpm run download`)**: Downloads model data from various AI providers using transformers in `scripts/download/transformers/`. This creates the raw provider data in `data/providers/`.
 
-2. **Aggregate (`pnpm run aggregate`)**: 
-   - Reads all provider data from `data/providers/`
-   - Fetches pricing data from Helicone API
-   - Enriches models with icon information
-   - Synchronizes data between models with the same ID
-   - Generates `data/all-models.json` and `src/models-data.ts`
+2. **Aggregate (`pnpm run aggregate`)**:
+    - Reads all provider data from `data/providers/`
+    - Fetches pricing data from Helicone API
+    - Enriches models with icon information
+    - Synchronizes data between models with the same ID
+    - Generates `data/all-models.json` and `src/models-data.ts`
 
-3. **Generate Icons (`pnpm run generate-icons`)**: 
-   - Creates SVG sprite sheet from LobeHub icons and custom icons
-   - Generates `src/icons-sprite.ts` with icon mappings
-   - Provides fallback icons for providers without official icons
+3. **Generate Icons (`pnpm run generate-icons`)**:
+    - Creates SVG sprite sheet from LobeHub icons and custom icons
+    - Generates `src/icons-sprite.ts` with icon mappings
+    - Provides fallback icons for providers without official icons
 
-4. **Build (`pnpm run build`)**: 
-   - Compiles TypeScript to JavaScript
-   - Generates type definitions
-   - Creates the final distributable package
+4. **Build (`pnpm run build`)**:
+    - Compiles TypeScript to JavaScript
+    - Generates type definitions
+    - Creates the final distributable package
 
 ### Available Scripts
 

@@ -13,10 +13,13 @@ export async function fetchXAIModels(): Promise<Model[]> {
 
     try {
         const models = getStaticModels();
+
         console.log(`[XAI] Total models found: ${models.length}`);
+
         return models;
     } catch (error) {
         console.error("[XAI] Error processing models:", error instanceof Error ? error.message : String(error));
+
         return [];
     }
 }
@@ -27,67 +30,67 @@ export async function fetchXAIModels(): Promise<Model[]> {
 function getStaticModels(): Model[] {
     const modelData = [
         {
-            name: "grok-4-0709",
             context: 262144,
-            vision: true,
-            reasoning: true,
             functionCalling: true,
-            toolCall: true,
+            name: "grok-4-0709",
             output: ["text"],
+            reasoning: true,
+            toolCall: true,
+            vision: true,
         },
         {
+            context: 131072,
+            functionCalling: true,
             name: "grok-3",
-            context: 131072,
-            vision: false,
-            reasoning: false,
-            functionCalling: true,
-            toolCall: false,
             output: ["text"],
+            reasoning: false,
+            toolCall: false,
+            vision: false,
         },
         {
+            context: 131072,
+            functionCalling: true,
             name: "grok-3-mini",
-            context: 131072,
-            vision: false,
-            reasoning: true,
-            functionCalling: true,
-            toolCall: true,
             output: ["text"],
+            reasoning: true,
+            toolCall: true,
+            vision: false,
         },
         {
+            context: 131072,
+            functionCalling: true,
             name: "grok-3-fast",
-            context: 131072,
-            vision: false,
-            reasoning: false,
-            functionCalling: true,
-            toolCall: false,
             output: ["text"],
+            reasoning: false,
+            toolCall: false,
+            vision: false,
         },
         {
+            context: 131072,
+            functionCalling: true,
             name: "grok-3-mini-fast",
-            context: 131072,
-            vision: false,
+            output: ["text"],
             reasoning: true,
-            functionCalling: true,
             toolCall: true,
-            output: ["text"],
+            vision: false,
         },
         {
-            name: "grok-2-vision-1212",
             context: 32768,
-            vision: true,
-            reasoning: false,
             functionCalling: true,
-            toolCall: false,
+            name: "grok-2-vision-1212",
             output: ["text"],
+            reasoning: false,
+            toolCall: false,
+            vision: true,
         },
         {
-            name: "grok-2-image-1212",
             context: null,
-            vision: true,
-            reasoning: false,
             functionCalling: false,
-            toolCall: false,
+            name: "grok-2-image-1212",
             output: ["image"],
+            reasoning: false,
+            toolCall: false,
+            vision: true,
         },
     ];
 

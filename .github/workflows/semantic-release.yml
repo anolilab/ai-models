@@ -58,27 +58,24 @@ jobs:
               id: "setup"
               uses: "anolilab/workflows/step/setup@main"
               with:
-                  node-version: "20.x"
+                  node-version: "22.x"
                   cache-prefix: "semantic-release"
 
             - name: "Build Production"
-              run: "pnpm run build:prod:packages"
+              run: "pnpm run build:packages:prod"
 
-            #- name: "test and coverage"
-            #  run: "pnpm run test:coverage"
-            #  env:
-            #      # @TODO: This is used to skip the css test with the production build, till a good solution is found
-            #      PACKEM_PRODUCTION_BUILD: "true"
+            - name: "test and coverage"
+              run: "pnpm run test:coverage"
 
             - name: "Prepare nx cache"
               shell: "bash"
               run: "tar -cf - .nx/cache | lz4 > /tmp/nx_cache.tar.lz4" # compress nx cache
 
-            #- name: "Upload code coverage to codecov"
-            #  uses: "anolilab/workflows/step/codecov@main"
-            #  with:
-            #      run-lint: "false"
-            #      codecov-token: "${{ secrets.CODECOV_TOKEN }}"
+            - name: "Upload code coverage to codecov"
+              uses: "anolilab/workflows/step/codecov@main"
+              with:
+                  run-lint: "false"
+                  codecov-token: "${{ secrets.CODECOV_TOKEN }}"
 
             - name: "Semantic Release"
               if: "success()"

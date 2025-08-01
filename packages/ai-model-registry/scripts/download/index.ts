@@ -41,6 +41,7 @@ interface TransformerModule {
     fetchAnthropicModels?: () => Promise<Model[]>;
     fetchAzureModels?: () => Promise<Model[]>;
     fetchBedrockModels?: () => Promise<Model[]>;
+    fetchCloudflareModels?: () => Promise<Model[]>;
     fetchDeepInfraModels?: () => Promise<Model[]>;
     fetchDeepSeekModels?: () => Promise<Model[]>;
     fetchFireworksAIModels?: () => Promise<Model[]>;
@@ -151,9 +152,9 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchVeniceModels
     || transformerModule.fetchXAIModels
     || transformerModule.fetchModelScopeModels
+    || transformerModule.fetchCloudflareModels
     || transformerModule.default
-    || null
-    ;
+    || null;
 
 /**
  * Processes a single provider: fetches data, transforms models, and saves them.
@@ -186,7 +187,9 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
     try {
         transformerModule = await import(transformerPath);
     } catch (error_) {
-        const error = new Error(`Could not load transformer '${transformer}' for provider "${name}": ${error_ instanceof Error ? error_.message : String(error_)}`);
+        const error = new Error(
+            `Could not load transformer '${transformer}' for provider "${name}": ${error_ instanceof Error ? error_.message : String(error_)}`,
+        );
 
         console.error(`[${name}] ERROR: ${error.message}`);
 

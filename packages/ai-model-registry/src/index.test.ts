@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import type { Model } from "./index";
 import { getAllModels, getModelById, getModelsByProvider, getProviders, getProviderStats, ModelSchema, searchModels } from "./index";
 
 describe("provider Registry", () => {
@@ -29,7 +30,7 @@ describe("provider Registry", () => {
             const providers = getProviders();
             const sortedProviders = [...providers].sort();
 
-            expect(providers).toEqual(sortedProviders);
+            expect(providers).toStrictEqual(sortedProviders);
         });
     });
 
@@ -82,17 +83,24 @@ describe("provider Registry", () => {
             const anthropicModel = allModels.find((m) => m.provider === "Anthropic");
             const testModel = anthropicModel;
 
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (testModel) {
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect.assertions(3);
 
                 const model = getModelById(testModel.id);
 
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect(model).toBeDefined();
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect(model?.id).toBe(testModel.id);
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect(model?.provider).toBe("Anthropic");
             } else {
                 // Skip test if no Anthropic models found
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect.assertions(1);
+                // eslint-disable-next-line vitest/no-conditional-expect
                 expect(true).toBe(true);
             }
         });
@@ -141,8 +149,8 @@ describe("provider Registry", () => {
             const toolCallModels = searchModels({ tool_call: true });
             const nonToolCallModels = searchModels({ tool_call: false });
 
-            expect(toolCallModels.every((model) => model.tool_call === true)).toBe(true);
-            expect(nonToolCallModels.every((model) => model.tool_call === false)).toBe(true);
+            expect(toolCallModels.every((model) => model.toolCall === true)).toBe(true);
+            expect(nonToolCallModels.every((model) => model.toolCall === false)).toBe(true);
         });
 
         it("should filter by streaming support", () => {
@@ -151,8 +159,8 @@ describe("provider Registry", () => {
             const streamingModels = searchModels({ streaming_supported: true });
             const nonStreamingModels = searchModels({ streaming_supported: false });
 
-            expect(streamingModels.every((model) => model.streaming_supported === true)).toBe(true);
-            expect(nonStreamingModels.every((model) => model.streaming_supported === false)).toBe(true);
+            expect(streamingModels.every((model) => model.streamingSupported === true)).toBe(true);
+            expect(nonStreamingModels.every((model) => model.streamingSupported === false)).toBe(true);
         });
 
         it("should filter by provider", () => {
@@ -191,6 +199,7 @@ describe("provider Registry", () => {
             expect(textOutputModels.every((model) => model.modalities.output.includes("text"))).toBe(true);
         });
 
+        // eslint-disable-next-line vitest/prefer-expect-assertions
         it("should filter by context window range", () => {
             const largeContextModels = searchModels({ context_min: 100_000 });
             const smallContextModels = searchModels({ context_max: 10_000 });
@@ -200,6 +209,7 @@ describe("provider Registry", () => {
 
             // Test that the search function works correctly
             // Note: Some models might have null context values, so we need to handle that
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (largeContextModels.length > 0) {
                 const validLargeContextModels = largeContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
 
@@ -208,6 +218,7 @@ describe("provider Registry", () => {
                 }
             }
 
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (smallContextModels.length > 0) {
                 const validSmallContextModels = smallContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
 
@@ -218,18 +229,22 @@ describe("provider Registry", () => {
 
             expect.assertions(assertionCount);
 
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (largeContextModels.length > 0) {
                 const validLargeContextModels = largeContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
 
                 if (validLargeContextModels.length > 0) {
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, vitest/no-conditional-expect
                     expect(validLargeContextModels.every((model) => model.limit.context! >= 100_000)).toBe(true);
                 }
             }
 
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (smallContextModels.length > 0) {
                 const validSmallContextModels = smallContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
 
                 if (validSmallContextModels.length > 0) {
+                    // eslint-disable-next-line vitest/no-conditional-expect
                     expect(validSmallContextModels.every((model) => model.limit.context! <= 10_000)).toBe(true);
                 }
             }
@@ -278,10 +293,12 @@ describe("provider Registry", () => {
             const models2 = getAllModels();
 
             expect(models1).not.toBe(models2); // Should be different references
-            expect(models1).toEqual(models2); // But same content
+            expect(models1).toStrictEqual(models2); // But same content
         });
 
         it("should return models that pass schema validation", () => {
+            expect.assertions(1);
+
             const models = getAllModels();
 
             expect.assertions(models.length);
@@ -317,6 +334,8 @@ describe("provider Registry", () => {
         });
 
         it("should only include providers with models", () => {
+            expect.assertions(3);
+
             const stats = getProviderStats();
             const entries = Object.entries(stats);
 
@@ -332,6 +351,8 @@ describe("provider Registry", () => {
 
     describe("data integrity", () => {
         it("should have consistent data across all functions", () => {
+            expect.assertions(3);
+
             const allModels = getAllModels();
             const providers = getProviders();
             const stats = getProviderStats();
@@ -367,11 +388,13 @@ describe("provider Registry", () => {
             const modelsByProvider = new Map<string, Model[]>();
 
             allModels.forEach((model) => {
-                if (!modelsByProvider.has(model.provider)) {
+                if (model.provider && !modelsByProvider.has(model.provider)) {
                     modelsByProvider.set(model.provider, []);
                 }
 
-                modelsByProvider.get(model.provider)!.push(model);
+                if (model.provider) {
+                    modelsByProvider.get(model.provider)!.push(model);
+                }
             });
 
             // Check for duplicates within each provider
@@ -390,12 +413,15 @@ describe("provider Registry", () => {
             }
 
             // Log any duplicates found
+            // eslint-disable-next-line vitest/no-conditional-in-test
             if (duplicatesByProvider.size > 0) {
-                console.warn("Duplicate model IDs found within providers:");
+                let errorMessage = "Duplicate model IDs found within providers:";
 
                 for (const [provider, duplicates] of duplicatesByProvider) {
-                    console.warn(`  ${provider}:`, duplicates);
+                    errorMessage += `  ${provider}: ${duplicates.join(", ")}\n`;
                 }
+
+                throw new Error(errorMessage);
             }
 
             // Assert that there are no duplicates within any provider

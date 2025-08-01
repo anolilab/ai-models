@@ -283,36 +283,44 @@ function migrateTextModel(oldModel: any): TextModel {
 import { z } from "zod";
 
 // Base schema
-const BaseModelSchema = z.object({
-    id: z.string(),
-    lastUpdated: z.string().nullable(),
-    name: z.string(),
-    provider: z.string(),
-    providerDoc: z.string().optional(),
-    providerEnv: z.array(z.string()).optional(),
-    providerModelsDevId: z.string().optional(),
-    providerNpm: z.string().optional(),
-    releaseDate: z.string().nullable(),
-    streamingSupported: z.boolean(),
-}).strict();
+const BaseModelSchema = z
+    .object({
+        id: z.string(),
+        lastUpdated: z.string().nullable(),
+        name: z.string(),
+        provider: z.string(),
+        providerDoc: z.string().optional(),
+        providerEnv: z.array(z.string()).optional(),
+        providerModelsDevId: z.string().optional(),
+        providerNpm: z.string().optional(),
+        releaseDate: z.string().nullable(),
+        streamingSupported: z.boolean(),
+    })
+    .strict();
 
 // Text model schema
 const TextModelSchema = BaseModelSchema.extend({
-    cost: z.object({
-        input: z.number().nullable(),
-        inputCacheHit: z.number().nullable(),
-        output: z.number().nullable(),
-    }).strict(),
+    cost: z
+        .object({
+            input: z.number().nullable(),
+            inputCacheHit: z.number().nullable(),
+            output: z.number().nullable(),
+        })
+        .strict(),
     extendedThinking: z.boolean(),
     knowledge: z.string().nullable(),
-    limit: z.object({
-        context: z.number().nullable(),
-        output: z.number().nullable(),
-    }).strict(),
-    modalities: z.object({
-        input: z.array(z.enum(["text", "image"])),
-        output: z.array(z.literal("text")),
-    }).strict(),
+    limit: z
+        .object({
+            context: z.number().nullable(),
+            output: z.number().nullable(),
+        })
+        .strict(),
+    modalities: z
+        .object({
+            input: z.array(z.enum(["text", "image"])),
+            output: z.array(z.literal("text")),
+        })
+        .strict(),
     openWeights: z.boolean(),
     reasoning: z.boolean(),
     temperature: z.boolean(),
@@ -323,32 +331,40 @@ const TextModelSchema = BaseModelSchema.extend({
 
 // Image model schema
 const ImageModelSchema = BaseModelSchema.extend({
-    cost: z.object({
-        perImage: z.number().nullable(),
-        perImage4K: z.number().nullable(),
-        perImageHD: z.number().nullable(),
-        perImageWithVariations: z.number().nullable(),
-    }).strict(),
-    imageCapabilities: z.object({
-        backgroundReplacement: z.boolean(),
-        faceEditing: z.boolean(),
-        imageToImage: z.boolean(),
-        inpainting: z.boolean(),
-        objectRemoval: z.boolean(),
-        outpainting: z.boolean(),
-        styleTransfer: z.boolean(),
-        textToImage: z.boolean(),
-    }).strict(),
-    limit: z.object({
-        maxAspectRatio: z.string().nullable(),
-        maxImagesPerRequest: z.number().nullable(),
-        maxResolution: z.string().nullable(),
-        supportedFormats: z.array(z.string()),
-    }).strict(),
-    modalities: z.object({
-        input: z.array(z.enum(["text", "image"])),
-        output: z.array(z.literal("image")),
-    }).strict(),
+    cost: z
+        .object({
+            perImage: z.number().nullable(),
+            perImage4K: z.number().nullable(),
+            perImageHD: z.number().nullable(),
+            perImageWithVariations: z.number().nullable(),
+        })
+        .strict(),
+    imageCapabilities: z
+        .object({
+            backgroundReplacement: z.boolean(),
+            faceEditing: z.boolean(),
+            imageToImage: z.boolean(),
+            inpainting: z.boolean(),
+            objectRemoval: z.boolean(),
+            outpainting: z.boolean(),
+            styleTransfer: z.boolean(),
+            textToImage: z.boolean(),
+        })
+        .strict(),
+    limit: z
+        .object({
+            maxAspectRatio: z.string().nullable(),
+            maxImagesPerRequest: z.number().nullable(),
+            maxResolution: z.string().nullable(),
+            supportedFormats: z.array(z.string()),
+        })
+        .strict(),
+    modalities: z
+        .object({
+            input: z.array(z.enum(["text", "image"])),
+            output: z.array(z.literal("image")),
+        })
+        .strict(),
     type: z.literal("image"),
 });
 

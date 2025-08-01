@@ -2,9 +2,10 @@ import { allModels } from "./models-data";
 import type { Model } from "./schema";
 
 /**
- * Get all available providers
+ * Retrieves all available AI model providers from the registry.
+ * @returns An array of provider names sorted alphabetically.
  */
-export function getProviders(): string[] {
+export const getProviders = (): string[] => {
     const providers = new Set<string>();
 
     allModels.forEach((model) => {
@@ -14,31 +15,46 @@ export function getProviders(): string[] {
     });
 
     return [...providers].sort();
-}
+};
 
 /**
- * Get all models for a specific provider
+ * Retrieves all AI models for a specific provider.
+ * @param provider The name of the provider to filter by.
+ * @returns An array of models belonging to the specified provider.
  */
-export function getModelsByProvider(provider: string): Model[] {
-    return allModels.filter((model) => model.provider === provider);
-}
+export const getModelsByProvider = (provider: string): Model[] => allModels.filter((model) => model.provider === provider);
 
 /**
- * Get a specific model by ID
+ * Retrieves a specific AI model by its unique identifier.
+ * @param id The unique identifier of the model to retrieve.
+ * @returns The model if found, undefined otherwise.
  */
-export function getModelById(id: string): Model | undefined {
+export const getModelById = (id: string): Model | undefined => {
     // Return undefined for empty IDs
     if (!id || id.trim() === "") {
         return undefined;
     }
 
     return allModels.find((model) => model.id === id);
-}
+};
 
 /**
- * Search models by various criteria
+ * Searches and filters AI models based on various criteria such as capabilities, provider, and context window.
+ * @param criteria The search criteria to filter models by.
+ * @param criteria.context_min Minimum context window size (excludes models with null/undefined context).
+ * @param criteria.context_max Maximum context window size (excludes models with null/undefined context).
+ * @param criteria.modalities Input/output modalities to filter by.
+ * @param criteria.modalities.input Array of input modalities to filter by.
+ * @param criteria.modalities.output Array of output modalities to filter by.
+ * @param criteria.preview Whether to filter by preview status.
+ * @param criteria.provider Provider name to filter by.
+ * @param criteria.reasoning Whether to filter by reasoning capability.
+ * @param criteria.streaming_supported Whether to filter by streaming support.
+ * @param criteria.tool_call Whether to filter by tool calling capability.
+ * @param criteria.vision Whether to filter by vision capability.
+ * @returns An array of models that match the specified criteria.
  */
-export function searchModels(criteria: {
+export const searchModels = (criteria: {
     context_max?: number;
     context_min?: number;
     modalities?: {
@@ -51,80 +67,78 @@ export function searchModels(criteria: {
     streaming_supported?: boolean;
     tool_call?: boolean;
     vision?: boolean;
-}): Model[] {
-    return allModels.filter((model) => {
-        // Vision capability
-        if (criteria.vision !== undefined && model.vision !== criteria.vision) {
+}): Model[] => allModels.filter((model) => {
+    // Vision capability
+    if (criteria.vision !== undefined && model.vision !== criteria.vision) {
+        return false;
+    }
+
+    // Reasoning capability
+    if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
+        return false;
+    }
+
+    // Tool call capability
+    if (criteria.tool_call !== undefined && model.toolCall !== criteria.tool_call) {
+        return false;
+    }
+
+    // Streaming support
+    if (criteria.streaming_supported !== undefined && model.streamingSupported !== criteria.streaming_supported) {
+        return false;
+    }
+
+    // Provider filter
+    if (criteria.provider && model.provider !== criteria.provider) {
+        return false;
+    }
+
+    // Preview status
+    if (criteria.preview !== undefined && model.preview !== criteria.preview) {
+        return false;
+    }
+
+    // Input modalities
+    if (criteria.modalities?.input) {
+        const hasAllInputModalities = criteria.modalities.input.every((modality) => model.modalities.input.includes(modality));
+
+        if (!hasAllInputModalities) {
             return false;
         }
+    }
 
-        // Reasoning capability
-        if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
+    // Output modalities
+    if (criteria.modalities?.output) {
+        const hasAllOutputModalities = criteria.modalities.output.every((modality) => model.modalities.output.includes(modality));
+
+        if (!hasAllOutputModalities) {
             return false;
         }
+    }
 
-        // Tool call capability
-        if (criteria.tool_call !== undefined && model.tool_call !== criteria.tool_call) {
-            return false;
-        }
+    // Context window range
+    if (criteria.context_min !== undefined && (!model.limit.context || model.limit.context < criteria.context_min)) {
+        return false;
+    }
 
-        // Streaming support
-        if (criteria.streaming_supported !== undefined && model.streaming_supported !== criteria.streaming_supported) {
-            return false;
-        }
+    if (criteria.context_max !== undefined && (!model.limit.context || model.limit.context > criteria.context_max)) {
+        return false;
+    }
 
-        // Provider filter
-        if (criteria.provider && model.provider !== criteria.provider) {
-            return false;
-        }
-
-        // Preview status
-        if (criteria.preview !== undefined && model.preview !== criteria.preview) {
-            return false;
-        }
-
-        // Input modalities
-        if (criteria.modalities?.input) {
-            const hasAllInputModalities = criteria.modalities.input.every((modality) => model.modalities.input.includes(modality));
-
-            if (!hasAllInputModalities) {
-                return false;
-            }
-        }
-
-        // Output modalities
-        if (criteria.modalities?.output) {
-            const hasAllOutputModalities = criteria.modalities.output.every((modality) => model.modalities.output.includes(modality));
-
-            if (!hasAllOutputModalities) {
-                return false;
-            }
-        }
-
-        // Context window range
-        if (criteria.context_min && model.limit.context && model.limit.context < criteria.context_min) {
-            return false;
-        }
-
-        if (criteria.context_max && model.limit.context && model.limit.context > criteria.context_max) {
-            return false;
-        }
-
-        return true;
-    });
-}
+    return true;
+});
 
 /**
- * Get all models (useful for advanced filtering)
+ * Retrieves all AI models from the registry for advanced filtering and processing.
+ * @returns A copy of all models in the registry.
  */
-export function getAllModels(): Model[] {
-    return [...allModels];
-}
+export const getAllModels = (): Model[] => [...allModels];
 
 /**
- * Get unique providers with their model counts
+ * Retrieves statistics about AI model providers including their model counts.
+ * @returns An object mapping provider names to their model counts.
  */
-export function getProviderStats(): Record<string, number> {
+export const getProviderStats = (): Record<string, number> => {
     const stats: Record<string, number> = {};
 
     allModels.forEach((model) => {
@@ -134,7 +148,7 @@ export function getProviderStats(): Record<string, number> {
     });
 
     return stats;
-}
+};
 
 // Re-export icons for convenience
 export * from "./icons-sprite";

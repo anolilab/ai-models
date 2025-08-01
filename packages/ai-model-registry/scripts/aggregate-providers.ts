@@ -323,8 +323,7 @@ const normalizeModelName = (name: string): string =>
     name
         .toLowerCase()
         .replaceAll(/[^a-z0-9]/g, "") // Remove all non-alphanumeric characters
-        .replaceAll(/\s+/g, "") // Remove spaces
-;
+        .replaceAll(/\s+/g, ""); // Remove spaces
 
 /**
  * Loads OpenRouter data as a reference for filling missing fields
@@ -767,14 +766,14 @@ const main = async (): Promise<void> => {
 
         // Generate API JSON file for CDN serving
         const apiJson = {
-            models: synchronizedModels,
             metadata: {
-                totalModels: synchronizedModels.length,
-                totalProviders: new Set(synchronizedModels.map(m => m.provider)).size,
+                description: "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
                 lastUpdated: new Date().toISOString(),
+                totalModels: synchronizedModels.length,
+                totalProviders: new Set(synchronizedModels.map((m) => m.provider)).size,
                 version: "0.0.0-development",
-                description: "AI Models API - Comprehensive database of AI model specifications, pricing, and features"
-            }
+            },
+            models: synchronizedModels,
         };
 
         writeFileSync(OUTPUT_API_JSON, JSON.stringify(apiJson, null, 2));

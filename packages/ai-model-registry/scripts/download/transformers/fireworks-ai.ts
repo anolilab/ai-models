@@ -51,7 +51,10 @@ async function scrapeFireworksModelsPage(): Promise<Model[]> {
             console.log(`[Fireworks AI] Found model: ${modelName}`);
 
             // Extract pricing information
-            const pricingText = $row.find(String.raw`.text-muted-foreground\/60`).text().trim();
+            const pricingText = $row
+                .find(String.raw`.text-muted-foreground\/60`)
+                .text()
+                .trim();
             const cost = parsePricing(pricingText);
 
             // Extract context length

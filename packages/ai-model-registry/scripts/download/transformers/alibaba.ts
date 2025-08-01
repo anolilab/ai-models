@@ -283,5 +283,4 @@ const parseTokenLimit = (limitString: string): number | null => {
 
 export const transformAlibabaModels = (rawData: any): Model[] =>
     // Not used in scraping version, but kept for interface compatibility
-    []
-;
+    [];

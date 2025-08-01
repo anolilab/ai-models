@@ -16,42 +16,43 @@ interface LlamaModelData {
  * @param models Array of raw model data from Llama documentation
  * @returns Array of normalized model objects
  */
-const transformLlamaModels = (models: LlamaModelData[]): Model[] => models.map((model) => {
-    return {
-        attachment: false,
-        cost: {
-            input: null, // Pricing not available
-            inputCacheHit: null,
-            output: null,
-        },
-        extendedThinking: false,
-        id: model.id,
-        knowledge: null,
-        lastUpdated: null,
-        limit: {
-            context: null, // Not specified in the data
-            output: null,
-        },
-        modalities: {
-            input: model.inputModalities,
-            output: model.outputModalities,
-        },
-        name: model.name,
-        openWeights: true, // Llama models are open weights
-        provider: model.provider,
-        providerDoc: "https://llama.meta.com/llama/",
-        // Provider metadata
-        providerEnv: ["META_API_KEY"],
-        providerModelsDevId: "meta",
-        providerNpm: "@ai-sdk/meta",
-        reasoning: false,
-        releaseDate: null,
-        streamingSupported: true,
-        temperature: true,
-        toolCall: true,
-        vision: model.inputModalities.includes("image"),
-    };
-});
+const transformLlamaModels = (models: LlamaModelData[]): Model[] =>
+    models.map((model) => {
+        return {
+            attachment: false,
+            cost: {
+                input: null, // Pricing not available
+                inputCacheHit: null,
+                output: null,
+            },
+            extendedThinking: false,
+            id: model.id,
+            knowledge: null,
+            lastUpdated: null,
+            limit: {
+                context: null, // Not specified in the data
+                output: null,
+            },
+            modalities: {
+                input: model.inputModalities,
+                output: model.outputModalities,
+            },
+            name: model.name,
+            openWeights: true, // Llama models are open weights
+            provider: model.provider,
+            providerDoc: "https://llama.meta.com/llama/",
+            // Provider metadata
+            providerEnv: ["META_API_KEY"],
+            providerModelsDevId: "meta",
+            providerNpm: "@ai-sdk/meta",
+            reasoning: false,
+            releaseDate: null,
+            streamingSupported: true,
+            temperature: true,
+            toolCall: true,
+            vision: model.inputModalities.includes("image"),
+        };
+    });
 
 /**
  * Fetches models using Puppeteer to get real-time data from the documentation.

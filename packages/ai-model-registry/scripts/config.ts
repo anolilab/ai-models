@@ -43,6 +43,8 @@ export const PROVIDER_ICON_MAP: Record<string, string> = {
     chutes: "chutes",
     claude: "anthropic",
     cloudflare: "cloudflare",
+    "cloudflare workers": "cloudflare",
+    "cloudflare workers ai": "cloudflare",
     cognitivecomputations: "cognitive-computations",
     // Additional providers with LobeHub icons
     cohere: "cohere",
@@ -168,6 +170,7 @@ export const BRAND_NAME_MAP: Record<string, string> = {
     "amazon-bedrock": "Amazon Bedrock",
     anthropic: "Anthropic",
     azure: "Azure OpenAI",
+    cloudflare: "Cloudflare",
     deepinfra: "Deep Infra",
     deepseek: "DeepSeek",
     "fireworks-ai": "Fireworks AI",
@@ -452,5 +455,13 @@ export const PROVIDERS_CONFIG: ProviderConfig[] = [
         npm: "@ai-sdk/openai-compatible",
         output: "modelscope",
         transformer: "./transformers/modelscope.ts",
+    },
+    {
+        doc: "https://developers.cloudflare.com/workers-ai/models",
+        env: ["CLOUDFLARE_API_TOKEN"],
+        name: "Cloudflare",
+        npm: "@ai-sdk/cloudflare",
+        output: "cloudflare",
+        transformer: "./transformers/cloudflare.ts",
     },
 ];
