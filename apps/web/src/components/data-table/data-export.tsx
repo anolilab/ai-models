@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
-import { exportData, exportToCSV, exportToExcel, exportToJSON } from "./utils/export-utils";
+import { exportData, exportToCSV, exportToJSON } from "./utils/export-utils";
 import type { TableConfig } from "./utils/table-config";
 
 interface DataTableExportProps<TData extends ExportableData> {
@@ -44,7 +44,7 @@ export function DataTableExport<TData extends ExportableData>({
 }: DataTableExportProps<TData>): JSX.Element {
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleExport = async (type: "csv" | "excel" | "json") => {
+    const handleExport = async (type: "csv" | "json") => {
         if (isLoading)
             return; // Prevent multiple export requests
 
@@ -219,7 +219,9 @@ export function DataTableExport<TData extends ExportableData>({
             // Filter column widths to match export headers
             const exportColumnWidths = columnWidths
                 ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
-                : exportHeaders.map(() => { return { wch: 15 }; });
+                : exportHeaders.map(() => {
+                    return { wch: 15 };
+                });
 
             // Use the generic export function with proper options
             await exportData(
@@ -245,7 +247,7 @@ export function DataTableExport<TData extends ExportableData>({
         }
     };
 
-    const exportAllPages = async (type: "csv" | "excel" | "json") => {
+    const exportAllPages = async (type: "csv" | "json") => {
         if (isLoading || !getAllItems)
             return;
 
@@ -340,7 +342,9 @@ export function DataTableExport<TData extends ExportableData>({
 
             const exportColumnWidths = columnWidths
                 ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
-                : exportHeaders.map(() => { return { wch: 15 }; });
+                : exportHeaders.map(() => {
+                    return { wch: 15 };
+                });
 
             // Update toast for processing
             toast.loading("Processing data...", {
@@ -357,10 +361,8 @@ export function DataTableExport<TData extends ExportableData>({
 
             if (type === "csv") {
                 success = exportToCSV(allData, filename, exportHeaders, exportColumnMapping, transformFunction);
-            } else if (type === "json") {
-                success = exportToJSON(allData, filename, transformFunction);
             } else {
-                success = exportToExcel(allData, filename, exportColumnMapping, exportColumnWidths, exportHeaders, transformFunction);
+                success = exportToJSON(allData, filename, transformFunction);
             }
 
             if (success) {
@@ -410,9 +412,7 @@ export function DataTableExport<TData extends ExportableData>({
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Selected as CSV
                         </DropdownMenuItem>
-                        <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("excel")}>
-                            Export Selected as XLS
-                        </DropdownMenuItem>
+
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("json")}>
                             Export Selected as JSON
                         </DropdownMenuItem>
@@ -423,9 +423,7 @@ export function DataTableExport<TData extends ExportableData>({
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Current Page as CSV
                         </DropdownMenuItem>
-                        <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("excel")}>
-                            Export Current Page as XLS
-                        </DropdownMenuItem>
+
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("json")}>
                             Export Current Page as JSON
                         </DropdownMenuItem>
@@ -434,9 +432,7 @@ export function DataTableExport<TData extends ExportableData>({
                                 <DropdownMenuItem disabled={isLoading} onClick={() => exportAllPages("csv")}>
                                     Export All Pages as CSV
                                 </DropdownMenuItem>
-                                <DropdownMenuItem disabled={isLoading} onClick={() => exportAllPages("excel")}>
-                                    Export All Pages as XLS
-                                </DropdownMenuItem>
+
                                 <DropdownMenuItem disabled={isLoading} onClick={() => exportAllPages("json")}>
                                     Export All Pages as JSON
                                 </DropdownMenuItem>

@@ -13,3 +13,6 @@ onlyBuiltDependencies:
   - puppeteer
   - sharp
   - unrs-resolver
+
+overrides:
+  next@>=15.0.0 <15.2.3: '>=15.2.3'

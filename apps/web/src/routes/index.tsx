@@ -1,18 +1,18 @@
-import type { Model } from "../../../../packages/ai-model-registry/dist";
-import { getAllModels } from "../../../../packages/ai-model-registry/dist";
+import type { Model } from "@anolilab/ai-model-registry";
+import { getAllModels } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Calendar, Copy, File, FileText, Image as ImageIcon, ScatterChart, Search, Trash2, Video, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
-import { DataTableColumnHeader } from "@/components/data-table/column-header";
-import { DataTable } from "@/components/data-table/data-table";
+import DataTableColumnHeader from "@/components/data-table/column-header";
+import DataTable from "@/components/data-table/data-table";
 import type { ColumnConfig } from "@/components/data-table/filter/core/types";
 import { dateFilterFn, numberFilterFn, textFilterFn } from "@/components/data-table/filter/integrations/tanstack-table/filter-fns";
 import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
-import { HowToUseDialog } from "@/components/how-to-use-dialog";
-import { SkeletonTable } from "@/components/skeleton-table";
+import HowToUseDialog from "@/components/how-to-use-dialog";
+import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ProviderIcon } from "@/utils/provider-icons";
@@ -455,10 +455,7 @@ const HomeComponent = () => {
     ];
 
     // Create columns with row deselection handler
-    const getColumns = useCallback(
-        (handleRowDeselection: ((rowId: string) => void) | null | undefined) => baseColumns,
-        [baseColumns],
-    );
+    const getColumns = useCallback((handleRowDeselection: ((rowId: string) => void) | null | undefined) => baseColumns, [baseColumns]);
 
     // Custom toolbar component for selection actions
     const renderToolbarContent = useCallback(

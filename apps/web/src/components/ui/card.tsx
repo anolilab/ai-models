@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
     <div className={cn("bg-card text-card-foreground flex flex-col gap-6 border py-6 shadow-sm", className)} ref={ref} {...props} />

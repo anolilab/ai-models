@@ -4,74 +4,55 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes<HTMLDivElement> {
     column: Column<TData, TValue>;
     title: string;
 }
 
-export function DataTableColumnHeader<TData, TValue>({ className, column, title }: DataTableColumnHeaderProps<TData, TValue>) {
+const DataTableColumnHeader = <TData, TValue>({ className, column, title }: DataTableColumnHeaderProps<TData, TValue>) => {
     if (!column.getCanSort()) {
-        return <div className={cn("font-medium uppercase", className)}>{title}</div>;
+        return <div className={cn(className)}>{title}</div>;
     }
 
-    // Get the current sort direction for this column
-    const currentDirection = column.getIsSorted();
-
-    const [open, setOpen] = useState(false);
-
-    // Handle sorting with proper TanStack Table API
-    const handleSort = (direction: "asc" | "desc" | false) => {
-        if (direction === false) {
-            // Clear sorting
-            column.clearSorting();
-        } else {
-            // Clear any existing sorting first, then set the new sort
-            column.toggleSorting(direction === "desc", true);
-        }
-
-        // Close the dropdown after sorting
-        setOpen(false);
-    };
-
     return (
-        <DropdownMenu onOpenChange={setOpen} open={open}>
-            <DropdownMenuTrigger asChild>
-                <Button
-                    className={cn("data-[state=open]:bg-accent font-mono-id h-8 focus-visible:ring-0 focus-visible:ring-offset-0", className)}
-                    size="sm"
-                    variant="ghost"
-                >
-                    <span className="font-medium uppercase">{title}</span>
-                    {currentDirection === "desc"
-                        ? (
-                        <ArrowDownIcon className="ml-2 h-4 w-4" />
-                        )
-                        : currentDirection === "asc"
+        <div className={cn("flex items-center space-x-2", className)}>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button className="data-[state=open]:bg-accent -ml-3 h-8" size="sm" variant="ghost">
+                        <span>{title}</span>
+                        {column.getIsSorted() === "desc"
                             ? (
-                        <ArrowUpIcon className="ml-2 h-4 w-4" />
+                            <ArrowDownIcon className="ml-2 h-4 w-4" />
                             )
-                            : (
-                        <CaretSortIcon className="ml-2 h-4 w-4" />
-                            )}
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-                <DropdownMenuItem onClick={() => handleSort("asc")}>
-                    <ArrowUpIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
-                    Asc
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleSort("desc")}>
-                    <ArrowDownIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
-                    Desc
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => column.toggleVisibility(false)}>
-                    <EyeNoneIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
-                    Hide
-                </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
+                            : column.getIsSorted() === "asc"
+                                ? (
+                            <ArrowUpIcon className="ml-2 h-4 w-4" />
+                                )
+                                : (
+                            <CaretSortIcon className="ml-2 h-4 w-4" />
+                                )}
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                    <DropdownMenuItem onClick={() => column.toggleSorting(false)}>
+                        <ArrowUpIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
+                        Asc
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => column.toggleSorting(true)}>
+                        <ArrowDownIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
+                        Desc
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => column.toggleVisibility(false)}>
+                        <EyeNoneIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
+                        Hide
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+        </div>
     );
-}
+};
+
+export default DataTableColumnHeader;

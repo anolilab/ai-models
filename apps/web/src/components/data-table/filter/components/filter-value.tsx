@@ -11,7 +11,7 @@ import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from "@/compon
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useDebounceCallback } from "@/hooks/use-debounce-callback";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 import { numberFilterOperators } from "../core/operators";
 import type { Column, ColumnDataType, ColumnOptionExtended, DataTableFilterActions, FilterModel, FilterStrategy } from "../core/types";
@@ -19,7 +19,7 @@ import { take } from "../lib/array";
 import { createNumberRange } from "../lib/helpers";
 import type { Locale } from "../lib/i18n";
 import { t } from "../lib/i18n";
-import { DebouncedInput } from "../ui/debounced-input";
+import DebouncedInput from "../ui/debounced-input";
 
 interface FilterValueProps<TData, TType extends ColumnDataType> {
     actions: DataTableFilterActions;
@@ -367,7 +367,11 @@ export function FilterValueOptionController<TData>({ actions, column, filter, lo
 
     // Update selected state when filter values change
     useEffect(() => {
-        setOptions((prev) => prev.map((o) => { return { ...o, selected: filter?.values.includes(o.value) }; }));
+        setOptions((prev) =>
+            prev.map((o) => {
+                return { ...o, selected: filter?.values.includes(o.value) };
+            }),
+        );
     }, [filter?.values]);
 
     const handleToggle = useCallback(
@@ -435,7 +439,11 @@ export function FilterValueMultiOptionController<TData>({ actions, column, filte
 
     // Update selected state when filter values change
     useEffect(() => {
-        setOptions((prev) => prev.map((o) => { return { ...o, selected: filter?.values.includes(o.value) }; }));
+        setOptions((prev) =>
+            prev.map((o) => {
+                return { ...o, selected: filter?.values.includes(o.value) };
+            }),
+        );
     }, [filter?.values]);
 
     const handleToggle = useCallback(

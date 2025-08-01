@@ -8,7 +8,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 interface DataTableViewOptionsProps<TData> {
     columnMapping?: Record<string, string>;
@@ -53,12 +53,16 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
     }, [columns, columnOrder]);
 
     // Memo for columns with visibility state to force re-renders
-    const columnsWithVisibility = useMemo(() => orderedColumns.map((column) => {
-        return {
-            ...column,
-            isVisible: column.getIsVisible(),
-        };
-    }), [orderedColumns, columnVisibility, visibilityUpdateTrigger, orderUpdateTrigger]);
+    const columnsWithVisibility = useMemo(
+        () =>
+            orderedColumns.map((column) => {
+                return {
+                    ...column,
+                    isVisible: column.getIsVisible(),
+                };
+            }),
+        [orderedColumns, columnVisibility, visibilityUpdateTrigger, orderUpdateTrigger],
+    );
 
     // Handle column visibility toggle
     const handleColumnVisibilityToggle = useCallback(

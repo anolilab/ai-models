@@ -180,29 +180,6 @@ test.describe("Data Table E2E Tests", () => {
         expect(download.suggestedFilename()).toMatch(/\.csv$/);
     });
 
-    test("should export data to Excel", async ({ page }) => {
-        // Open the export menu
-        const exportButton = page.getByRole("button", { name: "Export" });
-
-        await exportButton.click();
-
-        // Wait for the dropdown to appear
-        await page.waitForSelector("[role=\"menu\"]");
-
-        // Click on Excel export
-        const excelExportButton = page.getByRole("menuitem", { name: /excel/i });
-
-        // Set up download listener
-        const downloadPromise = page.waitForEvent("download");
-
-        await excelExportButton.click();
-
-        // Wait for download to start
-        const download = await downloadPromise;
-
-        expect(download.suggestedFilename()).toMatch(/\.xlsx$/);
-    });
-
     test("should filter by date range", async ({ page }) => {
         // Open the date filter
         const dateFilterButton = page.getByRole("button", { name: "Select a date" });

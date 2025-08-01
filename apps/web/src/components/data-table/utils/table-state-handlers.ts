@@ -5,42 +5,6 @@ type StatePromise = Promise<URLSearchParams> | undefined;
 type SetStateFunction<T> = (value: T | ((prev: T) => T)) => StatePromise;
 
 /**
- * Handler for sorting changes in a data table
- * Ensures that sortBy is updated before sortOrder for proper synchronization
- */
-export function createSortingHandler(setSortBy: SetStateFunction<string>, setSortOrder: SetStateFunction<"asc" | "desc">) {
-    return (updaterOrValue: SortingState | SortingUpdater): void => {
-        // Handle both direct values and updater functions
-        const newSorting = typeof updaterOrValue === "function" ? updaterOrValue([]) : updaterOrValue;
-
-        // Handle both sorting and clearing
-        if (newSorting.length > 0) {
-            const columnId = newSorting[0].id;
-            const direction = newSorting[0].desc ? "desc" : "asc";
-
-            // Important: Sequential updates to ensure proper synchronization
-            // First update the column id
-            const sortByResult = setSortBy(columnId);
-
-            if (sortByResult instanceof Promise) {
-                // If using URL state (Promise-based), chain the updates
-                sortByResult.then(() => {
-                    // Then set the sort direction
-                    setSortOrder(direction);
-                });
-            } else {
-                // If using regular state (non-Promise), just update sequentially
-                setSortOrder(direction);
-            }
-        } else {
-            // Clear sorting when newSorting is empty
-            setSortBy("");
-            setSortOrder("asc");
-        }
-    };
-}
-
-/**
  * Handler for pagination changes in a data table
  */
 export function createPaginationHandler(
@@ -68,11 +32,4 @@ export function createColumnSizingHandler(setColumnSizing: SetStateFunction<Colu
 
         setColumnSizing(newSizing);
     };
-}
-
-/**
- * Convert URL sorting parameters to TanStack Table SortingState
- */
-export function createSortingState(sortBy?: string, sortOrder?: "asc" | "desc"): SortingState {
-    return sortBy && sortOrder ? [{ desc: sortOrder === "desc", id: sortBy }] : [];
 }

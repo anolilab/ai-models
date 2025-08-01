@@ -8,7 +8,7 @@ import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, Filte
 import { getColumn } from "../lib/helpers";
 import type { Locale } from "../lib/i18n";
 import { FilterOperator } from "./filter-operator";
-import { FilterSubject } from "./filter-subject";
+import FilterSubject from "./filter-subject";
 import { FilterValue } from "./filter-value";
 
 interface ActiveFiltersProps<TData> {
@@ -19,8 +19,15 @@ interface ActiveFiltersProps<TData> {
     strategy: FilterStrategy;
 }
 
-export function ActiveFilters<TData>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>) {
-    return (
+interface ActiveFilterProps<TData, TType extends ColumnDataType> {
+    actions: DataTableFilterActions;
+    column: Column<TData, TType>;
+    filter: FilterModel<TType>;
+    locale?: Locale;
+    strategy: FilterStrategy;
+}
+
+export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>) => (
         <>
             {filters.map((filter) => {
                 const id = filter.columnId;
@@ -44,20 +51,10 @@ export function ActiveFilters<TData>({ actions, columns, filters, locale = "en",
                 );
             })}
         </>
-    );
-}
-
-interface ActiveFilterProps<TData, TType extends ColumnDataType> {
-    actions: DataTableFilterActions;
-    column: Column<TData, TType>;
-    filter: FilterModel<TType>;
-    locale?: Locale;
-    strategy: FilterStrategy;
-}
+);
 
 // Generic render function for a filter with type-safe value
-export function ActiveFilter<TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) {
-    return (
+export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) => (
         <div className="border-border bg-background flex items-center border text-xs shadow-xs">
             <FilterSubject column={column} />
             <Separator orientation="vertical" />
@@ -69,10 +66,9 @@ export function ActiveFilter<TData, TType extends ColumnDataType>({ actions, col
                 <X className="size-4" />
             </Button>
         </div>
-    );
-}
+);
 
-export function ActiveFiltersMobileContainer({ children }: { children: React.ReactNode }) {
+export const ActiveFiltersMobileContainer = ({ children }: { children: React.ReactNode }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [showLeftBlur, setShowLeftBlur] = useState(false);
     const [showRightBlur, setShowRightBlur] = useState(true);
@@ -129,4 +125,4 @@ export function ActiveFiltersMobileContainer({ children }: { children: React.Rea
             )}
         </div>
     );
-}
+};

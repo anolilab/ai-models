@@ -1,5 +1,4 @@
 import { toast } from "sonner";
-import { utils, write } from "xlsx";
 
 // Generic type for exportable data - should have string keys and values that can be converted to string
 export type ExportableData = Record<string, string | number | boolean | null | undefined>;
@@ -147,92 +146,10 @@ export function exportToJSON<T extends ExportableData>(data: T[], filename: stri
 }
 
 /**
- * Export data to Excel file using xlsx package
- */
-export function exportToExcel<T extends ExportableData>(
-    data: T[],
-    filename: string,
-    columnMapping?: Record<string, string>,
-    columnWidths?: { wch: number }[],
-    headers?: string[],
-    transformFunction?: DataTransformFunction<T>,
-): boolean {
-    if (data.length === 0) {
-        console.error("No data to export");
-
-        return false;
-    }
-
-    try {
-        // If no column mapping is provided, create one from the data keys
-        const mapping
-            = columnMapping
-                || Object.keys(data[0] || {}).reduce(
-                    (acc, key) => {
-                        acc[key] = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, " ");
-
-                        return acc;
-                    },
-                    {} as Record<string, string>,
-                );
-
-        // Apply transformation function first if provided, then map data to worksheet format
-        const worksheetData = data.map((item) => {
-            // Apply transformation function if provided
-            const transformedItem = transformFunction ? transformFunction(item) : item;
-
-            const row: ExportableData = {};
-            // If headers are provided, only include those columns
-            const columnsToExport = headers || Object.keys(mapping);
-
-            for (const key of columnsToExport) {
-                if (key in transformedItem) {
-                    row[mapping[key]] = transformedItem[key];
-                }
-            }
-
-            return row;
-        });
-
-        // Create a worksheet
-        const worksheet = utils.json_to_sheet(worksheetData);
-
-        // Set column widths if provided
-        if (columnWidths) {
-            worksheet["!cols"] = columnWidths;
-        }
-
-        // Create a workbook
-        const workbook = utils.book_new();
-
-        utils.book_append_sheet(workbook, worksheet, "Data");
-
-        // Generate Excel file
-        const excelBuffer = write(workbook, {
-            bookType: "xlsx",
-            type: "array",
-        });
-
-        // Create blob and download
-        const blob = new Blob([excelBuffer], {
-            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        });
-
-        downloadFile(blob, `${filename}.xlsx`);
-
-        return true;
-    } catch (error) {
-        console.error("Error creating Excel file:", error);
-
-        return false;
-    }
-}
-
-/**
  * Unified export function that handles loading states and error handling
  */
 export async function exportData<T extends ExportableData>(
-    type: "csv" | "excel" | "json",
+    type: "csv" | "json",
     getData: () => Promise<T[]>,
     onLoadingStart?: () => void,
     onLoadingEnd?: () => void,
@@ -295,21 +212,12 @@ export async function exportData<T extends ExportableData>(
                     id: TOAST_ID,
                 });
             }
-        } else if (type === "json") {
+        } else {
             success = exportToJSON(exportData, filename, options?.transformFunction);
 
             if (success) {
                 toast.success("Export successful", {
                     description: `Exported ${exportData.length} ${entityName} to JSON.`,
-                    id: TOAST_ID,
-                });
-            }
-        } else {
-            success = exportToExcel(exportData, filename, options?.columnMapping, options?.columnWidths, options?.headers, options?.transformFunction);
-
-            if (success) {
-                toast.success("Export successful", {
-                    description: `Exported ${exportData.length} ${entityName} to Excel.`,
                     id: TOAST_ID,
                 });
             }

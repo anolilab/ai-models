@@ -97,5 +97,7 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
 }
 
 export function createTSTFilters(filters: FiltersState): ColumnFiltersState {
-    return filters.map((filter) => { return { id: filter.columnId, value: filter }; });
+    return filters.map((filter) => {
+        return { id: filter.columnId, value: filter };
+    });
 }

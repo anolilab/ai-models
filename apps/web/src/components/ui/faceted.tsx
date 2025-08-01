@@ -6,7 +6,7 @@ import * as React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 type FacetedValue<Multiple extends boolean> = Multiple extends true ? string[] : string;
 
@@ -76,7 +76,9 @@ function Faceted<Multiple extends boolean = false>(props: FacetedProps<Multiple>
         [multiple, value, onValueChange, onOpenChange],
     );
 
-    const contextValue = React.useMemo<FacetedContextValue<typeof multiple>>(() => { return { multiple, onItemSelect, value }; }, [value, onItemSelect, multiple]);
+    const contextValue = React.useMemo<FacetedContextValue<typeof multiple>>(() => {
+        return { multiple, onItemSelect, value };
+    }, [value, onItemSelect, multiple]);
 
     return (
         <FacetedContext.Provider value={contextValue}>

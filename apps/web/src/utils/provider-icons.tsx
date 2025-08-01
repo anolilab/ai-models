@@ -1,4 +1,4 @@
-import { getIcon, isSvgIcon, spriteSheet } from "../../../../packages/ai-model-registry/dist/icons-sprite";
+import { getIcon, isSvgIcon, spriteSheet } from "@anolilab/ai-model-registry/icons";
 import React from "react";
 
 interface ProviderIconProps {
@@ -33,9 +33,9 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({ className = "w-5 h-5
 
         // Base64 icon - use img tag
         return (
-                <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
-                    <img alt={provider} className="h-full w-full object-contain" src={iconData} />
-                </div>
+            <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
+                <img alt={provider} className="h-full w-full object-contain" src={iconData} />
+            </div>
         );
     }
 

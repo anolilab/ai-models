@@ -1,16 +1,10 @@
-import type { Column, ColumnDataType } from "../core/types";
+import type { FilterSubjectProps } from "../core/types";
 
-interface FilterSubjectProps<TData, TType extends ColumnDataType> {
-    column: Column<TData, TType>;
-}
+const FilterSubject = <TData, TType extends ColumnDataType>({ column }: FilterSubjectProps<TData, TType>) => (
+    <div className="flex items-center gap-2">
+        <column.icon className="h-4 w-4" />
+        <span className="font-medium">{column.displayName}</span>
+    </div>
+);
 
-export function FilterSubject<TData, TType extends ColumnDataType>({ column }: FilterSubjectProps<TData, TType>) {
-    const hasIcon = !!column.icon;
-
-    return (
-        <span className="flex items-center gap-1 px-2 font-medium whitespace-nowrap select-none">
-            {hasIcon && <column.icon className="size-4 stroke-[2.25px]" />}
-            <span>{column.displayName}</span>
-        </span>
-    );
-}
+export default FilterSubject;

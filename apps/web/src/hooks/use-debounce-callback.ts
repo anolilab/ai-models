@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 
 import { debounce } from "../components/data-table/filter/lib/debounce";
-import { useUnmount } from "./use-unmount";
+import useUnmount from "./use-unmount";
 
 type DebounceOptions = {
     leading?: boolean;

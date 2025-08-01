@@ -1,12 +1,12 @@
 import type { Table } from "@tanstack/react-table";
 import { flexRender } from "@tanstack/react-table";
 import type { CSSProperties, KeyboardEvent } from "react";
-import { useCallback, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 
 import { Table as BaseTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
-import { DataTableResizer } from "./data-table-resizer";
+import DataTableResizer from "./data-table-resizer";
 
 // Define ExportableData type locally since it's not exported from the utils
 interface ExportableData {
@@ -54,14 +54,11 @@ export function RegularTable<TData>({
     }, [table]);
 
     // OPTIMIZATION: Memoize table styles
-    const tableStyles = useMemo(
-        () => {
-            return {
-                height: containerHeight,
-            };
-        },
-        [containerHeight],
-    );
+    const tableStyles = useMemo(() => {
+        return {
+            height: containerHeight,
+        };
+    }, [containerHeight]);
 
     // OPTIMIZATION: Memoize header styles
     const headerStyles = useMemo(() => (enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10" : ""), [enableStickyHeader]);

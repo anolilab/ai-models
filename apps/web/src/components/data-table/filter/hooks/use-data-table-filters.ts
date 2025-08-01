@@ -95,177 +95,13 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
         return createColumns(data, enhancedConfigs, strategy);
     }, [data, columnsConfig, options, faceted, strategy]);
 
-    const actions: DataTableFilterActions = useMemo(
-        () => {
-            return {
-                addFilterValue<TData, TType extends OptionBasedColumnDataType>(column: ColumnConfig<TData, TType>, values: FilterModel<TType>["values"]) {
-                    if (column.type === "option") {
-                        setFilters((prev) => {
-                            const filter = prev.find((f) => f.columnId === column.id);
-                            const isColumnFiltered = filter && filter.values.length > 0;
-
-                            if (!isColumnFiltered) {
-                                return [
-                                    ...prev,
-                                    {
-                                        columnId: column.id,
-                                        operator: values.length > 1 ? DEFAULT_OPERATORS[column.type].multiple : DEFAULT_OPERATORS[column.type].single,
-                                        type: column.type,
-                                        values,
-                                    },
-                                ];
-                            }
-
-                            const oldValues = filter.values;
-                            const newValues = addUniq(filter.values, values);
-                            const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
-
-                            return prev.map((f) =>
-                                (f.columnId === column.id
-                                    ? {
-                                        columnId: column.id,
-                                        operator: newOperator,
-                                        type: column.type,
-                                        values: newValues,
-                                    }
-                                    : f),
-                            );
-                        });
-
-                        return;
-                    }
-
-                    if (column.type === "multiOption") {
-                        setFilters((prev) => {
-                            const filter = prev.find((f) => f.columnId === column.id);
-                            const isColumnFiltered = filter && filter.values.length > 0;
-
-                            if (!isColumnFiltered) {
-                                return [
-                                    ...prev,
-                                    {
-                                        columnId: column.id,
-                                        operator: values.length > 1 ? DEFAULT_OPERATORS[column.type].multiple : DEFAULT_OPERATORS[column.type].single,
-                                        type: column.type,
-                                        values,
-                                    },
-                                ];
-                            }
-
-                            const oldValues = filter.values;
-                            const newValues = addUniq(filter.values, values);
-                            const newOperator = determineNewOperator("multiOption", oldValues, newValues, filter.operator);
-
-                            if (newValues.length === 0) {
-                                return prev.filter((f) => f.columnId !== column.id);
-                            }
-
-                            return prev.map((f) =>
-                                (f.columnId === column.id
-                                    ? {
-                                        columnId: column.id,
-                                        operator: newOperator,
-                                        type: column.type,
-                                        values: newValues,
-                                    }
-                                    : f),
-                            );
-                        });
-
-                        return;
-                    }
-
-                    throw new Error("[data-table-filter] addFilterValue() is only supported for option columns");
-                },
-                removeAllFilters() {
-                    setFilters([]);
-                },
-                removeFilter(columnId: string) {
-                    setFilters((prev) => prev.filter((f) => f.columnId !== columnId));
-                },
-                removeFilterValue<TData, TType extends OptionBasedColumnDataType>(column: ColumnConfig<TData, TType>, value: FilterModel<TType>["values"]) {
-                    if (column.type === "option") {
-                        setFilters((prev) => {
-                            const filter = prev.find((f) => f.columnId === column.id);
-                            const isColumnFiltered = filter && filter.values.length > 0;
-
-                            if (!isColumnFiltered) {
-                                return [...prev];
-                            }
-
-                            const newValues = removeUniq(filter.values, value);
-                            const oldValues = filter.values;
-                            const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
-
-                            if (newValues.length === 0) {
-                                return prev.filter((f) => f.columnId !== column.id);
-                            }
-
-                            return prev.map((f) =>
-                                (f.columnId === column.id
-                                    ? {
-                                        columnId: column.id,
-                                        operator: newOperator,
-                                        type: column.type,
-                                        values: newValues,
-                                    }
-                                    : f),
-                            );
-                        });
-
-                        return;
-                    }
-
-                    if (column.type === "multiOption") {
-                        setFilters((prev) => {
-                            const filter = prev.find((f) => f.columnId === column.id);
-                            const isColumnFiltered = filter && filter.values.length > 0;
-
-                            if (!isColumnFiltered) {
-                                return [...prev];
-                            }
-
-                            const newValues = removeUniq(filter.values, value);
-                            const oldValues = filter.values;
-                            const newOperator = determineNewOperator("multiOption", oldValues, newValues, filter.operator);
-
-                            if (newValues.length === 0) {
-                                return prev.filter((f) => f.columnId !== column.id);
-                            }
-
-                            return prev.map((f) =>
-                                (f.columnId === column.id
-                                    ? {
-                                        columnId: column.id,
-                                        operator: newOperator,
-                                        type: column.type,
-                                        values: newValues,
-                                    }
-                                    : f),
-                            );
-                        });
-
-                        return;
-                    }
-
-                    throw new Error("[data-table-filter] removeFilterValue() is only supported for option columns");
-                },
-                setFilterOperator<TType extends ColumnDataType>(columnId: string, operator: FilterModel<TType>["operator"]) {
-                    setFilters((prev) => prev.map((f) => (f.columnId === columnId ? { ...f, operator } : f)));
-                },
-                setFilterValue<TData, TType extends ColumnDataType>(column: ColumnConfig<TData, TType>, values: FilterModel<TType>["values"]) {
+    const actions: DataTableFilterActions = useMemo(() => {
+        return {
+            addFilterValue<TData, TType extends OptionBasedColumnDataType>(column: ColumnConfig<TData, TType>, values: FilterModel<TType>["values"]) {
+                if (column.type === "option") {
                     setFilters((prev) => {
                         const filter = prev.find((f) => f.columnId === column.id);
                         const isColumnFiltered = filter && filter.values.length > 0;
-                        const newValues
-                        = column.type === "number"
-                            ? createNumberFilterValue(values as number[])
-                            : column.type === "date"
-                                ? createDateFilterValue(values as [Date, Date] | [Date] | [] | undefined)
-                                : uniq(values);
-
-                        if (newValues.length === 0)
-                            return prev;
 
                         if (!isColumnFiltered) {
                             return [
@@ -274,27 +110,188 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                                     columnId: column.id,
                                     operator: values.length > 1 ? DEFAULT_OPERATORS[column.type].multiple : DEFAULT_OPERATORS[column.type].single,
                                     type: column.type,
-                                    values: newValues,
+                                    values,
                                 },
                             ];
                         }
 
                         const oldValues = filter.values;
-                        const newOperator = determineNewOperator(column.type, oldValues, newValues, filter.operator);
-                        const newFilter = {
-                            columnId: column.id,
-                            operator: newOperator,
-                            type: column.type,
-                            values: newValues as any,
-                        } satisfies FilterModel<TType>;
+                        const newValues = addUniq(filter.values, values);
+                        const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
 
-                        return prev.map((f) => (f.columnId === column.id ? newFilter : f));
+                        return prev.map((f) =>
+                            (f.columnId === column.id
+                                ? {
+                                    columnId: column.id,
+                                    operator: newOperator,
+                                    type: column.type,
+                                    values: newValues,
+                                }
+                                : f),
+                        );
                     });
-                },
-            };
-        },
-        [setFilters],
-    );
+
+                    return;
+                }
+
+                if (column.type === "multiOption") {
+                    setFilters((prev) => {
+                        const filter = prev.find((f) => f.columnId === column.id);
+                        const isColumnFiltered = filter && filter.values.length > 0;
+
+                        if (!isColumnFiltered) {
+                            return [
+                                ...prev,
+                                {
+                                    columnId: column.id,
+                                    operator: values.length > 1 ? DEFAULT_OPERATORS[column.type].multiple : DEFAULT_OPERATORS[column.type].single,
+                                    type: column.type,
+                                    values,
+                                },
+                            ];
+                        }
+
+                        const oldValues = filter.values;
+                        const newValues = addUniq(filter.values, values);
+                        const newOperator = determineNewOperator("multiOption", oldValues, newValues, filter.operator);
+
+                        if (newValues.length === 0) {
+                            return prev.filter((f) => f.columnId !== column.id);
+                        }
+
+                        return prev.map((f) =>
+                            (f.columnId === column.id
+                                ? {
+                                    columnId: column.id,
+                                    operator: newOperator,
+                                    type: column.type,
+                                    values: newValues,
+                                }
+                                : f),
+                        );
+                    });
+
+                    return;
+                }
+
+                throw new Error("[data-table-filter] addFilterValue() is only supported for option columns");
+            },
+            removeAllFilters() {
+                setFilters([]);
+            },
+            removeFilter(columnId: string) {
+                setFilters((prev) => prev.filter((f) => f.columnId !== columnId));
+            },
+            removeFilterValue<TData, TType extends OptionBasedColumnDataType>(column: ColumnConfig<TData, TType>, value: FilterModel<TType>["values"]) {
+                if (column.type === "option") {
+                    setFilters((prev) => {
+                        const filter = prev.find((f) => f.columnId === column.id);
+                        const isColumnFiltered = filter && filter.values.length > 0;
+
+                        if (!isColumnFiltered) {
+                            return [...prev];
+                        }
+
+                        const newValues = removeUniq(filter.values, value);
+                        const oldValues = filter.values;
+                        const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
+
+                        if (newValues.length === 0) {
+                            return prev.filter((f) => f.columnId !== column.id);
+                        }
+
+                        return prev.map((f) =>
+                            (f.columnId === column.id
+                                ? {
+                                    columnId: column.id,
+                                    operator: newOperator,
+                                    type: column.type,
+                                    values: newValues,
+                                }
+                                : f),
+                        );
+                    });
+
+                    return;
+                }
+
+                if (column.type === "multiOption") {
+                    setFilters((prev) => {
+                        const filter = prev.find((f) => f.columnId === column.id);
+                        const isColumnFiltered = filter && filter.values.length > 0;
+
+                        if (!isColumnFiltered) {
+                            return [...prev];
+                        }
+
+                        const newValues = removeUniq(filter.values, value);
+                        const oldValues = filter.values;
+                        const newOperator = determineNewOperator("multiOption", oldValues, newValues, filter.operator);
+
+                        if (newValues.length === 0) {
+                            return prev.filter((f) => f.columnId !== column.id);
+                        }
+
+                        return prev.map((f) =>
+                            (f.columnId === column.id
+                                ? {
+                                    columnId: column.id,
+                                    operator: newOperator,
+                                    type: column.type,
+                                    values: newValues,
+                                }
+                                : f),
+                        );
+                    });
+
+                    return;
+                }
+
+                throw new Error("[data-table-filter] removeFilterValue() is only supported for option columns");
+            },
+            setFilterOperator<TType extends ColumnDataType>(columnId: string, operator: FilterModel<TType>["operator"]) {
+                setFilters((prev) => prev.map((f) => (f.columnId === columnId ? { ...f, operator } : f)));
+            },
+            setFilterValue<TData, TType extends ColumnDataType>(column: ColumnConfig<TData, TType>, values: FilterModel<TType>["values"]) {
+                setFilters((prev) => {
+                    const filter = prev.find((f) => f.columnId === column.id);
+                    const isColumnFiltered = filter && filter.values.length > 0;
+                    const newValues
+                        = column.type === "number"
+                            ? createNumberFilterValue(values as number[])
+                            : column.type === "date"
+                                ? createDateFilterValue(values as [Date, Date] | [Date] | [] | undefined)
+                                : uniq(values);
+
+                    if (newValues.length === 0)
+                        return prev;
+
+                    if (!isColumnFiltered) {
+                        return [
+                            ...prev,
+                            {
+                                columnId: column.id,
+                                operator: values.length > 1 ? DEFAULT_OPERATORS[column.type].multiple : DEFAULT_OPERATORS[column.type].single,
+                                type: column.type,
+                                values: newValues,
+                            },
+                        ];
+                    }
+
+                    const oldValues = filter.values;
+                    const newOperator = determineNewOperator(column.type, oldValues, newValues, filter.operator);
+                    const newFilter = {
+                        columnId: column.id,
+                        operator: newOperator,
+                        type: column.type,
+                        values: newValues as any,
+                    } satisfies FilterModel<TType>;
+
+                    return prev.map((f) => (f.columnId === column.id ? newFilter : f));
+                });
+            },
+        };
+    }, [setFilters]);
 
     return { actions, columns, filters, strategy }; // columns is Column<TData>[]
 }

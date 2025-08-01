@@ -24,7 +24,7 @@ const preLogMiddleware = createMiddleware({ type: "function" })
         });
     });
 
-export const logMiddleware = createMiddleware({ type: "function" })
+const logMiddleware = createMiddleware({ type: "function" })
     .middleware([preLogMiddleware])
     .client(async (ctx) => {
         const res = await ctx.next();
@@ -39,3 +39,5 @@ export const logMiddleware = createMiddleware({ type: "function" })
 
         return res;
     });
+
+export default logMiddleware;

@@ -1,9 +1,9 @@
-import { useIsMobile } from "@/hooks/use-mobile";
+import useIsMobile from "@/hooks/use-mobile";
 
 import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
 import type { Locale } from "../lib/i18n";
 import { ActiveFilters, ActiveFiltersMobileContainer } from "./active-filters";
-import { FilterActions } from "./filter-actions";
+import FilterActions from "./filter-actions";
 import { FilterSelector } from "./filter-selector";
 
 interface DataTableFilterProps<TData> {
@@ -14,7 +14,7 @@ interface DataTableFilterProps<TData> {
     strategy: FilterStrategy;
 }
 
-export function DataTableFilter<TData>({ actions, columns, filters, locale = "en", strategy }: DataTableFilterProps<TData>) {
+const DataTableFilter = <TData,>({ actions, columns, filters, locale = "en", strategy }: DataTableFilterProps<TData>) => {
     const isMobile = useIsMobile();
 
     if (isMobile) {
@@ -41,4 +41,6 @@ export function DataTableFilter<TData>({ actions, columns, filters, locale = "en
             <FilterActions actions={actions} hasFilters={filters.length > 0} locale={locale} />
         </div>
     );
-}
+};
+
+export default DataTableFilter;

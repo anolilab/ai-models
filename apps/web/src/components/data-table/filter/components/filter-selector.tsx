@@ -1,11 +1,11 @@
 import { ArrowRightIcon, ChevronRightIcon, FilterIcon } from "lucide-react";
-import React, { isValidElement, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 import type { Column, ColumnDataType, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
 import { isAnyOf } from "../lib/array";
@@ -22,9 +22,7 @@ interface FilterSelectorProps<TData> {
     strategy: FilterStrategy;
 }
 
-export const FilterSelector = memo(__FilterSelector) as typeof __FilterSelector;
-
-function __FilterSelector<TData>({ actions, columns, filters, locale = "en", strategy }: FilterSelectorProps<TData>) {
+const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strategy }: FilterSelectorProps<TData>) => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const [property, setProperty] = useState<string | undefined>(undefined);
@@ -105,15 +103,95 @@ function __FilterSelector<TData>({ actions, columns, filters, locale = "en", str
             </PopoverContent>
         </Popover>
     );
+};
+
+interface QuickSearchFiltersProps<TData> {
+    actions: DataTableFilterActions;
+    columns: Column<TData>[];
+    filters: FiltersState;
+    search?: string;
 }
 
-export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
+const QuickSearchFiltersElement = <TData,>({ actions, columns, filters, search }: QuickSearchFiltersProps<TData>) => {
+    if (!search || search.trim().length < 2) {
+        return null;
+    }
+
+    const cols = useMemo(() => columns.filter((c) => isAnyOf<ColumnDataType>(c.type, ["option", "multiOption"])), [columns]);
+
+    return (
+        <>
+            {cols.map((column) => {
+                const filter = filters.find((f) => f.columnId === column.id);
+                const options = column.getOptions();
+                const optionsCount = column.getFacetedUniqueValues();
+
+                const handleOptionSelect = (value: string, check: boolean) => {
+                    if (check)
+                        actions.addFilterValue(column, [value]);
+                    else actions.removeFilterValue(column, [value]);
+                };
+
+                return (
+                    <Fragment key={column.id}>
+                        {options.map((v) => {
+                            const checked = Boolean(filter?.values.includes(v.value));
+                            const count = optionsCount?.get(v.value) ?? 0;
+
+                            return (
+                                <CommandItem
+                                    className="group"
+                                    key={v.value}
+                                    keywords={[v.label, v.value]}
+                                    onSelect={() => {
+                                        handleOptionSelect(v.value, !checked);
+                                    }}
+                                    value={v.value}
+                                >
+                                    <div className="group flex items-center gap-1.5">
+                                        <Checkbox
+                                            checked={checked}
+                                            className="dark:border-ring mr-1 opacity-0 group-data-[selected=true]:opacity-100 data-[state=checked]:opacity-100"
+                                        />
+                                        <div className="flex w-4 items-center justify-center">
+                                            {v.icon && (isValidElement(v.icon) ? v.icon : <v.icon className="text-primary size-4" />)}
+                                        </div>
+                                        <div className="flex items-center gap-0.5">
+                                            <span className="text-muted-foreground">{column.displayName}</span>
+                                            <ChevronRightIcon className="text-muted-foreground/75 size-3.5" />
+                                            <span>
+                                                {v.label}
+                                                <sup
+                                                    className={cn(
+                                                        !optionsCount && "hidden",
+                                                        "text-muted-foreground ml-0.5 tracking-tight tabular-nums",
+                                                        count === 0 && "slashed-zero",
+                                                    )}
+                                                >
+                                                    {count < 100 ? count : "100+"}
+                                                </sup>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </CommandItem>
+                            );
+                        })}
+                    </Fragment>
+                );
+            })}
+        </>
+    );
+};
+
+export const QuickSearchFilters = memo(QuickSearchFiltersElement) as typeof QuickSearchFiltersElement;
+
+export const FilterableColumn = <TData, TType extends ColumnDataType, TVal>({
     column,
     setProperty,
 }: {
     column: Column<TData, TType, TVal>;
     setProperty: (value: string) => void;
-}) {
+}) => {
     const itemRef = useRef<HTMLDivElement>(null);
 
     const prefetch = useCallback(() => {
@@ -175,83 +253,6 @@ export function FilterableColumn<TData, TType extends ColumnDataType, TVal>({
             </div>
         </CommandItem>
     );
-}
+};
 
-interface QuickSearchFiltersProps<TData> {
-    actions: DataTableFilterActions;
-    columns: Column<TData>[];
-    filters: FiltersState;
-    search?: string;
-}
-
-export const QuickSearchFilters = memo(__QuickSearchFilters) as typeof __QuickSearchFilters;
-
-function __QuickSearchFilters<TData>({ actions, columns, filters, search }: QuickSearchFiltersProps<TData>) {
-    if (!search || search.trim().length < 2)
-        return null;
-
-    const cols = useMemo(() => columns.filter((c) => isAnyOf<ColumnDataType>(c.type, ["option", "multiOption"])), [columns]);
-
-    return (
-        <>
-            {cols.map((column) => {
-                const filter = filters.find((f) => f.columnId === column.id);
-                const options = column.getOptions();
-                const optionsCount = column.getFacetedUniqueValues();
-
-                function handleOptionSelect(value: string, check: boolean) {
-                    if (check)
-                        actions.addFilterValue(column, [value]);
-                    else actions.removeFilterValue(column, [value]);
-                }
-
-                return (
-                    <React.Fragment key={column.id}>
-                        {options.map((v) => {
-                            const checked = Boolean(filter?.values.includes(v.value));
-                            const count = optionsCount?.get(v.value) ?? 0;
-
-                            return (
-                                <CommandItem
-                                    className="group"
-                                    key={v.value}
-                                    keywords={[v.label, v.value]}
-                                    onSelect={() => {
-                                        handleOptionSelect(v.value, !checked);
-                                    }}
-                                    value={v.value}
-                                >
-                                    <div className="group flex items-center gap-1.5">
-                                        <Checkbox
-                                            checked={checked}
-                                            className="dark:border-ring mr-1 opacity-0 group-data-[selected=true]:opacity-100 data-[state=checked]:opacity-100"
-                                        />
-                                        <div className="flex w-4 items-center justify-center">
-                                            {v.icon && (isValidElement(v.icon) ? v.icon : <v.icon className="text-primary size-4" />)}
-                                        </div>
-                                        <div className="flex items-center gap-0.5">
-                                            <span className="text-muted-foreground">{column.displayName}</span>
-                                            <ChevronRightIcon className="text-muted-foreground/75 size-3.5" />
-                                            <span>
-                                                {v.label}
-                                                <sup
-                                                    className={cn(
-                                                        !optionsCount && "hidden",
-                                                        "text-muted-foreground ml-0.5 tracking-tight tabular-nums",
-                                                        count === 0 && "slashed-zero",
-                                                    )}
-                                                >
-                                                    {count < 100 ? count : "100+"}
-                                                </sup>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </CommandItem>
-                            );
-                        })}
-                    </React.Fragment>
-                );
-            })}
-        </>
-    );
-}
+export const FilterSelector = memo(FilterSelectorElement) as typeof FilterSelectorElement;

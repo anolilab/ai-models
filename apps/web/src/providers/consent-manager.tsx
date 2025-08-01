@@ -62,16 +62,17 @@ const getShowConsentBanner = createIsomorphicFn()
             return showBanner({});
         }
     })
-    .client(async (): Promise<ContractsOutputs["consent"]["showBanner"]> =>
-        // On client side, return a fallback structure - consent will be managed by existing client-side logic
-        showBanner({}),
+    .client(
+        async (): Promise<ContractsOutputs["consent"]["showBanner"]> =>
+            // On client side, return a fallback structure - consent will be managed by existing client-side logic
+            showBanner({}),
     );
 
 /**
  * TanStack Start-compatible ConsentManagerProvider
  * Automatically detects user location and jurisdiction requirements server-side
  */
-export function ConsentManagerProvider({ children, options }: ConsentManagerProviderProps) {
+const ConsentManagerProvider = ({ children, options }: ConsentManagerProviderProps) => {
     // Get initial consent banner data from server
     const initialDataPromise = getShowConsentBanner();
 
@@ -88,4 +89,6 @@ export function ConsentManagerProvider({ children, options }: ConsentManagerProv
             {children}
         </ClientConsentManagerProvider>
     );
-}
+};
+
+export default ConsentManagerProvider;

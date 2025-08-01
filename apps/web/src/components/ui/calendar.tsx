@@ -4,7 +4,7 @@ import type { DayButton } from "react-day-picker";
 import { DayPicker, getDefaultClassNames } from "react-day-picker";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 function Calendar({
     buttonVariant = "ghost",
@@ -87,9 +87,9 @@ function Calendar({
                 DayButton: CalendarDayButton,
                 Root: ({ className, rootRef, ...props }) => <div className={cn(className)} data-slot="calendar" ref={rootRef} {...props} />,
                 WeekNumber: ({ children, ...props }) => (
-                        <td {...props}>
-                            <div className="flex size-(--cell-size) items-center justify-center text-center">{children}</div>
-                        </td>
+                    <td {...props}>
+                        <div className="flex size-(--cell-size) items-center justify-center text-center">{children}</div>
+                    </td>
                 ),
                 ...components,
             }}

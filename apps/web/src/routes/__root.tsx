@@ -8,7 +8,7 @@ import type { LinkHTMLAttributes, MetaHTMLAttributes } from "react";
 
 import Loader from "@/components/loader";
 import { Toaster } from "@/components/ui/sonner";
-import { ConsentManagerProvider } from "@/providers/consent-manager";
+import ConsentManagerProvider from "@/providers/consent-manager";
 import { AnalyticsProvider } from "@/providers/posthog";
 import { IconSpriteSheet } from "@/utils/provider-icons";
 import { seo } from "@/utils/seo";

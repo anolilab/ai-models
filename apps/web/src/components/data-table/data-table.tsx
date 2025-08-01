@@ -10,7 +10,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from "@tanstack/react-table";
-import * as React from "react";
+import type { ReactNode } from "react";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
 import { VirtualizedTable } from "@/components/data-table/virtual-table";
@@ -20,42 +20,14 @@ import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
 import { createTSTFilters } from "./filter/integrations/tanstack-table";
 import { DataTablePagination } from "./pagination";
 import { RegularTable } from "./regular-table";
-import { DataTableToolbar } from "./toolbar";
+import DataTableToolbar from "./toolbar";
 import { cleanupColumnResizing, initializeColumnSizes, trackColumnResizing } from "./utils/column-sizing";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import { createKeyboardNavigationHandler } from "./utils/keyboard-navigation";
 import { usePerformanceMonitor } from "./utils/performance-utils";
 import type { TableConfig } from "./utils/table-config";
 import { useTableConfig } from "./utils/table-config";
-import { createColumnSizingHandler, createPaginationHandler, createSortingHandler, createSortingState } from "./utils/table-state-handlers";
-
-// Error boundary component for table rendering
-class TableErrorBoundary extends React.Component<{ children: React.ReactNode; fallback?: React.ReactNode }, { hasError: boolean }> {
-    constructor(props: { children: React.ReactNode; fallback?: React.ReactNode }) {
-        super(props);
-        this.state = { hasError: false };
-    }
-
-    static getDerivedStateFromError(): { hasError: boolean } {
-        return { hasError: true };
-    }
-
-    componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-        console.error("Table rendering error:", error, errorInfo);
-    }
-
-    render() {
-        if (this.state.hasError) {
-            return (
-                this.props.fallback || (
-                    <div className="text-muted-foreground p-4 text-center">Something went wrong rendering the table. Please refresh the page.</div>
-                )
-            );
-        }
-
-        return this.props.children;
-    }
-}
+import { createColumnSizingHandler, createPaginationHandler } from "./utils/table-state-handlers";
 
 type RowSelectionUpdater = (prev: Record<string, boolean>) => Record<string, boolean>;
 
@@ -114,7 +86,7 @@ interface DataTableProps<TData extends ExportableData, TValue> {
         resetSelection: () => void;
         selectedRows: TData[];
         totalSelectedCount: number;
-    }) => React.ReactNode;
+    }) => ReactNode;
 
     // Virtualization options (only used when enableRowVirtualization is true)
     virtualizationOptions?: {
@@ -237,7 +209,7 @@ function tableReducer(state: TableState, action: TableAction): TableState {
     }
 }
 
-export function DataTable<TData extends ExportableData, TValue>({
+const DataTable = <TData extends ExportableData, TValue>({
     classes = {},
     config = {},
     containerHeight,
@@ -253,7 +225,7 @@ export function DataTable<TData extends ExportableData, TValue>({
     pageSizeOptions,
     renderToolbarContent,
     virtualizationOptions = {},
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData, TValue>): ReactNode => {
     // Performance monitoring (disabled in test environment)
     if (process.env.NODE_ENV !== "test") {
         usePerformanceMonitor("DataTable");
@@ -321,7 +293,8 @@ export function DataTable<TData extends ExportableData, TValue>({
 
     // Helper functions to handle both Record and Set selection states
     const isItemSelected = useCallback(
-        (itemId: string): boolean => (tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId]),
+        (itemId: string): boolean =>
+            (tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId]),
         [selectedItemIds, tableConfig.enableRowVirtualization],
     );
 
@@ -431,20 +404,20 @@ export function DataTable<TData extends ExportableData, TValue>({
     }, [dataItems, isItemSelected, totalSelectedItems, idField]);
 
     // Get all items
-    const getAllItems = useCallback((): TData[] =>
-        // Return all data
-        dataItems, [dataItems]);
+    const getAllItems = useCallback(
+        (): TData[] =>
+            // Return all data
+            dataItems,
+        [dataItems],
+    );
 
     // Memoized pagination state
-    const tablePagination = useMemo(
-        () => {
-            return {
-                pageIndex: pagination.page - 1,
-                pageSize: pagination.pageSize,
-            };
-        },
-        [pagination.page, pagination.pageSize],
-    );
+    const tablePagination = useMemo(() => {
+        return {
+            pageIndex: pagination.page - 1,
+            pageSize: pagination.pageSize,
+        };
+    }, [pagination.page, pagination.pageSize]);
 
     // Get columns with the deselection handler - React Compiler will optimize this
     const columns = useMemo(() => {
@@ -670,7 +643,6 @@ export function DataTable<TData extends ExportableData, TValue>({
                 />
             )}
             {tableConfig.enableRowVirtualization ? (
-                <TableErrorBoundary fallback={<div className="text-muted-foreground p-4 text-center">Error loading virtual table.</div>}>
                     <VirtualizedTable
                         className={classes.table}
                         columns={columns}
@@ -683,9 +655,7 @@ export function DataTable<TData extends ExportableData, TValue>({
                             overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
                         }}
                     />
-                </TableErrorBoundary>
             ) : (
-                <TableErrorBoundary fallback={<div className="text-muted-foreground p-4 text-center">Error loading regular table.</div>}>
                     <RegularTable
                         className={classes.table}
                         columns={columns}
@@ -697,7 +667,6 @@ export function DataTable<TData extends ExportableData, TValue>({
                         onKeyDown={handleKeyDown}
                         table={table}
                     />
-                </TableErrorBoundary>
             )}
 
             {tableConfig.enablePagination && (
@@ -712,3 +681,5 @@ export function DataTable<TData extends ExportableData, TValue>({
         </div>
     );
 }
+
+export default DataTable;

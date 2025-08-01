@@ -1,42 +1,16 @@
 "use client";
 
 import type { Table } from "@tanstack/react-table";
-import { CheckSquare, EyeOff, MoveHorizontal, Settings, Undo2 } from "lucide-react";
+import type { ReactNode } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 import { DataTableExport } from "./data-export";
-import { DataTableFilter } from "./filter/components/data-table-filter";
-import type { Column, ColumnConfig, DataTableFilterActions, FiltersState, FilterStrategy } from "./filter/core/types";
-import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
+import DataTableFilter from "./filter/components/data-table-filter";
+import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "./filter/core/types";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import type { TableConfig } from "./utils/table-config";
 import { DataTableViewOptions } from "./view-options";
-
-// Helper functions for component sizing
-const getButtonSizeClass = (size: "sm" | "default" | "lg", isIcon = false) => {
-    if (isIcon) {
-        switch (size) {
-            case "lg":
-                return "h-11 w-11";
-            case "sm":
-                return "h-8 w-8";
-            default:
-                return "";
-        }
-    }
-
-    switch (size) {
-        case "lg":
-            return "h-11 px-5";
-        case "sm":
-            return "h-8 px-3";
-        default:
-            return "";
-    }
-};
 
 interface DataTableToolbarProps<TData extends ExportableData> {
     className?: string;
@@ -58,7 +32,7 @@ interface DataTableToolbarProps<TData extends ExportableData> {
     transformFunction?: DataTransformFunction<TData>;
 }
 
-export function DataTableToolbar<TData extends ExportableData>({
+const DataTableToolbar = <TData extends ExportableData>({
     className,
     columnMapping,
     columnWidths,
@@ -75,7 +49,7 @@ export function DataTableToolbar<TData extends ExportableData>({
     table,
     totalSelectedItems = 0,
     transformFunction,
-}: DataTableToolbarProps<TData>) {
+}: DataTableToolbarProps<TData>): ReactNode => {
     // Use filter data passed from DataTable
     const filterState = filters || [];
     const filterColumnsData = filterColumns || [];
@@ -118,4 +92,6 @@ export function DataTableToolbar<TData extends ExportableData>({
             </div>
         </div>
     );
-}
+};
+
+export default DataTableToolbar;

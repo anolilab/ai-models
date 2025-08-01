@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 const Table = React.forwardRef<
     HTMLTableElement,
@@ -11,9 +11,9 @@ const Table = React.forwardRef<
         };
     }
 >(({ classNames, ...props }, ref) => (
-        <div className={cn("relative h-full w-full", classNames?.container)} data-slot="table-container" ref={ref}>
-            <table className={cn("w-full caption-bottom text-sm", classNames?.table)} data-slot="table" {...props} />
-        </div>
+    <div className={cn("relative h-full w-full", classNames?.container)} data-slot="table-container" ref={ref}>
+        <table className={cn("w-full caption-bottom text-sm", classNames?.table)} data-slot="table" {...props} />
+    </div>
 ));
 
 Table.displayName = "Table";

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-export const HowToUseDialog = () => {
+const HowToUseDialog = () => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -14,7 +14,7 @@ export const HowToUseDialog = () => {
                     How to use
                 </Button>
             </DialogTrigger>
-            <DialogContent className="max-h-[80vh] flex flex-col" style={{ maxWidth: "896px" }}>
+            <DialogContent className="flex max-h-[80vh] flex-col" style={{ maxWidth: "896px" }}>
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold">How to use</DialogTitle>
                     <DialogDescription className="text-base">
@@ -22,34 +22,29 @@ export const HowToUseDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
 
-                <div className="space-y-6 overflow-y-auto flex-1 pr-2">
+                <div className="flex-1 space-y-6 overflow-y-auto pr-2">
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">About</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            AI Models is a comprehensive, open-source database that automates the collection and organization of AI model metadata from 25+ providers.
-                            We solve the problem of scattered model information by providing a unified, always-up-to-date source of model specifications, pricing, and features.
+                        <h3 className="mb-2 text-lg font-semibold">About</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                            AI Models is a comprehensive, open-source database that automates the collection and organization of AI model metadata from 25+
+                            providers. We solve the problem of scattered model information by providing a unified, always-up-to-date source of model
+                            specifications, pricing, and features.
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Quick Start</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Quick Start</h3>
                         <div className="space-y-3">
                             <div>
-                                <p className="text-sm font-medium mb-1">API Endpoints:</p>
+                                <p className="mb-1 text-sm font-medium">API Endpoints:</p>
                                 <div className="space-y-2">
-                                    <div className="bg-muted p-3 rounded-md font-mono text-sm">
-                                        curl https://unpkg.com/@anolilab/ai-model-registry/api.json
-                                    </div>
-                                    <div className="bg-muted p-3 rounded-md font-mono text-sm">
-                                        curl https://ai-models.anolilab.com/api.json
-                                    </div>
+                                    <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://unpkg.com/@anolilab/ai-model-registry/api.json</div>
+                                    <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://ai-models.anolilab.com/api.json</div>
                                 </div>
                             </div>
                             <div>
-                                <p className="text-sm font-medium mb-1">NPM Package:</p>
-                                <div className="bg-muted p-3 rounded-md font-mono text-sm">
-                                    npm install @anolilab/ai-model-registry
-                                </div>
+                                <p className="mb-1 text-sm font-medium">NPM Package:</p>
+                                <div className="bg-muted rounded-md p-3 font-mono text-sm">npm install @anolilab/ai-model-registry</div>
                             </div>
                         </div>
                         <div className="mt-2 flex gap-2">
@@ -78,11 +73,11 @@ export const HowToUseDialog = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Usage Examples</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Usage Examples</h3>
                         <div className="space-y-3">
                             <div>
-                                <p className="text-sm font-medium mb-1">JavaScript/TypeScript:</p>
-                                <div className="bg-muted p-3 rounded-md font-mono text-sm">
+                                <p className="mb-1 text-sm font-medium">JavaScript/TypeScript:</p>
+                                <div className="bg-muted rounded-md p-3 font-mono text-sm">
                                     import {`{ getAllModels, getModelById }`} from '@anolilab/ai-model-registry';
                                     <br />
                                     <br />
@@ -98,8 +93,8 @@ export const HowToUseDialog = () => {
                                 </div>
                             </div>
                             <div>
-                                <p className="text-sm font-medium mb-1">API Response:</p>
-                                <div className="bg-muted p-3 rounded-md font-mono text-sm">
+                                <p className="mb-1 text-sm font-medium">API Response:</p>
+                                <div className="bg-muted rounded-md p-3 font-mono text-sm">
                                     {`{
   "models": [...],
   "metadata": {
@@ -115,21 +110,21 @@ export const HowToUseDialog = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Features</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Features</h3>
                         <div className="grid grid-cols-2 gap-4 text-sm">
-                            <div className="bg-muted p-3 rounded-md">
+                            <div className="bg-muted rounded-md p-3">
                                 <div className="font-semibold">1,676+ Models</div>
                                 <div className="text-muted-foreground">Comprehensive coverage</div>
                             </div>
-                            <div className="bg-muted p-3 rounded-md">
+                            <div className="bg-muted rounded-md p-3">
                                 <div className="font-semibold">25+ Providers</div>
                                 <div className="text-muted-foreground">Major AI platforms</div>
                             </div>
-                            <div className="bg-muted p-3 rounded-md">
+                            <div className="bg-muted rounded-md p-3">
                                 <div className="font-semibold">Pricing Data</div>
                                 <div className="text-muted-foreground">285+ models with costs</div>
                             </div>
-                            <div className="bg-muted p-3 rounded-md">
+                            <div className="bg-muted rounded-md p-3">
                                 <div className="font-semibold">Auto-Updated</div>
                                 <div className="text-muted-foreground">Daily aggregation</div>
                             </div>
@@ -137,34 +132,34 @@ export const HowToUseDialog = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Data Included</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Data Included</h3>
                         <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div className="h-2 w-2 rounded-full bg-green-500"></div>
                                 <span>Model specifications (context limits, modalities)</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div className="h-2 w-2 rounded-full bg-green-500"></div>
                                 <span>Pricing information (input/output costs)</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div className="h-2 w-2 rounded-full bg-green-500"></div>
                                 <span>Provider metadata and icons</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div className="h-2 w-2 rounded-full bg-green-500"></div>
                                 <span>Release dates and last updated timestamps</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div className="h-2 w-2 rounded-full bg-green-500"></div>
                                 <span>Model capabilities (tool calling, reasoning)</span>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Contribute</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="mb-2 text-lg font-semibold">Contribute</h3>
+                        <p className="text-muted-foreground mb-3 text-sm leading-relaxed">
                             This is a community-driven project. Help us keep the data accurate and up-to-date by contributing to our GitHub repository.
                         </p>
                         <div className="flex gap-2">
@@ -182,3 +177,5 @@ export const HowToUseDialog = () => {
         </Dialog>
     );
 };
+
+export default HowToUseDialog;

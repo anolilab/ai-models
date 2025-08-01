@@ -5,7 +5,7 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import type { RefObject } from "react";
 import { useEffect, useMemo, useRef } from "react";
 
-import { cn } from "@/lib/utils";
+import cn from "@/lib/utils";
 
 import {
     Table as BaseTable,
@@ -15,7 +15,7 @@ import {
     TableHeader,
     TableRow as BaseTableRow,
 } from "../ui/table";
-import { DataTableResizer } from "./data-table-resizer";
+import DataTableResizer from "./data-table-resizer";
 import type { RegularTableProps } from "./regular-table";
 
 // Define ExportableData type locally since it's not exported from the utils
@@ -438,15 +438,15 @@ const TableBodyRow = <TData extends ExportableData>({
 };
 
 const TableBodyCell = <TData extends ExportableData>({ cell, cellIndex }: TableBodyCellProps<TData>) => (
-        <BaseTableCell
-            className="flex truncate px-4.5 py-2 text-left"
-            id={`cell-${cellIndex}`}
-            style={{
-                width: cell.column.getSize(),
-            }}
-        >
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-        </BaseTableCell>
+    <BaseTableCell
+        className="flex truncate px-4.5 py-2 text-left"
+        id={`cell-${cellIndex}`}
+        style={{
+            width: cell.column.getSize(),
+        }}
+    >
+        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+    </BaseTableCell>
 );
 
 export { TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableHeadRow, type VirtualizationOptions, VirtualizedTable };
