@@ -62,7 +62,7 @@ body:
       id: "environment-info"
       attributes:
           label: "Environment Info"
-          description: "Output of `npx envinfo --system --npmPackages '@visulima/*' --binaries --browsers`"
+          description: "Output of `npx envinfo --system --npmPackages '@anolilab/*' --binaries --browsers`"
           render: "shell"
           placeholder: |
               System:
@@ -76,7 +76,7 @@ body:
                 npm: _ - /usr/bin/npm
                 pnpm: _ - /usr/bin/pnpm
               npmPackages:
-                @visulima/*: _ => _
+                @anolilab/*: _ => _
       validations:
           required: true
 
