@@ -27,10 +27,13 @@ const modalityIconMap: Record<string, React.ReactNode> = {
 };
 
 const HomeComponent = () => {
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     const { allModels } = Route.useLoaderData();
     const [containerHeight, setContainerHeight] = useState(600);
+    const [didMount, setDidMount] = useState(false);
 
     useEffect(() => {
+        setDidMount(true);
         const updateHeight = () => {
             setContainerHeight(window.innerHeight - 160);
         };
@@ -538,7 +541,7 @@ const HomeComponent = () => {
                             estimatedRowHeight: 40,
                             virtualizationOverscan: 5,
                         }}
-                        containerHeight={containerHeight}
+                        containerHeight={didMount ? containerHeight : undefined}
                         data={tableData}
                         defaultSorting={{
                             sortBy: "provider",
