@@ -1,169 +1,128 @@
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
-import { X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
-import type {
-  Column,
-  ColumnDataType,
-  DataTableFilterActions,
-  FilterModel,
-  FilterStrategy,
-  FiltersState,
-} from '../core/types'
-import { getColumn } from '../lib/helpers'
-import type { Locale } from '../lib/i18n'
-import { FilterOperator } from './filter-operator'
-import { FilterSubject } from './filter-subject'
-import { FilterValue } from './filter-value'
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, FilterStrategy, FiltersState } from "../core/types";
+import { getColumn } from "../lib/helpers";
+import type { Locale } from "../lib/i18n";
+import { FilterOperator } from "./filter-operator";
+import { FilterSubject } from "./filter-subject";
+import { FilterValue } from "./filter-value";
 
 interface ActiveFiltersProps<TData> {
-  columns: Column<TData>[]
-  filters: FiltersState
-  actions: DataTableFilterActions
-  strategy: FilterStrategy
-  locale?: Locale
+    columns: Column<TData>[];
+    filters: FiltersState;
+    actions: DataTableFilterActions;
+    strategy: FilterStrategy;
+    locale?: Locale;
 }
 
-export function ActiveFilters<TData>({
-  columns,
-  filters,
-  actions,
-  strategy,
-  locale = 'en',
-}: ActiveFiltersProps<TData>) {
-  return (
-    <>
-      {filters.map((filter) => {
-        const id = filter.columnId
+export function ActiveFilters<TData>({ columns, filters, actions, strategy, locale = "en" }: ActiveFiltersProps<TData>) {
+    return (
+        <>
+            {filters.map((filter) => {
+                const id = filter.columnId;
 
-        const column = getColumn(columns, id)
+                const column = getColumn(columns, id);
 
-        // Skip if no filter value
-        if (!filter.values) {
-          return null
-        }
+                // Skip if no filter value
+                if (!filter.values) {
+                    return null;
+                }
 
-        return (
-          <ActiveFilter
-            key={`active-filter-${filter.columnId}`}
-            filter={filter}
-            column={column}
-            actions={actions}
-            strategy={strategy}
-            locale={locale}
-          />
-        )
-      })}
-    </>
-  )
+                return (
+                    <ActiveFilter
+                        key={`active-filter-${filter.columnId}`}
+                        filter={filter}
+                        column={column}
+                        actions={actions}
+                        strategy={strategy}
+                        locale={locale}
+                    />
+                );
+            })}
+        </>
+    );
 }
 
 interface ActiveFilterProps<TData, TType extends ColumnDataType> {
-  filter: FilterModel<TType>
-  column: Column<TData, TType>
-  actions: DataTableFilterActions
-  strategy: FilterStrategy
-  locale?: Locale
+    filter: FilterModel<TType>;
+    column: Column<TData, TType>;
+    actions: DataTableFilterActions;
+    strategy: FilterStrategy;
+    locale?: Locale;
 }
 
 // Generic render function for a filter with type-safe value
-export function ActiveFilter<TData, TType extends ColumnDataType>({
-  filter,
-  column,
-  actions,
-  strategy,
-  locale = 'en',
-}: ActiveFilterProps<TData, TType>) {
-  return (
-    <div className="flex items-center border border-border bg-background shadow-xs text-xs">
-      <FilterSubject column={column} />
-      <Separator orientation="vertical" />
-      <FilterOperator
-        filter={filter}
-        column={column}
-        actions={actions}
-        locale={locale}
-      />
-      <Separator orientation="vertical" />
-      <FilterValue
-        filter={filter}
-        column={column}
-        actions={actions}
-        strategy={strategy}
-        locale={locale}
-      />
-      <Separator orientation="vertical" />
-      <Button
-        variant="ghost"
-        className="text-xs h-full"
-        onClick={() => actions.removeFilter(filter.columnId)}
-      >
-        <X className="size-4" />
-      </Button>
-    </div>
-  )
+export function ActiveFilter<TData, TType extends ColumnDataType>({ filter, column, actions, strategy, locale = "en" }: ActiveFilterProps<TData, TType>) {
+    return (
+        <div className="border-border bg-background flex items-center border text-xs shadow-xs">
+            <FilterSubject column={column} />
+            <Separator orientation="vertical" />
+            <FilterOperator filter={filter} column={column} actions={actions} locale={locale} />
+            <Separator orientation="vertical" />
+            <FilterValue filter={filter} column={column} actions={actions} strategy={strategy} locale={locale} />
+            <Separator orientation="vertical" />
+            <Button variant="ghost" className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)}>
+                <X className="size-4" />
+            </Button>
+        </div>
+    );
 }
 
-export function ActiveFiltersMobileContainer({
-  children,
-}: { children: React.ReactNode }) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [showLeftBlur, setShowLeftBlur] = useState(false)
-  const [showRightBlur, setShowRightBlur] = useState(true)
+export function ActiveFiltersMobileContainer({ children }: { children: React.ReactNode }) {
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [showLeftBlur, setShowLeftBlur] = useState(false);
+    const [showRightBlur, setShowRightBlur] = useState(true);
 
-  // Check if there's content to scroll and update blur states
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current
+    // Check if there's content to scroll and update blur states
+    const checkScroll = () => {
+        if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
 
-      // Show left blur if scrolled to the right
-      setShowLeftBlur(scrollLeft > 0)
+            // Show left blur if scrolled to the right
+            setShowLeftBlur(scrollLeft > 0);
 
-      // Show right blur if there's more content to scroll to the right
-      // Add a small buffer (1px) to account for rounding errors
-      setShowRightBlur(scrollLeft + clientWidth < scrollWidth - 1)
-    }
-  }
+            // Show right blur if there's more content to scroll to the right
+            // Add a small buffer (1px) to account for rounding errors
+            setShowRightBlur(scrollLeft + clientWidth < scrollWidth - 1);
+        }
+    };
 
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      const resizeObserver = new ResizeObserver(() => {
-        checkScroll()
-      })
-      resizeObserver.observe(scrollContainerRef.current)
-      return () => {
-        resizeObserver.disconnect()
-      }
-    }
-  }, [])
+    useEffect(() => {
+        if (scrollContainerRef.current) {
+            const resizeObserver = new ResizeObserver(() => {
+                checkScroll();
+            });
+            resizeObserver.observe(scrollContainerRef.current);
+            return () => {
+                resizeObserver.disconnect();
+            };
+        }
+    }, []);
 
-  // Update blur states when children change
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => {
-    checkScroll()
-  }, [children])
+    // Update blur states when children change
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    useEffect(() => {
+        checkScroll();
+    }, [children]);
 
-  return (
-    <div className="relative w-full overflow-x-hidden">
-      {/* Left blur effect */}
-      {showLeftBlur && (
-        <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent animate-in fade-in-0" />
-      )}
+    return (
+        <div className="relative w-full overflow-x-hidden">
+            {/* Left blur effect */}
+            {showLeftBlur && (
+                <div className="from-background animate-in fade-in-0 pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-16 bg-gradient-to-r to-transparent" />
+            )}
 
-      {/* Scrollable container */}
-      <div
-        ref={scrollContainerRef}
-        className="flex gap-2 overflow-x-scroll no-scrollbar"
-        onScroll={checkScroll}
-      >
-        {children}
-      </div>
+            {/* Scrollable container */}
+            <div ref={scrollContainerRef} className="no-scrollbar flex gap-2 overflow-x-scroll" onScroll={checkScroll}>
+                {children}
+            </div>
 
-      {/* Right blur effect */}
-      {showRightBlur && (
-        <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent animate-in fade-in-0 " />
-      )}
-    </div>
-  )
+            {/* Right blur effect */}
+            {showRightBlur && (
+                <div className="from-background animate-in fade-in-0 pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-16 bg-gradient-to-l to-transparent" />
+            )}
+        </div>
+    );
 }

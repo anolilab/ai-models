@@ -7,40 +7,40 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-  plugins: [
-    tsconfigPaths(),
-    tailwindcss(),
-    tanstackStart({
-      target: "netlify",
-      customViteReactPlugin: true,
-    }),
-    react({
-        babel: {
-            plugins: [["babel-plugin-react-compiler", { target: "19" }]],
-        },
-    }),
-    Unfonts({
-      fontsource: {
-        families: [
-          {
-            name: 'Inter',
-            weights: [300, 400, 500, 600, 700, 800]
-          },
-          {
-            name: 'JetBrains Mono',
-            weights: [400, 500, 600]
-          }
-        ]
-      },
-    }),
-    svgr({
-        // Optimize SVG imports
-        svgrOptions: {
-            //plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
-            svgoConfig: {
-                floatPrecision: 2,
+    plugins: [
+        tsconfigPaths(),
+        tailwindcss(),
+        tanstackStart({
+            target: "netlify",
+            customViteReactPlugin: true,
+        }),
+        react({
+            babel: {
+                plugins: [["babel-plugin-react-compiler", { target: "19" }]],
             },
-        },
-    }),
-  ]
+        }),
+        Unfonts({
+            fontsource: {
+                families: [
+                    {
+                        name: "Inter",
+                        weights: [300, 400, 500, 600, 700, 800],
+                    },
+                    {
+                        name: "JetBrains Mono",
+                        weights: [400, 500, 600],
+                    },
+                ],
+            },
+        }),
+        svgr({
+            // Optimize SVG imports
+            svgrOptions: {
+                //plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+                svgoConfig: {
+                    floatPrecision: 2,
+                },
+            },
+        }),
+    ],
 });

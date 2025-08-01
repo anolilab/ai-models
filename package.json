@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "dev:web": "nx run web:dev",
-    "download": "pnpm -r run download",
     "preinstall": "node -e \"if(process.env.CI == 'true') {console.info('Skipping preinstall...')} else {process.exit(1)}\" || (node verify-node-version.js && npm -y exec only-allow pnpm)",
     "postinstall": "is-ci || husky || exit 0",
     "nx": "nx",

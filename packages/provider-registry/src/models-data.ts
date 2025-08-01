@@ -1,5 +1,8 @@
-// Auto-generated file - do not edit manually
-// Generated from aggregated and synchronized provider data with Helicone pricing
+/* Auto-generated file - do not edit manually
+ * Generated from aggregated and synchronized provider data with Helicone pricing
+ * 
+ * To regenerate this file, run: pnpm run aggregate-providers
+ */
 
 import type { Model } from './schema';
 
@@ -55,7 +58,7 @@ export const allModels: Model[] = [
     "extendedThinking": true,
     "id": "deepseek-r-1-distill-qwen-1-5-b",
     "knowledge": null,
-    "lastUpdated": "2025-01-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32768,
       "output": 16384
@@ -1579,6 +1582,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00099
     },
+    "extendedThinking": false,
     "id": "deepseek/r1-v1:0",
     "knowledge": null,
     "lastUpdated": "2025-03-10",
@@ -1606,9 +1610,10 @@ export const allModels: Model[] = [
       "us-west-2"
     ],
     "releaseDate": "2025-03-10",
-    "streamingSupported": null,
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "bedrock"
   },
   {
@@ -2275,6 +2280,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "mistral/mistral-large-2407-v1:0",
     "knowledge": null,
     "lastUpdated": "2024-07-24",
@@ -2300,9 +2306,10 @@ export const allModels: Model[] = [
       "us-west-2"
     ],
     "releaseDate": "2024-07-24",
-    "streamingSupported": null,
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "bedrock"
   },
   {
@@ -2688,17 +2695,17 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 0.25,
+      "input": 0.5,
       "inputCacheHit": null,
-      "output": 1.25
+      "output": 0.03
     },
     "extendedThinking": false,
     "id": "claude-haiku-3",
-    "knowledge": "Aug 2023",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 4096
+      "context": 0,
+      "output": 0
     },
     "modalities": {
       "input": [
@@ -2720,7 +2727,7 @@ export const allModels: Model[] = [
     "providerModelsDevId": "anthropic",
     "providerNpm": "@ai-sdk/anthropic",
     "reasoning": false,
-    "releaseDate": null,
+    "releaseDate": "2024-02-29",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
@@ -2730,17 +2737,17 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 0.8,
+      "input": 1.6,
       "inputCacheHit": null,
-      "output": 4
+      "output": 0.08
     },
     "extendedThinking": false,
     "id": "claude-haiku-3-5",
-    "knowledge": "July 2024",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 8192
+      "context": 0,
+      "output": 1
     },
     "modalities": {
       "input": [
@@ -2762,7 +2769,7 @@ export const allModels: Model[] = [
     "providerModelsDevId": "anthropic",
     "providerNpm": "@ai-sdk/anthropic",
     "reasoning": false,
-    "releaseDate": null,
+    "releaseDate": "2024-03-04",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
@@ -2772,22 +2779,62 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 15,
+      "input": 30,
       "inputCacheHit": null,
-      "output": 75
+      "output": 1.5
     },
     "extendedThinking": true,
-    "id": "claude-opus-4",
-    "knowledge": "Mar 2025",
+    "id": "claude-opus-3",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 32000
+      "context": 15,
+      "output": 18
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Claude Opus 3",
+    "openWeights": false,
+    "provider": "Anthropic",
+    "providerDoc": "https://docs.anthropic.com/en/docs/about-claude/models",
+    "providerEnv": [
+      "ANTHROPIC_API_KEY"
+    ],
+    "providerId": "anthropic",
+    "providerModelsDevId": "anthropic",
+    "providerNpm": "@ai-sdk/anthropic",
+    "reasoning": true,
+    "releaseDate": "2024-02-29",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "anthropic"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 30,
+      "inputCacheHit": null,
+      "output": 1.5
+    },
+    "extendedThinking": true,
+    "id": "claude-opus-4",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 15,
+      "output": 18
+    },
+    "modalities": {
+      "input": [
+        "text"
       ],
       "output": [
         "text"
@@ -2808,29 +2855,28 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "vision": false,
     "icon": "anthropic",
     "cacheRead": false
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3,
+      "input": 6,
       "inputCacheHit": null,
-      "output": 15
+      "output": 0.3
     },
-    "extendedThinking": false,
+    "extendedThinking": true,
     "id": "claude-sonnet-3-5",
-    "knowledge": "Apr 2024",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 8192
+      "context": 3,
+      "output": 3
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -2846,34 +2892,33 @@ export const allModels: Model[] = [
     "providerId": "anthropic",
     "providerModelsDevId": "anthropic",
     "providerNpm": "@ai-sdk/anthropic",
-    "reasoning": false,
-    "releaseDate": null,
+    "reasoning": true,
+    "releaseDate": "2024-03-04",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "vision": false,
     "icon": "anthropic",
     "cacheRead": false
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3,
+      "input": 6,
       "inputCacheHit": null,
-      "output": 15
+      "output": 0.3
     },
     "extendedThinking": true,
     "id": "claude-sonnet-3-7",
-    "knowledge": "Nov 20241",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 64000
+      "context": 3,
+      "output": 3
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -2890,33 +2935,32 @@ export const allModels: Model[] = [
     "providerModelsDevId": "anthropic",
     "providerNpm": "@ai-sdk/anthropic",
     "reasoning": true,
-    "releaseDate": null,
+    "releaseDate": "2024-02-29",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "vision": false,
     "icon": "anthropic",
     "cacheRead": false
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3,
+      "input": 6,
       "inputCacheHit": null,
-      "output": 15
+      "output": 0.3
     },
     "extendedThinking": true,
     "id": "claude-sonnet-4",
-    "knowledge": "Mar 2025",
+    "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 64000
+      "context": 3,
+      "output": 3
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -2937,7 +2981,7 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "vision": false,
     "icon": "anthropic",
     "cacheRead": false
   },
@@ -3746,7 +3790,6 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 30
     },
-    "extendedThinking": false,
     "id": "gpt-4",
     "knowledge": "2023-11",
     "lastUpdated": "2024-04-09",
@@ -3777,8 +3820,9 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": false,
-    "icon": "openai"
+    "icon": "openai",
+    "extendedThinking": false,
+    "vision": false
   },
   {
     "attachment": false,
@@ -4916,24 +4960,23 @@ export const allModels: Model[] = [
     "icon": "azure"
   },
   {
-    "attachment": true,
+    "attachment": false,
     "cost": {
-      "input": 15,
-      "inputCacheHit": 7.5,
-      "output": 60
+      "input": 0.015,
+      "inputCacheHit": null,
+      "output": 0.06
     },
     "extendedThinking": false,
     "id": "o-1",
-    "knowledge": "2023-09",
-    "lastUpdated": "2024-12-05",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 100000
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -4941,21 +4984,22 @@ export const allModels: Model[] = [
     },
     "name": "o1",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2024-12-05",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai"
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "azure"
   },
   {
     "attachment": false,
@@ -5002,17 +5046,17 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 1.1,
-      "inputCacheHit": 0.55,
-      "output": 4.4
+      "input": 0.015,
+      "inputCacheHit": null,
+      "output": 0.06
     },
     "extendedThinking": false,
     "id": "o-1-mini",
-    "knowledge": "2023-09",
-    "lastUpdated": "2024-09-12",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 128000,
-      "output": 65536
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
@@ -5024,21 +5068,22 @@ export const allModels: Model[] = [
     },
     "name": "o1-mini",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2024-09-12",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
+    "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "openai"
+    "icon": "azure"
   },
   {
     "attachment": false,
@@ -5085,17 +5130,17 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 15,
-      "inputCacheHit": 7.5,
-      "output": 60
+      "input": 0.015,
+      "inputCacheHit": null,
+      "output": 0.06
     },
     "extendedThinking": false,
     "id": "o-1-preview",
-    "knowledge": "2023-09",
-    "lastUpdated": "2024-09-12",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 128000,
-      "output": 32768
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
@@ -5107,21 +5152,22 @@ export const allModels: Model[] = [
     },
     "name": "o1-preview",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2024-09-12",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "openai"
+    "icon": "azure"
   },
   {
     "attachment": false,
@@ -5166,24 +5212,23 @@ export const allModels: Model[] = [
     "icon": "azure"
   },
   {
-    "attachment": true,
+    "attachment": false,
     "cost": {
-      "input": 2,
-      "inputCacheHit": 0.5,
-      "output": 8
+      "input": 0.002,
+      "inputCacheHit": null,
+      "output": 0.008
     },
     "extendedThinking": false,
     "id": "o-3",
-    "knowledge": "2024-05",
-    "lastUpdated": "2025-04-16",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 100000
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -5191,21 +5236,22 @@ export const allModels: Model[] = [
     },
     "name": "o3",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2025-04-16",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai",
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "azure",
     "cacheRead": false
   },
   {
@@ -5253,17 +5299,17 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 1.1,
-      "inputCacheHit": 0.55,
-      "output": 4.4
+      "input": 0.0011,
+      "inputCacheHit": null,
+      "output": 0.0044
     },
     "extendedThinking": false,
     "id": "o-3-mini",
-    "knowledge": "2024-05",
-    "lastUpdated": "2025-01-29",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 100000
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
@@ -5275,21 +5321,22 @@ export const allModels: Model[] = [
     },
     "name": "o3-mini",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2024-12-20",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
-    "toolCall": true,
+    "temperature": true,
+    "toolCall": false,
     "vision": false,
-    "icon": "openai"
+    "icon": "azure"
   },
   {
     "attachment": false,
@@ -5334,24 +5381,23 @@ export const allModels: Model[] = [
     "icon": "azure"
   },
   {
-    "attachment": true,
+    "attachment": false,
     "cost": {
-      "input": 20,
+      "input": 0.02,
       "inputCacheHit": null,
-      "output": 80
+      "output": 0.08
     },
     "extendedThinking": false,
     "id": "o-3-pro",
-    "knowledge": "2024-05",
-    "lastUpdated": "2025-06-10",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 100000
+      "context": 2,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -5359,21 +5405,22 @@ export const allModels: Model[] = [
     },
     "name": "o3-pro",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2025-06-10",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai"
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "azure"
   },
   {
     "attachment": false,
@@ -5418,24 +5465,23 @@ export const allModels: Model[] = [
     "icon": "azure"
   },
   {
-    "attachment": true,
+    "attachment": false,
     "cost": {
-      "input": 1.1,
-      "inputCacheHit": 0.28,
-      "output": 4.4
+      "input": 0.0011,
+      "inputCacheHit": null,
+      "output": 0.0044
     },
     "extendedThinking": false,
     "id": "o-4-mini",
-    "knowledge": "2024-05",
-    "lastUpdated": "2025-04-16",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 200000,
-      "output": 100000
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -5443,21 +5489,22 @@ export const allModels: Model[] = [
     },
     "name": "o4-mini",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
+    "provider": "Azure OpenAI",
+    "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
     "providerEnv": [
-      "OPENAI_API_KEY"
+      "AZURE_OPENAI_API_KEY",
+      "AZURE_OPENAI_ENDPOINT"
     ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
-    "reasoning": true,
-    "releaseDate": "2025-04-16",
+    "providerId": "azure-open-ai",
+    "providerModelsDevId": "azure-openai",
+    "providerNpm": "@ai-sdk/azure-openai",
+    "reasoning": false,
+    "releaseDate": null,
     "streamingSupported": true,
-    "temperature": false,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai",
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "azure",
     "cacheRead": false
   },
   {
@@ -6433,6 +6480,45 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2
     },
+    "id": "moonshotai/Kimi-K2-Instruct",
+    "knowledge": "2024-10",
+    "lastUpdated": "2025-07-11",
+    "limit": {
+      "context": 131072,
+      "output": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Kimi K2",
+    "openWeights": true,
+    "provider": "Deep Infra",
+    "providerDoc": "https://deepinfra.com/models",
+    "providerEnv": [
+      "DEEPINFRA_API_KEY"
+    ],
+    "providerId": "deep-infra",
+    "providerModelsDevId": "deepinfra",
+    "providerNpm": "@ai-sdk/deepinfra",
+    "reasoning": false,
+    "releaseDate": "2025-07-11",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "icon": "deepinfra"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.5,
+      "inputCacheHit": null,
+      "output": 2
+    },
     "extendedThinking": false,
     "id": "moonshotai-kimi-k2-instruct",
     "knowledge": "2024-10",
@@ -6552,12 +6638,89 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
+      "input": 0.4,
+      "inputCacheHit": null,
+      "output": 1.6
+    },
+    "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+    "knowledge": "2025-04",
+    "lastUpdated": "2025-07-23",
+    "limit": {
+      "context": 262144,
+      "output": 66536
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3 Coder 480B A35B Instruct",
+    "openWeights": true,
+    "provider": "Deep Infra",
+    "providerDoc": "https://deepinfra.com/models",
+    "providerEnv": [
+      "DEEPINFRA_API_KEY"
+    ],
+    "providerId": "deep-infra",
+    "providerModelsDevId": "deepinfra",
+    "providerNpm": "@ai-sdk/deepinfra",
+    "reasoning": false,
+    "releaseDate": "2025-07-23",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "icon": "deepinfra"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.3,
+      "inputCacheHit": null,
+      "output": 1.2
+    },
+    "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+    "knowledge": "2025-04",
+    "lastUpdated": "2025-07-23",
+    "limit": {
+      "context": 262144,
+      "output": 66536
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3 Coder 480B A35B Instruct Turbo",
+    "openWeights": true,
+    "provider": "Deep Infra",
+    "providerDoc": "https://deepinfra.com/models",
+    "providerEnv": [
+      "DEEPINFRA_API_KEY"
+    ],
+    "providerId": "deep-infra",
+    "providerModelsDevId": "deepinfra",
+    "providerNpm": "@ai-sdk/deepinfra",
+    "reasoning": false,
+    "releaseDate": "2025-07-23",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "icon": "deepinfra"
+  },
+  {
+    "attachment": false,
+    "cost": {
       "input": 0.6,
       "inputCacheHit": null,
       "output": 2.2
     },
-    "extendedThinking": false,
-    "id": "zai-org-glm-4-5",
+    "id": "zai-org/GLM-4.5",
     "knowledge": "2025-04",
     "lastUpdated": "2025-07-28",
     "limit": {
@@ -6587,7 +6750,6 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": false,
     "icon": "deepinfra"
   },
   {
@@ -6631,9 +6793,10 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.14,
       "output": 2.19
     },
+    "extendedThinking": false,
     "id": "deepseek-reasoner",
     "knowledge": null,
-    "lastUpdated": "2025-05-28",
+    "lastUpdated": null,
     "limit": {
       "context": 64000,
       "output": 64000
@@ -6652,8 +6815,10 @@ export const allModels: Model[] = [
     "providerId": "deep-seek",
     "reasoning": true,
     "releaseDate": "2025/05/28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "deepseek"
   },
   {
@@ -8053,14 +8218,14 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 0.0003,
+      "input": 0.00075,
       "inputCacheHit": null,
-      "output": 0.0003
+      "output": 0.00099
     },
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-llama-70b",
     "knowledge": null,
-    "lastUpdated": "2025-01-23",
+    "lastUpdated": "2025-02-24",
     "limit": {
       "context": 131072,
       "output": null
@@ -8073,37 +8238,37 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Llama 70B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Llama-70B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-01-23",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0003,
+      "input": 0.00004,
       "inputCacheHit": null,
-      "output": 0.0003
+      "output": 0.00004
     },
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-llama-8b",
     "knowledge": null,
-    "lastUpdated": "2025-02-07",
+    "lastUpdated": "2025-02-24",
     "limit": {
-      "context": 131072,
+      "context": 32000,
       "output": 32000
     },
     "modalities": {
@@ -8114,37 +8279,37 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Llama 8B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Llama-8B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-02-07",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
     "cost": {
-      "input": null,
+      "input": 0.00015,
       "inputCacheHit": null,
-      "output": null
+      "output": 0.00015
     },
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-qwen-14b",
     "knowledge": null,
-    "lastUpdated": "2025-01-29",
+    "lastUpdated": "2025-02-24",
     "limit": {
-      "context": 131072,
+      "context": 64000,
       "output": 32000
     },
     "modalities": {
@@ -8155,35 +8320,35 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Qwen 14B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Qwen-14B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-01-29",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
     "cost": {
-      "input": null,
+      "input": 0.00017999999999999998,
       "inputCacheHit": null,
-      "output": null
+      "output": 0.00017999999999999998
     },
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-qwen-1-5b",
     "knowledge": null,
-    "lastUpdated": "2025-01-31",
+    "lastUpdated": "2025-03-07",
     "limit": {
       "context": 131072,
       "output": 32768
@@ -8196,35 +8361,35 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Qwen 1.5B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Qwen-1.5B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-01-31",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
     "cost": {
-      "input": null,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": null
+      "output": 0.0003
     },
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-qwen-32b",
     "knowledge": null,
-    "lastUpdated": "2025-01-29",
+    "lastUpdated": "2025-02-24",
     "limit": {
       "context": 131072,
       "output": 16384
@@ -8237,23 +8402,23 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Qwen 32B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Qwen-32B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-01-29",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
@@ -8265,7 +8430,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "deep-seek-r1-distill-qwen-7b",
     "knowledge": null,
-    "lastUpdated": "2025-05-30",
+    "lastUpdated": "2025-02-24",
     "limit": {
       "context": 131072,
       "output": null
@@ -8278,23 +8443,23 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "DeepSeek R1 Distill Qwen 7B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "DeepSeek-R1-Distill-Qwen-7B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-05-30",
+    "releaseDate": "2025-01-20",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
@@ -8429,7 +8594,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "deepseek-r1-05-28",
     "knowledge": null,
-    "lastUpdated": "2025-05-28",
+    "lastUpdated": null,
     "limit": {
       "context": 163840,
       "output": null
@@ -9538,9 +9703,9 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "intern-vl-3-38b",
     "knowledge": null,
-    "lastUpdated": null,
+    "lastUpdated": "2025-05-30",
     "limit": {
-      "context": 16384,
+      "context": null,
       "output": null
     },
     "modalities": {
@@ -9552,23 +9717,23 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "InternVL3 38B",
-    "openWeights": false,
-    "provider": "Fireworks AI",
-    "providerDoc": "https://readme.fireworks.ai/",
+    "name": "InternVL3-38B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
-      "FIREWORKS_API_KEY"
+      "MODELSCOPE_API_KEY"
     ],
-    "providerId": "fireworks-ai",
-    "providerModelsDevId": "fireworks-ai",
-    "providerNpm": "@ai-sdk/fireworks",
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": null,
+    "releaseDate": "2025-04-10",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
     "vision": true,
-    "icon": "fireworks"
+    "icon": "modelscope"
   },
   {
     "attachment": false,
@@ -10858,7 +11023,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "llama-guard-3-8b",
     "knowledge": null,
-    "lastUpdated": "2025-02-12",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": null
@@ -15549,24 +15714,23 @@ export const allModels: Model[] = [
     "icon": "githubcopilot"
   },
   {
-    "attachment": true,
+    "attachment": false,
+    "cacheRead": false,
     "cost": {
-      "input": 2,
-      "inputCacheHit": 0.5,
-      "output": 8
+      "input": 0.03,
+      "inputCacheHit": null,
+      "output": 0.06
     },
-    "extendedThinking": false,
     "id": "gpt-4-1",
-    "knowledge": "2024-04",
-    "lastUpdated": "2025-04-14",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 1047576,
-      "output": 32768
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -15574,42 +15738,32 @@ export const allModels: Model[] = [
     },
     "name": "GPT-4.1",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
+    "provider": "GitHub Copilot",
+    "providerId": "git-hub-copilot",
     "reasoning": false,
-    "releaseDate": "2025-04-14",
-    "streamingSupported": true,
+    "releaseDate": null,
     "temperature": true,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai",
-    "cacheRead": false
+    "toolCall": false,
+    "icon": "githubcopilot"
   },
   {
-    "attachment": true,
+    "attachment": false,
+    "cacheRead": false,
     "cost": {
-      "input": 2.5,
-      "inputCacheHit": 1.25,
-      "output": 10
+      "input": 0.005,
+      "inputCacheHit": null,
+      "output": 0.015
     },
-    "extendedThinking": false,
     "id": "gpt-4-o",
-    "knowledge": "2023-09",
-    "lastUpdated": "2024-05-13",
+    "knowledge": null,
+    "lastUpdated": null,
     "limit": {
-      "context": 128000,
-      "output": 16384
+      "context": null,
+      "output": null
     },
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
@@ -15617,22 +15771,13 @@ export const allModels: Model[] = [
     },
     "name": "GPT-4o",
     "openWeights": false,
-    "provider": "OpenAI",
-    "providerDoc": "https://platform.openai.com/docs/models",
-    "providerEnv": [
-      "OPENAI_API_KEY"
-    ],
-    "providerId": "open-ai",
-    "providerModelsDevId": "openai",
-    "providerNpm": "@ai-sdk/openai",
+    "provider": "GitHub Copilot",
+    "providerId": "git-hub-copilot",
     "reasoning": false,
-    "releaseDate": "2024-05-13",
-    "streamingSupported": true,
+    "releaseDate": null,
     "temperature": true,
-    "toolCall": true,
-    "vision": true,
-    "icon": "openai",
-    "cacheRead": false
+    "toolCall": false,
+    "icon": "githubcopilot"
   },
   {
     "attachment": false,
@@ -18225,6 +18370,50 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
+    "id": "misc-feature-flags-enable-project-variables",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "MiscFeatureFlags__enable_project_variables",
+    "openWeights": false,
+    "provider": "Google Vertex",
+    "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+    "providerEnv": [
+      "GOOGLE_VERTEX_PROJECT",
+      "GOOGLE_VERTEX_LOCATION",
+      "GOOGLE_APPLICATION_CREDENTIALS"
+    ],
+    "providerId": "google-vertex",
+    "providerModelsDevId": "google-vertex",
+    "providerNpm": "@ai-sdk/google-vertex",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": true,
+    "icon": "google"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
     "id": "model-prompting",
     "knowledge": null,
     "lastUpdated": null,
@@ -18828,7 +19017,13 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": false,
-    "icon": "groq"
+    "icon": "groq",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter"
   },
   {
     "attachment": false,
@@ -18847,7 +19042,7 @@ export const allModels: Model[] = [
     "id": "deepseek-r1-distill-llama-70b",
     "imageGeneration": false,
     "knowledge": null,
-    "lastUpdated": "2025-01-23",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 131072
@@ -18922,20 +19117,13 @@ export const allModels: Model[] = [
   },
   {
     "attachment": false,
-    "audioGeneration": false,
-    "batchMode": false,
-    "cacheRead": false,
-    "codeExecution": false,
-    "compoundSystem": true,
     "cost": {
       "input": null,
       "inputCacheHit": null,
       "output": null
     },
-    "deploymentType": "cloud",
     "extendedThinking": false,
     "id": "compound-beta",
-    "imageGeneration": false,
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
@@ -18954,12 +19142,16 @@ export const allModels: Model[] = [
     "openWeights": false,
     "preview": true,
     "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
     "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
     "reasoning": false,
     "releaseDate": null,
-    "searchGrounding": false,
     "streamingSupported": true,
-    "structuredOutputs": false,
     "temperature": true,
     "toolCall": true,
     "vision": false,
@@ -18967,20 +19159,13 @@ export const allModels: Model[] = [
   },
   {
     "attachment": false,
-    "audioGeneration": false,
-    "batchMode": false,
-    "cacheRead": false,
-    "codeExecution": false,
-    "compoundSystem": true,
     "cost": {
       "input": null,
       "inputCacheHit": null,
       "output": null
     },
-    "deploymentType": "cloud",
     "extendedThinking": false,
     "id": "compound-beta-mini",
-    "imageGeneration": false,
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
@@ -18999,16 +19184,650 @@ export const allModels: Model[] = [
     "openWeights": false,
     "preview": true,
     "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
     "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
     "reasoning": false,
     "releaseDate": null,
-    "searchGrounding": false,
     "streamingSupported": true,
-    "structuredOutputs": false,
     "temperature": true,
     "toolCall": true,
     "vision": false,
     "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.00075,
+      "inputCacheHit": null,
+      "output": 0.00099
+    },
+    "extendedThinking": false,
+    "id": "deepseek-r-1-distill-llama-70-b",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "deepseek-r1-distill-llama-70b",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": "2025-01-23",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0002,
+      "inputCacheHit": null,
+      "output": 0.0002
+    },
+    "extendedThinking": false,
+    "id": "gemma-2-9-b-it",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "gemma2-9b-it",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.00005,
+      "inputCacheHit": null,
+      "output": 0.00008
+    },
+    "extendedThinking": false,
+    "id": "llama-3-1-8-b-instant",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "llama-3.1-8b-instant",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0005899999999999999,
+      "inputCacheHit": null,
+      "output": 0.00079
+    },
+    "extendedThinking": false,
+    "id": "llama-3-3-70-b-versatile",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "llama-3.3-70b-versatile",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0002,
+      "inputCacheHit": null,
+      "output": 0.0006
+    },
+    "extendedThinking": false,
+    "id": "meta-llama-llama-4-maverick-17-b-128-e-instruct",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "meta-llama/llama-4-maverick-17b-128e-instruct",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.00011,
+      "inputCacheHit": null,
+      "output": 0.00034
+    },
+    "extendedThinking": false,
+    "id": "meta-llama-llama-4-scout-17-b-16-e-instruct",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0002,
+      "inputCacheHit": null,
+      "output": 0.0002
+    },
+    "extendedThinking": false,
+    "id": "meta-llama-llama-guard-4-12-b",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "meta-llama/llama-guard-4-12b",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0003,
+      "inputCacheHit": null,
+      "output": 0.0003
+    },
+    "extendedThinking": false,
+    "id": "meta-llama-llama-prompt-guard-2-22-m",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "meta-llama/llama-prompt-guard-2-22m",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0003,
+      "inputCacheHit": null,
+      "output": 0.0003
+    },
+    "extendedThinking": false,
+    "id": "meta-llama-llama-prompt-guard-2-86-m",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "meta-llama/llama-prompt-guard-2-86m",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.001,
+      "inputCacheHit": null,
+      "output": 0.003
+    },
+    "extendedThinking": false,
+    "id": "moonshotai-kimi-k-2-instruct",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "moonshotai/kimi-k2-instruct",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "playai-tts",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "playai-tts",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "playai-tts-arabic",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "playai-tts-arabic",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.00029,
+      "inputCacheHit": null,
+      "output": 0.0005899999999999999
+    },
+    "extendedThinking": false,
+    "id": "qwen-qwen-3-32-b",
+    "knowledge": null,
+    "lastUpdated": "2025-04-28",
+    "limit": {
+      "context": 131072,
+      "output": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "qwen/qwen3-32b",
+    "openWeights": false,
+    "preview": false,
+    "provider": "Groq",
+    "providerDoc": "https://console.groq.com/docs/models",
+    "providerEnv": [
+      "GROQ_API_KEY"
+    ],
+    "providerId": "groq",
+    "providerModelsDevId": "groq",
+    "providerNpm": "@ai-sdk/groq",
+    "reasoning": false,
+    "releaseDate": "2025-04-28",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "groq"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "whisper-large-v-3",
+    "knowledge": null,
+    "lastUpdated": "2024-08-13",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "whisper-large-v3",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2023-11-14",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope",
+    "preview": false
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "whisper-large-v-3-turbo",
+    "knowledge": null,
+    "lastUpdated": "2024-10-11",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Whisper-large-v3-turbo",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2024-10-11",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope",
+    "preview": false
   },
   {
     "attachment": false,
@@ -19197,6 +20016,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 5e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-guard-4-12b",
     "knowledge": null,
     "lastUpdated": "2025-04-30",
@@ -19219,8 +20039,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2025-04-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter",
     "audioGeneration": false,
     "batchMode": false,
@@ -19228,12 +20050,9 @@ export const allModels: Model[] = [
     "codeExecution": false,
     "compoundSystem": false,
     "deploymentType": "cloud",
-    "extendedThinking": false,
     "preview": false,
     "searchGrounding": false,
-    "streamingSupported": true,
-    "structuredOutputs": false,
-    "vision": false
+    "structuredOutputs": false
   },
   {
     "attachment": false,
@@ -19452,98 +20271,6 @@ export const allModels: Model[] = [
     "preview": false,
     "provider": "Groq",
     "providerId": "groq/open-ai",
-    "reasoning": false,
-    "releaseDate": null,
-    "searchGrounding": false,
-    "streamingSupported": true,
-    "structuredOutputs": false,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "groq"
-  },
-  {
-    "attachment": false,
-    "audioGeneration": true,
-    "batchMode": false,
-    "cacheRead": false,
-    "codeExecution": false,
-    "compoundSystem": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "deploymentType": "cloud",
-    "extendedThinking": false,
-    "id": "playai-tts",
-    "imageGeneration": false,
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": 8192,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text",
-        "audio"
-      ]
-    },
-    "name": "playai-tts",
-    "openWeights": false,
-    "preview": false,
-    "provider": "Groq",
-    "providerId": "groq/play-ai",
-    "reasoning": false,
-    "releaseDate": null,
-    "searchGrounding": false,
-    "streamingSupported": true,
-    "structuredOutputs": false,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "groq"
-  },
-  {
-    "attachment": false,
-    "audioGeneration": true,
-    "batchMode": false,
-    "cacheRead": false,
-    "codeExecution": false,
-    "compoundSystem": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "deploymentType": "cloud",
-    "extendedThinking": false,
-    "id": "playai-tts-arabic",
-    "imageGeneration": false,
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": 8192,
-      "output": 8192
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text",
-        "audio"
-      ]
-    },
-    "name": "playai-tts-arabic",
-    "openWeights": false,
-    "preview": false,
-    "provider": "Groq",
-    "providerId": "groq/play-ai",
     "reasoning": false,
     "releaseDate": null,
     "searchGrounding": false,
@@ -21680,7 +22407,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "mistral-large-2407",
     "knowledge": null,
-    "lastUpdated": "2024-11-19",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": null
@@ -24808,6 +25535,47 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
+    "id": "cv-tinynas-human-detection-damoyolo",
+    "knowledge": null,
+    "lastUpdated": "2025-06-08",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "cv_tinynas_human-detection_damoyolo",
+    "openWeights": false,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2022-12-22",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
     "id": "cv-tinynas-object-detection-damoyolo",
     "knowledge": null,
     "lastUpdated": "2025-06-08",
@@ -24965,6 +25733,47 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "cv-unet-skin-retouching",
+    "knowledge": null,
+    "lastUpdated": "2023-08-20",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "cv_unet_skin-retouching",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2022-08-03",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
     "icon": "modelscope"
   },
   {
@@ -25916,6 +26725,48 @@ export const allModels: Model[] = [
     "icon": "modelscope"
   },
   {
+    "attachment": true,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "dots-ocr",
+    "knowledge": null,
+    "lastUpdated": "2025-07-31",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "dots.ocr",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-30",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": true,
+    "icon": "modelscope"
+  },
+  {
     "attachment": false,
     "cost": {
       "input": null,
@@ -26841,7 +27692,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "flux-1-krea-dev",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -26867,6 +27718,48 @@ export const allModels: Model[] = [
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
     "releaseDate": "2025-07-31",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "flux-1-schnell",
+    "knowledge": null,
+    "lastUpdated": "2024-09-05",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "image"
+      ]
+    },
+    "name": "FLUX.1-schnell",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2024-08-01",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -27861,6 +28754,48 @@ export const allModels: Model[] = [
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
     "releaseDate": "2024-12-24",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "got-ocr2-0",
+    "knowledge": null,
+    "lastUpdated": "2025-02-26",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "GOT-OCR2_0",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2024-09-16",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -30146,6 +31081,47 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "mengzi-t-5-base",
+    "knowledge": null,
+    "lastUpdated": "2022-12-16",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "mengzi-t5-base",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2022-10-15",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
       "input": 0.0001,
       "inputCacheHit": null,
       "output": 0.0001
@@ -30553,6 +31529,47 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "mini-cpm-4-8b",
+    "knowledge": null,
+    "lastUpdated": "2025-06-17",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "MiniCPM4-8B",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-06-05",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
     "icon": "modelscope"
   },
   {
@@ -31848,7 +32865,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "nunchaku-flux-1-dev",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -32139,7 +33156,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "ollama-linux",
     "knowledge": null,
-    "lastUpdated": "2025-06-23",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -34896,7 +35913,7 @@ export const allModels: Model[] = [
     "extendedThinking": true,
     "id": "qwen-3-30b-a3b-thinking-2507-gguf",
     "knowledge": null,
-    "lastUpdated": "2025-07-30",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -35085,6 +36102,47 @@ export const allModels: Model[] = [
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
     "releaseDate": "2025-05-03",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "qwen-3-32b-gptq-int-8",
+    "knowledge": null,
+    "lastUpdated": "2025-04-29",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3-32B-GPTQ-Int8",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-04-29",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -35470,7 +36528,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "qwen-3-coder-30b-a3b-instruct",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -35484,6 +36542,129 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3-Coder-30B-A3B-Instruct",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-31",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "qwen-3-coder-30b-a3b-instruct-1m-gguf",
+    "knowledge": null,
+    "lastUpdated": "2025-07-31",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3-Coder-30B-A3B-Instruct-1M-GGUF",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-31",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "qwen-3-coder-30b-a3b-instruct-fp8",
+    "knowledge": null,
+    "lastUpdated": "2025-08-01",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3-Coder-30B-A3B-Instruct-FP8",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-31",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "qwen-3-coder-30b-a3b-instruct-gguf",
+    "knowledge": null,
+    "lastUpdated": "2025-07-31",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen3-Coder-30B-A3B-Instruct-GGUF",
     "openWeights": true,
     "provider": "ModelScope",
     "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
@@ -35675,7 +36856,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "qwen-3-coder-480b-a35b-instruct-gguf",
     "knowledge": null,
-    "lastUpdated": "2025-07-23",
+    "lastUpdated": "2025-08-01",
     "limit": {
       "context": null,
       "output": null
@@ -35689,7 +36870,7 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3-Coder-480B-A35B-Instruct-GGUF",
-    "openWeights": false,
+    "openWeights": true,
     "provider": "ModelScope",
     "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
     "providerEnv": [
@@ -35798,7 +36979,7 @@ export const allModels: Model[] = [
     "extendedThinking": false,
     "id": "qwen-3-embedding-0-6b",
     "knowledge": null,
-    "lastUpdated": "2025-06-22",
+    "lastUpdated": "2025-07-08",
     "limit": {
       "context": null,
       "output": null
@@ -35822,7 +37003,7 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2025-06-04",
+    "releaseDate": "2025-06-28",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -36274,6 +37455,47 @@ export const allModels: Model[] = [
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
     "releaseDate": "2023-08-03",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "qwen-audio-chat",
+    "knowledge": null,
+    "lastUpdated": "2025-02-26",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Qwen-Audio-Chat",
+    "openWeights": false,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2023-11-28",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -36775,6 +37997,47 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "small-thinker-21ba3b-instruct",
+    "knowledge": null,
+    "lastUpdated": "2025-08-01",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "SmallThinker-21BA3B-Instruct",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-26",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
     "icon": "modelscope"
   },
   {
@@ -37509,6 +38772,47 @@ export const allModels: Model[] = [
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
     "releaseDate": "2022-12-27",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "speech-ngram-lm-zh-cn-ai-wesp-fst",
+    "knowledge": null,
+    "lastUpdated": "2023-12-12",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "speech_ngram_lm_zh-cn-ai-wesp-fst",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2023-10-30",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -38471,6 +39775,48 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
+    "id": "step-3",
+    "knowledge": null,
+    "lastUpdated": "2025-07-31",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "step3",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-31",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
     "id": "step-audio-tts-3b",
     "knowledge": null,
     "lastUpdated": "2025-04-23",
@@ -38751,6 +40097,47 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
+    "id": "voxtral-mini-3b-2507",
+    "knowledge": null,
+    "lastUpdated": "2025-07-29",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Voxtral-Mini-3B-2507",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-15",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": false,
     "icon": "modelscope"
   },
   {
@@ -39590,6 +40977,48 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
+    "id": "wan-2-2-i2v-a14b-bf16",
+    "knowledge": null,
+    "lastUpdated": "2025-07-30",
+    "limit": {
+      "context": null,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "Wan2.2-I2V-A14B-BF16",
+    "openWeights": true,
+    "provider": "ModelScope",
+    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+    "providerEnv": [
+      "MODELSCOPE_API_KEY"
+    ],
+    "providerId": "model-scope",
+    "providerModelsDevId": "modelscope",
+    "providerNpm": "@ai-sdk/openai-compatible",
+    "reasoning": false,
+    "releaseDate": "2025-07-30",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
+    "vision": true,
+    "icon": "modelscope"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": null,
+      "inputCacheHit": null,
+      "output": null
+    },
+    "extendedThinking": false,
     "id": "wan-2-2-i2v-a14b-diffusers",
     "knowledge": null,
     "lastUpdated": "2025-07-29",
@@ -40125,9 +41554,9 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
-    "id": "whisper-large-v-3",
+    "id": "xi-yan-sql-qwen-coder-32b-2412",
     "knowledge": null,
-    "lastUpdated": "2024-08-13",
+    "lastUpdated": "2025-07-08",
     "limit": {
       "context": null,
       "output": null
@@ -40140,7 +41569,7 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "whisper-large-v3",
+    "name": "XiYanSQL-QwenCoder-32B-2412",
     "openWeights": true,
     "provider": "ModelScope",
     "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
@@ -40151,48 +41580,7 @@ export const allModels: Model[] = [
     "providerModelsDevId": "modelscope",
     "providerNpm": "@ai-sdk/openai-compatible",
     "reasoning": false,
-    "releaseDate": "2023-11-14",
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "modelscope"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "whisper-large-v-3-turbo",
-    "knowledge": null,
-    "lastUpdated": "2024-10-11",
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "Whisper-large-v3-turbo",
-    "openWeights": true,
-    "provider": "ModelScope",
-    "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-    "providerEnv": [
-      "MODELSCOPE_API_KEY"
-    ],
-    "providerId": "model-scope",
-    "providerModelsDevId": "modelscope",
-    "providerNpm": "@ai-sdk/openai-compatible",
-    "reasoning": false,
-    "releaseDate": "2024-10-11",
+    "releaseDate": "2024-12-09",
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
@@ -40414,7 +41802,6 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.375,
       "output": 6
     },
-    "extendedThinking": false,
     "id": "codex-mini-latest",
     "knowledge": "2024-04",
     "lastUpdated": "2025-05-16",
@@ -40445,7 +41832,6 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": false,
     "toolCall": true,
-    "vision": false,
     "icon": "openai"
   },
   {
@@ -40455,8 +41841,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 1.25,
       "output": 1.5
     },
-    "extendedThinking": false,
-    "id": "gpt-3-5-turbo",
+    "id": "gpt-3.5-turbo",
     "knowledge": "2021-09-01",
     "lastUpdated": "2023-11-06",
     "limit": {
@@ -40486,7 +41871,46 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
-    "vision": false,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 2,
+      "inputCacheHit": 0.5,
+      "output": 8
+    },
+    "id": "gpt-4.1",
+    "knowledge": "2024-04",
+    "lastUpdated": "2025-04-14",
+    "limit": {
+      "context": 1047576,
+      "output": 32768
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "GPT-4.1",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": false,
+    "releaseDate": "2025-04-14",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
     "icon": "openai"
   },
   {
@@ -40496,8 +41920,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.1,
       "output": 1.6
     },
-    "extendedThinking": false,
-    "id": "gpt-4-1-mini",
+    "id": "gpt-4.1-mini",
     "knowledge": "2024-04",
     "lastUpdated": "2025-04-14",
     "limit": {
@@ -40528,7 +41951,6 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
     "icon": "openai"
   },
   {
@@ -40538,8 +41960,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.03,
       "output": 0.4
     },
-    "extendedThinking": false,
-    "id": "gpt-4-1-nano",
+    "id": "gpt-4.1-nano",
     "knowledge": "2024-04",
     "lastUpdated": "2025-04-14",
     "limit": {
@@ -40570,7 +41991,46 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 2.5,
+      "inputCacheHit": 1.25,
+      "output": 10
+    },
+    "id": "gpt-4o",
+    "knowledge": "2023-09",
+    "lastUpdated": "2024-05-13",
+    "limit": {
+      "context": 128000,
+      "output": 16384
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "GPT-4o",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": false,
+    "releaseDate": "2024-05-13",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
     "icon": "openai"
   },
   {
@@ -40580,8 +42040,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.08,
       "output": 0.6
     },
-    "extendedThinking": false,
-    "id": "gpt-4-o-mini",
+    "id": "gpt-4o-mini",
     "knowledge": "2023-09",
     "lastUpdated": "2024-07-18",
     "limit": {
@@ -40612,7 +42071,6 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
     "icon": "openai"
   },
   {
@@ -40622,7 +42080,6 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 30
     },
-    "extendedThinking": false,
     "id": "gpt-4-turbo",
     "knowledge": "2023-12",
     "lastUpdated": "2024-04-09",
@@ -40654,7 +42111,124 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "vision": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 15,
+      "inputCacheHit": 7.5,
+      "output": 60
+    },
+    "id": "o1",
+    "knowledge": "2023-09",
+    "lastUpdated": "2024-12-05",
+    "limit": {
+      "context": 200000,
+      "output": 100000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o1",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2024-12-05",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 1.1,
+      "inputCacheHit": 0.55,
+      "output": 4.4
+    },
+    "id": "o1-mini",
+    "knowledge": "2023-09",
+    "lastUpdated": "2024-09-12",
+    "limit": {
+      "context": 128000,
+      "output": 65536
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o1-mini",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2024-09-12",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": false,
+    "icon": "openai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 15,
+      "inputCacheHit": 7.5,
+      "output": 60
+    },
+    "id": "o1-preview",
+    "knowledge": "2023-09",
+    "lastUpdated": "2024-09-12",
+    "limit": {
+      "context": 128000,
+      "output": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o1-preview",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2024-09-12",
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": false,
     "icon": "openai"
   },
   {
@@ -40664,8 +42238,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 600
     },
-    "extendedThinking": false,
-    "id": "o-1-pro",
+    "id": "o1-pro",
     "knowledge": "2023-09",
     "lastUpdated": "2025-03-19",
     "limit": {
@@ -40696,7 +42269,46 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": false,
     "toolCall": true,
-    "vision": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 2,
+      "inputCacheHit": 0.5,
+      "output": 8
+    },
+    "id": "o3",
+    "knowledge": "2024-05",
+    "lastUpdated": "2025-04-16",
+    "limit": {
+      "context": 200000,
+      "output": 100000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o3",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2025-04-16",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": true,
     "icon": "openai"
   },
   {
@@ -40706,8 +42318,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 2.5,
       "output": 40
     },
-    "extendedThinking": false,
-    "id": "o-3-deep-research",
+    "id": "o3-deep-research",
     "knowledge": "2024-05",
     "lastUpdated": "2024-06-26",
     "limit": {
@@ -40738,7 +42349,125 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": false,
     "toolCall": true,
-    "vision": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 1.1,
+      "inputCacheHit": 0.55,
+      "output": 4.4
+    },
+    "id": "o3-mini",
+    "knowledge": "2024-05",
+    "lastUpdated": "2025-01-29",
+    "limit": {
+      "context": 200000,
+      "output": 100000
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o3-mini",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2024-12-20",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 20,
+      "inputCacheHit": null,
+      "output": 80
+    },
+    "id": "o3-pro",
+    "knowledge": "2024-05",
+    "lastUpdated": "2025-06-10",
+    "limit": {
+      "context": 200000,
+      "output": 100000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o3-pro",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2025-06-10",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": true,
+    "icon": "openai"
+  },
+  {
+    "attachment": true,
+    "cost": {
+      "input": 1.1,
+      "inputCacheHit": 0.28,
+      "output": 4.4
+    },
+    "id": "o4-mini",
+    "knowledge": "2024-05",
+    "lastUpdated": "2025-04-16",
+    "limit": {
+      "context": 200000,
+      "output": 100000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "o4-mini",
+    "openWeights": false,
+    "provider": "OpenAI",
+    "providerDoc": "https://platform.openai.com/docs/models",
+    "providerEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "providerId": "open-ai",
+    "providerModelsDevId": "openai",
+    "providerNpm": "@ai-sdk/openai",
+    "reasoning": true,
+    "releaseDate": "2025-04-16",
+    "streamingSupported": true,
+    "temperature": false,
+    "toolCall": true,
     "icon": "openai"
   },
   {
@@ -40748,8 +42477,7 @@ export const allModels: Model[] = [
       "inputCacheHit": 0.5,
       "output": 8
     },
-    "extendedThinking": false,
-    "id": "o-4-mini-deep-research",
+    "id": "o4-mini-deep-research",
     "knowledge": "2024-05",
     "lastUpdated": "2024-06-26",
     "limit": {
@@ -40780,7 +42508,6 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": false,
     "toolCall": true,
-    "vision": true,
     "icon": "openai"
   },
   {
@@ -40790,6 +42517,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-8
     },
+    "extendedThinking": false,
     "id": "agentica-org/deepcoder-14b-preview",
     "knowledge": null,
     "lastUpdated": "2025-04-13",
@@ -40811,8 +42539,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/agentica-org",
     "reasoning": false,
     "releaseDate": "2025-04-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40822,6 +42552,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "agentica-org/deepcoder-14b-preview:free",
     "knowledge": null,
     "lastUpdated": "2025-04-13",
@@ -40843,8 +42574,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/agentica-org",
     "reasoning": false,
     "releaseDate": "2025-04-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40854,6 +42587,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000008
     },
+    "extendedThinking": false,
     "id": "ai21/jamba-1.6-large",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -40875,8 +42609,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/ai-21",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40886,6 +42622,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "ai21/jamba-1.6-mini",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -40907,8 +42644,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/ai-21",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40918,6 +42657,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000008
     },
+    "extendedThinking": false,
     "id": "aion-labs/aion-1.0",
     "knowledge": null,
     "lastUpdated": "2025-02-04",
@@ -40939,8 +42679,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/aion-labs",
     "reasoning": false,
     "releaseDate": "2025-02-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40950,6 +42692,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000014
     },
+    "extendedThinking": false,
     "id": "aion-labs/aion-1.0-mini",
     "knowledge": null,
     "lastUpdated": "2025-02-04",
@@ -40971,8 +42714,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/aion-labs",
     "reasoning": false,
     "releaseDate": "2025-02-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -40982,6 +42727,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-7
     },
+    "extendedThinking": false,
     "id": "aion-labs/aion-rp-llama-3.1-8b",
     "knowledge": null,
     "lastUpdated": "2025-02-04",
@@ -41003,8 +42749,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/aion-labs",
     "reasoning": false,
     "releaseDate": "2025-02-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41014,6 +42762,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "alfredpros/codellama-7b-instruct-solidity",
     "knowledge": null,
     "lastUpdated": "2025-04-14",
@@ -41035,8 +42784,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/alfredpros",
     "reasoning": false,
     "releaseDate": "2025-04-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41046,6 +42797,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000011
     },
+    "extendedThinking": false,
     "id": "alpindale/goliath-120b",
     "knowledge": null,
     "lastUpdated": "2023-11-10",
@@ -41067,8 +42819,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/alpindale",
     "reasoning": false,
     "releaseDate": "2023-11-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41078,6 +42832,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.4e-7
     },
+    "extendedThinking": false,
     "id": "amazon/nova-lite-v1",
     "knowledge": null,
     "lastUpdated": "2024-12-05",
@@ -41100,8 +42855,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/amazon",
     "reasoning": false,
     "releaseDate": "2024-12-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41111,6 +42868,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.4e-7
     },
+    "extendedThinking": false,
     "id": "amazon/nova-micro-v1",
     "knowledge": null,
     "lastUpdated": "2024-12-05",
@@ -41132,8 +42890,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/amazon",
     "reasoning": false,
     "releaseDate": "2024-12-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41143,6 +42903,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000032
     },
+    "extendedThinking": false,
     "id": "amazon/nova-pro-v1",
     "knowledge": null,
     "lastUpdated": "2024-12-05",
@@ -41165,8 +42926,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/amazon",
     "reasoning": false,
     "releaseDate": "2024-12-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41176,6 +42939,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000003
     },
+    "extendedThinking": false,
     "id": "anthracite-org/magnum-v2-72b",
     "knowledge": null,
     "lastUpdated": "2024-09-30",
@@ -41197,8 +42961,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthracite-org",
     "reasoning": false,
     "releaseDate": "2024-09-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41208,6 +42974,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000003
     },
+    "extendedThinking": false,
     "id": "anthracite-org/magnum-v4-72b",
     "knowledge": null,
     "lastUpdated": "2024-10-22",
@@ -41229,8 +42996,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthracite-org",
     "reasoning": false,
     "releaseDate": "2024-10-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41240,6 +43009,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000004
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-haiku",
     "knowledge": null,
     "lastUpdated": "2024-11-04",
@@ -41262,9 +43032,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-11-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -41273,6 +43051,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000004
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-haiku:beta",
     "knowledge": null,
     "lastUpdated": "2024-11-04",
@@ -41295,8 +43074,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-11-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41306,6 +43087,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000004
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-haiku-20241022",
     "knowledge": null,
     "lastUpdated": "2024-11-04",
@@ -41328,8 +43110,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-11-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41339,6 +43123,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-sonnet",
     "knowledge": null,
     "lastUpdated": "2024-10-22",
@@ -41361,9 +43146,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-10-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -41372,6 +43165,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-sonnet:beta",
     "knowledge": null,
     "lastUpdated": "2024-10-22",
@@ -41394,8 +43188,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-10-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41405,6 +43201,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-sonnet-20240620",
     "knowledge": null,
     "lastUpdated": "2024-06-20",
@@ -41427,8 +43224,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-06-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41438,6 +43237,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.5-sonnet-20240620:beta",
     "knowledge": null,
     "lastUpdated": "2024-06-20",
@@ -41460,8 +43260,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-06-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41471,6 +43273,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.7-sonnet",
     "knowledge": null,
     "lastUpdated": "2025-02-24",
@@ -41493,9 +43296,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2025-02-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -41504,6 +43315,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.7-sonnet:beta",
     "knowledge": null,
     "lastUpdated": "2025-02-24",
@@ -41526,8 +43338,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2025-02-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41537,6 +43351,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3.7-sonnet:thinking",
     "knowledge": null,
     "lastUpdated": "2025-02-24",
@@ -41559,8 +43374,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2025-02-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41570,6 +43387,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00000125
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3-haiku",
     "knowledge": null,
     "lastUpdated": "2024-03-13",
@@ -41592,9 +43410,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -41603,6 +43429,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00000125
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3-haiku:beta",
     "knowledge": null,
     "lastUpdated": "2024-03-13",
@@ -41625,8 +43452,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41636,6 +43465,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000075
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3-opus",
     "knowledge": null,
     "lastUpdated": "2024-03-05",
@@ -41658,9 +43488,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-03-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -41669,6 +43507,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000075
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3-opus:beta",
     "knowledge": null,
     "lastUpdated": "2024-03-05",
@@ -41691,8 +43530,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-03-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41702,6 +43543,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-3-sonnet",
     "knowledge": null,
     "lastUpdated": "2024-03-05",
@@ -41724,8 +43566,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2024-03-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41735,6 +43579,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000075
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-opus-4",
     "knowledge": null,
     "lastUpdated": "2025-05-22",
@@ -41757,8 +43602,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2025-05-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41768,6 +43615,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-sonnet-4",
     "knowledge": null,
     "lastUpdated": "2025-05-22",
@@ -41790,8 +43638,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/anthropic",
     "reasoning": false,
     "releaseDate": "2025-05-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41801,6 +43651,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 8e-7
     },
+    "extendedThinking": false,
     "id": "arcee-ai/coder-large",
     "knowledge": null,
     "lastUpdated": "2025-05-05",
@@ -41822,8 +43673,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arcee-ai",
     "reasoning": false,
     "releaseDate": "2025-05-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41833,6 +43686,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000033
     },
+    "extendedThinking": false,
     "id": "arcee-ai/maestro-reasoning",
     "knowledge": null,
     "lastUpdated": "2025-05-05",
@@ -41854,8 +43708,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arcee-ai",
     "reasoning": false,
     "releaseDate": "2025-05-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41865,6 +43721,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.8e-7
     },
+    "extendedThinking": false,
     "id": "arcee-ai/spotlight",
     "knowledge": null,
     "lastUpdated": "2025-05-05",
@@ -41887,8 +43744,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arcee-ai",
     "reasoning": false,
     "releaseDate": "2025-05-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -41898,6 +43757,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "arcee-ai/virtuoso-large",
     "knowledge": null,
     "lastUpdated": "2025-05-05",
@@ -41919,8 +43779,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arcee-ai",
     "reasoning": false,
     "releaseDate": "2025-05-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41930,6 +43792,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-8
     },
+    "extendedThinking": false,
     "id": "arliai/qwq-32b-arliai-rpr-v1",
     "knowledge": null,
     "lastUpdated": "2025-04-13",
@@ -41951,8 +43814,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arliai",
     "reasoning": false,
     "releaseDate": "2025-04-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41962,6 +43827,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "arliai/qwq-32b-arliai-rpr-v1:free",
     "knowledge": null,
     "lastUpdated": "2025-04-13",
@@ -41983,8 +43849,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/arliai",
     "reasoning": false,
     "releaseDate": "2025-04-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -41994,6 +43862,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000011
     },
+    "extendedThinking": false,
     "id": "baidu/ernie-4.5-300b-a47b",
     "knowledge": null,
     "lastUpdated": "2025-06-30",
@@ -42015,8 +43884,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/baidu",
     "reasoning": false,
     "releaseDate": "2025-06-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42026,6 +43897,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-7
     },
+    "extendedThinking": false,
     "id": "bytedance/ui-tars-1.5-7b",
     "knowledge": null,
     "lastUpdated": "2025-07-22",
@@ -42048,8 +43920,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/bytedance",
     "reasoning": false,
     "releaseDate": "2025-07-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -42059,6 +43933,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
     "knowledge": null,
     "lastUpdated": "2025-02-13",
@@ -42080,8 +43955,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cognitivecomputations",
     "reasoning": false,
     "releaseDate": "2025-02-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42091,6 +43968,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.3e-8
     },
+    "extendedThinking": false,
     "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
     "knowledge": null,
     "lastUpdated": "2025-02-13",
@@ -42112,8 +43990,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cognitivecomputations",
     "reasoning": false,
     "releaseDate": "2025-02-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42123,6 +44003,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
     "knowledge": null,
     "lastUpdated": "2025-02-13",
@@ -42144,8 +44025,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cognitivecomputations",
     "reasoning": false,
     "releaseDate": "2025-02-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42155,6 +44038,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
     "knowledge": null,
     "lastUpdated": "2025-07-09",
@@ -42176,8 +44060,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cognitivecomputations",
     "reasoning": false,
     "releaseDate": "2025-07-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42187,6 +44073,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 9e-7
     },
+    "extendedThinking": false,
     "id": "cognitivecomputations/dolphin-mixtral-8x22b",
     "knowledge": null,
     "lastUpdated": "2024-06-08",
@@ -42208,8 +44095,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cognitivecomputations",
     "reasoning": false,
     "releaseDate": "2024-06-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42219,6 +44108,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000002
     },
+    "extendedThinking": false,
     "id": "cohere/command",
     "knowledge": null,
     "lastUpdated": "2024-03-14",
@@ -42240,8 +44130,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-03-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42251,6 +44143,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000008
     },
+    "extendedThinking": false,
     "id": "cohere/command-a",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -42272,9 +44165,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -42283,6 +44184,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000015
     },
+    "extendedThinking": false,
     "id": "cohere/command-r",
     "knowledge": null,
     "lastUpdated": "2024-03-14",
@@ -42304,9 +44206,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-03-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -42315,6 +44225,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000015
     },
+    "extendedThinking": false,
     "id": "cohere/command-r-03-2024",
     "knowledge": null,
     "lastUpdated": "2024-03-02",
@@ -42336,8 +44247,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-03-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42347,6 +44260,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-7
     },
+    "extendedThinking": false,
     "id": "cohere/command-r-08-2024",
     "knowledge": null,
     "lastUpdated": "2024-08-30",
@@ -42368,8 +44282,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-08-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42379,6 +44295,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-7
     },
+    "extendedThinking": false,
     "id": "cohere/command-r7b-12-2024",
     "knowledge": null,
     "lastUpdated": "2024-12-14",
@@ -42400,8 +44317,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-12-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42411,6 +44330,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "cohere/command-r-plus",
     "knowledge": null,
     "lastUpdated": "2024-04-04",
@@ -42432,9 +44352,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-04-04",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -42443,6 +44371,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000015
     },
+    "extendedThinking": false,
     "id": "cohere/command-r-plus-04-2024",
     "knowledge": null,
     "lastUpdated": "2024-04-02",
@@ -42464,8 +44393,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-04-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42475,6 +44406,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "cohere/command-r-plus-08-2024",
     "knowledge": null,
     "lastUpdated": "2024-08-30",
@@ -42496,8 +44428,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/cohere",
     "reasoning": false,
     "releaseDate": "2024-08-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42507,6 +44441,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.72e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-chat",
     "knowledge": null,
     "lastUpdated": "2024-12-26",
@@ -42528,8 +44463,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2024-12-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42539,6 +44476,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 8.5e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-chat-v3-0324",
     "knowledge": null,
     "lastUpdated": "2025-03-24",
@@ -42560,8 +44498,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-03-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42571,6 +44511,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-chat-v3-0324:free",
     "knowledge": null,
     "lastUpdated": "2025-03-24",
@@ -42592,8 +44533,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-03-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42603,6 +44546,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00000218
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-prover-v2",
     "knowledge": null,
     "lastUpdated": "2025-04-30",
@@ -42624,8 +44568,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-04-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42635,6 +44581,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000002
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1",
     "knowledge": null,
     "lastUpdated": "2025-01-20",
@@ -42656,9 +44603,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -42667,6 +44622,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.72e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-0528",
     "knowledge": null,
     "lastUpdated": "2025-05-28",
@@ -42688,8 +44644,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-05-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42699,6 +44657,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-0528:free",
     "knowledge": null,
     "lastUpdated": "2025-05-28",
@@ -42720,8 +44679,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-05-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42731,6 +44692,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-8
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-0528-qwen3-8b",
     "knowledge": null,
     "lastUpdated": "2025-05-29",
@@ -42752,8 +44714,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-05-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42763,6 +44727,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
     "knowledge": null,
     "lastUpdated": "2025-05-29",
@@ -42784,8 +44749,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-05-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42795,6 +44762,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1:free",
     "knowledge": null,
     "lastUpdated": "2025-01-20",
@@ -42816,8 +44784,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42827,6 +44797,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 5e-8
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-llama-70b",
     "knowledge": null,
     "lastUpdated": "2025-01-23",
@@ -42848,9 +44819,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -42859,6 +44838,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-llama-70b:free",
     "knowledge": null,
     "lastUpdated": "2025-01-23",
@@ -42880,8 +44860,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42891,6 +44873,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-8
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-llama-8b",
     "knowledge": null,
     "lastUpdated": "2025-02-07",
@@ -42912,8 +44895,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-02-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42923,6 +44908,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-qwen-14b",
     "knowledge": null,
     "lastUpdated": "2025-01-29",
@@ -42944,8 +44930,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42955,6 +44943,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-qwen-14b:free",
     "knowledge": null,
     "lastUpdated": "2025-01-29",
@@ -42976,8 +44965,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -42987,6 +44978,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.8e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-qwen-1.5b",
     "knowledge": null,
     "lastUpdated": "2025-01-31",
@@ -43008,8 +45000,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-31",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43019,6 +45013,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-qwen-32b",
     "knowledge": null,
     "lastUpdated": "2025-01-29",
@@ -43040,8 +45035,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-01-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43051,6 +45048,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-r1-distill-qwen-7b",
     "knowledge": null,
     "lastUpdated": "2025-05-30",
@@ -43072,8 +45070,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-05-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43083,6 +45083,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3.02e-7
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-v3-base",
     "knowledge": null,
     "lastUpdated": "2025-03-29",
@@ -43104,8 +45105,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/deepseek",
     "reasoning": false,
     "releaseDate": "2025-03-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43115,6 +45118,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "eleutherai/llemma_7b",
     "knowledge": null,
     "lastUpdated": "2025-04-14",
@@ -43136,8 +45140,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/eleutherai",
     "reasoning": false,
     "releaseDate": "2025-04-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43147,6 +45153,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "featherless/qwerky-72b:free",
     "knowledge": null,
     "lastUpdated": "2025-03-20",
@@ -43168,8 +45175,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/featherless",
     "reasoning": false,
     "releaseDate": "2025-03-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43179,6 +45188,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.0-flash-001",
     "knowledge": null,
     "lastUpdated": "2025-02-05",
@@ -43202,8 +45212,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-02-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43213,6 +45225,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.0-flash-exp:free",
     "knowledge": null,
     "lastUpdated": "2024-12-11",
@@ -43235,8 +45248,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-12-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43246,6 +45261,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.0-flash-lite-001",
     "knowledge": null,
     "lastUpdated": "2025-02-25",
@@ -43269,8 +45285,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-02-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43280,6 +45298,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000025
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-flash",
     "knowledge": null,
     "lastUpdated": "2025-06-17",
@@ -43303,9 +45322,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-06-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -43314,6 +45341,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-flash-lite",
     "knowledge": null,
     "lastUpdated": "2025-07-22",
@@ -43337,8 +45365,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-07-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43348,6 +45378,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-flash-lite-preview-06-17",
     "knowledge": null,
     "lastUpdated": "2025-06-17",
@@ -43371,8 +45402,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-06-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43382,6 +45415,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-pro",
     "knowledge": null,
     "lastUpdated": "2025-06-17",
@@ -43405,9 +45439,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-06-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": true,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -43416,6 +45458,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-pro-exp-03-25",
     "knowledge": null,
     "lastUpdated": "2025-03-25",
@@ -43439,8 +45482,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43450,6 +45495,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-pro-preview",
     "knowledge": null,
     "lastUpdated": "2025-06-05",
@@ -43473,8 +45519,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-06-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43484,6 +45532,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.5-pro-preview-05-06",
     "knowledge": null,
     "lastUpdated": "2025-05-07",
@@ -43507,8 +45556,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-05-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43518,6 +45569,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-flash-1.5",
     "knowledge": null,
     "lastUpdated": "2024-05-14",
@@ -43540,8 +45592,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-05-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43551,6 +45605,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-7
     },
+    "extendedThinking": false,
     "id": "google/gemini-flash-1.5-8b",
     "knowledge": null,
     "lastUpdated": "2024-10-03",
@@ -43573,8 +45628,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-10-03",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43584,6 +45641,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000005
     },
+    "extendedThinking": false,
     "id": "google/gemini-pro-1.5",
     "knowledge": null,
     "lastUpdated": "2024-04-09",
@@ -43606,8 +45664,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-04-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43617,6 +45677,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6.5e-7
     },
+    "extendedThinking": false,
     "id": "google/gemma-2-27b-it",
     "knowledge": null,
     "lastUpdated": "2024-07-13",
@@ -43638,8 +45699,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-07-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43649,6 +45712,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-9
     },
+    "extendedThinking": false,
     "id": "google/gemma-2-9b-it",
     "knowledge": null,
     "lastUpdated": "2024-06-28",
@@ -43670,8 +45734,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-06-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43681,6 +45747,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-2-9b-it:free",
     "knowledge": null,
     "lastUpdated": "2024-06-28",
@@ -43702,8 +45769,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2024-06-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43713,6 +45782,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-8
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-12b-it",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -43735,8 +45805,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43746,6 +45818,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-12b-it:free",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -43768,8 +45841,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43779,6 +45854,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.7e-7
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-27b-it",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -43801,8 +45877,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43812,6 +45890,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-27b-it:free",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -43834,8 +45913,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43845,6 +45926,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-8
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-4b-it",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -43867,8 +45949,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43878,6 +45962,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-3-4b-it:free",
     "knowledge": null,
     "lastUpdated": "2025-03-13",
@@ -43900,8 +45985,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-03-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -43911,6 +45998,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-3n-e2b-it:free",
     "knowledge": null,
     "lastUpdated": "2025-07-09",
@@ -43932,8 +46020,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-07-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43943,6 +46033,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-8
     },
+    "extendedThinking": false,
     "id": "google/gemma-3n-e4b-it",
     "knowledge": null,
     "lastUpdated": "2025-05-20",
@@ -43964,8 +46055,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-05-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -43975,6 +46068,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "google/gemma-3n-e4b-it:free",
     "knowledge": null,
     "lastUpdated": "2025-05-20",
@@ -43996,8 +46090,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/google",
     "reasoning": false,
     "releaseDate": "2025-05-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44007,6 +46103,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-8
     },
+    "extendedThinking": false,
     "id": "gryphe/mythomax-l2-13b",
     "knowledge": null,
     "lastUpdated": "2023-07-02",
@@ -44028,8 +46125,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/gryphe",
     "reasoning": false,
     "releaseDate": "2023-07-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44039,6 +46138,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000001
     },
+    "extendedThinking": false,
     "id": "inception/mercury",
     "knowledge": null,
     "lastUpdated": "2025-06-26",
@@ -44060,8 +46160,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/inception",
     "reasoning": false,
     "releaseDate": "2025-06-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44071,6 +46173,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000001
     },
+    "extendedThinking": false,
     "id": "inception/mercury-coder",
     "knowledge": null,
     "lastUpdated": "2025-04-30",
@@ -44092,8 +46195,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/inception",
     "reasoning": false,
     "releaseDate": "2025-04-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44103,6 +46208,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "infermatic/mn-inferor-12b",
     "knowledge": null,
     "lastUpdated": "2024-11-13",
@@ -44124,8 +46230,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/infermatic",
     "reasoning": false,
     "releaseDate": "2024-11-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44135,6 +46243,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "inflection/inflection-3-pi",
     "knowledge": null,
     "lastUpdated": "2024-10-11",
@@ -44156,8 +46265,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/inflection",
     "reasoning": false,
     "releaseDate": "2024-10-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44167,6 +46278,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00001
     },
+    "extendedThinking": false,
     "id": "inflection/inflection-3-productivity",
     "knowledge": null,
     "lastUpdated": "2024-10-11",
@@ -44188,8 +46300,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/inflection",
     "reasoning": false,
     "releaseDate": "2024-10-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44199,6 +46313,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-8
     },
+    "extendedThinking": false,
     "id": "liquid/lfm-3b",
     "knowledge": null,
     "lastUpdated": "2025-01-25",
@@ -44220,8 +46335,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/liquid",
     "reasoning": false,
     "releaseDate": "2025-01-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44231,6 +46348,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.5e-7
     },
+    "extendedThinking": false,
     "id": "liquid/lfm-40b",
     "knowledge": null,
     "lastUpdated": "2024-09-30",
@@ -44252,8 +46370,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/liquid",
     "reasoning": false,
     "releaseDate": "2024-09-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44263,6 +46383,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-8
     },
+    "extendedThinking": false,
     "id": "liquid/lfm-7b",
     "knowledge": null,
     "lastUpdated": "2025-01-25",
@@ -44284,8 +46405,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/liquid",
     "reasoning": false,
     "releaseDate": "2025-01-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44295,6 +46418,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000015
     },
+    "extendedThinking": false,
     "id": "mancer/weaver",
     "knowledge": null,
     "lastUpdated": "2023-08-02",
@@ -44316,8 +46440,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mancer",
     "reasoning": false,
     "releaseDate": "2023-08-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44327,6 +46453,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000002
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.1-405b",
     "knowledge": null,
     "lastUpdated": "2024-08-02",
@@ -44348,8 +46475,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-08-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44359,6 +46488,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 8e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.1-405b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-07-23",
@@ -44380,8 +46510,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44391,6 +46523,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.1-405b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-07-23",
@@ -44412,8 +46545,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44423,6 +46558,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.8e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.1-70b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-07-23",
@@ -44444,8 +46580,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44455,6 +46593,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.1-8b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-07-23",
@@ -44476,8 +46615,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44487,6 +46628,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4.9e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-11b-vision-instruct",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44509,8 +46651,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -44520,6 +46664,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-11b-vision-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44542,8 +46687,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -44553,6 +46700,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-1b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44574,8 +46722,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44585,6 +46735,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-9
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-3b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44606,8 +46757,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44617,6 +46770,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-3b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44638,8 +46792,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44649,6 +46805,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.2-90b-vision-instruct",
     "knowledge": null,
     "lastUpdated": "2024-09-25",
@@ -44671,8 +46828,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-09-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -44682,6 +46841,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.2e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.3-70b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-12-06",
@@ -44703,8 +46863,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-12-06",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44714,6 +46876,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3.3-70b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-12-06",
@@ -44735,8 +46898,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-12-06",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44746,6 +46911,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3-70b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-04-18",
@@ -44767,8 +46933,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-04-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44778,6 +46946,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-3-8b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-04-18",
@@ -44799,8 +46968,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-04-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44810,6 +46981,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-4-maverick",
     "knowledge": null,
     "lastUpdated": "2025-04-05",
@@ -44832,8 +47004,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2025-04-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -44843,6 +47017,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-4-scout",
     "knowledge": null,
     "lastUpdated": "2025-04-05",
@@ -44865,8 +47040,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2025-04-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -44876,6 +47053,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-7
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-guard-2-8b",
     "knowledge": null,
     "lastUpdated": "2024-05-13",
@@ -44897,8 +47075,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2024-05-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44908,6 +47088,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-8
     },
+    "extendedThinking": false,
     "id": "meta-llama/llama-guard-3-8b",
     "knowledge": null,
     "lastUpdated": "2025-02-12",
@@ -44929,8 +47110,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/meta-llama",
     "reasoning": false,
     "releaseDate": "2025-02-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44940,6 +47123,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3.02e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/mai-ds-r1",
     "knowledge": null,
     "lastUpdated": "2025-04-21",
@@ -44961,8 +47145,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2025-04-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -44972,6 +47158,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "microsoft/mai-ds-r1:free",
     "knowledge": null,
     "lastUpdated": "2025-04-21",
@@ -44993,8 +47180,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2025-04-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45004,6 +47193,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-3.5-mini-128k-instruct",
     "knowledge": null,
     "lastUpdated": "2024-08-21",
@@ -45025,8 +47215,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2024-08-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45036,6 +47228,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000001
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-3-medium-128k-instruct",
     "knowledge": null,
     "lastUpdated": "2024-05-24",
@@ -45057,8 +47250,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2024-05-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45068,6 +47263,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-3-mini-128k-instruct",
     "knowledge": null,
     "lastUpdated": "2024-05-26",
@@ -45089,8 +47285,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2024-05-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45100,6 +47298,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.4e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-4",
     "knowledge": null,
     "lastUpdated": "2025-01-10",
@@ -45121,8 +47320,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2025-01-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45132,6 +47333,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-4-multimodal-instruct",
     "knowledge": null,
     "lastUpdated": "2025-03-08",
@@ -45154,8 +47356,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2025-03-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -45165,6 +47369,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3.5e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/phi-4-reasoning-plus",
     "knowledge": null,
     "lastUpdated": "2025-05-01",
@@ -45186,8 +47391,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2025-05-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45197,6 +47404,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4.8e-7
     },
+    "extendedThinking": false,
     "id": "microsoft/wizardlm-2-8x22b",
     "knowledge": null,
     "lastUpdated": "2024-04-16",
@@ -45218,8 +47426,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/microsoft",
     "reasoning": false,
     "releaseDate": "2024-04-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45229,6 +47439,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000011
     },
+    "extendedThinking": false,
     "id": "minimax/minimax-01",
     "knowledge": null,
     "lastUpdated": "2025-01-15",
@@ -45251,8 +47462,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/minimax",
     "reasoning": false,
     "releaseDate": "2025-01-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -45262,6 +47475,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00000165
     },
+    "extendedThinking": false,
     "id": "minimax/minimax-m1",
     "knowledge": null,
     "lastUpdated": "2025-06-17",
@@ -45283,8 +47497,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/minimax",
     "reasoning": false,
     "releaseDate": "2025-06-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45294,6 +47510,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 9e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/codestral-2501",
     "knowledge": null,
     "lastUpdated": "2025-01-14",
@@ -45315,8 +47532,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-01-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45326,6 +47545,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000002
     },
+    "extendedThinking": false,
     "id": "mistralai/devstral-medium",
     "knowledge": null,
     "lastUpdated": "2025-07-10",
@@ -45347,8 +47567,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-07-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45358,6 +47580,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.8e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/devstral-small",
     "knowledge": null,
     "lastUpdated": "2025-07-10",
@@ -45379,8 +47602,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-07-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45390,6 +47615,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/devstral-small-2505",
     "knowledge": null,
     "lastUpdated": "2025-05-21",
@@ -45411,8 +47637,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-05-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45422,6 +47650,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/devstral-small-2505:free",
     "knowledge": null,
     "lastUpdated": "2025-05-21",
@@ -45443,8 +47672,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-05-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45454,6 +47685,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000005
     },
+    "extendedThinking": false,
     "id": "mistralai/magistral-medium-2506",
     "knowledge": null,
     "lastUpdated": "2025-06-08",
@@ -45475,8 +47707,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-06-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45486,6 +47720,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000005
     },
+    "extendedThinking": false,
     "id": "mistralai/magistral-medium-2506:thinking",
     "knowledge": null,
     "lastUpdated": "2025-06-08",
@@ -45507,8 +47742,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-06-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45518,6 +47755,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000015
     },
+    "extendedThinking": false,
     "id": "mistralai/magistral-small-2506",
     "knowledge": null,
     "lastUpdated": "2025-06-10",
@@ -45539,8 +47777,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-06-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45550,6 +47790,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/ministral-3b",
     "knowledge": null,
     "lastUpdated": "2024-10-17",
@@ -45571,8 +47812,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-10-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45582,6 +47825,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/ministral-8b",
     "knowledge": null,
     "lastUpdated": "2024-10-17",
@@ -45603,8 +47847,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-10-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45614,6 +47860,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 5.4e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-7b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-05-27",
@@ -45635,8 +47882,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-05-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45646,6 +47895,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-7b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-05-27",
@@ -45667,8 +47917,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-05-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45678,6 +47930,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.9e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-7b-instruct-v0.1",
     "knowledge": null,
     "lastUpdated": "2023-09-28",
@@ -45699,8 +47952,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2023-09-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45710,6 +47965,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-7b-instruct-v0.2",
     "knowledge": null,
     "lastUpdated": "2023-12-28",
@@ -45731,8 +47987,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2023-12-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45742,6 +48000,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 5.4e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-7b-instruct-v0.3",
     "knowledge": null,
     "lastUpdated": "2024-05-27",
@@ -45763,8 +48022,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-05-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45774,6 +48035,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000006
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-large",
     "knowledge": null,
     "lastUpdated": "2024-02-26",
@@ -45795,8 +48057,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-02-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45806,6 +48070,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000006
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-large-2407",
     "knowledge": null,
     "lastUpdated": "2024-11-19",
@@ -45827,8 +48092,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-11-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45838,6 +48105,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000006
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-large-2411",
     "knowledge": null,
     "lastUpdated": "2024-11-19",
@@ -45859,8 +48127,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-11-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45870,6 +48140,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000002
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-medium-3",
     "knowledge": null,
     "lastUpdated": "2025-05-07",
@@ -45892,8 +48163,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-05-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -45903,6 +48176,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 5e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-nemo",
     "knowledge": null,
     "lastUpdated": "2024-07-19",
@@ -45924,8 +48198,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-07-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45935,6 +48211,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-nemo:free",
     "knowledge": null,
     "lastUpdated": "2024-07-19",
@@ -45956,8 +48233,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-07-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45967,6 +48246,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-saba",
     "knowledge": null,
     "lastUpdated": "2025-02-17",
@@ -45988,8 +48268,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-02-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -45999,6 +48281,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small",
     "knowledge": null,
     "lastUpdated": "2024-01-10",
@@ -46020,8 +48303,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-01-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46031,6 +48316,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-24b-instruct-2501",
     "knowledge": null,
     "lastUpdated": "2025-01-30",
@@ -46052,8 +48338,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-01-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46063,6 +48351,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-24b-instruct-2501:free",
     "knowledge": null,
     "lastUpdated": "2025-01-30",
@@ -46084,8 +48373,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-01-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46095,6 +48386,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.7e-8
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-3.1-24b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-03-17",
@@ -46117,8 +48409,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-03-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46128,6 +48422,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-3.1-24b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2025-03-17",
@@ -46150,8 +48445,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-03-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46161,6 +48458,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-3.2-24b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-06-20",
@@ -46183,8 +48481,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-06-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46194,6 +48494,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-small-3.2-24b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2025-06-20",
@@ -46216,8 +48517,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2025-06-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46227,6 +48530,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.5e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mistral-tiny",
     "knowledge": null,
     "lastUpdated": "2024-01-10",
@@ -46248,8 +48552,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-01-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46259,6 +48565,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 9e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mixtral-8x22b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-04-17",
@@ -46280,8 +48587,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-04-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46291,6 +48600,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.4e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/mixtral-8x7b-instruct",
     "knowledge": null,
     "lastUpdated": "2023-12-10",
@@ -46312,8 +48622,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2023-12-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46323,6 +48635,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1e-7
     },
+    "extendedThinking": false,
     "id": "mistralai/pixtral-12b",
     "knowledge": null,
     "lastUpdated": "2024-09-10",
@@ -46345,8 +48658,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-09-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46356,6 +48671,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000006
     },
+    "extendedThinking": false,
     "id": "mistralai/pixtral-large-2411",
     "knowledge": null,
     "lastUpdated": "2024-11-19",
@@ -46378,8 +48694,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/mistralai",
     "reasoning": false,
     "releaseDate": "2024-11-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46389,6 +48707,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "moonshotai/kimi-dev-72b:free",
     "knowledge": null,
     "lastUpdated": "2025-06-16",
@@ -46410,8 +48729,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/moonshotai",
     "reasoning": false,
     "releaseDate": "2025-06-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46421,6 +48742,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 8.78e-8
     },
+    "extendedThinking": false,
     "id": "moonshotai/kimi-k2",
     "knowledge": null,
     "lastUpdated": "2025-07-11",
@@ -46442,9 +48764,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/moonshotai",
     "reasoning": false,
     "releaseDate": "2025-07-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -46453,6 +48783,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "moonshotai/kimi-k2:free",
     "knowledge": null,
     "lastUpdated": "2025-07-11",
@@ -46474,8 +48805,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/moonshotai",
     "reasoning": false,
     "releaseDate": "2025-07-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46485,6 +48818,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3.8e-8
     },
+    "extendedThinking": false,
     "id": "moonshotai/kimi-vl-a3b-thinking",
     "knowledge": null,
     "lastUpdated": "2025-04-10",
@@ -46507,8 +48841,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/moonshotai",
     "reasoning": false,
     "releaseDate": "2025-04-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46518,6 +48854,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "moonshotai/kimi-vl-a3b-thinking:free",
     "knowledge": null,
     "lastUpdated": "2025-04-10",
@@ -46540,8 +48877,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/moonshotai",
     "reasoning": false,
     "releaseDate": "2025-04-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
@@ -46551,6 +48890,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000027
     },
+    "extendedThinking": false,
     "id": "morph/morph-v2",
     "knowledge": null,
     "lastUpdated": "2025-06-26",
@@ -46572,8 +48912,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/morph",
     "reasoning": false,
     "releaseDate": "2025-06-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46583,6 +48925,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000027
     },
+    "extendedThinking": false,
     "id": "morph/morph-v3-fast",
     "knowledge": null,
     "lastUpdated": "2025-07-07",
@@ -46604,9 +48947,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/morph",
     "reasoning": false,
     "releaseDate": "2025-07-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -46615,6 +48966,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000027
     },
+    "extendedThinking": false,
     "id": "morph/morph-v3-large",
     "knowledge": null,
     "lastUpdated": "2025-07-07",
@@ -46636,9 +48988,17 @@ export const allModels: Model[] = [
     "providerId": "open-router/morph",
     "reasoning": false,
     "releaseDate": "2025-07-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
-    "icon": "openrouter"
+    "vision": false,
+    "icon": "openrouter",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel"
   },
   {
     "attachment": false,
@@ -46647,6 +49007,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000001
     },
+    "extendedThinking": false,
     "id": "neversleep/llama-3.1-lumimaid-8b",
     "knowledge": null,
     "lastUpdated": "2024-09-15",
@@ -46668,8 +49029,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/neversleep",
     "reasoning": false,
     "releaseDate": "2024-09-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46679,6 +49042,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.000006
     },
+    "extendedThinking": false,
     "id": "neversleep/llama-3-lumimaid-70b",
     "knowledge": null,
     "lastUpdated": "2024-05-16",
@@ -46700,8 +49064,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/neversleep",
     "reasoning": false,
     "releaseDate": "2024-05-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46711,6 +49077,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.00000175
     },
+    "extendedThinking": false,
     "id": "neversleep/noromaid-20b",
     "knowledge": null,
     "lastUpdated": "2023-11-26",
@@ -46732,8 +49099,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/neversleep",
     "reasoning": false,
     "releaseDate": "2023-11-26",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46743,6 +49112,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000012
     },
+    "extendedThinking": false,
     "id": "nothingiisreal/mn-celeste-12b",
     "knowledge": null,
     "lastUpdated": "2024-08-02",
@@ -46764,8 +49134,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nothingiisreal",
     "reasoning": false,
     "releaseDate": "2024-08-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46775,6 +49147,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "nousresearch/deephermes-3-llama-3-8b-preview:free",
     "knowledge": null,
     "lastUpdated": "2025-02-28",
@@ -46796,8 +49169,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2025-02-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46807,6 +49182,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 1.41e-7
     },
+    "extendedThinking": false,
     "id": "nousresearch/deephermes-3-mistral-24b-preview",
     "knowledge": null,
     "lastUpdated": "2025-05-09",
@@ -46828,8 +49204,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2025-05-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46839,6 +49217,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-8
     },
+    "extendedThinking": false,
     "id": "nousresearch/hermes-2-pro-llama-3-8b",
     "knowledge": null,
     "lastUpdated": "2024-05-27",
@@ -46860,8 +49239,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2024-05-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46871,6 +49252,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 8e-7
     },
+    "extendedThinking": false,
     "id": "nousresearch/hermes-3-llama-3.1-405b",
     "knowledge": null,
     "lastUpdated": "2024-08-16",
@@ -46892,8 +49274,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2024-08-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46903,6 +49287,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 2.8e-7
     },
+    "extendedThinking": false,
     "id": "nousresearch/hermes-3-llama-3.1-70b",
     "knowledge": null,
     "lastUpdated": "2024-08-18",
@@ -46924,8 +49309,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2024-08-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46935,6 +49322,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 6e-7
     },
+    "extendedThinking": false,
     "id": "nousresearch/nous-hermes-2-mixtral-8x7b-dpo",
     "knowledge": null,
     "lastUpdated": "2024-01-16",
@@ -46956,8 +49344,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nousresearch",
     "reasoning": false,
     "releaseDate": "2024-01-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46967,6 +49357,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 3e-7
     },
+    "extendedThinking": false,
     "id": "nvidia/llama-3.1-nemotron-70b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-10-15",
@@ -46988,8 +49379,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nvidia",
     "reasoning": false,
     "releaseDate": "2024-10-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -46999,6 +49392,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0.0000018
     },
+    "extendedThinking": false,
     "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
     "knowledge": null,
     "lastUpdated": "2025-04-08",
@@ -47020,8 +49414,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nvidia",
     "reasoning": false,
     "releaseDate": "2025-04-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -47031,6 +49427,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 0
     },
+    "extendedThinking": false,
     "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1:free",
     "knowledge": null,
     "lastUpdated": "2025-04-08",
@@ -47052,8 +49449,10 @@ export const allModels: Model[] = [
     "providerId": "open-router/nvidia",
     "reasoning": false,
     "releaseDate": "2025-04-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -47063,6 +49462,7 @@ export const allModels: Model[] = [
       "inputCacheHit": null,
       "output": 4e-7
     },
+    "extendedThinking": false,
     "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
     "knowledge": null,
     "lastUpdated": "2025-04-08",
@@ -47084,17 +49484,20 @@ export const allModels: Model[] = [
     "providerId": "open-router/nvidia",
     "reasoning": false,
     "releaseDate": "2025-04-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000005,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/chatgpt-4o-latest",
     "knowledge": null,
     "lastUpdated": "2024-08-14",
@@ -47112,22 +49515,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: ChatGPT-4o",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-08-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000015,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000006
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/codex-mini",
     "knowledge": null,
     "lastUpdated": "2025-05-16",
@@ -47145,22 +49557,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: Codex Mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-05-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/gpt-3.5-turbo",
     "knowledge": null,
     "lastUpdated": "2023-05-28",
@@ -47177,22 +49598,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-3.5 Turbo",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-05-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000001,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000002
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/gpt-3.5-turbo-0613",
     "knowledge": null,
     "lastUpdated": "2024-01-25",
@@ -47209,22 +49639,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-01-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000004
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/gpt-3.5-turbo-16k",
     "knowledge": null,
     "lastUpdated": "2023-08-28",
@@ -47241,22 +49680,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-3.5 Turbo 16k",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-08-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000015,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000002
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/gpt-3.5-turbo-instruct",
     "knowledge": null,
     "lastUpdated": "2023-09-28",
@@ -47273,22 +49721,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-3.5 Turbo Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-09-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00003,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00006
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4",
     "knowledge": null,
     "lastUpdated": "2023-05-28",
@@ -47305,22 +49762,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-05-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00003,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00006
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4-0314",
     "knowledge": null,
     "lastUpdated": "2023-05-28",
@@ -47337,22 +49803,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4 (older v0314)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-05-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.000008
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4.1",
     "knowledge": null,
     "lastUpdated": "2025-04-14",
@@ -47371,22 +49846,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4.1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00001,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00003
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4-1106-preview",
     "knowledge": null,
     "lastUpdated": "2023-11-06",
@@ -47403,22 +49887,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4 Turbo (older v1106)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-11-06",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-7,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.0000016
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4.1-mini",
     "knowledge": null,
     "lastUpdated": "2025-04-14",
@@ -47437,22 +49930,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4.1 Mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 4e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4.1-nano",
     "knowledge": null,
     "lastUpdated": "2025-04-14",
@@ -47471,22 +49973,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4.1 Nano",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-14",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000025,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o",
     "knowledge": null,
     "lastUpdated": "2024-05-13",
@@ -47505,22 +50016,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-05-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000006,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.000018
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o:extended",
     "knowledge": null,
     "lastUpdated": "2024-05-13",
@@ -47539,22 +50059,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o (extended)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-05-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000005,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-2024-05-13",
     "knowledge": null,
     "lastUpdated": "2024-05-13",
@@ -47573,22 +50102,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o (2024-05-13)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-05-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000025,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-2024-08-06",
     "knowledge": null,
     "lastUpdated": "2024-08-06",
@@ -47607,22 +50145,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o (2024-08-06)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-08-06",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000025,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-2024-11-20",
     "knowledge": null,
     "lastUpdated": "2024-11-20",
@@ -47641,22 +50188,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o (2024-11-20)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-20",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-mini",
     "knowledge": null,
     "lastUpdated": "2024-07-18",
@@ -47675,22 +50231,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o-mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-07-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-mini-2024-07-18",
     "knowledge": null,
     "lastUpdated": "2024-07-18",
@@ -47709,22 +50274,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o-mini (2024-07-18)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-07-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-mini-search-preview",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -47741,22 +50315,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o-mini Search Preview",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000025,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4o-search-preview",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -47773,22 +50356,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4o Search Preview",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00001,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00003
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4-turbo",
     "knowledge": null,
     "lastUpdated": "2024-04-09",
@@ -47806,22 +50398,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4 Turbo",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-04-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00001,
+      "input": 0.03,
       "inputCacheHit": null,
-      "output": 0.00003
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/gpt-4-turbo-preview",
     "knowledge": null,
     "lastUpdated": "2024-01-25",
@@ -47838,22 +50439,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: GPT-4 Turbo Preview",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-01-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000015,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 0.00006
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/o1",
     "knowledge": null,
     "lastUpdated": "2024-12-17",
@@ -47871,22 +50481,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-12-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/o1-mini",
     "knowledge": null,
     "lastUpdated": "2024-09-12",
@@ -47903,22 +50522,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o1-mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-09-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/o1-mini-2024-09-12",
     "knowledge": null,
     "lastUpdated": "2024-09-12",
@@ -47935,22 +50563,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o1-mini (2024-09-12)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-09-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00015,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 0.0006
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "openai/o1-pro",
     "knowledge": null,
     "lastUpdated": "2025-03-19",
@@ -47968,22 +50605,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o1-pro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000008
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o3",
     "knowledge": null,
     "lastUpdated": "2025-04-16",
@@ -48002,22 +50648,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o3",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o3-mini",
     "knowledge": null,
     "lastUpdated": "2025-01-31",
@@ -48034,22 +50689,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o3 Mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-01-31",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o3-mini-high",
     "knowledge": null,
     "lastUpdated": "2025-02-12",
@@ -48066,22 +50730,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o3 Mini High",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.00008
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o3-pro",
     "knowledge": null,
     "lastUpdated": "2025-06-10",
@@ -48100,22 +50773,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o3 Pro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-06-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o4-mini",
     "knowledge": null,
     "lastUpdated": "2025-04-16",
@@ -48133,22 +50815,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o4 Mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000011,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000044
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openai/o4-mini-high",
     "knowledge": null,
     "lastUpdated": "2025-04-16",
@@ -48167,22 +50858,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenAI: o4 Mini High",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "opengvlab/internvl3-14b",
     "knowledge": null,
     "lastUpdated": "2025-04-30",
@@ -48200,22 +50900,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "OpenGVLab: InternVL3 14B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/opengvlab",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": -1,
+      "input": null,
       "inputCacheHit": null,
-      "output": -1
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openrouter/auto",
     "knowledge": null,
     "lastUpdated": "2023-11-08",
@@ -48232,22 +50941,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Auto Router",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openrouter",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-11-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "openrouter/horizon-alpha",
     "knowledge": null,
     "lastUpdated": "2025-07-30",
@@ -48265,22 +50983,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Horizon Alpha",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/openrouter",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000008
+      "output": null
     },
+    "extendedThinking": false,
     "id": "perplexity/r1-1776",
     "knowledge": null,
     "lastUpdated": "2025-02-19",
@@ -48297,22 +51024,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: R1 1776",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000001,
+      "input": 0.01,
       "inputCacheHit": null,
-      "output": 0.000001
+      "output": 0.01
     },
+    "extendedThinking": false,
     "id": "perplexity/sonar",
     "knowledge": null,
     "lastUpdated": "2025-01-27",
@@ -48330,22 +51066,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: Sonar",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-01-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": 0.01,
       "inputCacheHit": null,
-      "output": 0.000008
+      "output": 0.01
     },
+    "extendedThinking": false,
     "id": "perplexity/sonar-deep-research",
     "knowledge": null,
     "lastUpdated": "2025-03-07",
@@ -48362,22 +51107,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: Sonar Deep Research",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": 0.01,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": 0.01
     },
+    "extendedThinking": false,
     "id": "perplexity/sonar-pro",
     "knowledge": null,
     "lastUpdated": "2025-03-07",
@@ -48395,22 +51149,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: Sonar Pro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000001,
+      "input": 0.01,
       "inputCacheHit": null,
-      "output": 0.000005
+      "output": 0.01
     },
+    "extendedThinking": false,
     "id": "perplexity/sonar-reasoning",
     "knowledge": null,
     "lastUpdated": "2025-01-29",
@@ -48427,22 +51190,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: Sonar Reasoning",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-01-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": 0.01,
       "inputCacheHit": null,
-      "output": 0.000008
+      "output": 0.01
     },
+    "extendedThinking": false,
     "id": "perplexity/sonar-reasoning-pro",
     "knowledge": null,
     "lastUpdated": "2025-03-07",
@@ -48460,22 +51232,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Perplexity: Sonar Reasoning Pro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/perplexity",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "pygmalionai/mythalion-13b",
     "knowledge": null,
     "lastUpdated": "2023-09-02",
@@ -48492,22 +51273,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Pygmalion: Mythalion 13B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/pygmalionai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-09-02",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.01e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.01e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-72b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-09-19",
@@ -48524,22 +51314,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen2.5 72B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-09-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-72b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-09-19",
@@ -48556,22 +51355,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen2.5 72B Instruct (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-09-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-7b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-10-16",
@@ -48588,22 +51396,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen2.5 7B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-10-16",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-coder-32b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-11-11",
@@ -48620,22 +51437,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen2.5 Coder 32B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-coder-32b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2024-11-11",
@@ -48652,22 +51478,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen2.5 Coder 32B Instruct (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen2.5-vl-32b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-03-24",
@@ -48685,22 +51520,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen2.5 VL 32B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen2.5-vl-32b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2025-03-24",
@@ -48718,22 +51562,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen2.5 VL 32B Instruct (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 7.5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen2.5-vl-72b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -48751,22 +51604,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen2.5 VL 72B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen2.5-vl-72b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -48784,22 +51646,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen2.5 VL 72B Instruct (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2.5-vl-7b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-08-28",
@@ -48817,22 +51688,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen2.5-VL 7B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-08-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 9e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 9e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-2-72b-instruct",
     "knowledge": null,
     "lastUpdated": "2024-06-07",
@@ -48849,22 +51729,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen 2 72B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-06-07",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-14b",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -48881,22 +51770,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 14B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-14b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -48913,22 +51811,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 14B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.3e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-235b-a22b",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -48945,22 +51852,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 235B A22B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-235b-a22b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -48977,22 +51893,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 235B A22B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.179e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.179e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-235b-a22b-2507",
     "knowledge": null,
     "lastUpdated": "2025-07-21",
@@ -49009,22 +51934,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 235B A22B Instruct 2507",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.179e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.179e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-235b-a22b-thinking-2507",
     "knowledge": null,
     "lastUpdated": "2025-07-25",
@@ -49041,22 +51975,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.9e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-30b-a3b",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -49073,22 +52016,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 30B A3B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-30b-a3b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -49105,22 +52057,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 30B A3B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 8e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-30b-a3b-instruct-2507",
     "knowledge": null,
     "lastUpdated": "2025-07-29",
@@ -49137,22 +52098,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 30B A3B Instruct 2507",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-4b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-30",
@@ -49169,22 +52139,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 4B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3.5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.38e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-8b",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -49201,22 +52180,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 8B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-8b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-28",
@@ -49233,22 +52221,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 8B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-coder",
     "knowledge": null,
     "lastUpdated": "2025-07-23",
@@ -49265,22 +52262,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 Coder ",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen3-coder:free",
     "knowledge": null,
     "lastUpdated": "2025-07-23",
@@ -49297,22 +52303,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen3 Coder  (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000016,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000064
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-max",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -49329,22 +52344,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen-Max ",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-plus",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -49361,22 +52385,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen-Plus",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-turbo",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -49393,22 +52426,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen-Turbo",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000032
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-vl-max",
     "knowledge": null,
     "lastUpdated": "2025-02-01",
@@ -49426,22 +52468,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen VL Max",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2.1e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 6.3e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwen-vl-plus",
     "knowledge": null,
     "lastUpdated": "2025-02-05",
@@ -49459,22 +52510,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: Qwen VL Plus",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-02-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwq-32b",
     "knowledge": null,
     "lastUpdated": "2025-03-05",
@@ -49491,22 +52551,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: QwQ 32B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwq-32b:free",
     "knowledge": null,
     "lastUpdated": "2025-03-05",
@@ -49523,22 +52592,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: QwQ 32B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-05",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "qwen/qwq-32b-preview",
     "knowledge": null,
     "lastUpdated": "2024-11-28",
@@ -49555,22 +52633,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen: QwQ 32B Preview",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/qwen",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000045,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000045
+      "output": null
     },
+    "extendedThinking": false,
     "id": "raifle/sorcererlm-8x22b",
     "knowledge": null,
     "lastUpdated": "2024-11-08",
@@ -49587,22 +52674,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "SorcererLM 8x22B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/raifle",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.3e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.3e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "rekaai/reka-flash-3",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -49619,22 +52715,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Reka: Flash 3",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/rekaai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "rekaai/reka-flash-3:free",
     "knowledge": null,
     "lastUpdated": "2025-03-12",
@@ -49651,22 +52756,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Reka: Flash 3 (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/rekaai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-12",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "sao10k/fimbulvetr-11b-v2",
     "knowledge": null,
     "lastUpdated": "2024-04-21",
@@ -49683,22 +52797,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Fimbulvetr 11B v2",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sao-10-k",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-04-21",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6.5e-7,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 7.5e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "sao10k/l3.1-euryale-70b",
     "knowledge": null,
     "lastUpdated": "2024-08-28",
@@ -49715,22 +52838,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sao10K: Llama 3.1 Euryale 70B v2.2",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sao-10-k",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-08-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6.5e-7,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 7.5e-7
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "sao10k/l3.3-euryale-70b",
     "knowledge": null,
     "lastUpdated": "2024-12-18",
@@ -49747,22 +52879,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sao10K: Llama 3.3 Euryale 70B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sao-10-k",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-12-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.00000148,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 0.00000148
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "sao10k/l3-euryale-70b",
     "knowledge": null,
     "lastUpdated": "2024-06-18",
@@ -49779,22 +52920,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sao10k: Llama 3 Euryale 70B v2.1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sao-10-k",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-06-18",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-8,
+      "input": 0.015,
       "inputCacheHit": null,
-      "output": 5e-8
+      "output": 0.06
     },
+    "extendedThinking": false,
     "id": "sao10k/l3-lunaris-8b",
     "knowledge": null,
     "lastUpdated": "2024-08-13",
@@ -49811,22 +52961,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sao10K: Llama 3 8B Lunaris",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sao-10-k",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-08-13",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2.2e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.2e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "sarvamai/sarvam-m",
     "knowledge": null,
     "lastUpdated": "2025-05-25",
@@ -49843,22 +53002,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sarvam AI: Sarvam-M",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sarvamai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-05-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "sarvamai/sarvam-m:free",
     "knowledge": null,
     "lastUpdated": "2025-05-25",
@@ -49875,22 +53043,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Sarvam AI: Sarvam-M (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sarvamai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-05-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8.8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 8.8e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "scb10x/llama3.1-typhoon2-70b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-03-28",
@@ -49907,22 +53084,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Typhoon2 70B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/scb-10-x",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-28",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-8,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 3e-8
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "shisa-ai/shisa-v2-llama3.3-70b",
     "knowledge": null,
     "lastUpdated": "2025-04-15",
@@ -49939,22 +53125,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Shisa AI: Shisa V2 Llama 3.3 70B ",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/shisa-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 0
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-15",
@@ -49971,22 +53166,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Shisa AI: Shisa V2 Llama 3.3 70B  (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/shisa-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 8e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "sophosympatheia/midnight-rose-70b",
     "knowledge": null,
     "lastUpdated": "2024-03-22",
@@ -50003,22 +53207,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Midnight Rose 70B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/sophosympatheia",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-03-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000034
+      "output": null
     },
+    "extendedThinking": false,
     "id": "switchpoint/router",
     "knowledge": null,
     "lastUpdated": "2025-07-11",
@@ -50035,22 +53248,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Switchpoint Router",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/switchpoint",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "tencent/hunyuan-a13b-instruct",
     "knowledge": null,
     "lastUpdated": "2025-07-08",
@@ -50067,22 +53289,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Tencent: Hunyuan A13B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/tencent",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "tencent/hunyuan-a13b-instruct:free",
     "knowledge": null,
     "lastUpdated": "2025-07-08",
@@ -50099,22 +53330,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Tencent: Hunyuan A13B Instruct (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/tencent",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 7e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/anubis-70b-v1.1",
     "knowledge": null,
     "lastUpdated": "2025-06-29",
@@ -50131,22 +53371,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: Anubis 70B V1.1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-06-29",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/anubis-pro-105b-v1",
     "knowledge": null,
     "lastUpdated": "2025-03-10",
@@ -50163,22 +53412,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: Anubis Pro 105B V1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/rocinante-12b",
     "knowledge": null,
     "lastUpdated": "2024-09-30",
@@ -50195,22 +53453,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: Rocinante 12B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-09-30",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.28e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 7.28e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/skyfall-36b-v2",
     "knowledge": null,
     "lastUpdated": "2025-03-10",
@@ -50227,22 +53494,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: Skyfall 36B V2",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-03-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/unslopnemo-12b",
     "knowledge": null,
     "lastUpdated": "2024-11-08",
@@ -50259,22 +53535,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: UnslopNemo 12B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thedrummer/valkyrie-49b-v1",
     "knowledge": null,
     "lastUpdated": "2025-05-23",
@@ -50291,22 +53576,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TheDrummer: Valkyrie 49B V1",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thedrummer",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-05-23",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3.5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.38e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thudm/glm-4.1v-9b-thinking",
     "knowledge": null,
     "lastUpdated": "2025-07-11",
@@ -50324,22 +53618,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "THUDM: GLM 4.1V 9B Thinking",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thudm",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-11",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2.4e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thudm/glm-4-32b",
     "knowledge": null,
     "lastUpdated": "2025-04-17",
@@ -50356,22 +53659,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "THUDM: GLM 4 32B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thudm",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thudm/glm-4-32b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-17",
@@ -50388,22 +53700,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "THUDM: GLM 4 32B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thudm",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thudm/glm-z1-32b",
     "knowledge": null,
     "lastUpdated": "2025-04-17",
@@ -50420,22 +53741,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "THUDM: GLM Z1 32B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thudm",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "thudm/glm-z1-32b:free",
     "knowledge": null,
     "lastUpdated": "2025-04-17",
@@ -50452,22 +53782,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "THUDM: GLM Z1 32B (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/thudm",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-17",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3.02e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3.02e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "tngtech/deepseek-r1t2-chimera",
     "knowledge": null,
     "lastUpdated": "2025-07-08",
@@ -50484,22 +53823,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TNG: DeepSeek R1T2 Chimera",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/tngtech",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "tngtech/deepseek-r1t2-chimera:free",
     "knowledge": null,
     "lastUpdated": "2025-07-08",
@@ -50516,22 +53864,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TNG: DeepSeek R1T2 Chimera (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/tngtech",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-08",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "tngtech/deepseek-r1t-chimera:free",
     "knowledge": null,
     "lastUpdated": "2025-04-27",
@@ -50548,22 +53905,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "TNG: DeepSeek R1T Chimera (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/tngtech",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-27",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "undi95/remm-slerp-l2-13b",
     "knowledge": null,
     "lastUpdated": "2023-07-22",
@@ -50580,22 +53946,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "ReMM SLERP 13B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/undi-95",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-07-22",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "undi95/toppy-m-7b",
     "knowledge": null,
     "lastUpdated": "2023-11-10",
@@ -50612,22 +53987,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Toppy M 7B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/undi-95",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2023-11-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-2-1212",
     "knowledge": null,
     "lastUpdated": "2024-12-15",
@@ -50644,22 +54028,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 2 1212",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-12-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-2-vision-1212",
     "knowledge": null,
     "lastUpdated": "2024-12-15",
@@ -50677,22 +54070,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 2 Vision 1212",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-12-15",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-3",
     "knowledge": null,
     "lastUpdated": "2025-06-10",
@@ -50709,22 +54111,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 3",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-06-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-3-beta",
     "knowledge": null,
     "lastUpdated": "2025-04-09",
@@ -50741,22 +54152,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 3 Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-3-mini",
     "knowledge": null,
     "lastUpdated": "2025-06-10",
@@ -50773,22 +54193,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 3 Mini",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-06-10",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-3-mini-beta",
     "knowledge": null,
     "lastUpdated": "2025-04-09",
@@ -50805,22 +54234,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 3 Mini Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-04-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-4",
     "knowledge": null,
     "lastUpdated": "2025-07-09",
@@ -50838,22 +54276,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok 4",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-09",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000005,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "x-ai/grok-vision-beta",
     "knowledge": null,
     "lastUpdated": "2024-11-19",
@@ -50871,22 +54318,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "xAI: Grok Vision Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/x-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2024-11-19",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": true,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "z-ai/glm-4-32b",
     "knowledge": null,
     "lastUpdated": "2025-07-24",
@@ -50903,22 +54359,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Z.AI: GLM 4 32B ",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/z-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-24",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "z-ai/glm-4.5",
     "knowledge": null,
     "lastUpdated": "2025-07-25",
@@ -50935,22 +54400,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Z.AI: GLM 4.5",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/z-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000011
+      "output": null
     },
+    "extendedThinking": false,
     "id": "z-ai/glm-4.5-air",
     "knowledge": null,
     "lastUpdated": "2025-07-25",
@@ -50967,22 +54441,31 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Z.AI: GLM 4.5 Air",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/z-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0
+      "output": null
     },
+    "extendedThinking": false,
     "id": "z-ai/glm-4.5-air:free",
     "knowledge": null,
     "lastUpdated": "2025-07-25",
@@ -50999,13 +54482,21 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Z.AI: GLM 4.5 Air (free)",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "OpenRouter",
-    "providerId": "open-router/z-ai",
+    "providerDoc": "https://openrouter.ai/docs",
+    "providerEnv": [
+      "OPENROUTER_API_KEY"
+    ],
+    "providerId": "open-router",
+    "providerModelsDevId": "openrouter",
+    "providerNpm": "@ai-sdk/openrouter",
     "reasoning": false,
     "releaseDate": "2025-07-25",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "openrouter"
   },
   {
@@ -56015,13 +59506,14 @@ export const allModels: Model[] = [
   {
     "attachment": false,
     "cost": {
-      "input": 8e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "alibaba/qwen-3-14b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 40960,
       "output": 16384
@@ -56035,25 +59527,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3-14B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/alibaba",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "alibaba/qwen-3-235b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 40960,
       "output": 16384
@@ -56067,25 +59568,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3-235B-A22B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/alibaba",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "alibaba/qwen-3-30b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 40960,
       "output": 16384
@@ -56099,25 +59609,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3-30B-A3B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/alibaba",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "alibaba/qwen-3-32b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 40960,
       "output": 16384
@@ -56131,25 +59650,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen 3.32B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/alibaba",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000016
+      "output": null
     },
+    "extendedThinking": false,
     "id": "alibaba/qwen3-coder",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 262144,
       "output": 66536
@@ -56163,25 +59691,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Qwen3 Coder",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/alibaba",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "amazon/nova-lite",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 300000,
       "output": 8192
@@ -56195,25 +59732,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Nova Lite",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/amazon",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3.5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.4e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "amazon/nova-micro",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56227,25 +59773,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Nova Micro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/amazon",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 8e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000032
+      "output": null
     },
+    "extendedThinking": false,
     "id": "amazon/nova-pro",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 300000,
       "output": 8192
@@ -56259,25 +59814,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Nova Pro",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/amazon",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000015,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000075
+      "output": null
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-4-opus",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 200000,
       "output": 32000
@@ -56291,25 +59855,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Claude 4 Opus",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/anthropic",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "anthropic/claude-4-sonnet",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 200000,
       "output": 64000
@@ -56323,25 +59896,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Claude 4 Sonnet",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/anthropic",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 9e-7,
+      "input": 0.0009,
       "inputCacheHit": null,
-      "output": 9e-7
+      "output": 0.0009
     },
+    "extendedThinking": false,
     "id": "deepseek/deepseek-v3",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56355,25 +59937,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "DeepSeek-V3",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/deepseek",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.0-flash",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 1048576,
       "output": 8192
@@ -56387,25 +59978,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Gemini 2.0 Flash",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/google",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.5e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 3e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "google/gemini-2.0-flash-lite",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 1048576,
       "output": 8192
@@ -56419,25 +60019,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Gemini 2.0 Flash Lite",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/google",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "google/gemma-2-9b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 8192,
       "output": 8192
@@ -56451,25 +60060,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Gemma 2 9B IT",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/google",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "inception/mercury-coder-small",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32000,
       "output": 16384
@@ -56483,25 +60101,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mercury Coder Small Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/inception",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.2e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 7.2e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.1-70b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56515,25 +60142,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.1 70B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-8,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 8e-8
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.1-8b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131000,
       "output": 131072
@@ -56547,25 +60183,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.1 8B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.6e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 1.6e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.2-11b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56579,25 +60224,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.2 11B Vision Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 1e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.2-1b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56611,25 +60265,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.2 1B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 1.5e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.2-3b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56643,25 +60306,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.2 3B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.2e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 7.2e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.2-90b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56675,25 +60347,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.2 90B Vision Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.2e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 7.2e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3.3-70b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 8192
@@ -56707,25 +60388,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3.3 70B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5.9e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 7.9e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3-70b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 8192,
       "output": 8192
@@ -56739,25 +60429,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3 70B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-8,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 8e-8
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-3-8b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 8192,
       "output": 8192
@@ -56771,25 +60470,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 3 8B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 6e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-4-maverick",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 8192
@@ -56803,25 +60511,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 4 Maverick 17B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 3e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "meta/llama-4-scout",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 8192
@@ -56835,25 +60552,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Llama 4 Scout 17B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/meta",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-7,
+      "input": 0.3,
       "inputCacheHit": null,
-      "output": 9e-7
+      "output": 0.9
     },
+    "extendedThinking": false,
     "id": "mistral/codestral",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 256000,
       "output": 4000
@@ -56867,25 +60593,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mistral Codestral 25.01",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 2.8e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/devstral-small",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 128000
@@ -56899,25 +60634,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Devstral Small",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000005
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/magistral-medium",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 64000
@@ -56931,25 +60675,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Magistral Medium 2506",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/magistral-small",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 64000
@@ -56963,25 +60716,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Magistral Small 2506",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 4e-8,
+      "input": null,
       "inputCacheHit": null,
-      "output": 4e-8
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/ministral-3b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 4000
@@ -56995,25 +60757,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Ministral 3B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/ministral-8b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 4000
@@ -57027,25 +60798,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Ministral 8B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 0.000006
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "mistral/mistral-large",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32000,
       "output": 4000
@@ -57059,25 +60839,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mistral Large",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 7.9e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 7.9e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "mistral/mistral-saba-24b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32768,
       "output": 32768
@@ -57091,25 +60880,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mistral Saba 24B",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1e-7,
+      "input": 0.0003,
       "inputCacheHit": null,
-      "output": 3e-7
+      "output": 0.0003
     },
+    "extendedThinking": false,
     "id": "mistral/mistral-small",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32000,
       "output": 4000
@@ -57123,25 +60921,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mistral Small",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.0000012,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000012
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/mixtral-8x22b-instruct",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 65536,
       "output": 2048
@@ -57155,25 +60962,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Mixtral MoE 8x22B Instruct",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 1.5e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 1.5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/pixtral-12b",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 4000
@@ -57187,25 +61003,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Pixtral 12B 2409",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000006
+      "output": null
     },
+    "extendedThinking": false,
     "id": "mistral/pixtral-large",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 4000
@@ -57219,25 +61044,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Pixtral Large",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/mistral",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": 0.003,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": 0.015
     },
+    "extendedThinking": false,
     "id": "vercel/v0-1.0-md",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 32000
@@ -57251,25 +61085,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "v0-1.0-md",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": 0.003,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": 0.015
     },
+    "extendedThinking": false,
     "id": "vercel/v0-1.5-md",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 32768
@@ -57283,25 +61126,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "v0-1.5-md",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-2",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 4000
@@ -57315,25 +61167,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 2",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000002,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.00001
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-2-vision",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 32768,
       "output": 32768
@@ -57347,25 +61208,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 2 Vision",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-3",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 131072
@@ -57379,25 +61249,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 3 Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000005,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000025
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-3-fast",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 131072
@@ -57411,25 +61290,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 3 Fast Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 3e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 5e-7
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-3-mini",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 131072
@@ -57443,25 +61331,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 3 Mini Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000004
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-3-mini-fast",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 131072,
       "output": 131072
@@ -57475,25 +61372,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 3 Mini Fast Beta",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 0.000003,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.000015
+      "output": null
     },
+    "extendedThinking": false,
     "id": "xai/grok-4",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 256000,
       "output": 256000
@@ -57507,25 +61413,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "Grok 4",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/xai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 6e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000022
+      "output": null
     },
+    "extendedThinking": false,
     "id": "zai/glm-4.5",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 96000
@@ -57539,25 +61454,34 @@ export const allModels: Model[] = [
       ]
     },
     "name": "GLM 4.5",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/zai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
     "attachment": false,
     "cost": {
-      "input": 2e-7,
+      "input": null,
       "inputCacheHit": null,
-      "output": 0.0000011
+      "output": null
     },
+    "extendedThinking": false,
     "id": "zai/glm-4.5-air",
     "knowledge": null,
-    "lastUpdated": "2025-07-31",
+    "lastUpdated": null,
     "limit": {
       "context": 128000,
       "output": 96000
@@ -57571,13 +61495,21 @@ export const allModels: Model[] = [
       ]
     },
     "name": "GLM 4.5 Air",
-    "openWeights": true,
+    "openWeights": false,
     "provider": "Vercel",
+    "providerDoc": "https://sdk.vercel.ai/docs",
+    "providerEnv": [
+      "VERCEL_AI_API_KEY"
+    ],
     "providerId": "vercel/zai",
+    "providerModelsDevId": "vercel",
+    "providerNpm": "@ai-sdk/vercel",
     "reasoning": false,
-    "releaseDate": "2025-07-31",
+    "releaseDate": "2025-08-01",
+    "streamingSupported": true,
     "temperature": true,
     "toolCall": true,
+    "vision": false,
     "icon": "vercel"
   },
   {
@@ -57588,7 +61520,7 @@ export const allModels: Model[] = [
       "output": null
     },
     "extendedThinking": false,
-    "id": "grok-0",
+    "id": "grok-2-image-1212",
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
@@ -57597,16 +61529,17 @@ export const allModels: Model[] = [
     },
     "modalities": {
       "input": [
-        "text"
+        "text",
+        "image"
       ],
       "output": [
-        "text"
+        "image"
       ]
     },
-    "name": "grok-0",
+    "name": "grok-2-image-1212",
     "openWeights": false,
     "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
+    "providerDoc": "https://docs.x.ai/docs/models",
     "providerEnv": [
       "XAI_API_KEY"
     ],
@@ -57618,499 +61551,7 @@ export const allModels: Model[] = [
     "streamingSupported": true,
     "temperature": true,
     "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-1",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-1",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-10",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-10",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-100",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-100",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-11",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-11",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-12",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-12",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-13",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-13",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-14",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-14",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-15",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-15",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-16",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-16",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-17",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-17",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-18",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-18",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-19",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-19",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
+    "vision": true,
     "icon": "xai"
   },
   {
@@ -58121,503 +61562,11 @@ export const allModels: Model[] = [
       "output": 0.01
     },
     "extendedThinking": false,
-    "id": "grok-2",
+    "id": "grok-2-vision-1212",
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-2",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-20",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-20",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-21",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-21",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-22",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-22",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-23",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-23",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-24",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-24",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-25",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-25",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-26",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-26",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-27",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-27",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-28",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-28",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-29",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-29",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-2-mini",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": 8192,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "Grok 2 Mini",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-2-vision",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": 128000,
+      "context": 32768,
       "output": null
     },
     "modalities": {
@@ -58629,10 +61578,10 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "Grok 2 Vision",
+    "name": "grok-2-vision-1212",
     "openWeights": false,
     "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
+    "providerDoc": "https://docs.x.ai/docs/models",
     "providerEnv": [
       "XAI_API_KEY"
     ],
@@ -58659,7 +61608,7 @@ export const allModels: Model[] = [
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": null,
+      "context": 131072,
       "output": null
     },
     "modalities": {
@@ -58673,3123 +61622,7 @@ export const allModels: Model[] = [
     "name": "grok-3",
     "openWeights": false,
     "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-30",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-30",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-31",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-31",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-32",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-32",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-33",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-33",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-34",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-34",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-35",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-35",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-36",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-36",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-37",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-37",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-38",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-38",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-39",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-39",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-4",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-4",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-40",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-40",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-41",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-41",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-42",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-42",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-43",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-43",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-44",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-44",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-45",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-45",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-46",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-46",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-47",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-47",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-48",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-48",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": 0.003,
-      "inputCacheHit": null,
-      "output": 0.015
-    },
-    "extendedThinking": false,
-    "id": "grok-49",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-49",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-5",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-5",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-50",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-50",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-51",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-51",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-52",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-52",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-53",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-53",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-54",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-54",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-55",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-55",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-56",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-56",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-57",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-57",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-58",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-58",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-59",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-59",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-6",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-6",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-60",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-60",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-61",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-61",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-62",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-62",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-63",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-63",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-64",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-64",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-65",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-65",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-66",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-66",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-67",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-67",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-68",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-68",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-69",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-69",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-7",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-7",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-70",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-70",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-71",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-71",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-72",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-72",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-73",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-73",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-74",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-74",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-75",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-75",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-76",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-76",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-77",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-77",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-78",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-78",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-79",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-79",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-8",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-8",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-80",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-80",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-81",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-81",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-82",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-82",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-83",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-83",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-84",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-84",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-85",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-85",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-86",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-86",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-87",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-87",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-88",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-88",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-89",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-89",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-9",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-9",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-90",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-90",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-91",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-91",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-92",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-92",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-93",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-93",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-94",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-94",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-95",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-95",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-96",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-96",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-97",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-97",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-98",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-98",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
-    "providerEnv": [
-      "XAI_API_KEY"
-    ],
-    "providerId": "xai",
-    "providerModelsDevId": "xai",
-    "providerNpm": "@ai-sdk/xai",
-    "reasoning": false,
-    "releaseDate": null,
-    "streamingSupported": true,
-    "temperature": true,
-    "toolCall": false,
-    "vision": false,
-    "icon": "xai"
-  },
-  {
-    "attachment": false,
-    "cost": {
-      "input": null,
-      "inputCacheHit": null,
-      "output": null
-    },
-    "extendedThinking": false,
-    "id": "grok-99",
-    "knowledge": null,
-    "lastUpdated": null,
-    "limit": {
-      "context": null,
-      "output": null
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "name": "grok-99",
-    "openWeights": false,
-    "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
+    "providerDoc": "https://docs.x.ai/docs/models",
     "providerEnv": [
       "XAI_API_KEY"
     ],
@@ -61809,14 +61642,14 @@ export const allModels: Model[] = [
     "cost": {
       "input": 0.005,
       "inputCacheHit": null,
-      "output": 0.015
+      "output": 0.025
     },
     "extendedThinking": false,
-    "id": "grok-beta",
+    "id": "grok-3-fast",
     "knowledge": null,
     "lastUpdated": null,
     "limit": {
-      "context": null,
+      "context": 131072,
       "output": null
     },
     "modalities": {
@@ -61827,10 +61660,10 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "name": "grok-beta",
+    "name": "grok-3-fast",
     "openWeights": false,
     "provider": "XAI",
-    "providerDoc": "https://docs.x.ai/",
+    "providerDoc": "https://docs.x.ai/docs/models",
     "providerEnv": [
       "XAI_API_KEY"
     ],
@@ -61843,6 +61676,130 @@ export const allModels: Model[] = [
     "temperature": true,
     "toolCall": false,
     "vision": false,
+    "icon": "xai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0003,
+      "inputCacheHit": null,
+      "output": 0.0005
+    },
+    "extendedThinking": false,
+    "id": "grok-3-mini",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "grok-3-mini",
+    "openWeights": false,
+    "provider": "XAI",
+    "providerDoc": "https://docs.x.ai/docs/models",
+    "providerEnv": [
+      "XAI_API_KEY"
+    ],
+    "providerId": "xai",
+    "providerModelsDevId": "xai",
+    "providerNpm": "@ai-sdk/xai",
+    "reasoning": true,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "xai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.0006,
+      "inputCacheHit": null,
+      "output": 0.004
+    },
+    "extendedThinking": false,
+    "id": "grok-3-mini-fast",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 131072,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "grok-3-mini-fast",
+    "openWeights": false,
+    "provider": "XAI",
+    "providerDoc": "https://docs.x.ai/docs/models",
+    "providerEnv": [
+      "XAI_API_KEY"
+    ],
+    "providerId": "xai",
+    "providerModelsDevId": "xai",
+    "providerNpm": "@ai-sdk/xai",
+    "reasoning": true,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": false,
+    "icon": "xai"
+  },
+  {
+    "attachment": false,
+    "cost": {
+      "input": 0.003,
+      "inputCacheHit": null,
+      "output": 0.015
+    },
+    "extendedThinking": false,
+    "id": "grok-4-0709",
+    "knowledge": null,
+    "lastUpdated": null,
+    "limit": {
+      "context": 262144,
+      "output": null
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "name": "grok-4-0709",
+    "openWeights": false,
+    "provider": "XAI",
+    "providerDoc": "https://docs.x.ai/docs/models",
+    "providerEnv": [
+      "XAI_API_KEY"
+    ],
+    "providerId": "xai",
+    "providerModelsDevId": "xai",
+    "providerNpm": "@ai-sdk/xai",
+    "reasoning": true,
+    "releaseDate": null,
+    "streamingSupported": true,
+    "temperature": true,
+    "toolCall": true,
+    "vision": true,
     "icon": "xai"
   }
 ] as Model[];

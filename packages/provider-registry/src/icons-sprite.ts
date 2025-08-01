@@ -1,12 +1,6 @@
 /* Auto-generated file - do not edit manually
  * Generated using @lobehub/icons-static-svg and custom icons
  * 
- * Generation scripts:
- * - packages/provider-registry/scripts/generate-svg-sprite.ts - Main icon sprite generation
- * - packages/provider-registry/scripts/aggregate-providers.ts - Provider data aggregation
- * - packages/provider-registry/scripts/cleanup-duplicate-icons.ts - Icon cleanup and deduplication
- * - packages/provider-registry/scripts/config.ts - Provider icon mapping configuration
- * 
  * To regenerate this file, run: pnpm run generate-icons
  */
 

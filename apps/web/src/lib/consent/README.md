@@ -35,18 +35,18 @@ import { ConsentManagerDialog, CookieBanner } from "@c15t/react";
 import { ConsentManagerProvider } from "@/providers/consent-manager";
 
 // In your root component
-    <ConsentManagerProvider
-        options={{
-            mode: "offline",
-            store: {
-                initialGdprTypes: ["measurement", "necessary"],
-            },
-        }}
-    >
-        <CookieBanner />
-        <ConsentManagerDialog />
-        {/* Your app content */}
-    </ConsentManagerProvider>;
+<ConsentManagerProvider
+    options={{
+        mode: "offline",
+        store: {
+            initialGdprTypes: ["measurement", "necessary"],
+        },
+    }}
+>
+    <CookieBanner />
+    <ConsentManagerDialog />
+    {/* Your app content */}
+</ConsentManagerProvider>;
 ```
 
 ## Key Features

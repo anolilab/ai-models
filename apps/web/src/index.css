@@ -4,233 +4,233 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Base radius */
-  --radius: 0.75rem;
-  
-  /* Primary color palette based on oklch(0.93 0.24 116) */
-  --primary: oklch(0.93 0.24 116);
-  --primary-foreground: oklch(0.15 0.02 116);
-  --primary-muted: oklch(0.95 0.18 116);
-  --primary-subtle: oklch(0.97 0.12 116);
-  
-  /* Neutral colors for data tables - lighter backgrounds */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.15 0.02 116);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 116);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 116);
-  
-  /* Secondary colors */
-  --secondary: oklch(0.98 0.01 116);
-  --secondary-foreground: oklch(0.25 0.02 116);
-  --muted: oklch(0.98 0.01 116);
-  --muted-foreground: oklch(0.55 0.02 116);
-  --accent: oklch(0.96 0.02 116);
-  --accent-foreground: oklch(0.25 0.02 116);
-  
-  /* Semantic colors */
-  --destructive: oklch(0.65 0.25 27);
-  --destructive-foreground: oklch(0.98 0.02 116);
-  --success: oklch(0.75 0.20 142);
-  --success-foreground: oklch(0.98 0.02 116);
-  --warning: oklch(0.85 0.18 85);
-  --warning-foreground: oklch(0.25 0.02 116);
-  --info: oklch(0.75 0.15 220);
-  --info-foreground: oklch(0.98 0.02 116);
-  
-  /* Border and input colors */
-  --border: oklch(0.92 0.02 116);
-  --input: oklch(0.94 0.02 116);
-  --ring: oklch(0.93 0.24 116 / 0.3);
-  
-  /* Chart colors for data visualization */
-  --chart-1: oklch(0.93 0.24 116);
-  --chart-2: oklch(0.75 0.20 142);
-  --chart-3: oklch(0.65 0.25 27);
-  --chart-4: oklch(0.75 0.15 220);
-  --chart-5: oklch(0.85 0.18 85);
-  --chart-6: oklch(0.70 0.22 280);
-  --chart-7: oklch(0.80 0.16 45);
-  --chart-8: oklch(0.65 0.20 180);
-  
-  /* Sidebar colors */
-  --sidebar: oklch(0.99 0.005 116);
-  --sidebar-foreground: oklch(0.15 0.02 116);
-  --sidebar-primary: oklch(0.93 0.24 116);
-  --sidebar-primary-foreground: oklch(0.98 0.02 116);
-  --sidebar-accent: oklch(0.96 0.02 116);
-  --sidebar-accent-foreground: oklch(0.25 0.02 116);
-  --sidebar-border: oklch(0.92 0.02 116);
-  --sidebar-ring: oklch(0.93 0.24 116 / 0.3);
-  
-  /* Data table specific colors - lighter */
-  --table-header: oklch(0.99 0.005 116);
-  --table-row-hover: oklch(0.97 0.01 116);
-  --table-row-selected: oklch(0.93 0.24 116 / 0.08);
-  --table-border: oklch(0.90 0.02 116);
-  --table-stripe: oklch(0.995 0.002 116);
+    /* Base radius */
+    --radius: 0.75rem;
+
+    /* Primary color palette based on oklch(0.93 0.24 116) */
+    --primary: oklch(0.93 0.24 116);
+    --primary-foreground: oklch(0.15 0.02 116);
+    --primary-muted: oklch(0.95 0.18 116);
+    --primary-subtle: oklch(0.97 0.12 116);
+
+    /* Neutral colors for data tables - lighter backgrounds */
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.15 0.02 116);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.02 116);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.02 116);
+
+    /* Secondary colors */
+    --secondary: oklch(0.98 0.01 116);
+    --secondary-foreground: oklch(0.25 0.02 116);
+    --muted: oklch(0.98 0.01 116);
+    --muted-foreground: oklch(0.55 0.02 116);
+    --accent: oklch(0.96 0.02 116);
+    --accent-foreground: oklch(0.25 0.02 116);
+
+    /* Semantic colors */
+    --destructive: oklch(0.65 0.25 27);
+    --destructive-foreground: oklch(0.98 0.02 116);
+    --success: oklch(0.75 0.2 142);
+    --success-foreground: oklch(0.98 0.02 116);
+    --warning: oklch(0.85 0.18 85);
+    --warning-foreground: oklch(0.25 0.02 116);
+    --info: oklch(0.75 0.15 220);
+    --info-foreground: oklch(0.98 0.02 116);
+
+    /* Border and input colors */
+    --border: oklch(0.92 0.02 116);
+    --input: oklch(0.94 0.02 116);
+    --ring: oklch(0.93 0.24 116 / 0.3);
+
+    /* Chart colors for data visualization */
+    --chart-1: oklch(0.93 0.24 116);
+    --chart-2: oklch(0.75 0.2 142);
+    --chart-3: oklch(0.65 0.25 27);
+    --chart-4: oklch(0.75 0.15 220);
+    --chart-5: oklch(0.85 0.18 85);
+    --chart-6: oklch(0.7 0.22 280);
+    --chart-7: oklch(0.8 0.16 45);
+    --chart-8: oklch(0.65 0.2 180);
+
+    /* Sidebar colors */
+    --sidebar: oklch(0.99 0.005 116);
+    --sidebar-foreground: oklch(0.15 0.02 116);
+    --sidebar-primary: oklch(0.93 0.24 116);
+    --sidebar-primary-foreground: oklch(0.98 0.02 116);
+    --sidebar-accent: oklch(0.96 0.02 116);
+    --sidebar-accent-foreground: oklch(0.25 0.02 116);
+    --sidebar-border: oklch(0.92 0.02 116);
+    --sidebar-ring: oklch(0.93 0.24 116 / 0.3);
+
+    /* Data table specific colors - lighter */
+    --table-header: oklch(0.99 0.005 116);
+    --table-row-hover: oklch(0.97 0.01 116);
+    --table-row-selected: oklch(0.93 0.24 116 / 0.08);
+    --table-border: oklch(0.9 0.02 116);
+    --table-stripe: oklch(0.995 0.002 116);
 }
 
 .dark {
-  /* Dark mode color palette - using provided hex values */
-  --background: oklch(0.15 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.07 0 0);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.07 0 0);
-  --popover-foreground: oklch(1 0 0);
-  
-  /* Secondary colors */
-  --secondary: oklch(0.20 0 0);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.20 0 0);
-  --muted-foreground: oklch(0.67 0 0);
-  --accent: oklch(0.25 0 0);
-  --accent-foreground: oklch(1 0 0);
-  
-  /* Semantic colors */
-  --destructive: oklch(0.70 0.25 27);
-  --destructive-foreground: oklch(1 0 0);
-  --success: oklch(0.80 0.20 142);
-  --success-foreground: oklch(0.07 0 0);
-  --warning: oklch(0.90 0.18 85);
-  --warning-foreground: oklch(0.07 0 0);
-  --info: oklch(0.80 0.15 220);
-  --info-foreground: oklch(1 0 0);
-  
-  /* Border and input colors */
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.20 0 0);
-  --ring: oklch(0.93 0.24 116 / 0.4);
-  
-  /* Chart colors for dark mode */
-  --chart-1: oklch(0.93 0.24 116);
-  --chart-2: oklch(0.80 0.20 142);
-  --chart-3: oklch(0.70 0.25 27);
-  --chart-4: oklch(0.80 0.15 220);
-  --chart-5: oklch(0.90 0.18 85);
-  --chart-6: oklch(0.75 0.22 280);
-  --chart-7: oklch(0.85 0.16 45);
-  --chart-8: oklch(0.70 0.20 180);
-  
-  /* Sidebar colors */
-  --sidebar: oklch(0.07 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.93 0.24 116);
-  --sidebar-primary-foreground: oklch(0.07 0 0);
-  --sidebar-accent: oklch(0.25 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.25 0 0);
-  --sidebar-ring: oklch(0.93 0.24 116 / 0.4);
-  
-  /* Data table specific colors - using provided hex values */
-  --table-header: oklch(0.20 0 0);
-  --table-row-hover: oklch(0.25 0 0);
-  --table-row-selected: oklch(0.93 0.24 116 / 0.12);
-  --table-border: oklch(0.25 0 0);
-  --table-stripe: oklch(0.12 0 0);
+    /* Dark mode color palette - using provided hex values */
+    --background: oklch(0.15 0 0);
+    --foreground: oklch(1 0 0);
+    --card: oklch(0.07 0 0);
+    --card-foreground: oklch(1 0 0);
+    --popover: oklch(0.07 0 0);
+    --popover-foreground: oklch(1 0 0);
+
+    /* Secondary colors */
+    --secondary: oklch(0.2 0 0);
+    --secondary-foreground: oklch(1 0 0);
+    --muted: oklch(0.2 0 0);
+    --muted-foreground: oklch(0.67 0 0);
+    --accent: oklch(0.25 0 0);
+    --accent-foreground: oklch(1 0 0);
+
+    /* Semantic colors */
+    --destructive: oklch(0.7 0.25 27);
+    --destructive-foreground: oklch(1 0 0);
+    --success: oklch(0.8 0.2 142);
+    --success-foreground: oklch(0.07 0 0);
+    --warning: oklch(0.9 0.18 85);
+    --warning-foreground: oklch(0.07 0 0);
+    --info: oklch(0.8 0.15 220);
+    --info-foreground: oklch(1 0 0);
+
+    /* Border and input colors */
+    --border: oklch(0.25 0 0);
+    --input: oklch(0.2 0 0);
+    --ring: oklch(0.93 0.24 116 / 0.4);
+
+    /* Chart colors for dark mode */
+    --chart-1: oklch(0.93 0.24 116);
+    --chart-2: oklch(0.8 0.2 142);
+    --chart-3: oklch(0.7 0.25 27);
+    --chart-4: oklch(0.8 0.15 220);
+    --chart-5: oklch(0.9 0.18 85);
+    --chart-6: oklch(0.75 0.22 280);
+    --chart-7: oklch(0.85 0.16 45);
+    --chart-8: oklch(0.7 0.2 180);
+
+    /* Sidebar colors */
+    --sidebar: oklch(0.07 0 0);
+    --sidebar-foreground: oklch(1 0 0);
+    --sidebar-primary: oklch(0.93 0.24 116);
+    --sidebar-primary-foreground: oklch(0.07 0 0);
+    --sidebar-accent: oklch(0.25 0 0);
+    --sidebar-accent-foreground: oklch(1 0 0);
+    --sidebar-border: oklch(0.25 0 0);
+    --sidebar-ring: oklch(0.93 0.24 116 / 0.4);
+
+    /* Data table specific colors - using provided hex values */
+    --table-header: oklch(0.2 0 0);
+    --table-row-hover: oklch(0.25 0 0);
+    --table-row-selected: oklch(0.93 0.24 116 / 0.12);
+    --table-border: oklch(0.25 0 0);
+    --table-stripe: oklch(0.12 0 0);
 }
 
 /* Debug: Force border color in dark mode */
 .dark * {
-  border-color: var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 .dark th,
 .dark td {
-  border-bottom-color: var(--table-border) !important;
+    border-bottom-color: var(--table-border) !important;
 }
 
 @theme inline {
-  /* Radius scale */
-  --radius-sm: calc(var(--radius) - 0.25rem);
-  --radius-md: calc(var(--radius) - 0.125rem);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 0.25rem);
-  --radius-2xl: calc(var(--radius) + 0.5rem);
-  
-  /* Color mappings */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary-muted: var(--primary-muted);
-  --color-primary-subtle: var(--primary-subtle);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-info: var(--info);
-  --color-info-foreground: var(--info-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  
-  /* Chart colors */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-chart-6: var(--chart-6);
-  --color-chart-7: var(--chart-7);
-  --color-chart-8: var(--chart-8);
-  
-  /* Sidebar colors */
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  
-  /* Data table colors */
-  --color-table-header: var(--table-header);
-  --color-table-row-hover: var(--table-row-hover);
-  --color-table-row-selected: var(--table-row-selected);
-  --color-table-border: var(--table-border);
-  --color-table-stripe: var(--table-stripe);
-  
-  /* Typography scale optimized for data tables */
-  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-  
-  /* Font sizes optimized for data tables */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 0.9375rem;
-  --font-size-lg: 1rem;
-  --font-size-xl: 1.125rem;
-  --font-size-2xl: 1.25rem;
-  --font-size-3xl: 1.5rem;
-  
-  /* Line heights for better readability */
-  --line-height-tight: 1.25;
-  --line-height-snug: 1.375;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
-  
-  /* Font weights */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+    /* Radius scale */
+    --radius-sm: calc(var(--radius) - 0.25rem);
+    --radius-md: calc(var(--radius) - 0.125rem);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 0.25rem);
+    --radius-2xl: calc(var(--radius) + 0.5rem);
+
+    /* Color mappings */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary-muted: var(--primary-muted);
+    --color-primary-subtle: var(--primary-subtle);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Chart colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-chart-6: var(--chart-6);
+    --color-chart-7: var(--chart-7);
+    --color-chart-8: var(--chart-8);
+
+    /* Sidebar colors */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Data table colors */
+    --color-table-header: var(--table-header);
+    --color-table-row-hover: var(--table-row-hover);
+    --color-table-row-selected: var(--table-row-selected);
+    --color-table-border: var(--table-border);
+    --color-table-stripe: var(--table-stripe);
+
+    /* Typography scale optimized for data tables */
+    --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+    /* Font sizes optimized for data tables */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 0.9375rem;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.125rem;
+    --font-size-2xl: 1.25rem;
+    --font-size-3xl: 1.5rem;
+
+    /* Line heights for better readability */
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 }
 
 @layer base {
@@ -254,7 +254,7 @@
         font-weight: var(--font-weight-normal);
         color: var(--color-foreground);
         background-color: var(--color-background);
-        
+
         /* Prevent layout shift during font loading */
         font-feature-settings:
             "kern" 1,
@@ -269,7 +269,12 @@
     }
 
     /* Typography hierarchy for data tables */
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: var(--font-family-sans);
         font-weight: var(--font-weight-semibold);
         line-height: var(--line-height-tight);
@@ -277,15 +282,30 @@
         margin: 0;
     }
 
-    h1 { font-size: var(--font-size-3xl); }
-    h2 { font-size: var(--font-size-2xl); }
-    h3 { font-size: var(--font-size-xl); }
-    h4 { font-size: var(--font-size-lg); }
-    h5 { font-size: var(--font-size-base); }
-    h6 { font-size: var(--font-size-sm); }
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+    h3 {
+        font-size: var(--font-size-xl);
+    }
+    h4 {
+        font-size: var(--font-size-lg);
+    }
+    h5 {
+        font-size: var(--font-size-base);
+    }
+    h6 {
+        font-size: var(--font-size-sm);
+    }
 
     /* Monospace for data and code */
-    code, pre, kbd, samp {
+    code,
+    pre,
+    kbd,
+    samp {
         font-family: var(--font-family-mono);
         font-size: 0.875em;
         font-weight: var(--font-weight-normal);
@@ -408,7 +428,9 @@
         background: var(--color-border);
         border-radius: var(--radius-sm);
         border: 2px solid var(--color-muted);
-        transition: background-color 0.2s ease, border-color 0.2s ease;
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease;
     }
 
     :hover::-webkit-scrollbar-thumb {
@@ -460,7 +482,7 @@ input[type="radio"],
 [data-slot="button"],
 [data-slot="day"],
 [data-slot="select-item"] {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Fix specifically for calendar date picker buttons and elements */
@@ -483,7 +505,7 @@ input[type="radio"],
 .day-range-end,
 .day-selected,
 div[data-testid="calendar"] button {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Fix for pagination buttons and components */
@@ -494,7 +516,7 @@ nav button,
 [data-state="inactive"],
 [data-orientation="horizontal"],
 [data-orientation="vertical"] {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Fixes for Select elements and dropdowns */
@@ -506,7 +528,7 @@ nav button,
 [role="combobox"],
 [role="listbox"],
 [role="option"] {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Fix for checkbox in table rows and other inputs */
@@ -518,7 +540,7 @@ input[type="datetime-local"],
 input[type="month"],
 input[type="time"],
 input[type="week"] {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Fix for calendar date picker component specifically */
@@ -528,194 +550,198 @@ input[type="week"] {
 [id="rdp-1"] *,
 [id="rdp-2"],
 [id="rdp-2"] * {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 /* Table column resizer styles */
 @layer components {
-  .resizer {
-    @apply absolute right-0 top-0 h-full w-1.5 cursor-col-resize select-none touch-none opacity-0 hover:opacity-100 hover:bg-primary/50 group-hover:block;
-  }
+    .resizer {
+        @apply hover:bg-primary/50 absolute top-0 right-0 h-full w-1.5 cursor-col-resize touch-none opacity-0 select-none group-hover:block hover:opacity-100;
+    }
 
-  .resizer.isResizing {
-    @apply opacity-100 bg-primary;
-  }
+    .resizer.isResizing {
+        @apply bg-primary opacity-100;
+    }
 
-  table {
-    width: 100%;
-  }
+    table {
+        width: 100%;
+    }
 
-  .resizable-table {
-    @apply table-fixed relative;
-  }
+    .resizable-table {
+        @apply relative table-fixed;
+    }
 
-  .resizable-table th {
-    position: relative;
-    overflow: hidden;
-  }
+    .resizable-table th {
+        position: relative;
+        overflow: hidden;
+    }
 
-  .resizable-table th,
-  .resizable-table td {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+    .resizable-table th,
+    .resizable-table td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 /* Table column resizing styles - ENHANCED VERSION */
 @layer components {
-  /* Prevent layout shifts during resize */
-  .resizable-table {
-    table-layout: fixed;
-    width: 100%;
-    will-change: contents;
-  }
+    /* Prevent layout shifts during resize */
+    .resizable-table {
+        table-layout: fixed;
+        width: 100%;
+        will-change: contents;
+    }
 
-  /* Use hardware acceleration for smoother transitions */
-  .resizable-table th {
-    position: relative;
-    overflow: hidden;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    transition: width 0ms linear;
-  }
+    /* Use hardware acceleration for smoother transitions */
+    .resizable-table th {
+        position: relative;
+        overflow: hidden;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transition: width 0ms linear;
+    }
 
-  /* Prevent text selection when resizing */
-  body[data-resizing="true"] {
-    cursor: col-resize !important;
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    touch-action: none !important;
-    pointer-events: none !important;
-  }
+    /* Prevent text selection when resizing */
+    body[data-resizing="true"] {
+        cursor: col-resize !important;
+        user-select: none !important;
+        -webkit-user-select: none !important;
+        touch-action: none !important;
+        pointer-events: none !important;
+    }
 
-  /* Remove transition during active resize for instant feedback */
-  .resizable-table th[data-column-resizing="true"] {
-    transition: none !important;
-  }
+    /* Remove transition during active resize for instant feedback */
+    .resizable-table th[data-column-resizing="true"] {
+        transition: none !important;
+    }
 
-  /* Better hover interaction for resize handles */
-  .resizable-table th:hover [data-resizing] {
-    opacity: 0.8;
-  }
+    /* Better hover interaction for resize handles */
+    .resizable-table th:hover [data-resizing] {
+        opacity: 0.8;
+    }
 
-  /* Enhanced visual feedback during resize */
-  .resizable-table [data-resizing="true"] {
-    opacity: 1 !important;
-  }
+    /* Enhanced visual feedback during resize */
+    .resizable-table [data-resizing="true"] {
+        opacity: 1 !important;
+    }
 }
 
 /* Custom cursor for column resizing */
 @layer components {
-  /* Better cursor for column resize */
-  .cursor-col-resize {
-    cursor: col-resize;
-  }
+    /* Better cursor for column resize */
+    .cursor-col-resize {
+        cursor: col-resize;
+    }
 
-  /* Apply the cursor to the resize handle and its children */
-  [data-resizing],
-  [data-resizing] * {
-    cursor: col-resize !important;
-  }
+    /* Apply the cursor to the resize handle and its children */
+    [data-resizing],
+    [data-resizing] * {
+        cursor: col-resize !important;
+    }
 
-  /* Ensure the resize handle is always on top */
-  [data-resizing] {
-    z-index: 10;
-  }
+    /* Ensure the resize handle is always on top */
+    [data-resizing] {
+        z-index: 10;
+    }
 }
 
 /* Custom hover and interaction styles for the resizer */
 @layer components {
-  /* Resize handle hover effects */
-  .resizable-table [data-resizing] {
-    transition: opacity 0.15s ease, transform 0.1s ease;
-  }
+    /* Resize handle hover effects */
+    .resizable-table [data-resizing] {
+        transition:
+            opacity 0.15s ease,
+            transform 0.1s ease;
+    }
 
-  .resizable-table [data-resizing]:hover {
-    transform: scaleX(1.5);
-    opacity: 1 !important;
-  }
+    .resizable-table [data-resizing]:hover {
+        transform: scaleX(1.5);
+        opacity: 1 !important;
+    }
 
-  /* Active state during resize */
-  .resizable-table [data-resizing="true"] {
-    transform: scaleX(1.5) !important;
-  }
+    /* Active state during resize */
+    .resizable-table [data-resizing="true"] {
+        transform: scaleX(1.5) !important;
+    }
 
-  /* Ensure the grip icon is positioned correctly */
-  .resizable-table [data-resizing] svg {
-    transition: opacity 0.15s ease, color 0.15s ease;
-  }
+    /* Ensure the grip icon is positioned correctly */
+    .resizable-table [data-resizing] svg {
+        transition:
+            opacity 0.15s ease,
+            color 0.15s ease;
+    }
 
-  .resizable-table [data-resizing]:hover svg {
-    opacity: 1 !important;
-    color: var(--color-primary) !important;
-  }
+    .resizable-table [data-resizing]:hover svg {
+        opacity: 1 !important;
+        color: var(--color-primary) !important;
+    }
 }
 
 /* Static header styles */
 @layer components {
-  .table-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
+    .table-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
 
-  .table-container .sticky {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
-    flex-shrink: 0;
-  }
+    .table-container .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+        flex-shrink: 0;
+    }
 
-  /* Ensure proper table layout for static headers */
-  .table-container .sticky table {
-    width: 100%;
-    table-layout: fixed;
-  }
+    /* Ensure proper table layout for static headers */
+    .table-container .sticky table {
+        width: 100%;
+        table-layout: fixed;
+    }
 
-  /* Ensure body table matches header table layout */
-  .table-container .overflow-y-auto table {
-    width: 100%;
-    table-layout: fixed;
-  }
+    /* Ensure body table matches header table layout */
+    .table-container .overflow-y-auto table {
+        width: 100%;
+        table-layout: fixed;
+    }
 
-  /* Ensure header and body cells have consistent widths */
-  .table-container th,
-  .table-container td {
-    box-sizing: border-box;
-  }
+    /* Ensure header and body cells have consistent widths */
+    .table-container th,
+    .table-container td {
+        box-sizing: border-box;
+    }
 
-  /* Prevent layout shifts during column resizing */
-  .table-container .resizable-table {
-    border-collapse: separate;
-    border-spacing: 0;
-  }
+    /* Prevent layout shifts during column resizing */
+    .table-container .resizable-table {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
 }
 
 @layer components {
-  /* Monospace text for technical identifiers */
-  .font-mono-id {
-    font-family: var(--font-family-mono);
-    font-size: 0.875em;
-    font-weight: 500;
-    letter-spacing: 0.025em;
-  }
+    /* Monospace text for technical identifiers */
+    .font-mono-id {
+        font-family: var(--font-family-mono);
+        font-size: 0.875em;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+    }
 
-  .font-mono-id-light {
-    font-family: var(--font-family-mono);
-    font-size: 0.875em;
-    font-weight: 400;
-    letter-spacing: 0.025em;
-    opacity: 0.8;
-  }
+    .font-mono-id-light {
+        font-family: var(--font-family-mono);
+        font-size: 0.875em;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        opacity: 0.8;
+    }
 
-  .font-mono-id-bold {
-    font-family: var(--font-family-mono);
-    font-size: 0.875em;
-    font-weight: 600;
-    letter-spacing: 0.025em;
-  }
+    .font-mono-id-bold {
+        font-family: var(--font-family-mono);
+        font-size: 0.875em;
+        font-weight: 600;
+        letter-spacing: 0.025em;
+    }
 }
