@@ -347,16 +347,65 @@ cd ai-models
 # Install dependencies
 pnpm install
 
-# Build the package
-pnpm run build
+# Complete build process
+pnpm run download    # Download provider data
+pnpm run aggregate   # Aggregate and enrich data
+pnpm run generate-icons  # Generate provider icons
+pnpm run build       # Build the package
 
 # Run tests
 pnpm test
 ```
 
+### Build Process
+
+The complete build process involves several steps to download, aggregate, and generate all necessary data:
+
+```bash
+# 1. Download provider data
+pnpm run download
+
+# 2. Aggregate and enrich provider data (includes pricing from Helicone API)
+pnpm run aggregate
+
+# 3. Generate provider icons
+pnpm run generate-icons
+
+# 4. Build the package
+pnpm run build
+```
+
+#### What Each Step Does
+
+1. **Download (`pnpm run download`)**: Downloads model data from various AI providers using transformers in `scripts/download/transformers/`. This creates the raw provider data in `data/providers/`.
+
+2. **Aggregate (`pnpm run aggregate`)**: 
+   - Reads all provider data from `data/providers/`
+   - Fetches pricing data from Helicone API
+   - Enriches models with icon information
+   - Synchronizes data between models with the same ID
+   - Generates `data/all-models.json` and `src/models-data.ts`
+
+3. **Generate Icons (`pnpm run generate-icons`)**: 
+   - Creates SVG sprite sheet from LobeHub icons and custom icons
+   - Generates `src/icons-sprite.ts` with icon mappings
+   - Provides fallback icons for providers without official icons
+
+4. **Build (`pnpm run build`)**: 
+   - Compiles TypeScript to JavaScript
+   - Generates type definitions
+   - Creates the final distributable package
+
 ### Available Scripts
 
 ```bash
+# Download provider data from various sources
+pnpm run download
+
+# Download data for a specific provider
+pnpm run download --provider openai
+pnpm run download --provider anthropic
+
 # Aggregate provider data (includes pricing enrichment and synchronization)
 pnpm run aggregate
 

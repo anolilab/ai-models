@@ -328,8 +328,11 @@ function generateSpriteSheet(): void {
   spriteContent += '</svg>';
 
   // Generate TypeScript file
-  const tsContent = `// Auto-generated file - do not edit manually
-// Generated using @lobehub/icons-static-svg and custom icons
+  const tsContent = `/* Auto-generated file - do not edit manually
+ * Generated using @lobehub/icons-static-svg and custom icons
+ * 
+ * To regenerate this file, run: pnpm run generate-icons
+ */
 
 // SVG icons in sprite sheet
 export const iconSymbols: Record<string, string> = ${JSON.stringify(iconSymbols, null, 2)} as const;

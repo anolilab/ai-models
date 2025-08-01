@@ -764,7 +764,16 @@ const main = async (): Promise<void> => {
         console.log(`[DONE] Aggregated and synchronized ${synchronizedModels.length} models to ${OUTPUT_JSON}`);
 
         // Generate TypeScript data file for the package
-        const tsContent = `// Auto-generated file - do not edit manually\n// Generated from aggregated and synchronized provider data with Helicone pricing\n\nimport type { Model } from './schema';\n\nexport const allModels: Model[] = ${JSON.stringify(synchronizedModels, null, 2)} as Model[];\n`;
+        const tsContent = `/* Auto-generated file - do not edit manually
+ * Generated from aggregated and synchronized provider data with Helicone pricing
+ * 
+ * To regenerate this file, run: pnpm run aggregate-providers
+ */
+
+import type { Model } from './schema';
+
+export const allModels: Model[] = ${JSON.stringify(synchronizedModels, null, 2)} as Model[];
+`;
 
         writeFileSync(OUTPUT_TS, tsContent);
 

@@ -1,0 +1,9 @@
+examples
+coverage
+__fixtures__
+storybook-static
+node_modules
+dist
+
+**/CHANGELOG.md
+**/README.md
