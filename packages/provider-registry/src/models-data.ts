@@ -42,7 +42,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "alibaba"
   },
   {
     "id": "deepseek-r-1-distill-qwen-1-5-b",
@@ -82,7 +83,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "alibaba"
   },
   {
     "id": "deepseek-v-3",
@@ -122,7 +124,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "alibaba"
   },
   {
     "id": "moonshot-kimi-k2-instruct",
@@ -162,7 +165,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "alibaba"
   },
   {
     "id": "ai21/jamba-1-5-large-v1:0",
@@ -199,7 +203,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "ai21/jamba-1-5-mini-v1:0",
@@ -236,7 +241,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "ai21/jamba-instruct-v1:0",
@@ -273,7 +279,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/nova-canvas-v1:0",
@@ -310,7 +317,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/nova-lite-v1:0",
@@ -350,7 +358,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/nova-micro-v1:0",
@@ -388,7 +397,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/nova-pro-v1:0",
@@ -428,7 +438,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/nova-reel-v1:0",
@@ -465,7 +476,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/rerank-v1:0",
@@ -504,7 +516,8 @@ export const allModels: Model[] = [
       "ca-central-1",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-embed-image-v1",
@@ -550,7 +563,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-embed-text-v1",
@@ -589,7 +603,8 @@ export const allModels: Model[] = [
       "ap-northeast-1",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-embed-text-v2:0",
@@ -640,7 +655,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-image-generator-v1",
@@ -681,7 +697,8 @@ export const allModels: Model[] = [
       "eu-west-1 (Gated)",
       "eu-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-image-generator-v2:0",
@@ -719,7 +736,8 @@ export const allModels: Model[] = [
       "us-east-1",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-text-express-v1",
@@ -767,7 +785,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-text-lite-v1",
@@ -812,7 +831,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "amazon/titan-text-premier-v1:0",
@@ -848,7 +868,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-5-haiku-20241022-v1:0",
@@ -888,7 +909,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-5-sonnet-20240620-v1:0",
@@ -939,7 +961,8 @@ export const allModels: Model[] = [
       "eu-west-1 (Gated)*",
       "eu-west-3*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-5-sonnet-20241022-v2:0",
@@ -978,7 +1001,8 @@ export const allModels: Model[] = [
       "us-east-1*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-7-sonnet-20250219-v1:0",
@@ -1013,7 +1037,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-haiku-20240307-v1:0",
@@ -1067,7 +1092,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-opus-20240229-v1:0",
@@ -1106,7 +1132,8 @@ export const allModels: Model[] = [
       "us-east-1*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-3-sonnet-20240229-v1:0",
@@ -1156,7 +1183,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-instant-v1",
@@ -1197,7 +1225,8 @@ export const allModels: Model[] = [
       "ap-southeast-1 (Gated)",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-v2",
@@ -1237,7 +1266,8 @@ export const allModels: Model[] = [
       "ap-southeast-1 (Gated)",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "anthropic/claude-v2:1",
@@ -1277,7 +1307,8 @@ export const allModels: Model[] = [
       "ap-northeast-1",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/command-light-text-v14",
@@ -1314,7 +1345,8 @@ export const allModels: Model[] = [
       "us-east-1",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/command-r-plus-v1:0",
@@ -1352,7 +1384,8 @@ export const allModels: Model[] = [
       "us-east-1",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/command-r-v1:0",
@@ -1390,7 +1423,8 @@ export const allModels: Model[] = [
       "us-east-1",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/command-text-v14",
@@ -1427,7 +1461,8 @@ export const allModels: Model[] = [
       "us-east-1",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/embed-english-v3",
@@ -1460,7 +1495,8 @@ export const allModels: Model[] = [
         "video"
       ]
     },
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/embed-multilingual-v3",
@@ -1493,7 +1529,8 @@ export const allModels: Model[] = [
         "embedding"
       ]
     },
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "cohere/rerank-v3-5:0",
@@ -1532,7 +1569,8 @@ export const allModels: Model[] = [
       "ca-central-1",
       "eu-central-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "deepseek/r1-v1:0",
@@ -1570,7 +1608,8 @@ export const allModels: Model[] = [
       "us-east-2",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "luma/ray-v2:0",
@@ -1606,7 +1645,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-1-405b-instruct-v1:0",
@@ -1644,7 +1684,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-1-70b-instruct-v1:0",
@@ -1683,7 +1724,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-1-8b-instruct-v1:0",
@@ -1722,7 +1764,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-2-11b-instruct-v1:0",
@@ -1762,7 +1805,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-2-1b-instruct-v1:0",
@@ -1804,7 +1848,8 @@ export const allModels: Model[] = [
       "eu-west-1 (Gated)*",
       "eu-west-3*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-2-3b-instruct-v1:0",
@@ -1846,7 +1891,8 @@ export const allModels: Model[] = [
       "eu-west-1 (Gated)*",
       "eu-west-3*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-2-90b-instruct-v1:0",
@@ -1886,7 +1932,8 @@ export const allModels: Model[] = [
       "us-east-2*",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-3-70b-instruct-v1:0",
@@ -1925,7 +1972,8 @@ export const allModels: Model[] = [
       "us-east-2",
       "us-west-2*"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-70b-instruct-v1:0",
@@ -1967,7 +2015,8 @@ export const allModels: Model[] = [
       "ca-central-1",
       "eu-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama3-8b-instruct-v1:0",
@@ -2009,7 +2058,8 @@ export const allModels: Model[] = [
       "ca-central-1",
       "eu-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama4-maverick-17b-instruct-v1:0",
@@ -2049,7 +2099,8 @@ export const allModels: Model[] = [
       "us-east-2",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "meta/llama4-scout-17b-instruct-v1:0",
@@ -2089,7 +2140,8 @@ export const allModels: Model[] = [
       "us-east-2",
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/pixtral-large-2502-v1:0",
@@ -2123,7 +2175,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/mistral-7b-instruct-v0:2",
@@ -2167,7 +2220,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/mistral-large-2402-v1:0",
@@ -2211,7 +2265,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/mistral-large-2407-v1:0",
@@ -2247,7 +2302,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/mistral-small-2402-v1:0",
@@ -2283,7 +2339,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "mistral/mixtral-8x7b-instruct-v0:1",
@@ -2327,7 +2384,8 @@ export const allModels: Model[] = [
       "eu-west-3",
       "sa-east-1"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/sd3-5-large-v1:0",
@@ -2364,7 +2422,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/sd3-large-v1:0",
@@ -2401,7 +2460,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/stable-image-core-v1:0",
@@ -2437,7 +2497,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/stable-image-core-v1:1",
@@ -2473,7 +2534,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/stable-image-ultra-v1:0",
@@ -2509,7 +2571,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "stability/stable-image-ultra-v1:1",
@@ -2545,7 +2608,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "writer/palmyra-x4-v1:0",
@@ -2581,7 +2645,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "writer/palmyra-x5-v1:0",
@@ -2617,7 +2682,8 @@ export const allModels: Model[] = [
     "regions": [
       "us-west-2"
     ],
-    "streamingSupported": null
+    "streamingSupported": null,
+    "icon": "amazon"
   },
   {
     "id": "claude-haiku-3",
@@ -2658,7 +2724,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "anthropic"
   },
   {
     "id": "claude-haiku-3-5",
@@ -2699,7 +2766,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "anthropic"
   },
   {
     "id": "claude-opus-4",
@@ -2741,6 +2809,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "anthropic",
     "cacheRead": false
   },
   {
@@ -2783,6 +2852,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "anthropic",
     "cacheRead": false
   },
   {
@@ -2825,6 +2895,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "anthropic",
     "cacheRead": false
   },
   {
@@ -2867,6 +2938,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "anthropic",
     "cacheRead": false
   },
   {
@@ -2908,7 +2980,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "australiaeast",
@@ -2949,7 +3022,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "brazilsouth",
@@ -2990,7 +3064,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "canadaeast",
@@ -3031,7 +3106,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "codex-mini",
@@ -3072,7 +3148,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "codex-mini-(2025-05-16)",
@@ -3113,7 +3190,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "computer-use-preview",
@@ -3154,7 +3232,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "computer-use-preview-(2025-03-11)",
@@ -3195,7 +3274,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "dall-e-3",
@@ -3236,7 +3316,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "eastus",
@@ -3277,7 +3358,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "eastus-2",
@@ -3318,7 +3400,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "embeddings",
@@ -3359,7 +3442,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "francecentral",
@@ -3400,7 +3484,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "germanywestcentral",
@@ -3441,7 +3526,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-35-turbo-(0125)",
@@ -3482,7 +3568,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-35-turbo-(0125)-new",
@@ -3523,7 +3610,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-35-turbo-(1106)",
@@ -3564,7 +3652,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-35-turbo-instruct-(0914)",
@@ -3605,7 +3694,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-3-5",
@@ -3646,7 +3736,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4",
@@ -3686,7 +3777,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-4-(turbo-2024-04-09)-gpt-4-turbo-with-vision",
@@ -3728,7 +3820,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-1-(2025-04-14)",
@@ -3769,7 +3862,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-1-mini-(2025-04-14)",
@@ -3810,7 +3904,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-1-nano-(2025-04-14)",
@@ -3851,7 +3946,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-1-series",
@@ -3892,7 +3988,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-&-gpt-4-o-mini-&-gpt-4-turbo",
@@ -3933,7 +4030,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-(2024-05-13)-gpt-4-o-(omni)",
@@ -3974,7 +4072,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-(2024-08-06)",
@@ -4015,7 +4114,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-(2024-08-06)-gpt-4-o-(omni)",
@@ -4056,7 +4156,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-(2024-11-20)-gpt-4-o-(omni)",
@@ -4097,7 +4198,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-audio-preview-(2024-12-17)-gpt-4-o-audio",
@@ -4138,7 +4240,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-(2024-07-18)",
@@ -4179,7 +4282,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-(2024-07-18)-gpt-4-o-mini",
@@ -4220,7 +4324,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-audio-preview-(2024-12-17)-gpt-4-o-audio",
@@ -4261,7 +4366,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-realtime-preview-(2024-12-17)-gpt-4-o-audio",
@@ -4302,7 +4408,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-transcribe",
@@ -4343,7 +4450,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-mini-tts",
@@ -4384,7 +4492,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-realtime-preview-(2024-12-17)-gpt-4-o-audio",
@@ -4425,7 +4534,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-realtime-preview-(2025-06-03)-gpt-4-o-audio",
@@ -4466,7 +4576,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-4-o-transcribe",
@@ -4507,7 +4618,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "gpt-image-1",
@@ -4548,7 +4660,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "image-generation",
@@ -4589,7 +4702,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "italynorth",
@@ -4630,7 +4744,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "japaneast",
@@ -4671,7 +4786,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "koreacentral",
@@ -4712,7 +4828,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "northcentralus",
@@ -4753,7 +4870,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "norwayeast",
@@ -4794,7 +4912,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-1",
@@ -4835,7 +4954,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-1-(2024-12-17)",
@@ -4876,7 +4996,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-1-mini",
@@ -4916,7 +5037,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-1-mini-(2024-09-12)",
@@ -4957,7 +5079,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-1-preview",
@@ -4997,7 +5120,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-1-preview-(2024-09-12)",
@@ -5038,7 +5162,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-3",
@@ -5080,6 +5205,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "openai",
     "cacheRead": false
   },
   {
@@ -5121,7 +5247,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-3-mini",
@@ -5161,7 +5288,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-3-mini-(2025-01-31)",
@@ -5202,7 +5330,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-3-pro",
@@ -5243,7 +5372,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-3-pro-(2025-06-10)",
@@ -5284,7 +5414,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "o-4-mini",
@@ -5326,6 +5457,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "openai",
     "cacheRead": false
   },
   {
@@ -5367,7 +5499,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "polandcentral",
@@ -5408,7 +5541,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "sora",
@@ -5449,7 +5583,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "southafricanorth",
@@ -5490,7 +5625,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "southcentralus",
@@ -5531,7 +5667,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "southeastasia",
@@ -5572,7 +5709,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "southindia",
@@ -5613,7 +5751,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "spaincentral",
@@ -5654,7 +5793,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "swedencentral",
@@ -5695,7 +5835,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "switzerlandnorth",
@@ -5736,7 +5877,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "switzerlandwest",
@@ -5777,7 +5919,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "text-embedding-3-large",
@@ -5818,7 +5961,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "text-embedding-3-small",
@@ -5859,7 +6003,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "text-embedding-ada-002-(version-1)",
@@ -5900,7 +6045,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "text-embedding-ada-002-(version-2)",
@@ -5941,7 +6087,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "tts",
@@ -5982,7 +6129,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "tts-hd",
@@ -6023,7 +6171,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "uaenorth",
@@ -6064,7 +6213,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "uksouth",
@@ -6105,7 +6255,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "westeurope",
@@ -6146,7 +6297,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "westus",
@@ -6187,7 +6339,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "westus-3",
@@ -6228,7 +6381,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "whisper",
@@ -6269,7 +6423,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "microsoft"
   },
   {
     "id": "moonshotai-kimi-k2-instruct",
@@ -6309,7 +6464,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "deepinfra"
   },
   {
     "id": "qwen-qwen-3-coder-480b-a35b-instruct",
@@ -6349,7 +6505,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "deepinfra"
   },
   {
     "id": "qwen-qwen-3-coder-480b-a35b-instruct-turbo",
@@ -6389,7 +6546,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "deepinfra"
   },
   {
     "id": "zai-org-glm-4-5",
@@ -6429,7 +6587,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "deepinfra"
   },
   {
     "id": "deepseek-chat",
@@ -6461,7 +6620,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "cacheRead": true
+    "cacheRead": true,
+    "icon": "deepseek"
   },
   {
     "id": "deepseek-reasoner",
@@ -6493,7 +6653,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "cacheRead": true
+    "cacheRead": true,
+    "icon": "deepseek"
   },
   {
     "id": "chronos-hermes-13b-v-2",
@@ -6533,7 +6694,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-gemma-2b",
@@ -6573,7 +6735,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-gemma-7b",
@@ -6613,7 +6776,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-13b",
@@ -6653,7 +6817,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-13b-instruct",
@@ -6693,7 +6858,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-13b-python",
@@ -6733,7 +6899,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-34b",
@@ -6773,7 +6940,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-34b-instruct",
@@ -6813,7 +6981,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-34b-python",
@@ -6853,7 +7022,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-70b",
@@ -6893,7 +7063,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-70b-instruct",
@@ -6933,7 +7104,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-70b-python",
@@ -6973,7 +7145,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-7b",
@@ -7013,7 +7186,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-7b-instruct",
@@ -7053,7 +7227,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-llama-7b-python",
@@ -7093,7 +7268,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "code-qwen-1-5-7b",
@@ -7133,7 +7309,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "cogito-v-1-preview-llama-3b",
@@ -7173,7 +7350,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "cogito-v-1-preview-llama-70b",
@@ -7213,7 +7391,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "cogito-v-1-preview-llama-8b",
@@ -7253,7 +7432,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "cogito-v-1-preview-qwen-14b",
@@ -7293,7 +7473,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "cogito-v-1-preview-qwen-32b",
@@ -7333,7 +7514,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "dbrx-instruct",
@@ -7373,7 +7555,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-1-3b-base",
@@ -7413,7 +7596,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-33b-instruct",
@@ -7453,7 +7637,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-7b-base",
@@ -7493,7 +7678,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-7b-base-v-1-5",
@@ -7533,7 +7719,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-7b-instruct-v-1-5",
@@ -7573,7 +7760,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-v2-instruct",
@@ -7613,7 +7801,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-v2-lite-base",
@@ -7653,7 +7842,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-coder-v2-lite-instruct",
@@ -7693,7 +7883,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-prover-v2",
@@ -7733,7 +7924,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-(basic)",
@@ -7773,7 +7965,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-(fast)",
@@ -7813,7 +8006,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-0528-distill-qwen-3-8b",
@@ -7853,7 +8047,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-llama-70b",
@@ -7893,7 +8088,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-llama-8b",
@@ -7933,7 +8129,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-qwen-14b",
@@ -7973,7 +8170,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-qwen-1-5b",
@@ -8013,7 +8211,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-qwen-32b",
@@ -8053,7 +8252,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-r1-distill-qwen-7b",
@@ -8093,7 +8293,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-v2-5",
@@ -8133,7 +8334,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-v2-lite-chat",
@@ -8173,7 +8375,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deep-seek-v3",
@@ -8213,7 +8416,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deepseek-r1-05-28",
@@ -8253,7 +8457,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "deepseek-v3-03-24",
@@ -8293,7 +8498,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "devstral-small-2505",
@@ -8333,7 +8539,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "dobby-mini-unhinged-plus-llama-3-1-8b",
@@ -8373,7 +8580,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "dobby-unhinged-llama-3-3-70b",
@@ -8413,7 +8621,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "dolphin-2-6-mixtral-8-x-7-b",
@@ -8453,7 +8662,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "dolphin-2-9-2-qwen-2-72b",
@@ -8493,7 +8703,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "ernie-4-5-21b-a3b-pt",
@@ -8533,7 +8744,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ernie-4-5-300b-a47b-pt",
@@ -8573,7 +8785,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "fire-function-v1",
@@ -8613,7 +8826,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "fire-function-v2",
@@ -8653,7 +8867,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "fire-l-la-va-13b",
@@ -8694,7 +8909,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "firesearch-ocr-v6",
@@ -8735,7 +8951,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-[dev]",
@@ -8775,7 +8992,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-[dev]-control-net",
@@ -8815,7 +9033,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-[dev]-fp8",
@@ -8855,7 +9074,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-[schnell]",
@@ -8895,7 +9115,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-[schnell]-fp8",
@@ -8935,7 +9156,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-kontext-max",
@@ -8975,7 +9197,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "flux-1-kontext-pro",
@@ -9015,7 +9238,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "gemma-2-9b-instruct",
@@ -9055,7 +9279,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "gemma-2b-instruct",
@@ -9095,7 +9320,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "gemma-3-27b-instruct",
@@ -9135,7 +9361,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "gemma-7b",
@@ -9175,7 +9402,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "gemma-7b-instruct",
@@ -9215,7 +9443,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "glm-4-5",
@@ -9255,7 +9484,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hermes-2-pro-mistral-7b",
@@ -9295,7 +9525,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "intern-vl-3-38b",
@@ -9336,7 +9567,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "intern-vl-3-78b",
@@ -9377,7 +9609,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-vl-3-8b",
@@ -9418,7 +9651,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "japanese-stable-diffusion-xl",
@@ -9458,7 +9692,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "kimi-k2-instruct",
@@ -9498,7 +9733,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "l-la-va-v1-6-yi-34b",
@@ -9539,7 +9775,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-13b",
@@ -9579,7 +9816,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-13b-chat",
@@ -9619,7 +9857,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-70b",
@@ -9659,7 +9898,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-70b-chat",
@@ -9699,7 +9939,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-7b",
@@ -9739,7 +9980,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-2-7b-chat",
@@ -9779,7 +10021,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-405b-instruct",
@@ -9819,7 +10062,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-405b-instruct-long",
@@ -9859,7 +10103,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-70b-instruct",
@@ -9899,7 +10144,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-70b-instruct-1b",
@@ -9939,7 +10185,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-8b-instruct",
@@ -9979,7 +10226,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-1-nemotron-70b",
@@ -10019,7 +10267,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-2-11b-vision-instruct",
@@ -10060,7 +10309,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-2-1b",
@@ -10100,7 +10350,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-3-2-1b-instruct",
@@ -10140,7 +10391,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-3-2-3b",
@@ -10180,7 +10432,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-2-3b-instruct",
@@ -10220,7 +10473,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-3-2-90b-vision-instruct",
@@ -10261,7 +10515,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-3-70b-instruct",
@@ -10301,7 +10556,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-3-70b-instruct",
@@ -10341,7 +10597,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-70b-instruct-(hf-version)",
@@ -10381,7 +10638,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-8b",
@@ -10421,7 +10679,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-8b-instruct",
@@ -10461,7 +10720,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-3-8b-instruct-(hf-version)",
@@ -10501,7 +10761,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-4-maverick-instruct-(basic)",
@@ -10542,7 +10803,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-4-scout-instruct-(basic)",
@@ -10583,7 +10845,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-guard-3-8b",
@@ -10623,7 +10886,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-guard-7b",
@@ -10663,7 +10927,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-guard-v-2-8b",
@@ -10703,7 +10968,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "llama-guard-v-3-1b",
@@ -10743,7 +11009,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mini-max-m1-80-k",
@@ -10783,7 +11050,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mistal-7b-instruct-v0-1",
@@ -10823,7 +11091,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-7b",
@@ -10863,7 +11132,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-7b-instruct-v-0-2",
@@ -10903,7 +11173,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-7b-instruct-v-0-3",
@@ -10943,7 +11214,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-7b-open-orca",
@@ -10983,7 +11255,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-7b-v-0-2",
@@ -11023,7 +11296,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-nemo-base-2407",
@@ -11063,7 +11337,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-nemo-instruct-2407",
@@ -11103,7 +11378,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mistral-small-24b-instruct-2501",
@@ -11143,7 +11419,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mixtral-8-x-7-b-v-0-1",
@@ -11183,7 +11460,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mixtral-mo-e-8-x-22-b-instruct",
@@ -11223,7 +11501,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mixtral-mo-e-8-x-7-b-instruct",
@@ -11263,7 +11542,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mixtral-mo-e-8-x-7-b-instruct-(hf-version)",
@@ -11303,7 +11583,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mixtral-moe-8-x-22-b",
@@ -11343,7 +11624,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "mytho-max-l2-13b",
@@ -11383,7 +11665,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nous-capybara-7b-v1-9",
@@ -11423,7 +11706,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nous-hermes-2-yi-34b",
@@ -11463,7 +11747,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nous-hermes-llama-2-13b",
@@ -11503,7 +11788,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nous-hermes-llama-2-70b",
@@ -11543,7 +11829,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nous-hermes-llama-2-7b",
@@ -11583,7 +11870,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nouse-capybara-34b-v1-9",
@@ -11623,7 +11911,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "nouse-hermes-2-mixtral-8-x-7-b-dpo",
@@ -11663,7 +11952,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "open-chat-3-5-0106",
@@ -11703,7 +11993,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "open-hermes-2-5-mistral-7b",
@@ -11743,7 +12034,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "open-hermes-2-mistral-7b",
@@ -11783,7 +12075,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phi-2-3b",
@@ -11823,7 +12116,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phi-3-5-vision-instruct",
@@ -11864,7 +12158,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phi-3-mini-128-k-instruct",
@@ -11904,7 +12199,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phind-code-llama-34b-python-v-1",
@@ -11944,7 +12240,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phind-code-llama-34b-v-1",
@@ -11984,7 +12281,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "phind-code-llama-34b-v-2",
@@ -12024,7 +12322,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "playground-v-2-1024",
@@ -12064,7 +12363,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "playground-v-2-5-1024",
@@ -12104,7 +12404,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "pythia-12b",
@@ -12144,7 +12445,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-1-5-72b-chat",
@@ -12184,7 +12486,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-0-5b-instruct",
@@ -12224,7 +12527,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-14b",
@@ -12264,7 +12568,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-14b-instruct",
@@ -12304,7 +12609,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-1-5b-instruct",
@@ -12344,7 +12650,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-32b",
@@ -12384,7 +12691,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-32b-instruct",
@@ -12424,7 +12732,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-72b",
@@ -12464,7 +12773,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-72b-instruct",
@@ -12504,7 +12814,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-7b",
@@ -12544,7 +12855,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-7b-instruct",
@@ -12584,7 +12896,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-0-5b",
@@ -12624,7 +12937,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-0-5b-instruct",
@@ -12664,7 +12978,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-14b",
@@ -12704,7 +13019,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-14b-instruct",
@@ -12744,7 +13060,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-coder-1-5b",
@@ -12784,7 +13101,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-1-5b-instruct",
@@ -12824,7 +13142,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-32b",
@@ -12864,7 +13183,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-32b-instruct",
@@ -12904,7 +13224,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-32b-instruct-128k",
@@ -12944,7 +13265,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-32b-instruct-32k-ro-pe",
@@ -12984,7 +13306,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-32b-instruct-64-k",
@@ -13024,7 +13347,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-3b",
@@ -13064,7 +13388,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-3b-instruct",
@@ -13104,7 +13429,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-7b",
@@ -13144,7 +13470,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-coder-7b-instruct",
@@ -13184,7 +13511,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-math-72b-instruct",
@@ -13224,7 +13552,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-5-vl-32b-instruct",
@@ -13265,7 +13594,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-3b-instruct",
@@ -13306,7 +13636,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-72b-instruct",
@@ -13347,7 +13678,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-7b-instruct",
@@ -13388,7 +13720,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-72b-instruct",
@@ -13428,7 +13761,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-7b-instruct",
@@ -13468,7 +13802,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-vl-2b-instruct",
@@ -13509,7 +13844,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-vl-72b-instruct",
@@ -13550,7 +13886,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-2-vl-7b-instruct",
@@ -13591,7 +13928,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-0-6b",
@@ -13631,7 +13969,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b",
@@ -13671,7 +14010,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-1-7b",
@@ -13711,7 +14051,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-1-7b-fp-8-model-used-for-drafting",
@@ -13751,7 +14092,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-3-1-7b-fp-8-model-used-for-drafting-for-131072-context",
@@ -13791,7 +14133,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-3-1-7b-fp-8-model-used-for-drafting-for-40960-context-length",
@@ -13831,7 +14174,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwen-3-235b-a22b",
@@ -13871,7 +14215,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507",
@@ -13911,7 +14256,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-thinking-2507",
@@ -13951,7 +14297,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b",
@@ -13991,7 +14338,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-instruct-2507",
@@ -14031,7 +14379,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-thinking-2507",
@@ -14071,7 +14420,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-32b",
@@ -14111,7 +14461,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-4b",
@@ -14151,7 +14502,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b",
@@ -14191,7 +14543,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct",
@@ -14231,7 +14584,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-qwq-32b-preview",
@@ -14271,7 +14625,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "qwq-32b",
@@ -14311,7 +14666,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "rolm-ocr",
@@ -14352,7 +14708,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "segmind-stable-diffusion-1b-(ssd-1b)",
@@ -14392,7 +14749,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "snorkel-mistral-pair-rm-dpo",
@@ -14432,7 +14790,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "stable-code-3b",
@@ -14472,7 +14831,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "stable-diffusion-xl",
@@ -14512,7 +14872,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "star-coder-16b",
@@ -14552,7 +14913,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "star-coder-2-15b",
@@ -14592,7 +14954,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "star-coder-2-3b",
@@ -14632,7 +14995,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "star-coder-2-7b",
@@ -14672,7 +15036,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "star-coder-7b",
@@ -14712,7 +15077,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "streaming-asr",
@@ -14752,7 +15118,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "toppy-m-7b",
@@ -14792,7 +15159,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "whisper-v3-large",
@@ -14832,7 +15200,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "whisper-v3-turbo",
@@ -14872,7 +15241,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "yi-34b",
@@ -14912,7 +15282,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "yi-34b-chat",
@@ -14952,7 +15323,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "yi-6b",
@@ -14992,7 +15364,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "yi-large",
@@ -15032,7 +15405,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "zephyr-7b-beta",
@@ -15072,7 +15446,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "fireworks"
   },
   {
     "id": "claude-sonnet-3-7-thinking",
@@ -15104,7 +15479,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "cacheRead": false
+    "cacheRead": false,
+    "icon": "githubcopilot"
   },
   {
     "id": "gemini-2-0-flash",
@@ -15136,7 +15512,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "cacheRead": false
+    "cacheRead": false,
+    "icon": "githubcopilot"
   },
   {
     "id": "gemini-2-5-pro",
@@ -15168,7 +15545,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "cacheRead": false
+    "cacheRead": false,
+    "icon": "githubcopilot"
   },
   {
     "id": "gpt-4-1",
@@ -15210,6 +15588,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "openai",
     "cacheRead": false
   },
   {
@@ -15252,6 +15631,7 @@ export const allModels: Model[] = [
       ]
     },
     "streamingSupported": true,
+    "icon": "openai",
     "cacheRead": false
   },
   {
@@ -15292,7 +15672,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "ask-copilot-open",
@@ -15332,7 +15713,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "ask-copilot-select",
@@ -15372,7 +15754,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "github-models",
@@ -15412,7 +15795,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "optimizing-your-ai-powered-app-with-github-models",
@@ -15452,7 +15836,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "prototyping-with-ai-models",
@@ -15492,7 +15877,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "use-github-models",
@@ -15532,7 +15918,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "github"
   },
   {
     "id": "123-versions",
@@ -15572,7 +15959,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "calendar-month-deprecation-date",
@@ -15612,7 +16000,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "calendar-month-latest-update",
@@ -15652,7 +16041,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "cognition-2-knowledge-cutoff",
@@ -15692,7 +16082,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-flash-8-b-exp-0827",
@@ -15732,7 +16123,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-flash-8-b-exp-0924",
@@ -15772,7 +16164,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-flash-8b-gemini-1-5-flash-8-b",
@@ -15812,7 +16205,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-flash-gemini-1-5-flash",
@@ -15852,7 +16246,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-pro-exp-0801",
@@ -15892,7 +16287,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-pro-exp-0827",
@@ -15932,7 +16328,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-1-5-pro-gemini-1-5-pro",
@@ -15972,7 +16369,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-exp",
@@ -16012,7 +16410,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-exp-image-generation",
@@ -16052,7 +16451,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-gemini-2-0-flash",
@@ -16092,7 +16492,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-lite-gemini-2-0-flash-lite",
@@ -16132,7 +16533,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-live-gemini-2-0-flash-live-001",
@@ -16172,7 +16574,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-preview-image-generation-gemini-2-0-flash-preview-image-generation",
@@ -16212,7 +16615,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-thinking-exp-01-21",
@@ -16252,7 +16656,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-flash-thinking-exp-1219",
@@ -16292,7 +16697,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-0-pro-exp-02-05",
@@ -16332,7 +16738,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-gemini-2-5-flash",
@@ -16372,7 +16779,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-lite-gemini-2-5-flash-lite",
@@ -16412,7 +16820,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-live-gemini-live-2-5-flash-preview",
@@ -16452,7 +16861,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-native-audio-gemini-2-5-flash-preview-native-audio-dialog-&-gemini-2-5-flash-exp-native-audio-thinking-dialog",
@@ -16492,7 +16902,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-preview-04-17",
@@ -16532,7 +16943,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-flash-preview-tts-gemini-2-5-flash-preview-tts",
@@ -16572,7 +16984,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-pro-gemini-2-5-pro",
@@ -16612,7 +17025,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-pro-preview-03-25",
@@ -16652,7 +17066,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-pro-preview-05-06",
@@ -16692,7 +17107,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-pro-preview-06-05",
@@ -16732,7 +17148,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-2-5-pro-preview-tts-gemini-2-5-pro-preview-tts",
@@ -16772,7 +17189,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-embedding-exp-03-07",
@@ -16812,7 +17230,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-exp-1114",
@@ -16852,7 +17271,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-exp-1121",
@@ -16892,7 +17312,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "gemini-exp-1206",
@@ -16932,7 +17353,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "handyman-capabilities",
@@ -16972,7 +17394,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "id-card-model-code",
@@ -17012,7 +17435,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "movie-info-audio-visual-specs",
@@ -17052,7 +17476,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "save-supported-data-types",
@@ -17092,7 +17517,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "token-auto-token-limits[*]",
@@ -17132,7 +17558,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "approach",
@@ -17175,7 +17602,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "cloud-dot-devsite-v-2-prod",
@@ -17218,7 +17646,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "cross-product",
@@ -17261,7 +17690,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-cloud-innovators-plus",
@@ -17304,7 +17734,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-code-assist",
@@ -17347,7 +17778,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-developer-subscriptions",
@@ -17390,7 +17822,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-enterprise",
@@ -17433,7 +17866,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-free-benefits",
@@ -17476,7 +17910,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "dev-pro-enable-google-one-card",
@@ -17519,7 +17954,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "filters-gemini",
@@ -17561,7 +17997,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "flash-gemini",
@@ -17603,7 +18040,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "flash-lite-gemini",
@@ -17645,7 +18083,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "flash-lite-vertex",
@@ -17687,7 +18126,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "image-prompt",
@@ -17730,7 +18170,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "improve",
@@ -17773,7 +18214,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "model-prompting",
@@ -17816,7 +18258,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "monitoring-process",
@@ -17859,7 +18302,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "predictions-prompt",
@@ -17902,7 +18346,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "pro-gemini",
@@ -17945,7 +18390,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "profiles-enable-profile-collections",
@@ -17988,7 +18434,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "profiles-require-profile-eligibility-for-signin",
@@ -18031,7 +18478,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "quickstart-vertex",
@@ -18073,7 +18521,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "solved-my-problem",
@@ -18116,7 +18565,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "values-prompt",
@@ -18159,7 +18609,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "4-claude",
@@ -18201,7 +18652,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "haiku-claude",
@@ -18243,7 +18695,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "sonnet-claude",
@@ -18286,7 +18739,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "v-2-claude",
@@ -18328,7 +18782,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "google"
   },
   {
     "id": "qwen/qwen3-32b",
@@ -18372,7 +18827,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "deepseek-r1-distill-llama-70b",
@@ -18416,7 +18872,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "gemma2-9b-it",
@@ -18460,7 +18917,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "compound-beta",
@@ -18504,7 +18962,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": true
+    "compoundSystem": true,
+    "icon": "groq"
   },
   {
     "id": "compound-beta-mini",
@@ -18548,7 +19007,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": true
+    "compoundSystem": true,
+    "icon": "groq"
   },
   {
     "id": "llama-3.1-8b-instant",
@@ -18592,7 +19052,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "llama-3.3-70b-versatile",
@@ -18636,7 +19097,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "meta-llama/llama-4-maverick-17b-128e-instruct",
@@ -18680,7 +19142,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "meta-llama/llama-4-scout-17b-16e-instruct",
@@ -18724,7 +19187,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "meta-llama/llama-guard-4-12b",
@@ -18757,6 +19221,7 @@ export const allModels: Model[] = [
         "text"
       ]
     },
+    "icon": "openrouter",
     "vision": false,
     "extendedThinking": false,
     "preview": false,
@@ -18812,7 +19277,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "meta-llama/llama-prompt-guard-2-86m",
@@ -18856,7 +19322,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "moonshotai/kimi-k2-instruct",
@@ -18900,7 +19367,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "whisper-large-v3",
@@ -18945,7 +19413,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "whisper-large-v3-turbo",
@@ -18990,7 +19459,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": false,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "playai-tts",
@@ -19035,7 +19505,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": true,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "playai-tts-arabic",
@@ -19080,7 +19551,8 @@ export const allModels: Model[] = [
     "batchMode": false,
     "audioGeneration": true,
     "imageGeneration": false,
-    "compoundSystem": false
+    "compoundSystem": false,
+    "icon": "groq"
   },
   {
     "id": "amazon-chronos-t-5-small",
@@ -19120,7 +19592,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "distilbert-distilgpt-2",
@@ -19160,7 +19633,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "dphn-dolphin-2-9-1-yi-1-5-34-b",
@@ -19200,7 +19674,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "facebook-bart-large-cnn",
@@ -19240,7 +19715,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "facebook-opt-125-m",
@@ -19280,7 +19756,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "gensyn-qwen-2-5-0-5b-instruct",
@@ -19320,7 +19797,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "google-gemma-3-1-b-it",
@@ -19360,7 +19838,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "google-t-5-t-5-small",
@@ -19400,7 +19879,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "meta-llama-llama-3-1-8b-instruct",
@@ -19440,7 +19920,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "meta-llama-llama-3-2-1b",
@@ -19480,7 +19961,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "meta-llama-llama-3-2-1b-instruct",
@@ -19520,7 +20002,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "openai-community-gpt-2",
@@ -19560,7 +20043,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-2-5-14b-instruct",
@@ -19600,7 +20084,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-2-5-3b-instruct",
@@ -19640,7 +20125,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-2-5-7b-instruct",
@@ -19680,7 +20166,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-2-5-vl-3b-instruct",
@@ -19721,7 +20208,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-2-5-vl-7b-instruct",
@@ -19762,7 +20250,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-3-0-6b",
@@ -19802,7 +20291,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-3-4b-base",
@@ -19842,7 +20332,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-3-8b",
@@ -19882,7 +20373,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-3-8b-base",
@@ -19922,7 +20414,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "qwen-qwen-3-embedding-0-6b",
@@ -19962,7 +20455,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "unslothai-1",
@@ -20002,7 +20496,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "huggingface"
   },
   {
     "id": "2-vision",
@@ -20043,7 +20538,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "3-gemma",
@@ -20083,7 +20579,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "id-meta-fp-16-llama",
@@ -20123,7 +20620,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "id-meta-fp-8-fp-16-llama",
@@ -20163,7 +20661,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "id-meta-fp-8-llama",
@@ -20203,7 +20702,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "id-mistral-fp-8-mistral",
@@ -20243,7 +20743,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "instruct-llama",
@@ -20283,7 +20784,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "instruct-mistral-ne-mo-12b-instruct",
@@ -20323,7 +20825,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "inference"
   },
   {
     "id": "llama-4-maverick-17b-128e-instruct-fp8",
@@ -20358,7 +20861,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "meta"
   },
   {
     "id": "llama-4-scout-17b-16e-instruct-fp8",
@@ -20393,7 +20897,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "meta"
   },
   {
     "id": "llama-3.3-70b-instruct",
@@ -20428,7 +20933,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "meta"
   },
   {
     "id": "llama-3.3-8b-instruct",
@@ -20463,7 +20969,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "meta"
   },
   {
     "id": "codestral-2405",
@@ -20503,7 +21010,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "codestral-2501",
@@ -20543,7 +21051,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "codestral-2508",
@@ -20583,7 +21092,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "codestral-embed",
@@ -20623,7 +21133,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "codestral-mamba",
@@ -20663,7 +21174,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "devstral-medium",
@@ -20703,7 +21215,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "devstral-small-1",
@@ -20743,7 +21256,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "devstral-small-1-1",
@@ -20783,7 +21297,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "magistral-medium-1",
@@ -20823,7 +21338,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "magistral-medium-1-1",
@@ -20863,7 +21379,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "magistral-small-1",
@@ -20903,7 +21420,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "magistral-small-1-1",
@@ -20943,7 +21461,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mathstral-7b",
@@ -20983,7 +21502,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "ministral-3b",
@@ -21023,7 +21543,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "ministral-8b",
@@ -21063,7 +21584,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-embed",
@@ -21103,7 +21625,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-large-2402",
@@ -21144,7 +21667,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-large-2407",
@@ -21185,7 +21709,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-large-2-1",
@@ -21226,7 +21751,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-medium-2312",
@@ -21266,7 +21792,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-medium-3",
@@ -21306,7 +21833,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-moderation",
@@ -21346,7 +21874,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-nemo-12b",
@@ -21386,7 +21915,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-ocr-2503",
@@ -21426,7 +21956,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-ocr-2505",
@@ -21466,7 +21997,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-saba-2502",
@@ -21506,7 +22038,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-small-2",
@@ -21546,7 +22079,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-small-2402",
@@ -21586,7 +22120,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-small-3",
@@ -21626,7 +22161,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-small-3-1",
@@ -21666,7 +22202,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mistral-small-3-2",
@@ -21706,7 +22243,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mixtral-8-x-22-b",
@@ -21746,7 +22284,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "mixtral-8-x-7-b",
@@ -21786,7 +22325,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "pixtral-12b",
@@ -21826,7 +22366,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "pixtral-large",
@@ -21867,7 +22408,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "voxtral-mini",
@@ -21907,7 +22449,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "voxtral-mini-transcribe",
@@ -21947,7 +22490,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "voxtral-small",
@@ -21987,7 +22531,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "mistral"
   },
   {
     "id": "14-ckpt-sd-xl",
@@ -22028,7 +22573,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "47-ckpt-sd-xl",
@@ -22069,7 +22615,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "489-ckpt-flux-1",
@@ -22110,7 +22657,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "all-mini-lm-l6-v-2",
@@ -22150,7 +22698,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "anime-gpt-sovits-models",
@@ -22190,7 +22739,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bagel-7b-mo-t",
@@ -22230,7 +22780,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bark",
@@ -22270,7 +22821,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bce-embedding-base-v-1",
@@ -22310,7 +22862,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "belle-whisper-large-v-3-zh",
@@ -22350,7 +22903,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bert-base-chinese",
@@ -22390,7 +22944,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bert-base-uncased",
@@ -22430,7 +22985,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-base-zh-v-1-5",
@@ -22470,7 +23026,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-large-zh-v-1-5",
@@ -22510,7 +23067,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-m-3",
@@ -22550,7 +23108,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-m-3-gguf",
@@ -22590,7 +23149,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-reranker-base",
@@ -22630,7 +23190,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-reranker-large",
@@ -22670,7 +23231,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-reranker-v-2-m-3",
@@ -22710,7 +23272,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "bge-small-zh-v-1-5",
@@ -22750,7 +23313,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "blip2-chinese",
@@ -22791,7 +23355,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "blip-2-opt-2-7-b",
@@ -22831,7 +23396,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "chat-tts-model-scope",
@@ -22871,7 +23437,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "chatglm-2-6-b",
@@ -22911,7 +23478,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "chatglm-3-6-b",
@@ -22951,7 +23519,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "chinese-roberta-wwm-ext",
@@ -22991,7 +23560,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "clearer-voice-studio",
@@ -23031,7 +23601,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "clip-vit-base-patch-32",
@@ -23072,7 +23643,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "clip-vit-large-patch-14",
@@ -23113,7 +23685,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cog-video-x-5-b",
@@ -23153,7 +23726,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cog-view-4-6b",
@@ -23194,7 +23768,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-2-0-5b",
@@ -23234,7 +23809,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-2-0-5b-zhenghebao",
@@ -23274,7 +23850,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-300m",
@@ -23314,7 +23891,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-300m-instruct",
@@ -23354,7 +23932,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-300m-sft",
@@ -23394,7 +23973,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cosy-voice-ttsfrd",
@@ -23434,7 +24014,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-anytext-text-generation-editing",
@@ -23475,7 +24056,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-convnext-tiny-ocr-recognition-document-damo",
@@ -23515,7 +24097,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-convnext-tiny-ocr-recognition-general-damo",
@@ -23555,7 +24138,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-convnext-tiny-ocr-recognition-handwritten-damo",
@@ -23595,7 +24179,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-ddcolor-image-colorization",
@@ -23636,7 +24221,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-diffusion-text-to-image-synthesis",
@@ -23677,7 +24263,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-dla-34-table-structure-recognition-cycle-centernet",
@@ -23717,7 +24304,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-gpen-image-portrait-enhancement",
@@ -23758,7 +24346,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-ir-50-face-recognition-arcface",
@@ -23798,7 +24387,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-res-net-c-3-d-action-detection-detection-2-d",
@@ -23838,7 +24428,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnest-101-general-recognition",
@@ -23878,7 +24469,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-18-card-correction",
@@ -23918,7 +24510,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-18-ocr-detection-db-line-level-damo",
@@ -23958,7 +24551,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-18-ocr-detection-line-level-damo",
@@ -23998,7 +24592,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-34-face-attribute-recognition-fairface",
@@ -24038,7 +24633,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-50-face-detection-retinaface",
@@ -24078,7 +24674,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-50-face-reconstruction",
@@ -24118,7 +24715,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-resnet-transformer-table-structure-recognition-lore",
@@ -24158,7 +24756,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-tinynas-head-detection-damoyolo",
@@ -24198,7 +24797,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-tinynas-object-detection-damoyolo",
@@ -24239,7 +24839,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-tinynas-object-detection-damoyolo-safety-helmet",
@@ -24279,7 +24880,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-unet-image-face-fusion-damo",
@@ -24320,7 +24922,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-unet-image-matting",
@@ -24361,7 +24964,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-unet-universal-matting",
@@ -24401,7 +25005,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cv-vit-base-image-classification-image-net-labels",
@@ -24442,7 +25047,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "cyril-pilgrim-digital-human-v-1",
@@ -24483,7 +25089,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1",
@@ -24523,7 +25130,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528",
@@ -24563,7 +25171,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528-gguf",
@@ -24603,7 +25212,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528-qwen-3-8b",
@@ -24643,7 +25253,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528-qwen-3-8b-gguf",
@@ -24683,7 +25294,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528-w8a8",
@@ -24723,7 +25335,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-0528-w8a8-mind-ie",
@@ -24763,7 +25376,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-distill-qwen-14b-gguf",
@@ -24803,7 +25417,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-distill-qwen-1-5b-gguf",
@@ -24843,7 +25458,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-distill-qwen-32b-awq",
@@ -24883,7 +25499,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-distill-qwen-32b-gguf",
@@ -24923,7 +25540,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-distill-qwen-7b-gguf",
@@ -24963,7 +25581,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-r1-gguf",
@@ -25003,7 +25622,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-v3-0324",
@@ -25043,7 +25663,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deep-seek-v3-0324-gguf",
@@ -25083,7 +25704,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deepseek-llm-7-b-chat",
@@ -25123,7 +25745,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deepseek-vl-2",
@@ -25164,7 +25787,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "deepseek-vl-2-tiny",
@@ -25205,7 +25829,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "dolphin",
@@ -25246,7 +25871,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "dolphin-small",
@@ -25286,7 +25912,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "dou-bao-flux",
@@ -25327,7 +25954,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "duguang-ocr-onnx-v-2",
@@ -25367,7 +25995,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "echo-mimic-v-2",
@@ -25407,7 +26036,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "emotion-2-vec-plus-large",
@@ -25447,7 +26077,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ernie-4-5-0-3b-pt",
@@ -25487,7 +26118,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ernie-4-5-vl-28b-a3b-paddle",
@@ -25528,7 +26160,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ernie-4-5-vl-28b-a3b-pt",
@@ -25569,7 +26202,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "fire-red-asr-aed-l",
@@ -25609,7 +26243,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "fireredasr-aed-large-zh-en-onnx-offline-20250124",
@@ -25649,7 +26284,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "fish-speech-1-5",
@@ -25689,7 +26325,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-dev",
@@ -25730,7 +26367,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-dev-control-net-union-pro-2-0",
@@ -25771,7 +26409,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-dev-fp-8-dit",
@@ -25812,7 +26451,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-fill-dev",
@@ -25853,7 +26493,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev",
@@ -25894,7 +26535,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-comfy-ui",
@@ -25934,7 +26576,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-fp-8",
@@ -25975,7 +26618,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-gguf",
@@ -26016,7 +26660,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-lora-art-aug",
@@ -26057,7 +26702,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-lora-blingbling",
@@ -26098,7 +26744,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-lora-highresfix",
@@ -26139,7 +26786,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-kontext-dev-lora-super-outpainting",
@@ -26180,7 +26828,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-1-krea-dev",
@@ -26221,7 +26870,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-high-res",
@@ -26262,7 +26912,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-realistic-pure-desire-beautiful-girl-v-1-0",
@@ -26303,7 +26954,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "flux-xiao-hong-shu-ji-zhi-zhen-shi-v2",
@@ -26344,7 +26996,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "fst-itn-zh",
@@ -26384,7 +27037,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "funasr-runtime-win-cpu-x-64",
@@ -26424,7 +27078,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gemma-3-12-b-it",
@@ -26465,7 +27120,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gemma-3-27-b-it",
@@ -26506,7 +27162,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gemma-3-4-b-it",
@@ -26547,7 +27204,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gemma-3-n-e4b-it",
@@ -26588,7 +27246,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-1v-9b-base",
@@ -26628,7 +27287,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-1v-9b-thinking",
@@ -26668,7 +27328,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-1v-9b-thinking-gguf",
@@ -26709,7 +27370,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-32b-0414",
@@ -26749,7 +27411,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-5-air",
@@ -26789,7 +27452,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-5-air-base",
@@ -26829,7 +27493,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-5-air-fp8",
@@ -26869,7 +27534,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-5-base",
@@ -26909,7 +27575,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-5-fp8",
@@ -26949,7 +27616,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-9-b-chat",
@@ -26989,7 +27657,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-9b-0414",
@@ -27029,7 +27698,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-4-v-9-b",
@@ -27069,7 +27739,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "glm-z1-32b-0414",
@@ -27109,7 +27780,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gme-qwen-2-vl-2b-instruct",
@@ -27150,7 +27822,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gme-qwen-2-vl-7b-instruct",
@@ -27191,7 +27864,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gpt-2",
@@ -27231,7 +27905,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gpt-so-vits-inference",
@@ -27271,7 +27946,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gpt-so-vits-model-collection",
@@ -27311,7 +27987,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "grounding-dino",
@@ -27351,7 +28028,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gte-qwen-2-1-5b-instruct",
@@ -27391,7 +28069,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "gte-qwen-2-7b-instruct",
@@ -27431,7 +28110,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "happy-llm-215m-base",
@@ -27471,7 +28151,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hi-dream-e1-1",
@@ -27512,7 +28193,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "higgs-audio-v-2-generation-3b-base",
@@ -27552,7 +28234,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "higgs-audio-v-2-tokenizer",
@@ -27592,7 +28275,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hunyuan-a13b-instruct",
@@ -27632,7 +28316,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hunyuan-a13b-instruct-gptq-int-4",
@@ -27672,7 +28357,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hunyuan-di-t",
@@ -27713,7 +28399,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hunyuan-video",
@@ -27753,7 +28440,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "hunyuan-world-1",
@@ -27793,7 +28481,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "index-anisora",
@@ -27833,7 +28522,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "index-tts",
@@ -27873,7 +28563,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "index-tts-1-5",
@@ -27913,7 +28604,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-s1",
@@ -27954,7 +28646,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-s1-fp8",
@@ -27995,7 +28688,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-s1-gguf",
@@ -28036,7 +28730,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-vl-3-14b",
@@ -28077,7 +28772,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-vl-3-1b",
@@ -28118,7 +28814,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "intern-vl-3-2b",
@@ -28159,7 +28856,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "internlm-3-8-b-instruct",
@@ -28199,7 +28897,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "jan-nano",
@@ -28239,7 +28938,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "janus-pro-7b",
@@ -28280,7 +28980,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "jimeng",
@@ -28321,7 +29022,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "jina-embeddings-v-4",
@@ -28362,7 +29064,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "jt-da-8b",
@@ -28402,7 +29105,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kat-v1-40b",
@@ -28442,7 +29146,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "keye-vl-8b-preview",
@@ -28483,7 +29188,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-audio-7b-instruct",
@@ -28523,7 +29229,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-k2-base",
@@ -28563,7 +29270,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-k2-instruct-gguf",
@@ -28603,7 +29311,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-vl-a3b-instruct",
@@ -28644,7 +29353,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-vl-a3b-thinking",
@@ -28685,7 +29395,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kimi-vl-a3b-thinking-2506",
@@ -28726,7 +29437,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "kontext-remover-general-lo-ra",
@@ -28767,7 +29479,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "lingshu-32b",
@@ -28808,7 +29521,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "lisa",
@@ -28848,7 +29562,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "lite-avatar-gallery",
@@ -28888,7 +29603,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-2-7-b",
@@ -28928,7 +29644,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-2-7-b-chat-hf",
@@ -28968,7 +29685,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-2-7-b-hf",
@@ -29008,7 +29726,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-4-maverick-17b-128e-instruct",
@@ -29048,7 +29767,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llama-4-scout-17b-16e-instruct",
@@ -29088,7 +29808,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "llava-1-5-7-b-hf",
@@ -29129,7 +29850,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "longlegs",
@@ -29169,7 +29891,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "lora-rioko-kontext",
@@ -29210,7 +29933,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "m-3-e-base",
@@ -29250,7 +29974,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "majic-mix-realistic",
@@ -29291,7 +30016,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "majicflus-v-1",
@@ -29332,7 +30058,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "medical-deep-seek-large-language-model",
@@ -29372,7 +30099,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "megrez-2-3-x-7-b-a3b-preview",
@@ -29412,7 +30140,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "meta-llama-3-1-8b",
@@ -29452,7 +30181,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "meta-llama-3-1-8b-instruct",
@@ -29492,7 +30222,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "meta-llama-3-8b",
@@ -29532,7 +30263,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "meta-llama-3-8b-instruct",
@@ -29572,7 +30304,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mgeo-geographic-elements-tagging-chinese-base",
@@ -29612,7 +30345,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mgeo-geographic-entity-alignment-chinese-base",
@@ -29652,7 +30386,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mi-mo-vl-7b-rl",
@@ -29693,7 +30428,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "miner-u-2-0-2505-0-9b",
@@ -29733,7 +30469,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ming-lite-omni",
@@ -29773,7 +30510,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ming-lite-omni-1-5",
@@ -29814,7 +30552,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mini-cpm-o-2-6",
@@ -29855,7 +30594,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mini-cpm-v-2-6",
@@ -29896,7 +30636,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mini-mind-2",
@@ -29936,7 +30677,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mini-mind-2-py-torch",
@@ -29976,7 +30718,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "monkey-ocr",
@@ -30017,7 +30760,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "mplug-image-captioning-coco-base-zh",
@@ -30058,7 +30802,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-chinese-stable-diffusion-v-1-0",
@@ -30099,7 +30844,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-clip-vit-base-patch-16-zh",
@@ -30140,7 +30886,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-clip-vit-huge-patch-14-zh",
@@ -30181,7 +30928,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-clip-vit-large-patch-14-336-zh",
@@ -30222,7 +30970,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-convnext-roberta-base-vldoc-embedding",
@@ -30263,7 +31012,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "multi-modal-team-vit-large-patch-14-multi-modal-similarity",
@@ -30303,7 +31053,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nanonets-ocr-s",
@@ -30344,7 +31095,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nexus-gen-v-2",
@@ -30385,7 +31137,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-bart-text-error-correction-chinese",
@@ -30425,7 +31178,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-bert-document-segmentation-chinese-base",
@@ -30465,7 +31219,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-convai-text-2-sql-pretrain-cn",
@@ -30505,7 +31260,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-csanmt-translation-zh-2-en",
@@ -30545,7 +31301,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-deberta-rex-uninlu-chinese-base",
@@ -30585,7 +31342,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-gte-sentence-embedding-chinese-base",
@@ -30625,7 +31383,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-gte-sentence-embedding-chinese-large",
@@ -30665,7 +31424,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-maoe-named-entity-recognition-chinese-base-general",
@@ -30705,7 +31465,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-polylm-13-b-text-generation",
@@ -30745,7 +31506,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-polylm-qwen-7-b-text-generation",
@@ -30785,7 +31547,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-raner-named-entity-recognition-chinese-base-ecom-50-cls",
@@ -30825,7 +31588,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-raner-named-entity-recognition-chinese-base-generic",
@@ -30865,7 +31629,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-seqgpt-560-m",
@@ -30905,7 +31670,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-structbert-backbone-base-std",
@@ -30945,7 +31711,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-structbert-outbound-intention-chinese-tiny",
@@ -30985,7 +31752,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nlp-structbert-sentiment-classification-chinese-base",
@@ -31025,7 +31793,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nunchaku",
@@ -31066,7 +31835,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nunchaku-flux-1-dev",
@@ -31107,7 +31877,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "nunchaku-flux-1-kontext-dev",
@@ -31148,7 +31919,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ocr-flux-3b",
@@ -31189,7 +31961,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ofa-image-caption-muge-base-zh",
@@ -31230,7 +32003,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ofa-ocr-recognition-handwriting-base-zh",
@@ -31270,7 +32044,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ofa-visual-grounding-refcoco-large-zh",
@@ -31310,7 +32085,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ollama",
@@ -31350,7 +32126,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ollama-linux",
@@ -31390,7 +32167,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "omni-gen-2",
@@ -31430,7 +32208,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "one-ke",
@@ -31470,7 +32249,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "openaudio-s-1-mini",
@@ -31510,7 +32290,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ovis-u1-3b",
@@ -31551,7 +32332,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "paraphrase-multilingual-mini-lm-l12-v-2",
@@ -31591,7 +32373,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "pdf-extract-kit",
@@ -31631,7 +32414,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "pdf-extract-kit-1-0",
@@ -31671,7 +32455,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "prompt-clue",
@@ -31711,7 +32496,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "prompt-clue-base-v-1-5",
@@ -31751,7 +32537,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "punc-ct-transformer-cn-en-common-vocab-471067-large",
@@ -31791,7 +32578,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "punc-ct-transformer-zh-cn-common-vocab-272727-pytorch",
@@ -31831,7 +32619,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qvq-72b-preview",
@@ -31872,7 +32661,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qw-q-32b",
@@ -31912,7 +32702,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qw-q-32b-gguf",
@@ -31952,7 +32743,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qw-q-32b-preview",
@@ -31992,7 +32784,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-1-5-0-5b-chat",
@@ -32032,7 +32825,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-1-5-1-8b-chat",
@@ -32072,7 +32866,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-1-5-7b-chat",
@@ -32112,7 +32907,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-1-8b-chat",
@@ -32152,7 +32948,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-0-5b",
@@ -32192,7 +32989,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-0-5b-instruct",
@@ -32232,7 +33030,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-0-5b",
@@ -32272,7 +33071,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-14b-instruct-1m",
@@ -32312,7 +33112,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-32b-instruct-awq",
@@ -32352,7 +33153,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-3b-instruct",
@@ -32392,7 +33194,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-72b-instruct-awq",
@@ -32432,7 +33235,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-7b-instruct-gguf",
@@ -32472,7 +33276,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-omni-3b",
@@ -32513,7 +33318,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-omni-7b",
@@ -32554,7 +33360,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-omni-7b-awq",
@@ -32595,7 +33402,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-32b-instruct-awq",
@@ -32636,7 +33444,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-3b-instruct-awq",
@@ -32677,7 +33486,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-72b-instruct-awq",
@@ -32718,7 +33528,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-7b-instruct-awq",
@@ -32759,7 +33570,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-5-vl-7b-instruct-gguf",
@@ -32800,7 +33612,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-7b",
@@ -32840,7 +33653,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-audio-7b",
@@ -32880,7 +33694,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-2-audio-7b-instruct",
@@ -32920,7 +33735,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-0-6b-base",
@@ -32960,7 +33776,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-0-6b-gguf",
@@ -33000,7 +33817,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b-awq",
@@ -33040,7 +33858,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b-base",
@@ -33080,7 +33899,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b-fp8",
@@ -33120,7 +33940,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b-gguf",
@@ -33160,7 +33981,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-14b-unsloth-bnb-4-bit",
@@ -33200,7 +34022,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-1-7b-gguf",
@@ -33240,7 +34063,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-1-7b-mt-en-2-zh-gungeon",
@@ -33280,7 +34104,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-1-7b-mt-en-2-zh-gungeon-gguf",
@@ -33320,7 +34145,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-fp8",
@@ -33360,7 +34186,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-gptq-int-4",
@@ -33400,7 +34227,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507-awq",
@@ -33440,7 +34268,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507-fp8",
@@ -33480,7 +34309,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507-gguf",
@@ -33520,7 +34350,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-instruct-2507-gptq-int-4-int-8-mix",
@@ -33560,7 +34391,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-thinking-2507-awq",
@@ -33600,7 +34432,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-thinking-2507-fp8",
@@ -33640,7 +34473,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-235b-a22b-thinking-2507-gguf",
@@ -33680,7 +34514,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-awq",
@@ -33720,7 +34555,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-base",
@@ -33760,7 +34596,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-fp8",
@@ -33800,7 +34637,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-gguf",
@@ -33840,7 +34678,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-gptq-int-4",
@@ -33880,7 +34719,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-instruct-2507-fp8",
@@ -33920,7 +34760,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-instruct-2507-gguf",
@@ -33960,7 +34801,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-instruct-2507-gptq-int-8",
@@ -34000,7 +34842,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-thinking-2507-fp8",
@@ -34040,7 +34883,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-30b-a3b-thinking-2507-gguf",
@@ -34080,7 +34924,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-32b-awq",
@@ -34120,7 +34965,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-32b-fp8",
@@ -34160,7 +35006,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-32b-gguf",
@@ -34200,7 +35047,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-32b-gptq-int-4",
@@ -34240,7 +35088,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-4b-awq",
@@ -34280,7 +35129,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-4b-base",
@@ -34320,7 +35170,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-4b-gguf",
@@ -34360,7 +35211,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-72b-instruct",
@@ -34400,7 +35252,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b-awq",
@@ -34440,7 +35293,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b-base",
@@ -34480,7 +35334,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b-fp8",
@@ -34520,7 +35375,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b-gguf",
@@ -34560,7 +35416,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-8b-mlx-6-bit",
@@ -34600,7 +35457,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-30b-a3b-instruct",
@@ -34640,7 +35498,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-1m",
@@ -34680,7 +35539,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-1m-gguf",
@@ -34720,7 +35580,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-awq",
@@ -34760,7 +35621,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-fp8",
@@ -34800,7 +35662,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-gguf",
@@ -34840,7 +35703,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-coder-480b-a35b-instruct-gptq-int-4-int-8-mix",
@@ -34880,7 +35744,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-0-6-b",
@@ -34920,7 +35785,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-0-6b",
@@ -34960,7 +35826,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-0-6b-gguf",
@@ -35000,7 +35867,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-4b",
@@ -35040,7 +35908,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-4b-gguf",
@@ -35080,7 +35949,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-8b",
@@ -35120,7 +35990,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-embedding-8b-gguf",
@@ -35160,7 +36031,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-reranker-0-6b",
@@ -35200,7 +36072,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-reranker-4b",
@@ -35240,7 +36113,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-3-reranker-8b",
@@ -35280,7 +36154,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-72b-chat",
@@ -35320,7 +36195,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-7b",
@@ -35360,7 +36236,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-7b-chat",
@@ -35400,7 +36277,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-long-l1-32b",
@@ -35440,7 +36318,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-vl",
@@ -35481,7 +36360,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "qwen-vl-chat",
@@ -35522,7 +36402,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "rapid-ocr",
@@ -35562,7 +36443,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "rmbg-2-0",
@@ -35603,7 +36485,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "sd-35-clip-l",
@@ -35644,7 +36527,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "seed-x-instruct-7b",
@@ -35684,7 +36568,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "seed-x-ppo-7b",
@@ -35724,7 +36609,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "sense-voice-small",
@@ -35764,7 +36650,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "sense-voice-small-hotword",
@@ -35804,7 +36691,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "sense-voice-small-onnx",
@@ -35844,7 +36732,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "simple-vl-8b",
@@ -35885,7 +36774,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "spark-tts-0-5b",
@@ -35925,7 +36815,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-campplus-speaker-diarization-common",
@@ -35965,7 +36856,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-campplus-sv-zh-cn-16-k-common",
@@ -36005,7 +36897,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-campplus-sv-zh-cn-3-dspeaker-16-k",
@@ -36045,7 +36938,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-campplus-transformer-scl-zh-cn-16-k-common",
@@ -36085,7 +36979,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-charctc-kws-phone-xiaoyun",
@@ -36125,7 +37020,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-dfsmn-aec-psm-16-k",
@@ -36165,7 +37061,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-dfsmn-ans-psm-48-k-causal",
@@ -36205,7 +37102,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-dfsmn-kws-char-farfield-16-k-nihaomiya",
@@ -36245,7 +37143,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-eres-2-net-large-speaker-diarization-common",
@@ -36285,7 +37184,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-eres-2-net-sv-zh-cn-16-k-common",
@@ -36325,7 +37225,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-eres-2-netv-2-sv-zh-cn-16-k-common",
@@ -36365,7 +37266,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-eres-2-netv-2-w-24-s-4-ep-4-sv-zh-cn-16-k-common",
@@ -36405,7 +37307,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-frcrn-ans-cirm-16-k",
@@ -36445,7 +37348,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-fsmn-vad-zh-cn-16-k-common-onnx",
@@ -36485,7 +37389,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-fsmn-vad-zh-cn-16-k-common-pytorch",
@@ -36525,7 +37430,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-mossformer-2-separation-temporal-8-k",
@@ -36565,7 +37471,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-mossformer-separation-temporal-8-k",
@@ -36605,7 +37512,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-asr-nat-zh-cn-16-k-common-vocab-8404-online",
@@ -36645,7 +37553,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-asr-nat-zh-cantonese-en-16-k-vocab-8501-online",
@@ -36685,7 +37594,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-asr-nat-zh-cn-16-k-common-vocab-8358-tensorflow-1",
@@ -36725,7 +37635,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-asr-nat-zh-cn-16-k-common-vocab-8404-online",
@@ -36765,7 +37676,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-asr-nat-zh-cn-16-k-common-vocab-8404-online-onnx",
@@ -36805,7 +37717,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-asr-nat-zh-cn-16-k-common-vocab-8404-pytorch",
@@ -36845,7 +37758,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-contextual-asr-nat-zh-cn-16-k-common-vocab-8404",
@@ -36885,7 +37799,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-vad-punc-asr-nat-zh-cn-16-k-common-vocab-8404-onnx",
@@ -36925,7 +37840,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-vad-punc-asr-nat-zh-cn-16-k-common-vocab-8404-pytorch",
@@ -36965,7 +37881,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-paraformer-large-vad-punc-spk-asr-nat-zh-cn",
@@ -37005,7 +37922,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-sambert-hifigan-tts-zh-cn-16-k",
@@ -37045,7 +37963,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-sanm-kws-phone-xiaoyun-commands-online",
@@ -37085,7 +38004,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-seaco-paraformer-large-asr-nat-zh-cn-16-k-common-vocab-8404-pytorch",
@@ -37125,7 +38045,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-timestamp-prediction-v-1-16-k-offline",
@@ -37165,7 +38086,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-transformer-lm-zh-cn-common-vocab-8404-pytorch",
@@ -37205,7 +38127,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-uni-asr-asr-2-pass-cn-dialect-16-k-vocab-8358-tensorflow-1-online",
@@ -37245,7 +38168,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-xvector-sv-zh-cn-cnceleb-16-k-spk-3465-pytorch",
@@ -37285,7 +38209,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "speech-zipenhancer-ans-multiloss-16-k-base",
@@ -37325,7 +38250,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "stable-diffusion-3-5-large",
@@ -37366,7 +38292,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "stable-diffusion-3-5-large-turbo",
@@ -37407,7 +38334,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "stable-diffusion-v-1-5",
@@ -37448,7 +38376,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "stable-diffusion-xl-base-1-0",
@@ -37489,7 +38418,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "step-1-x-edit",
@@ -37530,7 +38460,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "step-audio-tts-3b",
@@ -37570,7 +38501,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "text-2-vec-base-chinese-sentence",
@@ -37610,7 +38542,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "text-to-video-synthesis",
@@ -37650,7 +38583,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "think-sound",
@@ -37690,7 +38624,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "ui-tars-1-5-7b",
@@ -37731,7 +38666,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "umt-5-xxl-fp-8-e-4-m-3-fn-scaled-safetensors",
@@ -37772,7 +38708,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "v-1-5-pruned-emaonly-safetensors",
@@ -37813,7 +38750,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "voxtral-small-24b-2507",
@@ -37853,7 +38791,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-14-bt-2-v-fusioni-x",
@@ -37893,7 +38832,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-14-b-t-2-v",
@@ -37933,7 +38873,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-14b-t2v-fusion-x-vace",
@@ -37974,7 +38915,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-1-3-b",
@@ -38014,7 +38956,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-comfy-ui-repackaged",
@@ -38054,7 +38997,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-flf2v-14b-720p",
@@ -38094,7 +39038,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-i2v-14b-480p",
@@ -38135,7 +39080,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-i2v-14b-480p-step-distill-cfg-distill-lightx-2-v",
@@ -38176,7 +39122,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-i2v-14b-720p",
@@ -38217,7 +39164,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-i2v-14b-fusion-x-gguf",
@@ -38258,7 +39206,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-t2v-14b",
@@ -38298,7 +39247,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-t2v-14b-fusion-x-lo-ra",
@@ -38338,7 +39288,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-t2v-14b-light-x-2-v-step-cfg-distill-vace",
@@ -38378,7 +39329,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-t2v-1-3b",
@@ -38418,7 +39370,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-vace-14b",
@@ -38459,7 +39412,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-vace-1-3b",
@@ -38500,7 +39454,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-1-vae",
@@ -38541,7 +39496,8 @@ export const allModels: Model[] = [
         "image"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-comfy-ui-repackaged",
@@ -38581,7 +39537,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-i2v-a14b",
@@ -38622,7 +39579,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-i2v-a14b-diffusers",
@@ -38663,7 +39621,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-i2v-a14b-gguf",
@@ -38704,7 +39663,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-t2v-a14b",
@@ -38744,7 +39704,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-t2v-a14b-diffusers",
@@ -38784,7 +39745,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-t2v-a14b-gguf",
@@ -38824,7 +39786,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-ti2v-5b",
@@ -38864,7 +39827,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-ti2v-5b-diffusers",
@@ -38904,7 +39868,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-ti2v-5b-gguf",
@@ -38944,7 +39909,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-2-2-vae",
@@ -38984,7 +39950,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-video-comfy",
@@ -39024,7 +39991,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "wan-video-comfy-fp-8-scaled",
@@ -39064,7 +40032,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "web-dancer-32b",
@@ -39104,7 +40073,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "web-sailor-3b",
@@ -39144,7 +40114,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "whisper-large-v-3",
@@ -39184,7 +40155,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "whisper-large-v-3-turbo",
@@ -39224,7 +40196,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "xi-yan-sql-qwen-coder-32b-2504",
@@ -39264,7 +40237,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "yol-ov-8",
@@ -39305,7 +40279,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "yolo11",
@@ -39346,7 +40321,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "yolo12",
@@ -39387,7 +40363,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "modelscope"
   },
   {
     "id": "more-morph",
@@ -39427,7 +40404,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "morph"
   },
   {
     "id": "codex-mini-latest",
@@ -39467,7 +40445,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-3-5-turbo",
@@ -39507,7 +40486,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-4-1-mini",
@@ -39548,7 +40528,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-4-1-nano",
@@ -39589,7 +40570,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-4-o-mini",
@@ -39630,7 +40612,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "gpt-4-turbo",
@@ -39671,7 +40654,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-1-pro",
@@ -39712,7 +40696,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-3-deep-research",
@@ -39753,7 +40738,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "o-4-mini-deep-research",
@@ -39794,7 +40780,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "openai"
   },
   {
     "id": "agentica-org/deepcoder-14b-preview",
@@ -39825,7 +40812,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "agentica-org/deepcoder-14b-preview:free",
@@ -39856,7 +40844,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "ai21/jamba-1.6-large",
@@ -39887,7 +40876,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "ai21/jamba-1.6-mini",
@@ -39918,7 +40908,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "aion-labs/aion-1.0",
@@ -39949,7 +40940,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "aion-labs/aion-1.0-mini",
@@ -39980,7 +40972,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "aion-labs/aion-rp-llama-3.1-8b",
@@ -40011,7 +41004,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "alfredpros/codellama-7b-instruct-solidity",
@@ -40042,7 +41036,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "alpindale/goliath-120b",
@@ -40073,7 +41068,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "amazon/nova-lite-v1",
@@ -40105,7 +41101,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "amazon/nova-micro-v1",
@@ -40136,7 +41133,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "amazon/nova-pro-v1",
@@ -40168,7 +41166,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthracite-org/magnum-v2-72b",
@@ -40199,7 +41198,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthracite-org/magnum-v4-72b",
@@ -40230,7 +41230,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-haiku",
@@ -40262,7 +41263,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-haiku:beta",
@@ -40294,7 +41296,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-haiku-20241022",
@@ -40326,7 +41329,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-sonnet",
@@ -40358,7 +41362,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-sonnet:beta",
@@ -40390,7 +41395,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-sonnet-20240620",
@@ -40422,7 +41428,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.5-sonnet-20240620:beta",
@@ -40454,7 +41461,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.7-sonnet",
@@ -40486,7 +41494,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.7-sonnet:beta",
@@ -40518,7 +41527,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3.7-sonnet:thinking",
@@ -40550,7 +41560,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3-haiku",
@@ -40582,7 +41593,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3-haiku:beta",
@@ -40614,7 +41626,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3-opus",
@@ -40646,7 +41659,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3-opus:beta",
@@ -40678,7 +41692,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-3-sonnet",
@@ -40710,7 +41725,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-opus-4",
@@ -40742,7 +41758,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "anthropic/claude-sonnet-4",
@@ -40774,7 +41791,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arcee-ai/coder-large",
@@ -40805,7 +41823,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arcee-ai/maestro-reasoning",
@@ -40836,7 +41855,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arcee-ai/spotlight",
@@ -40868,7 +41888,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arcee-ai/virtuoso-large",
@@ -40899,7 +41920,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arliai/qwq-32b-arliai-rpr-v1",
@@ -40930,7 +41952,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "arliai/qwq-32b-arliai-rpr-v1:free",
@@ -40961,7 +41984,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "baidu/ernie-4.5-300b-a47b",
@@ -40992,7 +42016,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "bytedance/ui-tars-1.5-7b",
@@ -41024,7 +42049,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
@@ -41055,7 +42081,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
@@ -41086,7 +42113,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
@@ -41117,7 +42145,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
@@ -41148,7 +42177,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cognitivecomputations/dolphin-mixtral-8x22b",
@@ -41179,7 +42209,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command",
@@ -41210,7 +42241,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-a",
@@ -41241,7 +42273,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r",
@@ -41272,7 +42305,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r-03-2024",
@@ -41303,7 +42337,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r-08-2024",
@@ -41334,7 +42369,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r7b-12-2024",
@@ -41365,7 +42401,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r-plus",
@@ -41396,7 +42433,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r-plus-04-2024",
@@ -41427,7 +42465,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "cohere/command-r-plus-08-2024",
@@ -41458,7 +42497,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-chat",
@@ -41489,7 +42529,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-chat-v3-0324",
@@ -41520,7 +42561,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-chat-v3-0324:free",
@@ -41551,7 +42593,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-prover-v2",
@@ -41582,7 +42625,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1",
@@ -41613,7 +42657,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-0528",
@@ -41644,7 +42689,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-0528:free",
@@ -41675,7 +42721,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -41706,7 +42753,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
@@ -41737,7 +42785,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1:free",
@@ -41768,7 +42817,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-llama-70b",
@@ -41799,7 +42849,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-llama-70b:free",
@@ -41830,7 +42881,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-llama-8b",
@@ -41861,7 +42913,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-qwen-14b",
@@ -41892,7 +42945,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-qwen-14b:free",
@@ -41923,7 +42977,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-qwen-1.5b",
@@ -41954,7 +43009,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-qwen-32b",
@@ -41985,7 +43041,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-r1-distill-qwen-7b",
@@ -42016,7 +43073,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "deepseek/deepseek-v3-base",
@@ -42047,7 +43105,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "eleutherai/llemma_7b",
@@ -42078,7 +43137,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "featherless/qwerky-72b:free",
@@ -42109,7 +43169,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.0-flash-001",
@@ -42142,7 +43203,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.0-flash-exp:free",
@@ -42174,7 +43236,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.0-flash-lite-001",
@@ -42207,7 +43270,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-flash",
@@ -42240,7 +43304,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-flash-lite",
@@ -42273,7 +43338,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-flash-lite-preview-06-17",
@@ -42306,7 +43372,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-pro",
@@ -42339,7 +43406,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-pro-exp-03-25",
@@ -42372,7 +43440,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-pro-preview",
@@ -42405,7 +43474,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-2.5-pro-preview-05-06",
@@ -42438,7 +43508,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-flash-1.5",
@@ -42470,7 +43541,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-flash-1.5-8b",
@@ -42502,7 +43574,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemini-pro-1.5",
@@ -42534,7 +43607,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-2-27b-it",
@@ -42565,7 +43639,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-2-9b-it",
@@ -42596,7 +43671,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-2-9b-it:free",
@@ -42627,7 +43703,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-12b-it",
@@ -42659,7 +43736,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-12b-it:free",
@@ -42691,7 +43769,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-27b-it",
@@ -42723,7 +43802,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-27b-it:free",
@@ -42755,7 +43835,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-4b-it",
@@ -42787,7 +43868,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3-4b-it:free",
@@ -42819,7 +43901,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3n-e2b-it:free",
@@ -42850,7 +43933,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3n-e4b-it",
@@ -42881,7 +43965,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "google/gemma-3n-e4b-it:free",
@@ -42912,7 +43997,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "gryphe/mythomax-l2-13b",
@@ -42943,7 +44029,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "inception/mercury",
@@ -42974,7 +44061,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "inception/mercury-coder",
@@ -43005,7 +44093,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "infermatic/mn-inferor-12b",
@@ -43036,7 +44125,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "inflection/inflection-3-pi",
@@ -43067,7 +44157,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "inflection/inflection-3-productivity",
@@ -43098,7 +44189,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "liquid/lfm-3b",
@@ -43129,7 +44221,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "liquid/lfm-40b",
@@ -43160,7 +44253,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "liquid/lfm-7b",
@@ -43191,7 +44285,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mancer/weaver",
@@ -43222,7 +44317,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.1-405b",
@@ -43253,7 +44349,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.1-405b-instruct",
@@ -43284,7 +44381,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.1-405b-instruct:free",
@@ -43315,7 +44413,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.1-70b-instruct",
@@ -43346,7 +44445,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.1-8b-instruct",
@@ -43377,7 +44477,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-11b-vision-instruct",
@@ -43409,7 +44510,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-11b-vision-instruct:free",
@@ -43441,7 +44543,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-1b-instruct",
@@ -43472,7 +44575,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-3b-instruct",
@@ -43503,7 +44607,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-3b-instruct:free",
@@ -43534,7 +44639,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.2-90b-vision-instruct",
@@ -43566,7 +44672,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.3-70b-instruct",
@@ -43597,7 +44704,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3.3-70b-instruct:free",
@@ -43628,7 +44736,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3-70b-instruct",
@@ -43659,7 +44768,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-3-8b-instruct",
@@ -43690,7 +44800,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-4-maverick",
@@ -43722,7 +44833,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-4-scout",
@@ -43754,7 +44866,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-guard-2-8b",
@@ -43785,7 +44898,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "meta-llama/llama-guard-3-8b",
@@ -43816,7 +44930,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/mai-ds-r1",
@@ -43847,7 +44962,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/mai-ds-r1:free",
@@ -43878,7 +44994,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-3.5-mini-128k-instruct",
@@ -43909,7 +45026,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-3-medium-128k-instruct",
@@ -43940,7 +45058,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-3-mini-128k-instruct",
@@ -43971,7 +45090,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-4",
@@ -44002,7 +45122,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-4-multimodal-instruct",
@@ -44034,7 +45155,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/phi-4-reasoning-plus",
@@ -44065,7 +45187,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "microsoft/wizardlm-2-8x22b",
@@ -44096,7 +45219,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "minimax/minimax-01",
@@ -44128,7 +45252,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "minimax/minimax-m1",
@@ -44159,7 +45284,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/codestral-2501",
@@ -44190,7 +45316,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/devstral-medium",
@@ -44221,7 +45348,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/devstral-small",
@@ -44252,7 +45380,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/devstral-small-2505",
@@ -44283,7 +45412,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/devstral-small-2505:free",
@@ -44314,7 +45444,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/magistral-medium-2506",
@@ -44345,7 +45476,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/magistral-medium-2506:thinking",
@@ -44376,7 +45508,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/magistral-small-2506",
@@ -44407,7 +45540,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/ministral-3b",
@@ -44438,7 +45572,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/ministral-8b",
@@ -44469,7 +45604,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-7b-instruct",
@@ -44500,7 +45636,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-7b-instruct:free",
@@ -44531,7 +45668,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-7b-instruct-v0.1",
@@ -44562,7 +45700,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-7b-instruct-v0.2",
@@ -44593,7 +45732,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-7b-instruct-v0.3",
@@ -44624,7 +45764,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-large",
@@ -44655,7 +45796,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-large-2407",
@@ -44686,7 +45828,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-large-2411",
@@ -44717,7 +45860,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-medium-3",
@@ -44749,7 +45893,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-nemo",
@@ -44780,7 +45925,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-nemo:free",
@@ -44811,7 +45957,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-saba",
@@ -44842,7 +45989,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small",
@@ -44873,7 +46021,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-24b-instruct-2501",
@@ -44904,7 +46053,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-24b-instruct-2501:free",
@@ -44935,7 +46085,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-3.1-24b-instruct",
@@ -44967,7 +46118,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-3.1-24b-instruct:free",
@@ -44999,7 +46151,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-3.2-24b-instruct",
@@ -45031,7 +46184,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-small-3.2-24b-instruct:free",
@@ -45063,7 +46217,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mistral-tiny",
@@ -45094,7 +46249,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mixtral-8x22b-instruct",
@@ -45125,7 +46281,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/mixtral-8x7b-instruct",
@@ -45156,7 +46313,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/pixtral-12b",
@@ -45188,7 +46346,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "mistralai/pixtral-large-2411",
@@ -45220,7 +46379,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "moonshotai/kimi-dev-72b:free",
@@ -45251,7 +46411,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "moonshotai/kimi-k2",
@@ -45282,7 +46443,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "moonshotai/kimi-k2:free",
@@ -45313,7 +46475,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "moonshotai/kimi-vl-a3b-thinking",
@@ -45345,7 +46508,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "moonshotai/kimi-vl-a3b-thinking:free",
@@ -45377,7 +46541,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "morph/morph-v2",
@@ -45408,7 +46573,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "morph/morph-v3-fast",
@@ -45439,7 +46605,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "morph/morph-v3-large",
@@ -45470,7 +46637,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "neversleep/llama-3.1-lumimaid-8b",
@@ -45501,7 +46669,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "neversleep/llama-3-lumimaid-70b",
@@ -45532,7 +46701,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "neversleep/noromaid-20b",
@@ -45563,7 +46733,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nothingiisreal/mn-celeste-12b",
@@ -45594,7 +46765,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/deephermes-3-llama-3-8b-preview:free",
@@ -45625,7 +46797,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/deephermes-3-mistral-24b-preview",
@@ -45656,7 +46829,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/hermes-2-pro-llama-3-8b",
@@ -45687,7 +46861,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/hermes-3-llama-3.1-405b",
@@ -45718,7 +46893,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/hermes-3-llama-3.1-70b",
@@ -45749,7 +46925,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nousresearch/nous-hermes-2-mixtral-8x7b-dpo",
@@ -45780,7 +46957,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nvidia/llama-3.1-nemotron-70b-instruct",
@@ -45811,7 +46989,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -45842,7 +47021,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1:free",
@@ -45873,7 +47053,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
@@ -45904,7 +47085,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/chatgpt-4o-latest",
@@ -45936,7 +47118,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/codex-mini",
@@ -45968,7 +47151,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-3.5-turbo",
@@ -45999,7 +47183,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-3.5-turbo-0613",
@@ -46030,7 +47215,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-3.5-turbo-16k",
@@ -46061,7 +47247,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-3.5-turbo-instruct",
@@ -46092,7 +47279,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4",
@@ -46123,7 +47311,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4-0314",
@@ -46154,7 +47343,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4.1",
@@ -46187,7 +47377,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4-1106-preview",
@@ -46218,7 +47409,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4.1-mini",
@@ -46251,7 +47443,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4.1-nano",
@@ -46284,7 +47477,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o",
@@ -46317,7 +47511,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o:extended",
@@ -46350,7 +47545,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-2024-05-13",
@@ -46383,7 +47579,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-2024-08-06",
@@ -46416,7 +47613,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-2024-11-20",
@@ -46449,7 +47647,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-mini",
@@ -46482,7 +47681,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-mini-2024-07-18",
@@ -46515,7 +47715,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-mini-search-preview",
@@ -46546,7 +47747,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4o-search-preview",
@@ -46577,7 +47779,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4-turbo",
@@ -46609,7 +47812,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/gpt-4-turbo-preview",
@@ -46640,7 +47844,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o1",
@@ -46672,7 +47877,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o1-mini",
@@ -46703,7 +47909,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o1-mini-2024-09-12",
@@ -46734,7 +47941,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o1-pro",
@@ -46766,7 +47974,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o3",
@@ -46799,7 +48008,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o3-mini",
@@ -46830,7 +48040,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o3-mini-high",
@@ -46861,7 +48072,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o3-pro",
@@ -46894,7 +48106,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o4-mini",
@@ -46926,7 +48139,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openai/o4-mini-high",
@@ -46959,7 +48173,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "opengvlab/internvl3-14b",
@@ -46991,7 +48206,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openrouter/auto",
@@ -47022,7 +48238,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "openrouter/horizon-alpha",
@@ -47054,7 +48271,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/r1-1776",
@@ -47085,7 +48303,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/sonar",
@@ -47117,7 +48336,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/sonar-deep-research",
@@ -47148,7 +48368,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/sonar-pro",
@@ -47180,7 +48401,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/sonar-reasoning",
@@ -47211,7 +48433,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "perplexity/sonar-reasoning-pro",
@@ -47243,7 +48466,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "pygmalionai/mythalion-13b",
@@ -47274,7 +48498,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-72b-instruct",
@@ -47305,7 +48530,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-72b-instruct:free",
@@ -47336,7 +48562,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-7b-instruct",
@@ -47367,7 +48594,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-coder-32b-instruct",
@@ -47398,7 +48626,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-coder-32b-instruct:free",
@@ -47429,7 +48658,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen2.5-vl-32b-instruct",
@@ -47461,7 +48691,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen2.5-vl-32b-instruct:free",
@@ -47493,7 +48724,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen2.5-vl-72b-instruct",
@@ -47525,7 +48757,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen2.5-vl-72b-instruct:free",
@@ -47557,7 +48790,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2.5-vl-7b-instruct",
@@ -47589,7 +48823,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-2-72b-instruct",
@@ -47620,7 +48855,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-14b",
@@ -47651,7 +48887,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-14b:free",
@@ -47682,7 +48919,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-235b-a22b",
@@ -47713,7 +48951,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-235b-a22b:free",
@@ -47744,7 +48983,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-235b-a22b-2507",
@@ -47775,7 +49015,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-235b-a22b-thinking-2507",
@@ -47806,7 +49047,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-30b-a3b",
@@ -47837,7 +49079,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-30b-a3b:free",
@@ -47868,7 +49111,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-30b-a3b-instruct-2507",
@@ -47899,7 +49143,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-4b:free",
@@ -47930,7 +49175,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-8b",
@@ -47961,7 +49207,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-8b:free",
@@ -47992,7 +49239,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-coder",
@@ -48023,7 +49271,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen3-coder:free",
@@ -48054,7 +49303,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-max",
@@ -48085,7 +49335,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-plus",
@@ -48116,7 +49367,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-turbo",
@@ -48147,7 +49399,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-vl-max",
@@ -48179,7 +49432,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwen-vl-plus",
@@ -48211,7 +49465,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwq-32b",
@@ -48242,7 +49497,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwq-32b:free",
@@ -48273,7 +49529,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "qwen/qwq-32b-preview",
@@ -48304,7 +49561,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "raifle/sorcererlm-8x22b",
@@ -48335,7 +49593,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "rekaai/reka-flash-3",
@@ -48366,7 +49625,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "rekaai/reka-flash-3:free",
@@ -48397,7 +49657,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sao10k/fimbulvetr-11b-v2",
@@ -48428,7 +49689,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sao10k/l3.1-euryale-70b",
@@ -48459,7 +49721,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sao10k/l3.3-euryale-70b",
@@ -48490,7 +49753,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sao10k/l3-euryale-70b",
@@ -48521,7 +49785,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sao10k/l3-lunaris-8b",
@@ -48552,7 +49817,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sarvamai/sarvam-m",
@@ -48583,7 +49849,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sarvamai/sarvam-m:free",
@@ -48614,7 +49881,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "scb10x/llama3.1-typhoon2-70b-instruct",
@@ -48645,7 +49913,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "shisa-ai/shisa-v2-llama3.3-70b",
@@ -48676,7 +49945,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
@@ -48707,7 +49977,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "sophosympatheia/midnight-rose-70b",
@@ -48738,7 +50009,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "switchpoint/router",
@@ -48769,7 +50041,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "tencent/hunyuan-a13b-instruct",
@@ -48800,7 +50073,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "tencent/hunyuan-a13b-instruct:free",
@@ -48831,7 +50105,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/anubis-70b-v1.1",
@@ -48862,7 +50137,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/anubis-pro-105b-v1",
@@ -48893,7 +50169,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/rocinante-12b",
@@ -48924,7 +50201,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/skyfall-36b-v2",
@@ -48955,7 +50233,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/unslopnemo-12b",
@@ -48986,7 +50265,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thedrummer/valkyrie-49b-v1",
@@ -49017,7 +50297,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thudm/glm-4.1v-9b-thinking",
@@ -49049,7 +50330,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thudm/glm-4-32b",
@@ -49080,7 +50362,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thudm/glm-4-32b:free",
@@ -49111,7 +50394,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thudm/glm-z1-32b",
@@ -49142,7 +50426,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "thudm/glm-z1-32b:free",
@@ -49173,7 +50458,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "tngtech/deepseek-r1t2-chimera",
@@ -49204,7 +50490,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "tngtech/deepseek-r1t2-chimera:free",
@@ -49235,7 +50522,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "tngtech/deepseek-r1t-chimera:free",
@@ -49266,7 +50554,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "undi95/remm-slerp-l2-13b",
@@ -49297,7 +50586,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "undi95/toppy-m-7b",
@@ -49328,7 +50618,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-2-1212",
@@ -49359,7 +50650,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-2-vision-1212",
@@ -49391,7 +50683,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-3",
@@ -49422,7 +50715,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-3-beta",
@@ -49453,7 +50747,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-3-mini",
@@ -49484,7 +50779,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-3-mini-beta",
@@ -49515,7 +50811,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-4",
@@ -49547,7 +50844,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "x-ai/grok-vision-beta",
@@ -49579,7 +50877,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "z-ai/glm-4-32b",
@@ -49610,7 +50909,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "z-ai/glm-4.5",
@@ -49641,7 +50941,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "z-ai/glm-4.5-air",
@@ -49672,7 +50973,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "z-ai/glm-4.5-air:free",
@@ -49703,7 +51005,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "openrouter"
   },
   {
     "id": "252-frequesty",
@@ -49743,7 +51046,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "requesty"
   },
   {
     "id": "2-b-requesty",
@@ -49783,7 +51087,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "requesty"
   },
   {
     "id": "u-003-c-requesty-api-key",
@@ -49823,7 +51128,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "requesty"
   },
   {
     "id": "your-requesty-api-key",
@@ -49863,7 +51169,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "requesty"
   },
   {
     "id": "252-ftogetherai-52386018",
@@ -49903,7 +51210,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "2-b-together",
@@ -49943,7 +51251,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "ai-together",
@@ -49983,7 +51292,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "meta-llama",
@@ -50023,7 +51333,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "meta-llama-3",
@@ -50063,7 +51374,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "quickstart-llama",
@@ -50103,7 +51415,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "together-and-llamarank",
@@ -50143,7 +51456,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "using-together-with-vercels-ai-sdk",
@@ -50183,7 +51497,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "workflows-together",
@@ -50223,7 +51538,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "together"
   },
   {
     "id": "solar-10-7-b-instruct",
@@ -50263,7 +51579,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-10-0",
@@ -50303,7 +51620,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-0",
@@ -50343,7 +51661,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-1",
@@ -50383,7 +51702,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-2",
@@ -50423,7 +51743,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-3",
@@ -50463,7 +51784,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-4",
@@ -50503,7 +51825,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-5",
@@ -50543,7 +51866,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-6",
@@ -50583,7 +51907,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-7",
@@ -50623,7 +51948,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-8",
@@ -50663,7 +51989,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-1-9",
@@ -50703,7 +52030,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-0",
@@ -50743,7 +52071,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-1",
@@ -50783,7 +52112,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-2",
@@ -50823,7 +52153,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-3",
@@ -50863,7 +52194,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-4",
@@ -50903,7 +52235,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-5",
@@ -50943,7 +52276,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-6",
@@ -50983,7 +52317,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-7",
@@ -51023,7 +52358,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-8",
@@ -51063,7 +52399,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-2-9",
@@ -51103,7 +52440,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-0",
@@ -51143,7 +52481,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-1",
@@ -51183,7 +52522,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-2",
@@ -51223,7 +52563,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-3",
@@ -51263,7 +52604,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-4",
@@ -51303,7 +52645,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-5",
@@ -51343,7 +52686,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-6",
@@ -51383,7 +52727,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-7",
@@ -51423,7 +52768,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-8",
@@ -51463,7 +52809,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-3-9",
@@ -51503,7 +52850,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-0",
@@ -51543,7 +52891,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-1",
@@ -51583,7 +52932,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-2",
@@ -51623,7 +52973,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-3",
@@ -51663,7 +53014,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-4",
@@ -51703,7 +53055,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-5",
@@ -51743,7 +53096,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-6",
@@ -51783,7 +53137,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-7",
@@ -51823,7 +53178,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-8",
@@ -51863,7 +53219,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-4-9",
@@ -51903,7 +53260,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-0",
@@ -51943,7 +53301,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-1",
@@ -51983,7 +53342,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-2",
@@ -52023,7 +53383,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-3",
@@ -52063,7 +53424,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-4",
@@ -52103,7 +53465,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-5",
@@ -52143,7 +53506,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-6",
@@ -52183,7 +53547,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-7",
@@ -52223,7 +53588,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-8",
@@ -52263,7 +53629,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-5-9",
@@ -52303,7 +53670,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-0",
@@ -52343,7 +53711,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-1",
@@ -52383,7 +53752,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-2",
@@ -52423,7 +53793,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-3",
@@ -52463,7 +53834,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-4",
@@ -52503,7 +53875,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-5",
@@ -52543,7 +53916,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-6",
@@ -52583,7 +53957,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-7",
@@ -52623,7 +53998,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-8",
@@ -52663,7 +54039,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-6-9",
@@ -52703,7 +54080,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-0",
@@ -52743,7 +54121,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-1",
@@ -52783,7 +54162,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-2",
@@ -52823,7 +54203,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-3",
@@ -52863,7 +54244,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-4",
@@ -52903,7 +54285,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-5",
@@ -52943,7 +54326,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-6",
@@ -52983,7 +54367,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-7",
@@ -53023,7 +54408,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-8",
@@ -53063,7 +54449,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-7-9",
@@ -53103,7 +54490,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-0",
@@ -53143,7 +54531,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-1",
@@ -53183,7 +54572,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-2",
@@ -53223,7 +54613,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-3",
@@ -53263,7 +54654,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-4",
@@ -53303,7 +54695,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-5",
@@ -53343,7 +54736,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-6",
@@ -53383,7 +54777,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-7",
@@ -53423,7 +54818,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-8",
@@ -53463,7 +54859,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-8-9",
@@ -53503,7 +54900,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-0",
@@ -53543,7 +54941,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-1",
@@ -53583,7 +54982,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-2",
@@ -53623,7 +55023,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-3",
@@ -53663,7 +55064,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-4",
@@ -53703,7 +55105,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-5",
@@ -53743,7 +55146,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-6",
@@ -53783,7 +55187,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-7",
@@ -53823,7 +55228,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-8",
@@ -53863,7 +55269,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-10-7-b-instruct-v-9-9",
@@ -53903,7 +55310,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-1-10-7b",
@@ -53943,7 +55351,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-1-10-7b-vision",
@@ -53984,7 +55393,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-1-mini",
@@ -54024,7 +55434,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "solar-1-mini-vision",
@@ -54065,7 +55476,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "upstage"
   },
   {
     "id": "4-nwqv-0-zkit-3-b-9-v-6-h",
@@ -54105,7 +55517,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "5v0h3h13h14",
@@ -54145,7 +55558,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "logo-particles-v-0-aws-ad-fq-yl-ef-vd-c",
@@ -54185,7 +55599,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "what-can-you-do-with-v-0",
@@ -54225,7 +55640,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "what-makes-v-0-different",
@@ -54265,7 +55681,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "who-is-v-0-for",
@@ -54305,7 +55722,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "v0"
   },
   {
     "id": "252-fveniceai",
@@ -54345,7 +55763,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "2-b-venice",
@@ -54385,7 +55804,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "about-venice",
@@ -54425,7 +55845,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "ask-venice",
@@ -54465,7 +55886,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "askvenice",
@@ -54505,7 +55927,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "page-venice",
@@ -54545,7 +55968,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "what-can-i-do-with-venice-api",
@@ -54585,7 +56009,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "venice"
   },
   {
     "id": "alibaba/qwen-3-14b",
@@ -54616,7 +56041,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "alibaba/qwen-3-235b",
@@ -54647,7 +56073,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "alibaba/qwen-3-30b",
@@ -54678,7 +56105,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "alibaba/qwen-3-32b",
@@ -54709,7 +56137,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "alibaba/qwen3-coder",
@@ -54740,7 +56169,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "amazon/nova-lite",
@@ -54771,7 +56201,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "amazon/nova-micro",
@@ -54802,7 +56233,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "amazon/nova-pro",
@@ -54833,7 +56265,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "anthropic/claude-4-opus",
@@ -54864,7 +56297,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "anthropic/claude-4-sonnet",
@@ -54895,7 +56329,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "deepseek/deepseek-v3",
@@ -54926,7 +56361,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "google/gemini-2.0-flash",
@@ -54957,7 +56393,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "google/gemini-2.0-flash-lite",
@@ -54988,7 +56425,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "google/gemma-2-9b",
@@ -55019,7 +56457,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "inception/mercury-coder-small",
@@ -55050,7 +56489,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.1-70b",
@@ -55081,7 +56521,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.1-8b",
@@ -55112,7 +56553,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.2-11b",
@@ -55143,7 +56585,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.2-1b",
@@ -55174,7 +56617,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.2-3b",
@@ -55205,7 +56649,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.2-90b",
@@ -55236,7 +56681,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3.3-70b",
@@ -55267,7 +56713,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3-70b",
@@ -55298,7 +56745,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-3-8b",
@@ -55329,7 +56777,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-4-maverick",
@@ -55360,7 +56809,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "meta/llama-4-scout",
@@ -55391,7 +56841,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/codestral",
@@ -55422,7 +56873,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/devstral-small",
@@ -55453,7 +56905,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/magistral-medium",
@@ -55484,7 +56937,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/magistral-small",
@@ -55515,7 +56969,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/ministral-3b",
@@ -55546,7 +57001,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/ministral-8b",
@@ -55577,7 +57033,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/mistral-large",
@@ -55608,7 +57065,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/mistral-saba-24b",
@@ -55639,7 +57097,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/mistral-small",
@@ -55670,7 +57129,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/mixtral-8x22b-instruct",
@@ -55701,7 +57161,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/pixtral-12b",
@@ -55732,7 +57193,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "mistral/pixtral-large",
@@ -55763,7 +57225,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "vercel/v0-1.0-md",
@@ -55794,7 +57257,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "vercel/v0-1.5-md",
@@ -55825,7 +57289,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-2",
@@ -55856,7 +57321,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-2-vision",
@@ -55887,7 +57353,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-3",
@@ -55918,7 +57385,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-3-fast",
@@ -55949,7 +57417,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-3-mini",
@@ -55980,7 +57449,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-3-mini-fast",
@@ -56011,7 +57481,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "xai/grok-4",
@@ -56042,7 +57513,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "zai/glm-4.5",
@@ -56073,7 +57545,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "zai/glm-4.5-air",
@@ -56104,7 +57577,8 @@ export const allModels: Model[] = [
       "output": [
         "text"
       ]
-    }
+    },
+    "icon": "vercel"
   },
   {
     "id": "grok-0",
@@ -56144,7 +57618,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-1",
@@ -56184,7 +57659,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-10",
@@ -56224,7 +57700,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-100",
@@ -56264,7 +57741,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-11",
@@ -56304,7 +57782,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-12",
@@ -56344,7 +57823,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-13",
@@ -56384,7 +57864,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-14",
@@ -56424,7 +57905,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-15",
@@ -56464,7 +57946,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-16",
@@ -56504,7 +57987,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-17",
@@ -56544,7 +58028,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-18",
@@ -56584,7 +58069,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-19",
@@ -56624,7 +58110,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-2",
@@ -56664,7 +58151,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-20",
@@ -56704,7 +58192,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-21",
@@ -56744,7 +58233,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-22",
@@ -56784,7 +58274,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-23",
@@ -56824,7 +58315,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-24",
@@ -56864,7 +58356,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-25",
@@ -56904,7 +58397,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-26",
@@ -56944,7 +58438,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-27",
@@ -56984,7 +58479,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-28",
@@ -57024,7 +58520,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-29",
@@ -57064,7 +58561,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-2-mini",
@@ -57104,7 +58602,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-2-vision",
@@ -57145,7 +58644,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-3",
@@ -57185,7 +58685,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-30",
@@ -57225,7 +58726,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-31",
@@ -57265,7 +58767,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-32",
@@ -57305,7 +58808,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-33",
@@ -57345,7 +58849,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-34",
@@ -57385,7 +58890,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-35",
@@ -57425,7 +58931,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-36",
@@ -57465,7 +58972,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-37",
@@ -57505,7 +59013,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-38",
@@ -57545,7 +59054,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-39",
@@ -57585,7 +59095,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-4",
@@ -57625,7 +59136,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-40",
@@ -57665,7 +59177,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-41",
@@ -57705,7 +59218,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-42",
@@ -57745,7 +59259,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-43",
@@ -57785,7 +59300,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-44",
@@ -57825,7 +59341,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-45",
@@ -57865,7 +59382,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-46",
@@ -57905,7 +59423,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-47",
@@ -57945,7 +59464,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-48",
@@ -57985,7 +59505,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-49",
@@ -58025,7 +59546,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-5",
@@ -58065,7 +59587,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-50",
@@ -58105,7 +59628,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-51",
@@ -58145,7 +59669,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-52",
@@ -58185,7 +59710,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-53",
@@ -58225,7 +59751,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-54",
@@ -58265,7 +59792,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-55",
@@ -58305,7 +59833,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-56",
@@ -58345,7 +59874,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-57",
@@ -58385,7 +59915,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-58",
@@ -58425,7 +59956,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-59",
@@ -58465,7 +59997,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-6",
@@ -58505,7 +60038,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-60",
@@ -58545,7 +60079,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-61",
@@ -58585,7 +60120,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-62",
@@ -58625,7 +60161,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-63",
@@ -58665,7 +60202,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-64",
@@ -58705,7 +60243,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-65",
@@ -58745,7 +60284,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-66",
@@ -58785,7 +60325,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-67",
@@ -58825,7 +60366,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-68",
@@ -58865,7 +60407,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-69",
@@ -58905,7 +60448,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-7",
@@ -58945,7 +60489,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-70",
@@ -58985,7 +60530,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-71",
@@ -59025,7 +60571,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-72",
@@ -59065,7 +60612,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-73",
@@ -59105,7 +60653,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-74",
@@ -59145,7 +60694,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-75",
@@ -59185,7 +60735,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-76",
@@ -59225,7 +60776,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-77",
@@ -59265,7 +60817,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-78",
@@ -59305,7 +60858,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-79",
@@ -59345,7 +60899,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-8",
@@ -59385,7 +60940,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-80",
@@ -59425,7 +60981,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-81",
@@ -59465,7 +61022,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-82",
@@ -59505,7 +61063,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-83",
@@ -59545,7 +61104,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-84",
@@ -59585,7 +61145,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-85",
@@ -59625,7 +61186,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-86",
@@ -59665,7 +61227,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-87",
@@ -59705,7 +61268,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-88",
@@ -59745,7 +61309,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-89",
@@ -59785,7 +61350,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-9",
@@ -59825,7 +61391,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-90",
@@ -59865,7 +61432,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-91",
@@ -59905,7 +61473,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-92",
@@ -59945,7 +61514,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-93",
@@ -59985,7 +61555,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-94",
@@ -60025,7 +61596,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-95",
@@ -60065,7 +61637,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-96",
@@ -60105,7 +61678,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-97",
@@ -60145,7 +61719,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-98",
@@ -60185,7 +61760,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-99",
@@ -60225,7 +61801,8 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   },
   {
     "id": "grok-beta",
@@ -60265,6 +61842,7 @@ export const allModels: Model[] = [
         "text"
       ]
     },
-    "streamingSupported": true
+    "streamingSupported": true,
+    "icon": "x-ai"
   }
 ] as Model[];

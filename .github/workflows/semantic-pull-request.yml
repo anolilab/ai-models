@@ -1,0 +1,16 @@
+name: "Semantic Pull Request"
+
+on: # yamllint disable-line rule:truthy
+    pull_request_target:
+        types:
+            - "opened"
+            - "reopened"
+            - "edited"
+            - "synchronize"
+    merge_group: # yamllint disable-line rule:empty-values
+
+jobs:
+    stale-issues:
+        uses: "anolilab/workflows/.github/workflows/semantic-pull-request.yml@main"
+        with:
+            target-repo: "anolilab/ai-models"

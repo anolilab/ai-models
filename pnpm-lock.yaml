@@ -262,6 +262,9 @@ importers:
         specifier: ^4.0.14
         version: 4.0.14
     devDependencies:
+      '@lobehub/icons-static-svg':
+        specifier: ^1.0.0
+        version: 1.60.0
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -1295,6 +1298,9 @@ packages:
 
   '@js-sdsl/ordered-map@4.4.2':
     resolution: {integrity: sha512-iUKgm52T8HOE/makSxjqoWhe95ZJA1/G1sYsGev2JDKUSS14KAgg1LHb+Ba+IPow0xflbnSkOsZcO08C7w1gYw==}
+
+  '@lobehub/icons-static-svg@1.60.0':
+    resolution: {integrity: sha512-XFz77zKdI+Er5KdGVh+k9OHzPprO0PN1QsFPBHomKILtKiaJaQTTO8DWEs+0ORosfZd/zAQC8CtCDNUS8h9ZCg==}
 
   '@mapbox/node-pre-gyp@2.0.0':
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
@@ -10320,6 +10326,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.4
 
   '@js-sdsl/ordered-map@4.4.2': {}
+
+  '@lobehub/icons-static-svg@1.60.0': {}
 
   '@mapbox/node-pre-gyp@2.0.0':
     dependencies:

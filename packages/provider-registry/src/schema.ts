@@ -12,6 +12,7 @@ export const ModelSchema = z.object({
   providerNpm: z.string().optional(), // NPM package name
   providerDoc: z.string().optional(), // Documentation URL
   providerModelsDevId: z.string().optional(), // ID from models.dev API
+  icon: z.string().optional(), // Provider icon identifier (e.g., LobeHub icon name)
   
   // Date fields
   releaseDate: z.string().nullable(),
@@ -28,8 +29,6 @@ export const ModelSchema = z.object({
   vision: z.boolean().optional(),
   extendedThinking: z.boolean().optional(),
   preview: z.boolean().optional(),
-
-
   
   // Knowledge and context
   knowledge: z.string().nullable(),
@@ -94,3 +93,30 @@ export const ModelSchema = z.object({
 });
 
 export type Model = z.infer<typeof ModelSchema>;
+
+export const ProviderSchema = z.object({
+  // Core identification
+  id: z.string(),
+  name: z.string(),
+  displayName: z.string().optional(),
+  
+  // Icon information
+  icon: z.string().optional(), // LobeHub icon name or custom icon identifier
+  
+  // Provider metadata
+  env: z.array(z.string()).optional(), // Environment variables required
+  npm: z.string().optional(), // NPM package name
+  doc: z.string().optional(), // Documentation URL
+  modelsDevId: z.string().optional(), // ID from models.dev API
+  
+  // Additional metadata
+  description: z.string().optional(),
+  website: z.string().optional(),
+  status: z.enum(['active', 'inactive', 'deprecated']).optional(),
+  
+  // Model count and capabilities
+  modelCount: z.number().optional(),
+  capabilities: z.array(z.string()).optional(),
+});
+
+export type Provider = z.infer<typeof ProviderSchema>;

@@ -52,6 +52,7 @@
   "scripts": {
     "aggregate": "tsx ./scripts/aggregate-providers.ts",
     "generate-icons": "tsx ./scripts/generate-svg-sprite.ts",
+    "cleanup-icons": "tsx ./scripts/cleanup-duplicate-icons.ts",
     "build": "pnpm run aggregate && pnpm run generate-icons && packem build --development",
     "build:prod": "pnpm run aggregate && pnpm run generate-icons && packem build --production",
     "download": "node ./scripts/download/index.ts",
@@ -65,6 +66,7 @@
     "test:coverage": "vitest run --coverage --coverage.reporter=text"
   },
   "devDependencies": {
+    "@lobehub/icons-static-svg": "^1.0.0",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^24.1.0",
     "@visulima/packem": "2.0.0-alpha.4",

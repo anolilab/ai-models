@@ -5,7 +5,7 @@ import { kebabCase } from '@visulima/string';
 import axios from 'axios';
 import type { Model } from '../src/schema.js';
 import { ModelSchema } from '../src/schema.js';
-import { BRAND_NAME_MAP } from './config.js';
+import { BRAND_NAME_MAP, PROVIDER_ICON_MAP } from './config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +14,39 @@ const PROVIDERS_DIR = path.resolve(__dirname, '../data/providers');
 const OPENROUTER_DIR = path.resolve(__dirname, '../data/providers/openrouter');
 const OUTPUT_JSON = path.join(__dirname, '../data/all-models.json');
 const OUTPUT_TS = path.resolve(__dirname, '../src/models-data.ts');
+
+/**
+ * Adds icon information to models based on their provider
+ * @param models - Array of models to add icons to
+ * @returns Array of models with icon information
+ */
+const addIconInformation = (models: Model[]): Model[] => {
+  console.log('[ICONS] Adding icon information to models...');
+  
+  const modelsWithIcons = models.map(model => {
+    if (!model.provider) {
+      return model;
+    }
+    
+    // Try to find icon for the provider
+    const iconName = PROVIDER_ICON_MAP[model.provider.toLowerCase()];
+    
+    if (iconName) {
+      return {
+        ...model,
+        icon: iconName
+      };
+    }
+    
+    // If no icon found, return model without icon
+    return model;
+  });
+  
+  const modelsWithIconsCount = modelsWithIcons.filter(m => m.icon).length;
+  console.log(`[ICONS] Added icons to ${modelsWithIconsCount} out of ${models.length} models`);
+  
+  return modelsWithIcons;
+};
 
 /**
  * Helicone API response structure
@@ -696,8 +729,11 @@ const main = async (): Promise<void> => {
     // Enrich models with pricing data from Helicone
     const enrichedModels = await enrichModelsWithPricing(deduplicatedModels);
     
+    // Add icon information
+    const modelsWithIcons = addIconInformation(enrichedModels);
+
     // Synchronize data between models with the same ID
-    const synchronizedModels = synchronizeModelData(enrichedModels);
+    const synchronizedModels = synchronizeModelData(modelsWithIcons);
   
     fs.writeFileSync(OUTPUT_JSON, JSON.stringify(synchronizedModels, null, 2));
   
