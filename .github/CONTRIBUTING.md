@@ -1,7 +1,7 @@
 # How to Contribute
 
 If you're reading this, you're awesome!
-Thank you for being a part of the community and helping us make these projects great.
+Thank you for being a part of the community and helping us make the AI Models project great.
 Here are a few guidelines that will help you along the way.
 
 ## How do I... <a name="toc"></a>
@@ -16,6 +16,7 @@ Here are a few guidelines that will help you along the way.
     -   [Project Setup](#project-setup)
     -   [Contribute Documentation](#contribute-documentation)
     -   [Contribute Code](#contribute-code)
+        -   [Adding New Providers](#adding-new-providers)
         -   [Deprecation workflow](#deprecation-workflow)
         -   [Documenting changes for new major versions](#major-version-docs)
         -   [JSDocs](#js-docs)
@@ -31,12 +32,12 @@ Here are a few guidelines that will help you along the way.
 
 ## [Code of Conduct](https://github.com/anolilab/ai-models/blob/main/.github/CODE_OF_CONDUCT.md)
 
-<\**ORGANIZATIONS*uppercase\*> has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) as its Code of Conduct, and we expect project participants to adhere to it.
+Anolilab has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) as its Code of Conduct, and we expect project participants to adhere to it.
 Please read [the full text](https://github.com/anolilab/ai-models/blob/main/.github/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ## Introduction
 
-Thank you so much for your interest in contributing!. All types of contributions are encouraged and valued. See the [table of contents](#toc) for different ways to help and details about how this project handles them!📝
+Thank you so much for your interest in contributing to the AI Models project! This project automates the fetching and organization of AI model metadata from various providers, making it easier to maintain up-to-date model information. All types of contributions are encouraged and valued. See the [table of contents](#toc) for different ways to help and details about how this project handles them!📝
 
 Please make sure to read the relevant section before making your contribution! It will make it a lot easier for us maintainers to make the most of it and smooth out the experience for all involved. 💚
 
@@ -49,7 +50,7 @@ If you have a question about this project, how to use it, or just need clarifica
 -   First, search the issues to see if someone else already had the same problem as you.
 -   If not, open an GitHub Discussion at [Q&A](https://github.com/anolilab/ai-models/discussions/categories/q-a)
 -   Provide as much context as you can about what you're running into.
--   Provide project and platform versions (nodejs, npm, etc) you can use `npx envinfo --system --npmPackages '@visulima/*' --binaries --browsers`, depending on what seems relevant. If not, please be ready to provide that information if maintainers ask for it.
+-   Provide project and platform versions (nodejs, pnpm, etc) you can use `npx envinfo --system --npmPackages --binaries --browsers`, depending on what seems relevant. If not, please be ready to provide that information if maintainers ask for it.
 
 Once it's filed:
 
@@ -116,9 +117,9 @@ If this seems like a lot, or you aren't able to do all this setup, you might als
 
 If you want to go the usual route and run the project locally, though:
 
--   [Install Node.js](https://nodejs.org/en/download/)
+-   [Install Node.js](https://nodejs.org/en/download/) (version 18 or higher)
 -   [Install nvm](https://github.com/nvm-sh/nvm#installing-and-updating) (optional)
-    > Visulima use nvm to manage the different node version, if you don't want to install `nvm`, check the package.json -> engines -> node value for the min support node version.
+    > We use nvm to manage different node versions. If you don't want to install `nvm`, check the package.json -> engines -> node value for the minimum supported node version.
 -   [Install pnpm](https://pnpm.io/installation)
 -   [Fork the project](https://guides.github.com/activities/forking/#fork)
 
@@ -126,8 +127,9 @@ Then in your terminal:
 
 -   `cd path/to/your/clone`
 -   `pnpm install`
--   `pnpm run build:packages`
--   `pnpm run test` (optional)
+-   `pnpm run dev:web` (to start the web application)
+-   `pnpm run download` (to fetch model data from providers)
+-   `pnpm run test:e2e` (to run end-to-end tests)
 
 And you should be ready to go!
 
@@ -146,7 +148,7 @@ To contribute documentation:
 -   Make sure your changes are formatted correctly and consistently with the rest of the documentation.
 -   Re-read what you wrote, and run a spellchecker on it to make sure you didn't miss anything.
 -   Write clear, concise commit message(s) using [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). Documentation commits should use `docs(<component>): <message>`, visit the [Committing](#committing) section for more information.
--   Go to https://github.com/<**ORGANIZATIONS**>/<**REPOSITORY_NAME**>/pulls and open a new pull request with your changes.
+-   Go to https://github.com/anolilab/ai-models/pulls and open a new pull request with your changes.
 -   If your PR is connected to an open issue, add a line in your PR's description that says `Fixes: #123`, where `#123` is the number of the issue you're fixing.
 
 Once you've filed the PR:
@@ -183,8 +185,7 @@ To contribute code:
 -   Write tests that verify that your contribution works as expected.
 -   Write clear, concise commit message(s) using [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
 -   Dependency updates, additions, or removals must be in individual commits, and the message must use the format: `<prefix>(deps): PKG@VERSION`, where `<prefix>` is any of the usual `conventional-changelog` prefixes, at your discretion.
--
--   Go to https://github.com/<**ORGANIZATIONS**>/<**REPOSITORY_NAME**>/pulls and open a new pull request with your changes.
+-   Go to https://github.com/anolilab/ai-models/pulls and open a new pull request with your changes.
 -   If your PR is connected to an open issue, add a line in your PR's description that says `Fixes: #123`, where `#123` is the number of the issue you're fixing.
 
 Once you've filed the PR:
@@ -196,14 +197,31 @@ Once you've filed the PR:
 -   If your PR gets accepted, it will be marked as such, and merged into the `main` branch soon after.
     Your contribution will be distributed to the masses with our [release process](#release-process).
 
+### <a name="adding-new-providers"></a> Adding New Providers
+
+When adding support for a new AI model provider:
+
+1. **Create a transformer**: Add a new file in `packages/provider-registry/scripts/download/transformers/` following the naming convention `provider-name.ts`
+2. **Implement the transformer**: Follow the existing patterns in other transformer files
+3. **Update the download script**: Add your provider to the list in the main download script
+4. **Add provider icon**: Place the provider's logo in `packages/provider-registry/assets/icons/providers/`
+5. **Update schema**: If the provider has unique fields, update the schema in `packages/provider-registry/src/schema.ts`
+6. **Test**: Run `pnpm run download --provider <provider-name>` to test your implementation
+7. **Document**: Update relevant documentation to reflect the new provider
+
+Example transformer structure:
+```typescript
+export async function transformProviderName(data: any) {
+  return data.models.map((model: any) => ({
+    id: model.id,
+    name: model.name,
+    provider: 'provider-name',
+    // ... other fields
+  }));
+}
+```
+
 ### <a name="deprecation-workflow"></a> Deprecation Workflow
-
-<!--
-Modified copy of https://github.com/faker-js/faker/blob/next/CONTRIBUTING.md#deprecation-workflow
-
-MIT License
-Faker - Copyright (c) 2022-2024
--->
 
 If you ever find yourself deprecating something in the source code, you can follow these steps to save yourself (and the reviewers) some trouble.
 
@@ -220,13 +238,6 @@ Example:
 
 ### <a name="major-version-docs"></a> Documenting changes for new major versions
 
-<!--
-Modified copy of https://github.com/faker-js/faker/blob/next/CONTRIBUTING.md#documenting-changes-for-new-major-versions
-
-MIT License
-Faker - Copyright (c) 2022-2024
--->
-
 Each major version has an upgrading guide `UPGRADE.md`.
 
 While developing new features and fixing bugs for a new release, changes are added to the migration guide to aid developers when the version is released.
@@ -241,13 +252,6 @@ There are two sections:
 Not every change needs to be in the migration guide. If it is too long, it becomes hard for users to spot the important changes.
 
 ### <a name="js-docs"></a> JSDocs
-
-<!--
-Modified copy of https://github.com/faker-js/faker/blob/next/CONTRIBUTING.md#jsdocs
-
-MIT License
-Faker - Copyright (c) 2022-2024
--->
 
 JSDoc are comments above any code structure (variable, function, class, etc.) that begin with `/**` and end with `*/`. Multiline comments start (if not being the start or end line) with a `*`.
 For more info checkout [jsdoc.app](https://jsdoc.app/about-getting-started.html).
@@ -437,13 +441,6 @@ function foo(bar: number, baz: number): [number, number] {
 
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
-<!--
-Modified copy of https://github.com/faker-js/faker/blob/next/CONTRIBUTING.md#committing
-
-MIT License
-Faker - Copyright (c) 2022-2024
--->
-
 We have very precise rules over how our Git commit messages must be formatted.
 This format leads to **easier to read commit history**.
 
@@ -517,36 +514,36 @@ Allowed scopes are:
 
 > The scope is not checkable via `Semantic Pull Request` action as this would limit the scopes to only existing modules,
 > but if we add a new package like `fs`, then the PR author couldn't use the new package name as scope.
-> As such, we (the Visulima team) must be mindful of valid scopes, and we reserve the right to edit titles as we see fit.
+> As such, we (the Anolilab team) must be mindful of valid scopes, and we reserve the right to edit titles as we see fit.
 
 Some examples of valid pull request titles:
 
 ```shell
 # Root package
-feat: add casing option
-fix: lower target to support Webpack 4
-chore: add naming convention rule
-docs: remove unused playground
-test: validate @see contents
-ci: allow breaking change commits
-build: add node v20 support
-infra: rework bug-report template
-revert: add more arabic names dataset (#362)
+feat: add new provider support
+fix: resolve model data parsing issue
+chore: update dependencies
+docs: improve setup instructions
+test: add provider transformer tests
+ci: update GitHub Actions workflow
+build: optimize bundle size
+infra: update issue templates
+revert: remove experimental feature
 
 # Commit or PR for a package
-feat(locale): extend test class
-refactor(location): deprecate location function
-fix(<package_name>)): lower target to support Webpack 4
-chore(<package_name>): add naming convention rule
-docs(<package_name>): remove unused playground
-test(<package_name>): validate @see contents
-ci(<package_name>): allow breaking change commits
-build(<package_name>): add node v18 support
-infra(<package_name>): rework bug-report template
-revert(<package_name>): add more arabic names dataset (#362)
+feat(provider-registry): add anthropic provider
+refactor(web): improve data table performance
+fix(provider-registry): handle missing model fields
+chore(web): update UI dependencies
+docs(provider-registry): add provider contribution guide
+test(provider-registry): validate schema types
+ci(web): add e2e test workflow
+build(provider-registry): optimize build process
+infra(web): update deployment config
+revert(provider-registry): revert breaking change
 
 # A release will look like this
-chore(release): 7.4.0
+chore(release): 1.2.0
 
 # Renovate automatically generates these
 chore(deps): update devdependencies
@@ -693,7 +690,7 @@ To clean up issues and PRs:
     -   not marked as `good first issue` or `help wanted` (these might stick around for a while, in general, as they're intended to be available)
     -   no explicit messages in the comments asking for it to be left open
     -   does not belong to a milestone
--   Leave a message when closing saying "Cleaning up stale issue. Please reopen or ping us if and when you're ready to resume this. See https://github.com/<**ORGANIZATIONS**>/<**REPOSITORY_NAME**>/blob/latest/CONTRIBUTING.md#clean-up-issues-and-prs for more details."
+-   Leave a message when closing saying "Cleaning up stale issue. Please reopen or ping us if and when you're ready to resume this. See https://github.com/anolilab/ai-models/blob/latest/CONTRIBUTING.md#clean-up-issues-and-prs for more details."
 
 ## Review Pull Requests
 

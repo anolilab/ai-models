@@ -56,7 +56,7 @@ const HomeComponent = () => {
       id: index + model.id,
       provider: model.provider || 'Unknown',
       providerId: model.providerId || 'Unknown',
-      providerIcon: model.providerIcon || (model.providerId ? model.providerId.split('/')[0] : null),
+      providerIcon: model.icon || null,
       model: (model.name || model.id).toLowerCase(),
       modelId: model.id,
       toolCall: model.toolCall,
@@ -76,7 +76,8 @@ const HomeComponent = () => {
       lastUpdated: model.lastUpdated || '-',
     }));
 
-    return processed;
+    // Sort alphabetically by provider
+    return processed.sort((a, b) => a.provider.localeCompare(b.provider));
   }, [allModels]);
 
   // Column configurations for data-table-filter - only the ones we want to filter
@@ -594,7 +595,7 @@ const HomeComponent = () => {
                 providerIcon: row.providerIcon,
                 provider: row.provider,
                 model: row.model,
-                providerId: row.provider.toLowerCase().replace(/\s+/g, '-'),
+                providerId: row.providerId,
                 modelId: row.modelId,
                 toolCall: row.toolCall,
                 reasoning: row.reasoning,

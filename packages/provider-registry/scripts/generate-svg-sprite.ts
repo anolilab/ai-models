@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { PROVIDER_ICON_MAP } from './config';
+import { snakeCase } from '@visulima/string/case';
 
 const LOBEHUB_ICONS_DIR = join(process.cwd(), 'node_modules', '@lobehub', 'icons-static-svg', 'icons');
 const CUSTOM_ICONS_DIR = join(process.cwd(), 'assets', 'icons', 'providers');
@@ -64,11 +65,7 @@ function extractSvgFromLobeHubIcon(iconName: string): string | null {
     // Try different possible file extensions and naming patterns
     const possibleNames = [
       `${iconName}.svg`,
-      `${iconName}-fill.svg`,
       `${iconName}-color.svg`,
-      `${iconName}-text.svg`,
-      `${iconName}-brand.svg`,
-      `${iconName}-brand-color.svg`,
     ];
     
     for (const fileName of possibleNames) {
@@ -276,15 +273,15 @@ function generateSpriteSheet(): void {
       let svgData = extractSvgContent(iconName, false);
       
       if (svgData) {
-        const symbolId = `icon-${provider}`;
+        const symbolId = `icon_${snakeCase(provider)}`;
         
         // Add to sprite sheet
         spriteContent += `  <symbol id="${symbolId}" viewBox="${svgData.viewBox}">\n`;
         spriteContent += `    ${svgData.content}\n`;
         spriteContent += `  </symbol>\n`;
         
-        // Store reference
-        iconSymbols[provider] = symbolId;
+        // Store reference using the icon name as key
+        iconSymbols[iconName] = symbolId;
         successfulIcons++;
         
         console.log(`✅ Generated icon for ${provider} using LobeHub ${iconName}`);
@@ -293,7 +290,7 @@ function generateSpriteSheet(): void {
         svgData = extractSvgContent(provider, true);
         
         if (svgData) {
-          const symbolId = `icon-${provider}`;
+          const symbolId = `icon_${snakeCase(provider)}`;
           
           // Add custom icon to sprite sheet
           spriteContent += `  <symbol id="${symbolId}" viewBox="${svgData.viewBox}">\n`;
@@ -308,7 +305,7 @@ function generateSpriteSheet(): void {
         } else {
           // Create fallback icon for providers without any icons
           const fallbackData = createFallbackIcon(provider);
-          const symbolId = `icon-${provider}`;
+          const symbolId = `icon_${snakeCase(provider)}`;
           
           // Add fallback icon to sprite sheet
           spriteContent += `  <symbol id="${symbolId}" viewBox="${fallbackData.viewBox}">\n`;
@@ -343,11 +340,11 @@ export const providerIconMap: Record<string, string> = ${JSON.stringify(PROVIDER
 // Sprite sheet containing all icons
 export const spriteSheet = \`${spriteContent}\`;
 
-export function getProviderIcon(providerName: string): string | null {
+export function getIcon(providerName: string): string | null {
   // First check if the provider name maps to a LobeHub icon
   const iconName = providerIconMap[providerName];
   if (iconName) {
-    const symbolId = iconSymbols[providerName];
+    const symbolId = iconSymbols[iconName];
     if (symbolId) {
       return \`#\${symbolId}\`;
     }
@@ -366,7 +363,7 @@ export function hasProviderIcon(providerName: string): boolean {
   // First check if the provider name maps to a LobeHub icon
   const iconName = providerIconMap[providerName];
   if (iconName) {
-    return providerName in iconSymbols;
+    return iconName in iconSymbols;
   }
   
   // Fallback: check if the provider name directly matches an icon

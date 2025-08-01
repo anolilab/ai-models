@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProviderIcon, spriteSheet, isSvgIcon } from '@anolilab/provider-registry/icons';
+import { getIcon, spriteSheet, isSvgIcon } from '@anolilab/provider-registry/icons';
 
 interface ProviderIconProps {
   providerIcon: string | null;
@@ -22,24 +22,14 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({
     );
   }
 
-  if (!providerIcon) {
-    return (
-      <div className={`${className} flex items-center justify-center bg-muted rounded`}>
-        <span className="text-xs font-medium text-muted-foreground">
-          {provider.slice(0, 2).toUpperCase()}
-        </span>
-      </div>
-    );
-  }
-
   // Get the icon data from the provider registry
-  const iconData = getProviderIcon(providerIcon);
+  const iconData = getIcon(providerIcon);
   
   if (iconData) {
     // Check if it's an SVG icon or base64 icon
     if (isSvgIcon(providerIcon)) {
       return (
-        <div className={`${className} flex items-center justify-center bg-muted rounded overflow-hidden`}>
+        <div className={`${className} flex items-center justify-center bg-white/50 p-0.5 rounded overflow-hidden`}>
           <svg className="w-full h-full">
             <use href={iconData} />
           </svg>
@@ -48,7 +38,7 @@ export const ProviderIcon: React.FC<ProviderIconProps> = ({
     } else {
       // Base64 icon - use img tag
       return (
-        <div className={`${className} flex items-center justify-center bg-muted rounded overflow-hidden`}>
+        <div className={`${className} flex items-center justify-center bg-white/50 p-0.5 rounded overflow-hidden`}>
           <img 
             src={iconData}
             alt={provider}

@@ -1,96 +1,101 @@
 {
-  "name": "@anolilab/provider-registry",
-  "description": "Unified registry for AI model providers and their metadata",
-  "version": "1.0.0",
-  "homepage": "https://github.com/anolilab/ai-models",
-  "bugs": {
-    "url": "https://github.com/anolilab/ai-models/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anolilab/ai-models.git",
-    "directory": "packages/provider-registry"
-  },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/prisis"
+    "name": "@anolilab/provider-registry",
+    "version": "1.0.0",
+    "description": "Unified registry for AI model providers and their metadata",
+    "keywords": [
+        "ai",
+        "models",
+        "providers",
+        "registry",
+        "metadata"
+    ],
+    "homepage": "https://github.com/anolilab/ai-models",
+    "bugs": {
+        "url": "https://github.com/anolilab/ai-models/issues"
     },
-    {
-      "type": "consulting",
-      "url": "https://anolilab.com/support"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anolilab/ai-models.git",
+        "directory": "packages/provider-registry"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/prisis"
+        },
+        {
+            "type": "consulting",
+            "url": "https://anolilab.com/support"
+        }
+    ],
+    "license": "Apache-2.0",
+    "author": "AnoliLab",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./schema": {
+            "types": "./dist/schema.d.ts",
+            "import": "./dist/schema.js"
+        },
+        "./icons": {
+            "types": "./dist/icons-sprite.d.ts",
+            "import": "./dist/icons-sprite.js"
+        }
+    },
+    "files": [
+        "./dist"
+    ],
+    "scripts": {
+        "build": "pnpm run aggregate && pnpm run generate-icons && packem build --development",
+        "aggregate": "tsx ./scripts/aggregate-providers.ts",
+        "build:prod": "pnpm run aggregate && pnpm run generate-icons && packem build --production",
+        "clean": "rimraf node_modules dist .eslintcache",
+        "cleanup-icons": "tsx ./scripts/cleanup-duplicate-icons.ts",
+        "download": "node ./scripts/download/index.ts",
+        "generate-icons": "tsx ./scripts/generate-svg-sprite.ts",
+        "install:chrome": "npx puppeteer browsers install chrome",
+        "lint:attw": "attw --pack",
+        "lint:eslint": "eslint .",
+        "lint:eslint:fix": "eslint . --fix",
+        "lint:prettier": "prettier --check .",
+        "lint:prettier:fix": "prettier --write .",
+        "lint:types": "tsc --noEmit",
+        "test": "vitest run --typecheck",
+        "test:coverage": "vitest run --coverage --coverage.reporter=text"
+    },
+    "dependencies": {
+        "zod": "^4.0.14"
+    },
+    "devDependencies": {
+        "@anolilab/eslint-config": "^16.2.22",
+        "@anolilab/prettier-config": "^6.0.3",
+        "@lobehub/icons-static-svg": "^1.60.0",
+        "@total-typescript/ts-reset": "^0.6.1",
+        "@types/node": "^24.1.0",
+        "@visulima/packem": "2.0.0-alpha.4",
+        "@visulima/string": "1.5.1",
+        "axios": "^1.11.0",
+        "cheerio": "^1.1.2",
+        "eslint": "^9.32.0",
+        "eslint-plugin-zod": "^1.4.0",
+        "prettier": "3.6.2",
+        "puppeteer": "^24.15.0",
+        "rss-parser": "3.13.0",
+        "semantic-release": "^24.2.7",
+        "tsx": "^4.20.3",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.38.0",
+        "vitest": "^3.2.4"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
     }
-  ],
-  "license": "Apache-2.0",
-  "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./schema": {
-      "import": "./dist/schema.js",
-      "types": "./dist/schema.d.ts"
-    },
-    "./icons": {
-      "import": "./dist/icons-sprite.js",
-      "types": "./dist/icons-sprite.d.ts"
-    }
-  },
-  "files": [
-    "./dist"
-  ],
-  "keywords": [
-    "ai",
-    "models",
-    "providers",
-    "registry",
-    "metadata"
-  ],
-  "author": "AnoliLab",
-  "scripts": {
-    "aggregate": "tsx ./scripts/aggregate-providers.ts",
-    "generate-icons": "tsx ./scripts/generate-svg-sprite.ts",
-    "cleanup-icons": "tsx ./scripts/cleanup-duplicate-icons.ts",
-    "build": "pnpm run aggregate && pnpm run generate-icons && packem build --development",
-    "build:prod": "pnpm run aggregate && pnpm run generate-icons && packem build --production",
-    "download": "node ./scripts/download/index.ts",
-    "install:chrome": "npx puppeteer browsers install chrome",
-    "clean": "rimraf node_modules dist .eslintcache",
-    "lint:attw": "attw --pack",
-    "lint:eslint": "eslint .",
-    "lint:eslint:fix": "eslint . --fix",
-    "lint:types": "tsc --noEmit",
-    "test": "vitest run --typecheck",
-    "test:coverage": "vitest run --coverage --coverage.reporter=text"
-  },
-  "devDependencies": {
-    "@lobehub/icons-static-svg": "^1.0.0",
-    "@total-typescript/ts-reset": "^0.6.1",
-    "@types/node": "^24.1.0",
-    "@visulima/packem": "2.0.0-alpha.4",
-    "axios": "^1.11.0",
-    "cheerio": "^1.1.2",
-    "eslint": "^9.32.0",
-    "prettier": "3.6.2",
-    "puppeteer": "^24.15.0",
-    "rss-parser": "3.13.0",
-    "semantic-release": "^24.2.7",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.38.0",
-    "vitest": "^3.2.4",
-    "@visulima/string": "1.5.1"
-  },
-  "dependencies": {
-    "zod": "^4.0.14"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
 }

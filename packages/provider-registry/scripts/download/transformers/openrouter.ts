@@ -1,114 +1,119 @@
-import axios from 'axios';
-import type { Model } from '../../../src/schema.js';
+import axios from "axios";
+
+import type { Model } from "../../../src/schema.js";
 
 /**
  * Raw model data from OpenRouter API
  */
 interface OpenRouterModel {
-  id: string;
-  name: string;
-  created: number;
-  owned_by?: string;
-  author?: string;
-  top_provider?: {
+    architecture?: {
+        input_modalities?: string[];
+        output_modalities?: string[];
+    };
+    author?: string;
     context_length?: number;
-    max_completion_tokens?: number;
-  };
-  architecture?: {
-    input_modalities?: string[];
-    output_modalities?: string[];
-  };
-  pricing?: {
-    prompt?: string | number;
-    completion?: string | number;
-  };
-  context_length?: number;
+    created: number;
+    id: string;
+    name: string;
+    owned_by?: string;
+    pricing?: {
+        completion?: string | number;
+        prompt?: string | number;
+    };
+    top_provider?: {
+        context_length?: number;
+        max_completion_tokens?: number;
+    };
 }
 
 /**
  * OpenRouter API response structure
  */
 interface OpenRouterResponse {
-  data: OpenRouterModel[];
+    data: OpenRouterModel[];
 }
 
 /**
  * Safely gets a value from an object with a default fallback
- * @param obj - The object to get the value from
- * @param key - The key to look for
- * @param def - Default value if key doesn't exist or is undefined
+ * @param obj The object to get the value from
+ * @param key The key to look for
+ * @param def Default value if key doesn't exist or is undefined
  * @returns The value or default
  * @example
  * const value = get(someObj, 'someKey', 'default');
  */
-function get<T>(obj: unknown, key: string, def: T): T {
-  return (obj && typeof obj === 'object' && key in obj && obj[key as keyof typeof obj] !== undefined) 
-    ? obj[key as keyof typeof obj] as T 
-    : def;
-}
+const get = <T>(object: unknown, key: string, def: T): T => {
+    if (object && typeof object === "object" && key in object) {
+        return (object as Record<string, T>)[key];
+    }
+
+    return def;
+};
 
 /**
  * Transforms an OpenRouter model object (new API structure) into the normalized structure.
- * 
- * @param model - The raw model object from OpenRouter API
+ * @param model The raw model object from OpenRouter API
  * @returns The normalized model structure
  */
-function transformOpenRouterModel(model: OpenRouterModel): Model {
-  const topProvider = get(model, 'top_provider', {});
-  const architecture = get(model, 'architecture', {});
-  const pricing = get(model, 'pricing', {});
+const transformOpenRouterModel = (model: OpenRouterModel): Model => {
+    const pricing = model.pricing || {};
 
-  return {
-    id: get(model, 'id', 'unknown'),
-    name: get(model, 'name', null),
-    releaseDate: get(model, 'created', null) ? new Date(model.created * 1000).toISOString().slice(0, 10) : null,
-    lastUpdated: get(model, 'created', null) ? new Date(model.created * 1000).toISOString().slice(0, 10) : null,
-    attachment: false,
-    reasoning: false,
-    temperature: true,
-    knowledge: null,
-    toolCall: true,
-    openWeights: true,
-    cost: {
-      input: pricing.prompt ? Number(pricing.prompt) : null,
-      output: pricing.completion ? Number(pricing.completion) : null,
-      inputCacheHit: null,
-    },
-    limit: {
-      context: topProvider.context_length ?? model.context_length ?? null,
-      output: topProvider.max_completion_tokens ?? null,
-    },
-    modalities: {
-      input: architecture.input_modalities || ['text'],
-      output: architecture.output_modalities || ['text'],
-    },
-    provider: model.owned_by || model.author || (model.id && model.id.split('/')[0]) || 'unknown',
-  };
-}
+    return {
+        attachment: false,
+        cost: {
+            input: typeof pricing.prompt === "number" ? pricing.prompt : null,
+            inputCacheHit: null,
+            output: typeof pricing.completion === "number" ? pricing.completion : null,
+        },
+        extendedThinking: false,
+        id: model.id,
+        knowledge: null,
+        lastUpdated: null,
+        limit: {
+            context: model.context_length || get(model.top_provider, "context_length", null),
+            output: get(model.top_provider, "max_completion_tokens", null),
+        },
+        modalities: {
+            input: get(model.architecture, "input_modalities", ["text"]),
+            output: get(model.architecture, "output_modalities", ["text"]),
+        },
+        name: model.name,
+        openWeights: false,
+        provider: model.owned_by || model.author || "OpenRouter",
+        providerDoc: "https://openrouter.ai/docs",
+        // Provider metadata
+        providerEnv: ["OPENROUTER_API_KEY"],
+        providerModelsDevId: "openrouter",
+        providerNpm: "@ai-sdk/openrouter",
+        reasoning: false,
+        releaseDate: model.created ? new Date(model.created * 1000).toISOString().split("T")[0] : null,
+        streamingSupported: true,
+        temperature: true,
+        toolCall: true,
+        vision: get(model.architecture, "input_modalities", []).includes("image"),
+    };
+};
 
 /**
  * Fetches models from OpenRouter API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
 async function fetchOpenRouterModels(): Promise<Model[]> {
-  console.log('[OpenRouter] Fetching: https://openrouter.ai/api/v1/models');
-  
-  try {
-    const response = await axios.get<OpenRouterResponse>('https://openrouter.ai/api/v1/models');
-    const data = response.data;
-    
-    const models = Array.isArray(data.data) ? data.data : [];
-    const transformedModels = models.map(transformOpenRouterModel);
-    
-    return transformedModels;
-    
-  } catch (error) {
-    console.error('[OpenRouter] Error fetching models:', error instanceof Error ? error.message : String(error));
-    return [];
-  }
+    console.log("[OpenRouter] Fetching: https://openrouter.ai/api/v1/models");
+
+    try {
+        const response = await axios.get<OpenRouterResponse>("https://openrouter.ai/api/v1/models");
+        const { data } = response;
+
+        const models = Array.isArray(data.data) ? data.data : [];
+        const transformedModels = models.map(transformOpenRouterModel);
+
+        return transformedModels;
+    } catch (error) {
+        console.error("[OpenRouter] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
 }
 
-export {
-  fetchOpenRouterModels,
-  transformOpenRouterModel,
-}; 
+export { fetchOpenRouterModels, transformOpenRouterModel };

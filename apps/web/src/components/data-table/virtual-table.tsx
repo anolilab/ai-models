@@ -408,6 +408,7 @@ const TableBodyRow = <TData extends ExportableData>({
       ref={node => rowVirtualizer.measureElement(node)}
       key={row.id}
       id={`row-${row.id}-${virtualRow.index}`}
+      data-index={virtualRow.index}
       data-state={row.getIsSelected() ? "selected" : undefined}
       tabIndex={0}
       aria-selected={row.getIsSelected()}

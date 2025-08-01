@@ -40,9 +40,9 @@ pnpm run download --provider "Helicone"
 
 1. **Data Fetching**: The script fetches pricing data from `https://helicone.ai/api/llm-costs`
 2. **Model Matching**: Uses three strategies to match models with pricing:
-   - Exact provider-model match
-   - Model name contains match
-   - Provider match with model name similarity
+    - Exact provider-model match
+    - Model name contains match
+    - Provider match with model name similarity
 3. **Cost Conversion**: Converts Helicone's per 1M tokens pricing to per 1K tokens format
 4. **Enrichment**: Updates models with missing pricing data while preserving existing data
 
@@ -52,19 +52,19 @@ The Helicone API returns data in this format:
 
 ```json
 {
-  "metadata": {
-    "total_models": 250,
-    "note": "All costs are per 1 million tokens unless otherwise specified"
-  },
-  "data": [
-    {
-      "provider": "OPENAI",
-      "model": "gpt-4",
-      "input_cost_per_1m": 30.0,
-      "output_cost_per_1m": 60.0,
-      "show_in_playground": true
-    }
-  ]
+    "metadata": {
+        "total_models": 250,
+        "note": "All costs are per 1 million tokens unless otherwise specified"
+    },
+    "data": [
+        {
+            "provider": "OPENAI",
+            "model": "gpt-4",
+            "input_cost_per_1m": 30.0,
+            "output_cost_per_1m": 60.0,
+            "show_in_playground": true
+        }
+    ]
 }
 ```
 
@@ -102,4 +102,4 @@ Enriched models are saved to `data/providers-enriched/` with the same structure 
 - Helicone only provides pricing data, not model metadata
 - The enrichment process is non-destructive - existing pricing data is preserved
 - Models are matched using fuzzy logic to handle naming variations
-- All costs are converted from per 1M tokens to per 1K tokens for consistency 
+- All costs are converted from per 1M tokens to per 1K tokens for consistency

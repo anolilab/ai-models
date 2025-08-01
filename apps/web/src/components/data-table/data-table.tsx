@@ -48,7 +48,6 @@ import {
   trackColumnResizing,
   cleanupColumnResizing
 } from "./utils/column-sizing";
-import { cn } from "@/lib/utils";
 
 // Error boundary component for table rendering
 class TableErrorBoundary extends React.Component<
@@ -81,7 +80,6 @@ class TableErrorBoundary extends React.Component<
   }
 }
 
-type ColumnOrderUpdater = (prev: string[]) => string[];
 type RowSelectionUpdater = (prev: Record<string, boolean>) => Record<string, boolean>;
 
 interface DataTableProps<TData extends ExportableData, TValue> {
@@ -162,7 +160,6 @@ export function DataTable<TData extends ExportableData, TValue>({
   // Use regular React state for all table parameters (client-side only)
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-  const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("lastUpdated");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>({});
@@ -418,7 +415,6 @@ export function DataTable<TData extends ExportableData, TValue>({
         // Only include pagination state if pagination is enabled
         ...(tableConfig.enablePagination ? { pagination } : {}),
         columnSizing,
-        globalFilter: search,
       },
       columnResizeMode: 'onChange' as ColumnResizeMode,
       onColumnSizingChange: handleColumnSizingChange,
@@ -443,7 +439,6 @@ export function DataTable<TData extends ExportableData, TValue>({
       onSortingChange: handleSortingChange,
       onColumnFiltersChange: setColumnFilters,
       onColumnVisibilityChange: setColumnVisibility,
-      onGlobalFilterChange: setSearch,
       getCoreRowModel: getCoreRowModel<TData>(),
       getFilteredRowModel: getFilteredRowModel<TData>(),
       getFacetedRowModel: getFacetedRowModel<TData>(),
@@ -464,14 +459,12 @@ export function DataTable<TData extends ExportableData, TValue>({
     // Only include pagination-related dependencies if pagination is enabled
     ...(tableConfig.enablePagination ? [pagination, pageSize, handlePaginationChange] : []),
     columnSizing,
-    search,
     handleColumnSizingChange,
     tableConfig.enableRowSelection,
     tableConfig.enableColumnResizing,
     handleRowSelectionChange,
     handleSortingChange,
     setColumnFilters,
-    setSearch,
     idField,
   ]);
 

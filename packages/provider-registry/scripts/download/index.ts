@@ -1,11 +1,13 @@
-#!/usr/bin/env node
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { kebabCase, snakeCase } from '@visulima/string';
-import { ModelSchema, type Model } from '../../src/schema.ts';
-import { PROVIDERS_CONFIG, type ProviderConfig } from '../config.ts';
+import { kebabCase, snakeCase } from "@visulima/string";
+
+import type { Model } from "../../src/schema.ts";
+import { ModelSchema } from "../../src/schema.ts";
+import type { ProviderConfig } from "../config.ts";
+import { PROVIDERS_CONFIG } from "../config.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,81 +15,75 @@ const __dirname = path.dirname(__filename);
 /**
  * Command line arguments interface
  */
-interface CliArgs {
-  outputPath: string;
-  providerName: string | null;
+interface CliArguments {
+    outputPath: string;
+    providerName: string | null;
 }
 
 /**
  * Processing result interface
  */
 interface ProcessingResult {
-  name: string;
-  models?: number;
-  saved?: number;
-  errors?: number;
-  output?: string;
-  error?: string;
+    error?: string;
+    errors?: number;
+    models?: number;
+    name: string;
+    output?: string;
+    saved?: number;
 }
 
 /**
  * Transformer module interface
  */
 interface TransformerModule {
-  fetchAzureModels?: () => Promise<Model[]>;
-  fetchOpenRouterModels?: () => Promise<Model[]>;
-  fetchVercelModels?: () => Promise<Model[]>;
-  fetchBedrockModels?: () => Promise<Model[]>;
-  fetchAnthropicModels?: () => Promise<Model[]>;
-  fetchDeepSeekModels?: () => Promise<Model[]>;
-  fetchGitHubCopilotModels?: () => Promise<Model[]>;
-  fetchGoogleModels?: () => Promise<Model[]>;
-  fetchGroqModels?: () => Promise<Model[]>;
-  fetchHuggingFaceModels?: () => Promise<Model[]>;
-  fetchLlamaModels?: () => Promise<Model[]>;
-  fetchOpenAIModels?: () => Promise<Model[]>;
-  fetchDeepInfraModels?: () => Promise<Model[]>;
-  fetchAlibabaModels?: () => Promise<Model[]>;
-  fetchFireworksAIModels?: () => Promise<Model[]>;
-  fetchGitHubModels?: () => Promise<Model[]>;
-  fetchGoogleVertexModels?: () => Promise<Model[]>;
-  fetchGoogleVertexAnthropicModels?: () => Promise<Model[]>;
-  fetchInferenceModels?: () => Promise<Model[]>;
-  fetchMistralModels?: () => Promise<Model[]>;
-  fetchMorphModels?: () => Promise<Model[]>;
-  fetchRequestyModels?: () => Promise<Model[]>;
-  fetchTogetherAIModels?: () => Promise<Model[]>;
-  fetchUpstageModels?: () => Promise<Model[]>;
-  fetchV0Models?: () => Promise<Model[]>;
-  fetchVeniceModels?: () => Promise<Model[]>;
-  fetchXAIModels?: () => Promise<Model[]>;
-  fetchModelScopeModels?: () => Promise<Model[]>;
-  default?: () => Promise<Model[]>;
+    default?: () => Promise<Model[]>;
+    fetchAlibabaModels?: () => Promise<Model[]>;
+    fetchAnthropicModels?: () => Promise<Model[]>;
+    fetchAzureModels?: () => Promise<Model[]>;
+    fetchBedrockModels?: () => Promise<Model[]>;
+    fetchDeepInfraModels?: () => Promise<Model[]>;
+    fetchDeepSeekModels?: () => Promise<Model[]>;
+    fetchFireworksAIModels?: () => Promise<Model[]>;
+    fetchGitHubCopilotModels?: () => Promise<Model[]>;
+    fetchGitHubModels?: () => Promise<Model[]>;
+    fetchGoogleModels?: () => Promise<Model[]>;
+    fetchGoogleVertexAnthropicModels?: () => Promise<Model[]>;
+    fetchGoogleVertexModels?: () => Promise<Model[]>;
+    fetchGroqModels?: () => Promise<Model[]>;
+    fetchHuggingFaceModels?: () => Promise<Model[]>;
+    fetchInferenceModels?: () => Promise<Model[]>;
+    fetchLlamaModels?: () => Promise<Model[]>;
+    fetchMistralModels?: () => Promise<Model[]>;
+    fetchModelScopeModels?: () => Promise<Model[]>;
+    fetchMorphModels?: () => Promise<Model[]>;
+    fetchOpenAIModels?: () => Promise<Model[]>;
+    fetchOpenRouterModels?: () => Promise<Model[]>;
+    fetchRequestyModels?: () => Promise<Model[]>;
+    fetchTogetherAIModels?: () => Promise<Model[]>;
+    fetchUpstageModels?: () => Promise<Model[]>;
+    fetchV0Models?: () => Promise<Model[]>;
+    fetchVeniceModels?: () => Promise<Model[]>;
+    fetchVercelModels?: () => Promise<Model[]>;
+    fetchXAIModels?: () => Promise<Model[]>;
 }
 
-/**
- * Parses command line arguments and returns configuration
- * @returns Parsed CLI arguments
- */
-function parseArgs(): CliArgs {
-  const args = process.argv.slice(2);
-  const outputPath = path.join(__dirname, '../../data/providers');
-  let providerName: string | null = null;
+const parseArguments = (): CliArguments => {
+    const arguments_ = process.argv.slice(2);
+    const outputPath = path.join(__dirname, "../../data/providers");
+    let providerName: string | null = null;
 
-  // Parse --provider argument
-  const providerIndex = args.indexOf('--provider');
-  if (providerIndex !== -1 && providerIndex + 1 < args.length) {
-    providerName = args[providerIndex + 1];
-  }
+    // Parse --provider argument
+    const providerIndex = arguments_.indexOf("--provider");
 
-  return { outputPath, providerName };
-}
+    if (providerIndex !== -1 && providerIndex + 1 < arguments_.length) {
+        providerName = arguments_[providerIndex + 1];
+    }
 
-/**
- * Shows help information and exits
- */
-function showHelp(): never {
-  console.log(`
+    return { outputPath, providerName };
+};
+
+const showHelp = (): never => {
+    console.log(`
 Usage: node index.js [options]
 
 Options:
@@ -98,240 +94,229 @@ Examples:
   node index.js                           # Process all providers
   node index.js --provider "OpenRouter"   # Process only OpenRouter
 `);
-  process.exit(0);
-}
+    process.exit(0);
+};
 
-/**
- * Ensures a directory exists, creating it recursively if necessary.
- * @param dir - The directory path to ensure exists
- */
-function ensureDirSync(dir: string): void {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-}
+const ensureDirSync = (dir: string): void => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+};
 
-/**
- * Extracts the provider name from a model object, sanitizing it for filesystem use.
- * If owned_by/author are missing, uses the first segment of model.id (before '/')
- * @param model - The model object containing provider information
- * @returns The sanitized provider name
- * @example
- * const provider = getProvider({ id: 'openai/gpt-4' }); // Returns 'openai'
- * const provider = getProvider({ owned_by: 'anthropic' }); // Returns 'anthropic'
- * const provider = getProvider({ provider: 'AI21 Labs' }); // Returns 'AI21_Labs'
- */
-function getProvider(model: Model): string {
-  if (model.ownedBy) return snakeCase(model.ownedBy);
-  if ('author' in model && model.author) return snakeCase(model.author as string);
-  if (model.provider) return snakeCase(model.provider);
-  if (model.id && typeof model.id === 'string' && model.id.includes('/')) {
-    return snakeCase(model.id.split('/')[0]);
-  }
-  return 'unknown';
-}
+const getProvider = (model: Model): string => {
+    if (model.ownedBy)
+        return snakeCase(model.ownedBy);
 
-/**
- * Extracts and sanitizes the model ID for use as a filename.
- * @param model - The model object containing ID information
- * @returns The sanitized model ID
- * @example
- * const modelId = getModelId({ id: 'gpt-4' }); // Returns 'gpt-4'
- * const modelId = getModelId({ name: 'Claude 3.5' }); // Returns 'Claude_3_5'
- */
-function getModelId(model: Model): string {
-  return snakeCase(model.id || model.name || 'unknown-model');
-}
+    if ("author" in model && model.author)
+        return snakeCase(model.author as string);
 
-/**
- * Gets the fetch function from a transformer module
- * @param transformerModule - The imported transformer module
- * @returns The fetch function or null if not found
- */
-function getFetchFunction(transformerModule: TransformerModule): (() => Promise<Model[]>) | null {
-  return transformerModule.fetchAzureModels || 
-         transformerModule.fetchOpenRouterModels || 
-         transformerModule.fetchVercelModels || 
-         transformerModule.fetchBedrockModels || 
-         transformerModule.fetchAnthropicModels ||
-         transformerModule.fetchDeepSeekModels ||
-         transformerModule.fetchGitHubCopilotModels ||
-         transformerModule.fetchGoogleModels ||
-         transformerModule.fetchGroqModels ||
-         transformerModule.fetchHuggingFaceModels ||
-         transformerModule.fetchLlamaModels ||
-         transformerModule.fetchOpenAIModels ||
-         transformerModule.fetchDeepInfraModels ||
-         transformerModule.fetchAlibabaModels ||
-         transformerModule.fetchFireworksAIModels ||
-         transformerModule.fetchGitHubModels ||
-         transformerModule.fetchGoogleVertexModels ||
-         transformerModule.fetchGoogleVertexAnthropicModels ||
-         transformerModule.fetchInferenceModels ||
-         transformerModule.fetchMistralModels ||
-         transformerModule.fetchMorphModels ||
-         transformerModule.fetchRequestyModels ||
-         transformerModule.fetchTogetherAIModels ||
-         transformerModule.fetchUpstageModels ||
-         transformerModule.fetchV0Models ||
-         transformerModule.fetchVeniceModels ||
-         transformerModule.fetchXAIModels ||
-         transformerModule.fetchModelScopeModels ||
-         transformerModule.default ||
-         null;
-}
+    if (model.provider)
+        return snakeCase(model.provider);
+
+    if (model.id && typeof model.id === "string" && model.id.includes("/")) {
+        return snakeCase(model.id.split("/")[0]);
+    }
+
+    return "unknown";
+};
+
+const getModelId = (model: Model): string => snakeCase(model.id || model.name || "unknown-model");
+
+const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<Model[]>) | null =>
+    transformerModule.fetchAzureModels
+    || transformerModule.fetchOpenRouterModels
+    || transformerModule.fetchVercelModels
+    || transformerModule.fetchBedrockModels
+    || transformerModule.fetchAnthropicModels
+    || transformerModule.fetchDeepSeekModels
+    || transformerModule.fetchGitHubCopilotModels
+    || transformerModule.fetchGoogleModels
+    || transformerModule.fetchGroqModels
+    || transformerModule.fetchHuggingFaceModels
+    || transformerModule.fetchLlamaModels
+    || transformerModule.fetchOpenAIModels
+    || transformerModule.fetchDeepInfraModels
+    || transformerModule.fetchAlibabaModels
+    || transformerModule.fetchFireworksAIModels
+    || transformerModule.fetchGitHubModels
+    || transformerModule.fetchGoogleVertexModels
+    || transformerModule.fetchGoogleVertexAnthropicModels
+    || transformerModule.fetchInferenceModels
+    || transformerModule.fetchMistralModels
+    || transformerModule.fetchMorphModels
+    || transformerModule.fetchRequestyModels
+    || transformerModule.fetchTogetherAIModels
+    || transformerModule.fetchUpstageModels
+    || transformerModule.fetchV0Models
+    || transformerModule.fetchVeniceModels
+    || transformerModule.fetchXAIModels
+    || transformerModule.fetchModelScopeModels
+    || transformerModule.default
+    || null
+    ;
 
 /**
  * Processes a single provider: fetches data, transforms models, and saves them.
- * @param providerConfig - Configuration object for the provider
- * @param outputPath - Base output directory path
+ * @param providerConfig Configuration object for the provider
+ * @param outputPath Base output directory path
  * @returns Result object containing processing statistics
  */
 async function processProvider(providerConfig: ProviderConfig, outputPath: string): Promise<ProcessingResult> {
-  const { name, transformer, output } = providerConfig;
-  
-  // Validate provider name
-  if (!name || typeof name !== 'string' || name.trim() === '') {
-    throw new Error(`Invalid provider name: "${name}". Provider name must be a non-empty string.`);
-  }
-  
-  // Validate transformer path
-  if (!transformer || typeof transformer !== 'string' || transformer.trim() === '') {
-    throw new Error(`Invalid transformer path for provider "${name}": "${transformer}". Transformer path must be a non-empty string.`);
-  }
-  
-  // Validate output path
-  if (!output || typeof output !== 'string' || output.trim() === '') {
-    throw new Error(`Invalid output path for provider "${name}": "${output}". Output path must be a non-empty string.`);
-  }
-  
-  const transformerPath = path.resolve(__dirname, transformer);
-  
-  let transformerModule: TransformerModule;
-  
-  try {
-    transformerModule = await import(transformerPath);
-  } catch (e) {
-    const error = new Error(`Could not load transformer '${transformer}' for provider "${name}": ${e instanceof Error ? e.message : String(e)}`);
-    console.error(`[${name}] ERROR: ${error.message}`);
-    return { name, error: error.message };
-  }
+    const { name, output, transformer } = providerConfig;
 
-  // Get the fetch function from the transformer
-  const fetchFunction = getFetchFunction(transformerModule);
-
-  if (!fetchFunction) {
-    console.error(`[${name}] ERROR: No fetch function found in transformer`);
-    return { name, error: 'No fetch function found' };
-  }
-
-  let models: Model[] = [];
-  
-  try {
-    models = await fetchFunction();
-  } catch (e) {
-    console.error(`[${name}] ERROR: Fetch failed:`, e instanceof Error ? e.message : String(e));
-    return { name, error: e instanceof Error ? e.message : String(e) };
-  }
-
-  if (!models.length) {
-    console.warn(`[${name}] WARNING: No models found.`);
-    return { name, models: 0, saved: 0 };
-  }
-
-  let saved = 0, errors = 0;
-
-  for (const model of models) {
-    try {
-      // Validate with Zod
-      const parseResult = ModelSchema.safeParse(model);
-      if (!parseResult.success) {
-        errors++;
-        console.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
-        continue;
-      }
-      
-      const provider = getProvider(model);
-      const modelId = getModelId(model);
-      const outDir = path.join(outputPath, output, provider);
-
-      ensureDirSync(outDir);
-      
-      const outPath = path.join(outDir, `${modelId}.json`);
-      
-      fs.writeFileSync(outPath, JSON.stringify(model, null, 2));
-      
-      saved++;
-    } catch (e) {
-      errors++;
-      console.error(`[${name}] ERROR: Failed to save model:`, e instanceof Error ? e.message : String(e));
+    // Validate provider name
+    if (!name || typeof name !== "string" || name.trim() === "") {
+        throw new Error(`Invalid provider name: "${name}". Provider name must be a non-empty string.`);
     }
-  }
-  
-  console.log(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
-  
-  return { name, models: models.length, saved, errors, output };
+
+    // Validate transformer path
+    if (!transformer || typeof transformer !== "string" || transformer.trim() === "") {
+        throw new Error(`Invalid transformer path for provider "${name}": "${transformer}". Transformer path must be a non-empty string.`);
+    }
+
+    // Validate output path
+    if (!output || typeof output !== "string" || output.trim() === "") {
+        throw new Error(`Invalid output path for provider "${name}": "${output}". Output path must be a non-empty string.`);
+    }
+
+    const transformerPath = path.resolve(__dirname, transformer);
+
+    let transformerModule: TransformerModule;
+
+    try {
+        transformerModule = await import(transformerPath);
+    } catch (error_) {
+        const error = new Error(`Could not load transformer '${transformer}' for provider "${name}": ${error_ instanceof Error ? error_.message : String(error_)}`);
+
+        console.error(`[${name}] ERROR: ${error.message}`);
+
+        return { error: error.message, name };
+    }
+
+    // Get the fetch function from the transformer
+    const fetchFunction = getFetchFunction(transformerModule);
+
+    if (!fetchFunction) {
+        console.error(`[${name}] ERROR: No fetch function found in transformer`);
+
+        return { error: "No fetch function found", name };
+    }
+
+    let models: Model[] = [];
+
+    try {
+        models = await fetchFunction();
+    } catch (error) {
+        console.error(`[${name}] ERROR: Fetch failed:`, error instanceof Error ? error.message : String(error));
+
+        return { error: error instanceof Error ? error.message : String(error), name };
+    }
+
+    if (models.length === 0) {
+        console.warn(`[${name}] WARNING: No models found.`);
+
+        return { models: 0, name, saved: 0 };
+    }
+
+    let errors = 0;
+    let saved = 0;
+
+    for (const model of models) {
+        try {
+            // Validate with Zod
+            const parseResult = ModelSchema.safeParse(model);
+
+            if (!parseResult.success) {
+                errors++;
+                console.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
+                continue;
+            }
+
+            const provider = getProvider(model);
+            const modelId = getModelId(model);
+            const outDir = path.join(outputPath, output, provider);
+
+            ensureDirSync(outDir);
+
+            const outPath = path.join(outDir, `${modelId}.json`);
+
+            fs.writeFileSync(outPath, JSON.stringify(model, null, 2));
+
+            saved++;
+        } catch (error) {
+            errors++;
+            console.error(`[${name}] ERROR: Failed to save model:`, error instanceof Error ? error.message : String(error));
+        }
+    }
+
+    console.log(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
+
+    return { errors, models: models.length, name, output, saved };
 }
-
-
 
 /**
  * Main function that processes all providers using the imported configuration.
  */
 async function main(): Promise<void> {
-  const args = parseArgs();
-  
-  // Show help if --help is provided
-  if (process.argv.includes('--help') || process.argv.includes('-h')) {
-    showHelp();
-  }
-  
-  // Filter providers if a specific provider name is provided
-  let providersToProcess = PROVIDERS_CONFIG;
-  if (args.providerName) {
-    // Validate that the provided provider name is correct
-    if (!args.providerName || typeof args.providerName !== 'string' || args.providerName.trim() === '') {
-      throw new Error(`Invalid provider name: "${args.providerName}". Provider name must be a non-empty string.`);
+    const arguments_ = parseArguments();
+
+    // Show help if --help is provided
+    if (process.argv.includes("--help") || process.argv.includes("-h")) {
+        showHelp();
     }
-    
-    providersToProcess = PROVIDERS_CONFIG.filter(p => p.name.toLowerCase() === args.providerName!.toLowerCase());
-    if (providersToProcess.length === 0) {
-      const availableProviders = PROVIDERS_CONFIG.map(p => p.name.toLowerCase()).join(', ');
-      throw new Error(`Provider "${args.providerName}" not found in config. Available providers: ${availableProviders}`);
-    }
-    console.log(`Processing provider: ${args.providerName}`);
-  } else {
-    console.log(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
-  }
-  
-  const results: ProcessingResult[] = [];
-  
-  for (const providerConfig of providersToProcess) {
-    // eslint-disable-next-line no-await-in-loop
-    const result = await processProvider(providerConfig, args.outputPath);
-    results.push(result);
-  }
-  
-  // Print summary
-  const summaryTitle = args.providerName ? `=== ${args.providerName} Summary ===` : '=== Batch Summary ===';
-  console.log(`\n${summaryTitle}`);
-  
-  for (const r of results) {
-    if (r.error) {
-      console.log(`[${r.name}] ERROR: ${r.error}`);
+
+    // Filter providers if a specific provider name is provided
+    let providersToProcess = PROVIDERS_CONFIG;
+
+    if (arguments_.providerName) {
+        // Validate that the provided provider name is correct
+        if (!arguments_.providerName || typeof arguments_.providerName !== "string" || arguments_.providerName.trim() === "") {
+            throw new Error(`Invalid provider name: "${arguments_.providerName}". Provider name must be a non-empty string.`);
+        }
+
+        providersToProcess = PROVIDERS_CONFIG.filter((p) => p.name.toLowerCase() === arguments_.providerName!.toLowerCase());
+
+        if (providersToProcess.length === 0) {
+            const availableProviders = PROVIDERS_CONFIG.map((p) => p.name.toLowerCase()).join(", ");
+
+            throw new Error(`Provider "${arguments_.providerName}" not found in config. Available providers: ${availableProviders}`);
+        }
+
+        console.log(`Processing provider: ${arguments_.providerName}`);
     } else {
-      console.log(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output}`);
+        console.log(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
     }
-  }
+
+    const results: ProcessingResult[] = [];
+
+    for (const providerConfig of providersToProcess) {
+        // eslint-disable-next-line no-await-in-loop
+        const result = await processProvider(providerConfig, arguments_.outputPath);
+
+        results.push(result);
+    }
+
+    // Print summary
+    const summaryTitle = arguments_.providerName ? `=== ${arguments_.providerName} Summary ===` : "=== Batch Summary ===";
+
+    console.log(`\n${summaryTitle}`);
+
+    for (const r of results) {
+        if (r.error) {
+            console.log(`[${r.name}] ERROR: ${r.error}`);
+        } else {
+            console.log(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output}`);
+        }
+    }
 }
 
 // Wrap main function call in try-catch to handle thrown errors
 try {
-  main().catch((error) => {
-    console.error('ERROR:', error instanceof Error ? error.message : String(error));
-    process.exit(1);
-  });
+    main().catch((error) => {
+        console.error("ERROR:", error instanceof Error ? error.message : String(error));
+        process.exit(1);
+    });
 } catch (error) {
-  console.error('ERROR:', error instanceof Error ? error.message : String(error));
-  process.exit(1);
-} 
+    console.error("ERROR:", error instanceof Error ? error.message : String(error));
+    process.exit(1);
+}
