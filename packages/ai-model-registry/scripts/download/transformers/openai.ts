@@ -101,29 +101,21 @@ const transformOpenAIModels = (providerData: OpenAIProviderData): Model[] => {
 async function fetchOpenAIModels(): Promise<Model[]> {
     console.log("[OpenAI] Fetching: https://models.dev/api.json");
 
-    try {
-        const response = await axios.get("https://models.dev/api.json");
-        const apiData = response.data;
+    const response = await axios.get("https://models.dev/api.json");
+    const apiData = response.data;
 
-        // Extract OpenAI provider data
-        const openAIProviderData = apiData.openai as OpenAIProviderData;
+    // Extract OpenAI provider data
+    const openAIProviderData = apiData.openai as OpenAIProviderData;
 
-        if (!openAIProviderData) {
-            console.error("[OpenAI] No OpenAI provider data found in models.dev API");
-
-            return [];
-        }
-
-        const models = transformOpenAIModels(openAIProviderData);
-
-        console.log(`[OpenAI] Successfully transformed ${models.length} models`);
-
-        return models;
-    } catch (error) {
-        console.error("[OpenAI] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
+    if (!openAIProviderData) {
+        throw new Error("No OpenAI provider data found in models.dev API");
     }
+
+    const models = transformOpenAIModels(openAIProviderData);
+
+    console.log(`[OpenAI] Successfully transformed ${models.length} models`);
+
+    return models;
 }
 
 export { fetchOpenAIModels, transformOpenAIModels };

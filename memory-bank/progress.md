@@ -8,7 +8,7 @@
   - Amazon Bedrock (65 models)
   - Anthropic (6 models)
   - Azure OpenAI (262 models)
-  - DeepSeek (2 models)
+  - **DeepSeek (2 models)** - FIXED
   - GitHub Copilot (11 models)
   - Google (130 models)
   - Groq (187 models)
@@ -32,13 +32,19 @@
   - Venice (11 models)
 
 ## Provider Registry NPM Package ✅ READY FOR PUBLICATION
-- **1,676 unique models** from 25 providers with per-provider uniqueness
+- **1,676+ unique models** from 25+ providers with per-provider uniqueness
 - **Fixed data quality issues**: Resolved empty model IDs and duplicate entries
-- **Enhanced with pricing data**: 285 models enriched with Helicone pricing
+- **Enhanced with pricing data**: 285+ models enriched with Helicone pricing
 - **Comprehensive test suite**: All 29 tests passing with per-provider uniqueness validation
 - **Production build**: Successfully builds with 3.55 MB total size
 - **Per-provider uniqueness**: Models can have the same ID across different providers (e.g., "gpt-4" in OpenAI and other providers)
 - **Only 3 duplicates removed**: Only true duplicates within the same provider are removed
+- **DeepSeek Transformer Fixed**: 
+  - **Issue Resolved**: DeepSeek transformer now properly extracts models from their pricing documentation
+  - **Root Cause**: HTML table structure changed with colspan="2" layout that wasn't being parsed correctly
+  - **Solution**: Updated transformer to handle new table structure and extract both deepseek-chat and deepseek-reasoner models
+  - **Data Quality**: Both models now have correct pricing, context limits (64K), and output limits (8K/64K)
+  - **Capabilities**: Properly maps API names to actual model names (DeepSeek-V3-0324, DeepSeek-R1-0528)
 - **Context Window Filtering Bug Fixed**: 
   - **Critical Issue Resolved**: searchModels function now properly excludes models with null/undefined context values when filtering by context window range
   - **Root Cause**: Previous logic only excluded models with context values that didn't meet criteria, but didn't handle null/undefined context values
@@ -69,12 +75,12 @@
 - Consider adding more advanced search and filtering capabilities
 
 ## Current Status
-- **All providers working**: Fixed Hugging Face, Upstage, and XAI transformers
+- **All providers working**: Fixed Hugging Face, Upstage, XAI, and DeepSeek transformers
 - **Data quality optimized**: Per-provider uniqueness ensures correct model representation
 - **Ready for production**: All tests passing, build successful, package version 1.0.0
-- **Comprehensive coverage**: 1,676 models from 25 providers with pricing data
-- **Critical bugs resolved**: Context window filtering bug fixed, all functionality working correctly
+- **Comprehensive coverage**: 1,676+ models from 25+ providers with pricing data
+- **Critical bugs resolved**: Context window filtering bug and DeepSeek transformer issues fixed, all functionality working correctly
 - **Documentation complete**: All functions have comprehensive and valid JSDoc documentation
 
 ## Known Issues
-- None - all critical issues have been resolved including the context window filtering bug 
+- None - all critical issues have been resolved including the DeepSeek transformer fix 

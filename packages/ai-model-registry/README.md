@@ -334,7 +334,7 @@ And many more...
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22+
 - pnpm (recommended) or npm
 
 ### Setup
@@ -349,8 +349,6 @@ pnpm install
 
 # Complete build process
 pnpm run download    # Download provider data
-pnpm run aggregate   # Aggregate and enrich data
-pnpm run generate-icons  # Generate provider icons
 pnpm run build       # Build the package
 
 # Run tests
@@ -366,11 +364,7 @@ The complete build process involves several steps to download, aggregate, and ge
 pnpm run download
 
 # 2. Aggregate and enrich provider data (includes pricing from Helicone API)
-pnpm run aggregate
-
 # 3. Generate provider icons
-pnpm run generate-icons
-
 # 4. Build the package
 pnpm run build
 ```
@@ -412,10 +406,10 @@ pnpm run aggregate
 # Generate provider icons
 pnpm run generate-icons
 
-# Build the package
+# Build the package + Aggregate provider data + Generate provider icons
 pnpm run build
 
-# Build for production
+# Build for production + Aggregate provider data + Generate provider icons
 pnpm run build:prod
 
 # Run tests
@@ -477,9 +471,6 @@ Helicone provides pricing data for models from:
 ### Usage
 
 ```bash
-# Aggregate all models with pricing data
-pnpm run aggregate
-
 # Build the package (includes aggregation with pricing)
 pnpm run build
 ```

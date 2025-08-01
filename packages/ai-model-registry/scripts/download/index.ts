@@ -2,15 +2,35 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { kebabCase, snakeCase } from "@visulima/string";
+import { blue, bold, cyan, gray, green, red, yellow } from "@visulima/colorize";
+import { snakeCase } from "@visulima/string";
 
 import type { Model } from "../../src/schema.ts";
 import { ModelSchema } from "../../src/schema.ts";
 import type { ProviderConfig } from "../config.ts";
 import { PROVIDERS_CONFIG } from "../config.ts";
 
+// eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
 const __dirname = path.dirname(__filename);
+
+/**
+ * Check if colors are supported in the current terminal
+ */
+const supportsColors = process.stdout.isTTY && process.env.FORCE_COLOR !== "0";
+
+/**
+ * Colored console output functions using @visulima/colorize
+ */
+const consoleColors = {
+    error: (message: string) => console.error(supportsColors ? red(message) : message),
+    highlight: (message: string) => console.log(supportsColors ? bold(cyan(message)) : message),
+    info: (message: string) => console.log(supportsColors ? blue(message) : message),
+    muted: (message: string) => console.log(supportsColors ? gray(message) : message),
+    success: (message: string) => console.log(supportsColors ? green(message) : message),
+    warning: (message: string) => console.warn(supportsColors ? yellow(message) : message),
+};
 
 /**
  * Command line arguments interface
@@ -26,6 +46,7 @@ interface CliArguments {
 interface ProcessingResult {
     error?: string;
     errors?: number;
+    hasWarning?: boolean;
     models?: number;
     name: string;
     output?: string;
@@ -191,7 +212,7 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
             `Could not load transformer '${transformer}' for provider "${name}": ${error_ instanceof Error ? error_.message : String(error_)}`,
         );
 
-        console.error(`[${name}] ERROR: ${error.message}`);
+        consoleColors.error(`[${name}] ERROR: ${error.message}`);
 
         return { error: error.message, name };
     }
@@ -200,7 +221,7 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
     const fetchFunction = getFetchFunction(transformerModule);
 
     if (!fetchFunction) {
-        console.error(`[${name}] ERROR: No fetch function found in transformer`);
+        consoleColors.error(`[${name}] ERROR: No fetch function found in transformer`);
 
         return { error: "No fetch function found", name };
     }
@@ -210,15 +231,15 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
     try {
         models = await fetchFunction();
     } catch (error) {
-        console.error(`[${name}] ERROR: Fetch failed:`, error instanceof Error ? error.message : String(error));
+        consoleColors.error(`[${name}] ERROR: Fetch failed:`, error instanceof Error ? error.message : String(error));
 
         return { error: error instanceof Error ? error.message : String(error), name };
     }
 
     if (models.length === 0) {
-        console.warn(`[${name}] WARNING: No models found.`);
+        consoleColors.warning(`[${name}] WARNING: No models found.`);
 
-        return { models: 0, name, saved: 0 };
+        return { hasWarning: true, models: 0, name, saved: 0 };
     }
 
     let errors = 0;
@@ -231,7 +252,7 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
 
             if (!parseResult.success) {
                 errors++;
-                console.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
+                consoleColors.error(`[${name}] ERROR: Model validation failed for id=${model.id}:`, parseResult.error.issues);
                 continue;
             }
 
@@ -248,11 +269,18 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
             saved++;
         } catch (error) {
             errors++;
-            console.error(`[${name}] ERROR: Failed to save model:`, error instanceof Error ? error.message : String(error));
+            consoleColors.error(`[${name}] ERROR: Failed to save model:`, error instanceof Error ? error.message : String(error));
         }
     }
 
-    console.log(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
+    // Use colored output based on results
+    if (errors > 0) {
+        consoleColors.error(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
+    } else if (saved === 0) {
+        consoleColors.warning(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
+    } else {
+        consoleColors.success(`[${name}] Done. Models processed: ${models.length}, saved: ${saved}, errors: ${errors}`);
+    }
 
     return { errors, models: models.length, name, output, saved };
 }
@@ -260,7 +288,7 @@ async function processProvider(providerConfig: ProviderConfig, outputPath: strin
 /**
  * Main function that processes all providers using the imported configuration.
  */
-async function main(): Promise<void> {
+const main = async (): Promise<void> => {
     const arguments_ = parseArguments();
 
     // Show help if --help is provided
@@ -285,9 +313,9 @@ async function main(): Promise<void> {
             throw new Error(`Provider "${arguments_.providerName}" not found in config. Available providers: ${availableProviders}`);
         }
 
-        console.log(`Processing provider: ${arguments_.providerName}`);
+        consoleColors.info(`Processing provider: ${arguments_.providerName}`);
     } else {
-        console.log(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
+        consoleColors.info(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
     }
 
     const results: ProcessingResult[] = [];
@@ -304,14 +332,45 @@ async function main(): Promise<void> {
 
     console.log(`\n${summaryTitle}`);
 
+    let hasWarnings = false;
+    let hasErrors = false;
+
     for (const r of results) {
         if (r.error) {
-            console.log(`[${r.name}] ERROR: ${r.error}`);
+            consoleColors.error(`[${r.name}] ERROR: ${r.error}`);
+            hasErrors = true;
+        } else if (r.hasWarning || (r.models === 0 && r.saved === 0)) {
+            consoleColors.warning(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output} ⚠️  WARNING: No models found`);
+            hasWarnings = true;
+        } else if (r.errors && r.errors > 0) {
+            consoleColors.error(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output}`);
+            hasErrors = true;
         } else {
-            console.log(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output}`);
+            consoleColors.success(`[${r.name}] Models: ${r.models}, Saved: ${r.saved}, Errors: ${r.errors}, Output: ${r.output}`);
         }
     }
-}
+
+    // Show warnings again at the end if any providers had 0 models
+    const providersWithWarnings = results.filter((r) => r.hasWarning || (r.models === 0 && r.saved === 0));
+
+    if (providersWithWarnings.length > 0) {
+        console.log();
+        consoleColors.warning("⚠️  WARNINGS SUMMARY:");
+
+        for (const r of providersWithWarnings) {
+            consoleColors.warning(`  • ${r.name}: No models found (0 models, 0 saved)`);
+        }
+    }
+
+    // Exit with appropriate code
+    if (hasErrors) {
+        process.exit(1);
+    } else if (hasWarnings || providersWithWarnings.length > 0) {
+        process.exit(1); // Exit with 1 for warnings as requested
+    } else {
+        process.exit(0);
+    }
+};
 
 // Wrap main function call in try-catch to handle thrown errors
 try {

@@ -206,18 +206,12 @@ const transformAnthropicModels = (htmlContent: string): Model[] => {
 async function fetchAnthropicModels(): Promise<Model[]> {
     console.log("[Anthropic] Fetching: https://docs.anthropic.com/en/docs/about-claude/models");
 
-    try {
-        const response = await axios.get("https://docs.anthropic.com/en/docs/about-claude/models");
-        const htmlContent = response.data;
+    const response = await axios.get("https://docs.anthropic.com/en/docs/about-claude/models");
+    const htmlContent = response.data;
 
-        const models = transformAnthropicModels(htmlContent);
+    const models = transformAnthropicModels(htmlContent);
 
-        return models;
-    } catch (error) {
-        console.error("[Anthropic] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
+    return models;
 }
 
 export { fetchAnthropicModels, transformAnthropicModels };

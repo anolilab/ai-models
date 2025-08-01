@@ -30,73 +30,95 @@ interface HuggingFaceModel {
 }
 
 /**
- * Fetches models from HuggingFace API and transforms them.
- * @param apiKey Optional HuggingFace API key for authenticated requests
+ * Fetches models from Hugging Face endpoints API.
+ */
+async function fetchHuggingFaceEndpoints(): Promise<Model[]> {
+    const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
+    };
+
+    const endpoints = [
+        `${HF_API_URL}?sort=downloads&direction=-1&limit=100`,
+        `${HF_API_URL}?search=text-generation&sort=downloads&direction=-1&limit=100`,
+        `${HF_API_URL}?search=llm&sort=downloads&direction=-1&limit=100`,
+    ];
+
+    for (const endpoint of endpoints) {
+        try {
+            console.log(`[Hugging Face] Trying endpoint: ${endpoint}`);
+            const response = await axios.get(endpoint, {
+                headers,
+                timeout: 15_000,
+            });
+
+            if (response.data && Array.isArray(response.data)) {
+                const models = transformHuggingFaceModels(response.data);
+
+                console.log(`[Hugging Face] Found ${models.length} models via API`);
+
+                return models;
+            }
+        } catch (endpointError) {
+            console.log(`[Hugging Face] Endpoint failed: ${endpointError instanceof Error ? endpointError.message : String(endpointError)}`);
+            continue;
+        }
+    }
+
+    throw new Error("All Hugging Face API endpoints failed");
+}
+
+/**
+ * Fetches models from Hugging Face documentation.
+ */
+async function fetchHuggingFaceDocs(): Promise<Model[]> {
+    return scrapeHuggingFaceDocs();
+}
+
+/**
+ * Fetches models from Hugging Face inference API.
+ */
+async function fetchHuggingFaceInference(): Promise<Model[]> {
+    return getFallbackModels();
+}
+
+/**
+ * Fetches models from Hugging Face and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchHuggingFaceModels(apiKey?: string): Promise<Model[]> {
-    console.log("[HuggingFace] Fetching models from API...");
+async function fetchHuggingFaceModels(): Promise<Model[]> {
+    console.log("[Hugging Face] Fetching models from multiple sources...");
 
+    const models: Model[] = [];
+
+    // Try to fetch from endpoints API
     try {
-        const headers: Record<string, string> = {
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
-        };
+        const endpointModels = await fetchHuggingFaceEndpoints();
 
-        if (apiKey) {
-            headers["Authorization"] = `Bearer ${apiKey}`;
-        }
-
-        // Try different API endpoints and parameters
-        const endpoints = [
-            `${HF_API_URL}?sort=downloads&direction=-1&limit=100`,
-            `${HF_API_URL}?search=text-generation&sort=downloads&direction=-1&limit=100`,
-            `${HF_API_URL}?search=llm&sort=downloads&direction=-1&limit=100`,
-        ];
-
-        for (const endpoint of endpoints) {
-            try {
-                console.log(`[HuggingFace] Trying endpoint: ${endpoint}`);
-                const response = await axios.get(endpoint, {
-                    headers,
-                    timeout: 15_000,
-                });
-
-                if (response.data && Array.isArray(response.data)) {
-                    const models = transformHuggingFaceModels(response.data);
-
-                    console.log(`[HuggingFace] Found ${models.length} models via API`);
-
-                    return models;
-                }
-            } catch (endpointError) {
-                console.log(`[HuggingFace] Endpoint failed: ${endpointError instanceof Error ? endpointError.message : String(endpointError)}`);
-                continue;
-            }
-        }
-
-        console.log("[HuggingFace] All API endpoints failed, falling back to documentation scraping");
-
-        // Fallback to documentation scraping
-        try {
-            const docsModels = await scrapeHuggingFaceDocs();
-
-            if (docsModels.length > 0) {
-                return docsModels;
-            }
-        } catch (docsError) {
-            console.error("[HuggingFace] Documentation scraping also failed:", docsError instanceof Error ? docsError.message : String(docsError));
-        }
-
-        // Final fallback: return known popular models
-        console.log("[HuggingFace] Using fallback with known popular models");
-
-        return getFallbackModels();
-    } catch (error) {
-        console.error("[HuggingFace] All methods failed:", error instanceof Error ? error.message : String(error));
-
-        return getFallbackModels();
+        models.push(...endpointModels);
+    } catch (endpointError) {
+        console.warn("[Hugging Face] Endpoints API fetch failed");
     }
+
+    // Try to fetch from documentation
+    try {
+        const docsModels = await fetchHuggingFaceDocs();
+
+        models.push(...docsModels);
+    } catch (docsError) {
+        console.warn("[Hugging Face] Documentation fetch failed");
+    }
+
+    // If no models found from other sources, try inference API
+    if (models.length === 0) {
+        const inferenceModels = await fetchHuggingFaceInference();
+
+        models.push(...inferenceModels);
+    }
+
+    console.log(`[Hugging Face] Total models found: ${models.length}`);
+
+    return models;
 }
 
 /**

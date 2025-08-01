@@ -76,7 +76,7 @@ pnpm install
 ```bash
 cd packages/ai-model-registry
 
-pnpm run prepare-data
+pnpm run download
 pnpm run build
 
 # WEB App

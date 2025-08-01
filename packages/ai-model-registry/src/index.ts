@@ -67,66 +67,67 @@ export const searchModels = (criteria: {
     streaming_supported?: boolean;
     tool_call?: boolean;
     vision?: boolean;
-}): Model[] => allModels.filter((model) => {
-    // Vision capability
-    if (criteria.vision !== undefined && model.vision !== criteria.vision) {
-        return false;
-    }
-
-    // Reasoning capability
-    if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
-        return false;
-    }
-
-    // Tool call capability
-    if (criteria.tool_call !== undefined && model.toolCall !== criteria.tool_call) {
-        return false;
-    }
-
-    // Streaming support
-    if (criteria.streaming_supported !== undefined && model.streamingSupported !== criteria.streaming_supported) {
-        return false;
-    }
-
-    // Provider filter
-    if (criteria.provider && model.provider !== criteria.provider) {
-        return false;
-    }
-
-    // Preview status
-    if (criteria.preview !== undefined && model.preview !== criteria.preview) {
-        return false;
-    }
-
-    // Input modalities
-    if (criteria.modalities?.input) {
-        const hasAllInputModalities = criteria.modalities.input.every((modality) => model.modalities.input.includes(modality));
-
-        if (!hasAllInputModalities) {
+}): Model[] =>
+    allModels.filter((model) => {
+        // Vision capability
+        if (criteria.vision !== undefined && model.vision !== criteria.vision) {
             return false;
         }
-    }
 
-    // Output modalities
-    if (criteria.modalities?.output) {
-        const hasAllOutputModalities = criteria.modalities.output.every((modality) => model.modalities.output.includes(modality));
-
-        if (!hasAllOutputModalities) {
+        // Reasoning capability
+        if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
             return false;
         }
-    }
 
-    // Context window range
-    if (criteria.context_min !== undefined && (!model.limit.context || model.limit.context < criteria.context_min)) {
-        return false;
-    }
+        // Tool call capability
+        if (criteria.tool_call !== undefined && model.toolCall !== criteria.tool_call) {
+            return false;
+        }
 
-    if (criteria.context_max !== undefined && (!model.limit.context || model.limit.context > criteria.context_max)) {
-        return false;
-    }
+        // Streaming support
+        if (criteria.streaming_supported !== undefined && model.streamingSupported !== criteria.streaming_supported) {
+            return false;
+        }
 
-    return true;
-});
+        // Provider filter
+        if (criteria.provider && model.provider !== criteria.provider) {
+            return false;
+        }
+
+        // Preview status
+        if (criteria.preview !== undefined && model.preview !== criteria.preview) {
+            return false;
+        }
+
+        // Input modalities
+        if (criteria.modalities?.input) {
+            const hasAllInputModalities = criteria.modalities.input.every((modality) => model.modalities.input.includes(modality));
+
+            if (!hasAllInputModalities) {
+                return false;
+            }
+        }
+
+        // Output modalities
+        if (criteria.modalities?.output) {
+            const hasAllOutputModalities = criteria.modalities.output.every((modality) => model.modalities.output.includes(modality));
+
+            if (!hasAllOutputModalities) {
+                return false;
+            }
+        }
+
+        // Context window range
+        if (criteria.context_min !== undefined && (!model.limit.context || model.limit.context < criteria.context_min)) {
+            return false;
+        }
+
+        if (criteria.context_max !== undefined && (!model.limit.context || model.limit.context > criteria.context_max)) {
+            return false;
+        }
+
+        return true;
+    });
 
 /**
  * Retrieves all AI models from the registry for advanced filtering and processing.

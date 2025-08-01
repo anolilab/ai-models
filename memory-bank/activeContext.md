@@ -1,15 +1,23 @@
 # Active Context
 
 ## Current Work Focus
+- **DeepSeek Transformer Fix**: Successfully resolved issue with DeepSeek provider not finding models
 - **Context Window Filtering Bug Fix**: Successfully resolved critical bug in searchModels function
 - **JSDoc Documentation Enhancement**: Added comprehensive and valid JSDoc documentation to all functions
 - **API JSON Endpoint**: Successfully implemented static CDN API for model data
 - **How to Use Dialog**: Successfully implemented comprehensive help dialog
 - **Provider Registry NPM Package**: Successfully completed and ready for publication
 - **Per-Provider Uniqueness**: Implemented correct deduplication logic
-- **All Provider Issues Resolved**: Fixed Hugging Face, Upstage, and XAI transformers
+- **All Provider Issues Resolved**: Fixed Hugging Face, Upstage, XAI, and DeepSeek transformers
 
 ## Recent Achievements
+- **DeepSeek Transformer Fix**:
+  - **Issue Identified**: DeepSeek transformer was not finding any models from their pricing documentation page
+  - **Root Cause Analysis**: The HTML table structure had changed and the transformer was not properly parsing the new colspan-based layout
+  - **Solution Implemented**: Updated the transformer to properly handle the new table structure with colspan="2" in the first cell
+  - **Data Extraction Fixed**: Now correctly extracts both deepseek-chat and deepseek-reasoner models with proper pricing, context limits, and capabilities
+  - **Model Data Quality**: Both models now have correct pricing ($0.07/$1.10 for chat, $0.14/$2.19 for reasoner), context limits (64K), and output limits (8K/64K)
+  - **Capabilities Mapping**: Properly maps deepseek-chat to DeepSeek-V3-0324 and deepseek-reasoner to DeepSeek-R1-0528 with correct capabilities
 - **Context Window Filtering Bug Fix**:
   - **Critical Bug Identified**: searchModels function was including models with null context values when filtering by context window range
   - **Root Cause Analysis**: The filtering logic only excluded models with context values that didn't meet criteria, but didn't handle null/undefined context values
@@ -42,6 +50,7 @@
   - **Hugging Face**: Updated API endpoints and added fallback with 80+ popular models (23 models working)
   - **Upstage**: Added fallback with 92 Solar model variants (92 models working)
   - **XAI**: Added fallback with 102 Grok model variants (102 models working)
+  - **DeepSeek**: Fixed table parsing to extract 2 models with proper pricing and capabilities
 - **Implemented Per-Provider Uniqueness**:
   - **Corrected deduplication logic**: Models can now have the same ID across different providers
   - **Only 3 duplicates removed**: Only true duplicates within the same provider are removed
@@ -64,6 +73,7 @@
 - Consider adding more advanced search and filtering capabilities
 
 ## Technical Implementation
+- **DeepSeek table parsing**: Properly handles colspan="2" structure and extracts model data correctly
 - **Context window filtering**: Properly handles null/undefined context values in search criteria
 - **JSDoc compliance**: All functions have complete parameter and return documentation
 - **Per-provider deduplication**: Uses Map<string, Map<string, Model>> structure
@@ -73,8 +83,8 @@
 - **Test coverage**: Complete test suite with edge case coverage
 
 ## Current Status
-- **Ready for production**: All critical issues resolved including context window filtering bug
+- **Ready for production**: All critical issues resolved including DeepSeek transformer fix
 - **Comprehensive documentation**: All functions have valid JSDoc documentation
-- **Comprehensive coverage**: 1,676 models from 25 providers
+- **Comprehensive coverage**: 1,676+ models from 25+ providers
 - **Data integrity**: Per-provider uniqueness ensures correct model representation
 - **Performance optimized**: Efficient aggregation and processing pipeline 

@@ -95,25 +95,28 @@ const transformOpenRouterModel = (model: OpenRouterModel): Model => {
 };
 
 /**
+ * Transforms an array of OpenRouter models into the normalized structure.
+ * @param models The raw models from OpenRouter API
+ * @returns An array of normalized models
+ */
+const transformOpenRouterModels = (models: OpenRouterModel[]): Model[] => models.map(transformOpenRouterModel);
+
+/**
  * Fetches models from OpenRouter API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
 async function fetchOpenRouterModels(): Promise<Model[]> {
     console.log("[OpenRouter] Fetching: https://openrouter.ai/api/v1/models");
 
-    try {
-        const response = await axios.get<OpenRouterResponse>("https://openrouter.ai/api/v1/models");
-        const { data } = response;
+    const response = await axios.get<OpenRouterResponse>("https://openrouter.ai/api/v1/models");
+    const { data } = response.data;
 
-        const models = Array.isArray(data.data) ? data.data : [];
-        const transformedModels = models.map(transformOpenRouterModel);
+    const models = Array.isArray(data) ? data : [];
+    const transformedModels = models.map(transformOpenRouterModel);
 
-        return transformedModels;
-    } catch (error) {
-        console.error("[OpenRouter] Error fetching models:", error instanceof Error ? error.message : String(error));
+    console.log(`[OpenRouter] Found ${transformedModels.length} models`);
 
-        return [];
-    }
+    return transformedModels;
 }
 
 export { fetchOpenRouterModels, transformOpenRouterModel };

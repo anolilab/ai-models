@@ -12,78 +12,70 @@ const GITHUB_MODELS_DOCS_URL = "https://docs.github.com/en/github-models";
  * @returns Promise that resolves to an array of transformed models
  */
 export async function fetchGitHubModels(): Promise<Model[]> {
-    console.log("[GitHub Models] Fetching models from API and documentation...");
+    const models: Model[] = [];
 
+    // Try to fetch from their API first
     try {
-        const models: Model[] = [];
+        console.log("[GitHub Models] Attempting to fetch from API:", GITHUB_MODELS_API_URL);
+        const apiResponse = await axios.get(GITHUB_MODELS_API_URL);
 
-        // Try to fetch from their API first
-        try {
-            console.log("[GitHub Models] Attempting to fetch from API:", GITHUB_MODELS_API_URL);
-            const apiResponse = await axios.get(GITHUB_MODELS_API_URL);
+        if (apiResponse.data && Array.isArray(apiResponse.data)) {
+            console.log(`[GitHub Models] Found ${apiResponse.data.length} models via API`);
 
-            if (apiResponse.data && Array.isArray(apiResponse.data)) {
-                console.log(`[GitHub Models] Found ${apiResponse.data.length} models via API`);
+            for (const modelData of apiResponse.data) {
+                const model: Model = {
+                    attachment: false,
+                    cost: {
+                        input: null,
+                        inputCacheHit: null,
+                        output: null,
+                    },
+                    extendedThinking: false,
+                    id: kebabCase(modelData.id || modelData.name),
+                    knowledge: null,
+                    lastUpdated: null,
+                    limit: {
+                        context: modelData.context_length || null,
+                        output: null,
+                    },
+                    modalities: {
+                        input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
+                        output: ["text"],
+                    },
+                    name: modelData.name || modelData.id,
+                    openWeights: false,
+                    provider: "GitHub Models",
+                    providerDoc: GITHUB_MODELS_DOCS_URL,
+                    // Provider metadata
+                    providerEnv: ["GITHUB_TOKEN"],
+                    providerModelsDevId: "github-models",
+                    providerNpm: "@ai-sdk/openai-compatible",
+                    reasoning: false,
+                    releaseDate: null,
+                    streamingSupported: true,
+                    temperature: true,
+                    toolCall: false,
+                    vision: modelData.capabilities?.vision || false,
+                };
 
-                for (const modelData of apiResponse.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.context_length || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "GitHub Models",
-                        providerDoc: GITHUB_MODELS_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["GITHUB_TOKEN"],
-                        providerModelsDevId: "github-models",
-                        providerNpm: "@ai-sdk/openai-compatible",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
+                models.push(model);
             }
-        } catch {
-            console.log("[GitHub Models] API fetch failed, falling back to documentation scraping");
         }
-
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[GitHub Models] Scraping documentation for model information");
-            const docsModels = await scrapeGitHubDocs();
-
-            models.push(...docsModels);
-        }
-
-        console.log(`[GitHub Models] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[GitHub Models] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
+    } catch {
+        console.log("[GitHub Models] API fetch failed, falling back to documentation scraping");
     }
+
+    // If API didn't work or returned no models, try scraping documentation
+    if (models.length === 0) {
+        console.log("[GitHub Models] Scraping documentation for model information");
+        const docsModels = await scrapeGitHubDocs();
+
+        models.push(...docsModels);
+    }
+
+    console.log(`[GitHub Models] Total models found: ${models.length}`);
+
+    return models;
 }
 
 /**

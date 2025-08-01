@@ -168,25 +168,19 @@ function parseContextLength(lengthString: string): number | null {
 async function fetchAzureModels(): Promise<Model[]> {
     console.log("[Azure OpenAI] Fetching:", AZURE_DOCS_URL);
 
-    try {
-        const response = await axios.get(AZURE_DOCS_URL, {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
-            },
-            timeout: 10_000,
-        });
-        const htmlContent = response.data;
+    const response = await axios.get(AZURE_DOCS_URL, {
+        headers: {
+            "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
+        },
+        timeout: 10_000,
+    });
+    const htmlContent = response.data;
 
-        const models = transformAzureModels(htmlContent);
+    const models = transformAzureModels(htmlContent);
 
-        console.log(`[Azure OpenAI] Found ${models.length} models`);
+    console.log(`[Azure OpenAI] Found ${models.length} models`);
 
-        return models;
-    } catch (error) {
-        console.error("[Azure OpenAI] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
+    return models;
 }
 
 export { fetchAzureModels, transformAzureModels };

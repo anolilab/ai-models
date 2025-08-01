@@ -170,27 +170,16 @@ function parseContextLength(lengthString: string): number | null {
  * @returns Promise that resolves to an array of transformed models
  */
 async function fetchGoogleModels(): Promise<Model[]> {
-    console.log("[Google] Fetching:", GOOGLE_DOCS_URL);
+    console.log("[Google] Fetching: https://ai.google.dev/models");
 
-    try {
-        const response = await axios.get(GOOGLE_DOCS_URL, {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
-            },
-            timeout: 10_000,
-        });
-        const htmlContent = response.data;
+    const response = await axios.get("https://ai.google.dev/models");
+    const htmlContent = response.data;
 
-        const models = transformGoogleModels(htmlContent);
+    const models = transformGoogleModels(htmlContent);
 
-        console.log(`[Google] Found ${models.length} models`);
+    console.log(`[Google] Found ${models.length} models`);
 
-        return models;
-    } catch (error) {
-        console.error("[Google] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
+    return models;
 }
 
 export { fetchGoogleModels, transformGoogleModels };
