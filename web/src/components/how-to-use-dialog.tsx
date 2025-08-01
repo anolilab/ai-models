@@ -38,7 +38,7 @@ const HowToUseDialog = () => {
                             <div>
                                 <p className="mb-1 text-sm font-medium">API Endpoints:</p>
                                 <div className="space-y-2">
-                                    <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://unpkg.com/@anolilab/ai-model-registry/api.json</div>
+                                    <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://unpkg.com/@anolilab/ai-model-registry@latest/public/api.json                                    </div>
                                     <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://ai-models.anolilab.com/api.json</div>
                                 </div>
                             </div>
