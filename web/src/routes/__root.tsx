@@ -141,7 +141,6 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             { href: "https://ph.anolilab.com", rel: "dns-prefetch" },
             { href: appCss, rel: "stylesheet" },
             // Additional performance optimizations
-            { as: "image", href: defaultOgImage, rel: "preload" },
             { href: "/sitemap.xml", rel: "sitemap", type: "application/xml" },
         ];
 
