@@ -14,11 +14,10 @@ interface SeoProps {
     url?: string; // Full canonical URL for the page
 }
 
-// Define the return type: separate arrays for title, meta, and links
+// Define the return type: separate arrays for meta and links
 interface SeoOutput {
     links: (LinkHTMLAttributes<HTMLLinkElement> & { rel: string })[];
     meta: MetaHTMLAttributes<HTMLMetaElement>[];
-    title: string;
 }
 
 /**
@@ -46,7 +45,8 @@ const seo = ({
         }
     };
 
-    // --- Essential Meta ---
+    // --- Title and Essential Meta ---
+    addMeta({ title });
     addMeta({ content: description, name: "description" });
     addMeta({ content: keywords, name: "keywords" });
     addMeta({ content: robots, name: "robots" });
@@ -78,9 +78,7 @@ const seo = ({
     return {
         links: linkTags,
         meta: metaTags,
-        title, // Return title directly as a string
     };
 };
-
 
 export default seo;

@@ -41,7 +41,6 @@ const RootDocument = () => {
     return (
         <html className="dark" lang="en">
             <head>
-                <title>AI Models Registry | Comprehensive Database of AI Models and Providers</title>
                 <HeadContent />
             </head>
             <body className="h-screen w-screen" suppressHydrationWarning={true}>
@@ -87,7 +86,6 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         const {
             links: generatedLinks,
             meta: generatedMeta,
-            title: generatedTitle,
         } = seo({
             description: defaultDescription,
             image: defaultOgImage,
@@ -171,7 +169,6 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
                     type: "application/ld+json",
                 },
             ],
-            title: generatedTitle,
         };
     },
 });
