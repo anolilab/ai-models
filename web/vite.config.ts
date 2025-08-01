@@ -1,3 +1,7 @@
+/// <reference types="vite-plugin-svgr/client" />
+/// <reference types="unplugin-fonts/client" />
+/// <reference types="vite/client" />
+
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import react from "@vitejs/plugin-react";
@@ -5,13 +9,25 @@ import Unfonts from "unplugin-fonts/vite";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
+import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
 
 export default defineConfig({
     plugins: [
         tsconfigPaths(),
+        unpluginFavicons({
+            cache: true,
+            inject: true,
+            logo: "./src/assets/images/logo.svg",
+        }),
         tailwindcss(),
         tanstackStart({
             customViteReactPlugin: true,
+            spa: {
+                enabled: true,
+                prerender: {
+                    crawlLinks: true,
+                },
+            },
             target: "netlify",
         }),
         react({

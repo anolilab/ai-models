@@ -1,3 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://models.anolilab.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

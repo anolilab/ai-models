@@ -1,0 +1,13 @@
+/* TEAM */
+    Developer: Anolilab Team
+    Contact: hello@anolilab.com
+    From: Germany
+
+/* SITE */
+    Last update: 2024/01/01
+    Language: English
+    Doctype: HTML5
+    IDE: WebStorm, VS Code
+    Standards: HTML5, CSS3, JavaScript ES2022
+    Components: React, TypeScript, TanStack Router
+    Software: Vite, Nx, pnpm 
