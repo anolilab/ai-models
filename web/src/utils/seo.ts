@@ -46,7 +46,7 @@ const seo = ({
     };
 
     // --- Title and Essential Meta ---
-    addMeta({ title });
+    metaTags.push({ title });
     addMeta({ content: description, name: "description" });
     addMeta({ content: keywords, name: "keywords" });
     addMeta({ content: robots, name: "robots" });
