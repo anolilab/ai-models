@@ -1,7 +1,7 @@
 import type { LinkHTMLAttributes, MetaHTMLAttributes } from "react";
 
 // Define the properties the SEO utility can accept
-interface SeoProps {
+interface SeoProperties {
     description?: string;
     image: string;
     keywords?: string;
@@ -34,14 +34,14 @@ const seo = ({
     twitterImage, // Added
     type = "website", // Default type
     url,
-}: SeoProps): SeoOutput => {
+}: SeoProperties): SeoOutput => {
     const metaTags: MetaHTMLAttributes<HTMLMetaElement>[] = [];
     const linkTags: (LinkHTMLAttributes<HTMLLinkElement> & { rel: string })[] = [];
 
     // Helper to add meta tag if content exists
-    const addMeta = (attrs: MetaHTMLAttributes<HTMLMetaElement>) => {
-        if (attrs.content != null || attrs.name != null || attrs.property != null) {
-            metaTags.push(attrs);
+    const addMeta = (attributes: MetaHTMLAttributes<HTMLMetaElement>) => {
+        if (attributes.content !== undefined || attributes.name !== undefined || attributes.property !== undefined) {
+            metaTags.push(attributes);
         }
     };
 
@@ -53,7 +53,7 @@ const seo = ({
 
     // --- Static Meta ---
     addMeta({ content: "width=device-width, initial-scale=1", name: "viewport" });
-    addMeta({ charSet: "utf-8" });
+    addMeta({ charSet: "utf8" });
 
     // --- Open Graph ---
     addMeta({ content: title, property: "og:title" });
