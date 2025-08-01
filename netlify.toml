@@ -1,6 +1,6 @@
 [build]
   # Build command that builds the provider-registry package first, then the web app
-  command = "pnpm install && nx build @anolilab/provider-registry && nx build web"
+  command = "nx build @anolilab/provider-registry && nx build web"
   
   # Publish directory - the web app's build output
   publish = "apps/web/dist"

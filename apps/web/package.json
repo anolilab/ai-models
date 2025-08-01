@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build && tsc --noEmit",
+    "build": "vite build",
     "build:test": "vite build",
     "dev": "vite dev --port 3000",
     "dev:e2e": "vite dev",
+    "lint:types": "tsc --noEmit",
     "serve": "vite preview",
     "start": "node .output/server/index.mjs",
     "test:e2e": "rm -rf port*.txt; playwright test --project=chromium",
