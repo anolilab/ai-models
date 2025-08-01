@@ -73,9 +73,7 @@ const RootDocument = () => {
     );
 };
 
-export interface RouterAppContext {
-    // Add properties as needed for router context
-}
+export type RouterAppContext = Record<string, never>;
 
 export const Route = createRootRouteWithContext<RouterAppContext>()({
     component: RootDocument,
@@ -123,7 +121,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             { content: "1; mode=block", httpEquiv: "X-XSS-Protection" },
             { content: "same-origin", httpEquiv: "X-Frame-Options" },
             { content: "max-age=31536000; includeSubDomains", httpEquiv: "Strict-Transport-Security" },
-            { content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://eu.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://eu.i.posthog.com;", httpEquiv: "Content-Security-Policy" },
+            { content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://eu.i.posthog.com https://ph.anolilab.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://eu.i.posthog.com https://ph.anolilab.com;", httpEquiv: "Content-Security-Policy" },
         ];
 
         const staticLinkTags: LinkElement[] = [
@@ -136,6 +134,8 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             // Performance optimizations
             { href: "https://eu.i.posthog.com", rel: "preconnect" },
             { href: "https://eu.i.posthog.com", rel: "dns-prefetch" },
+            { href: "https://ph.anolilab.com", rel: "preconnect" },
+            { href: "https://ph.anolilab.com", rel: "dns-prefetch" },
             { href: appCss, rel: "stylesheet" },
             // Additional performance optimizations
             { as: "image", href: defaultOgImage, rel: "preload" },
