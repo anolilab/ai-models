@@ -41,6 +41,7 @@ const RootDocument = () => {
     return (
         <html className="dark" lang="en">
             <head>
+                <title>AI Models Registry | Comprehensive Database of AI Models and Providers</title>
                 <HeadContent />
             </head>
             <body className="h-screen w-screen" suppressHydrationWarning={true}>
