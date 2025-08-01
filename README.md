@@ -12,7 +12,7 @@ This project is a comprehensive, open-source platform that provides a unified da
 <div align="center">
     <p>
         <sup>
-            Anolilab's open source work is supported by the community on <a href="https://github.com/sponsors/anolilab">GitHub Sponsors</a>
+            Anolilab's open source work is supported by the community on <a href="https://github.com/sponsors/prisis">GitHub Sponsors</a>
         </sup>
     </p>
 </div>
