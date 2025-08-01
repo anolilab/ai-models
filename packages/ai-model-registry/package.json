@@ -89,8 +89,10 @@
         "lint:prettier:fix": "prettier --write .",
         "lint:types": "tsc --noEmit",
         "prepare-data": "pnpm run download && pnpm run aggregate && pnpm run generate-icons",
-        "test": "vitest run --typecheck",
-        "test:coverage": "vitest run --coverage --coverage.reporter=text"
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "test:ui": "vitest --ui --coverage.enabled=true",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "zod": "^4.0.14"
