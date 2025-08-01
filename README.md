@@ -27,14 +27,15 @@ Check the README for each package within the `packages` directory for specific u
 
 ## Featured Packages
 
-| Tool                                                                     | Package                                                                                                                             | Version                                                                                                                         | Description                                                                                                                                     |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AI Model Registry](https://github.com/anolilab/ai-models)              | [@anolilab/ai-model-registry](https://github.com/anolilab/ai-models/blob/main/packages/ai-model-registry/README.md)                | ![npm](https://img.shields.io/npm/v/@anolilab/ai-model-registry?style=flat-square&labelColor=292a44&color=663399&label=v)       | A comprehensive TypeScript library providing access to AI model metadata from 50+ providers with pricing data and advanced search capabilities. |
-| [Web Application](https://github.com/anolilab/ai-models)                | [web](https://github.com/anolilab/ai-models/blob/main/web/README.md)                                                               | ![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-blue.svg)                                                           | A modern React web application built with TanStack Start for browsing and searching AI models with advanced filtering and data export.         |
+| Tool                                                       | Package                                                                                                             | Version                                                                                                                   | Description                                                                                                                                     |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [AI Model Registry](https://github.com/anolilab/ai-models) | [@anolilab/ai-model-registry](https://github.com/anolilab/ai-models/blob/main/packages/ai-model-registry/README.md) | ![npm](https://img.shields.io/npm/v/@anolilab/ai-model-registry?style=flat-square&labelColor=292a44&color=663399&label=v) | A comprehensive TypeScript library providing access to AI model metadata from 50+ providers with pricing data and advanced search capabilities. |
+| [Web Application](https://github.com/anolilab/ai-models)   | [web](https://github.com/anolilab/ai-models/blob/main/web/README.md)                                                |                                                                                                                           | A modern React web application built with TanStack Start for browsing and searching AI models with advanced filtering and data export.          |
 
 ## Features
 
 ### 🌐 Web Application
+
 - **📊 Interactive Data Table**: Browse 1000+ AI models with advanced filtering and sorting
 - **🔍 Powerful Search**: Search by provider, capabilities, pricing, and more
 - **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
@@ -43,6 +44,7 @@ Check the README for each package within the `packages` directory for specific u
 - **📤 Data Export**: Export filtered data in various formats
 
 ### 📦 AI Model Registry Library
+
 - **🔄 Unified Interface**: Access models from multiple providers through a single API
 - **🛡️ Type Safety**: Full TypeScript support with Zod schema validation
 - **📦 Tree Shaking**: Import only what you need to minimize bundle size
@@ -113,5 +115,3 @@ If you would like to help take a look at the [list of issues](https://github.com
 ## License
 
 The anolilab ai-models is open-sourced software licensed under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0)
-
-[repository]: https://github.com/anolilab/ai-models
