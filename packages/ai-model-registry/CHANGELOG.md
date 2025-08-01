@@ -1,3 +1,10 @@
+## @anolilab/ai-model-registry [1.0.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.0...@anolilab/ai-model-registry@1.0.1) (2025-08-01)
+
+### Bug Fixes
+
+* add missing models ([5adc0cf](https://github.com/anolilab/ai-models/commit/5adc0cf64b48675080f199a1229eecac88540dcc))
+* streamline build process by removing redundant aggregation steps and updating README for clarity on build commands ([c0b4525](https://github.com/anolilab/ai-models/commit/c0b452541bcae0e6d4c594b012fa70b68a752f52))
+
 ## @anolilab/ai-model-registry 1.0.0 (2025-08-01)
 
 ### Features
