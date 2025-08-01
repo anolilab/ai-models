@@ -15,7 +15,7 @@ We are building a new npm package to expose static provider/model data from the 
 
 ## Interface Pattern: Unified Provider Registry
 ```js
-import { getProviders, getModelsByProvider, getModelById, searchModels } from 'provider-registry';
+import { getProviders, getModelsByProvider, getModelById, searchModels } from 'ai-model-registry';
 
 const providers = getProviders(); // ['Meta', 'Groq', 'Cerebras', ...]
 const metaModels = getModelsByProvider('Meta');
@@ -34,7 +34,7 @@ const visionModels = searchModels({ vision: true });
 
 ## TODO List
 - [x] 1. Analyze and enhance Zod schemas for model/provider types
-- [x] 2. Create npm package structure in `packages/provider-registry/`
+- [x] 2. Create npm package structure in `packages/ai-model-registry/`
 - [x] 3. Design and implement the registry interface (getProviders, getModelsByProvider, getModelById, searchModels)
 - [x] 4. Ensure tree-shakable exports for each provider
 - [x] 5. Write documentation and usage examples
@@ -83,7 +83,7 @@ const visionModels = searchModels({ vision: true });
 - **Data integrity**: 4 tests - cross-function consistency, unique IDs
 
 ### Web App Integration
-- **Dependency added**: `@anolilab/provider-registry` as workspace dependency
+- **Dependency added**: `@anolilab/ai-model-registry` as workspace dependency
 - **Data transformation**: Models converted to table-friendly format
 - **Real-time data**: Table displays live data from provider registry
 - **Multiple providers**: Shows models from mistral, openai, xai, perplexity, etc.

@@ -71,9 +71,9 @@ importers:
 
   apps/web:
     dependencies:
-      '@anolilab/provider-registry':
+      '@anolilab/ai-model-registry':
         specifier: workspace:*
-        version: link:../../packages/provider-registry
+        version: link:../../packages/ai-model-registry
       '@c15t/react':
         specifier: ^1.5.0
         version: 1.5.0(@babel/core@7.28.0)(@playwright/test@1.54.1)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(babel-plugin-react-compiler@19.1.0-rc.2)(crossws@0.3.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))(ws@8.18.3)
@@ -322,7 +322,7 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3
 
-  packages/provider-registry:
+  packages/ai-model-registry:
     dependencies:
       zod:
         specifier: ^4.0.14

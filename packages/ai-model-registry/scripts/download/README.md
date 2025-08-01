@@ -18,7 +18,7 @@ The Helicone API integration allows you to enrich existing models with pricing d
 #### Enrich All Providers
 
 ```bash
-# From the provider-registry package directory
+# From the ai-model-registry package directory
 pnpm run enrich-pricing
 ```
 

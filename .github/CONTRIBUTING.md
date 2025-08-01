@@ -201,11 +201,11 @@ Once you've filed the PR:
 
 When adding support for a new AI model provider:
 
-1. **Create a transformer**: Add a new file in `packages/provider-registry/scripts/download/transformers/` following the naming convention `provider-name.ts`
+1. **Create a transformer**: Add a new file in `packages/ai-model-registry/scripts/download/transformers/` following the naming convention `provider-name.ts`
 2. **Implement the transformer**: Follow the existing patterns in other transformer files
 3. **Update the download script**: Add your provider to the list in the main download script
-4. **Add provider icon**: Place the provider's logo in `packages/provider-registry/assets/icons/providers/`
-5. **Update schema**: If the provider has unique fields, update the schema in `packages/provider-registry/src/schema.ts`
+4. **Add provider icon**: Place the provider's logo in `packages/ai-model-registry/assets/icons/providers/`
+5. **Update schema**: If the provider has unique fields, update the schema in `packages/ai-model-registry/src/schema.ts`
 6. **Test**: Run `pnpm run download --provider <provider-name>` to test your implementation
 7. **Document**: Update relevant documentation to reflect the new provider
 
@@ -531,16 +531,16 @@ infra: update issue templates
 revert: remove experimental feature
 
 # Commit or PR for a package
-feat(provider-registry): add anthropic provider
+feat(ai-model-registry): add anthropic provider
 refactor(web): improve data table performance
-fix(provider-registry): handle missing model fields
+fix(ai-model-registry): handle missing model fields
 chore(web): update UI dependencies
-docs(provider-registry): add provider contribution guide
-test(provider-registry): validate schema types
+docs(ai-model-registry): add provider contribution guide
+test(ai-model-registry): validate schema types
 ci(web): add e2e test workflow
-build(provider-registry): optimize build process
+build(ai-model-registry): optimize build process
 infra(web): update deployment config
-revert(provider-registry): revert breaking change
+revert(ai-model-registry): revert breaking change
 
 # A release will look like this
 chore(release): 1.2.0

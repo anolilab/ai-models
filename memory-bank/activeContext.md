@@ -1,11 +1,18 @@
 # Active Context
 
 ## Current Work Focus
+- **How to Use Dialog**: Successfully implemented comprehensive help dialog
 - **Provider Registry NPM Package**: Successfully completed and ready for publication
 - **Per-Provider Uniqueness**: Implemented correct deduplication logic
 - **All Provider Issues Resolved**: Fixed Hugging Face, Upstage, and XAI transformers
 
 ## Recent Achievements
+- **How to Use Dialog Implementation**:
+  - **Comprehensive help dialog**: Created detailed dialog explaining project purpose and usage
+  - **NPM package integration**: Added information about @anolilab/ai-model-registry package
+  - **Usage examples**: Included code examples for getting models and specific model lookups
+  - **Contribution guidance**: Added links to GitHub and contribution information
+  - **Current status display**: Shows 1,676+ models, 25+ providers, pricing data, and open source status
 - **Fixed Provider Issues**:
   - **Hugging Face**: Updated API endpoints and added fallback with 80+ popular models (23 models working)
   - **Upstage**: Added fallback with 92 Solar model variants (92 models working)
@@ -26,6 +33,7 @@
 
 ## Next Steps
 - **Publish npm package**: The provider registry is ready for npm publication
+- **User experience improvements**: Consider adding more interactive features to the dialog
 - Continue extending the system with additional AI model providers
 - Monitor and update provider data regularly
 - Consider adding more advanced search and filtering capabilities

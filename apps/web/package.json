@@ -19,7 +19,7 @@
         "test:e2e:ui": "rm -rf port*.txt; playwright test --project=chromium --ui"
     },
     "dependencies": {
-        "@anolilab/provider-registry": "workspace:*",
+        "@anolilab/ai-model-registry": "workspace:*",
         "@c15t/react": "^1.5.0",
         "@c15t/translations": "^1.5.0",
         "@dnd-kit/core": "^6.3.1",

@@ -44,6 +44,7 @@
 - Modern React application with TanStack Router
 - Data table with advanced filtering, sorting, and pagination
 - Provider registry integration for model data
+- **How to Use Dialog**: Comprehensive help dialog explaining project purpose, NPM package usage, and contribution guidelines
 - Responsive design with mobile support
 - Comprehensive test suite with Playwright E2E tests
 

@@ -1,5 +1,5 @@
-import type { Model } from "@anolilab/provider-registry";
-import { getAllModels } from "@anolilab/provider-registry";
+import type { Model } from "../../../../packages/ai-model-registry/dist";
+import { getAllModels } from "../../../../packages/ai-model-registry/dist";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Calendar, Copy, File, FileText, Image as ImageIcon, ScatterChart, Search, Trash2, Video, Volume2 } from "lucide-react";
@@ -11,6 +11,7 @@ import { DataTable } from "@/components/data-table/data-table";
 import type { ColumnConfig } from "@/components/data-table/filter/core/types";
 import { dateFilterFn, numberFilterFn, textFilterFn } from "@/components/data-table/filter/integrations/tanstack-table/filter-fns";
 import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
+import { HowToUseDialog } from "@/components/how-to-use-dialog";
 import { SkeletonTable } from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -513,9 +514,7 @@ const HomeComponent = () => {
                     <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
                 </div>
                 <div className="right flex items-center gap-3">
-                    <Button className="bg-[var(--color-brand)] px-3 py-2 text-sm text-[var(--color-text-invert)]" id="help">
-                        How to use
-                    </Button>
+                    <HowToUseDialog />
 
                     <a className="github" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
                         <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

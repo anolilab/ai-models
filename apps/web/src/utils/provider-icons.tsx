@@ -1,4 +1,4 @@
-import { getIcon, isSvgIcon, spriteSheet } from "@anolilab/provider-registry/icons";
+import { getIcon, isSvgIcon, spriteSheet } from "../../../../packages/ai-model-registry/dist/icons-sprite";
 import React from "react";
 
 interface ProviderIconProps {

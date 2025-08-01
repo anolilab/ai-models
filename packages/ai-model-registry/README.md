@@ -1,6 +1,6 @@
-# @anolilab/provider-registry
+# @anolilab/ai-model-registry
 
-[![npm version](https://badge.fury.io/js/@anolilab%2Fprovider-registry.svg)](https://badge.fury.io/js/@anolilab%2Fprovider-registry)
+[![npm version](https://badge.fury.io/js/@anolilab%2Fai-model-registry.svg)](https://badge.fury.io/js/@anolilab%2Fai-model-registry)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-blue.svg)](https://www.typescriptlang.org/)
 
@@ -21,19 +21,19 @@ A comprehensive, unified registry for AI model providers and their metadata. Thi
 
 ```bash
 # Using npm
-npm install @anolilab/provider-registry
+npm install @anolilab/ai-model-registry
 
 # Using yarn
-yarn add @anolilab/provider-registry
+yarn add @anolilab/ai-model-registry
 
 # Using pnpm
-pnpm add @anolilab/provider-registry
+pnpm add @anolilab/ai-model-registry
 ```
 
 ## 🚀 Quick Start
 
 ```typescript
-import { getProviders, getModelsByProvider, getModelById, searchModels, getAllModels } from "@anolilab/provider-registry";
+import { getProviders, getModelsByProvider, getModelById, searchModels, getAllModels } from "@anolilab/ai-model-registry";
 
 // Get all available providers
 const providers = getProviders();
@@ -289,13 +289,13 @@ The package supports tree shaking, so you can import only what you need:
 
 ```typescript
 // Only import specific functions
-import { getProviders, getModelById } from "@anolilab/provider-registry";
+import { getProviders, getModelById } from "@anolilab/ai-model-registry";
 
 // Import schema for validation
-import { ModelSchema } from "@anolilab/provider-registry/schema";
+import { ModelSchema } from "@anolilab/ai-model-registry/schema";
 
 // Import icons (if needed)
-import { getIcon } from "@anolilab/provider-registry/icons";
+import { getIcon } from "@anolilab/ai-model-registry/icons";
 ```
 
 ## 🏢 Supported Providers
@@ -434,7 +434,7 @@ pnpm run lint:types
 ### Project Structure
 
 ```
-packages/provider-registry/
+packages/ai-model-registry/
 ├── src/
 │   ├── index.ts          # Main exports
 │   ├── schema.ts         # Model schema definitions

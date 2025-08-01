@@ -234,7 +234,7 @@ Popular AI / LLM Model Brand SVG Logo and Icon Collection
 
 # Licenses of bundled dependencies
 
-The published @anolilab/provider-registry artifact additionally contains code with the following licenses:
+The published @anolilab/ai-model-registry artifact additionally contains code with the following licenses:
 MIT
 
 # Bundled dependencies:
