@@ -1,4 +1,4 @@
-import { allModels } from "./models-data";
+import { models as allModels } from "../public/api.json";
 import type { Model } from "./schema";
 
 /**
