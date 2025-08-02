@@ -10,7 +10,8 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Check, X, Download, FileText, Image, Music, Video, Code, File, Database, Settings } from "lucide-react";
+import { Check, X, Download, FileText, Image, Music, Video, Code, File, Database, Settings, ChevronDown, ChevronRight } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ProviderIcon } from "@/utils/provider-icons";
 
 import type { ModelTableRow, ColumnConfig } from "@/hooks/use-table";
@@ -26,6 +27,7 @@ interface ModelComparisonDialogProps {
 const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelComparisonDialogProps) => {
     const [showConfig, setShowConfig] = useState(false);
     const [comparisonFields, setComparisonFields] = useState<ColumnConfig<ModelTableRow>[]>([]);
+    const [isSummaryExpanded, setIsSummaryExpanded] = useState(true);
 
     // Get column configurations and create comparison config
     const columnConfigs = getTableColumns();
@@ -197,7 +199,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="w-full md:max-w-[90vw] max-h-[90vh] flex flex-col">
+            <DialogContent className="w-full md:max-w-[90vw] max-h-[90vh] flex flex-col gap-4 pr-2">
                 <DialogHeader className="flex-shrink-0">
                     <div className="flex items-center justify-between">
                         <div>
@@ -218,26 +220,218 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                     </div>
                 </DialogHeader>
                 
-                {/* Summary section */}
-                <div className="p-4 bg-muted/50 rounded-lg mb-4 flex-shrink-0">
-                    <h3 className="font-medium mb-2">Quick Summary</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                        {comparisonFields
-                            .filter(field => field.type === "cost" || field.type === "number")
-                            .slice(0, 4)
-                            .map(field => (
-                                <div key={field.id}>
-                                    <span className="text-muted-foreground">
-                                        {field.type === "cost" ? "Lowest" : "Highest"} {field.displayName}:
-                                    </span>
-                                    <div className="font-mono">{getBestValue(field.id, field) || '-'}</div>
-                                </div>
-                            ))}
+                <div className="flex flex-col gap-4 overflow-y-auto scroll-smooth pr-2">
+                <Collapsible open={isSummaryExpanded} onOpenChange={setIsSummaryExpanded} className="bg-muted/50 rounded-lg mb-4 flex-shrink-0">
+                    <CollapsibleTrigger asChild>
+                        <button className="w-full p-4 flex items-center justify-between hover:bg-muted/70 transition-colors rounded-lg">
+                            <h3 className="font-medium">Quick Summary</h3>
+                            {isSummaryExpanded ? (
+                                <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                            ) : (
+                                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                            )}
+                        </button>
+                    </CollapsibleTrigger>
+                    
+                    <CollapsibleContent className="px-4 pb-4">
+                    
+                    {/* Info text */}
+                    <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                        <div className="flex items-start gap-2">
+                            <div className="text-blue-600 dark:text-blue-400 mt-0.5">
+                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div className="text-sm text-blue-800 dark:text-blue-200">
+                                <p className="font-medium mb-1">Quick Summary Guide</p>
+                                <p className="text-xs leading-relaxed">
+                                    This summary helps you quickly identify the best models for your needs.{" "}
+                                    <strong>Cost Analysis</strong> shows potential savings, <strong>Feature Comparison</strong> displays capability support, 
+                                    and <strong>Performance Highlights</strong> reveal the best-in-class metrics. 
+                                    Scroll down for detailed side-by-side comparison.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                    {/* Cost Analysis */}
+                    <div className="mb-4">
+                        <h4 className="text-sm font-medium mb-2 text-muted-foreground">Cost Analysis</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                            {(() => {
+                                const costFields = comparisonFields.filter(field => field.type === "cost");
+                                const bestCosts = costFields.map(field => {
+                                    const bestValue = getBestValue(field.id, field);
+                                    const bestModel = selectedModels.find(model => 
+                                        getFieldValue(model, field.id) === bestValue
+                                    );
+                                    
+                                    // Calculate potential savings
+                                    const allValues = selectedModels.map(model => {
+                                        const value = getFieldValue(model, field.id);
+                                        return { model, value, numeric: parseFloat(value.replace(/[^0-9.]/g, '')) || 0 };
+                                    }).filter(item => item.numeric > 0);
+                                    
+                                    const maxCost = Math.max(...allValues.map(item => item.numeric));
+                                    const savings = maxCost - (parseFloat(bestValue?.replace(/[^0-9.]/g, '') || '0'));
+                                    const savingsPercent = maxCost > 0 ? ((savings / maxCost) * 100).toFixed(0) : 0;
+                                    
+                                    return { field, bestValue, bestModel, savings, savingsPercent };
+                                });
+                                
+                                return bestCosts.slice(0, 3).map(({ field, bestValue, bestModel, savings, savingsPercent }) => (
+                                    <div key={field.id} className="p-2 bg-background rounded border">
+                                        <div className="flex items-center justify-between mb-1">
+                                            <span className="text-muted-foreground">{field.displayName}:</span>
+                                            <div className="text-right">
+                                                <div className="font-mono font-medium">{bestValue || '-'}</div>
+                                                {bestModel && (
+                                                    <div className="text-xs text-muted-foreground">
+                                                        {bestModel.provider}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                        {savings > 0 && (
+                                            <div className="text-xs text-green-600 dark:text-green-400">
+                                                Save up to {savingsPercent}% vs most expensive
+                                            </div>
+                                        )}
+                                    </div>
+                                ));
+                            })()}
+                        </div>
+                    </div>
+
+                    {/* Feature Comparison */}
+                    <div className="mb-4">
+                        <h4 className="text-sm font-medium mb-2 text-muted-foreground">Feature Comparison</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                            {(() => {
+                                // Define key features to check
+                                const keyFeatures = [
+                                    { id: 'toolCall', name: 'Tool Calling', icon: '🔧' },
+                                    { id: 'reasoning', name: 'Reasoning', icon: '🧠' },
+                                    { id: 'input', name: 'Text Input', icon: '📝' },
+                                    { id: 'output', name: 'Text Output', icon: '📤' }
+                                ];
+                                
+                                return keyFeatures.map(feature => {
+                                    const supportedCount = selectedModels.filter(model => {
+                                        const value = getFieldValue(model, feature.id);
+                                        return value === 'Yes' || value === 'Text' || value === 'true';
+                                    }).length;
+                                    
+                                    const supportPercentage = Math.round((supportedCount / selectedModels.length) * 100);
+                                    
+                                    return (
+                                        <div key={feature.id} className="p-2 bg-background rounded border">
+                                            <div className="flex items-center justify-between mb-1">
+                                                <span className="flex items-center gap-2">
+                                                    <span>{feature.icon}</span>
+                                                    <span className="text-muted-foreground">{feature.name}:</span>
+                                                </span>
+                                                <div className="text-right">
+                                                    <div className="text-sm font-medium">
+                                                        {supportedCount}/{selectedModels.length} models
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground">
+                                                        {supportPercentage}% support
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="w-full bg-muted rounded-full h-1.5">
+                                                <div 
+                                                    className="bg-primary h-1.5 rounded-full transition-all duration-300" 
+                                                    style={{ width: `${supportPercentage}%` }}
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                });
+                            })()}
+                        </div>
+                    </div>
+
+                    {/* Performance Highlights */}
+                    <div className="mb-4">
+                        <h4 className="text-sm font-medium mb-2 text-muted-foreground">Performance Highlights</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                            {(() => {
+                                const numberFields = comparisonFields.filter(field => field.type === "number");
+                                const highlights = numberFields.slice(0, 4).map(field => {
+                                    const values = selectedModels.map(model => {
+                                        const value = getFieldValue(model, field.id);
+                                        return { model, value, numeric: parseInt(value.replace(/[^0-9]/g, '')) || 0 };
+                                    }).filter(item => item.numeric > 0);
+                                    
+                                    if (values.length === 0) return null;
+                                    
+                                    const maxValue = Math.max(...values.map(item => item.numeric));
+                                    const minValue = Math.min(...values.map(item => item.numeric));
+                                    const bestModel = values.find(item => item.numeric === maxValue)?.model;
+                                    const improvement = maxValue > minValue ? ((maxValue - minValue) / minValue * 100).toFixed(0) : 0;
+                                    
+                                    return { field, maxValue, bestModel, improvement };
+                                }).filter((item): item is { field: ColumnConfig<ModelTableRow>; maxValue: number; bestModel: ModelTableRow | undefined; improvement: string } => item !== null);
+                                
+                                return highlights.map(({ field, maxValue, bestModel, improvement }) => (
+                                    <div key={field.id} className="p-2 bg-background rounded border">
+                                        <div className="flex items-center justify-between mb-1">
+                                            <span className="text-muted-foreground">{field.displayName}:</span>
+                                            <div className="text-right">
+                                                <div className="font-medium">{maxValue.toLocaleString()}</div>
+                                                {bestModel && (
+                                                    <div className="text-xs text-muted-foreground">
+                                                        {bestModel.provider}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                        {parseFloat(improvement) > 0 && (
+                                            <div className="text-xs text-blue-600 dark:text-blue-400">
+                                                {improvement}% better than lowest
+                                            </div>
+                                        )}
+                                    </div>
+                                ));
+                            })()}
+                        </div>
+                    </div>
+
+                    {/* Model Overview */}
+                    <div>
+                        <h4 className="text-sm font-medium mb-2 text-muted-foreground">Model Overview</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                            <div className="p-2 bg-background rounded border">
+                                <span className="text-muted-foreground">Total Models:</span>
+                                <div className="font-medium">{selectedModels.length}</div>
+                            </div>
+                            <div className="p-2 bg-background rounded border">
+                                <span className="text-muted-foreground">Unique Providers:</span>
+                                <div className="font-medium">
+                                    {new Set(selectedModels.map(m => m.provider)).size}
+                                </div>
+                            </div>
+                            <div className="p-2 bg-background rounded border">
+                                <span className="text-muted-foreground">Fields Compared:</span>
+                                <div className="font-medium">{comparisonFields.length}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Scroll indicator */}
+                    <div className="px-4 pb-2">
+                        <div className="text-xs text-muted-foreground text-center">
+                            Scroll for more details
+                        </div>
+                    </div>
+                </CollapsibleContent>
+                </Collapsible>
                 
                 {/* Scrollable comparison table */}
-                <div className="flex-1 overflow-auto min-h-0 relative">
+                <div className="flex-1 relative">
                     <table className="w-full text-sm border-collapse">
                         <thead>
                             <tr>
@@ -304,6 +498,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                             })}
                         </tbody>
                     </table>
+                </div>
                 </div>
 
                 <div className="flex justify-between items-center gap-2 pt-4 border-t flex-shrink-0">

@@ -29,6 +29,7 @@
         "@fontsource/jetbrains-mono": "^5.2.6",
         "@hookform/resolvers": "^5.2.1",
         "@radix-ui/react-checkbox": "^1.3.2",
+        "@radix-ui/react-collapsible": "1.1.11",
         "@radix-ui/react-dialog": "^1.1.14",
         "@radix-ui/react-dropdown-menu": "^2.1.15",
         "@radix-ui/react-icons": "^1.3.2",
@@ -68,10 +69,9 @@
         "zod": "^4.0.14"
     },
     "devDependencies": {
-        "@anolilab/unplugin-favicons": "1.0.5",
-        "favicons": "^7.2.0",
         "@anolilab/eslint-config": "16.2.22",
         "@anolilab/prettier-config": "6.0.3",
+        "@anolilab/unplugin-favicons": "1.0.5",
         "@babel/core": "7.28.0",
         "@c15t/backend": "1.5.0",
         "@playwright/test": "^1.54.2",
@@ -91,6 +91,7 @@
         "eslint-plugin-react-compiler": "19.1.0-rc.2",
         "eslint-plugin-testing-library": "7.6.3",
         "eslint-plugin-zod": "^1.4.0",
+        "favicons": "^7.2.0",
         "get-port-please": "^3.2.0",
         "happy-dom": "^18.0.1",
         "jsdom": "^26.1.0",
