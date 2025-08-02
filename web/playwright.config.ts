@@ -30,7 +30,7 @@ export default defineConfig({
     },
 
     webServer: {
-        command: `VITE_NODE_ENV="test" VITE_EXTERNAL_PORT=${EXTERNAL_PORT} pnpm build:test && VITE_NODE_ENV="test" VITE_EXTERNAL_PORT=${EXTERNAL_PORT} VITE_SERVER_PORT=${PORT} PORT=${PORT} pnpm start`,
+        command: `VITE_NODE_ENV="test" VITE_EXTERNAL_PORT=${EXTERNAL_PORT} pnpm build && VITE_NODE_ENV="test" VITE_EXTERNAL_PORT=${EXTERNAL_PORT} VITE_SERVER_PORT=${PORT} PORT=${PORT} pnpm start`,
         reuseExistingServer: !process.env.CI,
         stdout: "pipe",
         url: baseURL,

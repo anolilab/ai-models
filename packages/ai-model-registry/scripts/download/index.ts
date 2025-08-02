@@ -75,6 +75,7 @@ interface TransformerModule {
     fetchGoogleVertexModels?: () => Promise<Model[]>;
     fetchGroqModels?: () => Promise<Model[]>;
     fetchHuggingFaceModels?: () => Promise<Model[]>;
+    fetchInceptionModels?: () => Promise<Model[]>;
     fetchInferenceModels?: () => Promise<Model[]>;
     fetchLlamaModels?: () => Promise<Model[]>;
     fetchMistralModels?: () => Promise<Model[]>;
@@ -158,6 +159,8 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchGoogleModels
     || transformerModule.fetchGroqModels
     || transformerModule.fetchHuggingFaceModels
+    || transformerModule.fetchInceptionModels
+    || transformerModule.fetchInferenceModels
     || transformerModule.fetchLlamaModels
     || transformerModule.fetchOpenAIModels
     || transformerModule.fetchDeepInfraModels
@@ -166,7 +169,6 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchGitHubModels
     || transformerModule.fetchGoogleVertexModels
     || transformerModule.fetchGoogleVertexAnthropicModels
-    || transformerModule.fetchInferenceModels
     || transformerModule.fetchMistralModels
     || transformerModule.fetchMorphModels
     || transformerModule.fetchRequestyModels

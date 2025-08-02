@@ -492,4 +492,13 @@ export const PROVIDERS_CONFIG: ProviderConfig[] = [
         output: "chutes",
         transformer: "./transformers/chutes.ts",
     },
+    {
+        doc: "https://platform.inceptionlabs.ai/docs",
+        env: ["INCEPTION_API_KEY"],
+        modelsDevId: "inception",
+        name: "Inception",
+        npm: "@ai-sdk/openai-compatible",
+        output: "inception",
+        transformer: "./transformers/inception.ts",
+    },
 ];
