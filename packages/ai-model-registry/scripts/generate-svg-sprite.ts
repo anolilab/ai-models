@@ -109,6 +109,8 @@ const extractSvgFromCustomIcon = (providerName: string): string | null => {
             ...providerName === "xai" ? ["x-ai.svg", "x-ai.png"] : [],
             // Special case for amazon bedrock -> amazon-bedrock
             ...providerName === "amazon bedrock" ? ["amazon-bedrock.svg", "amazon-bedrock.png"] : [],
+            // Special case for weights & biases -> wandb
+            ...providerName === "weights & biases" ? ["wandb.svg", "wandb.png"] : [],
         ];
 
         for (const fileName of possibleNames) {

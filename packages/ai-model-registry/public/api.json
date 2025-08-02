@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
-    "lastUpdated": "2025-08-02T02:28:50.109Z",
+    "lastUpdated": "2025-08-02T02:33:44.434Z",
     "totalModels": 1657,
     "totalProviders": 33,
     "version": "0.0.0-development"
@@ -25428,7 +25428,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67061,7 +67061,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67103,7 +67103,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67145,7 +67145,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67187,7 +67187,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": true,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67229,7 +67229,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67271,7 +67271,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
@@ -67313,7 +67313,7 @@
       "temperature": true,
       "toolCall": false,
       "vision": false,
-      "icon": "wandb"
+      "icon": "weights & biases"
     },
     {
       "attachment": false,
