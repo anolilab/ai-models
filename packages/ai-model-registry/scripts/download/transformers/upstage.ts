@@ -1,308 +1,173 @@
-import { kebabCase } from "@visulima/string";
-import axios from "axios";
-import { load } from "cheerio";
+import { launch } from "puppeteer";
 
 import type { Model } from "../../../src/schema.js";
 
-const UPSTAGE_API_URL = "https://api.upstage.ai/v1/models";
-const UPSTAGE_DOCS_URL = "https://docs.upstage.ai/";
+const UPSTAGE_MODELS_URL = "https://console.upstage.ai/docs/models/history";
 
 /**
- * Scrapes Upstage documentation for model information.
+ * Extract model information from the Upstage models page using Puppeteer.
  */
-const scrapeUpstageDocs = async (): Promise<Model[]> => {
+const extractModelsFromPage = async (): Promise<Model[]> => {
+    const browser = await launch({ headless: true });
+    const page = await browser.newPage();
+
     try {
-        const response = await axios.get(UPSTAGE_DOCS_URL, { timeout: 10_000 });
-        const $ = load(response.data);
+        console.log("[Upstage] Loading models page:", UPSTAGE_MODELS_URL);
+        await page.goto(UPSTAGE_MODELS_URL, { waitUntil: "domcontentloaded" });
 
-        const models: Model[] = [];
+        // Wait for the content to load
+        await page.waitForSelector("h1", { timeout: 10000 });
 
-        // Look for model tables or lists in the documentation
-        $("table, .model-list, .models-table").each((index, element) => {
-            const tableText = $(element).text().toLowerCase();
+        // Extract model information from the page
+        const models = await page.evaluate(() => {
+            const results: Model[] = [];
 
-            // Check if this table contains model information
-            if (tableText.includes("model") || tableText.includes("upstage") || tableText.includes("solar") || tableText.includes("llama")) {
-                console.log(`[Upstage] Found potential model table ${index + 1}`);
+            // Look for Solar-related links (these are the model links)
+            const allLinks = document.querySelectorAll("a");
+            const solarLinks = Array.from(allLinks).filter((link) => {
+                const text = link.textContent ? link.textContent.toLowerCase() : "";
+                const href = link.getAttribute("href") || "";
 
-                $(element)
-                    .find("tr, .model-item")
-                    .each((_, row) => {
-                        const cells = $(row)
-                            .find("td, .model-cell")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
+                return text.includes("solar") || href.includes("solar");
+            });
 
-                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
-                            const modelName = cells[0];
+            for (let i = 0; i < solarLinks.length; i++) {
+                const link = solarLinks[i];
+                const href = link.getAttribute("href") || "";
+                const text = link.textContent ? link.textContent.trim() : "";
 
-                            console.log(`[Upstage] Found model: ${modelName}`);
+                // Skip if it's not a model link (anchor links starting with #)
+                if (!href.startsWith("#") || !text) {
+                    continue;
+                }
 
-                            const model: Model = {
-                                attachment: false,
-                                cost: {
-                                    input: null,
-                                    inputCacheHit: null,
-                                    output: null,
-                                },
-                                extendedThinking: false,
-                                id: kebabCase(modelName),
-                                knowledge: null,
-                                lastUpdated: null,
-                                limit: {
-                                    context: parseContextLength(cells[1] || cells[2]),
-                                    output: null,
-                                },
-                                modalities: {
-                                    input: modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                    output: ["text"],
-                                },
-                                name: modelName,
-                                openWeights: false,
-                                provider: "Upstage",
-                                providerDoc: UPSTAGE_DOCS_URL,
-                                // Provider metadata
-                                providerEnv: ["UPSTAGE_API_KEY"],
-                                providerModelsDevId: "upstage",
-                                providerNpm: "@ai-sdk/upstage",
-                                reasoning: false,
-                                releaseDate: null,
-                                streamingSupported: true,
-                                temperature: true,
-                                toolCall: false,
-                                vision: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("vl"),
-                            };
+                // Skip duplicate links
+                if (results.some((model) => model.name === text)) {
+                    continue;
+                }
 
-                            models.push(model);
-                        }
-                    });
-            }
-        });
+                // Try to find additional metadata for this model
+                let contextLength = null;
+                let releaseDate = null;
+                let trainingDataCutoff = null;
 
-        // If no tables found, try to extract from text content
-        if (models.length === 0) {
-            const bodyText = $("body").text();
-            const modelMatches = bodyText.match(/([\w\-]+(?:upstage|solar|llama|mistral)[\w\-]*)/gi);
+                // Look for the model section that contains this link
+                const modelSection = link.closest("section") || link.closest("div");
 
-            if (modelMatches) {
-                console.log(`[Upstage] Found ${modelMatches.length} potential models in text`);
+                if (modelSection) {
+                    const sectionText = modelSection.textContent || "";
 
-                for (const match of modelMatches.slice(0, 20)) {
-                    // Limit to first 20 matches
-                    const modelName = match.trim();
+                    // Extract context length (look for patterns like "65,536" or "32K")
+                    const contextMatch = sectionText.match(/Context length\s*([\d,]+)/i);
 
-                    if (modelName.length > 3 && modelName.length < 50) {
-                        const model: Model = {
-                            attachment: false,
-                            cost: {
-                                input: null,
-                                inputCacheHit: null,
-                                output: null,
-                            },
-                            extendedThinking: false,
-                            id: kebabCase(modelName),
-                            knowledge: null,
-                            lastUpdated: null,
-                            limit: {
-                                context: null,
-                                output: null,
-                            },
-                            modalities: {
-                                input: modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                output: ["text"],
-                            },
-                            name: modelName,
-                            openWeights: false,
-                            provider: "Upstage",
-                            providerDoc: UPSTAGE_DOCS_URL,
-                            // Provider metadata
-                            providerEnv: ["UPSTAGE_API_KEY"],
-                            providerModelsDevId: "upstage",
-                            providerNpm: "@ai-sdk/upstage",
-                            reasoning: false,
-                            releaseDate: null,
-                            streamingSupported: true,
-                            temperature: true,
-                            toolCall: false,
-                            vision: modelName.toLowerCase().includes("vision"),
-                        };
+                    if (contextMatch) {
+                        contextLength = parseInt(contextMatch[1].replace(/,/g, ""), 10);
+                    }
 
-                        models.push(model);
+                    // Extract release date (look for patterns like "2025-07-10")
+                    const releaseMatch = sectionText.match(/Release date\s*(\d{4}-\d{2}-\d{2})/i);
+
+                    if (releaseMatch) {
+                        releaseDate = releaseMatch[1];
+                    }
+
+                    // Extract training data cut-off (look for patterns like "Dec 2023")
+                    const trainingMatch = sectionText.match(/Training data cut-off\s*([A-Z]+\s+\d{4})/i);
+
+                    if (trainingMatch && trainingMatch[1]) {
+                        trainingDataCutoff = trainingMatch[1].trim();
                     }
                 }
-            }
-        }
 
-        console.log(`[Upstage] Scraped ${models.length} models from documentation`);
+                // Determine capabilities based on model name
+                const nameLower = text.toLowerCase();
+                const vision = nameLower.includes("vision") || nameLower.includes("docvision");
+                const toolCall = nameLower.includes("pro") || nameLower.includes("function");
+                const reasoning = nameLower.includes("pro") || nameLower.includes("reasoning");
+
+                const model: Model = {
+                    attachment: false,
+                    cost: {
+                        input: null,
+                        inputCacheHit: null,
+                        output: null,
+                    },
+                    description: `${text} model from Upstage`,
+                    id: text
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, ""),
+                    knowledge: trainingDataCutoff,
+                    lastUpdated: null,
+                    limit: {
+                        context: contextLength,
+                        output: null,
+                    },
+                    modalities: {
+                        input: vision ? ["text", "image"] : ["text"],
+                        output: ["text"],
+                    },
+                    name: text,
+                    openWeights: false,
+                    provider: "Upstage",
+                    providerDoc: `https://console.upstage.ai/docs/models/history${href}`,
+                    providerEnv: ["UPSTAGE_API_KEY"],
+                    providerModelsDevId: "upstage",
+                    providerNpm: "@ai-sdk/upstage",
+                    reasoning,
+                    releaseDate,
+                    streamingSupported: true,
+                    temperature: true,
+                    toolCall,
+                    vision,
+                };
+
+                results.push(model);
+            }
+
+            return results;
+        });
 
         return models;
     } catch (error) {
-        console.error("[Upstage] Error scraping documentation:", error instanceof Error ? error.message : String(error));
+        console.error("[Upstage] Error extracting models:", error);
 
         return [];
+    } finally {
+        await browser.close();
     }
 };
 
 /**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-const parseContextLength = (lengthString: string): number | null => {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-};
-
-/**
- * Transforms Upstage model data into the normalized structure.
- * @param rawData Raw data from Upstage API
- * @returns Array of normalized model objects
- */
-export const transformUpstageModels = (rawData: any): Model[] => {
-    const models: Model[] = [];
-
-    // This function is kept for interface compatibility but the main logic is in fetchUpstageModels
-    if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
-            const model: Model = {
-                attachment: false,
-                cost: {
-                    input: null,
-                    inputCacheHit: null,
-                    output: null,
-                },
-                extendedThinking: false,
-                id: kebabCase(modelData.id || modelData.name),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: modelData.context_length || null,
-                    output: null,
-                },
-                modalities: {
-                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelData.name || modelData.id,
-                openWeights: false,
-                provider: "Upstage",
-                providerDoc: UPSTAGE_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["UPSTAGE_API_KEY"],
-                providerModelsDevId: "upstage",
-                providerNpm: "@ai-sdk/upstage",
-                reasoning: false,
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true,
-                toolCall: false,
-                vision: modelData.capabilities?.vision || false,
-            };
-
-            models.push(model);
-        }
-    }
-
-    return models;
-};
-
-/**
- * Fetches Upstage models from their API and documentation.
+ * Fetches Upstage models from their documentation page using Puppeteer.
  * @returns Promise that resolves to an array of transformed models
  */
 export const fetchUpstageModels = async (): Promise<Model[]> => {
-    console.log("[Upstage] Fetching models from API and documentation...");
+    console.log("[Upstage] Fetching models using Puppeteer...");
 
     try {
-        const models: Model[] = [];
+        const models = await extractModelsFromPage();
 
-        // Try to fetch from their API first
-        try {
-            console.log("[Upstage] Attempting to fetch from API:", UPSTAGE_API_URL);
-            const apiResponse = await axios.get(UPSTAGE_API_URL, {
-                headers: {
-                    Accept: "application/json",
-                    "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
-                },
-                timeout: 10_000,
-            });
-
-            if (apiResponse.data && Array.isArray(apiResponse.data)) {
-                console.log(`[Upstage] Found ${apiResponse.data.length} models via API`);
-
-                for (const modelData of apiResponse.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.context_length || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "Upstage",
-                        providerDoc: UPSTAGE_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["UPSTAGE_API_KEY"],
-                        providerModelsDevId: "upstage",
-                        providerNpm: "@ai-sdk/upstage",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Upstage] API fetch failed, falling back to documentation scraping");
-        }
-
-        // If API didn't work or returned no models, try scraping documentation
         if (models.length === 0) {
-            console.log("[Upstage] Scraping documentation for model information");
-            const docsModels = await scrapeUpstageDocs();
+            console.log("[Upstage] No models found on the page");
 
-            if (docsModels.length > 0) {
-                models.push(...docsModels);
-            }
+            return [];
         }
 
-        console.log(`[Upstage] Total models found: ${models.length}`);
+        console.log(`[Upstage] Found ${models.length} models`);
 
         return models;
     } catch (error) {
-        console.error("[Upstage] Error fetching models:", error instanceof Error ? error.message : String(error));
+        console.error("[Upstage] Error fetching models:", error);
 
         return [];
     }
 };
+
+/**
+ * Transforms raw Upstage model data into standardized Model objects.
+ * This function is kept for compatibility but now delegates to fetchUpstageModels.
+ * @param rawData Raw model data (unused in this implementation)
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const transformUpstageModels = async (rawData: any): Promise<Model[]> => fetchUpstageModels();
