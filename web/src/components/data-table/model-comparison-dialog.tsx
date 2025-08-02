@@ -126,8 +126,8 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
-                <DialogHeader>
+            <DialogContent className="max-w-7xl max-h-[90vh] flex flex-col">
+                <DialogHeader className="flex-shrink-0">
                     <DialogTitle>Model Comparison</DialogTitle>
                     <DialogDescription>
                         Comparing {selectedModels.length} models side-by-side
@@ -135,7 +135,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                 </DialogHeader>
                 
                 {/* Summary section */}
-                <div className="p-4 bg-muted/50 rounded-lg mb-4">
+                <div className="p-4 bg-muted/50 rounded-lg mb-4 flex-shrink-0">
                     <h3 className="font-medium mb-2">Quick Summary</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                         <div>
@@ -157,14 +157,17 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                     </div>
                 </div>
                 
-                <div className="flex-1 overflow-auto">
-                    <div className="grid grid-cols-[200px_repeat(auto-fit,minmax(200px,1fr))] gap-2 text-sm">
+                {/* Scrollable comparison table */}
+                <div className="flex-1 overflow-auto min-h-0 relative">
+                    <div className="grid grid-cols-[200px_repeat(auto-fit,minmax(200px,1fr))] gap-2 text-sm pb-4">
+                        {/* Fade indicator for scrollable content */}
+                        <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
                         {/* Header row with model names */}
-                        <div className="sticky top-0 bg-background z-10 p-2 font-medium border-b">
+                        <div className="sticky top-0 bg-background z-10 p-2 font-medium border-b shadow-sm">
                             Feature
                         </div>
                         {selectedModels.map((model, index) => (
-                            <div key={model.id} className="sticky top-0 bg-background z-10 p-2 border-b">
+                            <div key={model.id} className="sticky top-0 bg-background z-10 p-2 border-b shadow-sm">
                                 <div className="flex items-center gap-2 mb-2">
                                     <ProviderIcon 
                                         provider={model.provider} 
@@ -218,7 +221,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                     </div>
                 </div>
 
-                <div className="flex justify-end gap-2 pt-4 border-t">
+                <div className="flex justify-end gap-2 pt-4 border-t flex-shrink-0">
                     <Button variant="outline" onClick={onClose}>
                         Close
                     </Button>
