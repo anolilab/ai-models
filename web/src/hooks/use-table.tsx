@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from
 import { Checkbox } from "@/components/ui/checkbox";
 import { memoizedTransformModels } from "@/utils/data-utils";
 import { ProviderIcon } from "@/utils/provider-icons";
+import useIsMobile from "./use-is-mobile";
 
 export enum ColumnType {
     BOOLEAN = "boolean",
@@ -1157,6 +1158,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
     const headerRef = useRef<HTMLDivElement>(null);
     const footerRef = useRef<HTMLDivElement>(null);
     const resizeTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+    const isMobile = useIsMobile();
 
     const updateHeight = useCallback(() => {
         if (typeof window === "undefined")
@@ -1169,7 +1171,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
         const footerHeight = footerRef.current?.offsetHeight || 0;
 
         // Calculate available height for table
-        const availableHeight = windowHeight - headerHeight - footerHeight - 100; // 100px buffer
+        const availableHeight = windowHeight - headerHeight - footerHeight - (isMobile ? 64 : 54);
 
         setContainerHeight(Math.max(400, availableHeight)); // Minimum 400px height
 
