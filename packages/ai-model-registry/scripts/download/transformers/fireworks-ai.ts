@@ -8,29 +8,9 @@ const FIREWORKS_MODELS_URL = "https://app.fireworks.ai/models?filter=All%20Model
 const FIREWORKS_DOCS_URL = "https://readme.fireworks.ai/";
 
 /**
- * Fetches Fireworks AI models from their models page.
- * @returns Promise that resolves to an array of transformed models
- */
-export async function fetchFireworksAIModels(): Promise<Model[]> {
-    console.log("[Fireworks AI] Fetching models from models page...");
-
-    try {
-        const models = await scrapeFireworksModelsPage();
-
-        console.log(`[Fireworks AI] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[Fireworks AI] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
-
-/**
  * Scrapes Fireworks AI models page for model information.
  */
-async function scrapeFireworksModelsPage(): Promise<Model[]> {
+const scrapeFireworksModelsPage = async (): Promise<Model[]> => {
     try {
         console.log("[Fireworks AI] Scraping models page:", FIREWORKS_MODELS_URL);
         const response = await axios.get(FIREWORKS_MODELS_URL);
@@ -67,12 +47,6 @@ async function scrapeFireworksModelsPage(): Promise<Model[]> {
                 .map((_, badge) => $(badge).text().trim())
                 .get();
             const isVision = badges.some((badge) => badge.toLowerCase().includes("vision"));
-            const isLLM = badges.some((badge) => badge.toLowerCase().includes("llm"));
-            const isServerless = badges.some((badge) => badge.toLowerCase().includes("serverless"));
-
-            // Extract provider icon to determine the original provider
-            const providerIcon = $row.find("img[src*=\"logos\"]").attr("src");
-            const originalProvider = extractProviderFromIcon(providerIcon);
 
             const model: Model = {
                 attachment: false,
@@ -116,12 +90,12 @@ async function scrapeFireworksModelsPage(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse pricing information from text (e.g., "$0.22/M Input • $0.88/M Output")
  */
-function parsePricing(pricingText: string): { input: number | null; inputCacheHit: number | null; output: number | null } {
+const parsePricing = (pricingText: string): { input: number | null; inputCacheHit: number | null; output: number | null } => {
     let input: number | null = null;
     let output: number | null = null;
     const inputCacheHit: number | null = null;
@@ -135,7 +109,7 @@ function parsePricing(pricingText: string): { input: number | null; inputCacheHi
     if (inputMatch) {
         const parsed = Number.parseFloat(inputMatch[1]);
 
-        input = isNaN(parsed) ? null : parsed;
+        input = Number.isNaN(parsed) ? null : parsed;
     }
 
     // Extract output cost
@@ -144,59 +118,18 @@ function parsePricing(pricingText: string): { input: number | null; inputCacheHi
     if (outputMatch) {
         const parsed = Number.parseFloat(outputMatch[1]);
 
-        output = isNaN(parsed) ? null : parsed;
+        output = Number.isNaN(parsed) ? null : parsed;
     }
 
     return { input, inputCacheHit, output };
-}
-
-/**
- * Extract original provider from icon URL
- */
-function extractProviderFromIcon(iconUrl: string | undefined): string {
-    if (!iconUrl)
-        return "Unknown";
-
-    // Extract provider name from icon path
-    const match = iconUrl.match(/logos\/([^/]+)-icon/);
-
-    if (match) {
-        return match[1].charAt(0).toUpperCase() + match[1].slice(1);
-    }
-
-    return "Unknown";
-}
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-function parseContextLength(lengthString: string): number | null {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-}
+};
 
 /**
  * Transforms Fireworks AI model data into the normalized structure.
  * @param rawData Raw data from Fireworks AI API
  * @returns Array of normalized model objects
  */
-export function transformFireworksAIModels(rawData: any): Model[] {
+export const transformFireworksAIModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchFireworksAIModels
@@ -242,4 +175,24 @@ export function transformFireworksAIModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
+
+/**
+ * Fetches Fireworks AI models from their models page.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchFireworksAIModels = async (): Promise<Model[]> => {
+    console.log("[Fireworks AI] Fetching models from models page...");
+
+    try {
+        const models = await scrapeFireworksModelsPage();
+
+        console.log(`[Fireworks AI] Total models found: ${models.length}`);
+
+        return models;
+    } catch (error) {
+        console.error("[Fireworks AI] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};

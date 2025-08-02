@@ -8,88 +8,9 @@ const MORPH_API_URL = "https://api.morph.ai/v1/models";
 const MORPH_DOCS_URL = "https://morph.ai/";
 
 /**
- * Fetches Morph models from their API and documentation.
- * @returns Promise that resolves to an array of transformed models
- */
-export async function fetchMorphModels(): Promise<Model[]> {
-    console.log("[Morph] Fetching models from API and documentation...");
-
-    try {
-        const models: Model[] = [];
-
-        // Try to fetch from their API first
-        try {
-            console.log("[Morph] Attempting to fetch from API:", MORPH_API_URL);
-            const apiResponse = await axios.get(MORPH_API_URL);
-
-            if (apiResponse.data && Array.isArray(apiResponse.data)) {
-                console.log(`[Morph] Found ${apiResponse.data.length} models via API`);
-
-                for (const modelData of apiResponse.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.context_length || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "Morph",
-                        providerDoc: MORPH_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["MORPH_API_KEY"],
-                        providerModelsDevId: "morph",
-                        providerNpm: "@ai-sdk/morph",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Morph] API fetch failed, falling back to documentation scraping");
-        }
-
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Morph] Scraping documentation for model information");
-            const docsModels = await scrapeMorphDocs();
-
-            models.push(...docsModels);
-        }
-
-        console.log(`[Morph] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[Morph] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
-
-/**
  * Scrapes Morph documentation for model information.
  */
-async function scrapeMorphDocs(): Promise<Model[]> {
+const scrapeMorphDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(MORPH_DOCS_URL);
         const $ = load(response.data);
@@ -220,12 +141,12 @@ async function scrapeMorphDocs(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
  */
-function parseContextLength(lengthString: string): number | null {
+const parseContextLength = (lengthString: string): number | null => {
     if (!lengthString)
         return null;
 
@@ -244,14 +165,14 @@ function parseContextLength(lengthString: string): number | null {
         return value * 1024 * 1024;
 
     return value;
-}
+};
 
 /**
  * Transforms Morph model data into the normalized structure.
  * @param rawData Raw data from Morph API
  * @returns Array of normalized model objects
  */
-export function transformMorphModels(rawData: any): Model[] {
+export const transformMorphModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchMorphModels
@@ -297,4 +218,83 @@ export function transformMorphModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
+
+/**
+ * Fetches Morph models from their API and documentation.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchMorphModels = async (): Promise<Model[]> => {
+    console.log("[Morph] Fetching models from API and documentation...");
+
+    try {
+        const models: Model[] = [];
+
+        // Try to fetch from their API first
+        try {
+            console.log("[Morph] Attempting to fetch from API:", MORPH_API_URL);
+            const apiResponse = await axios.get(MORPH_API_URL);
+
+            if (apiResponse.data && Array.isArray(apiResponse.data)) {
+                console.log(`[Morph] Found ${apiResponse.data.length} models via API`);
+
+                for (const modelData of apiResponse.data) {
+                    const model: Model = {
+                        attachment: false,
+                        cost: {
+                            input: null,
+                            inputCacheHit: null,
+                            output: null,
+                        },
+                        extendedThinking: false,
+                        id: kebabCase(modelData.id || modelData.name),
+                        knowledge: null,
+                        lastUpdated: null,
+                        limit: {
+                            context: modelData.context_length || null,
+                            output: null,
+                        },
+                        modalities: {
+                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
+                            output: ["text"],
+                        },
+                        name: modelData.name || modelData.id,
+                        openWeights: false,
+                        provider: "Morph",
+                        providerDoc: MORPH_DOCS_URL,
+                        // Provider metadata
+                        providerEnv: ["MORPH_API_KEY"],
+                        providerModelsDevId: "morph",
+                        providerNpm: "@ai-sdk/morph",
+                        reasoning: false,
+                        releaseDate: null,
+                        streamingSupported: true,
+                        temperature: true,
+                        toolCall: false,
+                        vision: modelData.capabilities?.vision || false,
+                    };
+
+                    models.push(model);
+                }
+            }
+        } catch {
+            console.log("[Morph] API fetch failed, falling back to documentation scraping");
+        }
+
+        // If API didn't work or returned no models, try scraping documentation
+        if (models.length === 0) {
+            console.log("[Morph] Scraping documentation for model information");
+            const docsModels = await scrapeMorphDocs();
+
+            models.push(...docsModels);
+        }
+
+        console.log(`[Morph] Total models found: ${models.length}`);
+
+        return models;
+    } catch (error) {
+        console.error("[Morph] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};

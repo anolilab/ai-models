@@ -35,20 +35,13 @@ interface CloudflareModelData {
 }
 
 /**
- * Cloudflare provider data interface
- */
-interface CloudflareProviderData {
-    models: CloudflareModelData[];
-}
-
-/**
  * Extracts model information from the main models page
  * @param htmlContent HTML content from the Cloudflare Workers AI models page
  * @returns Array of basic model information
  */
-function parseModelsFromMainPage(
+const parseModelsFromMainPage = (
     htmlContent: string,
-): { badges: string[]; category: string; description: string; detailUrl: string; id: string; name: string; provider: string }[] {
+): { badges: string[]; category: string; description: string; detailUrl: string; id: string; name: string; provider: string }[] => {
     const $ = load(htmlContent);
     const models: { badges: string[]; category: string; description: string; detailUrl: string; id: string; name: string; provider: string }[] = [];
 
@@ -57,21 +50,24 @@ function parseModelsFromMainPage(
         const $link = $(element);
         const href = $link.attr("href");
 
-        if (!href || href === "/workers-ai/models/")
+        if (!href || href === "/workers-ai/models/") {
             return; // Skip the main page link
+        }
 
         // Extract model ID from URL
         const modelId = href.replace("/workers-ai/models/", "").split("/")[0];
 
-        if (!modelId)
+        if (!modelId) {
             return;
+        }
 
         // Extract model name
         const $nameElement = $link.find(".text-lg.font-semibold");
         const name = $nameElement.text().trim();
 
-        if (!name)
+        if (!name) {
             return;
+        }
 
         // Extract description
         const $descriptionElement = $link.find("p.text-sm.leading-6");
@@ -105,14 +101,14 @@ function parseModelsFromMainPage(
     });
 
     return models;
-}
+};
 
 /**
  * Fetches detailed information for a specific model from its detail page
  * @param detailUrl URL of the model's detail page
  * @returns Promise that resolves to detailed model information
  */
-async function fetchModelDetails(detailUrl: string): Promise<Partial<CloudflareModelData>> {
+const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareModelData>> => {
     try {
         console.log(`[Cloudflare] Fetching details for: ${detailUrl}`);
         const response = await axios.get(detailUrl, {
@@ -159,9 +155,12 @@ async function fetchModelDetails(detailUrl: string): Promise<Partial<CloudflareM
             const priceMatch = pricingText.match(/\$([\d.]+)/g);
 
             if (priceMatch && priceMatch.length >= 2) {
+                const inputCost = parseFloat(priceMatch[0].replace("$", ""));
+                const outputCost = parseFloat(priceMatch[1].replace("$", ""));
+
                 details.pricing = {
-                    input: parseFloat(priceMatch[0].replace("$", "")),
-                    output: parseFloat(priceMatch[1].replace("$", "")),
+                    input: Number.isNaN(inputCost) ? undefined : inputCost,
+                    output: Number.isNaN(outputCost) ? undefined : outputCost,
                 };
             }
         }
@@ -183,14 +182,14 @@ async function fetchModelDetails(detailUrl: string): Promise<Partial<CloudflareM
 
         return {};
     }
-}
+};
 
 /**
  * Transforms Cloudflare model data into the normalized structure.
  * @param modelsData Array of Cloudflare model data
  * @returns Array of normalized model objects
  */
-const transformCloudflareModels = (modelsData: CloudflareModelData[]): Model[] => {
+export const transformCloudflareModels = (modelsData: CloudflareModelData[]): Model[] => {
     const models: Model[] = [];
 
     for (const modelData of modelsData) {
@@ -226,7 +225,7 @@ const transformCloudflareModels = (modelsData: CloudflareModelData[]): Model[] =
                 output: modelData.pricing?.output || null,
             },
             // Description
-            description: modelData.description || null,
+            description: modelData.description || undefined,
             id: modelData.id,
             knowledge: null, // Not provided by Cloudflare
             lastUpdated: null, // Not provided by Cloudflare
@@ -268,7 +267,7 @@ const transformCloudflareModels = (modelsData: CloudflareModelData[]): Model[] =
  * Fetches Cloudflare models by parsing their documentation page and fetching individual model details.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchCloudflareModels(): Promise<Model[]> {
+export const fetchCloudflareModels = async (): Promise<Model[]> => {
     console.log("[Cloudflare] Fetching models from Cloudflare Workers AI documentation");
 
     try {
@@ -292,7 +291,7 @@ async function fetchCloudflareModels(): Promise<Model[]> {
         // Fetch detailed information for each model (with rate limiting)
         const detailedModels: CloudflareModelData[] = [];
 
-        for (let i = 0; i < basicModels.length; i++) {
+        for (let i = 0; i < basicModels.length; i += 1) {
             const basicModel = basicModels[i];
 
             // Add delay between requests to be respectful
@@ -359,6 +358,4 @@ async function fetchCloudflareModels(): Promise<Model[]> {
 
         return transformCloudflareModels(fallbackModels);
     }
-}
-
-export { fetchCloudflareModels, transformCloudflareModels };
+};

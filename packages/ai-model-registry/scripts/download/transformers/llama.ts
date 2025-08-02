@@ -16,7 +16,7 @@ interface LlamaModelData {
  * @param models Array of raw model data from Llama documentation
  * @returns Array of normalized model objects
  */
-const transformLlamaModels = (models: LlamaModelData[]): Model[] =>
+export const transformLlamaModels = (models: LlamaModelData[]): Model[] =>
     models.map((model) => {
         return {
             attachment: false,
@@ -58,7 +58,7 @@ const transformLlamaModels = (models: LlamaModelData[]): Model[] =>
  * Fetches models using Puppeteer to get real-time data from the documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchLlamaModels(): Promise<Model[]> {
+export const fetchLlamaModels = async (): Promise<Model[]> => {
     try {
         console.log("[Llama] Fetching with Puppeteer...");
 
@@ -122,6 +122,4 @@ async function fetchLlamaModels(): Promise<Model[]> {
         console.error("[Llama] Puppeteer fetch failed:", error instanceof Error ? error.message : String(error));
         throw error;
     }
-}
-
-export { fetchLlamaModels, transformLlamaModels };
+};

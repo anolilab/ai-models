@@ -4,7 +4,7 @@ import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
 
-const transformGitHubCopilotModels = (htmlContent: string): Model[] => {
+export const transformGitHubCopilotModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);
     const models: Model[] = [];
 
@@ -31,8 +31,6 @@ const transformGitHubCopilotModels = (htmlContent: string): Model[] => {
                     }
 
                     const modelName = cells[0];
-                    const provider = cells[1];
-                    const releaseStatus = cells[2];
 
                     // Skip if not a valid model
                     if (!modelName || modelName === "N/A" || modelName === "Model name") {
@@ -136,7 +134,7 @@ const transformGitHubCopilotModels = (htmlContent: string): Model[] => {
  * Fetches models from GitHub Copilot documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchGitHubCopilotModels(): Promise<Model[]> {
+export const fetchGitHubCopilotModels = async (): Promise<Model[]> => {
     console.log("[GitHub Copilot] Fetching: https://docs.github.com/en/copilot/reference/ai-models/supported-models");
 
     const response = await axios.get("https://docs.github.com/en/copilot/reference/ai-models/supported-models");
@@ -150,6 +148,4 @@ async function fetchGitHubCopilotModels(): Promise<Model[]> {
     }
 
     return models;
-}
-
-export { fetchGitHubCopilotModels, transformGitHubCopilotModels };
+};

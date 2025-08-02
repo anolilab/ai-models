@@ -1,4 +1,3 @@
-import { kebabCase } from "@visulima/string";
 import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
@@ -49,7 +48,7 @@ interface OpenAIProviderData {
  * @param providerData The provider data from models.dev API
  * @returns Array of normalized model objects
  */
-const transformOpenAIModels = (providerData: OpenAIProviderData): Model[] => {
+export const transformOpenAIModels = (providerData: OpenAIProviderData): Model[] => {
     const models: Model[] = [];
 
     for (const [modelId, modelData] of Object.entries(providerData.models)) {
@@ -98,7 +97,7 @@ const transformOpenAIModels = (providerData: OpenAIProviderData): Model[] => {
  * Fetches OpenAI models from models.dev API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchOpenAIModels(): Promise<Model[]> {
+export const fetchOpenAIModels = async (): Promise<Model[]> => {
     console.log("[OpenAI] Fetching: https://models.dev/api.json");
 
     const response = await axios.get("https://models.dev/api.json");
@@ -116,6 +115,4 @@ async function fetchOpenAIModels(): Promise<Model[]> {
     console.log(`[OpenAI] Successfully transformed ${models.length} models`);
 
     return models;
-}
-
-export { fetchOpenAIModels, transformOpenAIModels };
+};

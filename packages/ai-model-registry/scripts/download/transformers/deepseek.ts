@@ -5,38 +5,6 @@ import { load } from "cheerio";
 import type { Model } from "../../../src/schema.js";
 
 /**
- * Model mapping from API names to actual model names
- */
-interface ModelMappings {
-    [key: string]: string;
-}
-
-/**
- * Release dates for models
- */
-interface ReleaseDates {
-    [key: string]: string;
-}
-
-/**
- * Pricing data for a model
- */
-interface PricingData {
-    input?: number;
-    input_cache_hit?: number;
-    output?: number;
-}
-
-/**
- * API model configuration
- */
-interface ApiModelConfig {
-    id: string;
-    outputLimit: number;
-    reasoning: boolean;
-}
-
-/**
  * Transforms DeepSeek model data from their pricing documentation page into the normalized structure.
  * @param htmlContent The HTML content from the DeepSeek pricing page
  * @returns Array of normalized model objects
@@ -89,7 +57,7 @@ const parseTokenLimit = (limitString: string): number | null => {
     return null;
 };
 
-const transformDeepSeekModels = (htmlContent: string): Model[] => {
+export const transformDeepSeekModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);
     const models: Model[] = [];
 
@@ -273,7 +241,7 @@ const transformDeepSeekModels = (htmlContent: string): Model[] => {
  * Fetches models from DeepSeek pricing documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchDeepSeekModels(): Promise<Model[]> {
+export const fetchDeepSeekModels = async (): Promise<Model[]> => {
     console.log("[DeepSeek] Fetching: https://api-docs.deepseek.com/quick_start/pricing");
 
     const response = await axios.get("https://api-docs.deepseek.com/quick_start/pricing");
@@ -287,6 +255,4 @@ async function fetchDeepSeekModels(): Promise<Model[]> {
     }
 
     return models;
-}
-
-export { fetchDeepSeekModels, transformDeepSeekModels };
+};

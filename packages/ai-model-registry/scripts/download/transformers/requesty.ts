@@ -10,7 +10,7 @@ const REQUESTY_DOCS_URL = "https://docs.requesty.ai/";
 /**
  * Scrapes Requesty documentation for model information.
  */
-async function scrapeRequestyDocs(): Promise<Model[]> {
+const scrapeRequestyDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(REQUESTY_DOCS_URL);
         const $ = load(response.data);
@@ -141,7 +141,7 @@ async function scrapeRequestyDocs(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
@@ -172,7 +172,7 @@ const parseContextLength = (lengthString: string): number | null => {
  * @param rawData Raw data from Requesty API
  * @returns Array of normalized model objects
  */
-export function transformRequestyModels(rawData: any): Model[] {
+export const transformRequestyModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchRequestyModels
@@ -218,13 +218,13 @@ export function transformRequestyModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
 
 /**
  * Fetches Requesty models from their API and documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-export async function fetchRequestyModels(): Promise<Model[]> {
+export const fetchRequestyModels = async (): Promise<Model[]> => {
     console.log("[Requesty] Fetching models from API and documentation...");
 
     try {
@@ -297,4 +297,4 @@ export async function fetchRequestyModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};

@@ -51,7 +51,7 @@ const get = <T>(object: unknown, key: string, def: T): T => {
  * @param model The raw model object from Vercel Gateway API
  * @returns The normalized model structure
  */
-const transformVercelModel = (model: VercelModel): Model => {
+export const transformVercelModel = (model: VercelModel): Model => {
     const pricing = model.pricing || {};
 
     return {
@@ -94,7 +94,7 @@ const transformVercelModel = (model: VercelModel): Model => {
  * Fetches models from Vercel Gateway API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchVercelModels(): Promise<Model[]> {
+export const fetchVercelModels = async (): Promise<Model[]> => {
     console.log("[VercelGateway] Fetching: https://ai-gateway.vercel.sh/v1/models");
 
     try {
@@ -110,6 +110,4 @@ async function fetchVercelModels(): Promise<Model[]> {
 
         return [];
     }
-}
-
-export { fetchVercelModels, transformVercelModel };
+};

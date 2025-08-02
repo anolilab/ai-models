@@ -8,91 +8,9 @@ const GOOGLE_VERTEX_ANTHROPIC_API_URL = "https://generativelanguage.googleapis.c
 const GOOGLE_VERTEX_ANTHROPIC_DOCS_URL = "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude";
 
 /**
- * Fetches Google Vertex Anthropic models from their API and documentation.
- * @returns Promise that resolves to an array of transformed models
- */
-export async function fetchGoogleVertexAnthropicModels(): Promise<Model[]> {
-    console.log("[Google Vertex Anthropic] Fetching models from API and documentation...");
-
-    try {
-        const models: Model[] = [];
-
-        // Try to fetch from their API first
-        try {
-            console.log("[Google Vertex Anthropic] Attempting to fetch from API:", GOOGLE_VERTEX_ANTHROPIC_API_URL);
-            const apiResponse = await axios.get(GOOGLE_VERTEX_ANTHROPIC_API_URL);
-
-            if (apiResponse.data && Array.isArray(apiResponse.data.models)) {
-                console.log(`[Google Vertex Anthropic] Found ${apiResponse.data.models.length} models via API`);
-
-                for (const modelData of apiResponse.data.models) {
-                    // Filter for Anthropic/Claude models
-                    if (modelData.name?.toLowerCase().includes("claude") || modelData.displayName?.toLowerCase().includes("claude")) {
-                        const model: Model = {
-                            attachment: false,
-                            cost: {
-                                input: null,
-                                inputCacheHit: null,
-                                output: null,
-                            },
-                            extendedThinking: modelData.name?.toLowerCase().includes("opus") || modelData.name?.toLowerCase().includes("sonnet"),
-                            id: kebabCase(modelData.name || modelData.displayName),
-                            knowledge: null,
-                            lastUpdated: null,
-                            limit: {
-                                context: modelData.inputTokenLimit || null,
-                                output: modelData.outputTokenLimit || null,
-                            },
-                            modalities: {
-                                input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
-                                output: ["text"],
-                            },
-                            name: modelData.displayName || modelData.name,
-                            openWeights: false,
-                            provider: "Google Vertex Anthropic",
-                            providerDoc: GOOGLE_VERTEX_ANTHROPIC_DOCS_URL,
-                            // Provider metadata
-                            providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-                            providerModelsDevId: "google-vertex-anthropic",
-                            providerNpm: "@ai-sdk/google-vertex/anthropic",
-                            reasoning: modelData.name?.toLowerCase().includes("opus") || modelData.name?.toLowerCase().includes("sonnet"),
-                            releaseDate: null,
-                            streamingSupported: true,
-                            temperature: true,
-                            toolCall: modelData.supportedGenerationMethods?.includes("tool-calls") || false,
-                            vision: modelData.supportedGenerationMethods?.includes("generate-content") || false,
-                        };
-
-                        models.push(model);
-                    }
-                }
-            }
-        } catch {
-            console.log("[Google Vertex Anthropic] API fetch failed, falling back to documentation scraping");
-        }
-
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Google Vertex Anthropic] Scraping documentation for model information");
-            const docsModels = await scrapeGoogleVertexAnthropicDocs();
-
-            models.push(...docsModels);
-        }
-
-        console.log(`[Google Vertex Anthropic] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[Google Vertex Anthropic] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
-
-/**
  * Scrapes Google Vertex Anthropic documentation for model information.
  */
-async function scrapeGoogleVertexAnthropicDocs(): Promise<Model[]> {
+const scrapeGoogleVertexAnthropicDocs = async (): Promise<Model[]> => {
     const response = await axios.get(GOOGLE_VERTEX_ANTHROPIC_DOCS_URL);
     const $ = load(response.data);
 
@@ -217,12 +135,12 @@ async function scrapeGoogleVertexAnthropicDocs(): Promise<Model[]> {
     console.log(`[Google Vertex Anthropic] Scraped ${models.length} models from documentation`);
 
     return models;
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
  */
-function parseContextLength(lengthString: string): number | null {
+const parseContextLength = (lengthString: string): number | null => {
     if (!lengthString)
         return null;
 
@@ -241,14 +159,14 @@ function parseContextLength(lengthString: string): number | null {
         return value * 1024 * 1024;
 
     return value;
-}
+};
 
 /**
  * Transforms Google Vertex Anthropic model data into the normalized structure.
  * @param rawData Raw data from Google Vertex Anthropic API
  * @returns Array of normalized model objects
  */
-export function transformGoogleVertexAnthropicModels(rawData: any): Model[] {
+export const transformGoogleVertexAnthropicModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchGoogleVertexAnthropicModels
@@ -297,4 +215,86 @@ export function transformGoogleVertexAnthropicModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
+
+/**
+ * Fetches Google Vertex Anthropic models from their API and documentation.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchGoogleVertexAnthropicModels = async (): Promise<Model[]> => {
+    console.log("[Google Vertex Anthropic] Fetching models from API and documentation...");
+
+    try {
+        const models: Model[] = [];
+
+        // Try to fetch from their API first
+        try {
+            console.log("[Google Vertex Anthropic] Attempting to fetch from API:", GOOGLE_VERTEX_ANTHROPIC_API_URL);
+            const apiResponse = await axios.get(GOOGLE_VERTEX_ANTHROPIC_API_URL);
+
+            if (apiResponse.data && Array.isArray(apiResponse.data.models)) {
+                console.log(`[Google Vertex Anthropic] Found ${apiResponse.data.models.length} models via API`);
+
+                for (const modelData of apiResponse.data.models) {
+                    // Filter for Anthropic/Claude models
+                    if (modelData.name?.toLowerCase().includes("claude") || modelData.displayName?.toLowerCase().includes("claude")) {
+                        const model: Model = {
+                            attachment: false,
+                            cost: {
+                                input: null,
+                                inputCacheHit: null,
+                                output: null,
+                            },
+                            extendedThinking: modelData.name?.toLowerCase().includes("opus") || modelData.name?.toLowerCase().includes("sonnet"),
+                            id: kebabCase(modelData.name || modelData.displayName),
+                            knowledge: null,
+                            lastUpdated: null,
+                            limit: {
+                                context: modelData.inputTokenLimit || null,
+                                output: modelData.outputTokenLimit || null,
+                            },
+                            modalities: {
+                                input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
+                                output: ["text"],
+                            },
+                            name: modelData.displayName || modelData.name,
+                            openWeights: false,
+                            provider: "Google Vertex Anthropic",
+                            providerDoc: GOOGLE_VERTEX_ANTHROPIC_DOCS_URL,
+                            // Provider metadata
+                            providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+                            providerModelsDevId: "google-vertex-anthropic",
+                            providerNpm: "@ai-sdk/google-vertex/anthropic",
+                            reasoning: modelData.name?.toLowerCase().includes("opus") || modelData.name?.toLowerCase().includes("sonnet"),
+                            releaseDate: null,
+                            streamingSupported: true,
+                            temperature: true,
+                            toolCall: modelData.supportedGenerationMethods?.includes("tool-calls") || false,
+                            vision: modelData.supportedGenerationMethods?.includes("generate-content") || false,
+                        };
+
+                        models.push(model);
+                    }
+                }
+            }
+        } catch {
+            console.log("[Google Vertex Anthropic] API fetch failed, falling back to documentation scraping");
+        }
+
+        // If API didn't work or returned no models, try scraping documentation
+        if (models.length === 0) {
+            console.log("[Google Vertex Anthropic] Scraping documentation for model information");
+            const docsModels = await scrapeGoogleVertexAnthropicDocs();
+
+            models.push(...docsModels);
+        }
+
+        console.log(`[Google Vertex Anthropic] Total models found: ${models.length}`);
+
+        return models;
+    } catch (error) {
+        console.error("[Google Vertex Anthropic] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};

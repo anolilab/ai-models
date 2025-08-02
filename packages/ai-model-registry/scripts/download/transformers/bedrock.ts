@@ -4,26 +4,13 @@ import * as cheerio from "cheerio";
 import type { Model } from "../../../src/schema.js";
 
 /**
- * Raw model data extracted from Bedrock documentation table
- */
-interface BedrockModelData {
-    inputModalities: string[];
-    launchDate: string;
-    modelId: string;
-    modelName: string;
-    outputModalities: string[];
-    provider: string;
-    regions: string[];
-}
-
-/**
  * Parses input modalities from text description
  * @param modalitiesText Text describing input modalities
  * @returns Array of parsed input modalities
  * @example
  * parseInputModalities("Text, Image") // Returns ['text', 'image']
  */
-function parseInputModalities(modalitiesText: string): string[] {
+const parseInputModalities = (modalitiesText: string): string[] => {
     const inputMods: string[] = [];
     const text = modalitiesText.toLowerCase();
 
@@ -40,7 +27,7 @@ function parseInputModalities(modalitiesText: string): string[] {
         inputMods.push("video");
 
     return inputMods;
-}
+};
 
 /**
  * Parses output modalities from text description
@@ -49,7 +36,7 @@ function parseInputModalities(modalitiesText: string): string[] {
  * @example
  * parseOutputModalities("Text, Image") // Returns ['text', 'image']
  */
-function parseOutputModalities(modalitiesText: string): string[] {
+const parseOutputModalities = (modalitiesText: string): string[] => {
     const outputMods: string[] = [];
     const text = modalitiesText.toLowerCase();
 
@@ -69,14 +56,14 @@ function parseOutputModalities(modalitiesText: string): string[] {
         outputMods.push("embedding");
 
     return outputMods;
-}
+};
 
 /**
  * Parses regions from HTML cell content
  * @param regionsCell Cheerio element containing regions data
  * @returns Array of parsed regions
  */
-function parseRegions(regionsCell: cheerio.Cheerio<any>): string[] {
+const parseRegions = (regionsCell: cheerio.Cheerio<any>): string[] => {
     const regionsArray: string[] = [];
 
     if (regionsCell.length > 0) {
@@ -109,7 +96,7 @@ function parseRegions(regionsCell: cheerio.Cheerio<any>): string[] {
 
     // Remove duplicates
     return [...new Set(regionsArray)];
-}
+};
 
 /**
  * Parses launch date from text format
@@ -118,7 +105,7 @@ function parseRegions(regionsCell: cheerio.Cheerio<any>): string[] {
  * @example
  * parseLaunchDate("9/23/2024") // Returns "2024-09-23"
  */
-function parseLaunchDate(launchDate: string): string | null {
+const parseLaunchDate = (launchDate: string): string | null => {
     if (!launchDate || launchDate === "-" || launchDate === "") {
         return null;
     }
@@ -133,25 +120,14 @@ function parseLaunchDate(launchDate: string): string | null {
     }
 
     return null;
-}
-
-/**
- * Formats model ID by converting dots to slashes
- * @param modelId Original model ID
- * @returns Formatted model ID
- * @example
- * formatModelId("ai21.jamba-1-5-large-v1:0") // Returns "ai21/jamba-1-5-large-v1:0"
- */
-function formatModelId(modelId: string): string {
-    return modelId.replaceAll(".", "/");
-}
+};
 
 /**
  * Transforms Amazon Bedrock model data from their model lifecycle documentation page into the normalized structure.
  * @param htmlContent The HTML content from the Amazon Bedrock model lifecycle page
  * @returns Array of normalized model objects
  */
-function transformBedrockModels(htmlContent: string): Model[] {
+export const transformBedrockModels = (htmlContent: string): Model[] => {
     const $ = cheerio.load(htmlContent);
     const models: Model[] = [];
 
@@ -184,9 +160,6 @@ function transformBedrockModels(htmlContent: string): Model[] {
                         // Parse output modalities
                         const outputMods = parseOutputModalities(outputModalities);
 
-                        // Convert model ID format from dots to slashes
-                        const formattedModelId = formatModelId(modelId);
-
                         // Parse regions into array
                         const regionsArray = parseRegions(regionsCell);
 
@@ -200,7 +173,7 @@ function transformBedrockModels(htmlContent: string): Model[] {
                                 inputCacheHit: null,
                                 output: null,
                             },
-                            id: formattedModelId,
+                            id: modelId,
                             knowledge: null,
                             lastUpdated: releaseDate, // Use launch date as last updated for now
                             launchDate,
@@ -229,13 +202,13 @@ function transformBedrockModels(htmlContent: string): Model[] {
     });
 
     return models;
-}
+};
 
 /**
  * Fetches models from Amazon Bedrock documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchBedrockModels(): Promise<Model[]> {
+export const fetchBedrockModels = async (): Promise<Model[]> => {
     console.log("[Amazon Bedrock] Fetching: https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html");
 
     try {
@@ -250,6 +223,4 @@ async function fetchBedrockModels(): Promise<Model[]> {
 
         return [];
     }
-}
-
-export { fetchBedrockModels, transformBedrockModels };
+};

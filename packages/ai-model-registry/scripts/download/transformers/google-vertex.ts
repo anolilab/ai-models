@@ -8,88 +8,33 @@ const GOOGLE_VERTEX_API_URL = "https://generativelanguage.googleapis.com/v1beta/
 const GOOGLE_VERTEX_DOCS_URL = "https://cloud.google.com/vertex-ai/docs/generative-ai";
 
 /**
- * Fetches Google Vertex models from their API and documentation.
- * @returns Promise that resolves to an array of transformed models
+ * Parse context length from string (e.g., "32k" -> 32768)
  */
-export async function fetchGoogleVertexModels(): Promise<Model[]> {
-    console.log("[Google Vertex] Fetching models from API and documentation...");
+const parseContextLength = (lengthString: string): number | null => {
+    if (!lengthString)
+        return null;
 
-    try {
-        const models: Model[] = [];
+    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
 
-        // Try to fetch from their API first
-        try {
-            console.log("[Google Vertex] Attempting to fetch from API:", GOOGLE_VERTEX_API_URL);
-            const apiResponse = await axios.get(GOOGLE_VERTEX_API_URL);
+    if (!match)
+        return null;
 
-            if (apiResponse.data && Array.isArray(apiResponse.data.models)) {
-                console.log(`[Google Vertex] Found ${apiResponse.data.models.length} models via API`);
+    const value = Number.parseInt(match[1], 10);
+    const unit = match[2];
 
-                for (const modelData of apiResponse.data.models) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.name || modelData.displayName),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.inputTokenLimit || null,
-                            output: modelData.outputTokenLimit || null,
-                        },
-                        modalities: {
-                            input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.displayName || modelData.name,
-                        openWeights: false,
-                        provider: "Google Vertex",
-                        providerDoc: GOOGLE_VERTEX_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-                        providerModelsDevId: "google-vertex",
-                        providerNpm: "@ai-sdk/google-vertex",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: modelData.supportedGenerationMethods?.includes("tool-calls") || false,
-                        vision: modelData.supportedGenerationMethods?.includes("generate-content") || false,
-                    };
+    if (unit === "k")
+        return value * 1024;
 
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Google Vertex] API fetch failed, falling back to documentation scraping");
-        }
+    if (unit === "m")
+        return value * 1024 * 1024;
 
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Google Vertex] Scraping documentation for model information");
-            const docsModels = await scrapeGoogleVertexDocs();
-
-            models.push(...docsModels);
-        }
-
-        console.log(`[Google Vertex] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[Google Vertex] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
+    return value;
+};
 
 /**
  * Scrapes Google Vertex documentation for model information.
  */
-async function scrapeGoogleVertexDocs(): Promise<Model[]> {
+const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(GOOGLE_VERTEX_DOCS_URL);
         const $ = load(response.data);
@@ -236,38 +181,14 @@ async function scrapeGoogleVertexDocs(): Promise<Model[]> {
 
         return [];
     }
-}
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-function parseContextLength(lengthString: string): number | null {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-}
+};
 
 /**
  * Transforms Google Vertex model data into the normalized structure.
  * @param rawData Raw data from Google Vertex API
  * @returns Array of normalized model objects
  */
-export function transformGoogleVertexModels(rawData: any): Model[] {
+export const transformGoogleVertexModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchGoogleVertexModels
@@ -313,4 +234,83 @@ export function transformGoogleVertexModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
+
+/**
+ * Fetches Google Vertex models from their API and documentation.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchGoogleVertexModels = async (): Promise<Model[]> => {
+    console.log("[Google Vertex] Fetching models from API and documentation...");
+
+    try {
+        const models: Model[] = [];
+
+        // Try to fetch from their API first
+        try {
+            console.log("[Google Vertex] Attempting to fetch from API:", GOOGLE_VERTEX_API_URL);
+            const apiResponse = await axios.get(GOOGLE_VERTEX_API_URL);
+
+            if (apiResponse.data && Array.isArray(apiResponse.data.models)) {
+                console.log(`[Google Vertex] Found ${apiResponse.data.models.length} models via API`);
+
+                for (const modelData of apiResponse.data.models) {
+                    const model: Model = {
+                        attachment: false,
+                        cost: {
+                            input: null,
+                            inputCacheHit: null,
+                            output: null,
+                        },
+                        extendedThinking: false,
+                        id: kebabCase(modelData.name || modelData.displayName),
+                        knowledge: null,
+                        lastUpdated: null,
+                        limit: {
+                            context: modelData.inputTokenLimit || null,
+                            output: modelData.outputTokenLimit || null,
+                        },
+                        modalities: {
+                            input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
+                            output: ["text"],
+                        },
+                        name: modelData.displayName || modelData.name,
+                        openWeights: false,
+                        provider: "Google Vertex",
+                        providerDoc: GOOGLE_VERTEX_DOCS_URL,
+                        // Provider metadata
+                        providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+                        providerModelsDevId: "google-vertex",
+                        providerNpm: "@ai-sdk/google-vertex",
+                        reasoning: false,
+                        releaseDate: null,
+                        streamingSupported: true,
+                        temperature: true,
+                        toolCall: modelData.supportedGenerationMethods?.includes("tool-calls") || false,
+                        vision: modelData.supportedGenerationMethods?.includes("generate-content") || false,
+                    };
+
+                    models.push(model);
+                }
+            }
+        } catch {
+            console.log("[Google Vertex] API fetch failed, falling back to documentation scraping");
+        }
+
+        // If API didn't work or returned no models, try scraping documentation
+        if (models.length === 0) {
+            console.log("[Google Vertex] Scraping documentation for model information");
+            const docsModels = await scrapeGoogleVertexDocs();
+
+            models.push(...docsModels);
+        }
+
+        console.log(`[Google Vertex] Total models found: ${models.length}`);
+
+        return models;
+    } catch (error) {
+        console.error("[Google Vertex] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};

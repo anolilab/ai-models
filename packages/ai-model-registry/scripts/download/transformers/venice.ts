@@ -11,7 +11,7 @@ const VENICE_DOCS_URL = "https://docs.venice.ai/";
  * Fetches Venice models from their API and documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-export async function fetchVeniceModels(): Promise<Model[]> {
+export const fetchVeniceModels = async (): Promise<Model[]> => {
     console.log("[Venice] Fetching models from API and documentation...");
 
     try {
@@ -129,12 +129,12 @@ export async function fetchVeniceModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Scrapes Venice documentation for model information.
  */
-async function scrapeVeniceDocs(): Promise<Model[]> {
+const scrapeVeniceDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(VENICE_DOCS_URL);
         const $ = load(response.data);
@@ -266,12 +266,12 @@ async function scrapeVeniceDocs(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
  */
-function parseContextLength(lengthString: string): number | null {
+const parseContextLength = (lengthString: string): number | null => {
     if (!lengthString)
         return null;
 
@@ -290,14 +290,14 @@ function parseContextLength(lengthString: string): number | null {
         return value * 1024 * 1024;
 
     return value;
-}
+};
 
 /**
  * Transforms Venice model data into the normalized structure.
  * @param rawData Raw data from Venice API
  * @returns Array of normalized model objects
  */
-export function transformVeniceModels(rawData: any): Model[] {
+export const transformVeniceModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchVeniceModels
@@ -343,4 +343,4 @@ export function transformVeniceModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};

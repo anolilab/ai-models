@@ -11,7 +11,7 @@ const TOGETHER_AI_DOCS_URL = "https://docs.together.ai/";
  * Fetches Together AI models from their API and documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-export async function fetchTogetherAIModels(): Promise<Model[]> {
+export const fetchTogetherAIModels = async (): Promise<Model[]> => {
     console.log("[Together AI] Fetching models from API and documentation...");
 
     try {
@@ -84,12 +84,12 @@ export async function fetchTogetherAIModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Scrapes Together AI documentation for model information.
  */
-async function scrapeTogetherAIDocs(): Promise<Model[]> {
+const scrapeTogetherAIDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(TOGETHER_AI_DOCS_URL);
         const $ = load(response.data);
@@ -220,12 +220,12 @@ async function scrapeTogetherAIDocs(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
  */
-function parseContextLength(lengthString: string): number | null {
+const parseContextLength = (lengthString: string): number | null => {
     if (!lengthString)
         return null;
 
@@ -244,14 +244,14 @@ function parseContextLength(lengthString: string): number | null {
         return value * 1024 * 1024;
 
     return value;
-}
+};
 
 /**
  * Transforms Together AI model data into the normalized structure.
  * @param rawData Raw data from Together AI API
  * @returns Array of normalized model objects
  */
-export function transformTogetherAIModels(rawData: any): Model[] {
+export const transformTogetherAIModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchTogetherAIModels
@@ -297,4 +297,4 @@ export function transformTogetherAIModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};

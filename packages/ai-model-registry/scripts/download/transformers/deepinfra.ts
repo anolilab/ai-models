@@ -1,90 +1,90 @@
-import { kebabCase } from "@visulima/string";
 import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
 
 /**
- * Deep Infra model data from models.dev API
+ * Deep Infra model data from their website API
  */
 interface DeepInfraModelData {
-    attachment: boolean;
-    cost: {
-        input: number;
-        output: number;
-    };
-    id: string;
-    knowledge: string;
-    last_updated: string;
-    limit: {
-        context: number;
-        output: number;
-    };
-    modalities: {
-        input: string[];
-        output: string[];
-    };
+    cover_img_url: string;
+    deprecated: string | null;
+    description: string;
+    expected: string | null;
+    full_name: string;
+    max_tokens: number | null;
+    mmlu: number | null;
     name: string;
-    open_weights: boolean;
-    reasoning: boolean;
-    release_date: string;
-    temperature: boolean;
-    tool_call: boolean;
+    owner: string;
+    pricing: {
+        cents_per_input_chars?: number;
+        cents_per_input_sec?: number;
+        cents_per_input_token?: number;
+        cents_per_output_token?: number;
+        type: string;
+    };
+    private: number;
+    quantization: string | null;
+    replaced_by: string | null;
+    tags: string[];
+    type: string;
 }
 
 /**
- * Deep Infra provider data from models.dev API
+ * Deep Infra website API response structure
  */
-interface DeepInfraProviderData {
-    doc: string;
-    env: string[];
-    id: string;
-    models: Record<string, DeepInfraModelData>;
-    name: string;
-    npm: string;
+interface DeepInfraApiResponse {
+    pageProps: {
+        _featured: DeepInfraModelData[];
+    };
 }
 
 /**
- * Transforms Deep Infra model data from models.dev API into the normalized structure.
- * @param providerData The provider data from models.dev API
+ * Transforms Deep Infra model data from their website API into the normalized structure.
+ * @param modelsData Array of model data from Deep Infra website
  * @returns Array of normalized model objects
  */
-const transformDeepInfraModels = (providerData: DeepInfraProviderData): Model[] => {
+const transformDeepInfraModels = (modelsData: DeepInfraModelData[]): Model[] => {
     const models: Model[] = [];
 
-    for (const [modelId, modelData] of Object.entries(providerData.models)) {
+    for (const modelData of modelsData) {
+        // Only process text-generation models for now
+        if (modelData.type !== "text-generation") {
+            continue;
+        }
+
         const model: Model = {
-            attachment: modelData.attachment,
+            attachment: false, // Default value, not available in API
             cost: {
-                input: modelData.cost.input,
+                input: modelData.pricing.cents_per_input_token || null,
                 inputCacheHit: null,
-                output: modelData.cost.output,
+                output: modelData.pricing.cents_per_output_token || null,
             },
-            extendedThinking: modelData.extended_thinking,
-            id: modelId,
-            knowledge: modelData.knowledge,
-            lastUpdated: modelData.last_updated || null,
+            extendedThinking: false, // Default value, not available in API
+            id: modelData.full_name,
+            knowledge: null, // Not available in API
+            lastUpdated: null, // Not available in API
             limit: {
-                context: modelData.limit.context,
-                output: modelData.limit.output,
+                context: modelData.max_tokens,
+                output: null, // Not available in API
             },
             modalities: {
-                input: modelData.modalities.input,
-                output: modelData.modalities.output,
+                input: ["text"], // Default for text generation models
+                output: ["text"],
             },
             name: modelData.name,
-            openWeights: modelData.open_weights,
+            openWeights: false, // Default value, not available in API
             provider: "Deep Infra",
-            providerDoc: providerData.doc,
+            providerDoc: "https://deepinfra.com/docs",
             // Provider metadata
-            providerEnv: providerData.env,
-            providerModelsDevId: providerData.id,
-            providerNpm: providerData.npm,
-            reasoning: modelData.reasoning,
-            releaseDate: modelData.release_date || null,
-            streamingSupported: true,
-            temperature: modelData.temperature,
-            toolCall: modelData.tool_call,
-            vision: modelData.vision,
+            providerEnv: [],
+            providerModelsDevId: "deepinfra",
+            providerNpm: "@deepinfra/sdk",
+            reasoning: false, // Default value, not available in API
+            releaseDate: null, // Not available in API
+            streamingSupported: true, // Deep Infra supports streaming
+            temperature: true, // Default value, not available in API
+            toolCall: false, // Default value, not available in API
+            vision: false, // Default value, not available in API
         };
 
         models.push(model);
@@ -94,26 +94,68 @@ const transformDeepInfraModels = (providerData: DeepInfraProviderData): Model[] 
 };
 
 /**
- * Fetches Deep Infra models from models.dev API and transforms them.
+ * Fetches the dynamic Next.js data URL from Deep Infra's website.
+ * @returns Promise that resolves to the data URL
+ */
+const getDeepInfraDataUrl = async (): Promise<string> => {
+    try {
+        // First, fetch the main page to extract the dynamic build ID
+        const response = await axios.get("https://deepinfra.com/models/text-generation", {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (compatible; AI-Model-Registry/1.0)",
+            },
+        });
+
+        const html = response.data;
+
+        // Look for the Next.js build ID in the HTML
+        const buildIdMatch = html.match(/"buildId":"([^"]+)"/);
+
+        if (!buildIdMatch) {
+            throw new Error("Could not find Next.js build ID in HTML");
+        }
+
+        const buildId = buildIdMatch[1];
+
+        return `https://deepinfra.com/_next/data/${buildId}/index.json`;
+    } catch (error) {
+        console.error("[Deep Infra] Error getting data URL:", error instanceof Error ? error.message : String(error));
+
+        throw error;
+    }
+};
+
+/**
+ * Fetches Deep Infra models from their website API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchDeepInfraModels(): Promise<Model[]> {
-    console.log("[Deep Infra] Fetching: https://models.dev/api.json");
-
+// eslint-disable-next-line import/prefer-default-export
+export const fetchDeepInfraModels = async (): Promise<Model[]> => {
     try {
-        const response = await axios.get("https://models.dev/api.json");
-        const apiData = response.data;
+        // Get the dynamic data URL
+        const dataUrl = await getDeepInfraDataUrl();
 
-        // Extract Deep Infra provider data
-        const deepInfraProviderData = apiData.deepinfra as DeepInfraProviderData;
+        console.log(`[Deep Infra] Fetching: ${dataUrl}`);
 
-        if (!deepInfraProviderData) {
-            console.error("[Deep Infra] No Deep Infra provider data found in models.dev API");
+        const response = await axios.get(dataUrl, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (compatible; AI-Model-Registry/1.0)",
+            },
+        });
+
+        const apiData = response.data as DeepInfraApiResponse;
+
+        // Extract featured models from pageProps
+        // eslint-disable-next-line no-underscore-dangle
+        const featuredModels = apiData.pageProps?._featured;
+
+        if (!featuredModels || !Array.isArray(featuredModels)) {
+            console.error("[Deep Infra] No featured models found in API response");
 
             return [];
         }
 
-        const models = transformDeepInfraModels(deepInfraProviderData);
+        const models = transformDeepInfraModels(featuredModels);
 
         console.log(`[Deep Infra] Successfully transformed ${models.length} models`);
 
@@ -123,6 +165,4 @@ async function fetchDeepInfraModels(): Promise<Model[]> {
 
         return [];
     }
-}
-
-export { fetchDeepInfraModels, transformDeepInfraModels };
+};

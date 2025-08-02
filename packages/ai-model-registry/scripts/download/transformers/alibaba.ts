@@ -8,31 +8,9 @@ const DEEPSEEK_DOCS_URL = "https://help.aliyun.com/zh/model-studio/deepseek-api"
 const KIMI_DOCS_URL = "https://help.aliyun.com/zh/model-studio/kimi-api";
 
 /**
- * Fetches Alibaba models (DeepSeek and Kimi) by scraping the documentation pages.
- * @returns Promise that resolves to an array of transformed models
- */
-export async function fetchAlibabaModels(): Promise<Model[]> {
-    const models: Model[] = [];
-
-    // Fetch DeepSeek models
-    const deepseekModels = await fetchDeepSeekModels();
-
-    models.push(...deepseekModels);
-
-    // Fetch Kimi models
-    const kimiModels = await fetchKimiModels();
-
-    models.push(...kimiModels);
-
-    console.log(`[Alibaba] Total models extracted: ${models.length} (${deepseekModels.length} DeepSeek + ${kimiModels.length} Kimi)`);
-
-    return models;
-}
-
-/**
  * Fetches DeepSeek models from the documentation page.
  */
-async function fetchDeepSeekModels(): Promise<Model[]> {
+const fetchDeepSeekModels = async (): Promise<Model[]> => {
     console.log(`[Alibaba] Fetching DeepSeek model list from: ${DEEPSEEK_DOCS_URL}`);
 
     try {
@@ -114,12 +92,12 @@ async function fetchDeepSeekModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Fetches Kimi models from the documentation page.
  */
-async function fetchKimiModels(): Promise<Model[]> {
+const fetchKimiModels = async (): Promise<Model[]> => {
     console.log(`[Alibaba] Fetching Kimi model list from: ${KIMI_DOCS_URL}`);
 
     try {
@@ -199,7 +177,7 @@ async function fetchKimiModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 const isValidDeepSeekModel = (modelName: string): boolean => {
     // Must contain deepseek and be a real model name
@@ -281,6 +259,28 @@ const parseTokenLimit = (limitString: string): number | null => {
     return match ? Number.parseInt(match[1], 10) : null;
 };
 
-export const transformAlibabaModels = (rawData: any): Model[] =>
+/**
+ * Fetches Alibaba models (DeepSeek and Kimi) by scraping the documentation pages.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchAlibabaModels = async (): Promise<Model[]> => {
+    const models: Model[] = [];
+
+    // Fetch DeepSeek models
+    const deepseekModels = await fetchDeepSeekModels();
+
+    models.push(...deepseekModels);
+
+    // Fetch Kimi models
+    const kimiModels = await fetchKimiModels();
+
+    models.push(...kimiModels);
+
+    console.log(`[Alibaba] Total models extracted: ${models.length} (${deepseekModels.length} DeepSeek + ${kimiModels.length} Kimi)`);
+
+    return models;
+};
+
+export const transformAlibabaModels = (): Model[] =>
     // Not used in scraping version, but kept for interface compatibility
     [];

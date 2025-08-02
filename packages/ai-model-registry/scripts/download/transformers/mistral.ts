@@ -8,88 +8,9 @@ const MISTRAL_API_URL = "https://api.mistral.ai/v1/models";
 const MISTRAL_DOCS_URL = "https://docs.mistral.ai/getting-started/models/";
 
 /**
- * Fetches Mistral models from their API and documentation.
- * @returns Promise that resolves to an array of transformed models
- */
-export async function fetchMistralModels(): Promise<Model[]> {
-    console.log("[Mistral] Fetching models from API and documentation...");
-
-    try {
-        const models: Model[] = [];
-
-        // Try to fetch from their API first
-        try {
-            console.log("[Mistral] Attempting to fetch from API:", MISTRAL_API_URL);
-            const apiResponse = await axios.get(MISTRAL_API_URL);
-
-            if (apiResponse.data && Array.isArray(apiResponse.data.data)) {
-                console.log(`[Mistral] Found ${apiResponse.data.data.length} models via API`);
-
-                for (const modelData of apiResponse.data.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.context_length || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "Mistral",
-                        providerDoc: MISTRAL_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["MISTRAL_API_KEY"],
-                        providerModelsDevId: "mistral",
-                        providerNpm: "@ai-sdk/mistral",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: modelData.capabilities?.tool_use || false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Mistral] API fetch failed, falling back to documentation scraping");
-        }
-
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Mistral] Scraping documentation for model information");
-            const docsModels = await scrapeMistralDocs();
-
-            models.push(...docsModels);
-        }
-
-        console.log(`[Mistral] Total models found: ${models.length}`);
-
-        return models;
-    } catch (error) {
-        console.error("[Mistral] Error fetching models:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
-
-/**
  * Scrapes Mistral documentation for model information.
  */
-async function scrapeMistralDocs(): Promise<Model[]> {
+const scrapeMistralDocs = async (): Promise<Model[]> => {
     try {
         const response = await axios.get(MISTRAL_DOCS_URL);
         const $ = load(response.data);
@@ -221,12 +142,12 @@ async function scrapeMistralDocs(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Parse context length from string (e.g., "32k" -> 32768)
  */
-function parseContextLength(lengthString: string): number | null {
+const parseContextLength = (lengthString: string): number | null => {
     if (!lengthString)
         return null;
 
@@ -245,14 +166,14 @@ function parseContextLength(lengthString: string): number | null {
         return value * 1024 * 1024;
 
     return value;
-}
+};
 
 /**
  * Transforms Mistral model data into the normalized structure.
  * @param rawData Raw data from Mistral API
  * @returns Array of normalized model objects
  */
-export function transformMistralModels(rawData: any): Model[] {
+export const transformMistralModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchMistralModels
@@ -298,4 +219,83 @@ export function transformMistralModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};
+
+/**
+ * Fetches Mistral models from their API and documentation.
+ * @returns Promise that resolves to an array of transformed models
+ */
+export const fetchMistralModels = async (): Promise<Model[]> => {
+    console.log("[Mistral] Fetching models from API and documentation...");
+
+    try {
+        const models: Model[] = [];
+
+        // Try to fetch from their API first
+        try {
+            console.log("[Mistral] Attempting to fetch from API:", MISTRAL_API_URL);
+            const apiResponse = await axios.get(MISTRAL_API_URL);
+
+            if (apiResponse.data && Array.isArray(apiResponse.data.data)) {
+                console.log(`[Mistral] Found ${apiResponse.data.data.length} models via API`);
+
+                for (const modelData of apiResponse.data.data) {
+                    const model: Model = {
+                        attachment: false,
+                        cost: {
+                            input: null,
+                            inputCacheHit: null,
+                            output: null,
+                        },
+                        extendedThinking: false,
+                        id: kebabCase(modelData.id || modelData.name),
+                        knowledge: null,
+                        lastUpdated: null,
+                        limit: {
+                            context: modelData.context_length || null,
+                            output: null,
+                        },
+                        modalities: {
+                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
+                            output: ["text"],
+                        },
+                        name: modelData.name || modelData.id,
+                        openWeights: false,
+                        provider: "Mistral",
+                        providerDoc: MISTRAL_DOCS_URL,
+                        // Provider metadata
+                        providerEnv: ["MISTRAL_API_KEY"],
+                        providerModelsDevId: "mistral",
+                        providerNpm: "@ai-sdk/mistral",
+                        reasoning: false,
+                        releaseDate: null,
+                        streamingSupported: true,
+                        temperature: true,
+                        toolCall: modelData.capabilities?.tool_use || false,
+                        vision: modelData.capabilities?.vision || false,
+                    };
+
+                    models.push(model);
+                }
+            }
+        } catch {
+            console.log("[Mistral] API fetch failed, falling back to documentation scraping");
+        }
+
+        // If API didn't work or returned no models, try scraping documentation
+        if (models.length === 0) {
+            console.log("[Mistral] Scraping documentation for model information");
+            const docsModels = await scrapeMistralDocs();
+
+            models.push(...docsModels);
+        }
+
+        console.log(`[Mistral] Total models found: ${models.length}`);
+
+        return models;
+    } catch (error) {
+        console.error("[Mistral] Error fetching models:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};

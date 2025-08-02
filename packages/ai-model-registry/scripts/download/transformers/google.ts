@@ -7,11 +7,35 @@ import type { Model } from "../../../src/schema.js";
 const GOOGLE_DOCS_URL = "https://ai.google.dev/models";
 
 /**
+ * Parse context length from string (e.g., "32k" -> 32768)
+ */
+const parseContextLength = (lengthString: string): number | null => {
+    if (!lengthString)
+        return null;
+
+    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
+
+    if (!match)
+        return null;
+
+    const value = Number.parseInt(match[1], 10);
+    const unit = match[2];
+
+    if (unit === "k")
+        return value * 1024;
+
+    if (unit === "m")
+        return value * 1024 * 1024;
+
+    return value;
+};
+
+/**
  * Transforms Google model data from their documentation into the normalized structure.
  * @param htmlContent The HTML content from the Google AI documentation
  * @returns Array of normalized model objects
  */
-function transformGoogleModels(htmlContent: string): Model[] {
+export const transformGoogleModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);
     const models: Model[] = [];
 
@@ -139,37 +163,13 @@ function transformGoogleModels(htmlContent: string): Model[] {
     }
 
     return models;
-}
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-function parseContextLength(lengthString: string): number | null {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-}
+};
 
 /**
  * Fetches models from Google AI documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchGoogleModels(): Promise<Model[]> {
+export const fetchGoogleModels = async (): Promise<Model[]> => {
     console.log("[Google] Fetching: https://ai.google.dev/models");
 
     const response = await axios.get("https://ai.google.dev/models");
@@ -180,6 +180,4 @@ async function fetchGoogleModels(): Promise<Model[]> {
     console.log(`[Google] Found ${models.length} models`);
 
     return models;
-}
-
-export { fetchGoogleModels, transformGoogleModels };
+};

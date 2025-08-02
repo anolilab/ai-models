@@ -4,48 +4,6 @@ import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
 
-/**
- * Model details extracted from the features table
- */
-interface ModelDetails {
-    api_model_name?: string;
-    comparative_latency?: string;
-    context_window?: string;
-    description?: string;
-    extended_thinking?: boolean;
-    max_output?: string;
-    multilingual?: boolean;
-    priority_tier?: boolean;
-    strengths?: string;
-    training_cutoff?: string;
-    vision?: boolean;
-}
-
-/**
- * Pricing information extracted from the pricing table
- */
-interface ModelPricing {
-    input: number | null;
-    output: number | null;
-}
-
-/**
- * Raw model data before transformation
- */
-interface RawModelData {
-    details: ModelDetails;
-    name: string;
-    pricing: ModelPricing;
-}
-
-/**
- * Model column information from the features table header
- */
-interface ModelColumn {
-    index: number;
-    name: string;
-}
-
 const parsePrice = (priceString: string): number | null => {
     if (!priceString || priceString === "N/A" || priceString === "Free") {
         return null;
@@ -79,7 +37,7 @@ const parseTokenLimit = (limitString: string): number | null => {
  * @param htmlContent The HTML content from the Anthropic models documentation page
  * @returns Array of normalized model objects
  */
-const transformAnthropicModels = (htmlContent: string): Model[] => {
+export const transformAnthropicModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);
     const models: Model[] = [];
 
@@ -203,7 +161,7 @@ const transformAnthropicModels = (htmlContent: string): Model[] => {
  * Fetches models from Anthropic documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchAnthropicModels(): Promise<Model[]> {
+export const fetchAnthropicModels = async (): Promise<Model[]> => {
     console.log("[Anthropic] Fetching: https://docs.anthropic.com/en/docs/about-claude/models");
 
     const response = await axios.get("https://docs.anthropic.com/en/docs/about-claude/models");
@@ -212,6 +170,4 @@ async function fetchAnthropicModels(): Promise<Model[]> {
     const models = transformAnthropicModels(htmlContent);
 
     return models;
-}
-
-export { fetchAnthropicModels, transformAnthropicModels };
+};

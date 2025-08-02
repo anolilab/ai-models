@@ -8,10 +8,494 @@ const MODELSCOPE_API_URL = "https://modelscope.cn/api/v1/dolphin/models";
 const MODELSCOPE_DOCS_URL = "https://modelscope.cn/docs/model-service/API-Inference/intro";
 
 /**
+ * Check if model has vision capability based on tasks, model type, name and tags
+ */
+const hasVisionCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for vision indicators
+    if (name.includes("vision") || name.includes("vl") || name.includes("multimodal") || name.includes("image")) {
+        return true;
+    }
+
+    // Check tags for vision indicators
+    if (tagString.includes("vision") || tagString.includes("multimodal") || tagString.includes("image")) {
+        return true;
+    }
+
+    // Check model type for vision indicators
+    if (modelType && Array.isArray(modelType)) {
+        for (const type of modelType) {
+            if (type.toLowerCase().includes("vl") || type.toLowerCase().includes("vision")) {
+                return true;
+            }
+        }
+    }
+
+    // Check tasks for vision-related tasks
+    if (tasks && Array.isArray(tasks)) {
+        for (const task of tasks) {
+            const taskName = task.Name?.toLowerCase() || "";
+
+            if (taskName.includes("image") || taskName.includes("vision") || taskName.includes("multimodal")) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+/**
+ * Check if model has tool calling capability
+ */
+const hasToolCallCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for tool indicators
+    if (name.includes("tool") || name.includes("function") || name.includes("api")) {
+        return true;
+    }
+
+    // Check tags for tool indicators
+    if (tagString.includes("tool") || tagString.includes("function") || tagString.includes("api")) {
+        return true;
+    }
+
+    // Check tasks for tool-related tasks
+    if (tasks && Array.isArray(tasks)) {
+        for (const task of tasks) {
+            const taskName = task.Name?.toLowerCase() || "";
+
+            if (taskName.includes("tool") || taskName.includes("function") || taskName.includes("api")) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+/**
+ * Check if model has reasoning capability
+ */
+const hasReasoningCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for reasoning indicators
+    if (name.includes("reasoning") || name.includes("thinking") || name.includes("logic")) {
+        return true;
+    }
+
+    // Check tags for reasoning indicators
+    if (tagString.includes("reasoning") || tagString.includes("thinking") || tagString.includes("logic")) {
+        return true;
+    }
+
+    // Check tasks for reasoning-related tasks
+    if (tasks && Array.isArray(tasks)) {
+        for (const task of tasks) {
+            const taskName = task.Name?.toLowerCase() || "";
+
+            if (taskName.includes("reasoning") || taskName.includes("thinking") || taskName.includes("logic")) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+/**
+ * Check if model has extended thinking capability
+ */
+const hasExtendedThinkingCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for extended thinking indicators
+    if (name.includes("thinking") || name.includes("extended") || name.includes("chain-of-thought")) {
+        return true;
+    }
+
+    // Check tags for extended thinking indicators
+    if (tagString.includes("thinking") || tagString.includes("extended") || tagString.includes("chain-of-thought")) {
+        return true;
+    }
+
+    return false;
+};
+
+/**
+ * Check if model has knowledge capability
+ */
+const hasKnowledgeCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for knowledge indicators
+    if (name.includes("knowledge") || name.includes("rag") || name.includes("retrieval")) {
+        return true;
+    }
+
+    // Check tags for knowledge indicators
+    if (tagString.includes("knowledge") || tagString.includes("rag") || tagString.includes("retrieval")) {
+        return true;
+    }
+
+    return false;
+};
+
+/**
+ * Check if model has attachment capability
+ */
+const hasAttachmentCapability = (tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for attachment indicators
+    if (name.includes("attachment") || name.includes("file") || name.includes("document")) {
+        return true;
+    }
+
+    // Check tags for attachment indicators
+    if (tagString.includes("attachment") || tagString.includes("file") || tagString.includes("document")) {
+        return true;
+    }
+
+    return false;
+};
+
+/**
+ * Determine if model has open weights based on license
+ */
+const isOpenWeights = (license: string): boolean => {
+    if (!license)
+        return false;
+
+    const openLicenses = [
+        "apache-2.0",
+        "apache license 2.0",
+        "mit",
+        "mit license",
+        "bsd-3-clause",
+        "bsd-2-clause",
+        "gpl-3.0",
+        "gpl-2.0",
+        "agpl-3.0",
+        "cc-by-4.0",
+        "cc-by-sa-4.0",
+        "openrail",
+        "openrail++",
+        "creativeml-openrail-m",
+        "bigcode-openrail-m",
+        "bigscience-openrail-m",
+        "bigscience-bloom-rail-1.0",
+        "llama2",
+        "llama3",
+        "llama3.1",
+        "llama3.2",
+        "llama3.3",
+        "gemma",
+        "gemma2",
+        "gemma3",
+    ];
+
+    return openLicenses.some((openLicense) => license.toLowerCase().includes(openLicense.toLowerCase()));
+};
+
+/**
+ * Determine input modalities based on tasks, model type, model name and tags
+ */
+function getInputModalities(tasks: any[], modelType: any[], modelName: string, tags: string[]): string[] {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check model name for vision indicators
+    if (name.includes("vision") || name.includes("vl") || name.includes("multimodal") || name.includes("image")) {
+        return ["text", "image"];
+    }
+
+    // Check tags for vision indicators
+    if (tagString.includes("vision") || tagString.includes("multimodal") || tagString.includes("image")) {
+        return ["text", "image"];
+    }
+
+    // Check model type for vision indicators
+    if (modelType && Array.isArray(modelType)) {
+        for (const type of modelType) {
+            if (type.toLowerCase().includes("vl") || type.toLowerCase().includes("vision")) {
+                return ["text", "image"];
+            }
+        }
+    }
+
+    // Check tasks for vision-related tasks
+    if (tasks && Array.isArray(tasks)) {
+        for (const task of tasks) {
+            const taskName = task.Name?.toLowerCase() || "";
+
+            if (taskName.includes("image") || taskName.includes("vision") || taskName.includes("multimodal")) {
+                return ["text", "image"];
+            }
+        }
+    }
+
+    return ["text"];
+}
+
+/**
+ * Determine output modalities based on tasks, model type, model name and tags
+ */
+const getOutputModalities = (tasks: any[], modelType: any[], modelName: string, tags: string[]): string[] => {
+    const name = modelName.toLowerCase();
+    const tagString = tags.join(" ").toLowerCase();
+
+    // Check for image generation
+    if (name.includes("image-gen") || name.includes("text-to-image") || name.includes("diffusion")) {
+        return ["image"];
+    }
+
+    // Check tags for image generation
+    if (tagString.includes("text-to-image") || tagString.includes("image-generation") || tagString.includes("diffusion")) {
+        return ["image"];
+    }
+
+    // Check tasks for image generation
+    if (tasks && Array.isArray(tasks)) {
+        for (const task of tasks) {
+            const taskName = task.Name?.toLowerCase() || "";
+
+            if (taskName.includes("text-to-image") || taskName.includes("image-generation")) {
+                return ["image"];
+            }
+        }
+    }
+
+    return ["text"];
+};
+
+/**
+ * Scrapes ModelScope documentation for model information.
+ */
+const scrapeModelScopeDocs = async (): Promise<Model[]> => {
+    try {
+        const response = await axios.get(MODELSCOPE_DOCS_URL);
+        const $ = load(response.data);
+
+        const models: Model[] = [];
+
+        // Look for model tables or lists in the documentation
+        $("table, .model-list, .models-table").each((index, element) => {
+            const tableText = $(element).text().toLowerCase();
+
+            // Check if this table contains model information
+            if (tableText.includes("model") || tableText.includes("modelscope") || tableText.includes("qwen") || tableText.includes("chatglm")) {
+                console.log(`[ModelScope] Found potential model table ${index + 1}`);
+
+                $(element)
+                    .find("tr, .model-item")
+                    .each((_, row) => {
+                        const cells = $(row)
+                            .find("td, .model-cell")
+                            .map((_, td) => $(td).text().trim())
+                            .get();
+
+                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
+                            const modelName = cells[0];
+
+                            console.log(`[ModelScope] Found model: ${modelName}`);
+
+                            const model: Model = {
+                                attachment: false,
+                                cost: {
+                                    input: null,
+                                    inputCacheHit: null,
+                                    output: null,
+                                },
+                                extendedThinking: false,
+                                id: kebabCase(modelName),
+                                knowledge: null,
+                                lastUpdated: null,
+                                limit: {
+                                    context: parseContextLength(cells[1] || cells[2]),
+                                    output: null,
+                                },
+                                modalities: {
+                                    input: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
+                                    output: ["text"],
+                                },
+                                name: modelName,
+                                openWeights: true, // ModelScope models are typically open source
+                                provider: "ModelScope",
+                                providerDoc: MODELSCOPE_DOCS_URL,
+                                // Provider metadata
+                                providerEnv: ["MODELSCOPE_API_KEY"],
+                                providerModelsDevId: "modelscope",
+                                providerNpm: "@ai-sdk/openai-compatible",
+                                reasoning: false,
+                                releaseDate: null,
+                                streamingSupported: true,
+                                temperature: true,
+                                toolCall: false,
+                                vision: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision"),
+                            };
+
+                            models.push(model);
+                        }
+                    });
+            }
+        });
+
+        // If no tables found, try to extract from text content
+        if (models.length === 0) {
+            const bodyText = $("body").text();
+            const modelMatches = bodyText.match(/([\w\-]+(?:modelscope|qwen|chatglm|baichuan|yi)[\w\-]*)/gi);
+
+            if (modelMatches) {
+                console.log(`[ModelScope] Found ${modelMatches.length} potential models in text`);
+
+                for (const match of modelMatches.slice(0, 30)) {
+                    // Limit to first 30 matches
+                    const modelName = match.trim();
+
+                    if (modelName.length > 3 && modelName.length < 50) {
+                        const model: Model = {
+                            attachment: false,
+                            cost: {
+                                input: null,
+                                inputCacheHit: null,
+                                output: null,
+                            },
+                            extendedThinking: false,
+                            id: kebabCase(modelName),
+                            knowledge: null,
+                            lastUpdated: null,
+                            limit: {
+                                context: null,
+                                output: null,
+                            },
+                            modalities: {
+                                input: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
+                                output: ["text"],
+                            },
+                            name: modelName,
+                            openWeights: true, // ModelScope models are typically open source
+                            provider: "ModelScope",
+                            providerDoc: MODELSCOPE_DOCS_URL,
+                            // Provider metadata
+                            providerEnv: ["MODELSCOPE_API_KEY"],
+                            providerModelsDevId: "modelscope",
+                            providerNpm: "@ai-sdk/openai-compatible",
+                            reasoning: false,
+                            releaseDate: null,
+                            streamingSupported: true,
+                            temperature: true,
+                            toolCall: false,
+                            vision: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision"),
+                        };
+
+                        models.push(model);
+                    }
+                }
+            }
+        }
+
+        console.log(`[ModelScope] Scraped ${models.length} models from documentation`);
+
+        return models;
+    } catch (error) {
+        console.error("[ModelScope] Error scraping documentation:", error instanceof Error ? error.message : String(error));
+
+        return [];
+    }
+};
+
+/**
+ * Parse context length from string (e.g., "32k" -> 32768)
+ */
+const parseContextLength = (lengthString: string): number | null => {
+    if (!lengthString)
+        return null;
+
+    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
+
+    if (!match)
+        return null;
+
+    const value = Number.parseInt(match[1], 10);
+    const unit = match[2];
+
+    if (unit === "k")
+        return value * 1024;
+
+    if (unit === "m")
+        return value * 1024 * 1024;
+
+    return value;
+};
+
+/**
+ * Transforms ModelScope model data into the normalized structure.
+ * @param rawData Raw data from ModelScope API
+ * @returns Array of normalized model objects
+ */
+export const transformModelScopeModels = (rawData: any): Model[] => {
+    const models: Model[] = [];
+
+    // This function is kept for interface compatibility but the main logic is in fetchModelScopeModels
+    if (Array.isArray(rawData)) {
+        for (const modelData of rawData) {
+            const model: Model = {
+                attachment: false,
+                cost: {
+                    input: null,
+                    inputCacheHit: null,
+                    output: null,
+                },
+                extendedThinking: false,
+                id: kebabCase(modelData.id || modelData.name),
+                knowledge: null,
+                lastUpdated: null,
+                limit: {
+                    context: modelData.context_length || null,
+                    output: null,
+                },
+                modalities: {
+                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
+                    output: ["text"],
+                },
+                name: modelData.name || modelData.id,
+                openWeights: modelData.open_weights || true, // ModelScope models are typically open source
+                provider: "ModelScope",
+                providerDoc: MODELSCOPE_DOCS_URL,
+                // Provider metadata
+                providerEnv: ["MODELSCOPE_API_KEY"],
+                providerModelsDevId: "modelscope",
+                providerNpm: "@ai-sdk/openai-compatible",
+                reasoning: false,
+                releaseDate: null,
+                streamingSupported: true,
+                temperature: true,
+                toolCall: false,
+                vision: modelData.capabilities?.vision || false,
+            };
+
+            models.push(model);
+        }
+    }
+
+    return models;
+};
+
+/**
  * Fetches ModelScope models from their API and documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-export async function fetchModelScopeModels(): Promise<Model[]> {
+export const fetchModelScopeModels = async (): Promise<Model[]> => {
     console.log("[ModelScope] Fetching models from API and documentation...");
 
     try {
@@ -168,488 +652,4 @@ export async function fetchModelScopeModels(): Promise<Model[]> {
 
         return [];
     }
-}
-
-/**
- * Check if model has vision capability based on tasks, model type, name and tags
- */
-function hasVisionCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for vision indicators
-    if (name.includes("vision") || name.includes("vl") || name.includes("multimodal") || name.includes("image")) {
-        return true;
-    }
-
-    // Check tags for vision indicators
-    if (tagString.includes("vision") || tagString.includes("multimodal") || tagString.includes("image")) {
-        return true;
-    }
-
-    // Check model type for vision indicators
-    if (modelType && Array.isArray(modelType)) {
-        for (const type of modelType) {
-            if (type.toLowerCase().includes("vl") || type.toLowerCase().includes("vision")) {
-                return true;
-            }
-        }
-    }
-
-    // Check tasks for vision-related tasks
-    if (tasks && Array.isArray(tasks)) {
-        for (const task of tasks) {
-            const taskName = task.Name?.toLowerCase() || "";
-
-            if (taskName.includes("image") || taskName.includes("vision") || taskName.includes("multimodal")) {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-/**
- * Check if model has tool calling capability
- */
-function hasToolCallCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for tool indicators
-    if (name.includes("tool") || name.includes("function") || name.includes("api")) {
-        return true;
-    }
-
-    // Check tags for tool indicators
-    if (tagString.includes("tool") || tagString.includes("function") || tagString.includes("api")) {
-        return true;
-    }
-
-    // Check tasks for tool-related tasks
-    if (tasks && Array.isArray(tasks)) {
-        for (const task of tasks) {
-            const taskName = task.Name?.toLowerCase() || "";
-
-            if (taskName.includes("tool") || taskName.includes("function") || taskName.includes("api")) {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-/**
- * Check if model has reasoning capability
- */
-function hasReasoningCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for reasoning indicators
-    if (name.includes("reasoning") || name.includes("thinking") || name.includes("logic")) {
-        return true;
-    }
-
-    // Check tags for reasoning indicators
-    if (tagString.includes("reasoning") || tagString.includes("thinking") || tagString.includes("logic")) {
-        return true;
-    }
-
-    // Check tasks for reasoning-related tasks
-    if (tasks && Array.isArray(tasks)) {
-        for (const task of tasks) {
-            const taskName = task.Name?.toLowerCase() || "";
-
-            if (taskName.includes("reasoning") || taskName.includes("thinking") || taskName.includes("logic")) {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-/**
- * Check if model has extended thinking capability
- */
-function hasExtendedThinkingCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for extended thinking indicators
-    if (name.includes("thinking") || name.includes("extended") || name.includes("chain-of-thought")) {
-        return true;
-    }
-
-    // Check tags for extended thinking indicators
-    if (tagString.includes("thinking") || tagString.includes("extended") || tagString.includes("chain-of-thought")) {
-        return true;
-    }
-
-    return false;
-}
-
-/**
- * Check if model has knowledge capability
- */
-function hasKnowledgeCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for knowledge indicators
-    if (name.includes("knowledge") || name.includes("rag") || name.includes("retrieval")) {
-        return true;
-    }
-
-    // Check tags for knowledge indicators
-    if (tagString.includes("knowledge") || tagString.includes("rag") || tagString.includes("retrieval")) {
-        return true;
-    }
-
-    return false;
-}
-
-/**
- * Check if model has attachment capability
- */
-function hasAttachmentCapability(tasks: any[], modelType: any[], modelName: string, tags: string[]): boolean {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for attachment indicators
-    if (name.includes("attachment") || name.includes("file") || name.includes("document")) {
-        return true;
-    }
-
-    // Check tags for attachment indicators
-    if (tagString.includes("attachment") || tagString.includes("file") || tagString.includes("document")) {
-        return true;
-    }
-
-    return false;
-}
-
-/**
- * Determine if model has open weights based on license
- */
-function isOpenWeights(license: string): boolean {
-    if (!license)
-        return false;
-
-    const openLicenses = [
-        "apache-2.0",
-        "apache license 2.0",
-        "mit",
-        "mit license",
-        "bsd-3-clause",
-        "bsd-2-clause",
-        "gpl-3.0",
-        "gpl-2.0",
-        "agpl-3.0",
-        "cc-by-4.0",
-        "cc-by-sa-4.0",
-        "openrail",
-        "openrail++",
-        "creativeml-openrail-m",
-        "bigcode-openrail-m",
-        "bigscience-openrail-m",
-        "bigscience-bloom-rail-1.0",
-        "llama2",
-        "llama3",
-        "llama3.1",
-        "llama3.2",
-        "llama3.3",
-        "gemma",
-        "gemma2",
-        "gemma3",
-    ];
-
-    return openLicenses.some((openLicense) => license.toLowerCase().includes(openLicense.toLowerCase()));
-}
-
-/**
- * Determine input modalities based on tasks, model type, model name and tags
- */
-function getInputModalities(tasks: any[], modelType: any[], modelName: string, tags: string[]): string[] {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check model name for vision indicators
-    if (name.includes("vision") || name.includes("vl") || name.includes("multimodal") || name.includes("image")) {
-        return ["text", "image"];
-    }
-
-    // Check tags for vision indicators
-    if (tagString.includes("vision") || tagString.includes("multimodal") || tagString.includes("image")) {
-        return ["text", "image"];
-    }
-
-    // Check model type for vision indicators
-    if (modelType && Array.isArray(modelType)) {
-        for (const type of modelType) {
-            if (type.toLowerCase().includes("vl") || type.toLowerCase().includes("vision")) {
-                return ["text", "image"];
-            }
-        }
-    }
-
-    // Check tasks for vision-related tasks
-    if (tasks && Array.isArray(tasks)) {
-        for (const task of tasks) {
-            const taskName = task.Name?.toLowerCase() || "";
-
-            if (taskName.includes("image") || taskName.includes("vision") || taskName.includes("multimodal")) {
-                return ["text", "image"];
-            }
-        }
-    }
-
-    return ["text"];
-}
-
-/**
- * Determine output modalities based on tasks, model type, model name and tags
- */
-function getOutputModalities(tasks: any[], modelType: any[], modelName: string, tags: string[]): string[] {
-    const name = modelName.toLowerCase();
-    const tagString = tags.join(" ").toLowerCase();
-
-    // Check for image generation
-    if (name.includes("image-gen") || name.includes("text-to-image") || name.includes("diffusion")) {
-        return ["image"];
-    }
-
-    // Check tags for image generation
-    if (tagString.includes("text-to-image") || tagString.includes("image-generation") || tagString.includes("diffusion")) {
-        return ["image"];
-    }
-
-    // Check tasks for image generation
-    if (tasks && Array.isArray(tasks)) {
-        for (const task of tasks) {
-            const taskName = task.Name?.toLowerCase() || "";
-
-            if (taskName.includes("text-to-image") || taskName.includes("image-generation")) {
-                return ["image"];
-            }
-        }
-    }
-
-    return ["text"];
-}
-
-/**
- * Scrapes ModelScope documentation for model information.
- */
-async function scrapeModelScopeDocs(): Promise<Model[]> {
-    try {
-        const response = await axios.get(MODELSCOPE_DOCS_URL);
-        const $ = load(response.data);
-
-        const models: Model[] = [];
-
-        // Look for model tables or lists in the documentation
-        $("table, .model-list, .models-table").each((index, element) => {
-            const tableText = $(element).text().toLowerCase();
-
-            // Check if this table contains model information
-            if (tableText.includes("model") || tableText.includes("modelscope") || tableText.includes("qwen") || tableText.includes("chatglm")) {
-                console.log(`[ModelScope] Found potential model table ${index + 1}`);
-
-                $(element)
-                    .find("tr, .model-item")
-                    .each((_, row) => {
-                        const cells = $(row)
-                            .find("td, .model-cell")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
-
-                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
-                            const modelName = cells[0];
-
-                            console.log(`[ModelScope] Found model: ${modelName}`);
-
-                            const model: Model = {
-                                attachment: false,
-                                cost: {
-                                    input: null,
-                                    inputCacheHit: null,
-                                    output: null,
-                                },
-                                extendedThinking: false,
-                                id: kebabCase(modelName),
-                                knowledge: null,
-                                lastUpdated: null,
-                                limit: {
-                                    context: parseContextLength(cells[1] || cells[2]),
-                                    output: null,
-                                },
-                                modalities: {
-                                    input: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                    output: ["text"],
-                                },
-                                name: modelName,
-                                openWeights: true, // ModelScope models are typically open source
-                                provider: "ModelScope",
-                                providerDoc: MODELSCOPE_DOCS_URL,
-                                // Provider metadata
-                                providerEnv: ["MODELSCOPE_API_KEY"],
-                                providerModelsDevId: "modelscope",
-                                providerNpm: "@ai-sdk/openai-compatible",
-                                reasoning: false,
-                                releaseDate: null,
-                                streamingSupported: true,
-                                temperature: true,
-                                toolCall: false,
-                                vision: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision"),
-                            };
-
-                            models.push(model);
-                        }
-                    });
-            }
-        });
-
-        // If no tables found, try to extract from text content
-        if (models.length === 0) {
-            const bodyText = $("body").text();
-            const modelMatches = bodyText.match(/([\w\-]+(?:modelscope|qwen|chatglm|baichuan|yi)[\w\-]*)/gi);
-
-            if (modelMatches) {
-                console.log(`[ModelScope] Found ${modelMatches.length} potential models in text`);
-
-                for (const match of modelMatches.slice(0, 30)) {
-                    // Limit to first 30 matches
-                    const modelName = match.trim();
-
-                    if (modelName.length > 3 && modelName.length < 50) {
-                        const model: Model = {
-                            attachment: false,
-                            cost: {
-                                input: null,
-                                inputCacheHit: null,
-                                output: null,
-                            },
-                            extendedThinking: false,
-                            id: kebabCase(modelName),
-                            knowledge: null,
-                            lastUpdated: null,
-                            limit: {
-                                context: null,
-                                output: null,
-                            },
-                            modalities: {
-                                input: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                output: ["text"],
-                            },
-                            name: modelName,
-                            openWeights: true, // ModelScope models are typically open source
-                            provider: "ModelScope",
-                            providerDoc: MODELSCOPE_DOCS_URL,
-                            // Provider metadata
-                            providerEnv: ["MODELSCOPE_API_KEY"],
-                            providerModelsDevId: "modelscope",
-                            providerNpm: "@ai-sdk/openai-compatible",
-                            reasoning: false,
-                            releaseDate: null,
-                            streamingSupported: true,
-                            temperature: true,
-                            toolCall: false,
-                            vision: modelName.toLowerCase().includes("vl") || modelName.toLowerCase().includes("vision"),
-                        };
-
-                        models.push(model);
-                    }
-                }
-            }
-        }
-
-        console.log(`[ModelScope] Scraped ${models.length} models from documentation`);
-
-        return models;
-    } catch (error) {
-        console.error("[ModelScope] Error scraping documentation:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-}
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-function parseContextLength(lengthString: string): number | null {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-}
-
-/**
- * Transforms ModelScope model data into the normalized structure.
- * @param rawData Raw data from ModelScope API
- * @returns Array of normalized model objects
- */
-export function transformModelScopeModels(rawData: any): Model[] {
-    const models: Model[] = [];
-
-    // This function is kept for interface compatibility but the main logic is in fetchModelScopeModels
-    if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
-            const model: Model = {
-                attachment: false,
-                cost: {
-                    input: null,
-                    inputCacheHit: null,
-                    output: null,
-                },
-                extendedThinking: false,
-                id: kebabCase(modelData.id || modelData.name),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: modelData.context_length || null,
-                    output: null,
-                },
-                modalities: {
-                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelData.name || modelData.id,
-                openWeights: modelData.open_weights || true, // ModelScope models are typically open source
-                provider: "ModelScope",
-                providerDoc: MODELSCOPE_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["MODELSCOPE_API_KEY"],
-                providerModelsDevId: "modelscope",
-                providerNpm: "@ai-sdk/openai-compatible",
-                reasoning: false,
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true,
-                toolCall: false,
-                vision: modelData.capabilities?.vision || false,
-            };
-
-            models.push(model);
-        }
-    }
-
-    return models;
-}
+};

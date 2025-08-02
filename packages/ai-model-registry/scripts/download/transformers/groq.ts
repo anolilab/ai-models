@@ -162,7 +162,7 @@ const fetchModelDetails = async (detailUrl: string): Promise<any> => {
  * @param htmlContent The HTML content from the Groq documentation
  * @returns Array of normalized model objects
  */
-const transformGroqModels = async (htmlContent: string): Promise<Model[]> => {
+export const transformGroqModels = async (htmlContent: string): Promise<Model[]> => {
     const $ = load(htmlContent);
     const models: Model[] = [];
     const modelDataToProcess: {
@@ -295,7 +295,7 @@ const transformGroqModels = async (htmlContent: string): Promise<Model[]> => {
     }
 
     // Process all models asynchronously
-    for (const modelData of modelDataToProcess) {
+    for await (const modelData of modelDataToProcess) {
         // Fetch model details if we have a detail URL
         let modelDetails = {};
 
@@ -358,7 +358,7 @@ const transformGroqModels = async (htmlContent: string): Promise<Model[]> => {
  * Fetches models from Groq documentation and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchGroqModels(): Promise<Model[]> {
+export const fetchGroqModels = async (): Promise<Model[]> => {
     console.log("[Groq] Fetching: https://console.groq.com/docs/models");
 
     try {
@@ -375,6 +375,4 @@ async function fetchGroqModels(): Promise<Model[]> {
 
         return [];
     }
-}
-
-export { fetchGroqModels, transformGroqModels };
+};

@@ -8,7 +8,7 @@ const XAI_DOCS_URL = "https://docs.x.ai/docs/models";
  * Fetches XAI models from static data based on official documentation.
  * @returns Promise that resolves to an array of transformed models
  */
-export async function fetchXAIModels(): Promise<Model[]> {
+export const fetchXAIModels = async (): Promise<Model[]> => {
     console.log("[XAI] Using static model data from documentation...");
 
     try {
@@ -22,12 +22,12 @@ export async function fetchXAIModels(): Promise<Model[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Returns static XAI models data based on official documentation
  */
-function getStaticModels(): Model[] {
+const getStaticModels = (): Model[] => {
     const modelData = [
         {
             context: 262144,
@@ -138,14 +138,14 @@ function getStaticModels(): Model[] {
     console.log(`[XAI] Created ${models.length} models from static data`);
 
     return models;
-}
+};
 
 /**
  * Transforms XAI model data into the normalized structure.
  * @param rawData Raw data from XAI API
  * @returns Array of normalized model objects
  */
-export function transformXAIModels(rawData: any): Model[] {
+export const transformXAIModels = (rawData: any): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchXAIModels
@@ -191,4 +191,4 @@ export function transformXAIModels(rawData: any): Model[] {
     }
 
     return models;
-}
+};

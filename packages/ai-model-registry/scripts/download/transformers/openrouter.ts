@@ -55,7 +55,7 @@ const get = <T>(object: unknown, key: string, def: T): T => {
  * @param model The raw model object from OpenRouter API
  * @returns The normalized model structure
  */
-const transformOpenRouterModel = (model: OpenRouterModel): Model => {
+export const transformOpenRouterModel = (model: OpenRouterModel): Model => {
     const pricing = model.pricing || {};
 
     return {
@@ -95,17 +95,10 @@ const transformOpenRouterModel = (model: OpenRouterModel): Model => {
 };
 
 /**
- * Transforms an array of OpenRouter models into the normalized structure.
- * @param models The raw models from OpenRouter API
- * @returns An array of normalized models
- */
-const transformOpenRouterModels = (models: OpenRouterModel[]): Model[] => models.map(transformOpenRouterModel);
-
-/**
  * Fetches models from OpenRouter API and transforms them.
  * @returns Promise that resolves to an array of transformed models
  */
-async function fetchOpenRouterModels(): Promise<Model[]> {
+export const fetchOpenRouterModels = async (): Promise<Model[]> => {
     console.log("[OpenRouter] Fetching: https://openrouter.ai/api/v1/models");
 
     const response = await axios.get<OpenRouterResponse>("https://openrouter.ai/api/v1/models");
@@ -117,6 +110,4 @@ async function fetchOpenRouterModels(): Promise<Model[]> {
     console.log(`[OpenRouter] Found ${transformedModels.length} models`);
 
     return transformedModels;
-}
-
-export { fetchOpenRouterModels, transformOpenRouterModel };
+};
