@@ -330,6 +330,7 @@ const HomeComponent = () => {
 
                 return cost === "-" ? 0 : parseFloat(cost);
             },
+            cell: ({ row }) => <span className="text-right">{row.original.inputCost}</span>,
             enableColumnFilter: true,
             filterFn: numberFilterFn,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Input Cost" />,
@@ -343,6 +344,7 @@ const HomeComponent = () => {
 
                 return cost === "-" ? 0 : parseFloat(cost);
             },
+            cell: ({ row }) => <span className="text-right">{row.original.outputCost}</span>,
             enableColumnFilter: true,
             filterFn: numberFilterFn,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Output Cost" />,
@@ -352,12 +354,14 @@ const HomeComponent = () => {
         },
         {
             accessorKey: "cacheReadCost",
+            cell: ({ row }) => <span className="text-right">{row.original.cacheReadCost}</span>,
             enableColumnFilter: true,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Cache Read Cost" />,
             size: 200,
         },
         {
             accessorKey: "cacheWriteCost",
+            cell: ({ row }) => <span className="text-right">{row.original.cacheWriteCost}</span>,
             enableColumnFilter: true,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Cache Write Cost" />,
             size: 200,
@@ -372,13 +376,13 @@ const HomeComponent = () => {
                 const value = row.original.contextLimit;
 
                 if (value === "-")
-                    return <span className="text-muted-foreground text-xs">-</span>;
+                    return <span className="text-muted-foreground text-xs text-right">-</span>;
 
                 // Parse the number and format with commas
                 const num = parseInt(value.replace(/\D/g, ""), 10);
                 const formatted = num.toLocaleString();
 
-                return <span>{formatted}</span>;
+                return <span className="text-right">{formatted}</span>;
             },
             enableColumnFilter: true,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Context Limit" />,
@@ -396,13 +400,13 @@ const HomeComponent = () => {
                 const value = row.original.outputLimit;
 
                 if (value === "-")
-                    return <span className="text-muted-foreground text-xs">-</span>;
+                    return <span className="text-muted-foreground text-xs text-right">-</span>;
 
                 // Parse the number and format with commas
                 const num = parseInt(value.replace(/\D/g, ""), 10);
                 const formatted = num.toLocaleString();
 
-                return <span>{formatted}</span>;
+                return <span className="text-right">{formatted}</span>;
             },
             enableColumnFilter: true,
             header: ({ column }) => <DataTableColumnHeader column={column} title="Output Limit" />,
