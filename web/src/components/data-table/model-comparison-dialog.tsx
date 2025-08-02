@@ -197,7 +197,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="max-w-7xl max-h-[90vh] flex flex-col">
+            <DialogContent className="w-full md:max-w-[90vw] max-h-[90vh] flex flex-col">
                 <DialogHeader className="flex-shrink-0">
                     <div className="flex items-center justify-between">
                         <div>
@@ -238,67 +238,72 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                 
                 {/* Scrollable comparison table */}
                 <div className="flex-1 overflow-auto min-h-0 relative">
-                    <div className="grid grid-cols-[200px_repeat(auto-fit,minmax(200px,1fr))] gap-2 text-sm pb-4">
-                        {/* Fade indicator for scrollable content */}
-                        <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
-                        {/* Header row with model names */}
-                        <div className="sticky top-0 bg-background z-10 p-2 font-medium border-b shadow-sm">
-                            Feature
-                        </div>
-                        {selectedModels.map((model) => (
-                            <div key={model.id} className="sticky top-0 bg-background z-10 p-2 border-b shadow-sm">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <ProviderIcon 
-                                        provider={model.provider} 
-                                        providerIcon={model.providerIcon} 
-                                        className="h-4 w-4" 
-                                    />
-                                    <span className="font-medium text-xs">{model.provider}</span>
-                                </div>
-                                <div className="text-xs text-muted-foreground truncate" title={model.model}>
-                                    {model.model}
-                                </div>
-                            </div>
-                        ))}
-
-                        {/* Comparison rows */}
-                        {comparisonFields.map((field) => {
-                            const hasDifferences = highlightDifferences(field.id);
-                            const bestValue = getBestValue(field.id, field);
-                            const shouldHighlight = field.comparison?.highlightDifferences !== false;
-                            
-                            return (
-                                <div key={field.id} className="contents">
-                                    <div className={`p-2 border-b ${hasDifferences && shouldHighlight ? 'bg-yellow-50 dark:bg-yellow-950/20' : ''}`}>
-                                        <span className="text-sm font-medium">{field.displayName}</span>
-                                        {hasDifferences && shouldHighlight && (
-                                            <Badge variant="secondary" className="ml-2 text-xs">
-                                                Different
-                                            </Badge>
-                                        )}
-                                    </div>
-                                    {selectedModels.map((model) => {
-                                        const value = getFieldValue(model, field.id);
-                                        const isBestValue = bestValue && value === bestValue;
-                                        
-                                        return (
-                                            <div 
-                                                key={`${model.id}-${field.id}`} 
-                                                className={`p-2 border-b flex items-center ${hasDifferences && shouldHighlight ? 'bg-yellow-50 dark:bg-yellow-950/20' : ''} ${isBestValue ? 'bg-green-50 dark:bg-green-950/20' : ''}`}
-                                            >
-                                                {renderFieldValue(value, field)}
-                                                {isBestValue && (
-                                                    <Badge variant="default" className="ml-2 text-xs">
-                                                        Best
+                    <table className="w-full text-sm border-collapse">
+                        <thead>
+                            <tr>
+                                <th className="sticky top-0 left-0 z-30 p-3 text-left font-medium border-b min-w-[200px] shadow-sm bg-background after:absolute after:top-0 after:right-0 after:-bottom-[1px] after:w-[1px] after:bg-border before:absolute before:-bottom-[1px] before:left-0 before:right-0 before:h-[1px] before:bg-border">
+                                    Feature
+                                </th>
+                                {selectedModels.map((model) => (
+                                    <th key={model.id} className={`sticky top-0 z-20 p-3 text-left font-medium border-b min-w-[200px] shadow-sm bg-background after:absolute after:-bottom-[1px] after:left-0 after:right-0 after:h-[1px] after:bg-border ${selectedModels.indexOf(model) < selectedModels.length - 1 ? 'before:absolute before:top-0 before:right-0 before:bottom-0 before:w-[1px] before:bg-border' : ''}`}>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <ProviderIcon 
+                                                provider={model.provider} 
+                                                providerIcon={model.providerIcon} 
+                                                className="h-4 w-4" 
+                                            />
+                                            <span className="font-medium text-xs">{model.provider}</span>
+                                        </div>
+                                        <div className="text-xs text-muted-foreground truncate" title={model.model}>
+                                            {model.model}
+                                        </div>
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {comparisonFields.map((field) => {
+                                const hasDifferences = highlightDifferences(field.id);
+                                const bestValue = getBestValue(field.id, field);
+                                const shouldHighlight = field.comparison?.highlightDifferences !== false;
+                                
+                                return (
+                                    <tr key={field.id}>
+                                        <td className="sticky left-0 z-20 p-3 border-b shadow-sm bg-background after:absolute after:top-0 after:right-0 after:bottom-0 after:w-[1px] after:bg-border">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-sm font-medium">{field.displayName}</span>
+                                                {hasDifferences && shouldHighlight && (
+                                                    <Badge variant="secondary" className="text-xs">
+                                                        Different
                                                     </Badge>
                                                 )}
                                             </div>
-                                        );
-                                    })}
-                                </div>
-                            );
-                        })}
-                    </div>
+                                        </td>
+                                        {selectedModels.map((model) => {
+                                            const value = getFieldValue(model, field.id);
+                                            const isBestValue = bestValue && value === bestValue;
+                                            
+                                            return (
+                                                <td 
+                                                    key={`${model.id}-${field.id}`} 
+                                                    className={`p-3 border-b ${hasDifferences && shouldHighlight ? 'bg-yellow-50 dark:bg-yellow-950/20' : 'bg-background'} ${isBestValue ? 'bg-green-50 dark:bg-green-950/20' : ''} before:absolute before:-bottom-[1px] before:left-0 before:right-0 before:h-[1px] before:bg-border ${selectedModels.indexOf(model) < selectedModels.length - 1 ? 'after:absolute after:top-0 after:right-0 after:bottom-0 after:w-[1px] after:bg-border' : ''} relative`}
+                                                >
+                                                    <div className="flex items-center gap-2">
+                                                        {renderFieldValue(value, field)}
+                                                        {isBestValue && (
+                                                            <Badge variant="default" className="text-xs">
+                                                                Best
+                                                            </Badge>
+                                                        )}
+                                                    </div>
+                                                </td>
+                                            );
+                                        })}
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
                 </div>
 
                 <div className="flex justify-between items-center gap-2 pt-4 border-t flex-shrink-0">
