@@ -127,8 +127,8 @@ importers:
         specifier: 1.4.23
         version: 1.4.23
       '@visulima/packem':
-        specifier: 2.0.0-alpha.4
-        version: 2.0.0-alpha.4(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@types/node@24.1.0)(esbuild@0.25.8)(lightningcss@1.30.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.0)
+        specifier: 2.0.0-alpha.5
+        version: 2.0.0-alpha.5(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@types/node@24.1.0)(esbuild@0.25.8)(lightningcss@1.30.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.0)
       '@visulima/string':
         specifier: 1.5.1
         version: 1.5.1
@@ -4553,8 +4553,8 @@ packages:
     peerDependencies:
       rollup: ^4
 
-  '@visulima/packem@2.0.0-alpha.4':
-    resolution: {integrity: sha512-feoL2/H2NDIMl/ZjHDc+ATf04RddJ9pTd2tkpbyHnKcCkvFF/pSudHazsH5lMYr/4oeAU6JiYi95QhOp+HogTA==}
+  '@visulima/packem@2.0.0-alpha.5':
+    resolution: {integrity: sha512-15RiKRxVnEF4u1rmipM2oL7YCq9L95QpmjywNz/vYbAGR/weeLXXlLuNSgYwkeFRyQLIElyrhjjfhFOhF3fnuA==}
     engines: {node: '>=20.* <=24.*'}
     hasBin: true
     peerDependencies:
@@ -15129,7 +15129,7 @@ snapshots:
       - '@types/node'
       - yaml
 
-  '@visulima/packem@2.0.0-alpha.4(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@types/node@24.1.0)(esbuild@0.25.8)(lightningcss@1.30.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.0)':
+  '@visulima/packem@2.0.0-alpha.5(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@types/node@24.1.0)(esbuild@0.25.8)(lightningcss@1.30.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.0)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@clack/prompts': 0.11.0
