@@ -2,8 +2,8 @@ import type { Model } from "@anolilab/ai-model-registry";
 import { getAllModels } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
-import { Calendar, Copy, File, FileText, Image as ImageIcon, ScatterChart, Search, Trash2, Video, Volume2 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Calendar, Copy, File, FileText, Image as ImageIcon, MoreHorizontal, ScatterChart, Search, Trash2, Video, Volume2 } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
 import DataTableColumnHeader from "@/components/data-table/column-header";
@@ -15,6 +15,13 @@ import HowToUseDialog from "@/components/how-to-use-dialog";
 import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import useIsMobile from "@/hooks/use-is-mobile";
 import { ProviderIcon } from "@/utils/provider-icons";
 
 const modalityIconMap: Record<string, React.ReactNode> = {
@@ -31,11 +38,22 @@ const HomeComponent = () => {
     const { allModels } = Route.useLoaderData();
     const [containerHeight, setContainerHeight] = useState(600);
     const [didMount, setDidMount] = useState(false);
+    const isMobile = useIsMobile();
+    const headerRef = useRef<HTMLElement>(null);
+    const footerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         setDidMount(true);
+
         const updateHeight = () => {
-            setContainerHeight(window.innerHeight - 160);
+            const headerHeight = headerRef.current?.offsetHeight;
+            const footerHeight = footerRef.current?.offsetHeight;
+
+            if (headerHeight && footerHeight) {
+                const totalOffset = headerHeight + footerHeight + 64;
+
+                setContainerHeight(window.innerHeight - totalOffset);
+            }
         };
 
         updateHeight();
@@ -43,7 +61,7 @@ const HomeComponent = () => {
         window.addEventListener("resize", updateHeight);
 
         return () => window.removeEventListener("resize", updateHeight);
-    }, []);
+    }, [isMobile]);
 
     // Helper function to format cost as currency
     const formatCost = (cost: number | null): string => {
@@ -511,27 +529,56 @@ const HomeComponent = () => {
 
     return (
         <>
-            <header className="flex items-center justify-between border-b px-3 py-2" style={{ height: "56px" }}>
+            <header className="flex items-center justify-between border-b px-3 py-2" ref={headerRef} style={{ height: "56px" }}>
                 <div className="left flex min-w-0 items-center gap-2">
                     <h1 className="text-lg font-bold tracking-tight uppercase">Models</h1>
                     <span className="slash" />
                     <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
                 </div>
                 <div className="right flex items-center gap-3">
-                    <HowToUseDialog />
+                    {isMobile
+                        ? (
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button className="flex items-center gap-2 text-sm" size="sm" variant="ghost">
+                                        <MoreHorizontal className="h-4 w-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end" className="w-48">
+                                    <DropdownMenuItem asChild>
+                                        <HowToUseDialog />
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <a
+                                            className="w-full cursor-pointer"
+                                            href="https://github.com/anolilab/ai-models"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                        >
+                                            GitHub
+                                        </a>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        )
+                        : (
+                            <>
+                                <HowToUseDialog />
 
-                    <a className="github" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
-                        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
-                                fill="currentColor"
-                            ></path>
-                        </svg>
-                    </a>
+                                <a className="github" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
+                                    <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+                                            fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </>
+                        )}
                 </div>
             </header>
             <main>
-                <ClientOnly fallback={<SkeletonTable columns={20} rows={15} />}>
+                <ClientOnly fallback={<SkeletonTable columns={isMobile ? 2 : 20} rows={15} />}>
                     <DataTable<(typeof tableData)[0], any>
                         config={{
                             enableColumnResizing: false,
@@ -656,7 +703,7 @@ const HomeComponent = () => {
                     />
                 </ClientOnly>
             </main>
-            <footer className="flex items-center justify-between gap-10 px-4 py-3">
+            <footer className="flex items-center justify-between gap-4 sm:gap-10 px-4 py-3 flex-col sm:flex-row" ref={footerRef}>
                 <div className="flex items-center gap-2">
                     <p className="text-sm text-[var(--color-text-tertiary)]">Powered by</p>
                     <a href="https://anolilab.com" rel="noopener noreferrer" target="_blank">

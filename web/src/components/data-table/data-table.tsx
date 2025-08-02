@@ -642,7 +642,8 @@ const DataTable = <TData extends ExportableData, TValue>({
                     transformFunction={exportConfig.transformFunction}
                 />
             )}
-            {tableConfig.enableRowVirtualization ? (
+            
+            {tableConfig.enableRowVirtualization && (
                 <VirtualizedTable
                     className={classes.table}
                     columns={columns}
@@ -655,7 +656,9 @@ const DataTable = <TData extends ExportableData, TValue>({
                         overscan: virtualizationOptions.overscan ?? tableConfig.virtualizationOverscan,
                     }}
                 />
-            ) : (
+            )}
+
+            {!tableConfig.enableRowVirtualization && (
                 <RegularTable
                     className={classes.table}
                     columns={columns}

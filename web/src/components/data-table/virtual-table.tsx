@@ -86,96 +86,6 @@ interface TableBodyCellProps<TData extends ExportableData> {
     cellIndex: number;
 }
 
-const VirtualizedTable = <TData extends ExportableData>({
-    className,
-    columns,
-    enableClickRowSelect = false,
-    enableColumnResizing = false,
-    enableKeyboardNavigation = false,
-    enableStickyHeader = true,
-    onKeyDown,
-    style,
-    table,
-    virtualizationOptions,
-}: VirtualizedTableProps<TData>) => {
-    const visibleColumns = table.getVisibleLeafColumns();
-    const tableContainerRef = useRef<HTMLDivElement>(null);
-
-    // CRITICAL: Memoize expensive width calculation (React Compiler can't optimize this)
-    const totalWidth = useMemo(() => visibleColumns.reduce((sum, column) => sum + column.getSize(), 0), [visibleColumns]);
-
-    // Column virtualization for horizontal scrolling
-    const columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
-        count: visibleColumns.length,
-        estimateSize: (index) => visibleColumns[index].getSize(),
-        getScrollElement: () => tableContainerRef.current,
-        horizontal: true,
-        overscan: 3,
-        scrollPaddingEnd: 0,
-        scrollPaddingStart: 0,
-    });
-
-    const virtualColumns = columnVirtualizer.getVirtualItems();
-
-    // Force column virtualizer to recalculate when container changes
-    useEffect(() => {
-        if (tableContainerRef.current) {
-            columnVirtualizer.measure();
-        }
-    }, [tableContainerRef.current, columnVirtualizer]);
-
-    // Calculate virtual padding for smooth horizontal scrolling
-    const virtualPaddingLeft = virtualColumns[0]?.start ?? 0;
-    const virtualPaddingRight = virtualColumns.length > 0 ? columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0) : 0;
-
-    return (
-        <div
-            className="relative overflow-auto"
-            ref={tableContainerRef}
-            style={{
-                height: virtualizationOptions.containerHeight,
-                ...enableStickyHeader && {
-                    position: "relative",
-                },
-            }}
-        >
-            <BaseTable
-                classNames={{
-                    container: "w-full",
-                    table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
-                }}
-                onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
-                style={{
-                    ...style,
-                    width: `${totalWidth}px`,
-                }}
-            >
-                <TableHead
-                    columnVirtualizer={columnVirtualizer}
-                    enableColumnResizing={enableColumnResizing}
-                    enableRowSelection={table.getState().rowSelection !== undefined}
-                    enableStickyHeader={enableStickyHeader}
-                    table={table}
-                    virtualPaddingLeft={virtualPaddingLeft}
-                    virtualPaddingRight={virtualPaddingRight}
-                />
-                <TableBody
-                    columns={columns}
-                    columnVirtualizer={columnVirtualizer}
-                    enableClickRowSelect={enableClickRowSelect}
-                    enableRowSelection={table.getState().rowSelection !== undefined}
-                    enableStickyHeader={enableStickyHeader}
-                    table={table}
-                    tableContainerRef={tableContainerRef}
-                    virtualizationOptions={virtualizationOptions}
-                    virtualPaddingLeft={virtualPaddingLeft}
-                    virtualPaddingRight={virtualPaddingRight}
-                />
-            </BaseTable>
-        </div>
-    );
-};
-
 const TableHead = <TData extends ExportableData>({
     columnVirtualizer,
     enableColumnResizing = false,
@@ -194,7 +104,7 @@ const TableHead = <TData extends ExportableData>({
     const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
 
     return (
-        <TableHeader className={cn(enableStickyHeader && "bg-background sticky top-0 z-50 min-h-10 border-b shadow-sm")} key={headerKey}>
+        <TableHeader className={cn(enableStickyHeader && "bg-background sticky -top-[2px] pt-[2px] sm:top-0 z-50 min-h-10 border-b shadow-sm")} key={headerKey}>
             {table.getHeaderGroups().map((headerGroup) => {
                 const sortingState = table
                     .getState()
@@ -217,6 +127,22 @@ const TableHead = <TData extends ExportableData>({
         </TableHeader>
     );
 };
+
+const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>) => (
+    <BaseTableHead
+        className="group/th bg-background relative flex p-2 text-left"
+        colSpan={header.colSpan}
+        data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
+        scope="col"
+        style={{
+            width: header.getSize(),
+        }}
+        tabIndex={-1}
+    >
+        {!header.isPlaceholder && flexRender(header.column.columnDef.header, header.getContext())}
+        {enableColumnResizing && header.column.getCanResize() && <DataTableResizer header={header} />}
+    </BaseTableHead>
+);
 
 const TableHeadRow = <TData extends ExportableData>({
     columnVirtualizer,
@@ -253,31 +179,6 @@ const TableHeadRow = <TData extends ExportableData>({
             {/* Right padding for virtualization */}
             {hasVirtualColumns && virtualPaddingRight > 0 && <BaseTableHead className="flex" style={{ width: virtualPaddingRight }} />}
         </BaseTableRow>
-    );
-};
-
-const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header, table }: TableHeadCellProps<TData>) => {
-    // Include sorting state in key to force re-render when sorting changes
-    const sortingState = table
-        .getState()
-        .sorting
-        .map((s: { desc: boolean; id: string }) => `${s.id}-${s.desc}`)
-        .join(",");
-
-    return (
-        <BaseTableHead
-            className="group/th bg-background relative flex p-2 text-left"
-            colSpan={header.colSpan}
-            data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
-            scope="col"
-            style={{
-                width: header.getSize(),
-            }}
-            tabIndex={-1}
-        >
-            {!header.isPlaceholder && flexRender(header.column.columnDef.header, header.getContext())}
-            {enableColumnResizing && header.column.getCanResize() && <DataTableResizer header={header} />}
-        </BaseTableHead>
     );
 };
 
@@ -448,5 +349,94 @@ const TableBodyCell = <TData extends ExportableData>({ cell, cellIndex }: TableB
         {flexRender(cell.column.columnDef.cell, cell.getContext())}
     </BaseTableCell>
 );
+
+const VirtualizedTable = <TData extends ExportableData>({
+    className,
+    columns,
+    enableClickRowSelect = false,
+    enableColumnResizing = false,
+    enableKeyboardNavigation = false,
+    enableStickyHeader = true,
+    onKeyDown,
+    style,
+    table,
+    virtualizationOptions,
+}: VirtualizedTableProps<TData>) => {
+    const visibleColumns = table.getVisibleLeafColumns();
+    const tableContainerRef = useRef<HTMLDivElement>(null);
+
+    // CRITICAL: Memoize expensive width calculation (React Compiler can't optimize this)
+    const totalWidth = useMemo(() => visibleColumns.reduce((sum, column) => sum + column.getSize(), 0), [visibleColumns]);
+
+    // Column virtualization for horizontal scrolling
+    const columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
+        count: visibleColumns.length,
+        estimateSize: (index) => visibleColumns[index].getSize(),
+        getScrollElement: () => tableContainerRef.current,
+        horizontal: true,
+        overscan: 3,
+        scrollPaddingEnd: 0,
+        scrollPaddingStart: 0,
+    });
+
+    const virtualColumns = columnVirtualizer.getVirtualItems();
+
+    // Force column virtualizer to recalculate when container changes
+    useEffect(() => {
+        if (tableContainerRef.current) {
+            columnVirtualizer.measure();
+        }
+    }, [tableContainerRef.current, columnVirtualizer]);
+
+    // Calculate virtual padding for smooth horizontal scrolling
+    const virtualPaddingLeft = virtualColumns[0]?.start ?? 0;
+    const virtualPaddingRight = virtualColumns.length > 0 ? columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0) : 0;
+
+    return (
+        <div
+            className="relative overflow-auto"
+            ref={tableContainerRef}
+            style={{
+                height: virtualizationOptions.containerHeight,
+                ...enableStickyHeader && {
+                    position: "relative",
+                },
+            }}
+        >
+            <BaseTable
+                classNames={{
+                    table: cn("grid", enableColumnResizing ? "resizable-table" : "", className),
+                }}
+                onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
+                style={{
+                    ...style,
+                    width: `${totalWidth}px`,
+                }}
+            >
+                <TableHead
+                    columnVirtualizer={columnVirtualizer}
+                    enableColumnResizing={enableColumnResizing}
+                    enableRowSelection={table.getState().rowSelection !== undefined}
+                    enableStickyHeader={enableStickyHeader}
+                    table={table}
+                    virtualPaddingLeft={virtualPaddingLeft}
+                    virtualPaddingRight={virtualPaddingRight}
+                />
+                <TableBody
+                    columns={columns}
+                    columnVirtualizer={columnVirtualizer}
+                    enableClickRowSelect={enableClickRowSelect}
+                    enableRowSelection={table.getState().rowSelection !== undefined}
+                    enableStickyHeader={enableStickyHeader}
+                    table={table}
+                    tableContainerRef={tableContainerRef}
+                    virtualizationOptions={virtualizationOptions}
+                    virtualPaddingLeft={virtualPaddingLeft}
+                    virtualPaddingRight={virtualPaddingRight}
+                />
+            </BaseTable>
+        </div>
+    );
+};
 
 export { TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableHeadRow, type VirtualizationOptions, VirtualizedTable };

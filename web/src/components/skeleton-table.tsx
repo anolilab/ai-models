@@ -7,9 +7,7 @@ interface SkeletonTableProps {
 
 const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps) => (
     <div className="w-full">
-        {/* Table Container */}
         <div className="border">
-            {/* Table Header */}
             <div className="bg-muted/50 border-b">
                 <div className="flex items-center px-4 py-3">
                     {Array.from({ length: columns }).map((_, index) => (
@@ -20,7 +18,6 @@ const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps) => (
                 </div>
             </div>
 
-            {/* Table Rows */}
             <div className="divide-y">
                 {Array.from({ length: rows }).map((_, rowIndex) => (
                     <div className="hover:bg-muted/50 flex items-center px-4 py-3" key={rowIndex}>

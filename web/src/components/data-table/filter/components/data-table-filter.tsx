@@ -1,4 +1,4 @@
-import useIsMobile from "@/hooks/use-mobile";
+import useIsMobile from "@/hooks/use-is-mobile";
 
 import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
 import type { Locale } from "../lib/i18n";

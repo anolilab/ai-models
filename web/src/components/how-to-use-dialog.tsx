@@ -1,16 +1,17 @@
 import { ExternalLink, Github, Package } from "lucide-react";
+import type { FC } from "react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-const HowToUseDialog = () => {
+const HowToUseDialog: FC = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <Dialog onOpenChange={setOpen} open={open}>
             <DialogTrigger asChild>
-                <Button className="bg-[var(--color-brand)] px-3 py-2 text-sm text-[var(--color-text-invert)]" id="help">
+                <Button className="bg-[var(--color-brand)] px-2 py-1.5 sm:px-3 sm:py-2 text-sm text-[var(--color-text-invert)]" id="help">
                     How to use
                 </Button>
             </DialogTrigger>
