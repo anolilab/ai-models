@@ -1,8 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
-        "lastUpdated": "2025-08-02T00:07:47.154Z",
-        "totalModels": 1587,
+        "lastUpdated": "2025-08-02T00:30:45.467Z",
+        "totalModels": 1588,
         "totalProviders": 29,
         "version": "0.0.0-development"
     },
@@ -37783,6 +37783,7 @@
                 "inputCacheHit": 0.375,
                 "output": 6
             },
+            "extendedThinking": true,
             "id": "codex-mini-latest",
             "knowledge": "2024-04",
             "lastUpdated": "2025-05-16",
@@ -37807,6 +37808,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -37816,6 +37818,7 @@
                 "inputCacheHit": 1.25,
                 "output": 1.5
             },
+            "extendedThinking": false,
             "id": "gpt-3.5-turbo",
             "knowledge": "2021-09-01",
             "lastUpdated": "2023-11-06",
@@ -37840,6 +37843,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -37849,6 +37853,7 @@
                 "inputCacheHit": null,
                 "output": 30
             },
+            "extendedThinking": false,
             "id": "gpt-4",
             "knowledge": "2023-11",
             "lastUpdated": "2024-04-09",
@@ -37873,6 +37878,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -37882,8 +37888,9 @@
                 "inputCacheHit": 0.5,
                 "output": 8
             },
+            "extendedThinking": false,
             "id": "gpt-4.1",
-            "knowledge": "2024-04",
+            "knowledge": "2024-05",
             "lastUpdated": "2025-04-14",
             "limit": {
                 "context": 1047576,
@@ -37906,6 +37913,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -37915,6 +37923,7 @@
                 "inputCacheHit": 0.1,
                 "output": 1.6
             },
+            "extendedThinking": false,
             "id": "gpt-4.1-mini",
             "knowledge": "2024-04",
             "lastUpdated": "2025-04-14",
@@ -37939,6 +37948,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -37948,6 +37958,7 @@
                 "inputCacheHit": 0.03,
                 "output": 0.4
             },
+            "extendedThinking": false,
             "id": "gpt-4.1-nano",
             "knowledge": "2024-04",
             "lastUpdated": "2025-04-14",
@@ -37972,6 +37983,42 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 60,
+                "inputCacheHit": null,
+                "output": 120
+            },
+            "extendedThinking": false,
+            "id": "gpt-4-32k",
+            "knowledge": "2023-11",
+            "lastUpdated": "2023-03-14",
+            "limit": {
+                "context": 32768,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-4 32K",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2023-03-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -37981,6 +38028,7 @@
                 "inputCacheHit": 1.25,
                 "output": 10
             },
+            "extendedThinking": false,
             "id": "gpt-4o",
             "knowledge": "2023-09",
             "lastUpdated": "2024-05-13",
@@ -38005,6 +38053,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -38014,6 +38063,7 @@
                 "inputCacheHit": 0.08,
                 "output": 0.6
             },
+            "extendedThinking": false,
             "id": "gpt-4o-mini",
             "knowledge": "2023-09",
             "lastUpdated": "2024-07-18",
@@ -38038,6 +38088,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -38047,8 +38098,9 @@
                 "inputCacheHit": null,
                 "output": 30
             },
+            "extendedThinking": false,
             "id": "gpt-4-turbo",
-            "knowledge": "2023-12",
+            "knowledge": "2023-11",
             "lastUpdated": "2024-04-09",
             "limit": {
                 "context": 128000,
@@ -38071,15 +38123,17 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
-            "attachment": true,
+            "attachment": false,
             "cost": {
                 "input": 15,
                 "inputCacheHit": 7.5,
                 "output": 60
             },
+            "extendedThinking": true,
             "id": "o1",
             "knowledge": "2023-09",
             "lastUpdated": "2024-12-05",
@@ -38104,6 +38158,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -38113,6 +38168,7 @@
                 "inputCacheHit": 0.55,
                 "output": 4.4
             },
+            "extendedThinking": true,
             "id": "o1-mini",
             "knowledge": "2023-09",
             "lastUpdated": "2024-09-12",
@@ -38137,6 +38193,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": false,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -38146,6 +38203,7 @@
                 "inputCacheHit": 7.5,
                 "output": 60
             },
+            "extendedThinking": true,
             "id": "o1-preview",
             "knowledge": "2023-09",
             "lastUpdated": "2024-09-12",
@@ -38170,6 +38228,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -38212,6 +38271,7 @@
                 "inputCacheHit": 0.5,
                 "output": 8
             },
+            "extendedThinking": true,
             "id": "o3",
             "knowledge": "2024-05",
             "lastUpdated": "2025-04-16",
@@ -38236,6 +38296,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -38278,6 +38339,7 @@
                 "inputCacheHit": 0.55,
                 "output": 4.4
             },
+            "extendedThinking": true,
             "id": "o3-mini",
             "knowledge": "2024-05",
             "lastUpdated": "2025-01-29",
@@ -38302,6 +38364,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": false,
             "icon": "openai"
         },
         {
@@ -38311,6 +38374,7 @@
                 "inputCacheHit": null,
                 "output": 80
             },
+            "extendedThinking": true,
             "id": "o3-pro",
             "knowledge": "2024-05",
             "lastUpdated": "2025-06-10",
@@ -38335,6 +38399,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
@@ -38344,6 +38409,7 @@
                 "inputCacheHit": 0.28,
                 "output": 4.4
             },
+            "extendedThinking": true,
             "id": "o4-mini",
             "knowledge": "2024-05",
             "lastUpdated": "2025-04-16",
@@ -38368,6 +38434,7 @@
             "streamingSupported": true,
             "temperature": false,
             "toolCall": true,
+            "vision": true,
             "icon": "openai"
         },
         {
