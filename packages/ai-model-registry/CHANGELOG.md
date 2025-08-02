@@ -1,3 +1,10 @@
+## @anolilab/ai-model-registry [1.1.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.2...@anolilab/ai-model-registry@1.1.0) (2025-08-02)
+
+### Features
+
+* add new Cerebras and Chutes models to the AI model registry, update API data, and enhance icon handling for improved functionality ([e99ddb7](https://github.com/anolilab/ai-models/commit/e99ddb76cd1ea4a848068a051d565eb0fe4dd33f))
+* add Weights & Biases integration with new models, update API data, and enhance provider handling for improved functionality ([670e9f2](https://github.com/anolilab/ai-models/commit/670e9f24234d0fec239dc8e8b4246a58aed822e2))
+
 ## @anolilab/ai-model-registry [1.0.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.1...@anolilab/ai-model-registry@1.0.2) (2025-08-02)
 
 ### Bug Fixes
