@@ -1,3 +1,9 @@
+## @anolilab/ai-model-registry [1.2.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.1...@anolilab/ai-model-registry@1.2.2) (2025-08-02)
+
+### Bug Fixes
+
+* streamline model extraction process of upstage ([59cb3c8](https://github.com/anolilab/ai-models/commit/59cb3c821da9053caffbc2b88af4e57f598884b9))
+
 ## @anolilab/ai-model-registry [1.2.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.0...@anolilab/ai-model-registry@1.2.1) (2025-08-02)
 
 ### Bug Fixes
