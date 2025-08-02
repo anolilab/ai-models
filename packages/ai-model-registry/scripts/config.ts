@@ -154,6 +154,9 @@ export const PROVIDER_ICON_MAP: Record<string, string> = {
     venice: "venice",
     vercel: "vercel",
     vertexai: "google",
+    wandb: "wandb",
+    "weights & biases": "wandb",
+    "weights-biases": "wandb",
     writer: "writer",
     "x-ai": "xai",
     xai: "xai",
@@ -194,6 +197,7 @@ export const BRAND_NAME_MAP: Record<string, string> = {
     v0: "V0",
     venice: "Venice",
     vercel: "Vercel",
+    "weights-biases": "Weights & Biases",
     xai: "XAI",
 };
 
@@ -463,5 +467,13 @@ export const PROVIDERS_CONFIG: ProviderConfig[] = [
         npm: "@ai-sdk/cloudflare",
         output: "cloudflare",
         transformer: "./transformers/cloudflare.ts",
+    },
+    {
+        doc: "https://weave-docs.wandb.ai/guides/integrations/inference/",
+        env: ["WANDB_API_KEY"],
+        name: "Weights & Biases",
+        npm: "@ai-sdk/openai-compatible",
+        output: "weights-biases",
+        transformer: "./transformers/weights-biases.ts",
     },
 ];

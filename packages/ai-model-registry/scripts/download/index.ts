@@ -86,6 +86,7 @@ interface TransformerModule {
     fetchV0Models?: () => Promise<Model[]>;
     fetchVeniceModels?: () => Promise<Model[]>;
     fetchVercelModels?: () => Promise<Model[]>;
+    fetchWeightsBiasesModels?: () => Promise<Model[]>;
     fetchXAIModels?: () => Promise<Model[]>;
 }
 
@@ -174,6 +175,7 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchXAIModels
     || transformerModule.fetchModelScopeModels
     || transformerModule.fetchCloudflareModels
+    || transformerModule.fetchWeightsBiasesModels
     || transformerModule.default
     || null;
 

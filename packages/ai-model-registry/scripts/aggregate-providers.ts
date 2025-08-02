@@ -672,7 +672,10 @@ const aggregateModels = async (): Promise<Model[]> => {
             }
 
             // Generate provider ID from file path and original provider field (sub-provider)
-            convertedData.providerId = generateProviderId(file, originalProvider);
+            // Only set providerId if it's not already present (to respect transformer-set values)
+            if (!convertedData.providerId) {
+                convertedData.providerId = generateProviderId(file, originalProvider);
+            }
 
             // Fix empty IDs by using the name or filename as fallback
             if (!convertedData.id || convertedData.id === "") {
