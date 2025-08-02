@@ -1,22 +1,14 @@
-import type { Model } from "@anolilab/ai-model-registry";
 import { getAllModels } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
-import type { ColumnDef } from "@tanstack/react-table";
-import { Calendar, Copy, File, FileText, Image as ImageIcon, MoreHorizontal, ScatterChart, Search, Trash2, Video, Volume2, BarChart3 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { BarChart3, Copy, MoreHorizontal, Trash2 } from "lucide-react";
+import { useCallback, useState } from "react";
 
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
-import DataTableColumnHeader from "@/components/data-table/column-header";
 import DataTable from "@/components/data-table/data-table";
-import type { ColumnConfig } from "@/components/data-table/filter/core/types";
-import { dateFilterFn, numberFilterFn, textFilterFn } from "@/components/data-table/filter/integrations/tanstack-table/filter-fns";
-import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
 import HowToUseDialog from "@/components/how-to-use-dialog";
 import ModelComparisonDialog from "@/components/data-table/model-comparison-dialog";
-import SelectionModeToggle from "@/components/data-table/selection-mode-toggle";
 import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -24,475 +16,45 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import useIsMobile from "@/hooks/use-is-mobile";
-import { ProviderIcon } from "@/utils/provider-icons";
-
-const modalityIconMap: Record<string, React.ReactNode> = {
-    audio: <Volume2 className="inline size-4" />,
-    embedding: <ScatterChart className="inline size-4" />,
-    file: <File className="inline size-4" />,
-    image: <ImageIcon className="inline size-4" />,
-    text: <FileText className="inline size-4" />,
-    video: <Video className="inline size-4" />,
-};
+import { useModelTable, useSelectionMode, useTableHeight } from "@/hooks/use-table";
 
 const HomeComponent = () => {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     const { allModels } = Route.useLoaderData();
-    const [containerHeight, setContainerHeight] = useState(600);
-    const [didMount, setDidMount] = useState(false);
-    const [isComparisonDialogOpen, setIsComparisonDialogOpen] = useState(false);
-    const [selectedModelsForComparison, setSelectedModelsForComparison] = useState<typeof tableData>([]);
-    const [selectionMode, setSelectionMode] = useState<"comparison" | "export">("comparison");
     const isMobile = useIsMobile();
     
-    // Handler for mode changes
-    const handleModeChange = useCallback((newMode: "comparison" | "export") => {
-        setSelectionMode(newMode);
-        // Clear selections when switching modes to avoid confusion
-        // This will be handled by the DataTable component
-    }, []);
-    const headerRef = useRef<HTMLElement>(null);
-    const footerRef = useRef<HTMLElement>(null);
+    // Custom hooks
+    const {
+        containerHeight,
+        didMount,
+        headerRef,
+        footerRef,
+    } = useTableHeight();
+    
+    const {
+        selectionMode,
+        maxSelectionLimit,
+        handleModeChange,
+        getValidationMessage,
+    } = useSelectionMode();
+    
+    const {
+        tableData,
+        columns,
+        exportConfig,
+        filterConfig,
+    } = useModelTable(allModels, {
+        enableColumnResizing: false,
+        enableColumnHiding: true,
+        enableFiltering: true,
+        enableSorting: true,
+    });
 
-    useEffect(() => {
-        setDidMount(true);
 
-        const updateHeight = () => {
-            const headerHeight = headerRef.current?.offsetHeight;
-            const footerHeight = footerRef.current?.offsetHeight;
-
-            if (headerHeight && footerHeight) {
-                const totalOffset = headerHeight + footerHeight + 64;
-
-                setContainerHeight(window.innerHeight - totalOffset);
-            }
-        };
-
-        updateHeight();
-
-        window.addEventListener("resize", updateHeight);
-
-        return () => window.removeEventListener("resize", updateHeight);
-    }, [isMobile]);
-
-    // Helper function to format cost as currency
-    const formatCost = (cost: number | null): string => {
-        if (cost === null || cost === undefined)
-            return "-";
-
-        return new Intl.NumberFormat("en-US", {
-            currency: "USD",
-            maximumFractionDigits: 4,
-            minimumFractionDigits: 2,
-            style: "currency",
-        }).format(cost);
-    };
-
-    // Transform the data to match our table structure
-    const tableData = useMemo(() => {
-        const processed = allModels.map((model: Model, index: number) => {
-            return {
-                cacheReadCost: formatCost(model.cost.inputCacheHit),
-                cacheWriteCost: "-", // Not available in our data
-                contextLimit: model.limit.context ? model.limit.context.toLocaleString() : "-",
-                id: index + model.id,
-                input: model.modalities.input.join(", "),
-                inputCost: formatCost(model.cost.input),
-                knowledge: model.knowledge || "-",
-                lastUpdated: model.lastUpdated || "-",
-                model: (model.name || model.id).toLowerCase(),
-                modelId: model.id,
-                output: model.modalities.output.join(", "),
-                outputCost: formatCost(model.cost.output),
-                outputLimit: model.limit.output ? model.limit.output.toLocaleString() : "-",
-                provider: model.provider || "Unknown",
-                providerIcon: model.icon || null,
-                providerId: model.providerId || "Unknown",
-                reasoning: model.reasoning,
-                releaseDate: model.releaseDate || "-",
-                temperature: model.temperature ? "Yes" : "No",
-                toolCall: model.toolCall,
-                weights: model.openWeights ? "Open" : "Closed",
-            };
-        });
-
-        // Sort alphabetically by provider
-        return processed.sort((a, b) => a.provider.localeCompare(b.provider));
-    }, [allModels]);
-
-    // Column configurations for data-table-filter - only the ones we want to filter
-    const columnConfigs: ColumnConfig<(typeof tableData)[0]>[] = useMemo(
-        () => [
-            {
-                accessor: (row) => row.provider,
-                displayName: "Provider",
-                icon: Search,
-                id: "provider",
-                type: "text",
-            },
-            {
-                accessor: (row) => row.model,
-                displayName: "Model",
-                icon: Search,
-                id: "model",
-                type: "text",
-            },
-            {
-                accessor: (row) => {
-                    const cost = row.inputCost.replace(/[^0-9.]/g, "");
-
-                    return cost === "-" ? 0 : parseFloat(cost);
-                },
-                displayName: "Input Cost",
-                icon: Search,
-                id: "inputCost",
-                type: "number",
-            },
-            {
-                accessor: (row) => {
-                    const cost = row.outputCost.replace(/[^0-9.]/g, "");
-
-                    return cost === "-" ? 0 : parseFloat(cost);
-                },
-                displayName: "Output Cost",
-                icon: Search,
-                id: "outputCost",
-                type: "number",
-            },
-            {
-                accessor: (row) => {
-                    if (row.lastUpdated === "-")
-                        return null;
-
-                    return new Date(row.lastUpdated);
-                },
-                displayName: "Last Updated",
-                icon: Calendar,
-                id: "lastUpdated",
-                type: "date",
-            },
-            {
-                accessor: (row) => row.toolCall,
-                displayName: "Tool Call",
-                icon: Search,
-                id: "toolCall",
-                options: [
-                    { label: "Yes", value: "Yes" },
-                    { label: "No", value: "No" },
-                ],
-                type: "option",
-            },
-            {
-                accessor: (row) => row.reasoning,
-                displayName: "Reasoning",
-                icon: Search,
-                id: "reasoning",
-                options: [
-                    { label: "Yes", value: "Yes" },
-                    { label: "No", value: "No" },
-                ],
-                type: "option",
-            },
-        ],
-        [],
-    );
-
-    const baseColumns: ColumnDef<(typeof tableData)[0]>[] = [
-        {
-            cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
-            enableHiding: false,
-            enableSorting: false,
-            header: ({ table }) => (
-                <div className="p-2">
-                    <Checkbox
-                        aria-label="Select all"
-                        checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
-                        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                    />
-                </div>
-            ),
-            id: "select",
-            size: 60,
-        },
-        {
-            accessorKey: "providerIcon",
-            cell: ({ row }) => <ProviderIcon className="h-6 w-6" provider={row.original.provider} providerIcon={row.original.providerIcon} />,
-            enableColumnFilter: false,
-            enableSorting: false,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="" />,
-            id: "providerIcon",
-            size: 60,
-        },
-        {
-            accessorKey: "provider",
-            enableColumnFilter: true,
-            enableSorting: true,
-            filterFn: textFilterFn,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Provider" />,
-            id: "provider",
-            size: 150,
-            sortingFn: "text",
-        },
-        {
-            accessorKey: "model",
-            enableColumnFilter: true,
-            enableSorting: true,
-            filterFn: textFilterFn,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Model" />,
-            id: "model",
-            size: 300,
-            sortingFn: "text",
-        },
-        {
-            accessorKey: "providerId",
-            cell: ({ row }) => <span className="text-muted-foreground font-mono-id text-xs">{row.original.providerId}</span>,
-            enableColumnFilter: true,
-            enableSorting: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Provider ID" />,
-            id: "providerId",
-            size: 200,
-        },
-        {
-            accessorKey: "modelId",
-            cell: ({ row }) => <span className="text-muted-foreground font-mono-id text-xs">{row.original.modelId}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Model ID" />,
-            id: "modelId",
-            size: 420,
-        },
-        {
-            accessorKey: "toolCall",
-            enableColumnFilter: true,
-            filterFn: (row, columnId, filterValue) => {
-                const value = row.getValue<string>(columnId);
-
-                return optionFilterFn(value, filterValue);
-            },
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Tool Call" />,
-            id: "toolCall",
-            size: 130,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "reasoning",
-            enableColumnFilter: true,
-            filterFn: (row, columnId, filterValue) => {
-                const value = row.getValue<string>(columnId);
-
-                return optionFilterFn(value, filterValue);
-            },
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Reasoning" />,
-            id: "reasoning",
-            size: 130,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "input",
-            cell: ({ row }) => {
-                const modalities = useMemo(() => row.original.input.split(",").map((m: string) => m.trim()), [row.original.input]);
-
-                // Memoize the modality components to prevent tooltip recreation
-                const modalityComponents = useMemo(
-                    () =>
-                        modalities.map((modality: string, index: number) => {
-                            const icon = modalityIconMap[modality];
-
-                            if (icon) {
-                                return (
-                                    <span
-                                        className="border-border text-muted-foreground border px-1 py-0.5"
-                                        key={`input-${modality}-${index}`}
-                                        title={modality.charAt(0).toUpperCase() + modality.slice(1)}
-                                    >
-                                        {icon}
-                                    </span>
-                                );
-                            }
-
-                            return <span key={`input-${modality}-${index}`}>{modality}</span>;
-                        }),
-                    [modalities],
-                );
-
-                return <span className="flex items-center gap-1">{modalityComponents}</span>;
-            },
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Input" />,
-            size: 150,
-        },
-        {
-            accessorKey: "output",
-            cell: ({ row }) => {
-                const modalities = useMemo(() => row.original.output.split(",").map((m: string) => m.trim()), [row.original.output]);
-
-                // Memoize the modality components to prevent tooltip recreation
-                const modalityComponents = useMemo(
-                    () =>
-                        modalities.map((modality: string, index: number) => {
-                            const icon = modalityIconMap[modality];
-
-                            if (icon) {
-                                return (
-                                    <span
-                                        className="border-border text-muted-foreground border px-1 py-0.5"
-                                        key={`output-${modality}-${index}`}
-                                        title={modality.charAt(0).toUpperCase() + modality.slice(1)}
-                                    >
-                                        {icon}
-                                    </span>
-                                );
-                            }
-
-                            return <span key={`output-${modality}-${index}`}>{modality}</span>;
-                        }),
-                    [modalities],
-                );
-
-                return <span className="flex items-center gap-1">{modalityComponents}</span>;
-            },
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Output" />,
-            size: 150,
-        },
-        {
-            accessorFn: (row) => {
-                const cost = row.inputCost.replace(/[^0-9.]/g, "");
-
-                return cost === "-" ? 0 : parseFloat(cost);
-            },
-            cell: ({ row }) => <span className="text-right">{row.original.inputCost}</span>,
-            enableColumnFilter: true,
-            filterFn: numberFilterFn,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Input Cost" />,
-            id: "inputCost",
-            size: 150,
-            sortingFn: "basic",
-        },
-        {
-            accessorFn: (row) => {
-                const cost = row.outputCost.replace(/[^0-9.]/g, "");
-
-                return cost === "-" ? 0 : parseFloat(cost);
-            },
-            cell: ({ row }) => <span className="text-right">{row.original.outputCost}</span>,
-            enableColumnFilter: true,
-            filterFn: numberFilterFn,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Output Cost" />,
-            id: "outputCost",
-            size: 150,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "cacheReadCost",
-            cell: ({ row }) => <span className="text-right">{row.original.cacheReadCost}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Cache Read Cost" />,
-            size: 200,
-        },
-        {
-            accessorKey: "cacheWriteCost",
-            cell: ({ row }) => <span className="text-right">{row.original.cacheWriteCost}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Cache Write Cost" />,
-            size: 200,
-        },
-        {
-            accessorFn: (row) => {
-                const limit = row.contextLimit.replace(/\D/g, "");
-
-                return limit === "-" ? 0 : parseInt(limit, 10);
-            },
-            cell: ({ row }) => {
-                const value = row.original.contextLimit;
-
-                if (value === "-")
-                    return <span className="text-muted-foreground text-xs text-right">-</span>;
-
-                // Parse the number and format with commas
-                const num = parseInt(value.replace(/\D/g, ""), 10);
-                const formatted = num.toLocaleString();
-
-                return <span className="text-right">{formatted}</span>;
-            },
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Context Limit" />,
-            id: "contextLimit",
-            size: 200,
-            sortingFn: "basic",
-        },
-        {
-            accessorFn: (row) => {
-                const limit = row.outputLimit.replace(/\D/g, "");
-
-                return limit === "-" ? 0 : parseInt(limit, 10);
-            },
-            cell: ({ row }) => {
-                const value = row.original.outputLimit;
-
-                if (value === "-")
-                    return <span className="text-muted-foreground text-xs text-right">-</span>;
-
-                // Parse the number and format with commas
-                const num = parseInt(value.replace(/\D/g, ""), 10);
-                const formatted = num.toLocaleString();
-
-                return <span className="text-right">{formatted}</span>;
-            },
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Output Limit" />,
-            id: "outputLimit",
-            size: 160,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "temperature",
-            cell: ({ row }) => <span className="text-muted-foreground text-xs">{row.original.temperature}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Temperature" />,
-            size: 150,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "weights",
-            cell: ({ row }) => <span className="text-muted-foreground text-xs">{row.original.weights}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Weights" />,
-            size: 140,
-            sortingFn: "basic",
-        },
-        {
-            accessorKey: "knowledge",
-            cell: ({ row }) => <span className="text-muted-foreground text-xs">{row.original.knowledge}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Knowledge" />,
-            size: 150,
-        },
-        {
-            accessorKey: "releaseDate",
-            cell: ({ row }) => <span className="text-muted-foreground text-xs">{row.original.releaseDate}</span>,
-            enableColumnFilter: true,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Release Date" />,
-            size: 200,
-        },
-        {
-            accessorFn: (row) => {
-                if (row.lastUpdated === "-")
-                    return null;
-
-                return new Date(row.lastUpdated);
-            },
-            cell: ({ row }) => <span className="text-muted-foreground text-xs">{row.original.lastUpdated}</span>,
-            enableColumnFilter: true,
-            filterFn: dateFilterFn,
-            header: ({ column }) => <DataTableColumnHeader column={column} title="Last Updated" />,
-            id: "lastUpdated",
-            size: 200,
-            sortingFn: "datetime",
-        },
-    ];
-
-    // Create columns with row deselection handler
-    const getColumns = useCallback((handleRowDeselection: ((rowId: string) => void) | null | undefined) => baseColumns, [baseColumns]);
+    
+    // Local state
+    const [isComparisonDialogOpen, setIsComparisonDialogOpen] = useState(false);
+    const [selectedModelsForComparison, setSelectedModelsForComparison] = useState<typeof tableData>([]);
 
     // Custom toolbar component for selection actions
     const renderToolbarContent = useCallback(
@@ -508,25 +70,10 @@ const HomeComponent = () => {
         }) => {
             return (
                 <div className="flex items-center gap-4">
-                    {/* Selection Mode Toggle */}
-                    <SelectionModeToggle
-                        currentMode={selectionMode}
-                        onModeChange={handleModeChange}
-                        selectedCount={totalSelectedCount}
-                        maxSelectionLimit={5}
-                        size="sm"
-                    />
-                    
-                    {/* Selection Actions */}
                     {totalSelectedCount > 0 && (
                         <div className="flex items-center gap-2">
                             <span className="text-sm font-medium">
-                                {totalSelectedCount} model{totalSelectedCount !== 1 ? "s" : ""} selected
-                                {selectionMode === "comparison" && totalSelectedCount > 1 && (
-                                    <span className="text-muted-foreground ml-1">
-                                        (max 5 for comparison)
-                                    </span>
-                                )}
+                                {getValidationMessage(totalSelectedCount)}
                             </span>
                             <div className="flex items-center gap-2">
                                 {selectionMode === "comparison" && totalSelectedCount > 1 && (
@@ -548,7 +95,6 @@ const HomeComponent = () => {
                                     onClick={() => {
                                         // Copy selected model IDs to clipboard
                                         const modelIds = selectedRows.map((row) => row.modelId).join("\n");
-
                                         navigator.clipboard.writeText(modelIds);
                                     }}
                                     variant="outline"
@@ -568,7 +114,7 @@ const HomeComponent = () => {
                 </div>
             );
         },
-        [selectionMode],
+        [selectionMode, maxSelectionLimit, handleModeChange, getValidationMessage],
     );
 
     return (
@@ -623,7 +169,7 @@ const HomeComponent = () => {
             </header>
             <main>
                 <ClientOnly fallback={<SkeletonTable columns={isMobile ? 2 : 20} rows={15} />}>
-                    <DataTable<(typeof tableData)[0], any>
+                    <DataTable<typeof tableData[0], any>
                         config={{
                             enableColumnResizing: false,
                             enableColumnVisibility: true,
@@ -633,8 +179,8 @@ const HomeComponent = () => {
                             enableRowVirtualization: true,
                             enableStickyHeader: true,
                             enableToolbar: true,
-                            maxSelectionLimit: 5, // Limit selection to 5 models for comparison
-                            selectionMode: selectionMode, // Use current selection mode
+                            maxSelectionLimit: maxSelectionLimit,
+                            selectionMode: selectionMode,
                             estimatedRowHeight: 40,
                             virtualizationOverscan: 5,
                         }}
@@ -644,102 +190,10 @@ const HomeComponent = () => {
                             sortBy: "provider",
                             sortOrder: "asc",
                         }}
-                        exportConfig={{
-                            columnMapping: {
-                                cacheReadCost: "Cache Read Cost",
-                                cacheWriteCost: "Cache Write Cost",
-                                contextLimit: "Context Limit",
-                                input: "Input",
-                                inputCost: "Input Cost",
-                                knowledge: "Knowledge",
-                                lastUpdated: "Last Updated",
-                                model: "Model",
-                                modelId: "Model ID",
-                                output: "Output",
-                                outputCost: "Output Cost",
-                                outputLimit: "Output Limit",
-                                provider: "Provider",
-                                providerIcon: "Provider Icon",
-                                providerId: "Provider ID",
-                                reasoning: "Reasoning",
-                                releaseDate: "Release Date",
-                                temperature: "Temperature",
-                                toolCall: "Tool Call",
-                                weights: "Weights",
-                            },
-                            columnWidths: [
-                                { wch: 10 }, // providerIcon
-                                { wch: 15 }, // provider
-                                { wch: 20 }, // model
-                                { wch: 15 }, // providerId
-                                { wch: 20 }, // modelId
-                                { wch: 10 }, // toolCall
-                                { wch: 10 }, // reasoning
-                                { wch: 15 }, // input
-                                { wch: 15 }, // output
-                                { wch: 12 }, // inputCost
-                                { wch: 12 }, // outputCost
-                                { wch: 15 }, // cacheReadCost
-                                { wch: 15 }, // cacheWriteCost
-                                { wch: 15 }, // contextLimit
-                                { wch: 15 }, // outputLimit
-                                { wch: 12 }, // temperature
-                                { wch: 12 }, // weights
-                                { wch: 15 }, // knowledge
-                                { wch: 15 }, // releaseDate
-                                { wch: 15 }, // lastUpdated
-                            ],
-                            entityName: "models",
-                            headers: [
-                                "providerIcon",
-                                "provider",
-                                "model",
-                                "providerId",
-                                "modelId",
-                                "toolCall",
-                                "reasoning",
-                                "input",
-                                "output",
-                                "inputCost",
-                                "outputCost",
-                                "cacheReadCost",
-                                "cacheWriteCost",
-                                "contextLimit",
-                                "outputLimit",
-                                "temperature",
-                                "weights",
-                                "knowledge",
-                                "releaseDate",
-                                "lastUpdated",
-                            ],
-                            transformFunction: (row) => {
-                                return {
-                                    cacheReadCost: row.cacheReadCost,
-                                    cacheWriteCost: row.cacheWriteCost,
-                                    contextLimit: row.contextLimit,
-                                    input: row.input,
-                                    inputCost: row.inputCost,
-                                    knowledge: row.knowledge,
-                                    lastUpdated: row.lastUpdated,
-                                    model: row.model,
-                                    modelId: row.modelId,
-                                    output: row.output,
-                                    outputCost: row.outputCost,
-                                    outputLimit: row.outputLimit,
-                                    provider: row.provider,
-                                    providerIcon: row.providerIcon,
-                                    providerId: row.providerId,
-                                    reasoning: row.reasoning,
-                                    releaseDate: row.releaseDate,
-                                    temperature: row.temperature,
-                                    toolCall: row.toolCall,
-                                    weights: row.weights,
-                                };
-                            },
-                        }}
-                        filterColumns={columnConfigs}
+                        exportConfig={exportConfig}
+                        filterColumns={filterConfig}
                         filterStrategy="client"
-                        getColumns={getColumns}
+                        getColumns={() => columns}
                         idField="id"
                         renderToolbarContent={renderToolbarContent}
                         virtualizationOptions={{
@@ -749,7 +203,6 @@ const HomeComponent = () => {
                     />
                 </ClientOnly>
                 
-                {/* Model Comparison Dialog */}
                 <ModelComparisonDialog
                     isOpen={isComparisonDialogOpen}
                     onClose={() => setIsComparisonDialogOpen(false)}

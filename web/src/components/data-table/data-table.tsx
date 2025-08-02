@@ -17,7 +17,7 @@ import { VirtualizedTable } from "@/components/data-table/virtual-table";
 
 import type { ColumnConfig, FilterStrategy } from "./filter/core/types";
 import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
-import { createTSTFilters } from "./filter/integrations/tanstack-table";
+import { createTSTColumns, createTSTFilters } from "./filter/integrations/tanstack-table";
 import { DataTablePagination } from "./pagination";
 import { RegularTable } from "./regular-table";
 import DataTableToolbar from "./toolbar";
@@ -258,6 +258,9 @@ const DataTable = <TData extends ExportableData, TValue>({
 
     // Set up data-table-filter if filterColumns are provided
     const filterData = useMemo(() => data, [data]);
+    
+
+    
     const {
         actions,
         columns: filterColumnsData,
@@ -268,6 +271,8 @@ const DataTable = <TData extends ExportableData, TValue>({
         data: filterData,
         strategy: filterStrategy,
     });
+    
+
 
     // Convert filter system filters to TanStack Table column filters
     const convertedColumnFilters = useMemo(() => {
@@ -290,6 +295,8 @@ const DataTable = <TData extends ExportableData, TValue>({
 
         return columnFilters;
     }, [convertedColumnFilters, externalColumnFilters, columnFilters]);
+
+
 
     // Helper functions to handle both Record and Set selection states
     const isItemSelected = useCallback(
@@ -444,19 +451,34 @@ const DataTable = <TData extends ExportableData, TValue>({
         // Only pass deselection handler if row selection is enabled
         const columnDefs = getColumns(tableConfig.enableRowSelection ? handleRowDeselection : null);
 
-        // Pre-compute column metadata for better performance
+        // Use data-table-filter's createTSTColumns when filter columns are provided
+        if (filterColumns && filterColumns.length > 0 && filterColumnsData && filterColumnsData.length > 0) {
+            const processedColumns = createTSTColumns({
+                columns: columnDefs,
+                configs: filterColumnsData,
+            });
+            
+            return processedColumns.map((column) => {
+                return {
+                    ...column,
+                    meta: {
+                        ...column.meta,
+                        _cachedAccessor: "accessorFn" in column ? column.accessorFn : "accessorKey" in column ? column.accessorKey : undefined,
+                    },
+                };
+            });
+        }
+
         return columnDefs.map((column) => {
             return {
                 ...column,
-                // Add computed properties for better performance
                 meta: {
                     ...column.meta,
-                    // Cache the accessor function result for better performance
                     _cachedAccessor: "accessorFn" in column ? column.accessorFn : "accessorKey" in column ? column.accessorKey : undefined,
                 },
             };
         });
-    }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection]);
+    }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection, filterColumns, filterColumnsData]);
 
     // Create event handlers using utility functions
 
