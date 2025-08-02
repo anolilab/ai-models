@@ -1,3 +1,9 @@
+## @anolilab/ai-model-registry [1.2.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.0...@anolilab/ai-model-registry@1.2.1) (2025-08-02)
+
+### Bug Fixes
+
+* **deps:** update dependency @visulima/packem to v2.0.0-alpha.5 ([cfbe379](https://github.com/anolilab/ai-models/commit/cfbe379145bbe0c31e97bb7f9e42c5911957946c))
+
 ## @anolilab/ai-model-registry [1.2.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.1.0...@anolilab/ai-model-registry@1.2.0) (2025-08-02)
 
 ### Features
