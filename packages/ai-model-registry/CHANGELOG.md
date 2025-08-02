@@ -1,3 +1,10 @@
+## @anolilab/ai-model-registry [1.0.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.1...@anolilab/ai-model-registry@1.0.2) (2025-08-02)
+
+### Bug Fixes
+
+* fixed openAI model registry with new models and enhance existing model attributes for improved functionality ([ed978dc](https://github.com/anolilab/ai-models/commit/ed978dcf1bad8a936097a7be586ab8a17fe854cb))
+* update AI model registry data structure and add new scripts for Azure and deep infra models, for better output ([70b895f](https://github.com/anolilab/ai-models/commit/70b895f8d018f662c5782b23cd280350da04f218))
+
 ## @anolilab/ai-model-registry [1.0.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.0...@anolilab/ai-model-registry@1.0.1) (2025-08-01)
 
 ### Bug Fixes
