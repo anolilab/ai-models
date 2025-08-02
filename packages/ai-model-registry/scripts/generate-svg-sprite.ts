@@ -21,7 +21,7 @@ interface Model {
 /**
  * Extracts unique providers from the aggregated model data
  */
-function getUniqueProvidersFromModels(): Set<string> {
+const getUniqueProvidersFromModels = (): Set<string> => {
     try {
         const modelsData = readFileSync(MODELS_DATA_FILE, "utf-8");
         const models: Model[] = JSON.parse(modelsData);
@@ -42,12 +42,12 @@ function getUniqueProvidersFromModels(): Set<string> {
 
         return new Set();
     }
-}
+};
 
 /**
  * Creates a fallback icon for providers without any icons
  */
-function createFallbackIcon(providerName: string): { content: string; viewBox: string } {
+const createFallbackIcon = (providerName: string): { content: string; viewBox: string } => {
     const firstLetter = providerName.charAt(0).toUpperCase();
     const words = providerName.split(" ");
     const initials = words.map((word) => word.charAt(0).toUpperCase()).join("");
@@ -59,12 +59,12 @@ function createFallbackIcon(providerName: string): { content: string; viewBox: s
   `;
 
     return { content: content.trim(), viewBox: "0 0 24 24" };
-}
+};
 
 /**
  * Extracts SVG content from LobeHub icon file
  */
-function extractSvgFromLobeHubIcon(iconName: string): string | null {
+const extractSvgFromLobeHubIcon = (iconName: string): string | null => {
     try {
         // Try different possible file extensions and naming patterns
         const possibleNames = [`${iconName}.svg`, `${iconName}-color.svg`];
@@ -90,12 +90,12 @@ function extractSvgFromLobeHubIcon(iconName: string): string | null {
 
         return null;
     }
-}
+};
 
 /**
  * Extracts SVG content from our custom icon file
  */
-function extractSvgFromCustomIcon(providerName: string): string | null {
+const extractSvgFromCustomIcon = (providerName: string): string | null => {
     try {
         // Try different possible file extensions and naming patterns
         const possibleNames = [
@@ -146,12 +146,12 @@ function extractSvgFromCustomIcon(providerName: string): string | null {
 
         return null;
     }
-}
+};
 
 /**
  * Optimizes SVG content by removing unnecessary attributes and whitespace
  */
-function optimizeSvgContent(svgContent: string): string {
+const optimizeSvgContent = (svgContent: string): string => {
     let optimized = svgContent;
 
     // Remove comments
@@ -193,12 +193,12 @@ function optimizeSvgContent(svgContent: string): string {
     optimized = optimized.replace(/\s{2,}/g, " ");
 
     return optimized;
-}
+};
 
 /**
  * Extracts SVG content and viewBox from icon
  */
-function extractSvgContent(iconName: string, isCustom = false): { content: string; viewBox: string } | null {
+const extractSvgContent = (iconName: string, isCustom = false): { content: string; viewBox: string } | null => {
     const svgString = isCustom ? extractSvgFromCustomIcon(iconName) : extractSvgFromLobeHubIcon(iconName);
 
     if (!svgString) {
@@ -247,9 +247,9 @@ function extractSvgContent(iconName: string, isCustom = false): { content: strin
     }
 
     return { content: svgContent, viewBox };
-}
+};
 
-function generateSpriteSheet(): void {
+const generateSpriteSheet = (): void => {
     const iconSymbols: IconData = {};
     let spriteContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">\n";
 
@@ -295,7 +295,12 @@ function generateSpriteSheet(): void {
                 console.log(`✅ Generated icon for ${provider} using LobeHub ${iconName}`);
             } else {
                 // Try custom icon for missing providers
-                svgData = extractSvgContent(provider, true);
+                // First try with the mapped icon name, then with the provider name
+                svgData = extractSvgContent(iconName, true);
+
+                if (!svgData) {
+                    svgData = extractSvgContent(provider, true);
+                }
 
                 if (svgData) {
                     const symbolId = `icon_${snakeCase(provider)}`;
@@ -416,6 +421,6 @@ export function isBase64Icon(providerName: string): boolean {
     }
 
     console.log(`\n✅ Generated icon system with ${successfulIcons + customIcons + fallbackIcons} icons in ${OUTPUT_FILE}`);
-}
+};
 
 generateSpriteSheet();

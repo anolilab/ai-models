@@ -1,9 +1,9 @@
 {
     "metadata": {
         "description": "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
-        "lastUpdated": "2025-08-02T01:21:59.949Z",
-        "totalModels": 1595,
-        "totalProviders": 30,
+        "lastUpdated": "2025-08-02T01:59:12.960Z",
+        "totalModels": 1652,
+        "totalProviders": 32,
         "version": "0.0.0-development"
     },
     "models": [
@@ -2735,6 +2735,2590 @@
         },
         {
             "attachment": false,
+            "cost": {
+                "input": 0.001,
+                "inputCacheHit": null,
+                "output": 0.002
+            },
+            "extendedThinking": false,
+            "id": "cerebras-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": 4096
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cerebras-1",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "batchMode": false,
+            "cacheRead": false,
+            "codeExecution": false,
+            "compoundSystem": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "deploymentType": "cloud",
+            "extendedThinking": false,
+            "id": "deepseek-r1-distill-llama-70b",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-distill-llama-70b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerId": "groq/deep-seek-meta",
+            "reasoning": false,
+            "releaseDate": "2025-01-23",
+            "searchGrounding": false,
+            "streamingSupported": true,
+            "structuredOutputs": false,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "groq",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerNpm": "@ai-sdk/cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.1
+            },
+            "extendedThinking": true,
+            "id": "llama3.1-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 8B",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.85,
+                "inputCacheHit": null,
+                "output": 1.2
+            },
+            "extendedThinking": true,
+            "id": "llama-3.3-70b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.3 70B",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0006
+            },
+            "extendedThinking": false,
+            "id": "llama-4-maverick-17b-128e-instruct",
+            "knowledge": null,
+            "lastUpdated": "2025-04-11",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Maverick-17B-128E-Instruct",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-04-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00011,
+                "inputCacheHit": null,
+                "output": 0.00034
+            },
+            "extendedThinking": false,
+            "id": "llama-4-scout-17b-16e-instruct",
+            "knowledge": null,
+            "lastUpdated": "2025-04-10",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Scout-17B-16E-Instruct",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-04-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope",
+            "audioGeneration": false,
+            "description": "Meta's Llama 4 Scout is a 17 billion parameter model with 16 experts that is natively multimodal. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding.",
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-3-235b-a22b-instruct-2507",
+            "knowledge": null,
+            "lastUpdated": "2025-07-30",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Instruct-2507",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "qwen-3-235b-a22b-thinking-2507",
+            "knowledge": null,
+            "lastUpdated": "2025-07-31",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Thinking-2507",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": true,
+            "releaseDate": "2025-07-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00029,
+                "inputCacheHit": null,
+                "output": 0.0005899999999999999
+            },
+            "extendedThinking": false,
+            "id": "qwen-3-32b",
+            "knowledge": null,
+            "lastUpdated": "2025-07-26",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-32B",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-04-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2,
+                "inputCacheHit": null,
+                "output": 2
+            },
+            "extendedThinking": true,
+            "id": "qwen-3-coder-480b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen 3 480B Coder",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "agentica-org/DeepCoder-14B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepCoder-14B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "agentica-org/DeepSWE-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSWE-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "all-hands/openhands-lm-32b-v0.1-ep3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openhands-lm-32b-v0.1-ep3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "ArliAI/QwQ-32B-ArliAI-RpR-v1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QwQ-32B-ArliAI-RpR-v1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 12.88,
+                "inputCacheHit": null,
+                "output": 12.88
+            },
+            "extendedThinking": false,
+            "id": "ByteDance-Seed/Seed-Coder-8B-Reasoning-bf16",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seed-Coder-8B-Reasoning-bf16",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Devstral-Small-2505",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral-Small-2505",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 512000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Llama-4-Scout-17B-16E-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Scout-17B-16E-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 27.216000000000005,
+                "inputCacheHit": null,
+                "output": 27.216000000000005
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Mistral-Small-3.1-24B-Instruct-2503",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.1-24B-Instruct-2503",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Mistral-Small-3.2-24B-Instruct-2506",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.2-24B-Instruct-2506",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 56,
+                "inputCacheHit": null,
+                "output": 56
+            },
+            "extendedThinking": false,
+            "id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Dolphin3.0-Mistral-24B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 12.88,
+                "inputCacheHit": null,
+                "output": 12.88
+            },
+            "extendedThinking": false,
+            "id": "cognitivecomputations/Dolphin3.0-R1-Mistral-24B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Dolphin3.0-R1-Mistral-24B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-02-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": 163840
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-05-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 25.76,
+                "inputCacheHit": null,
+                "output": 25.76
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528-Qwen3-8B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 50.4,
+                "inputCacheHit": null,
+                "output": 50.4
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-Distill-Llama-70B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-0324",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-Base",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-Base",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "internlm/Intern-S1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Intern-S1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "microsoft/MAI-DS-R1-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MAI-DS-R1-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 100.8,
+                "inputCacheHit": null,
+                "output": 100.8
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-Dev-72B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-Dev-72B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 87.75648,
+                "inputCacheHit": null,
+                "output": 87.75648
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 37.8,
+                "inputCacheHit": null,
+                "output": 37.8
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-VL-A3B-Thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-VL-A3B-Thinking",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/DeepHermes-3-Llama-3-8B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepHermes-3-Llama-3-8B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 141.12,
+                "inputCacheHit": null,
+                "output": 141.12
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/DeepHermes-3-Mistral-24B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepHermes-3-Mistral-24B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openbmb/MiniCPM4-8B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniCPM4-8B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "Qwen/QwQ-32B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QwQ-32B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 100.8,
+                "inputCacheHit": null,
+                "output": 100.8
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-72B-Instruct",
+            "knowledge": null,
+            "lastUpdated": "2024-09-19",
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-72B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-09-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 75.6,
+                "inputCacheHit": null,
+                "output": 75.6
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+            "knowledge": null,
+            "lastUpdated": "2024-11-11",
+            "limit": {
+                "context": 131072,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-Coder-32B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-11-11",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-VL-32B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-VL-32B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 151.2,
+                "inputCacheHit": null,
+                "output": 151.2
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-VL-72B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-VL-72B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-14B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-14B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 117.936,
+                "inputCacheHit": null,
+                "output": 117.936
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Instruct-2507",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 117.936,
+                "inputCacheHit": null,
+                "output": 117.936
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Thinking-2507",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-30B-A3B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-30B-A3B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 27.216000000000005,
+                "inputCacheHit": null,
+                "output": 27.216000000000005
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-32B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-32B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-8B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-8B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-480B-A35B-Instruct-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 12.88,
+                "inputCacheHit": null,
+                "output": 12.88
+            },
+            "extendedThinking": false,
+            "id": "RekaAI/reka-flash-3",
+            "knowledge": null,
+            "lastUpdated": "2025-03-12",
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "reka-flash-3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-03-12",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "Salesforce/xgen-small-9B-instruct-r",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "xgen-small-9B-instruct-r",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "sarvamai/sarvam-m",
+            "knowledge": null,
+            "lastUpdated": "2025-05-25",
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Sarvam AI: Sarvam-M",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-05-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "shisa-ai/shisa-v2-llama3.3-70b",
+            "knowledge": null,
+            "lastUpdated": "2025-04-15",
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Shisa AI: Shisa V2 Llama 3.3 70B ",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-04-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "stepfun-ai/step3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "step3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tencent/Hunyuan-A13B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hunyuan-A13B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 36.4,
+                "inputCacheHit": null,
+                "output": 36.4
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Cydonia-24B-v2.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cydonia-24B-v2.1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 12.88,
+                "inputCacheHit": null,
+                "output": 12.88
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Gemmasutra-Pro-27B-v1.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemmasutra-Pro-27B-v1.1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 72.8,
+                "inputCacheHit": null,
+                "output": 72.8
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Skyfall-36B-v2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Skyfall-36B-v2",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 72.8,
+                "inputCacheHit": null,
+                "output": 72.8
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Tunguska-39B-v1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Tunguska-39B-v1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "THUDM/GLM-4-32B-0414",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4-32B-0414",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "THUDM/GLM-Z1-32B-0414",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-Z1-32B-0414",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 272.16,
+                "inputCacheHit": null,
+                "output": 272.16
+            },
+            "extendedThinking": false,
+            "id": "tngtech/DeepSeek-R1T-Chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1T-Chimera",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 302.4,
+                "inputCacheHit": null,
+                "output": 302.4
+            },
+            "extendedThinking": false,
+            "id": "tngtech/DeepSeek-TNG-R1T2-Chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-TNG-R1T2-Chimera",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3.22,
+                "inputCacheHit": null,
+                "output": 3.22
+            },
+            "extendedThinking": false,
+            "id": "tplr/TEMPLAR-I",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TEMPLAR-I",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3.7800000000000002,
+                "inputCacheHit": null,
+                "output": 3.7800000000000002
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-2-9b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-2-9b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-12b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-12b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 100.8,
+                "inputCacheHit": null,
+                "output": 100.8
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-27b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-27b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.8000000000000003,
+                "inputCacheHit": null,
+                "output": 2.8000000000000003
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Llama-3.2-1B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.2-1B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3.22,
+                "inputCacheHit": null,
+                "output": 3.22
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Llama-3.2-3B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.2-3B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 12.88,
+                "inputCacheHit": null,
+                "output": 12.88
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Meta-Llama-3.1-8B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Meta-Llama-3.1-8B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-07-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15.120000000000001,
+                "inputCacheHit": null,
+                "output": 15.120000000000001
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Mistral-Nemo-Instruct-2407",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Nemo-Instruct-2407",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30.240000000000002,
+                "inputCacheHit": null,
+                "output": 30.240000000000002
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Mistral-Small-24B-Instruct-2501",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-24B-Instruct-2501",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5-Air",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-Air",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
             "audioGeneration": false,
             "cost": {
                 "input": null,
@@ -4336,46 +6920,6 @@
             "version": null,
             "vision": false,
             "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00011,
-                "inputCacheHit": null,
-                "output": 0.00034
-            },
-            "extendedThinking": false,
-            "id": "llama-4-scout-17b-16e-instruct",
-            "knowledge": null,
-            "lastUpdated": "2025-04-10",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Llama-4-Scout-17B-16E-Instruct",
-            "openWeights": false,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-04-05",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope",
-            "audioGeneration": false,
-            "description": "Meta's Llama 4 Scout is a 17 billion parameter model with 16 experts that is natively multimodal. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding.",
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true
         },
         {
             "attachment": false,
@@ -6015,7 +8559,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -6050,7 +8594,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -6095,41 +8639,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00005,
-                "inputCacheHit": null,
-                "output": 0.000215
-            },
-            "extendedThinking": false,
-            "id": "deepseek-ai/DeepSeek-R1-0528",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 163840,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-R1-0528",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": "2025-05-28",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": 0.0001,
                 "inputCacheHit": null,
                 "output": 0.0003
@@ -6147,111 +8656,6 @@
                 "output": ["text"]
             },
             "name": "DeepSeek-R1-0528-Turbo",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00001,
-                "inputCacheHit": null,
-                "output": 0.00004
-            },
-            "extendedThinking": false,
-            "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-R1-Distill-Llama-70B",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": "2025-01-23",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000038,
-                "inputCacheHit": null,
-                "output": 0.000089
-            },
-            "extendedThinking": false,
-            "id": "deepseek-ai/DeepSeek-V3",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-V3",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000028,
-                "inputCacheHit": null,
-                "output": 0.000088
-            },
-            "extendedThinking": false,
-            "id": "deepseek-ai/DeepSeek-V3-0324",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-V3-0324",
             "openWeights": false,
             "provider": "Deep Infra",
             "providerDoc": "https://deepinfra.com/docs",
@@ -6896,41 +9300,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00005,
-                "inputCacheHit": null,
-                "output": 0.0002
-            },
-            "extendedThinking": false,
-            "id": "moonshotai/Kimi-K2-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Kimi-K2-Instruct",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": 0.5,
                 "inputCacheHit": null,
                 "output": 2
@@ -6984,216 +9353,6 @@
                 "output": ["text"]
             },
             "name": "whisper-large-v3-turbo",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0000075,
-                "inputCacheHit": null,
-                "output": 0.000015
-            },
-            "extendedThinking": false,
-            "id": "Qwen/QwQ-32B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "QwQ-32B",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000006,
-                "inputCacheHit": null,
-                "output": 0.000024
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-14B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-14B",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000013,
-                "inputCacheHit": null,
-                "output": 0.00006
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-235B-A22B-Instruct-2507",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000013,
-                "inputCacheHit": null,
-                "output": 0.00006
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-235B-A22B-Thinking-2507",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000008,
-                "inputCacheHit": null,
-                "output": 0.000029
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-30B-A3B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-30B-A3B",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00001,
-                "inputCacheHit": null,
-                "output": 0.00003
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-32B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-32B",
             "openWeights": false,
             "provider": "Deep Infra",
             "providerDoc": "https://deepinfra.com/docs",
@@ -7405,41 +9564,6 @@
                 "output": ["text"]
             },
             "name": "GLM-4.5",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.000019,
-                "inputCacheHit": null,
-                "output": 0.00011
-            },
-            "extendedThinking": false,
-            "id": "zai-org/GLM-4.5-Air",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "GLM-4.5-Air",
             "openWeights": false,
             "provider": "Deep Infra",
             "providerDoc": "https://deepinfra.com/docs",
@@ -9986,6 +12110,41 @@
                 "output": ["text"]
             },
             "name": "GLM-4.5",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "glm-4-5-air",
+            "knowledge": null,
+            "lastUpdated": "2025-07-28",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-Air",
             "openWeights": false,
             "provider": "ModelScope",
             "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
@@ -13929,76 +16088,6 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "qwen-3-235b-a22b-instruct-2507",
-            "knowledge": null,
-            "lastUpdated": "2025-07-30",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-235B-A22B-Instruct-2507",
-            "openWeights": true,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-07-21",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": true,
-            "id": "qwen-3-235b-a22b-thinking-2507",
-            "knowledge": null,
-            "lastUpdated": "2025-07-31",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-235B-A22B-Thinking-2507",
-            "openWeights": true,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": true,
-            "releaseDate": "2025-07-25",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
             "id": "qwen-3-30b-a3b",
             "knowledge": null,
             "lastUpdated": "2025-07-26",
@@ -14090,41 +16179,6 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": true,
             "releaseDate": "2025-07-29",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00029,
-                "inputCacheHit": null,
-                "output": 0.0005899999999999999
-            },
-            "extendedThinking": false,
-            "id": "qwen-3-32b",
-            "knowledge": null,
-            "lastUpdated": "2025-07-26",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-32B",
-            "openWeights": true,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-04-28",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -18165,47 +20219,6 @@
             "providerEnv": ["OPENROUTER_API_KEY"],
             "providerModelsDevId": "openrouter",
             "providerNpm": "@ai-sdk/openrouter"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": false,
-            "batchMode": false,
-            "cacheRead": false,
-            "codeExecution": false,
-            "compoundSystem": false,
-            "cost": {
-                "input": 0.00075,
-                "inputCacheHit": null,
-                "output": 0.00099
-            },
-            "deploymentType": "cloud",
-            "extendedThinking": false,
-            "id": "deepseek-r1-distill-llama-70b",
-            "imageGeneration": false,
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": 131072
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "deepseek-r1-distill-llama-70b",
-            "openWeights": false,
-            "preview": false,
-            "provider": "Groq",
-            "providerId": "groq/deep-seek-meta",
-            "reasoning": false,
-            "releaseDate": "2025-01-23",
-            "searchGrounding": false,
-            "streamingSupported": true,
-            "structuredOutputs": false,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "groq"
         },
         {
             "attachment": false,
@@ -24522,6 +26535,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "deep-seek-v3-0324-awq",
+            "knowledge": null,
+            "lastUpdated": "2025-03-29",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324-AWQ",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-03-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "deep-seek-v3-0324-gguf",
             "knowledge": null,
             "lastUpdated": "2025-05-23",
@@ -26048,41 +28096,6 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2025-04-08",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "glm-4-5-air",
-            "knowledge": null,
-            "lastUpdated": "2025-07-28",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "GLM-4.5-Air",
-            "openWeights": false,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-07-20",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -28148,41 +30161,6 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2023-12-21",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "modelscope"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0002,
-                "inputCacheHit": null,
-                "output": 0.0006
-            },
-            "extendedThinking": false,
-            "id": "llama-4-maverick-17b-128e-instruct",
-            "knowledge": null,
-            "lastUpdated": "2025-04-11",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Llama-4-Maverick-17B-128E-Instruct",
-            "openWeights": false,
-            "provider": "ModelScope",
-            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
-            "providerEnv": ["MODELSCOPE_API_KEY"],
-            "providerId": "model-scope",
-            "providerModelsDevId": "modelscope",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-04-05",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -45687,6 +47665,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "openrouter/horizon-beta",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["text"]
+            },
+            "name": "Horizon Beta",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-08-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "perplexity/r1-1776",
             "knowledge": null,
             "lastUpdated": "2025-02-19",
@@ -47367,41 +49380,6 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "sarvamai/sarvam-m",
-            "knowledge": null,
-            "lastUpdated": "2025-05-25",
-            "limit": {
-                "context": 32768,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Sarvam AI: Sarvam-M",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2025-05-25",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
             "id": "sarvamai/sarvam-m:free",
             "knowledge": null,
             "lastUpdated": "2025-05-25",
@@ -47458,41 +49436,6 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2025-03-28",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0003
-            },
-            "extendedThinking": false,
-            "id": "shisa-ai/shisa-v2-llama3.3-70b",
-            "knowledge": null,
-            "lastUpdated": "2025-04-15",
-            "limit": {
-                "context": 32768,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Shisa AI: Shisa V2 Llama 3.3 70B ",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2025-04-15",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52952,7 +54895,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52987,7 +54930,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53022,7 +54965,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53057,7 +55000,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53092,7 +55035,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53127,7 +55070,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53162,7 +55105,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53197,7 +55140,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53232,7 +55175,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53267,7 +55210,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53302,7 +55245,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53337,7 +55280,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53372,7 +55315,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53407,7 +55350,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53442,7 +55385,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53477,7 +55420,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53512,7 +55455,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53547,7 +55490,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53582,7 +55525,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53617,7 +55560,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53652,7 +55595,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53687,7 +55630,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53722,7 +55665,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53757,7 +55700,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53792,7 +55735,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53827,7 +55770,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53862,7 +55805,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53897,7 +55840,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53932,7 +55875,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53967,7 +55910,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54002,7 +55945,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54037,7 +55980,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54072,7 +56015,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54107,7 +56050,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54142,7 +56085,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54177,7 +56120,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54212,7 +56155,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54247,7 +56190,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54282,7 +56225,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54317,7 +56260,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54352,7 +56295,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54387,7 +56330,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54422,7 +56365,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54457,7 +56400,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54492,7 +56435,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54527,7 +56470,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54562,7 +56505,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54597,7 +56540,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54632,7 +56575,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54667,7 +56610,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54702,7 +56645,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54737,7 +56680,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54772,7 +56715,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54807,7 +56750,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54842,7 +56785,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54877,7 +56820,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54912,7 +56855,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-01",
+            "releaseDate": "2025-08-02",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

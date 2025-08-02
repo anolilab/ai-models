@@ -62,6 +62,8 @@ interface TransformerModule {
     fetchAnthropicModels?: () => Promise<Model[]>;
     fetchAzureModels?: () => Promise<Model[]>;
     fetchBedrockModels?: () => Promise<Model[]>;
+    fetchCerebrasModels?: () => Promise<Model[]>;
+    fetchChutesModels?: () => Promise<Model[]>;
     fetchCloudflareModels?: () => Promise<Model[]>;
     fetchDeepInfraModels?: () => Promise<Model[]>;
     fetchDeepSeekModels?: () => Promise<Model[]>;
@@ -176,6 +178,8 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchModelScopeModels
     || transformerModule.fetchCloudflareModels
     || transformerModule.fetchWeightsBiasesModels
+    || transformerModule.fetchCerebrasModels
+    || transformerModule.fetchChutesModels
     || transformerModule.default
     || null;
 
