@@ -258,9 +258,7 @@ const DataTable = <TData extends ExportableData, TValue>({
 
     // Set up data-table-filter if filterColumns are provided
     const filterData = useMemo(() => data, [data]);
-    
 
-    
     const {
         actions,
         columns: filterColumnsData,
@@ -271,8 +269,6 @@ const DataTable = <TData extends ExportableData, TValue>({
         data: filterData,
         strategy: filterStrategy,
     });
-    
-
 
     // Convert filter system filters to TanStack Table column filters
     const convertedColumnFilters = useMemo(() => {
@@ -295,8 +291,6 @@ const DataTable = <TData extends ExportableData, TValue>({
 
         return columnFilters;
     }, [convertedColumnFilters, externalColumnFilters, columnFilters]);
-
-
 
     // Helper functions to handle both Record and Set selection states
     const isItemSelected = useCallback(
@@ -381,19 +375,22 @@ const DataTable = <TData extends ExportableData, TValue>({
             // Check if we have a max selection limit and if we're in comparison mode
             if (tableConfig.selectionMode === "comparison" && tableConfig.maxSelectionLimit > 0) {
                 const selectedKeys = Object.keys(newRowSelection);
+
                 if (selectedKeys.length > tableConfig.maxSelectionLimit) {
                     // If we're exceeding the limit, keep only the first N items
                     const limitedSelection: Record<string, boolean> = {};
-                    selectedKeys.slice(0, tableConfig.maxSelectionLimit).forEach(key => {
+
+                    selectedKeys.slice(0, tableConfig.maxSelectionLimit).forEach((key) => {
                         limitedSelection[key] = true;
                     });
-                    
+
                     // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
                     if (tableConfig.enableRowVirtualization) {
                         dispatch({ payload: new Set(Object.keys(limitedSelection)), type: "SET_SELECTED_ITEMS" });
                     } else {
                         dispatch({ payload: limitedSelection, type: "SET_SELECTED_ITEMS" });
                     }
+
                     return;
                 }
             }
@@ -457,7 +454,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                 columns: columnDefs,
                 configs: filterColumnsData,
             });
-            
+
             return processedColumns.map((column) => {
                 return {
                     ...column,
@@ -689,7 +686,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                     transformFunction={exportConfig.transformFunction}
                 />
             )}
-            
+
             {tableConfig.enableRowVirtualization && (
                 <VirtualizedTable
                     className={classes.table}

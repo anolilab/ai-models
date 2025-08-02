@@ -104,7 +104,7 @@ const TableHead = <TData extends ExportableData>({
     const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
 
     return (
-        <TableHeader className={cn(enableStickyHeader && "bg-background sticky -top-[2px] pt-[2px] sm:top-0 z-50 min-h-10 border-b shadow-sm")} key={headerKey}>
+        <TableHeader className={cn(enableStickyHeader && "bg-background sticky -top-[2px] z-50 min-h-10 border-b pt-[2px] shadow-sm sm:top-0")} key={headerKey}>
             {table.getHeaderGroups().map((headerGroup) => {
                 const sortingState = table
                     .getState()

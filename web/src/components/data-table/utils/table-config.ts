@@ -42,6 +42,9 @@ export interface TableConfig {
     // Enable/disable toolbar
     enableToolbar: boolean;
 
+    // Estimated row height for virtualization (in pixels)
+    estimatedRowHeight: number;
+
     // Maximum number of items that can be selected (for comparison features)
     // Set to 0 or undefined to disable the limit
     maxSelectionLimit: number;
@@ -50,9 +53,6 @@ export interface TableConfig {
     // "comparison": Limited selection for model comparison (default: 5 items)
     // "export": Unlimited selection for data export
     selectionMode: "comparison" | "export";
-
-    // Estimated row height for virtualization (in pixels)
-    estimatedRowHeight: number;
 
     // Control the size of buttons and inputs throughout the table
     // sm: small, default: standard, lg: large
@@ -77,10 +77,10 @@ const defaultConfig: TableConfig = {
     enableRowVirtualization: false, // Disabled by default for backward compatibility
     enableStickyHeader: false, // Static header disabled by default
     enableToolbar: true, // Toolbar enabled by default
-    maxSelectionLimit: 5, // Default to 5 items for comparison
-    selectionMode: "comparison", // Default to comparison mode
-
     estimatedRowHeight: 40, // Default row height estimate
+    maxSelectionLimit: 5, // Default to 5 items for comparison
+
+    selectionMode: "comparison", // Default to comparison mode
     size: "default", // Default size for buttons and inputs
     virtualizationOverscan: 5, // Default overscan for smooth scrolling
 };

@@ -11,7 +11,7 @@ const HowToUseDialog: FC = () => {
     return (
         <Dialog onOpenChange={setOpen} open={open}>
             <DialogTrigger asChild>
-                <Button className="bg-[var(--color-brand)] px-2 py-1.5 sm:px-3 sm:py-2 text-sm text-[var(--color-text-invert)]" id="help">
+                <Button className="bg-[var(--color-brand)] px-2 py-1.5 text-sm text-[var(--color-text-invert)] sm:px-3 sm:py-2" id="help">
                     How to use
                 </Button>
             </DialogTrigger>

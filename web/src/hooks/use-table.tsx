@@ -1,21 +1,21 @@
-import { useState, useCallback, useMemo, useEffect, useRef, useTransition } from "react";
+import type { Model } from "@anolilab/ai-model-registry";
 import type { ColumnDef } from "@tanstack/react-table";
 import { createColumnHelper } from "@tanstack/react-table";
-import { Checkbox } from "@/components/ui/checkbox";
-import { ProviderIcon } from "@/utils/provider-icons";
-import { Calendar, DollarSign, CheckSquare, Search, FileText, Image, Music, Video, Code, File, Database } from "lucide-react";
-import type { Model } from "@anolilab/ai-model-registry";
-import { memoizedTransformModels } from "@/utils/data-utils";
+import { Calendar, CheckSquare, Code, Database, DollarSign, File, FileText, Image, Music, Search, Video } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
 
+import { Checkbox } from "@/components/ui/checkbox";
+import { memoizedTransformModels } from "@/utils/data-utils";
+import { ProviderIcon } from "@/utils/provider-icons";
 
 export enum ColumnType {
-    TEXT = "text",
-    NUMBER = "number",
     BOOLEAN = "boolean",
-    DATE = "date",
     COST = "cost",
+    DATE = "date",
     MODALITY = "modality",
+    NUMBER = "number",
     SELECT = "select",
+    TEXT = "text",
 }
 
 export enum ColumnGroup {
@@ -28,98 +28,98 @@ export enum ColumnGroup {
 
 export enum ColumnVisibility {
     ALWAYS = "always",
-    OPTIONAL = "optional",
     HIDDEN = "hidden",
+    OPTIONAL = "optional",
 }
 
 export type FilterFn = "text" | "number" | "date" | "option" | "boolean";
 export type SortFn = "text" | "number" | "date" | "basic" | "datetime";
 
 export interface ColumnConfig<T = any> {
-    id: string;
-    displayName: string;
-    type: ColumnType;
-    group: ColumnGroup;
-    accessorKey?: keyof T;
     accessorFn?: (row: T) => any;
-    visibility: {
-        default: ColumnVisibility;
-        export: boolean;
-        comparison: boolean;
-        filterable: boolean;
-        sortable: boolean;
-    };
-    size: number;
+    accessorKey?: keyof T;
     cell?: (props: any) => React.ReactNode;
-    header?: (props: any) => React.ReactNode;
-    filter?: {
-        type: FilterFn;
-        options?: Array<{ label: string; value: string }>;
+    comparison?: {
+        formatter?: (value: any) => string;
+        highlightDifferences?: boolean;
     };
-    sort?: {
-        type: SortFn;
-    };
+    displayName: string;
     export?: {
+        formatter?: (value: any) => string;
         label?: string;
         width?: number;
-        formatter?: (value: any) => string;
     };
-    comparison?: {
-        highlightDifferences?: boolean;
-        formatter?: (value: any) => string;
+    filter?: {
+        options?: { label: string; value: string }[];
+        type: FilterFn;
     };
+    group: ColumnGroup;
+    header?: (props: any) => React.ReactNode;
+    id: string;
     metadata?: {
         description?: string;
         icon?: React.ReactNode;
         tooltip?: string;
     };
+    size: number;
+    sort?: {
+        type: SortFn;
+    };
+    type: ColumnType;
+    visibility: {
+        comparison: boolean;
+        default: ColumnVisibility;
+        export: boolean;
+        filterable: boolean;
+        sortable: boolean;
+    };
 }
 
 export interface ModelTableRow {
-    id: string;
-    index: number;
-    model: string;
-    modelId: string;
-    provider: string;
-    providerIcon: string | null;
-    providerId: string;
-    input: string;
-    output: string;
-    inputCost: string;
-    outputCost: string;
+    [key: string]: string | number | boolean | null | undefined;
     cacheReadCost: string;
     cacheWriteCost: string;
     contextLimit: string;
-    outputLimit: string;
-    temperature: string;
-    weights: string;
+    id: string;
+    index: number;
+    input: string;
+    inputCost: string;
     knowledge: string;
-    releaseDate: string;
     lastUpdated: string;
-    toolCall: string;
+    model: string;
+    modelId: string;
+    output: string;
+    outputCost: string;
+    outputLimit: string;
+    provider: string;
+    providerIcon: string | null;
+    providerId: string;
     reasoning: string;
-    [key: string]: string | number | boolean | null | undefined;
+    releaseDate: string;
+    temperature: string;
+    toolCall: string;
+    weights: string;
 }
 
 const modalityIconMap: Record<string, React.ReactNode> = {
-    text: <FileText className="size-4" />,
-    image: <Image className="size-4" />,
     audio: <Music className="size-4" />,
-    video: <Video className="size-4" />,
     code: <Code className="size-4" />,
-    file: <File className="size-4" />,
     embedding: <Database className="size-4" />,
+    file: <File className="size-4" />,
+    image: <Image className="size-4" />,
+    text: <FileText className="size-4" />,
+    video: <Video className="size-4" />,
 };
 
 const renderModalityCell = (props: any) => {
     const modalities = props.getValue();
     const modalityList = modalities.split(",").map((m: string) => m.trim());
-    
+
     return (
         <span className="flex items-center gap-1">
             {modalityList.map((modality: string, index: number) => {
                 const icon = modalityIconMap[modality];
-                
+
                 if (icon) {
                     return (
                         <span
@@ -131,89 +131,85 @@ const renderModalityCell = (props: any) => {
                         </span>
                     );
                 }
-                
+
                 return <span key={`${modality}-${index}`}>{modality}</span>;
             })}
         </span>
     );
 };
 
-const renderCostCell = (props: any) => (
-    <span className="text-right">{props.getValue()}</span>
-);
+const renderCostCell = (props: any) => <span className="text-right">{props.getValue()}</span>;
 
 const renderNumberCell = (props: any) => {
     const value = props.getValue();
+
     if (value === "-" || value === null || value === undefined) {
-        return <span className="text-muted-foreground text-xs text-right">-</span>;
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
-    
+
     let num: number;
+
     if (typeof value === "string") {
         num = parseInt(value.replace(/\D/g, ""), 10);
     } else if (typeof value === "number") {
         num = value;
     } else {
-        return <span className="text-muted-foreground text-xs text-right">-</span>;
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
-    
+
     if (isNaN(num) || num === 0) {
-        return <span className="text-muted-foreground text-xs text-right">-</span>;
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
-    
+
     const formatted = num.toLocaleString();
+
     return <span className="text-right">{formatted}</span>;
 };
 
-const renderBooleanCell = (props: any) => (
-    <span className="text-muted-foreground text-xs">{props.getValue()}</span>
-);
+const renderBooleanCell = (props: any) => <span className="text-muted-foreground text-xs">{props.getValue()}</span>;
 
 const renderDateCell = (props: any) => {
     const value = props.getValue();
-    
+
     if (value === "-" || value === null || value === undefined) {
         return <span className="text-muted-foreground text-xs">-</span>;
     }
-    
+
     if (value instanceof Date) {
         return <span className="text-muted-foreground text-xs">{value.toLocaleDateString()}</span>;
     }
-    
+
     if (typeof value === "string") {
         return <span className="text-muted-foreground text-xs">{value}</span>;
     }
-    
+
     return <span className="text-muted-foreground text-xs">-</span>;
 };
 
 const extractLimitValue = (limitString: string): number => {
-    if (limitString === "-") return 0;
+    if (limitString === "-")
+        return 0;
+
     const numericValue = limitString.replace(/\D/g, "");
+
     return parseInt(numericValue, 10) || 0;
 };
 
 const parseDate = (dateString: string): Date | null => {
-    if (dateString === "-") return null;
+    if (dateString === "-")
+        return null;
+
     const date = new Date(dateString);
+
     return isNaN(date.getTime()) ? null : date;
 };
 
 export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
     // Selection column
     {
-        id: "select",
+        cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
         displayName: "Select",
-        type: ColumnType.SELECT,
         group: ColumnGroup.BASIC,
-        size: 60,
-        visibility: {
-            default: ColumnVisibility.ALWAYS,
-            export: false,
-            comparison: false,
-            filterable: false,
-            sortable: false,
-        },
         header: ({ table }) => (
             <div className="p-2">
                 <Checkbox
@@ -223,481 +219,487 @@ export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
                 />
             </div>
         ),
-        cell: ({ row }) => (
-            <Checkbox 
-                aria-label="Select row" 
-                checked={row.getIsSelected()} 
-                onCheckedChange={(value) => row.toggleSelected(!!value)} 
-            />
-        ),
-    },
-    
-    // Provider Icon
-    {
-        id: "providerIcon",
-        displayName: "",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.BASIC,
-        accessorKey: "providerIcon",
+        id: "select",
         size: 60,
+        type: ColumnType.SELECT,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.ALWAYS,
             export: false,
-            comparison: false,
             filterable: false,
             sortable: false,
         },
-        cell: ({ row }) => (
-            <ProviderIcon 
-                className="h-6 w-6" 
-                provider={row.original.provider} 
-                providerIcon={row.original.providerIcon} 
-            />
-        ),
     },
-    
+
+    // Provider Icon
+    {
+        accessorKey: "providerIcon",
+        cell: (props: any) => {
+            const provider = props.getValue ? props.getValue() : props.row?.original?.provider;
+            const providerIcon = props.row?.original?.providerIcon;
+
+            return <ProviderIcon className="h-6 w-6" provider={provider} providerIcon={providerIcon} />;
+        },
+        displayName: "",
+        group: ColumnGroup.BASIC,
+        id: "providerIcon",
+        size: 60,
+        type: ColumnType.TEXT,
+        visibility: {
+            comparison: false,
+            default: ColumnVisibility.ALWAYS,
+            export: false,
+            filterable: false,
+            sortable: false,
+        },
+    },
+
     // Provider
     {
-        id: "provider",
-        displayName: "Provider",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.BASIC,
         accessorKey: "provider",
+        comparison: { highlightDifferences: true },
+        displayName: "Provider",
+        export: { label: "Provider", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.BASIC,
+        id: "provider",
         size: 150,
+        sort: { type: "text" },
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.ALWAYS,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "text" },
-        export: { label: "Provider", width: 15 },
-        comparison: { highlightDifferences: true },
     },
-    
+
     // Model
     {
-        id: "model",
-        displayName: "Model",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.BASIC,
         accessorKey: "model",
+        comparison: { highlightDifferences: true },
+        displayName: "Model",
+        export: { label: "Model", width: 20 },
+        filter: { type: "text" },
+        group: ColumnGroup.BASIC,
+        id: "model",
         size: 300,
+        sort: { type: "text" },
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.ALWAYS,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "text" },
-        export: { label: "Model", width: 20 },
-        comparison: { highlightDifferences: true },
     },
-    
+
     // Provider ID
     {
-        id: "providerId",
-        displayName: "Provider ID",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.BASIC,
         accessorKey: "providerId",
+        cell: (props: any) => {
+            const value = props.getValue ? props.getValue() : props.row?.original?.providerId;
+
+            return <span className="text-muted-foreground font-mono text-xs">{value}</span>;
+        },
+        comparison: { highlightDifferences: true },
+        displayName: "Provider ID",
+        export: { label: "Provider ID", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.BASIC,
+        id: "providerId",
         size: 200,
+        sort: { type: "text" },
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "text" },
-        export: { label: "Provider ID", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: ({ row }) => (
-            <span className="text-muted-foreground font-mono text-xs">{row.original.providerId}</span>
-        ),
     },
-    
+
     // Model ID
     {
-        id: "modelId",
-        displayName: "Model ID",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.BASIC,
         accessorKey: "modelId",
+        cell: (props: any) => {
+            const value = props.getValue ? props.getValue() : props.row?.original?.modelId;
+
+            return <span className="text-muted-foreground font-mono text-xs">{value}</span>;
+        },
+        comparison: { highlightDifferences: true },
+        displayName: "Model ID",
+        export: { label: "Model ID", width: 20 },
+        filter: { type: "text" },
+        group: ColumnGroup.BASIC,
+        id: "modelId",
         size: 420,
+        sort: { type: "text" },
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "text" },
-        export: { label: "Model ID", width: 20 },
-        comparison: { highlightDifferences: true },
-        cell: ({ row }) => (
-            <span className="text-muted-foreground font-mono text-xs">{row.original.modelId}</span>
-        ),
     },
-    
+
     // Tool Call
     {
-        id: "toolCall",
-        displayName: "Tool Call",
-        type: ColumnType.BOOLEAN,
-        group: ColumnGroup.CAPABILITIES,
         accessorKey: "toolCall",
+        cell: renderBooleanCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Tool Call",
+        export: { label: "Tool Call", width: 12 },
+        filter: { type: "text" },
+        group: ColumnGroup.CAPABILITIES,
+        id: "toolCall",
         size: 130,
+        sort: { type: "basic" },
+        type: ColumnType.BOOLEAN,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "basic" },
-        export: { label: "Tool Call", width: 12 },
-        comparison: { highlightDifferences: true },
-        cell: renderBooleanCell,
     },
-    
+
     // Reasoning
     {
-        id: "reasoning",
-        displayName: "Reasoning",
-        type: ColumnType.BOOLEAN,
-        group: ColumnGroup.CAPABILITIES,
         accessorKey: "reasoning",
+        cell: renderBooleanCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Reasoning",
+        export: { label: "Reasoning", width: 12 },
+        filter: { type: "text" },
+        group: ColumnGroup.CAPABILITIES,
+        id: "reasoning",
         size: 130,
+        sort: { type: "basic" },
+        type: ColumnType.BOOLEAN,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "basic" },
-        export: { label: "Reasoning", width: 12 },
-        comparison: { highlightDifferences: true },
-        cell: renderBooleanCell,
     },
-    
+
     // Input Modalities
     {
-        id: "input",
-        displayName: "Input",
-        type: ColumnType.MODALITY,
-        group: ColumnGroup.CAPABILITIES,
         accessorKey: "input",
+        cell: renderModalityCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Input",
+        export: { label: "Input", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.CAPABILITIES,
+        id: "input",
         size: 150,
+        type: ColumnType.MODALITY,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: false,
         },
-        filter: { type: "text" },
-        export: { label: "Input", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderModalityCell,
     },
-    
+
     // Output Modalities
     {
-        id: "output",
-        displayName: "Output",
-        type: ColumnType.MODALITY,
-        group: ColumnGroup.CAPABILITIES,
         accessorKey: "output",
+        cell: renderModalityCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Output",
+        export: { label: "Output", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.CAPABILITIES,
+        id: "output",
         size: 150,
+        type: ColumnType.MODALITY,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: false,
         },
-        filter: { type: "text" },
-        export: { label: "Output", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderModalityCell,
     },
-    
+
     // Input Cost
     {
-        id: "inputCost",
-        displayName: "Input Cost",
-        type: ColumnType.COST,
-        group: ColumnGroup.COSTS,
         accessorFn: (row) => extractLimitValue(row.inputCost),
+        cell: renderCostCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Input Cost",
+        export: { label: "Input Cost", width: 12 },
+        filter: { type: "number" },
+        group: ColumnGroup.COSTS,
+        id: "inputCost",
         size: 150,
+        sort: { type: "basic" },
+        type: ColumnType.COST,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Input Cost", width: 12 },
-        comparison: { highlightDifferences: true },
-        cell: renderCostCell
     },
-    
+
     // Output Cost
     {
-        id: "outputCost",
-        displayName: "Output Cost",
-        type: ColumnType.COST,
-        group: ColumnGroup.COSTS,
         accessorFn: (row) => extractLimitValue(row.outputCost),
+        cell: renderCostCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Output Cost",
+        export: { label: "Output Cost", width: 12 },
+        filter: { type: "number" },
+        group: ColumnGroup.COSTS,
+        id: "outputCost",
         size: 150,
+        sort: { type: "basic" },
+        type: ColumnType.COST,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Output Cost", width: 12 },
-        comparison: { highlightDifferences: true },
-        cell: renderCostCell,
     },
-    
+
     // Cache Read Cost
     {
-        id: "cacheReadCost",
-        displayName: "Cache Read Cost",
-        type: ColumnType.COST,
-        group: ColumnGroup.COSTS,
         accessorKey: "cacheReadCost",
+        cell: renderCostCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Cache Read Cost",
+        export: { label: "Cache Read Cost", width: 15 },
+        filter: { type: "number" },
+        group: ColumnGroup.COSTS,
+        id: "cacheReadCost",
         size: 200,
+        sort: { type: "basic" },
+        type: ColumnType.COST,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Cache Read Cost", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderCostCell,
     },
-    
+
     // Cache Write Cost
     {
-        id: "cacheWriteCost",
-        displayName: "Cache Write Cost",
-        type: ColumnType.COST,
-        group: ColumnGroup.COSTS,
         accessorKey: "cacheWriteCost",
+        cell: renderCostCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Cache Write Cost",
+        export: { label: "Cache Write Cost", width: 15 },
+        filter: { type: "number" },
+        group: ColumnGroup.COSTS,
+        id: "cacheWriteCost",
         size: 200,
+        sort: { type: "basic" },
+        type: ColumnType.COST,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Cache Write Cost", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderCostCell,
     },
-    
+
     // Context Limit
     {
-        id: "contextLimit",
-        displayName: "Context Limit",
-        type: ColumnType.NUMBER,
-        group: ColumnGroup.LIMITS,
         accessorFn: (row) => extractLimitValue(row.contextLimit),
+        cell: renderNumberCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Context Limit",
+        export: { label: "Context Limit", width: 15 },
+        filter: { type: "number" },
+        group: ColumnGroup.LIMITS,
+        id: "contextLimit",
         size: 200,
+        sort: { type: "basic" },
+        type: ColumnType.NUMBER,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Context Limit", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderNumberCell,
     },
-    
+
     // Output Limit
     {
-        id: "outputLimit",
-        displayName: "Output Limit",
-        type: ColumnType.NUMBER,
-        group: ColumnGroup.LIMITS,
         accessorFn: (row) => extractLimitValue(row.outputLimit),
+        cell: renderNumberCell,
+        comparison: { highlightDifferences: true },
+        displayName: "Output Limit",
+        export: { label: "Output Limit", width: 15 },
+        filter: { type: "number" },
+        group: ColumnGroup.LIMITS,
+        id: "outputLimit",
         size: 160,
+        sort: { type: "basic" },
+        type: ColumnType.NUMBER,
         visibility: {
+            comparison: true,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: true,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "number" },
-        sort: { type: "basic" },
-        export: { label: "Output Limit", width: 15 },
-        comparison: { highlightDifferences: true },
-        cell: renderNumberCell,
     },
-    
+
     // Temperature
     {
-        id: "temperature",
-        displayName: "Temperature",
-        type: ColumnType.BOOLEAN,
-        group: ColumnGroup.CAPABILITIES,
         accessorKey: "temperature",
+        cell: renderBooleanCell,
+        displayName: "Temperature",
+        export: { label: "Temperature", width: 12 },
+        filter: { type: "text" },
+        group: ColumnGroup.CAPABILITIES,
+        id: "temperature",
         size: 150,
+        sort: { type: "basic" },
+        type: ColumnType.BOOLEAN,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: false,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "basic" },
-        export: { label: "Temperature", width: 12 },
-        cell: renderBooleanCell,
     },
-    
+
     // Weights
     {
-        id: "weights",
-        displayName: "Weights",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.METADATA,
         accessorKey: "weights",
+        cell: renderBooleanCell,
+        displayName: "Weights",
+        export: { label: "Weights", width: 12 },
+        filter: { type: "text" },
+        group: ColumnGroup.METADATA,
+        id: "weights",
         size: 140,
+        sort: { type: "basic" },
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: false,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "text" },
-        sort: { type: "basic" },
-        export: { label: "Weights", width: 12 },
-        cell: renderBooleanCell,
     },
-    
+
     // Knowledge
     {
-        id: "knowledge",
-        displayName: "Knowledge",
-        type: ColumnType.TEXT,
-        group: ColumnGroup.METADATA,
         accessorKey: "knowledge",
+        cell: renderBooleanCell,
+        displayName: "Knowledge",
+        export: { label: "Knowledge", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.METADATA,
+        id: "knowledge",
         size: 150,
+        type: ColumnType.TEXT,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: false,
             filterable: true,
             sortable: false,
         },
-        filter: { type: "text" },
-        export: { label: "Knowledge", width: 15 },
-        cell: renderBooleanCell,
     },
-    
+
     // Release Date
     {
-        id: "releaseDate",
-        displayName: "Release Date",
-        type: ColumnType.DATE,
-        group: ColumnGroup.METADATA,
         accessorKey: "releaseDate",
+        cell: renderDateCell,
+        displayName: "Release Date",
+        export: { label: "Release Date", width: 15 },
+        filter: { type: "text" },
+        group: ColumnGroup.METADATA,
+        id: "releaseDate",
         size: 200,
+        type: ColumnType.DATE,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.HIDDEN,
             export: true,
-            comparison: false,
             filterable: true,
             sortable: false,
         },
-        filter: { type: "text" },
-        export: { label: "Release Date", width: 15 },
-        cell: renderDateCell,
     },
-    
+
     // Last Updated
     {
-        id: "lastUpdated",
-        displayName: "Last Updated",
-        type: ColumnType.DATE,
-        group: ColumnGroup.METADATA,
         accessorFn: (row) => parseDate(row.lastUpdated),
+        cell: renderDateCell,
+        displayName: "Last Updated",
+        export: { label: "Last Updated", width: 15 },
+        filter: { type: "date" },
+        group: ColumnGroup.METADATA,
+        id: "lastUpdated",
         size: 200,
+        sort: { type: "datetime" },
+        type: ColumnType.DATE,
         visibility: {
+            comparison: false,
             default: ColumnVisibility.OPTIONAL,
             export: true,
-            comparison: false,
             filterable: true,
             sortable: true,
         },
-        filter: { type: "date" },
-        sort: { type: "datetime" },
-        export: { label: "Last Updated", width: 15 },
-        cell: renderDateCell,
     },
 ];
 
 export interface ColumnFactoryOptions {
-    enableResizing?: boolean;
-    enableHiding?: boolean;
     enableFilter?: boolean;
+    enableHiding?: boolean;
+    enableResizing?: boolean;
     enableSort?: boolean;
 }
 
-
-
 const getSortFn = (type: string) => {
     switch (type) {
-        case "number": return "basic";
-        case "date": return "basic";
-        case "datetime": return "basic";
-        case "text": default: return "basic";
+        case "date":
+            return "basic";
+        case "datetime":
+            return "basic";
+        case "number":
+            return "basic";
+        case "text":
+        default:
+            return "basic";
     }
 };
 
 const columnHelper = createColumnHelper<ModelTableRow>();
 
-const createSelectionColumn = (): ColumnDef<ModelTableRow> => 
+const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
     columnHelper.display({
-        id: "select",
-        size: 60,
-        minSize: 60,
-        maxSize: 60,
+        cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
+        enableColumnFilter: false,
         enableHiding: false,
         enableResizing: false,
         enableSorting: false,
-        enableColumnFilter: false,
         header: ({ table }) => (
             <div className="p-2">
                 <Checkbox
@@ -707,186 +709,148 @@ const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
                 />
             </div>
         ),
-        cell: ({ row }) => (
-            <Checkbox 
-                aria-label="Select row" 
-                checked={row.getIsSelected()} 
-                onCheckedChange={(value) => row.toggleSelected(!!value)} 
-            />
-        ),
+        id: "select",
+        maxSize: 60,
+        minSize: 60,
+        size: 60,
     });
 
+export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] => configs.map((config) => {
+    const column: ColumnDef<ModelTableRow> = {
+        enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
+        enableHiding: options.enableHiding !== false,
+        enableResizing: options.enableResizing !== false,
+        enableSorting: config.visibility.sortable && config.sort && options.enableSort !== false,
+        id: config.id,
+        maxSize: config.size * 2,
+        minSize: config.size,
+        size: config.size,
+    };
 
+    // Set header
+    if (config.header) {
+        (column as any).header = config.header;
+    } else {
+        (column as any).header = config.displayName;
+    }
 
-export const createColumnsFromConfig = (
-    configs: ColumnConfig<ModelTableRow>[],
-    options: ColumnFactoryOptions = {}
-): ColumnDef<ModelTableRow>[] => {
-    return configs.map(config => {
-        const column: ColumnDef<ModelTableRow> = {
-            id: config.id,
-            size: config.size,
-            minSize: config.size,
-            maxSize: config.size * 2,
-            enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
-            enableSorting: config.visibility.sortable && config.sort && options.enableSort !== false,
-            enableResizing: options.enableResizing !== false,
-            enableHiding: options.enableHiding !== false,
-        };
+    // Set accessor
+    if (config.accessorKey) {
+        (column as any).accessorKey = config.accessorKey as string;
+    } else if (config.accessorFn) {
+        (column as any).accessorFn = config.accessorFn;
+    }
 
-        // Set header
-        if (config.header) {
-            (column as any).header = config.header;
-        } else {
-            (column as any).header = config.displayName;
-        }
+    // Set cell renderer
+    if (config.cell) {
+        (column as any).cell = config.cell;
+    }
 
-        // Set accessor
-        if (config.accessorKey) {
-            (column as any).accessorKey = config.accessorKey as string;
-        } else if (config.accessorFn) {
-            (column as any).accessorFn = config.accessorFn;
-        }
+    // Set sorting function
+    if (config.sort) {
+        (column as any).sortingFn = getSortFn(config.sort.type);
+    }
 
-        // Set cell renderer
-        if (config.cell) {
-            (column as any).cell = config.cell;
-        }
+    return column;
+});
 
-        // Set sorting function
-        if (config.sort) {
-            (column as any).sortingFn = getSortFn(config.sort.type);
-        }
+export const createColumnsWithSelection = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] => {
+    const hasSelectionColumn = configs.some((config) => config.id === "select");
 
-        return column;
-    });
-};
-
-export const createColumnsWithSelection = (
-    configs: ColumnConfig<ModelTableRow>[],
-    options: ColumnFactoryOptions = {}
-): ColumnDef<ModelTableRow>[] => {
-    const hasSelectionColumn = configs.some(config => config.id === "select");
-    
     if (hasSelectionColumn) {
         return createColumnsFromConfig(configs, options);
     }
-    
+
     return [createSelectionColumn(), ...createColumnsFromConfig(configs, options)];
 };
 
 export const createColumnsByVisibility = (
     configs: ColumnConfig<ModelTableRow>[],
     visibleColumns: string[],
-    options: ColumnFactoryOptions = {}
+    options: ColumnFactoryOptions = {},
 ): ColumnDef<ModelTableRow>[] => {
-    const filteredConfigs = configs.filter(config => 
-        visibleColumns.includes(config.id) || config.visibility.default === "always"
-    );
-    
+    const filteredConfigs = configs.filter((config) => visibleColumns.includes(config.id) || config.visibility.default === "always");
+
     return createColumnsWithSelection(filteredConfigs, options);
 };
 
-
-
-
-
-export const createExportConfig = (
-    configs: ColumnConfig<ModelTableRow>[],
-    enabledColumns: string[]
-) => {
-    const exportableConfigs = configs.filter(config => 
-        config.visibility.export && enabledColumns.includes(config.id)
-    );
+export const createExportConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
+    const exportableConfigs = configs.filter((config) => config.visibility.export && enabledColumns.includes(config.id));
 
     return {
-        columnMapping: Object.fromEntries(
-            exportableConfigs.map(config => [
-                config.id,
-                config.export?.label || config.displayName
-            ])
-        ),
-        columnWidths: exportableConfigs.map(config => ({ 
-            wch: config.export?.width || 15 
-        })),
-        headers: exportableConfigs.map(config => 
-            config.export?.label || config.displayName
-        ),
-        enabledColumns: exportableConfigs.map(config => config.id),
+        columnMapping: Object.fromEntries(exportableConfigs.map((config) => [config.id, config.export?.label || config.displayName])),
+        columnWidths: exportableConfigs.map((config) => {
+            return {
+                wch: config.export?.width || 15,
+            };
+        }),
+        enabledColumns: exportableConfigs.map((config) => config.id),
+        headers: exportableConfigs.map((config) => config.export?.label || config.displayName),
     };
 };
 
-export const createComparisonConfig = (
-    configs: ColumnConfig<ModelTableRow>[],
-    enabledColumns: string[]
-) => {
-    const comparableConfigs = configs.filter(config => 
-        config.visibility.comparison && enabledColumns.includes(config.id)
-    );
+export const createComparisonConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
+    const comparableConfigs = configs.filter((config) => config.visibility.comparison && enabledColumns.includes(config.id));
 
     return {
-        columns: comparableConfigs.map(config => ({
-            id: config.id,
-            label: config.displayName,
-            highlightDifferences: config.comparison?.highlightDifferences || false,
-        })),
-        enabledColumns: comparableConfigs.map(config => config.id),
+        columns: comparableConfigs.map((config) => {
+            return {
+                highlightDifferences: config.comparison?.highlightDifferences || false,
+                id: config.id,
+                label: config.displayName,
+            };
+        }),
+        enabledColumns: comparableConfigs.map((config) => config.id),
     };
 };
 
-export const createFilterConfig = (
-    configs: ColumnConfig<ModelTableRow>[],
-    enabledColumns: string[]
-) => {
-    const filterableConfigs = configs.filter(config => 
-        config.visibility.filterable && enabledColumns.includes(config.id)
-    );
-
-
+export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
+    const filterableConfigs = configs.filter((config) => config.visibility.filterable && enabledColumns.includes(config.id));
 
     const iconMap: Record<string, any> = {
+        boolean: CheckSquare,
+        cost: DollarSign,
         date: Calendar,
         number: DollarSign,
-        cost: DollarSign,
         option: CheckSquare,
-        boolean: CheckSquare,
         text: Search,
     };
 
     // Map our ColumnType enum to data-table-filter ColumnDataType
     const typeMap: Record<ColumnType, "text" | "number" | "date" | "option" | "multiOption"> = {
-        [ColumnType.TEXT]: "text",
-        [ColumnType.NUMBER]: "number", 
+        [ColumnType.BOOLEAN]: "option",
         [ColumnType.COST]: "number",
         [ColumnType.DATE]: "date",
-        [ColumnType.BOOLEAN]: "option",
         [ColumnType.MODALITY]: "text",
+        [ColumnType.NUMBER]: "number",
         [ColumnType.SELECT]: "option",
+        [ColumnType.TEXT]: "text",
     };
 
-    const result = filterableConfigs.map(config => {
+    const result = filterableConfigs.map((config) => {
         const mappedType = typeMap[config.type] || "text";
-        
-        let options = config.filter?.options;
-        
-        const accessor = config.accessorFn || ((row: ModelTableRow) => {
-            if (config.accessorKey) {
-                return row[config.accessorKey];
-            }
-            return undefined;
-        });
-        
+
+        const options = config.filter?.options;
+
+        const accessor
+            = config.accessorFn
+                || ((row: ModelTableRow) => {
+                    if (config.accessorKey) {
+                        return row[config.accessorKey];
+                    }
+
+                    return undefined;
+                });
+
         return {
             accessor,
             displayName: config.displayName,
             icon: iconMap[config.type] || Search,
             id: config.id,
-            type: mappedType,
             options,
+            type: mappedType,
         };
     });
-
-
 
     return result;
 };
@@ -956,54 +920,47 @@ export const getDefaultComparisonColumns = (): string[] => [
     "reasoning",
 ];
 
-
-
-
-
 export type SelectionMode = "comparison" | "export";
 export type SortOrder = "asc" | "desc";
 
 export interface TableOptions {
-    enableColumnResizing?: boolean;
     enableColumnHiding?: boolean;
+    enableColumnResizing?: boolean;
     enableFiltering?: boolean;
+    enablePagination?: boolean;
+    enableRowSelection?: boolean;
     enableSorting?: boolean;
     enableVirtualization?: boolean;
-    enableRowSelection?: boolean;
-    enablePagination?: boolean;
 }
 
 export interface TableState {
-    selectedRows: ModelTableRow[];
-    visibleColumns: string[];
-    sortBy: string;
-    sortOrder: SortOrder;
     filters: Record<string, any>;
     pageIndex: number;
     pageSize: number;
     searchTerm: string;
+    selectedRows: ModelTableRow[];
+    sortBy: string;
+    sortOrder: SortOrder;
+    visibleColumns: string[];
 }
 
 export interface TableError {
-    message: string;
     code: string;
     details?: any;
+    message: string;
 }
 
 export interface UseModelTableReturn {
-    tableData: ModelTableRow[];
     columns: any[];
+    error: TableError | null;
     exportConfig: any;
     filterConfig: any;
     isLoading: boolean;
-    error: TableError | null;
     refresh: () => void;
+    tableData: ModelTableRow[];
 }
 
-export const useModelTable = (
-    models: Model[],
-    options: TableOptions = {}
-): UseModelTableReturn => {
+export const useModelTable = (models: Model[], options: TableOptions = {}): UseModelTableReturn => {
     const [isPending, startTransition] = useTransition();
     const [error, setError] = useState<TableError | null>(null);
     const [lastRefresh, setLastRefresh] = useState(Date.now());
@@ -1012,14 +969,17 @@ export const useModelTable = (
     const tableData = useMemo(() => {
         try {
             setError(null);
+
             return memoizedTransformModels(models);
         } catch (err) {
             const tableError: TableError = {
-                message: "Failed to transform model data",
                 code: "TRANSFORM_ERROR",
                 details: err,
+                message: "Failed to transform model data",
             };
+
             setError(tableError);
+
             return [];
         }
     }, [models, lastRefresh]);
@@ -1030,60 +990,72 @@ export const useModelTable = (
             return getTableColumns();
         } catch (err) {
             const tableError: TableError = {
-                message: "Failed to load column configurations",
                 code: "COLUMN_CONFIG_ERROR",
                 details: err,
+                message: "Failed to load column configurations",
             };
+
             setError(tableError);
+
             return [];
         }
     }, []);
 
     // Create columns with visibility filtering
     const columns = useMemo(() => {
-        if (columnConfigs.length === 0) return [];
-        
+        if (columnConfigs.length === 0)
+            return [];
+
         try {
             const visibleColumns = getDefaultColumnOrder();
+
             return createColumnsByVisibility(columnConfigs, visibleColumns, {
-                enableResizing: options.enableColumnResizing,
-                enableHiding: options.enableColumnHiding,
                 enableFilter: options.enableFiltering,
+                enableHiding: options.enableColumnHiding,
+                enableResizing: options.enableColumnResizing,
                 enableSort: options.enableSorting,
             });
         } catch (err) {
             const tableError: TableError = {
-                message: "Failed to create table columns",
                 code: "COLUMN_CREATION_ERROR",
                 details: err,
+                message: "Failed to create table columns",
             };
+
             setError(tableError);
+
             return [];
         }
     }, [columnConfigs, options]);
 
     // Create export configuration
     const exportConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return null;
-        
+        if (columnConfigs.length === 0)
+            return null;
+
         try {
             const exportColumns = getDefaultExportColumns();
+
             return createExportConfig(columnConfigs, exportColumns);
         } catch (err) {
             console.warn("Failed to create export config:", err);
+
             return null;
         }
     }, [columnConfigs]);
 
     // Create filter configuration
     const filterConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return [];
-        
+        if (columnConfigs.length === 0)
+            return [];
+
         try {
             const filterColumns = getDefaultColumnOrder();
+
             return createFilterConfig(columnConfigs, filterColumns);
         } catch (err) {
             console.warn("Failed to create filter config:", err);
+
             return [];
         }
     }, [columnConfigs, options.enableFiltering]);
@@ -1096,87 +1068,91 @@ export const useModelTable = (
     }, []);
 
     return {
-        tableData,
         columns,
+        error,
         exportConfig,
         filterConfig,
         isLoading: isPending,
-        error,
         refresh,
+        tableData,
     };
 };
 
 export interface UseSelectionModeReturn {
-    selectionMode: SelectionMode;
-    maxSelectionLimit: number;
-    handleModeChange: (mode: SelectionMode) => void;
-    isSelectionValid: (count: number) => boolean;
-    getValidationMessage: (count: number) => string;
     canCompare: (count: number) => boolean;
     canExport: (count: number) => boolean;
+    getValidationMessage: (count: number) => string;
+    handleModeChange: (mode: SelectionMode) => void;
+    isSelectionValid: (count: number) => boolean;
+    maxSelectionLimit: number;
+    selectionMode: SelectionMode;
 }
 
 export const useSelectionMode = (): UseSelectionModeReturn => {
     const [selectionMode, setSelectionMode] = useState<SelectionMode>("comparison");
 
-    const maxSelectionLimit = useMemo(() => {
-        return selectionMode === "comparison" ? 10 : 1000;
-    }, [selectionMode]);
+    const maxSelectionLimit = useMemo(() => (selectionMode === "comparison" ? 10 : 1000), [selectionMode]);
 
     const handleModeChange = useCallback((mode: SelectionMode) => {
         setSelectionMode(mode);
     }, []);
 
-    const isSelectionValid = useCallback((count: number) => {
-        return count >= 0 && count <= maxSelectionLimit;
-    }, [maxSelectionLimit]);
+    const isSelectionValid = useCallback(
+        (count: number) => count >= 0 && count <= maxSelectionLimit,
+        [maxSelectionLimit],
+    );
 
-    const canCompare = useCallback((count: number) => {
-        return selectionMode === "comparison" && count >= 2 && count <= maxSelectionLimit;
-    }, [selectionMode, maxSelectionLimit]);
+    const canCompare = useCallback(
+        (count: number) => selectionMode === "comparison" && count >= 2 && count <= maxSelectionLimit,
+        [selectionMode, maxSelectionLimit],
+    );
 
-    const canExport = useCallback((count: number) => {
-        return selectionMode === "export" && count > 0 && count <= maxSelectionLimit;
-    }, [selectionMode, maxSelectionLimit]);
+    const canExport = useCallback(
+        (count: number) => selectionMode === "export" && count > 0 && count <= maxSelectionLimit,
+        [selectionMode, maxSelectionLimit],
+    );
 
-    const getValidationMessage = useCallback((count: number) => {
-        if (count === 0) {
-            return "No models selected";
-        }
-        
-        if (count > maxSelectionLimit) {
-            return `Too many models selected (max: ${maxSelectionLimit})`;
-        }
-        
-        if (selectionMode === "comparison" && count < 2) {
-            return "Select at least 2 models to compare";
-        }
-        
-        if (selectionMode === "export" && count === 0) {
-            return "Select at least 1 model to export";
-        }
-        
-        return `${count} model${count === 1 ? "" : "s"} selected`;
-    }, [maxSelectionLimit, selectionMode]);
+    const getValidationMessage = useCallback(
+        (count: number) => {
+            if (count === 0) {
+                return "No models selected";
+            }
+
+            if (count > maxSelectionLimit) {
+                return `Too many models selected (max: ${maxSelectionLimit})`;
+            }
+
+            if (selectionMode === "comparison" && count < 2) {
+                return "Select at least 2 models to compare";
+            }
+
+            if (selectionMode === "export" && count === 0) {
+                return "Select at least 1 model to export";
+            }
+
+            return `${count} model${count === 1 ? "" : "s"} selected`;
+        },
+        [maxSelectionLimit, selectionMode],
+    );
 
     return {
-        selectionMode,
-        maxSelectionLimit,
-        handleModeChange,
-        isSelectionValid,
-        getValidationMessage,
         canCompare,
         canExport,
+        getValidationMessage,
+        handleModeChange,
+        isSelectionValid,
+        maxSelectionLimit,
+        selectionMode,
     };
 };
 
 export interface UseTableHeightReturn {
     containerHeight: number;
     didMount: boolean;
-    headerRef: React.RefObject<HTMLDivElement | null>;
     footerRef: React.RefObject<HTMLDivElement | null>;
-    updateHeight: () => void;
+    headerRef: React.RefObject<HTMLDivElement | null>;
     isResizing: boolean;
+    updateHeight: () => void;
 }
 
 export const useTableHeight = (): UseTableHeightReturn => {
@@ -1188,24 +1164,25 @@ export const useTableHeight = (): UseTableHeightReturn => {
     const resizeTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
     const updateHeight = useCallback(() => {
-        if (typeof window === "undefined") return;
+        if (typeof window === "undefined")
+            return;
 
         setIsResizing(true);
-        
+
         const windowHeight = window.innerHeight;
         const headerHeight = headerRef.current?.offsetHeight || 0;
         const footerHeight = footerRef.current?.offsetHeight || 0;
-        
+
         // Calculate available height for table
         const availableHeight = windowHeight - headerHeight - footerHeight - 100; // 100px buffer
-        
+
         setContainerHeight(Math.max(400, availableHeight)); // Minimum 400px height
-        
+
         // Clear previous timeout
         if (resizeTimeoutRef.current) {
             clearTimeout(resizeTimeoutRef.current);
         }
-        
+
         // Set timeout to clear resizing state
         resizeTimeoutRef.current = setTimeout(() => {
             setIsResizing(false);
@@ -1221,9 +1198,10 @@ export const useTableHeight = (): UseTableHeightReturn => {
         };
 
         window.addEventListener("resize", handleResize);
-        
+
         return () => {
             window.removeEventListener("resize", handleResize);
+
             if (resizeTimeoutRef.current) {
                 clearTimeout(resizeTimeoutRef.current);
             }
@@ -1233,71 +1211,71 @@ export const useTableHeight = (): UseTableHeightReturn => {
     return {
         containerHeight,
         didMount,
-        headerRef,
         footerRef,
-        updateHeight,
+        headerRef,
         isResizing,
+        updateHeight,
     };
 };
 
 export interface UseTableStateReturn {
-    state: TableState;
-    setSelectedRows: (rows: ModelTableRow[]) => void;
-    setVisibleColumns: (columns: string[]) => void;
-    setSortBy: (column: string) => void;
-    setSortOrder: (order: SortOrder) => void;
+    resetState: () => void;
     setFilters: (filters: Record<string, any>) => void;
     setPageIndex: (index: number) => void;
     setPageSize: (size: number) => void;
     setSearchTerm: (term: string) => void;
-    resetState: () => void;
+    setSelectedRows: (rows: ModelTableRow[]) => void;
+    setSortBy: (column: string) => void;
+    setSortOrder: (order: SortOrder) => void;
+    setVisibleColumns: (columns: string[]) => void;
+    state: TableState;
     updateState: (updates: Partial<TableState>) => void;
 }
 
 const initialTableState: TableState = {
-    selectedRows: [],
-    visibleColumns: getDefaultColumnOrder(),
-    sortBy: "provider",
-    sortOrder: "asc",
     filters: {},
     pageIndex: 0,
     pageSize: 50,
     searchTerm: "",
+    selectedRows: [],
+    sortBy: "provider",
+    sortOrder: "asc",
+    visibleColumns: getDefaultColumnOrder(),
 };
 
 export const useTableState = (): UseTableStateReturn => {
     const [state, setState] = useState<TableState>(initialTableState);
 
     const setSelectedRows = useCallback((rows: ModelTableRow[]) => {
-        setState(prev => ({ ...prev, selectedRows: rows }));
+        setState((prev) => { return { ...prev, selectedRows: rows }; });
     }, []);
 
     const setVisibleColumns = useCallback((columns: string[]) => {
-        setState(prev => ({ ...prev, visibleColumns: columns }));
+        setState((prev) => { return { ...prev, visibleColumns: columns }; });
     }, []);
 
     const setSortBy = useCallback((column: string) => {
-        setState(prev => ({ ...prev, sortBy: column }));
+        setState((prev) => { return { ...prev, sortBy: column }; });
     }, []);
 
     const setSortOrder = useCallback((order: SortOrder) => {
-        setState(prev => ({ ...prev, sortOrder: order }));
+        setState((prev) => { return { ...prev, sortOrder: order }; });
     }, []);
 
     const setFilters = useCallback((filters: Record<string, any>) => {
-        setState(prev => ({ ...prev, filters }));
+        setState((prev) => { return { ...prev, filters }; });
     }, []);
 
     const setPageIndex = useCallback((index: number) => {
-        setState(prev => ({ ...prev, pageIndex: index }));
+        setState((prev) => { return { ...prev, pageIndex: index }; });
     }, []);
 
     const setPageSize = useCallback((size: number) => {
-        setState(prev => ({ ...prev, pageSize: size, pageIndex: 0 }));
+        setState((prev) => { return { ...prev, pageIndex: 0, pageSize: size }; });
     }, []);
 
     const setSearchTerm = useCallback((term: string) => {
-        setState(prev => ({ ...prev, searchTerm: term, pageIndex: 0 }));
+        setState((prev) => { return { ...prev, pageIndex: 0, searchTerm: term }; });
     }, []);
 
     const resetState = useCallback(() => {
@@ -1305,73 +1283,73 @@ export const useTableState = (): UseTableStateReturn => {
     }, []);
 
     const updateState = useCallback((updates: Partial<TableState>) => {
-        setState(prev => ({ ...prev, ...updates }));
+        setState((prev) => { return { ...prev, ...updates }; });
     }, []);
 
     return {
-        state,
-        setSelectedRows,
-        setVisibleColumns,
-        setSortBy,
-        setSortOrder,
+        resetState,
         setFilters,
         setPageIndex,
         setPageSize,
         setSearchTerm,
-        resetState,
+        setSelectedRows,
+        setSortBy,
+        setSortOrder,
+        setVisibleColumns,
+        state,
         updateState,
     };
 };
 
-export const useTablePersistence = (
-    key: string,
-    initialState: TableState
-): [TableState, (state: TableState) => void] => {
+export const useTablePersistence = (key: string, initialState: TableState): [TableState, (state: TableState) => void] => {
     const [state, setState] = useState<TableState>(() => {
-        if (typeof window === "undefined") return initialState;
-        
+        if (typeof window === "undefined")
+            return initialState;
+
         try {
             const saved = localStorage.getItem(key);
+
             if (saved) {
                 const parsed = JSON.parse(saved);
+
                 // Merge with initial state to handle new fields
                 return { ...initialState, ...parsed };
             }
         } catch (error) {
             console.warn(`Failed to load table state from localStorage (${key}):`, error);
         }
-        
+
         return initialState;
     });
 
-    const setPersistedState = useCallback((newState: TableState) => {
-        setState(newState);
-        
-        if (typeof window !== "undefined") {
-            try {
-                localStorage.setItem(key, JSON.stringify(newState));
-            } catch (error) {
-                console.warn(`Failed to save table state to localStorage (${key}):`, error);
+    const setPersistedState = useCallback(
+        (newState: TableState) => {
+            setState(newState);
+
+            if (typeof window !== "undefined") {
+                try {
+                    localStorage.setItem(key, JSON.stringify(newState));
+                } catch (error) {
+                    console.warn(`Failed to save table state to localStorage (${key}):`, error);
+                }
             }
-        }
-    }, [key]);
+        },
+        [key],
+    );
 
     return [state, setPersistedState];
 };
 
 export interface UseTableSearchReturn {
-    searchTerm: string;
-    setSearchTerm: (term: string) => void;
+    clearSearch: () => void;
     filteredData: ModelTableRow[];
     isSearching: boolean;
     searchResults: number;
-    clearSearch: () => void;
+    searchTerm: string;
+    setSearchTerm: (term: string) => void;
 }
 
-export const useTableSearch = (
-    data: ModelTableRow[],
-    searchFields: (keyof ModelTableRow)[] = ["provider", "model", "modelId"]
-): UseTableSearchReturn => {
+export const useTableSearch = (data: ModelTableRow[], searchFields: (keyof ModelTableRow)[] = ["provider", "model", "modelId"]): UseTableSearchReturn => {
     const [searchTerm, setSearchTerm] = useState("");
     const [isSearching, setIsSearching] = useState(false);
 
@@ -1382,16 +1360,18 @@ export const useTableSearch = (
 
         setIsSearching(true);
         const term = searchTerm.toLowerCase();
-        
-        const filtered = data.filter(row => {
-            return searchFields.some(field => {
-                const value = row[field];
-                if (value == null) return false;
-                return String(value).toLowerCase().includes(term);
-            });
-        });
+
+        const filtered = data.filter((row) => searchFields.some((field) => {
+            const value = row[field];
+
+            if (value == null)
+                return false;
+
+            return String(value).toLowerCase().includes(term);
+        }));
 
         setIsSearching(false);
+
         return filtered;
     }, [data, searchTerm, searchFields]);
 
@@ -1400,21 +1380,21 @@ export const useTableSearch = (
     }, [setSearchTerm]);
 
     return {
-        searchTerm,
-        setSearchTerm,
+        clearSearch,
         filteredData,
         isSearching,
         searchResults: filteredData.length,
-        clearSearch,
+        searchTerm,
+        setSearchTerm,
     };
 };
 
 export interface UseTablePerformanceReturn {
-    isVirtualized: boolean;
-    estimatedRowHeight: number;
-    overscan: number;
-    enableRowVirtualization: boolean;
     enableColumnVirtualization: boolean;
+    enableRowVirtualization: boolean;
+    estimatedRowHeight: number;
+    isVirtualized: boolean;
+    overscan: number;
 }
 
 export const useTablePerformance = (
@@ -1423,23 +1403,17 @@ export const useTablePerformance = (
         enableVirtualization?: boolean;
         estimatedRowHeight?: number;
         overscan?: number;
-    } = {}
+    } = {},
 ): UseTablePerformanceReturn => {
-    const {
-        enableVirtualization = true,
-        estimatedRowHeight = 40,
-        overscan = 5,
-    } = options;
+    const { enableVirtualization = true, estimatedRowHeight = 40, overscan = 5 } = options;
 
-    const isVirtualized = useMemo(() => {
-        return enableVirtualization && dataLength > 100;
-    }, [enableVirtualization, dataLength]);
+    const isVirtualized = useMemo(() => enableVirtualization && dataLength > 100, [enableVirtualization, dataLength]);
 
     return {
-        isVirtualized,
-        estimatedRowHeight,
-        overscan,
-        enableRowVirtualization: isVirtualized,
         enableColumnVirtualization: false, // Usually not needed for most tables
+        enableRowVirtualization: isVirtualized,
+        estimatedRowHeight,
+        isVirtualized,
+        overscan,
     };
-}; 
+};
