@@ -2,7 +2,7 @@ import type { Model } from "@anolilab/ai-model-registry";
 import { getAllModels } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
-import { Calendar, Copy, File, FileText, Image as ImageIcon, MoreHorizontal, ScatterChart, Search, Trash2, Video, Volume2 } from "lucide-react";
+import { Calendar, Copy, File, FileText, Image as ImageIcon, MoreHorizontal, ScatterChart, Search, Trash2, Video, Volume2, BarChart3 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
@@ -12,6 +12,8 @@ import type { ColumnConfig } from "@/components/data-table/filter/core/types";
 import { dateFilterFn, numberFilterFn, textFilterFn } from "@/components/data-table/filter/integrations/tanstack-table/filter-fns";
 import { optionFilterFn } from "@/components/data-table/filter/lib/filter-fns";
 import HowToUseDialog from "@/components/how-to-use-dialog";
+import ModelComparisonDialog from "@/components/data-table/model-comparison-dialog";
+import SelectionModeToggle from "@/components/data-table/selection-mode-toggle";
 import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -38,7 +40,17 @@ const HomeComponent = () => {
     const { allModels } = Route.useLoaderData();
     const [containerHeight, setContainerHeight] = useState(600);
     const [didMount, setDidMount] = useState(false);
+    const [isComparisonDialogOpen, setIsComparisonDialogOpen] = useState(false);
+    const [selectedModelsForComparison, setSelectedModelsForComparison] = useState<typeof tableData>([]);
+    const [selectionMode, setSelectionMode] = useState<"comparison" | "export">("comparison");
     const isMobile = useIsMobile();
+    
+    // Handler for mode changes
+    const handleModeChange = useCallback((newMode: "comparison" | "export") => {
+        setSelectionMode(newMode);
+        // Clear selections when switching modes to avoid confusion
+        // This will be handled by the DataTable component
+    }, []);
     const headerRef = useRef<HTMLElement>(null);
     const footerRef = useRef<HTMLElement>(null);
 
@@ -494,37 +506,69 @@ const HomeComponent = () => {
             selectedRows: typeof tableData;
             totalSelectedCount: number;
         }) => {
-            if (totalSelectedCount === 0)
-                return null;
-
             return (
-                <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">
-                        {totalSelectedCount} model{totalSelectedCount !== 1 ? "s" : ""} selected
-                    </span>
-                    <div className="flex items-center gap-2">
-                        <Button
-                            onClick={() => {
-                                // Copy selected model IDs to clipboard
-                                const modelIds = selectedRows.map((row) => row.modelId).join("\n");
+                <div className="flex items-center gap-4">
+                    {/* Selection Mode Toggle */}
+                    <SelectionModeToggle
+                        currentMode={selectionMode}
+                        onModeChange={handleModeChange}
+                        selectedCount={totalSelectedCount}
+                        maxSelectionLimit={5}
+                        size="sm"
+                    />
+                    
+                    {/* Selection Actions */}
+                    {totalSelectedCount > 0 && (
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium">
+                                {totalSelectedCount} model{totalSelectedCount !== 1 ? "s" : ""} selected
+                                {selectionMode === "comparison" && totalSelectedCount > 1 && (
+                                    <span className="text-muted-foreground ml-1">
+                                        (max 5 for comparison)
+                                    </span>
+                                )}
+                            </span>
+                            <div className="flex items-center gap-2">
+                                {selectionMode === "comparison" && totalSelectedCount > 1 && (
+                                    <Button
+                                        onClick={() => {
+                                            // Store selected models for comparison
+                                            setSelectedModelsForComparison(selectedRows);
+                                            setIsComparisonDialogOpen(true);
+                                        }}
+                                        variant="default"
+                                        size="sm"
+                                    >
+                                        <BarChart3 className="mr-1 h-4 w-4" />
+                                        Compare Models
+                                    </Button>
+                                )}
+                                
+                                <Button
+                                    onClick={() => {
+                                        // Copy selected model IDs to clipboard
+                                        const modelIds = selectedRows.map((row) => row.modelId).join("\n");
 
-                                navigator.clipboard.writeText(modelIds);
-                            }}
-                            variant="outline"
-                        >
-                            <Copy className="mr-1 h-4 w-4" />
-                            Copy IDs
-                        </Button>
+                                        navigator.clipboard.writeText(modelIds);
+                                    }}
+                                    variant="outline"
+                                    size="sm"
+                                >
+                                    <Copy className="mr-1 h-4 w-4" />
+                                    Copy IDs
+                                </Button>
 
-                        <Button onClick={resetSelection} variant="outline">
-                            <Trash2 className="mr-1 h-4 w-4" />
-                            Clear
-                        </Button>
-                    </div>
+                                <Button onClick={resetSelection} variant="outline" size="sm">
+                                    <Trash2 className="mr-1 h-4 w-4" />
+                                    Clear
+                                </Button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             );
         },
-        [],
+        [selectionMode],
     );
 
     return (
@@ -589,6 +633,8 @@ const HomeComponent = () => {
                             enableRowVirtualization: true,
                             enableStickyHeader: true,
                             enableToolbar: true,
+                            maxSelectionLimit: 5, // Limit selection to 5 models for comparison
+                            selectionMode: selectionMode, // Use current selection mode
                             estimatedRowHeight: 40,
                             virtualizationOverscan: 5,
                         }}
@@ -702,6 +748,13 @@ const HomeComponent = () => {
                         }}
                     />
                 </ClientOnly>
+                
+                {/* Model Comparison Dialog */}
+                <ModelComparisonDialog
+                    isOpen={isComparisonDialogOpen}
+                    onClose={() => setIsComparisonDialogOpen(false)}
+                    selectedModels={selectedModelsForComparison}
+                />
             </main>
             <footer className="flex items-center justify-between gap-4 sm:gap-10 px-4 py-3 flex-col sm:flex-row" ref={footerRef}>
                 <div className="flex items-center gap-2">
