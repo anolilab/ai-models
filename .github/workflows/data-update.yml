@@ -39,29 +39,25 @@ jobs:
                   cache-prefix: "data-update"
 
             - name: "Install Chrome for Puppeteer"
-              if: "success()"
+              if: "${{ success() }}"
               run: "pnpm exec nx run ai-model-registry:install:chrome"
 
             - name: "Ensure data directory exists"
-              if: "success()"
+              if: "${{ success() }}"
               run: "mkdir -p packages/ai-model-registry/data/providers"
 
             - name: "Prepare AI Model Registry Data"
-              if: "success()"
+              if: "${{ success() }}"
               run: "pnpm exec nx run ai-model-registry:prepare-data"
 
-            - name: "Check for changes"
-              if: "success()"
-              id: "changes"
+            - name: "Format and lint generated files"
+              if: "${{ success() }}"
               run: |
-                  if git diff --quiet; then
-                      echo "no_changes=true" >> $GITHUB_OUTPUT
-                  else
-                      echo "no_changes=false" >> $GITHUB_OUTPUT
-                  fi
-
+                  cd packages/ai-model-registry
+                  pnpm exec prettier --write public/api.json src/icons-sprite.ts
+                  pnpm exec eslint --fix src/icons-sprite.ts
             - name: "Commit updated data"
-              if: "success() && steps.changes.outputs.no_changes == 'false'"
+              if: "${{ success() }} && steps.changes.outputs.no_changes == 'false'"
               uses: "stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403" # v5.2.0
               with:
                   file_pattern: |

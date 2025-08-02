@@ -78,7 +78,7 @@ jobs:
                   codecov-token: "${{ secrets.CODECOV_TOKEN }}"
 
             - name: "Semantic Release"
-              if: "success()"
+              if: "${{ success() }}"
               env:
                   GITHUB_TOKEN: "${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}"
                   NPM_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"

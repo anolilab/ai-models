@@ -13,7 +13,7 @@ const useIsMobile = (): boolean => {
         };
 
         mql.addEventListener("change", onChange);
-        
+
         setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
 
         return () => mql.removeEventListener("change", onChange);
