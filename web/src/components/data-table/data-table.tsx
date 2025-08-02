@@ -371,8 +371,8 @@ const DataTable = <TData extends ExportableData, TValue>({
             // Determine the new row selection value
             const newRowSelection = typeof updaterOrValue === "function" ? updaterOrValue(rowSelectionRef.current) : updaterOrValue;
 
-            // Check if we have a max selection limit and if we're trying to exceed it
-            if (tableConfig.maxSelectionLimit > 0) {
+            // Check if we have a max selection limit and if we're in comparison mode
+            if (tableConfig.selectionMode === "comparison" && tableConfig.maxSelectionLimit > 0) {
                 const selectedKeys = Object.keys(newRowSelection);
                 if (selectedKeys.length > tableConfig.maxSelectionLimit) {
                     // If we're exceeding the limit, keep only the first N items
@@ -398,7 +398,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                 dispatch({ payload: newRowSelection, type: "SET_SELECTED_ITEMS" });
             }
         },
-        [tableConfig.enableRowVirtualization, tableConfig.maxSelectionLimit],
+        [tableConfig.enableRowVirtualization, tableConfig.maxSelectionLimit, tableConfig.selectionMode],
     );
 
     // Get selected items data - React Compiler optimized
@@ -617,6 +617,11 @@ const DataTable = <TData extends ExportableData, TValue>({
             dispatch({ payload: { page: 1 }, type: "SET_PAGINATION" });
         }
     }, [dataItems.length, pagination.pageSize, pagination.page]);
+
+    // Clear selections when selection mode changes
+    useEffect(() => {
+        dispatch({ type: "CLEAR_SELECTIONS" });
+    }, [tableConfig.selectionMode]);
 
     // Initialize default column sizes when columns are available and no saved sizes exist
     useEffect(() => {

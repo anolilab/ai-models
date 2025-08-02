@@ -6,10 +6,11 @@ The web app now includes a powerful model comparison feature that allows users t
 
 ## Features
 
-### 1. Configurable Selection Limit
-- **Default Limit**: 5 models maximum for comparison
-- **Configurable**: The limit can be adjusted via the `maxSelectionLimit` configuration option
-- **Visual Feedback**: Users see a "(max 5 for comparison)" indicator when multiple models are selected
+### 1. Dual Mode Selection System
+- **Comparison Mode**: Limited to 5 models maximum for side-by-side comparison
+- **Export Mode**: Unlimited selection for data export functionality
+- **Mode Toggle**: Easy switching between modes with visual indicators
+- **Smart Clearing**: Selections are cleared when switching modes to avoid confusion
 
 ### 2. Comparison Dialog
 - **Side-by-Side View**: Models are displayed in columns for easy comparison
@@ -34,13 +35,21 @@ The web app now includes a powerful model comparison feature that allows users t
 
 ## Usage
 
-1. **Select Models**: Use the checkboxes to select 2-5 models for comparison
-2. **Compare Button**: Click "Compare Models" button that appears when multiple models are selected
-3. **Review Comparison**: The dialog opens showing:
+### Comparison Mode
+1. **Switch to Compare Mode**: Click the "Compare" button in the toolbar
+2. **Select Models**: Use the checkboxes to select 2-5 models for comparison
+3. **Compare Button**: Click "Compare Models" button that appears when multiple models are selected
+4. **Review Comparison**: The dialog opens showing:
    - Quick summary of best values
    - Detailed side-by-side comparison
    - Highlighted differences and best values
-4. **Close**: Click "Close" to return to the main table
+5. **Close**: Click "Close" to return to the main table
+
+### Export Mode
+1. **Switch to Export Mode**: Click the "Export" button in the toolbar
+2. **Select Models**: Use the checkboxes to select any number of models for export
+3. **Export Data**: Use the existing export functionality to download selected models
+4. **Unlimited Selection**: No restrictions on the number of models you can select
 
 ## Technical Implementation
 
@@ -48,7 +57,8 @@ The web app now includes a powerful model comparison feature that allows users t
 ```typescript
 // In DataTable config
 {
-  maxSelectionLimit: 5, // Configurable limit
+  maxSelectionLimit: 5, // Limit for comparison mode
+  selectionMode: "comparison" | "export", // Current mode
   enableRowSelection: true,
   // ... other config options
 }
@@ -56,8 +66,9 @@ The web app now includes a powerful model comparison feature that allows users t
 
 ### Components
 - `ModelComparisonDialog`: Main comparison dialog component
-- Enhanced `DataTable`: Updated with selection limit logic
-- Updated toolbar with comparison button
+- `SelectionModeToggle`: Mode switching component for toolbar
+- Enhanced `DataTable`: Updated with dual-mode selection logic
+- Updated toolbar with mode toggle and conditional actions
 
 ### Key Features
 - **Responsive Design**: Works on desktop and mobile
@@ -71,7 +82,9 @@ The web app now includes a powerful model comparison feature that allows users t
 2. **Cost Optimization**: Quickly identify the most cost-effective options
 3. **Capability Assessment**: Compare features like tool calling, reasoning, etc.
 4. **Visual Clarity**: Clear highlighting makes differences obvious
-5. **Efficient Workflow**: Streamlined comparison process with configurable limits
+5. **Efficient Workflow**: Streamlined comparison process with dual-mode system
+6. **Export Compatibility**: Maintains full export functionality without restrictions
+7. **Mode Flexibility**: Easy switching between comparison and export workflows
 
 ## Future Enhancements
 
