@@ -715,44 +715,45 @@ const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
         size: 60,
     });
 
-export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] => configs.map((config) => {
-    const column: ColumnDef<ModelTableRow> = {
-        enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
-        enableHiding: options.enableHiding !== false,
-        enableResizing: options.enableResizing !== false,
-        enableSorting: config.visibility.sortable && config.sort && options.enableSort !== false,
-        id: config.id,
-        maxSize: config.size * 2,
-        minSize: config.size,
-        size: config.size,
-    };
+export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] =>
+    configs.map((config) => {
+        const column: ColumnDef<ModelTableRow> = {
+            enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
+            enableHiding: options.enableHiding !== false,
+            enableResizing: options.enableResizing !== false,
+            enableSorting: config.visibility.sortable && config.sort && options.enableSort !== false,
+            id: config.id,
+            maxSize: config.size * 2,
+            minSize: config.size,
+            size: config.size,
+        };
 
-    // Set header
-    if (config.header) {
-        (column as any).header = config.header;
-    } else {
-        (column as any).header = config.displayName;
-    }
+        // Set header
+        if (config.header) {
+            (column as any).header = config.header;
+        } else {
+            (column as any).header = config.displayName;
+        }
 
-    // Set accessor
-    if (config.accessorKey) {
-        (column as any).accessorKey = config.accessorKey as string;
-    } else if (config.accessorFn) {
-        (column as any).accessorFn = config.accessorFn;
-    }
+        // Set accessor
+        if (config.accessorKey) {
+            (column as any).accessorKey = config.accessorKey as string;
+        } else if (config.accessorFn) {
+            (column as any).accessorFn = config.accessorFn;
+        }
 
-    // Set cell renderer
-    if (config.cell) {
-        (column as any).cell = config.cell;
-    }
+        // Set cell renderer
+        if (config.cell) {
+            (column as any).cell = config.cell;
+        }
 
-    // Set sorting function
-    if (config.sort) {
-        (column as any).sortingFn = getSortFn(config.sort.type);
-    }
+        // Set sorting function
+        if (config.sort) {
+            (column as any).sortingFn = getSortFn(config.sort.type);
+        }
 
-    return column;
-});
+        return column;
+    });
 
 export const createColumnsWithSelection = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] => {
     const hasSelectionColumn = configs.some((config) => config.id === "select");
@@ -1097,20 +1098,14 @@ export const useSelectionMode = (): UseSelectionModeReturn => {
         setSelectionMode(mode);
     }, []);
 
-    const isSelectionValid = useCallback(
-        (count: number) => count >= 0 && count <= maxSelectionLimit,
-        [maxSelectionLimit],
-    );
+    const isSelectionValid = useCallback((count: number) => count >= 0 && count <= maxSelectionLimit, [maxSelectionLimit]);
 
     const canCompare = useCallback(
         (count: number) => selectionMode === "comparison" && count >= 2 && count <= maxSelectionLimit,
         [selectionMode, maxSelectionLimit],
     );
 
-    const canExport = useCallback(
-        (count: number) => selectionMode === "export" && count > 0 && count <= maxSelectionLimit,
-        [selectionMode, maxSelectionLimit],
-    );
+    const canExport = useCallback((count: number) => selectionMode === "export" && count > 0 && count <= maxSelectionLimit, [selectionMode, maxSelectionLimit]);
 
     const getValidationMessage = useCallback(
         (count: number) => {
@@ -1247,35 +1242,51 @@ export const useTableState = (): UseTableStateReturn => {
     const [state, setState] = useState<TableState>(initialTableState);
 
     const setSelectedRows = useCallback((rows: ModelTableRow[]) => {
-        setState((prev) => { return { ...prev, selectedRows: rows }; });
+        setState((prev) => {
+            return { ...prev, selectedRows: rows };
+        });
     }, []);
 
     const setVisibleColumns = useCallback((columns: string[]) => {
-        setState((prev) => { return { ...prev, visibleColumns: columns }; });
+        setState((prev) => {
+            return { ...prev, visibleColumns: columns };
+        });
     }, []);
 
     const setSortBy = useCallback((column: string) => {
-        setState((prev) => { return { ...prev, sortBy: column }; });
+        setState((prev) => {
+            return { ...prev, sortBy: column };
+        });
     }, []);
 
     const setSortOrder = useCallback((order: SortOrder) => {
-        setState((prev) => { return { ...prev, sortOrder: order }; });
+        setState((prev) => {
+            return { ...prev, sortOrder: order };
+        });
     }, []);
 
     const setFilters = useCallback((filters: Record<string, any>) => {
-        setState((prev) => { return { ...prev, filters }; });
+        setState((prev) => {
+            return { ...prev, filters };
+        });
     }, []);
 
     const setPageIndex = useCallback((index: number) => {
-        setState((prev) => { return { ...prev, pageIndex: index }; });
+        setState((prev) => {
+            return { ...prev, pageIndex: index };
+        });
     }, []);
 
     const setPageSize = useCallback((size: number) => {
-        setState((prev) => { return { ...prev, pageIndex: 0, pageSize: size }; });
+        setState((prev) => {
+            return { ...prev, pageIndex: 0, pageSize: size };
+        });
     }, []);
 
     const setSearchTerm = useCallback((term: string) => {
-        setState((prev) => { return { ...prev, pageIndex: 0, searchTerm: term }; });
+        setState((prev) => {
+            return { ...prev, pageIndex: 0, searchTerm: term };
+        });
     }, []);
 
     const resetState = useCallback(() => {
@@ -1283,7 +1294,9 @@ export const useTableState = (): UseTableStateReturn => {
     }, []);
 
     const updateState = useCallback((updates: Partial<TableState>) => {
-        setState((prev) => { return { ...prev, ...updates }; });
+        setState((prev) => {
+            return { ...prev, ...updates };
+        });
     }, []);
 
     return {
@@ -1361,14 +1374,16 @@ export const useTableSearch = (data: ModelTableRow[], searchFields: (keyof Model
         setIsSearching(true);
         const term = searchTerm.toLowerCase();
 
-        const filtered = data.filter((row) => searchFields.some((field) => {
-            const value = row[field];
+        const filtered = data.filter((row) =>
+            searchFields.some((field) => {
+                const value = row[field];
 
-            if (value == null)
-                return false;
+                if (value == null)
+                    return false;
 
-            return String(value).toLowerCase().includes(term);
-        }));
+                return String(value).toLowerCase().includes(term);
+            }),
+        );
 
         setIsSearching(false);
 

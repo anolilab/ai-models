@@ -69,7 +69,8 @@ export const transformModelToTableRow = (model: Model, index: number): ModelTabl
     };
 };
 
-export const transformModelsToTableRows = (models: Model[]): ModelTableRow[] => models.map((model, index) => transformModelToTableRow(model, index)).sort((a, b) => a.provider.localeCompare(b.provider));
+export const transformModelsToTableRows = (models: Model[]): ModelTableRow[] =>
+    models.map((model, index) => transformModelToTableRow(model, index)).sort((a, b) => a.provider.localeCompare(b.provider));
 
 const createMemoizedTransformer = <T, R>(transformFn: (data: T) => R, getDependency: (data: T) => any) => {
     let lastDependency: any = null;

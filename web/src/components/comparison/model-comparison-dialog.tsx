@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronDown, ChevronRight, Code, Database, Download, File, FileText, Image, Music, Settings, Video, X } from "lucide-react";
+import { Check, ChevronDown, ChevronRight, Code, Database, File, FileText, Image, Music, Settings, Video, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -8,6 +8,7 @@ import ComparisonConfig from "@/components/comparison/comparison-config-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import DataExport from "@/components/ui/data-export";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import type { ColumnConfig, ModelTableRow } from "@/hooks/use-table";
 import { createComparisonConfig, getDefaultComparisonColumns, getTableColumns } from "@/hooks/use-table";
@@ -152,27 +153,19 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
         return null;
     };
 
-    const exportComparison = () => {
-        const csvData = [
-            // Header row
-            ["Feature", ...selectedModels.map((model) => `${model.provider} - ${model.model}`)],
-            // Data rows
-            ...comparisonFields.map((field) => [field.displayName, ...selectedModels.map((model) => getFieldValue(model, field.id))]),
-        ];
+    const getExportData = () => comparisonFields.map((field) => {
+        const row: any = {
+            Feature: field.displayName,
+        };
 
-        const csvContent = csvData.map((row) => row.map((cell) => `"${cell}"`).join(",")).join("\n");
+        selectedModels.forEach((model) => {
+            const value = getFieldValue(model, field.id);
 
-        const blob = new Blob([csvContent], { type: "text/csv" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
+            row[`${model.provider} - ${model.model}`] = value;
+        });
 
-        a.href = url;
-        a.download = `model-comparison-${selectedModels.length}-models.csv`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    };
+        return row;
+    });
 
     return (
         <Dialog onOpenChange={onClose} open={isOpen}>
@@ -183,13 +176,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                             <DialogTitle>Model Comparison</DialogTitle>
                             <DialogDescription>Comparing {selectedModels.length} models side-by-side</DialogDescription>
                         </div>
-                        <Button
-                            className="flex cursor-pointer items-center gap-2"
-                            onClick={() => setShowConfig(true)}
-                            size="sm"
-                            type="button"
-                            variant="outline"
-                        >
+                        <Button className="flex cursor-pointer items-center gap-2" onClick={() => setShowConfig(true)} type="button" variant="outline">
                             <Settings className="h-4 w-4" />
                             Configure
                         </Button>
@@ -487,10 +474,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                 <div className="flex flex-shrink-0 items-center justify-between gap-2 border-t pt-4">
                     <div className="text-muted-foreground text-sm">{comparisonFields.length} comparison fields</div>
                     <div className="flex gap-2">
-                        <Button onClick={exportComparison} variant="outline">
-                            <Download className="mr-2 h-4 w-4" />
-                            Export CSV
-                        </Button>
+                        <DataExport data={getExportData()} filename={`model-comparison-${selectedModels.length}-models`} variant="outline" />
                         <Button onClick={onClose} variant="outline">
                             Close
                         </Button>

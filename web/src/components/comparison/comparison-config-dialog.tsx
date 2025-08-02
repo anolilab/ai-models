@@ -203,17 +203,17 @@ const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: Comparison
 
                         return !isSameAsDefaults
                             ? (
-                            <Button onClick={handleReset} size="sm" variant="outline">
+                            <Button onClick={handleReset} variant="outline">
                                 <RotateCcw className="mr-2 h-4 w-4" />
                                 Reset
                             </Button>
                             )
                             : null;
                     })()}
-                    <Button onClick={onClose} size="sm" variant="outline">
+                    <Button onClick={onClose} variant="outline">
                         Cancel
                     </Button>
-                    <Button disabled={!hasChanges} onClick={handleSave} size="sm">
+                    <Button disabled={!hasChanges} onClick={handleSave}>
                         <Save className="mr-2 h-4 w-4" />
                         Save
                     </Button>

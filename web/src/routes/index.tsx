@@ -46,48 +46,46 @@ const HomeComponent = () => {
             selectedRows: typeof tableData;
             totalSelectedCount: number;
         }) => (
-                <div className="flex items-center gap-4">
-                    {totalSelectedCount > 0 && (
+            <div className="flex items-center gap-4">
+                {totalSelectedCount > 0 && (
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium">{getValidationMessage(totalSelectedCount)}</span>
                         <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">{getValidationMessage(totalSelectedCount)}</span>
-                            <div className="flex items-center gap-2">
-                                {selectionMode === "comparison" && totalSelectedCount > 1 && (
-                                    <Button
-                                        onClick={() => {
-                                            // Store selected models for comparison
-                                            setSelectedModelsForComparison(selectedRows);
-                                            setIsComparisonDialogOpen(true);
-                                        }}
-                                        size="sm"
-                                        variant="default"
-                                    >
-                                        <BarChart3 className="mr-1 h-4 w-4" />
-                                        Compare Models
-                                    </Button>
-                                )}
-
+                            {selectionMode === "comparison" && totalSelectedCount > 1 && (
                                 <Button
                                     onClick={() => {
-                                        // Copy selected model IDs to clipboard
-                                        const modelIds = selectedRows.map((row) => row.modelId).join("\n");
-
-                                        navigator.clipboard.writeText(modelIds);
+                                        // Store selected models for comparison
+                                        setSelectedModelsForComparison(selectedRows);
+                                        setIsComparisonDialogOpen(true);
                                     }}
-                                    size="sm"
-                                    variant="outline"
+                                    variant="default"
                                 >
-                                    <Copy className="mr-1 h-4 w-4" />
-                                    Copy IDs
+                                    <BarChart3 className="mr-1 h-4 w-4" />
+                                    Compare Models
                                 </Button>
+                            )}
 
-                                <Button onClick={resetSelection} size="sm" variant="outline">
-                                    <Trash2 className="mr-1 h-4 w-4" />
-                                    Clear
-                                </Button>
-                            </div>
+                            <Button
+                                onClick={() => {
+                                    // Copy selected model IDs to clipboard
+                                    const modelIds = selectedRows.map((row) => row.modelId).join("\n");
+
+                                    navigator.clipboard.writeText(modelIds);
+                                }}
+                                variant="outline"
+                            >
+                                <Copy className="mr-1 h-4 w-4" />
+                                Copy IDs
+                            </Button>
+
+                            <Button onClick={resetSelection} variant="outline">
+                                <Trash2 className="mr-1 h-4 w-4" />
+                                Clear
+                            </Button>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
+            </div>
         ),
         [selectionMode, maxSelectionLimit, handleModeChange, getValidationMessage],
     );
@@ -105,7 +103,7 @@ const HomeComponent = () => {
                         ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button className="flex items-center gap-2 text-sm" size="sm" variant="ghost">
+                                <Button className="flex items-center gap-2 text-sm" variant="ghost">
                                     <MoreHorizontal className="h-4 w-4" />
                                 </Button>
                             </DropdownMenuTrigger>

@@ -314,7 +314,6 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                             {...props}
                             className={cn("w-auto", multiSelectVariants({ className, variant }))}
                             onClick={handleTogglePopover}
-                            size="default"
                         >
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             <span>
@@ -443,7 +442,6 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                                                     setMonthTo(end);
                                                     setYearTo(end.getFullYear());
                                                 }}
-                                                size="default"
                                                 variant="ghost"
                                             >
                                                 {label}
