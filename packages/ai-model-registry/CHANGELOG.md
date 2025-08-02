@@ -1,3 +1,13 @@
+## @anolilab/ai-model-registry [1.2.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.1.0...@anolilab/ai-model-registry@1.2.0) (2025-08-02)
+
+### Features
+
+* implement Inception model integration and enhance provider registry with new features ([bc814bd](https://github.com/anolilab/ai-models/commit/bc814bd64188c35fee5243fe53aa9aef4e51df1b))
+
+### Bug Fixes
+
+* update Weights & Biases icon mapping and enhance icon generation logic ([80dc219](https://github.com/anolilab/ai-models/commit/80dc219833049ded7b477cd12e954ed9077348ba))
+
 ## @anolilab/ai-model-registry [1.1.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.0.2...@anolilab/ai-model-registry@1.1.0) (2025-08-02)
 
 ### Features
