@@ -371,6 +371,26 @@ const DataTable = <TData extends ExportableData, TValue>({
             // Determine the new row selection value
             const newRowSelection = typeof updaterOrValue === "function" ? updaterOrValue(rowSelectionRef.current) : updaterOrValue;
 
+            // Check if we have a max selection limit and if we're trying to exceed it
+            if (tableConfig.maxSelectionLimit > 0) {
+                const selectedKeys = Object.keys(newRowSelection);
+                if (selectedKeys.length > tableConfig.maxSelectionLimit) {
+                    // If we're exceeding the limit, keep only the first N items
+                    const limitedSelection: Record<string, boolean> = {};
+                    selectedKeys.slice(0, tableConfig.maxSelectionLimit).forEach(key => {
+                        limitedSelection[key] = true;
+                    });
+                    
+                    // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
+                    if (tableConfig.enableRowVirtualization) {
+                        dispatch({ payload: new Set(Object.keys(limitedSelection)), type: "SET_SELECTED_ITEMS" });
+                    } else {
+                        dispatch({ payload: limitedSelection, type: "SET_SELECTED_ITEMS" });
+                    }
+                    return;
+                }
+            }
+
             // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
             if (tableConfig.enableRowVirtualization) {
                 dispatch({ payload: new Set(Object.keys(newRowSelection)), type: "SET_SELECTED_ITEMS" });
@@ -378,7 +398,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                 dispatch({ payload: newRowSelection, type: "SET_SELECTED_ITEMS" });
             }
         },
-        [tableConfig.enableRowVirtualization],
+        [tableConfig.enableRowVirtualization, tableConfig.maxSelectionLimit],
     );
 
     // Get selected items data - React Compiler optimized

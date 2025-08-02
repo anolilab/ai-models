@@ -42,6 +42,10 @@ export interface TableConfig {
     // Enable/disable toolbar
     enableToolbar: boolean;
 
+    // Maximum number of items that can be selected (for comparison features)
+    // Set to 0 or undefined to disable the limit
+    maxSelectionLimit: number;
+
     // Estimated row height for virtualization (in pixels)
     estimatedRowHeight: number;
 
@@ -68,6 +72,7 @@ const defaultConfig: TableConfig = {
     enableRowVirtualization: false, // Disabled by default for backward compatibility
     enableStickyHeader: false, // Static header disabled by default
     enableToolbar: true, // Toolbar enabled by default
+    maxSelectionLimit: 5, // Default to 5 items for comparison
 
     estimatedRowHeight: 40, // Default row height estimate
     size: "default", // Default size for buttons and inputs
