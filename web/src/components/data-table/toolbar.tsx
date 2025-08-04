@@ -8,8 +8,8 @@ import cn from "@/lib/utils";
 import { DataTableExport } from "./data-export";
 import DataTableFilter from "./filter/components/data-table-filter";
 import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "./filter/core/types";
+import type { TableConfig } from "./types";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
-import type { TableConfig } from "./utils/table-config";
 import { DataTableViewOptions } from "./view-options";
 
 interface DataTableToolbarProps<TData extends ExportableData> {

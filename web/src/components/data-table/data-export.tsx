@@ -9,9 +9,9 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
+import type { TableConfig } from "./types";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import { exportData, exportToCSV, exportToJSON } from "./utils/export-utils";
-import type { TableConfig } from "./utils/table-config";
 
 interface DataTableExportProps<TData extends ExportableData> {
     columnMapping?: Record<string, string>;

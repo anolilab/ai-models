@@ -117,7 +117,6 @@ const TableBodyRow = <TData extends ExportableData>({
             data-index={virtualRow.index}
             data-state={row.getIsSelected() ? "selected" : undefined}
             id={`row-${row.id}-${virtualRow.index}`}
-            key={row.id}
             onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
             onFocus={(e) => {
                 // Remove focus from other rows
@@ -152,7 +151,7 @@ const TableBodyRow = <TData extends ExportableData>({
 
 const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>): JSX.Element => (
     <BaseTableHead
-        className="group/th bg-background relative flex p-2 text-left"
+        className="group/th bg-background relative flex truncate px-4.5 py-2 text-left"
         colSpan={header.colSpan}
         data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
         scope="col"
@@ -314,15 +313,12 @@ const TableBody = <TData extends ExportableData>({
         >
             {virtualRows.map((virtualRow) => {
                 const row = rows[virtualRow.index] as Row<TData>;
-
+                const state = table.getState();
                 // Include sorting state in key to force re-render when sorting changes
-                const sortingState = table
-                    .getState()
-                    .sorting
-                    .map((s) => `${s.id}-${s.desc}`)
-                    .join(",");
+                const sortingState = state.sorting.map((s) => `${s.id}-${s.desc}`).join(",");
+
                 const rowKey = enableRowSelection
-                    ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}-${sortingState}`
+                    ? `${row.id}-${virtualRow.index}-${state.rowSelection[row.id]}-${sortingState}`
                     : `${row.id}-${virtualRow.index}-${sortingState}`;
 
                 return (
@@ -424,7 +420,6 @@ const VirtualizedTable = <TData extends ExportableData>({
                     columns={columns}
                     columnVirtualizer={columnVirtualizer}
                     enableClickRowSelect={enableClickRowSelect}
-                    enableRowSelection={table.getState().rowSelection !== undefined}
                     enableStickyHeader={enableStickyHeader}
                     table={table}
                     tableContainerRef={tableContainerRef}

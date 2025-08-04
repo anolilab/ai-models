@@ -26,7 +26,7 @@ export interface RegularTableProps<TData> {
     table: Table<TData>;
 }
 
-export function RegularTable<TData>({
+export const RegularTable = <TData,>({
     className,
     columns,
     containerHeight,
@@ -37,7 +37,7 @@ export function RegularTable<TData>({
     onKeyDown,
     style,
     table,
-}: RegularTableProps<TData>) {
+}: RegularTableProps<TData>) => {
     const { rows } = table.getRowModel();
 
     // Check if row selection is enabled
@@ -175,4 +175,4 @@ export function RegularTable<TData>({
             </BaseTable>
         </div>
     );
-}
+};
