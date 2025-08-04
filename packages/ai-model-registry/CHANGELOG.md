@@ -1,3 +1,9 @@
+## @anolilab/ai-model-registry [1.2.3](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.2...@anolilab/ai-model-registry@1.2.3) (2025-08-04)
+
+### Bug Fixes
+
+* update AI model registry data and enhance transformer utilities ([3c5f86e](https://github.com/anolilab/ai-models/commit/3c5f86e1795d31e9890d015e69f0b07cdd0df14f))
+
 ## @anolilab/ai-model-registry [1.2.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.1...@anolilab/ai-model-registry@1.2.2) (2025-08-02)
 
 ### Bug Fixes
