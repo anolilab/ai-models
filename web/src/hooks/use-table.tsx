@@ -96,7 +96,8 @@ const renderDateCell = (props: any) => {
 };
 
 const extractLimitValue = (limitString: string): number => {
-    if (limitString === "-") return 0;
+    if (limitString === "-")
+        return 0;
 
     const numericValue = limitString.replace(/\D/g, "");
 
@@ -104,7 +105,8 @@ const extractLimitValue = (limitString: string): number => {
 };
 
 const parseDate = (dateString: string): Date | null => {
-    if (dateString === "-") return null;
+    if (dateString === "-")
+        return null;
 
     const date = new Date(dateString);
 
@@ -819,15 +821,15 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
 
         const options = config.filter?.options;
 
-        const accessor =
-            config.accessorFn ||
-            ((row: ModelTableRow) => {
-                if (config.accessorKey) {
-                    return row[config.accessorKey];
-                }
+        const accessor
+            = config.accessorFn
+                || ((row: ModelTableRow) => {
+                    if (config.accessorKey) {
+                        return row[config.accessorKey];
+                    }
 
-                return undefined;
-            });
+                    return undefined;
+                });
 
         return {
             accessor,
@@ -990,7 +992,8 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create columns with visibility filtering
     const columns = useMemo(() => {
-        if (columnConfigs.length === 0) return [];
+        if (columnConfigs.length === 0)
+            return [];
 
         try {
             const visibleColumns = getDefaultColumnOrder();
@@ -1016,7 +1019,8 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create export configuration
     const exportConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return null;
+        if (columnConfigs.length === 0)
+            return null;
 
         try {
             const exportColumns = getDefaultExportColumns();
@@ -1031,7 +1035,8 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create filter configuration
     const filterConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return [];
+        if (columnConfigs.length === 0)
+            return [];
 
         try {
             const filterColumns = getDefaultColumnOrder();
@@ -1143,7 +1148,8 @@ export const useTableHeight = (): UseTableHeightReturn => {
     const isMobile = useIsMobile();
 
     const updateHeight = useCallback(() => {
-        if (typeof window === "undefined") return;
+        if (typeof window === "undefined")
+            return;
 
         setIsResizing(true);
 
@@ -1299,7 +1305,8 @@ export const useTableState = (): UseTableStateReturn => {
 
 export const useTablePersistence = (key: string, initialState: TableState): [TableState, (state: TableState) => void] => {
     const [state, setState] = useState<TableState>(() => {
-        if (typeof window === "undefined") return initialState;
+        if (typeof window === "undefined")
+            return initialState;
 
         try {
             const saved = localStorage.getItem(key);
@@ -1360,7 +1367,8 @@ export const useTableSearch = (data: ModelTableRow[], searchFields: (keyof Model
             searchFields.some((field) => {
                 const value = row[field];
 
-                if (value == null) return false;
+                if (value == null)
+                    return false;
 
                 return String(value).toLowerCase().includes(term);
             }),

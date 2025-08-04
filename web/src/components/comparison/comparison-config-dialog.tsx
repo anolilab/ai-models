@@ -199,12 +199,14 @@ const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: Comparison
                         const defaultConfig = getDefaultComparisonColumns();
                         const isSameAsDefaults = JSON.stringify(enabledColumns.sort()) === JSON.stringify(defaultConfig.sort());
 
-                        return !isSameAsDefaults ? (
+                        return !isSameAsDefaults
+                            ? (
                             <Button onClick={handleReset} variant="outline">
                                 <RotateCcw className="mr-2 h-4 w-4" />
                                 Reset
                             </Button>
-                        ) : null;
+                            )
+                            : null;
                     })()}
                     <Button onClick={onClose} variant="outline">
                         Cancel

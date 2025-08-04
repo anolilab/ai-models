@@ -36,15 +36,15 @@ export interface ColumnOptionExtended extends ColumnOption {
 /*
  * Represents the data type (kind) of a column.
  */
-export type ColumnDataType =
+export type ColumnDataType
     /* The column value is a string that should be searchable. */
-    | "text"
-    | "number"
-    | "date"
+    = | "text"
+        | "number"
+        | "date"
     /* The column value can be a single value from a list of options. */
-    | "option"
+        | "option"
     /* The column value can be zero or more values from a list of options. */
-    | "multiOption";
+        | "multiOption";
 
 /*
  * Represents the data type (kind) of option and multi-option columns.
@@ -148,9 +148,9 @@ export type ColumnPrivateProperties<TData, TVal> = {
     _prefetchedValuesCache: ElementType<NonNullable<TVal>>[] | null;
 };
 
-export type Column<TData, TType extends ColumnDataType = any, TVal = unknown> = ColumnConfig<TData, TType, TVal> &
-    ColumnPrivateProperties<TData, TVal> &
-    ColumnProperties<TData, TVal>;
+export type Column<TData, TType extends ColumnDataType = any, TVal = unknown> = ColumnConfig<TData, TType, TVal>
+    & ColumnPrivateProperties<TData, TVal>
+    & ColumnProperties<TData, TVal>;
 
 /*
  * Describes the available actions on column filters.
@@ -176,15 +176,15 @@ export type FilterStrategy = "client" | "server";
 export type TextFilterOperator = "contains" | "does not contain";
 
 /* Operators for number data */
-export type NumberFilterOperator =
-    | "is"
-    | "is not"
-    | "is less than"
-    | "is greater than or equal to"
-    | "is greater than"
-    | "is less than or equal to"
-    | "is between"
-    | "is not between";
+export type NumberFilterOperator
+    = | "is"
+        | "is not"
+        | "is less than"
+        | "is greater than or equal to"
+        | "is greater than"
+        | "is less than or equal to"
+        | "is between"
+        | "is not between";
 
 /* Operators for date data */
 export type DateFilterOperator = "is" | "is not" | "is before" | "is on or after" | "is after" | "is on or before" | "is between" | "is not between";
@@ -258,9 +258,9 @@ export type FilterOperatorDetailsBase<OperatorValue, T extends ColumnDataType> =
  * It extends FilterOperatorDetailsBase with additional logic and contraints on the defined properties.
  *
  */
-export type FilterOperatorDetails<OperatorValue, T extends ColumnDataType> = FilterOperatorDetailsBase<OperatorValue, T> &
-    ({ isNegated: false; negation: FilterOperators[T]; negationOf?: never } | { isNegated: true; negation?: never; negationOf: FilterOperators[T] }) &
-    (
+export type FilterOperatorDetails<OperatorValue, T extends ColumnDataType> = FilterOperatorDetailsBase<OperatorValue, T>
+    & ({ isNegated: false; negation: FilterOperators[T]; negationOf?: never } | { isNegated: true; negation?: never; negationOf: FilterOperators[T] })
+    & (
         | { pluralOf?: never; singularOf?: never }
         | { pluralOf?: never; singularOf: FilterOperators[T]; target: "single" }
         | { pluralOf: FilterOperators[T]; singularOf?: never; target: "multiple" }

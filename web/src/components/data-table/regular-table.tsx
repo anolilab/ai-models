@@ -76,7 +76,7 @@ export function RegularTable<TData>({
     // OPTIMIZATION: Memoize focus handler
     const handleRowFocus = useCallback((e: React.FocusEvent<HTMLTableRowElement>) => {
         // Add a data attribute to the currently focused row
-        for (const el of document.querySelectorAll('[data-focused="true"]')) {
+        for (const el of document.querySelectorAll("[data-focused=\"true\"]")) {
             el.removeAttribute("data-focused");
         }
 
@@ -121,15 +121,16 @@ export function RegularTable<TData>({
                 </TableHeader>
 
                 <TableBody key={tableKey}>
-                    {rows?.length ? (
-                        rows.map((row, rowIndex) => {
+                    {rows?.length
+                        ? rows.map((row, rowIndex) => {
                             // OPTIMIZATION: Memoize row selection state
                             const isSelected = row.getIsSelected();
 
                             // Include sorting state in key to force re-render when sorting changes
                             const sortingState = table
                                 .getState()
-                                .sorting.map((s) => `${s.id}-${s.desc}`)
+                                .sorting
+                                .map((s) => `${s.id}-${s.desc}`)
                                 .join(",");
                             const rowKey = enableRowSelection
                                 ? `${row.id}-${rowIndex}-${row.getIsSelected()}-${sortingState}`
@@ -162,14 +163,14 @@ export function RegularTable<TData>({
                                 </TableRow>
                             );
                         })
-                    ) : (
+                        : (
                         // No results
                         <TableRow>
                             <TableCell className="h-24 truncate text-left" colSpan={columns.length}>
                                 No results.
                             </TableCell>
                         </TableRow>
-                    )}
+                        )}
                 </TableBody>
             </BaseTable>
         </div>

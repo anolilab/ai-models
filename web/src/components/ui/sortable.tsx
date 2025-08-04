@@ -98,8 +98,8 @@ interface GetItemValue<T> {
     getItemValue: (item: T) => UniqueIdentifier;
 }
 
-type SortableRootProps<T> = DndContextProps &
-    (T extends object ? GetItemValue<T> : Partial<GetItemValue<T>>) & {
+type SortableRootProps<T> = DndContextProps
+    & (T extends object ? GetItemValue<T> : Partial<GetItemValue<T>>) & {
         flatCursor?: boolean;
         onMove?: (event: DragEndEvent & { activeIndex: number; overIndex: number }) => void;
         onValueChange?: (items: T[]) => void;
@@ -152,7 +152,8 @@ function SortableRoot<T>(props: SortableRootProps<T>) {
         (event: DragStartEvent) => {
             sortableProps.onDragStart?.(event);
 
-            if (event.activatorEvent.defaultPrevented) return;
+            if (event.activatorEvent.defaultPrevented)
+                return;
 
             setActiveId(event.active.id);
         },
@@ -163,7 +164,8 @@ function SortableRoot<T>(props: SortableRootProps<T>) {
         (event: DragEndEvent) => {
             sortableProps.onDragEnd?.(event);
 
-            if (event.activatorEvent.defaultPrevented) return;
+            if (event.activatorEvent.defaultPrevented)
+                return;
 
             const { active, over } = event;
 
@@ -187,7 +189,8 @@ function SortableRoot<T>(props: SortableRootProps<T>) {
         (event: DragEndEvent) => {
             sortableProps.onDragCancel?.(event);
 
-            if (event.activatorEvent.defaultPrevented) return;
+            if (event.activatorEvent.defaultPrevented)
+                return;
 
             setActiveId(null);
         },
@@ -310,13 +313,13 @@ const SortableContent = React.forwardRef<HTMLDivElement, SortableContentProps>((
     return (
         <SortableContentContext.Provider value={true}>
             <SortableContext items={context.items} strategy={strategyProp ?? context.strategy}>
-                {withoutSlot ? (
-                    children
-                ) : (
+                {withoutSlot
+                    ? children
+                    : (
                     <ContentPrimitive data-slot="sortable-content" {...contentProps} ref={forwardedRef}>
                         {children}
                     </ContentPrimitive>
-                )}
+                    )}
             </SortableContext>
         </SortableContentContext.Provider>
     );
@@ -373,11 +376,13 @@ const SortableItem = React.forwardRef<HTMLDivElement, SortableItemProps>((props,
     const { attributes, isDragging, listeners, setActivatorNodeRef, setNodeRef, transform, transition } = useSortable({ disabled, id: value });
 
     const composedRef = useComposedRefs(forwardedRef, (node) => {
-        if (disabled) return;
+        if (disabled)
+            return;
 
         setNodeRef(node);
 
-        if (asHandle) setActivatorNodeRef(node);
+        if (asHandle)
+            setActivatorNodeRef(node);
     });
 
     const composedStyle = React.useMemo<React.CSSProperties>(() => {
@@ -445,7 +450,8 @@ const SortableItemHandle = React.forwardRef<HTMLButtonElement, SortableItemHandl
     const isDisabled = disabled ?? itemContext.disabled;
 
     const composedRef = useComposedRefs(forwardedRef, (node) => {
-        if (!isDisabled) return;
+        if (!isDisabled)
+            return;
 
         itemContext.setActivatorNodeRef(node);
     });
@@ -505,12 +511,13 @@ function SortableOverlay(props: SortableOverlayProps) {
 
     const container = containerProp ?? (mounted ? globalThis.document?.body : null);
 
-    if (!container) return null;
+    if (!container)
+        return null;
 
     return createPortal(
         <DragOverlay className={cn(!context.flatCursor && "cursor-grabbing")} dropAnimation={dropAnimation} modifiers={context.modifiers} {...overlayProps}>
             <SortableOverlayContext.Provider value={true}>
-                {context.activeId ? (typeof children === "function" ? children({ value: context.activeId }) : children) : null}
+                {context.activeId ? typeof children === "function" ? children({ value: context.activeId }) : children : null}
             </SortableOverlayContext.Provider>
         </DragOverlay>,
         container,

@@ -2,7 +2,7 @@ import type { Cell, Header, HeaderGroup, Row, Table } from "@tanstack/react-tabl
 import { flexRender } from "@tanstack/react-table";
 import type { VirtualItem, Virtualizer } from "@tanstack/react-virtual";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import type { RefObject } from "react";
+import type { JSX, RefObject } from "react";
 import { useEffect, useMemo, useRef } from "react";
 
 import cn from "@/lib/utils";
@@ -18,9 +18,9 @@ import {
 import DataTableResizer from "./data-table-resizer";
 import type { RegularTableProps } from "./regular-table";
 
-// Define ExportableData type locally since it's not exported from the utils
+/** Define ExportableData type locally since it's not exported from the utils */
 interface ExportableData {
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 interface VirtualizationOptions {
@@ -59,7 +59,7 @@ interface TableHeadCellProps<TData extends ExportableData> {
 }
 
 interface TableBodyProps<TData extends ExportableData> {
-    columns: any[];
+    columns: unknown[];
     columnVirtualizer: Virtualizer<HTMLDivElement, HTMLTableCellElement>;
     enableClickRowSelect?: boolean;
     enableRowSelection?: boolean;
@@ -86,47 +86,71 @@ interface TableBodyCellProps<TData extends ExportableData> {
     cellIndex: number;
 }
 
-const TableHead = <TData extends ExportableData>({
+const TableBodyCell = <TData extends ExportableData>({ cell, cellIndex }: TableBodyCellProps<TData>): JSX.Element => (
+    <BaseTableCell
+        className="flex truncate px-4.5 py-2 text-left"
+        id={`cell-${cellIndex}`}
+        style={{
+            width: cell.column.getSize(),
+        }}
+    >
+        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+    </BaseTableCell>
+);
+
+const TableBodyRow = <TData extends ExportableData>({
     columnVirtualizer,
-    enableColumnResizing = false,
-    enableRowSelection = false,
-    enableStickyHeader = true,
-    table,
+    enableClickRowSelect = false,
+    row,
+    rowVirtualizer,
     virtualPaddingLeft,
     virtualPaddingRight,
-}: TableHeadProps<TData>) => {
-    // Create a key that changes when selection state or sorting changes
-    const sortingState = table
-        .getState()
-        .sorting.map((s) => `${s.id}-${s.desc}`)
-        .join(",");
-    const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
+    virtualRow,
+}: TableBodyRowProps<TData>): JSX.Element => {
+    const visibleCells = row.getVisibleCells();
+    const virtualColumns = columnVirtualizer.getVirtualItems();
 
     return (
-        <TableHeader className={cn(enableStickyHeader && "bg-background sticky -top-[2px] z-50 min-h-10 border-b pt-[2px] shadow-sm sm:top-0")} key={headerKey}>
-            {table.getHeaderGroups().map((headerGroup) => {
-                const sortingState = table
-                    .getState()
-                    .sorting.map((s) => `${s.id}-${s.desc}`)
-                    .join(",");
+        <BaseTableRow
+            aria-selected={row.getIsSelected()}
+            className="absolute right-0 left-0 flex w-full"
+            data-index={virtualRow.index}
+            data-state={row.getIsSelected() ? "selected" : undefined}
+            id={`row-${row.id}-${virtualRow.index}`}
+            key={row.id}
+            onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
+            onFocus={(e) => {
+                // Remove focus from other rows
+                for (const el of document.querySelectorAll("[data-focused=\"true\"]")) {
+                    el.removeAttribute("data-focused");
+                }
 
-                return (
-                    <TableHeadRow
-                        columnVirtualizer={columnVirtualizer}
-                        enableColumnResizing={enableColumnResizing}
-                        headerGroup={headerGroup}
-                        key={`${headerGroup.id}-${sortingState}`}
-                        table={table}
-                        virtualPaddingLeft={virtualPaddingLeft}
-                        virtualPaddingRight={virtualPaddingRight}
-                    />
-                );
+                e.currentTarget.setAttribute("data-focused", "true");
+            }}
+            ref={(node) => rowVirtualizer.measureElement(node)}
+            style={{
+                height: `${virtualRow.size}px`,
+                transform: `translateY(${virtualRow.start}px)`,
+            }}
+            tabIndex={0}
+        >
+            {/* Left padding for virtualization */}
+            {virtualPaddingLeft > 0 && <BaseTableCell className="flex" style={{ width: virtualPaddingLeft }} />}
+
+            {/* Render virtual cells */}
+            {virtualColumns.map((vc, cellIndex) => {
+                const cell = visibleCells[vc.index];
+
+                return <TableBodyCell cell={cell} cellIndex={cellIndex} key={cell.id} />;
             })}
-        </TableHeader>
+
+            {/* Right padding for virtualization */}
+            {virtualPaddingRight > 0 && <BaseTableCell className="flex" style={{ width: virtualPaddingRight }} />}
+        </BaseTableRow>
     );
 };
 
-const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>) => (
+const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>): JSX.Element => (
     <BaseTableHead
         className="group/th bg-background relative flex p-2 text-left"
         colSpan={header.colSpan}
@@ -149,7 +173,7 @@ const TableHeadRow = <TData extends ExportableData>({
     table,
     virtualPaddingLeft,
     virtualPaddingRight,
-}: TableHeadRowProps<TData>) => {
+}: TableHeadRowProps<TData>): JSX.Element => {
     const virtualColumns = columnVirtualizer.getVirtualItems();
     const hasVirtualColumns = virtualColumns.length > 0;
 
@@ -167,7 +191,8 @@ const TableHeadRow = <TData extends ExportableData>({
             {headersToRender.map((header) => {
                 const sortingState = table
                     .getState()
-                    .sorting.map((s) => `${s.id}-${s.desc}`)
+                    .sorting
+                    .map((s) => `${s.id}-${s.desc}`)
                     .join(",");
 
                 return <TableHeadCell enableColumnResizing={enableColumnResizing} header={header} key={`${header.id}-${sortingState}`} table={table} />;
@@ -176,6 +201,40 @@ const TableHeadRow = <TData extends ExportableData>({
             {/* Right padding for virtualization */}
             {hasVirtualColumns && virtualPaddingRight > 0 && <BaseTableHead className="flex" style={{ width: virtualPaddingRight }} />}
         </BaseTableRow>
+    );
+};
+
+const TableHead = <TData extends ExportableData>({
+    columnVirtualizer,
+    enableColumnResizing = false,
+    enableRowSelection = false,
+    enableStickyHeader = true,
+    table,
+    virtualPaddingLeft,
+    virtualPaddingRight,
+}: TableHeadProps<TData>): JSX.Element => {
+    // Create a key that changes when selection state or sorting changes
+    const sortingState = table
+        .getState()
+        .sorting
+        .map((s) => `${s.id}-${s.desc}`)
+        .join(",");
+    const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
+
+    return (
+        <TableHeader className={cn(enableStickyHeader && "bg-background sticky -top-[2px] z-50 min-h-10 border-b pt-[2px] shadow-sm sm:top-0")} key={headerKey}>
+            {table.getHeaderGroups().map((headerGroup) => (
+                <TableHeadRow
+                    columnVirtualizer={columnVirtualizer}
+                    enableColumnResizing={enableColumnResizing}
+                    headerGroup={headerGroup}
+                    key={`${headerGroup.id}-${sortingState}`}
+                    table={table}
+                    virtualPaddingLeft={virtualPaddingLeft}
+                    virtualPaddingRight={virtualPaddingRight}
+                />
+            ))}
+        </TableHeader>
     );
 };
 
@@ -190,7 +249,7 @@ const TableBody = <TData extends ExportableData>({
     virtualizationOptions,
     virtualPaddingLeft,
     virtualPaddingRight,
-}: TableBodyProps<TData>) => {
+}: TableBodyProps<TData>): JSX.Element => {
     const { rows } = table.getRowModel();
 
     // Row virtualization for vertical scrolling
@@ -259,7 +318,8 @@ const TableBody = <TData extends ExportableData>({
                 // Include sorting state in key to force re-render when sorting changes
                 const sortingState = table
                     .getState()
-                    .sorting.map((s) => `${s.id}-${s.desc}`)
+                    .sorting
+                    .map((s) => `${s.id}-${s.desc}`)
                     .join(",");
                 const rowKey = enableRowSelection
                     ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}-${sortingState}`
@@ -282,70 +342,6 @@ const TableBody = <TData extends ExportableData>({
     );
 };
 
-const TableBodyRow = <TData extends ExportableData>({
-    columnVirtualizer,
-    enableClickRowSelect = false,
-    row,
-    rowVirtualizer,
-    virtualPaddingLeft,
-    virtualPaddingRight,
-    virtualRow,
-}: TableBodyRowProps<TData>) => {
-    const visibleCells = row.getVisibleCells();
-    const virtualColumns = columnVirtualizer.getVirtualItems();
-
-    return (
-        <BaseTableRow
-            aria-selected={row.getIsSelected()}
-            className="absolute right-0 left-0 flex w-full"
-            data-index={virtualRow.index}
-            data-state={row.getIsSelected() ? "selected" : undefined}
-            id={`row-${row.id}-${virtualRow.index}`}
-            key={row.id}
-            onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
-            onFocus={(e) => {
-                // Remove focus from other rows
-                for (const el of document.querySelectorAll('[data-focused="true"]')) {
-                    el.removeAttribute("data-focused");
-                }
-
-                e.currentTarget.setAttribute("data-focused", "true");
-            }}
-            ref={(node) => rowVirtualizer.measureElement(node)}
-            style={{
-                height: `${virtualRow.size}px`,
-                transform: `translateY(${virtualRow.start}px)`,
-            }}
-            tabIndex={0}
-        >
-            {/* Left padding for virtualization */}
-            {virtualPaddingLeft > 0 && <BaseTableCell className="flex" style={{ width: virtualPaddingLeft }} />}
-
-            {/* Render virtual cells */}
-            {virtualColumns.map((vc, cellIndex) => {
-                const cell = visibleCells[vc.index];
-
-                return <TableBodyCell cell={cell} cellIndex={cellIndex} key={cell.id} />;
-            })}
-
-            {/* Right padding for virtualization */}
-            {virtualPaddingRight > 0 && <BaseTableCell className="flex" style={{ width: virtualPaddingRight }} />}
-        </BaseTableRow>
-    );
-};
-
-const TableBodyCell = <TData extends ExportableData>({ cell, cellIndex }: TableBodyCellProps<TData>) => (
-    <BaseTableCell
-        className="flex truncate px-4.5 py-2 text-left"
-        id={`cell-${cellIndex}`}
-        style={{
-            width: cell.column.getSize(),
-        }}
-    >
-        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-    </BaseTableCell>
-);
-
 const VirtualizedTable = <TData extends ExportableData>({
     className,
     columns,
@@ -357,7 +353,7 @@ const VirtualizedTable = <TData extends ExportableData>({
     style,
     table,
     virtualizationOptions,
-}: VirtualizedTableProps<TData>) => {
+}: VirtualizedTableProps<TData>): JSX.Element => {
     const visibleColumns = table.getVisibleLeafColumns();
     const tableContainerRef = useRef<HTMLDivElement>(null);
 
@@ -394,9 +390,12 @@ const VirtualizedTable = <TData extends ExportableData>({
             ref={tableContainerRef}
             style={{
                 height: virtualizationOptions.containerHeight,
-                ...(enableStickyHeader && {
+                // Safari-specific fixes for horizontal scrolling
+                WebkitOverflowScrolling: "touch",
+                WebkitTransform: "translateZ(0)",
+                ...enableStickyHeader && {
                     position: "relative",
-                }),
+                },
             }}
         >
             <BaseTable
@@ -406,6 +405,9 @@ const VirtualizedTable = <TData extends ExportableData>({
                 onKeyDown={enableKeyboardNavigation ? onKeyDown : undefined}
                 style={{
                     ...style,
+                    // Safari-specific fixes for horizontal scrolling
+                    minWidth: `${totalWidth}px`,
+                    tableLayout: "fixed",
                     width: `${totalWidth}px`,
                 }}
             >

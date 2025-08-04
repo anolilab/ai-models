@@ -123,8 +123,8 @@ export function FilterValueOptionDisplay<TData>({ actions, column, filter, local
 
     return (
         <div className="inline-flex items-center gap-0.5">
-            {hasOptionIcons &&
-                take(selected, 3).map(({ icon, value }) => {
+            {hasOptionIcons
+                && take(selected, 3).map(({ icon, value }) => {
                     const Icon = icon!;
 
                     return isValidElement(Icon) ? Icon : <Icon className="size-4" key={value} />;
@@ -191,9 +191,11 @@ function formatDateRange(start: Date, end: Date) {
 }
 
 export function FilterValueDateDisplay<TData>({ actions, column, filter, locale = "en" }: FilterValueDisplayProps<TData, "date">) {
-    if (!filter) return null;
+    if (!filter)
+        return null;
 
-    if (filter.values.length === 0) return <Ellipsis className="size-4" />;
+    if (filter.values.length === 0)
+        return <Ellipsis className="size-4" />;
 
     if (filter.values.length === 1) {
         const value = filter.values[0];
@@ -209,9 +211,11 @@ export function FilterValueDateDisplay<TData>({ actions, column, filter, locale 
 }
 
 export function FilterValueTextDisplay<TData>({ actions, column, filter, locale = "en" }: FilterValueDisplayProps<TData, "text">) {
-    if (!filter) return null;
+    if (!filter)
+        return null;
 
-    if (filter.values.length === 0 || filter.values[0].trim() === "") return <Ellipsis className="size-4" />;
+    if (filter.values.length === 0 || filter.values[0].trim() === "")
+        return <Ellipsis className="size-4" />;
 
     const value = filter.values[0];
 
@@ -219,7 +223,8 @@ export function FilterValueTextDisplay<TData>({ actions, column, filter, locale 
 }
 
 export function FilterValueNumberDisplay<TData>({ actions, column, filter, locale = "en" }: FilterValueDisplayProps<TData, "number">) {
-    if (!filter || !filter.values || filter.values.length === 0) return null;
+    if (!filter || !filter.values || filter.values.length === 0)
+        return null;
 
     if (filter.operator === "is between" || filter.operator === "is not between") {
         const minValue = filter.values[0];
@@ -335,7 +340,7 @@ const OptionItem = memo(({ onToggle, option }: OptionItemProps) => {
                 <span>
                     {label}
                     <sup className={cn(count == null && "hidden", "text-muted-foreground ml-0.5 tracking-tight tabular-nums", count === 0 && "slashed-zero")}>
-                        {typeof count === "number" ? (count < 100 ? count : "100+") : ""}
+                        {typeof count === "number" ? count < 100 ? count : "100+" : ""}
                     </sup>
                 </span>
             </div>
@@ -371,7 +376,8 @@ export function FilterValueOptionController<TData>({ actions, column, filter, lo
 
     const handleToggle = useCallback(
         (value: string, checked: boolean) => {
-            if (checked) actions.addFilterValue(column, [value]);
+            if (checked)
+                actions.addFilterValue(column, [value]);
             else actions.removeFilterValue(column, [value]);
         },
         [actions, column],
@@ -383,7 +389,8 @@ export function FilterValueOptionController<TData>({ actions, column, filter, lo
         const unsel: typeof options = [];
 
         for (const o of options) {
-            if (o.initialSelected) sel.push(o);
+            if (o.initialSelected)
+                sel.push(o);
             else unsel.push(o);
         }
 
@@ -441,7 +448,8 @@ export function FilterValueMultiOptionController<TData>({ actions, column, filte
 
     const handleToggle = useCallback(
         (value: string, checked: boolean) => {
-            if (checked) actions.addFilterValue(column, [value]);
+            if (checked)
+                actions.addFilterValue(column, [value]);
             else actions.removeFilterValue(column, [value]);
         },
         [actions, column],
@@ -453,7 +461,8 @@ export function FilterValueMultiOptionController<TData>({ actions, column, filte
         const unsel: typeof options = [];
 
         for (const o of options) {
-            if (o.initialSelected) sel.push(o);
+            if (o.initialSelected)
+                sel.push(o);
             else unsel.push(o);
         }
 
@@ -544,9 +553,9 @@ export function FilterValueNumberController<TData>({ actions, column, filter, lo
         }
     }, [filter?.values, values]);
 
-    const isNumberRange =
+    const isNumberRange
         // filter && values.length === 2
-        filter && numberFilterOperators[filter.operator].target === "multiple";
+        = filter && numberFilterOperators[filter.operator].target === "multiple";
 
     const setFilterOperatorDebounced = useDebounceCallback(actions.setFilterOperator, 500);
     const setFilterValueDebounced = useDebounceCallback(actions.setFilterValue, 500);

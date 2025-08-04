@@ -45,7 +45,8 @@ export function DataTableExport<TData extends ExportableData>({
     const [isLoading, setIsLoading] = useState(false);
 
     const handleExport = async (type: "csv" | "json") => {
-        if (isLoading) return; // Prevent multiple export requests
+        if (isLoading)
+            return; // Prevent multiple export requests
 
         // Create a data fetching function based on the current state
         const fetchExportData = async (): Promise<TData[]> => {
@@ -89,18 +90,21 @@ export function DataTableExport<TData extends ExportableData>({
                             const valueA = a[sortField as keyof TData];
                             const valueB = b[sortField as keyof TData];
 
-                            if (valueA === valueB) return 0;
+                            if (valueA === valueB)
+                                return 0;
 
-                            if (valueA === null || valueA === undefined) return isDescending ? 1 : -1;
+                            if (valueA === null || valueA === undefined)
+                                return isDescending ? 1 : -1;
 
-                            if (valueB === null || valueB === undefined) return isDescending ? -1 : 1;
+                            if (valueB === null || valueB === undefined)
+                                return isDescending ? -1 : 1;
 
                             if (typeof valueA === "string" && typeof valueB === "string") {
                                 return isDescending ? valueB.localeCompare(valueA) : valueA.localeCompare(valueB);
                             }
 
                             // For numeric and other comparable types
-                            return isDescending ? (valueB > valueA ? 1 : -1) : valueA > valueB ? 1 : -1;
+                            return isDescending ? valueB > valueA ? 1 : -1 : valueA > valueB ? 1 : -1;
                         } catch (sortError) {
                             console.error("Error during sorting:", sortError);
 
@@ -145,19 +149,21 @@ export function DataTableExport<TData extends ExportableData>({
 
             // Generate export options based on visible columns and respect column order
             const { columnOrder } = table.getState();
-            const orderedVisibleColumns =
-                columnOrder.length > 0
+            const orderedVisibleColumns
+                = columnOrder.length > 0
                     ? [...visibleColumns].sort((a, b) => {
-                          const aIndex = columnOrder.indexOf(a.id);
-                          const bIndex = columnOrder.indexOf(b.id);
+                        const aIndex = columnOrder.indexOf(a.id);
+                        const bIndex = columnOrder.indexOf(b.id);
 
-                          // If column isn't in the order array, put it at the end
-                          if (aIndex === -1) return 1;
+                        // If column isn't in the order array, put it at the end
+                        if (aIndex === -1)
+                            return 1;
 
-                          if (bIndex === -1) return -1;
+                        if (bIndex === -1)
+                            return -1;
 
-                          return aIndex - bIndex;
-                      })
+                        return aIndex - bIndex;
+                    })
                     : visibleColumns;
 
             // Generate export headers - always start with visible columns only
@@ -187,35 +193,35 @@ export function DataTableExport<TData extends ExportableData>({
             }
 
             // Auto-generate column mapping from table headers if not provided
-            const exportColumnMapping =
-                columnMapping ||
-                (() => {
-                    const mapping: Record<string, string> = {};
+            const exportColumnMapping
+                = columnMapping
+                    || (() => {
+                        const mapping: Record<string, string> = {};
 
-                    orderedVisibleColumns.forEach((column) => {
+                        orderedVisibleColumns.forEach((column) => {
                         // Try to get header text if available
-                        const headerText = column.columnDef.header as string;
+                            const headerText = column.columnDef.header as string;
 
-                        if (headerText && typeof headerText === "string") {
-                            mapping[column.id] = headerText;
-                        } else {
+                            if (headerText && typeof headerText === "string") {
+                                mapping[column.id] = headerText;
+                            } else {
                             // Fallback to formatted column ID
-                            mapping[column.id] = column.id
-                                .split(/(?=[A-Z])|_/)
-                                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                .join(" ");
-                        }
-                    });
+                                mapping[column.id] = column.id
+                                    .split(/(?=[A-Z])|_/)
+                                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                    .join(" ");
+                            }
+                        });
 
-                    return mapping;
-                })();
+                        return mapping;
+                    })();
 
             // Filter column widths to match export headers
             const exportColumnWidths = columnWidths
                 ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
                 : exportHeaders.map(() => {
-                      return { wch: 15 };
-                  });
+                    return { wch: 15 };
+                });
 
             // Use the generic export function with proper options
             await exportData(
@@ -242,7 +248,8 @@ export function DataTableExport<TData extends ExportableData>({
     };
 
     const exportAllPages = async (type: "csv" | "json") => {
-        if (isLoading || !getAllItems) return;
+        if (isLoading || !getAllItems)
+            return;
 
         setIsLoading(true);
 
@@ -301,43 +308,43 @@ export function DataTableExport<TData extends ExportableData>({
                 }
             }
 
-            const exportColumnMapping =
-                columnMapping ||
-                (() => {
-                    const mapping: Record<string, string> = {};
+            const exportColumnMapping
+                = columnMapping
+                    || (() => {
+                        const mapping: Record<string, string> = {};
 
-                    // If we have custom headers, generate mapping for them
-                    if (headers && headers.length > 0) {
-                        headers.forEach((header) => {
-                            mapping[header] = header
-                                .split(/(?=[A-Z])|_/)
-                                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                .join(" ");
-                        });
-                    } else {
-                        // Otherwise use visible columns
-                        visibleColumns.forEach((column) => {
-                            const headerText = column.columnDef.header as string;
-
-                            if (headerText && typeof headerText === "string") {
-                                mapping[column.id] = headerText;
-                            } else {
-                                mapping[column.id] = column.id
+                        // If we have custom headers, generate mapping for them
+                        if (headers && headers.length > 0) {
+                            headers.forEach((header) => {
+                                mapping[header] = header
                                     .split(/(?=[A-Z])|_/)
                                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                     .join(" ");
-                            }
-                        });
-                    }
+                            });
+                        } else {
+                        // Otherwise use visible columns
+                            visibleColumns.forEach((column) => {
+                                const headerText = column.columnDef.header as string;
 
-                    return mapping;
-                })();
+                                if (headerText && typeof headerText === "string") {
+                                    mapping[column.id] = headerText;
+                                } else {
+                                    mapping[column.id] = column.id
+                                        .split(/(?=[A-Z])|_/)
+                                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                        .join(" ");
+                                }
+                            });
+                        }
+
+                        return mapping;
+                    })();
 
             const exportColumnWidths = columnWidths
                 ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
                 : exportHeaders.map(() => {
-                      return { wch: 15 };
-                  });
+                    return { wch: 15 };
+                });
 
             // Update toast for processing
             toast.loading("Processing data...", {
@@ -382,22 +389,25 @@ export function DataTableExport<TData extends ExportableData>({
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button disabled={isLoading} size={size} variant="outline">
-                    {isLoading ? (
+                    {isLoading
+                        ? (
                         <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             Exporting...
                         </>
-                    ) : (
+                        )
+                        : (
                         <>
                             <DownloadIcon className="mr-2 h-4 w-4" />
                             Export
                             {hasSelection && <span className="ml-1">({selectedData?.length})</span>}
                         </>
-                    )}
+                        )}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                {hasSelection ? (
+                {hasSelection
+                    ? (
                     <>
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Selected as CSV
@@ -407,7 +417,8 @@ export function DataTableExport<TData extends ExportableData>({
                             Export Selected as JSON
                         </DropdownMenuItem>
                     </>
-                ) : (
+                    )
+                    : (
                     <>
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Current Page as CSV
@@ -428,7 +439,7 @@ export function DataTableExport<TData extends ExportableData>({
                             </>
                         )}
                     </>
-                )}
+                    )}
             </DropdownMenuContent>
         </DropdownMenu>
     );

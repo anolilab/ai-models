@@ -55,7 +55,8 @@ function Faceted<Multiple extends boolean = false>(props: FacetedProps<Multiple>
 
     const onItemSelect = React.useCallback(
         (selectedValue: string) => {
-            if (!onValueChange) return;
+            if (!onValueChange)
+                return;
 
             if (multiple) {
                 const currentValue = (Array.isArray(value) ? value : []) as string[];
@@ -131,17 +132,18 @@ function FacetedBadgeList(props: FacetedBadgeListProps) {
 
     return (
         <div {...badgeListProps} className={cn("flex flex-wrap items-center gap-1", className)}>
-            {values.length > max ? (
+            {values.length > max
+                ? (
                 <Badge className={cn("px-1 font-normal", badgeClassName)} variant="secondary">
                     {values.length} selected
                 </Badge>
-            ) : (
-                values.map((value) => (
+                )
+                : values.map((value) => (
                     <Badge className={cn("px-1 font-normal", badgeClassName)} key={value} variant="secondary">
                         <span className="truncate">{getLabel(value)}</span>
                     </Badge>
                 ))
-            )}
+            }
         </div>
     );
 }

@@ -22,13 +22,17 @@ const DataTableColumnHeader = <TData, TValue>({ className, column, title }: Data
                 <DropdownMenuTrigger asChild>
                     <Button className="data-[state=open]:bg-accent -ml-3 h-8" size="sm" variant="ghost">
                         <span>{title}</span>
-                        {column.getIsSorted() === "desc" ? (
+                        {column.getIsSorted() === "desc"
+                            ? (
                             <ArrowDownIcon className="ml-2 h-4 w-4" />
-                        ) : column.getIsSorted() === "asc" ? (
+                            )
+                            : column.getIsSorted() === "asc"
+                                ? (
                             <ArrowUpIcon className="ml-2 h-4 w-4" />
-                        ) : (
+                                )
+                                : (
                             <CaretSortIcon className="ml-2 h-4 w-4" />
-                        )}
+                                )}
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">

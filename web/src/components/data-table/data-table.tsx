@@ -111,16 +111,16 @@ type TableState = {
     };
 };
 
-type TableAction =
-    | { payload: { page?: number; pageSize?: number }; type: "SET_PAGINATION" }
-    | { payload: { sortBy?: string; sortOrder?: "asc" | "desc" }; type: "SET_SORTING" }
-    | { payload: Record<string, boolean>; type: "SET_COLUMN_VISIBILITY" }
-    | { payload: { id: string; value: unknown }[]; type: "SET_COLUMN_FILTERS" }
-    | { payload: ColumnSizingState; type: "SET_COLUMN_SIZING" }
-    | { payload: Record<string, boolean> | Set<string>; type: "SET_SELECTED_ITEMS" }
-    | { payload: string; type: "ADD_SELECTED_ITEM" }
-    | { payload: string; type: "REMOVE_SELECTED_ITEM" }
-    | { type: "CLEAR_SELECTIONS" };
+type TableAction
+    = | { payload: { page?: number; pageSize?: number }; type: "SET_PAGINATION" }
+        | { payload: { sortBy?: string; sortOrder?: "asc" | "desc" }; type: "SET_SORTING" }
+        | { payload: Record<string, boolean>; type: "SET_COLUMN_VISIBILITY" }
+        | { payload: { id: string; value: unknown }[]; type: "SET_COLUMN_FILTERS" }
+        | { payload: ColumnSizingState; type: "SET_COLUMN_SIZING" }
+        | { payload: Record<string, boolean> | Set<string>; type: "SET_SELECTED_ITEMS" }
+        | { payload: string; type: "ADD_SELECTED_ITEM" }
+        | { payload: string; type: "REMOVE_SELECTED_ITEM" }
+        | { type: "CLEAR_SELECTIONS" };
 
 function tableReducer(state: TableState, action: TableAction): TableState {
     switch (action.type) {
@@ -295,7 +295,7 @@ const DataTable = <TData extends ExportableData, TValue>({
     // Helper functions to handle both Record and Set selection states
     const isItemSelected = useCallback(
         (itemId: string): boolean =>
-            tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId],
+            (tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId]),
         [selectedItemIds, tableConfig.enableRowVirtualization],
     );
 
@@ -326,7 +326,8 @@ const DataTable = <TData extends ExportableData, TValue>({
     const dataItems = useMemo(() => data || [], [data]);
 
     const rowSelection = useMemo(() => {
-        if (!dataItems.length) return {};
+        if (!dataItems.length)
+            return {};
 
         const selection: Record<string, boolean> = {};
         const dataLength = dataItems.length;
@@ -351,7 +352,8 @@ const DataTable = <TData extends ExportableData, TValue>({
 
     const handleRowDeselection = useCallback(
         (rowId: string) => {
-            if (!dataItems.length) return;
+            if (!dataItems.length)
+                return;
 
             const rowIndex = Number.parseInt(rowId, 10);
             const item = dataItems[rowIndex];
@@ -549,16 +551,16 @@ const DataTable = <TData extends ExportableData, TValue>({
                 rowSelection,
                 sorting: sorting.sortBy && sorting.sortOrder ? [{ desc: sorting.sortOrder === "desc", id: sorting.sortBy }] : [],
                 // Only include pagination state if pagination is enabled
-                ...(tableConfig.enablePagination ? { pagination: tablePagination } : {}),
+                ...tableConfig.enablePagination ? { pagination: tablePagination } : {},
                 columnSizing,
             },
             // Only include pagination-related options if pagination is enabled
-            ...(tableConfig.enablePagination
+            ...tableConfig.enablePagination
                 ? {
-                      onPaginationChange: handlePaginationChange,
-                      pageCount: Math.ceil(dataItems.length / pagination.pageSize),
-                  }
-                : {}),
+                    onPaginationChange: handlePaginationChange,
+                    pageCount: Math.ceil(dataItems.length / pagination.pageSize),
+                }
+                : {},
             enableColumnFilters: true,
             enableColumnResizing: tableConfig.enableColumnResizing,
             enableMultiSort: false, // Only allow single column sorting
@@ -591,7 +593,7 @@ const DataTable = <TData extends ExportableData, TValue>({
             onSortingChange: handleSortingChange,
             rowSelection,
             // Only use pagination row model if pagination is enabled
-            ...(tableConfig.enablePagination ? { getPaginationRowModel: getPaginationRowModel<TData>() } : {}),
+            ...tableConfig.enablePagination ? { getPaginationRowModel: getPaginationRowModel<TData>() } : {},
             getFacetedUniqueValues: getFacetedUniqueValues<TData>(),
         };
 
@@ -604,7 +606,7 @@ const DataTable = <TData extends ExportableData, TValue>({
         rowSelection,
         effectiveColumnFilters,
         // Only include pagination-related dependencies if pagination is enabled
-        ...(tableConfig.enablePagination ? [pagination, handlePaginationChange] : []),
+        ...tableConfig.enablePagination ? [pagination, handlePaginationChange] : [],
         columnSizing,
         handleColumnSizingChange,
         tableConfig.enableRowSelection,

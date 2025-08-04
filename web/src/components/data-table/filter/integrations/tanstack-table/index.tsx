@@ -46,7 +46,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"option">) => {
                 const value = row.getValue<unknown>(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (typeof value === "string") {
                     return optionFilterFn(value, filterValue);
@@ -66,7 +67,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"multiOption">) => {
                 const value = row.getValue(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (isStringArray(value)) {
                     return multiOptionFilterFn(value, filterValue);

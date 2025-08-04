@@ -151,10 +151,12 @@ export function useMemoizedValue<T>(factory: () => T, deps: React.DependencyList
  * Shallow equality check for dependency arrays
  */
 function shallowEqual(a: React.DependencyList, b: React.DependencyList): boolean {
-    if (a.length !== b.length) return false;
+    if (a.length !== b.length)
+        return false;
 
     for (let i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) return false;
+        if (a[i] !== b[i])
+            return false;
     }
 
     return true;
@@ -244,11 +246,14 @@ export function createOptimizedSortFunction<T>(accessorKey: keyof T, dataType: "
         const valueB = b[accessorKey];
 
         // Handle null/undefined values
-        if (valueA == null && valueB == null) return 0;
+        if (valueA == null && valueB == null)
+            return 0;
 
-        if (valueA == null) return 1;
+        if (valueA == null)
+            return 1;
 
-        if (valueB == null) return -1;
+        if (valueB == null)
+            return -1;
 
         // Use pre-computed sort functions
         switch (dataType) {
@@ -299,12 +304,14 @@ export function useDebouncedSorting<T>(data: T[], sortConfig: { desc: boolean; i
  */
 export function useMemoizedSorting<T>(data: T[], sortConfig: { desc: boolean; id: string } | null, sortFunctions: Record<string, (a: T, b: T) => number>) {
     return useMemo(() => {
-        if (!sortConfig || !data.length) return data;
+        if (!sortConfig || !data.length)
+            return data;
 
         const sortedData = [...data].sort((a, b) => {
             const sortFn = sortFunctions[sortConfig.id];
 
-            if (!sortFn) return 0;
+            if (!sortFn)
+                return 0;
 
             const result = sortFn(a, b);
 

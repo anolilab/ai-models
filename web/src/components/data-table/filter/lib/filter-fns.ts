@@ -5,9 +5,11 @@ import type { FilterModel } from "../core/types";
 import { intersection } from "./array";
 
 export function optionFilterFn<TData>(inputData: string, filterValue: FilterModel<"option">) {
-    if (!inputData) return false;
+    if (!inputData)
+        return false;
 
-    if (filterValue.values.length === 0) return true;
+    if (filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toString().toLowerCase();
 
@@ -24,9 +26,11 @@ export function optionFilterFn<TData>(inputData: string, filterValue: FilterMode
 }
 
 export function multiOptionFilterFn(inputData: string[], filterValue: FilterModel<"multiOption">) {
-    if (!inputData) return false;
+    if (!inputData)
+        return false;
 
-    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0) return true;
+    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0)
+        return true;
 
     const values = inputData;
     const filterValues = filterValue.values;
@@ -47,7 +51,8 @@ export function multiOptionFilterFn(inputData: string[], filterValue: FilterMode
 }
 
 export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"date">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     if (dateFilterOperators[filterValue.operator].target === "single" && filterValue.values.length > 1)
         throw new Error("Singular operators require at most one filter value");
@@ -88,12 +93,14 @@ export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"d
 }
 
 export function textFilterFn<TData>(inputData: string, filterValue: FilterModel<"text">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toLowerCase().trim();
     const filterStr = filterValue.values[0].toLowerCase().trim();
 
-    if (filterStr === "") return true;
+    if (filterStr === "")
+        return true;
 
     const found = value.includes(filterStr);
 
