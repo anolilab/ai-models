@@ -118,16 +118,16 @@ const columnHelper = createColumnHelper<ModelTableRow>();
 const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
     columnHelper.display({
         cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
-    enableColumnFilter: false,
-    enableHiding: false,
-    enableResizing: false,
-    enableSorting: false,
-    header: ({ table }) => (
-        <Checkbox
-        aria-label="Select all"
-        checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        />
+        enableColumnFilter: false,
+        enableHiding: false,
+        enableResizing: false,
+        enableSorting: false,
+        header: ({ table }) => (
+            <Checkbox
+                aria-label="Select all"
+                checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
+                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            />
         ),
         id: "select",
         maxSize: 60,
@@ -961,12 +961,15 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
                 filteredConfigs = filteredConfigs.filter((config) => config.id !== "select");
             }
 
-            return [createSelectionColumn(), ...createColumnsFromConfig(filteredConfigs, {
-                enableFilter: options.enableFiltering,
-                enableHiding: options.enableColumnHiding,
-                enableResizing: options.enableColumnResizing,
-                enableSort: options.enableSorting,
-            })];
+            return [
+                createSelectionColumn(),
+                ...createColumnsFromConfig(filteredConfigs, {
+                    enableFilter: options.enableFiltering,
+                    enableHiding: options.enableColumnHiding,
+                    enableResizing: options.enableColumnResizing,
+                    enableSort: options.enableSorting,
+                }),
+            ];
         } catch (err) {
             const tableError: TableError = {
                 code: "COLUMN_CREATION_ERROR",
@@ -1056,7 +1059,10 @@ export const useSelectionMode = (): UseSelectionModeReturn => {
         [selectionMode, maxSelectionLimit],
     );
 
-    const canExport = useCallback((count: number) => selectionMode === "export" && count > 0 && (maxSelectionLimit === undefined || count <= maxSelectionLimit), [selectionMode, maxSelectionLimit]);
+    const canExport = useCallback(
+        (count: number) => selectionMode === "export" && count > 0 && (maxSelectionLimit === undefined || count <= maxSelectionLimit),
+        [selectionMode, maxSelectionLimit],
+    );
 
     const getValidationMessage = useCallback(
         (count: number) => {
