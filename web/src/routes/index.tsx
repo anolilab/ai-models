@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
 import ModelComparisonDialog from "@/components/comparison/model-comparison-dialog";
 import DataTable from "@/components/data-table/data-table";
+import SelectionModeToggle from "@/components/data-table/selection-mode-toggle";
 import HowToUseDialog from "@/components/how-to-use-dialog";
 import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,6 @@ const HomeComponent = () => {
     const { allModels } = Route.useLoaderData();
     const isMobile = useIsMobile();
 
-    // Custom hooks
     const { containerHeight, didMount, footerRef, headerRef } = useTableHeight();
 
     const { getValidationMessage, handleModeChange, maxSelectionLimit, selectionMode } = useSelectionMode();
@@ -28,6 +28,7 @@ const HomeComponent = () => {
         enableColumnResizing: false,
         enableFiltering: true,
         enableSorting: true,
+        selectionMode,
     });
 
     // Local state
@@ -47,6 +48,15 @@ const HomeComponent = () => {
             totalSelectedCount: number;
         }) => (
             <div className="flex items-center gap-4">
+                <SelectionModeToggle
+                    currentMode={selectionMode}
+                    onModeChange={(mode) => {
+                        handleModeChange(mode);
+                        // Clear selection when switching modes to avoid confusion
+                        resetSelection();
+                    }}
+                />
+
                 {totalSelectedCount > 0 && (
                     <div className="flex items-center gap-2">
                         <span className="text-sm font-medium">{getValidationMessage(totalSelectedCount)}</span>
@@ -70,7 +80,9 @@ const HomeComponent = () => {
                                     // Copy selected model IDs to clipboard
                                     const modelIds = selectedRows.map((row) => row.modelId).join("\n");
 
-                                    navigator.clipboard.writeText(modelIds);
+                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                        navigator.clipboard.writeText(modelIds);
+                                    }
                                 }}
                                 variant="outline"
                             >
@@ -87,7 +99,7 @@ const HomeComponent = () => {
                 )}
             </div>
         ),
-        [selectionMode, maxSelectionLimit, handleModeChange, getValidationMessage],
+        [selectionMode, handleModeChange, getValidationMessage],
     );
 
     let Menu = (
@@ -138,8 +150,9 @@ const HomeComponent = () => {
             </header>
             <main>
                 <ClientOnly fallback={<SkeletonTable columns={isMobile ? 2 : 20} rows={15} />}>
-                    <DataTable<(typeof tableData)[0], any>
+                    <DataTable<(typeof tableData)[0], unknown>
                         config={{
+                            enableClickRowSelect: true,
                             enableColumnResizing: false,
                             enableColumnVisibility: true,
                             enablePagination: false,

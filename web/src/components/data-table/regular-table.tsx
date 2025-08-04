@@ -26,7 +26,7 @@ export interface RegularTableProps<TData> {
     table: Table<TData>;
 }
 
-export function RegularTable<TData>({
+export const RegularTable = <TData,>({
     className,
     columns,
     containerHeight,
@@ -37,7 +37,7 @@ export function RegularTable<TData>({
     onKeyDown,
     style,
     table,
-}: RegularTableProps<TData>) {
+}: RegularTableProps<TData>) => {
     const { rows } = table.getRowModel();
 
     // Check if row selection is enabled
@@ -101,20 +101,20 @@ export function RegularTable<TData>({
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map((header) => (
-                                <TableHead
-                                    className="group/th relative p-2 text-left"
-                                    colSpan={header.colSpan}
-                                    data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
+                                    <TableHead
+                                        className="group/th relative p-2 text-left"
+                                        colSpan={header.colSpan}
+                                        data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
                                     key={header.id}
-                                    scope="col"
-                                    style={{
-                                        width: header.getSize(),
-                                    }}
-                                    tabIndex={-1}
-                                >
-                                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                                    {enableColumnResizing && header.column.getCanResize() && <DataTableResizer header={header} />}
-                                </TableHead>
+                                        scope="col"
+                                        style={{
+                                            width: header.getSize(),
+                                        }}
+                                        tabIndex={-1}
+                                    >
+                                        {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                                        {enableColumnResizing && header.column.getCanResize() && <DataTableResizer header={header} />}
+                                    </TableHead>
                             ))}
                         </TableRow>
                     ))}
@@ -148,17 +148,17 @@ export function RegularTable<TData>({
                                     tabIndex={0}
                                 >
                                     {row.getVisibleCells().map((cell, cellIndex) => (
-                                        <TableCell
-                                            className="truncate px-4 text-left"
-                                            data-cell-index={cellIndex}
-                                            id={`cell-${rowIndex}-${cellIndex}`}
+                                            <TableCell
+                                                className="truncate px-4 text-left"
+                                                data-cell-index={cellIndex}
+                                                id={`cell-${rowIndex}-${cellIndex}`}
                                             key={cell.id}
-                                            style={{
-                                                width: cell.column.getSize(),
-                                            }}
-                                        >
-                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                        </TableCell>
+                                                style={{
+                                                    width: cell.column.getSize(),
+                                                }}
+                                            >
+                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                            </TableCell>
                                     ))}
                                 </TableRow>
                             );
