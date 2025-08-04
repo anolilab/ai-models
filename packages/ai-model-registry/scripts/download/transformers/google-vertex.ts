@@ -3,33 +3,10 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
+import { parseContextLength } from "../utils/index.js";
 
 const GOOGLE_VERTEX_API_URL = "https://generativelanguage.googleapis.com/v1beta/models";
-const GOOGLE_VERTEX_DOCS_URL = "https://cloud.google.com/vertex-ai/docs/generative-ai";
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-const parseContextLength = (lengthString: string): number | null => {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-};
+const GOOGLE_VERTEX_DOCS_URL = "https://cloud.google.com/vertex-ai/generative-ai/docs/models";
 
 /**
  * Scrapes Google Vertex documentation for model information.
@@ -41,80 +18,102 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
 
         const models: Model[] = [];
 
-        // Look for model tables or lists in the documentation
-        $("table, .model-list, .models-table").each((index, element) => {
-            const tableText = $(element).text().toLowerCase();
+        // Look for model-list divs which contain the actual models
+        $(".model-list").each((index, modelList) => {
+            console.log(`[Google Vertex] Found model list ${index + 1}`);
 
-            // Check if this table contains model information
-            if (tableText.includes("model") || tableText.includes("gemini") || tableText.includes("palm") || tableText.includes("vertex")) {
-                console.log(`[Google Vertex] Found potential model table ${index + 1}`);
+            // Find all links within the model-list that likely point to model details
+            $(modelList)
+                .find("a")
+                .each((linkIndex, link) => {
+                    const href = $(link).attr("href");
+                    const modelName = $(link).text().trim();
 
-                $(element)
-                    .find("tr, .model-item")
-                    .each((_, row) => {
-                        const cells = $(row)
-                            .find("td, .model-cell")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
+                    // Check if this looks like a model name and has a valid href
+                    if (
+                        href
+                        && modelName
+                        && modelName.length > 3
+                        && modelName.length < 100
+                        && (modelName.toLowerCase().includes("gemini")
+                            || modelName.toLowerCase().includes("palm")
+                            || modelName.toLowerCase().includes("pro")
+                            || modelName.toLowerCase().includes("ultra")
+                            || modelName.toLowerCase().includes("imagen")
+                            || modelName.toLowerCase().includes("veo")
+                            || modelName.toLowerCase().includes("gemma")
+                            || modelName.toLowerCase().includes("embedding"))
+                        && !modelName.toLowerCase().includes("overview")
+                        && !modelName.toLowerCase().includes("tutorial")
+                        && !modelName.toLowerCase().includes("quickstart")
+                    ) {
+                        console.log(`[Google Vertex] Found model: ${modelName}`);
 
-                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
-                            const modelName = cells[0];
+                        // Try to get additional context from the parent elements
+                        const parentText = $(link).parent().text();
+                        let contextLength: number | null = null;
 
-                            console.log(`[Google Vertex] Found model: ${modelName}`);
+                        // Look for context length in the surrounding text
+                        const contextMatch = parentText.match(/(\d+)([km])\s*(?:tokens?|context)/i);
 
-                            const model: Model = {
-                                attachment: false,
-                                cost: {
-                                    input: null,
-                                    inputCacheHit: null,
-                                    output: null,
-                                },
-                                extendedThinking: false,
-                                id: kebabCase(modelName),
-                                knowledge: null,
-                                lastUpdated: null,
-                                limit: {
-                                    context: parseContextLength(cells[1] || cells[2]),
-                                    output: null,
-                                },
-                                modalities: {
-                                    input:
-                                        modelName.toLowerCase().includes("vision")
-                                        || modelName.toLowerCase().includes("pro")
-                                        || modelName.toLowerCase().includes("ultra")
-                                            ? ["text", "image"]
-                                            : ["text"],
-                                    output: ["text"],
-                                },
-                                name: modelName,
-                                openWeights: false,
-                                provider: "Google Vertex",
-                                providerDoc: GOOGLE_VERTEX_DOCS_URL,
-                                // Provider metadata
-                                providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-                                providerModelsDevId: "google-vertex",
-                                providerNpm: "@ai-sdk/google-vertex",
-                                reasoning: false,
-                                releaseDate: null,
-                                streamingSupported: true,
-                                temperature: true,
-                                toolCall: modelName.toLowerCase().includes("pro") || modelName.toLowerCase().includes("ultra"),
-                                vision:
+                        if (contextMatch) {
+                            contextLength = parseContextLength(contextMatch[0]);
+                        }
+
+                        const model: Model = {
+                            attachment: false,
+                            cost: {
+                                input: null,
+                                inputCacheHit: null,
+                                output: null,
+                            },
+                            extendedThinking: false,
+                            id: kebabCase(modelName),
+                            knowledge: null,
+                            lastUpdated: null,
+                            limit: {
+                                context: contextLength,
+                                output: null,
+                            },
+                            modalities: {
+                                input:
                                     modelName.toLowerCase().includes("vision")
                                     || modelName.toLowerCase().includes("pro")
-                                    || modelName.toLowerCase().includes("ultra"),
-                            };
+                                    || modelName.toLowerCase().includes("ultra")
+                                    || modelName.toLowerCase().includes("imagen")
+                                        ? ["text", "image"]
+                                        : ["text"],
+                                output: modelName.toLowerCase().includes("imagen") || modelName.toLowerCase().includes("veo") ? ["image", "video"] : ["text"],
+                            },
+                            name: modelName,
+                            openWeights: modelName.toLowerCase().includes("gemma"),
+                            provider: "Google Vertex",
+                            providerDoc: GOOGLE_VERTEX_DOCS_URL,
+                            // Provider metadata
+                            providerEnv: ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+                            providerModelsDevId: "google-vertex",
+                            providerNpm: "@ai-sdk/google-vertex",
+                            reasoning: false,
+                            releaseDate: null,
+                            streamingSupported: true,
+                            temperature: true,
+                            toolCall: modelName.toLowerCase().includes("pro") || modelName.toLowerCase().includes("ultra"),
+                            vision:
+                                modelName.toLowerCase().includes("vision")
+                                || modelName.toLowerCase().includes("pro")
+                                || modelName.toLowerCase().includes("ultra")
+                                || modelName.toLowerCase().includes("imagen"),
+                        };
 
-                            models.push(model);
-                        }
-                    });
-            }
+                        models.push(model);
+                    }
+                });
         });
 
-        // If no tables found, try to extract from text content
+        // If no models found via model-list, try to extract from text content
         if (models.length === 0) {
             const bodyText = $("body").text();
-            const modelMatches = bodyText.match(/([\w\-]+(?:gemini|palm|vertex|pro|ultra)[\w\-]*)/gi);
+            const modelMatches = bodyText.match(/([\w-]+(?:gemini|palm|vertex|pro|ultra|imagen|veo|gemma)[\w-]*)/gi);
 
             if (modelMatches) {
                 console.log(`[Google Vertex] Found ${modelMatches.length} potential models in text`);
@@ -144,12 +143,13 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                                     modelName.toLowerCase().includes("vision")
                                     || modelName.toLowerCase().includes("pro")
                                     || modelName.toLowerCase().includes("ultra")
+                                    || modelName.toLowerCase().includes("imagen")
                                         ? ["text", "image"]
                                         : ["text"],
-                                output: ["text"],
+                                output: modelName.toLowerCase().includes("imagen") || modelName.toLowerCase().includes("veo") ? ["image", "video"] : ["text"],
                             },
                             name: modelName,
-                            openWeights: false,
+                            openWeights: modelName.toLowerCase().includes("gemma"),
                             provider: "Google Vertex",
                             providerDoc: GOOGLE_VERTEX_DOCS_URL,
                             // Provider metadata
@@ -164,7 +164,8 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                             vision:
                                 modelName.toLowerCase().includes("vision")
                                 || modelName.toLowerCase().includes("pro")
-                                || modelName.toLowerCase().includes("ultra"),
+                                || modelName.toLowerCase().includes("ultra")
+                                || modelName.toLowerCase().includes("imagen"),
                         };
 
                         models.push(model);
@@ -188,12 +189,18 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
  * @param rawData Raw data from Google Vertex API
  * @returns Array of normalized model objects
  */
-export const transformGoogleVertexModels = (rawData: any): Model[] => {
+export const transformGoogleVertexModels = (rawData: unknown): Model[] => {
     const models: Model[] = [];
 
     // This function is kept for interface compatibility but the main logic is in fetchGoogleVertexModels
     if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
+        for (const modelData of rawData as {
+            displayName?: string;
+            inputTokenLimit?: number;
+            name?: string;
+            outputTokenLimit?: number;
+            supportedGenerationMethods?: string[];
+        }[]) {
             const model: Model = {
                 attachment: false,
                 cost: {
@@ -202,7 +209,7 @@ export const transformGoogleVertexModels = (rawData: any): Model[] => {
                     output: null,
                 },
                 extendedThinking: false,
-                id: kebabCase(modelData.name || modelData.displayName),
+                id: kebabCase(modelData.name || modelData.displayName || ""),
                 knowledge: null,
                 lastUpdated: null,
                 limit: {
@@ -213,7 +220,7 @@ export const transformGoogleVertexModels = (rawData: any): Model[] => {
                     input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
                     output: ["text"],
                 },
-                name: modelData.displayName || modelData.name,
+                name: modelData.displayName || modelData.name || "",
                 openWeights: false,
                 provider: "Google Vertex",
                 providerDoc: GOOGLE_VERTEX_DOCS_URL,
@@ -263,7 +270,7 @@ export const fetchGoogleVertexModels = async (): Promise<Model[]> => {
                             output: null,
                         },
                         extendedThinking: false,
-                        id: kebabCase(modelData.name || modelData.displayName),
+                        id: kebabCase(modelData.name || modelData.displayName || ""),
                         knowledge: null,
                         lastUpdated: null,
                         limit: {
@@ -274,7 +281,7 @@ export const fetchGoogleVertexModels = async (): Promise<Model[]> => {
                             input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
                             output: ["text"],
                         },
-                        name: modelData.displayName || modelData.name,
+                        name: modelData.displayName || modelData.name || "",
                         openWeights: false,
                         provider: "Google Vertex",
                         providerDoc: GOOGLE_VERTEX_DOCS_URL,

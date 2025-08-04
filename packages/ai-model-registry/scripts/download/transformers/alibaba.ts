@@ -3,6 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
+import { parseTokenLimit } from "../utils/index.js";
 
 const DEEPSEEK_DOCS_URL = "https://help.aliyun.com/zh/model-studio/deepseek-api";
 const KIMI_DOCS_URL = "https://help.aliyun.com/zh/model-studio/kimi-api";
@@ -242,21 +243,13 @@ const cleanKimiModelName = (modelName: string): string => {
 };
 
 const parseCost = (costString: string): number | null => {
-    if (!costString || costString === "限时免费体验")
+    if (!costString || costString === "限时免费体验") {
         return null;
+    }
 
     const match = costString.match(/(\d+\.?\d*)/);
 
     return match ? Number.parseFloat(match[1]) : null;
-};
-
-const parseTokenLimit = (limitString: string): number | null => {
-    if (!limitString)
-        return null;
-
-    const match = limitString.replaceAll(",", "").match(/(\d+)/);
-
-    return match ? Number.parseInt(match[1], 10) : null;
 };
 
 /**

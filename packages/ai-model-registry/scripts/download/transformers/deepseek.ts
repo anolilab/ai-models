@@ -9,53 +9,7 @@ import type { Model } from "../../../src/schema.js";
  * @param htmlContent The HTML content from the DeepSeek pricing page
  * @returns Array of normalized model objects
  */
-const parsePrice = (priceString: string): number | null => {
-    if (!priceString || priceString === "N/A" || priceString === "Free") {
-        return null;
-    }
-
-    const match = priceString.match(/\$?([\d,]+\.?\d*)/);
-
-    if (match) {
-        return Number.parseFloat(match[1].replace(/,/g, ""));
-    }
-
-    return null;
-};
-
-const parseTokenLimit = (limitString: string): number | null => {
-    if (!limitString || limitString === "N/A")
-        return null;
-
-    // Handle "DEFAULT: XK MAXIMUM: YK" format
-    const maxMatch = limitString.match(/MAXIMUM:\s*(\d+(?:\.\d+)?)\s*K/i);
-
-    if (maxMatch) {
-        return Math.round(Number.parseFloat(maxMatch[1]) * 1000);
-    }
-
-    // Handle "DEFAULT: XK" format
-    const defaultMatch = limitString.match(/DEFAULT:\s*(\d+(?:\.\d+)?)\s*K/i);
-
-    if (defaultMatch) {
-        return Math.round(Number.parseFloat(defaultMatch[1]) * 1000);
-    }
-
-    const match = limitString.match(/(\d+(?:\.\d+)?)\s*K/i);
-
-    if (match) {
-        return Math.round(Number.parseFloat(match[1]) * 1000);
-    }
-
-    // Try to match just numbers
-    const numberMatch = limitString.match(/(\d+)/);
-
-    if (numberMatch) {
-        return Number.parseInt(numberMatch[1], 10);
-    }
-
-    return null;
-};
+import { parsePrice, parseTokenLimit } from "../utils/index.js";
 
 export const transformDeepSeekModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);

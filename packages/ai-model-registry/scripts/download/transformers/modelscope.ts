@@ -3,6 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
+import { parseContextLength } from "../utils/index.js";
 
 const MODELSCOPE_API_URL = "https://modelscope.cn/api/v1/dolphin/models";
 const MODELSCOPE_DOCS_URL = "https://modelscope.cn/docs/model-service/API-Inference/intro";
@@ -173,8 +174,9 @@ const hasAttachmentCapability = (tasks: any[], modelType: any[], modelName: stri
  * Determine if model has open weights based on license
  */
 const isOpenWeights = (license: string): boolean => {
-    if (!license)
+    if (!license) {
         return false;
+    }
 
     const openLicenses = [
         "apache-2.0",
@@ -412,30 +414,6 @@ const scrapeModelScopeDocs = async (): Promise<Model[]> => {
 
         return [];
     }
-};
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-const parseContextLength = (lengthString: string): number | null => {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
 };
 
 /**

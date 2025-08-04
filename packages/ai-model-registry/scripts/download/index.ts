@@ -71,7 +71,7 @@ interface TransformerModule {
     fetchGitHubCopilotModels?: () => Promise<Model[]>;
     fetchGitHubModels?: () => Promise<Model[]>;
     fetchGoogleModels?: () => Promise<Model[]>;
-    fetchGoogleVertexAnthropicModels?: () => Promise<Model[]>;
+    fetchGooglePartnerModels?: () => Promise<Model[]>;
     fetchGoogleVertexModels?: () => Promise<Model[]>;
     fetchGroqModels?: () => Promise<Model[]>;
     fetchHuggingFaceModels?: () => Promise<Model[]>;
@@ -168,7 +168,7 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     || transformerModule.fetchFireworksAIModels
     || transformerModule.fetchGitHubModels
     || transformerModule.fetchGoogleVertexModels
-    || transformerModule.fetchGoogleVertexAnthropicModels
+    || transformerModule.fetchGooglePartnerModels
     || transformerModule.fetchMistralModels
     || transformerModule.fetchMorphModels
     || transformerModule.fetchRequestyModels

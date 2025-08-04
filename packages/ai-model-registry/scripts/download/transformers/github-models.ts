@@ -3,33 +3,10 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
+import { parseContextLength } from "../utils/index.js";
 
 const GITHUB_MODELS_API_URL = "https://api.github.com/models";
 const GITHUB_MODELS_DOCS_URL = "https://docs.github.com/en/github-models";
-
-/**
- * Parse context length from string (e.g., "32k" -> 32768)
- */
-const parseContextLength = (lengthString: string): number | null => {
-    if (!lengthString)
-        return null;
-
-    const match = lengthString.toLowerCase().match(/(\d+)([km])?/);
-
-    if (!match)
-        return null;
-
-    const value = Number.parseInt(match[1], 10);
-    const unit = match[2];
-
-    if (unit === "k")
-        return value * 1024;
-
-    if (unit === "m")
-        return value * 1024 * 1024;
-
-    return value;
-};
 
 /**
  * Scrapes GitHub Models documentation for model information.
