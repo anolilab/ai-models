@@ -59,8 +59,7 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
             if (options && (config.type === "option" || config.type === "multiOption")) {
                 const optionsInput = options[config.id as OptionColumnIds<TColumns>];
 
-                if (!optionsInput || !isColumnOptionArray(optionsInput))
-                    return config;
+                if (!optionsInput || !isColumnOptionArray(optionsInput)) return config;
 
                 final = { ...final, options: optionsInput };
             }
@@ -69,8 +68,7 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
             if (faceted && (config.type === "option" || config.type === "multiOption")) {
                 const facetedOptionsInput = faceted[config.id as OptionColumnIds<TColumns>];
 
-                if (!facetedOptionsInput || !isColumnOptionMap(facetedOptionsInput))
-                    return config;
+                if (!facetedOptionsInput || !isColumnOptionMap(facetedOptionsInput)) return config;
 
                 final = { ...final, facetedOptions: facetedOptionsInput };
             }
@@ -79,8 +77,7 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
             if (config.type === "number" && faceted) {
                 const minMaxTuple = faceted[config.id as NumberColumnIds<TColumns>];
 
-                if (!minMaxTuple || !isMinMaxTuple(minMaxTuple))
-                    return config;
+                if (!minMaxTuple || !isMinMaxTuple(minMaxTuple)) return config;
 
                 final = {
                     ...final,
@@ -120,14 +117,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -160,14 +157,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -201,14 +198,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -233,14 +230,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -256,15 +253,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                 setFilters((prev) => {
                     const filter = prev.find((f) => f.columnId === column.id);
                     const isColumnFiltered = filter && filter.values.length > 0;
-                    const newValues
-                        = column.type === "number"
+                    const newValues =
+                        column.type === "number"
                             ? createNumberFilterValue(values as number[])
                             : column.type === "date"
-                                ? createDateFilterValue(values as [Date, Date] | [Date] | [] | undefined)
-                                : uniq(values);
+                              ? createDateFilterValue(values as [Date, Date] | [Date] | [] | undefined)
+                              : uniq(values);
 
-                    if (newValues.length === 0)
-                        return prev;
+                    if (newValues.length === 0) return prev;
 
                     if (!isColumnFiltered) {
                         return [

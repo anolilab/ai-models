@@ -99,8 +99,7 @@ const HomeComponent = () => {
                     <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
                 </div>
                 <div className="right flex items-center gap-3">
-                    {isMobile
-                        ? (
+                    {isMobile ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button className="flex items-center gap-2 text-sm" variant="ghost">
@@ -118,8 +117,7 @@ const HomeComponent = () => {
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
-                        )
-                        : (
+                    ) : (
                         <>
                             <HowToUseDialog />
 
@@ -132,7 +130,7 @@ const HomeComponent = () => {
                                 </svg>
                             </a>
                         </>
-                        )}
+                    )}
                 </div>
             </header>
             <main>

@@ -21,11 +21,11 @@ export const AnalyticsProvider: FC<PropsWithChildren> = ({ children }) => {
         // Don't initialize PostHog in development, if window is not available,
         // if environment variables are missing, or if analytics consent is not given
         if (
-            import.meta.env.DEV
-                || typeof window === "undefined"
-                || !import.meta.env.VITE_POSTHOG_API_KEY
-                || !import.meta.env.VITE_POSTHOG_HOST
-                || !hasAnalyticsConsent
+            import.meta.env.DEV ||
+            typeof window === "undefined" ||
+            !import.meta.env.VITE_POSTHOG_API_KEY ||
+            !import.meta.env.VITE_POSTHOG_HOST ||
+            !hasAnalyticsConsent
         ) {
             return;
         }
@@ -61,8 +61,7 @@ export const AnalyticsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     // Effect to handle consent changes after initialization
     useEffect(() => {
-        if (typeof window === "undefined" || !window.posthog)
-            return;
+        if (typeof window === "undefined" || !window.posthog) return;
 
         if (hasAnalyticsConsent) {
             // User has given consent - opt in to capturing

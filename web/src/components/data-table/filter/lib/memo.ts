@@ -25,8 +25,7 @@ function shallowEqual<T>(arr1: ReadonlyArray<T>, arr2: ReadonlyArray<T>): boolea
     }
 
     for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] !== arr2[i])
-            return false;
+        if (arr1[i] !== arr2[i]) return false;
     }
 
     return true;

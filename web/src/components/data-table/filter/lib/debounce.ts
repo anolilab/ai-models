@@ -26,8 +26,7 @@ export function debounce<T extends (...args: any[]) => any>(
     const maxWaitTime = maxWait !== undefined ? Math.max(wait, maxWait) : null;
 
     function invokeFunc(time: number): ReturnType<T> | undefined {
-        if (lastArgs === null)
-            return undefined;
+        if (lastArgs === null) return undefined;
 
         const args = lastArgs;
         const thisArg = lastThis;
@@ -41,8 +40,7 @@ export function debounce<T extends (...args: any[]) => any>(
     }
 
     function shouldInvoke(time: number): boolean {
-        if (lastCallTime === null)
-            return false;
+        if (lastCallTime === null) return false;
 
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;
@@ -55,8 +53,7 @@ export function debounce<T extends (...args: any[]) => any>(
     }
 
     function remainingWait(time: number): number {
-        if (lastCallTime === null)
-            return wait;
+        if (lastCallTime === null) return wait;
 
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;

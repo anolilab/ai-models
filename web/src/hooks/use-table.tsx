@@ -7,7 +7,133 @@ import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from
 import { Checkbox } from "@/components/ui/checkbox";
 import { memoizedTransformModels } from "@/utils/data-utils";
 import { ProviderIcon } from "@/utils/provider-icons";
+
 import useIsMobile from "./use-is-mobile";
+
+const modalityIconMap: Record<string, React.ReactNode> = {
+    audio: <Music className="size-4" />,
+    code: <Code className="size-4" />,
+    embedding: <Database className="size-4" />,
+    file: <File className="size-4" />,
+    image: <Image className="size-4" />,
+    text: <FileText className="size-4" />,
+    video: <Video className="size-4" />,
+};
+
+const renderModalityCell = (props: any) => {
+    const modalities = props.getValue();
+    const modalityList = modalities.split(",").map((m: string) => m.trim());
+
+    return (
+        <span className="flex items-center gap-1">
+            {modalityList.map((modality: string, index: number) => {
+                const icon = modalityIconMap[modality];
+
+                if (icon) {
+                    return (
+                        <span
+                            className="border-border text-muted-foreground border px-1 py-0.5"
+                            key={`${modality}-${index}`}
+                            title={modality.charAt(0).toUpperCase() + modality.slice(1)}
+                        >
+                            {icon}
+                        </span>
+                    );
+                }
+
+                return <span key={`${modality}-${index}`}>{modality}</span>;
+            })}
+        </span>
+    );
+};
+
+const renderCostCell = (props: any) => <span className="text-right">{props.getValue()}</span>;
+
+const renderNumberCell = (props: any) => {
+    const value = props.getValue();
+
+    if (value === "-" || value === null || value === undefined) {
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
+    }
+
+    let num: number;
+
+    if (typeof value === "string") {
+        num = parseInt(value.replace(/\D/g, ""), 10);
+    } else if (typeof value === "number") {
+        num = value;
+    } else {
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
+    }
+
+    if (isNaN(num) || num === 0) {
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
+    }
+
+    const formatted = num.toLocaleString();
+
+    return <span className="text-right">{formatted}</span>;
+};
+
+const renderBooleanCell = (props: any) => <span className="text-muted-foreground text-xs">{props.getValue()}</span>;
+
+const renderDateCell = (props: any) => {
+    const value = props.getValue();
+
+    if (value === "-" || value === null || value === undefined) {
+        return <span className="text-muted-foreground text-xs">-</span>;
+    }
+
+    if (value instanceof Date) {
+        return <span className="text-muted-foreground text-xs">{value.toLocaleDateString()}</span>;
+    }
+
+    if (typeof value === "string") {
+        return <span className="text-muted-foreground text-xs">{value}</span>;
+    }
+
+    return <span className="text-muted-foreground text-xs">-</span>;
+};
+
+const extractLimitValue = (limitString: string): number => {
+    if (limitString === "-") return 0;
+
+    const numericValue = limitString.replace(/\D/g, "");
+
+    return parseInt(numericValue, 10) || 0;
+};
+
+const parseDate = (dateString: string): Date | null => {
+    if (dateString === "-") return null;
+
+    const date = new Date(dateString);
+
+    return Number.isNaN(date.getTime()) ? null : date;
+};
+
+const columnHelper = createColumnHelper<ModelTableRow>();
+
+const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
+    columnHelper.display({
+        cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
+        enableColumnFilter: false,
+        enableHiding: false,
+        enableResizing: false,
+        enableSorting: false,
+        header: ({ table }) => (
+            <div className="p-2">
+                <Checkbox
+                    aria-label="Select all"
+                    checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
+                    onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+                />
+            </div>
+        ),
+        id: "select",
+        maxSize: 60,
+        minSize: 60,
+        size: 60,
+    });
 
 export enum ColumnType {
     BOOLEAN = "boolean",
@@ -101,109 +227,6 @@ export interface ModelTableRow {
     toolCall: string;
     weights: string;
 }
-
-const modalityIconMap: Record<string, React.ReactNode> = {
-    audio: <Music className="size-4" />,
-    code: <Code className="size-4" />,
-    embedding: <Database className="size-4" />,
-    file: <File className="size-4" />,
-    image: <Image className="size-4" />,
-    text: <FileText className="size-4" />,
-    video: <Video className="size-4" />,
-};
-
-const renderModalityCell = (props: any) => {
-    const modalities = props.getValue();
-    const modalityList = modalities.split(",").map((m: string) => m.trim());
-
-    return (
-        <span className="flex items-center gap-1">
-            {modalityList.map((modality: string, index: number) => {
-                const icon = modalityIconMap[modality];
-
-                if (icon) {
-                    return (
-                        <span
-                            className="border-border text-muted-foreground border px-1 py-0.5"
-                            key={`${modality}-${index}`}
-                            title={modality.charAt(0).toUpperCase() + modality.slice(1)}
-                        >
-                            {icon}
-                        </span>
-                    );
-                }
-
-                return <span key={`${modality}-${index}`}>{modality}</span>;
-            })}
-        </span>
-    );
-};
-
-const renderCostCell = (props: any) => <span className="text-right">{props.getValue()}</span>;
-
-const renderNumberCell = (props: any) => {
-    const value = props.getValue();
-
-    if (value === "-" || value === null || value === undefined) {
-        return <span className="text-muted-foreground text-right text-xs">-</span>;
-    }
-
-    let num: number;
-
-    if (typeof value === "string") {
-        num = parseInt(value.replace(/\D/g, ""), 10);
-    } else if (typeof value === "number") {
-        num = value;
-    } else {
-        return <span className="text-muted-foreground text-right text-xs">-</span>;
-    }
-
-    if (isNaN(num) || num === 0) {
-        return <span className="text-muted-foreground text-right text-xs">-</span>;
-    }
-
-    const formatted = num.toLocaleString();
-
-    return <span className="text-right">{formatted}</span>;
-};
-
-const renderBooleanCell = (props: any) => <span className="text-muted-foreground text-xs">{props.getValue()}</span>;
-
-const renderDateCell = (props: any) => {
-    const value = props.getValue();
-
-    if (value === "-" || value === null || value === undefined) {
-        return <span className="text-muted-foreground text-xs">-</span>;
-    }
-
-    if (value instanceof Date) {
-        return <span className="text-muted-foreground text-xs">{value.toLocaleDateString()}</span>;
-    }
-
-    if (typeof value === "string") {
-        return <span className="text-muted-foreground text-xs">{value}</span>;
-    }
-
-    return <span className="text-muted-foreground text-xs">-</span>;
-};
-
-const extractLimitValue = (limitString: string): number => {
-    if (limitString === "-")
-        return 0;
-
-    const numericValue = limitString.replace(/\D/g, "");
-
-    return parseInt(numericValue, 10) || 0;
-};
-
-const parseDate = (dateString: string): Date | null => {
-    if (dateString === "-")
-        return null;
-
-    const date = new Date(dateString);
-
-    return isNaN(date.getTime()) ? null : date;
-};
 
 export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
     // Selection column
@@ -678,44 +701,6 @@ export interface ColumnFactoryOptions {
     enableSort?: boolean;
 }
 
-const getSortFn = (type: string) => {
-    switch (type) {
-        case "date":
-            return "basic";
-        case "datetime":
-            return "basic";
-        case "number":
-            return "basic";
-        case "text":
-        default:
-            return "basic";
-    }
-};
-
-const columnHelper = createColumnHelper<ModelTableRow>();
-
-const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
-    columnHelper.display({
-        cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
-        enableColumnFilter: false,
-        enableHiding: false,
-        enableResizing: false,
-        enableSorting: false,
-        header: ({ table }) => (
-            <div className="p-2">
-                <Checkbox
-                    aria-label="Select all"
-                    checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
-                    onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                />
-            </div>
-        ),
-        id: "select",
-        maxSize: 60,
-        minSize: 60,
-        size: 60,
-    });
-
 export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] =>
     configs.map((config) => {
         const column: ColumnDef<ModelTableRow> = {
@@ -750,7 +735,7 @@ export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], 
 
         // Set sorting function
         if (config.sort) {
-            (column as any).sortingFn = getSortFn(config.sort.type);
+            (column as any).sortingFn = "basic";
         }
 
         return column;
@@ -834,15 +819,15 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
 
         const options = config.filter?.options;
 
-        const accessor
-            = config.accessorFn
-                || ((row: ModelTableRow) => {
-                    if (config.accessorKey) {
-                        return row[config.accessorKey];
-                    }
+        const accessor =
+            config.accessorFn ||
+            ((row: ModelTableRow) => {
+                if (config.accessorKey) {
+                    return row[config.accessorKey];
+                }
 
-                    return undefined;
-                });
+                return undefined;
+            });
 
         return {
             accessor,
@@ -1001,12 +986,11 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return [];
         }
-    }, []);
+    }, [getTableColumns]);
 
     // Create columns with visibility filtering
     const columns = useMemo(() => {
-        if (columnConfigs.length === 0)
-            return [];
+        if (columnConfigs.length === 0) return [];
 
         try {
             const visibleColumns = getDefaultColumnOrder();
@@ -1032,8 +1016,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create export configuration
     const exportConfig = useMemo(() => {
-        if (columnConfigs.length === 0)
-            return null;
+        if (columnConfigs.length === 0) return null;
 
         try {
             const exportColumns = getDefaultExportColumns();
@@ -1048,8 +1031,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create filter configuration
     const filterConfig = useMemo(() => {
-        if (columnConfigs.length === 0)
-            return [];
+        if (columnConfigs.length === 0) return [];
 
         try {
             const filterColumns = getDefaultColumnOrder();
@@ -1161,8 +1143,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
     const isMobile = useIsMobile();
 
     const updateHeight = useCallback(() => {
-        if (typeof window === "undefined")
-            return;
+        if (typeof window === "undefined") return;
 
         setIsResizing(true);
 
@@ -1229,18 +1210,18 @@ export interface UseTableStateReturn {
     updateState: (updates: Partial<TableState>) => void;
 }
 
-const initialTableState: TableState = {
-    filters: {},
-    pageIndex: 0,
-    pageSize: 50,
-    searchTerm: "",
-    selectedRows: [],
-    sortBy: "provider",
-    sortOrder: "asc",
-    visibleColumns: getDefaultColumnOrder(),
-};
-
 export const useTableState = (): UseTableStateReturn => {
+    const initialTableState: TableState = {
+        filters: {},
+        pageIndex: 0,
+        pageSize: 50,
+        searchTerm: "",
+        selectedRows: [],
+        sortBy: "provider",
+        sortOrder: "asc",
+        visibleColumns: getDefaultColumnOrder(),
+    };
+
     const [state, setState] = useState<TableState>(initialTableState);
 
     const setSelectedRows = useCallback((rows: ModelTableRow[]) => {
@@ -1318,8 +1299,7 @@ export const useTableState = (): UseTableStateReturn => {
 
 export const useTablePersistence = (key: string, initialState: TableState): [TableState, (state: TableState) => void] => {
     const [state, setState] = useState<TableState>(() => {
-        if (typeof window === "undefined")
-            return initialState;
+        if (typeof window === "undefined") return initialState;
 
         try {
             const saved = localStorage.getItem(key);
@@ -1380,8 +1360,7 @@ export const useTableSearch = (data: ModelTableRow[], searchFields: (keyof Model
             searchFields.some((field) => {
                 const value = row[field];
 
-                if (value == null)
-                    return false;
+                if (value == null) return false;
 
                 return String(value).toLowerCase().includes(term);
             }),

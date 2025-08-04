@@ -10,11 +10,9 @@ export function intersection<T>(a: T[], b: T[]): T[] {
  */
 function deepHash(value: any, cache = new WeakMap<object, string>()): string {
     // Handle primitives and null/undefined.
-    if (value === null)
-        return "null";
+    if (value === null) return "null";
 
-    if (value === undefined)
-        return "undefined";
+    if (value === undefined) return "undefined";
 
     const type = typeof value;
 
@@ -62,24 +60,19 @@ function deepHash(value: any, cache = new WeakMap<object, string>()): string {
  */
 function deepEqual(a: any, b: any): boolean {
     // Check strict equality first.
-    if (a === b)
-        return true;
+    if (a === b) return true;
 
     // If types differ, they’re not equal.
-    if (typeof a !== typeof b)
-        return false;
+    if (typeof a !== typeof b) return false;
 
-    if (a === null || b === null || a === undefined || b === undefined)
-        return false;
+    if (a === null || b === null || a === undefined || b === undefined) return false;
 
     // Check arrays.
     if (Array.isArray(a)) {
-        if (!Array.isArray(b) || a.length !== b.length)
-            return false;
+        if (!Array.isArray(b) || a.length !== b.length) return false;
 
         for (let i = 0; i < a.length; i++) {
-            if (!deepEqual(a[i], b[i]))
-                return false;
+            if (!deepEqual(a[i], b[i])) return false;
         }
 
         return true;
@@ -87,21 +80,17 @@ function deepEqual(a: any, b: any): boolean {
 
     // Check objects.
     if (typeof a === "object") {
-        if (typeof b !== "object")
-            return false;
+        if (typeof b !== "object") return false;
 
         const aKeys = Object.keys(a).sort();
         const bKeys = Object.keys(b).sort();
 
-        if (aKeys.length !== bKeys.length)
-            return false;
+        if (aKeys.length !== bKeys.length) return false;
 
         for (let i = 0; i < aKeys.length; i++) {
-            if (aKeys[i] !== bKeys[i])
-                return false;
+            if (aKeys[i] !== bKeys[i]) return false;
 
-            if (!deepEqual(a[aKeys[i]], b[bKeys[i]]))
-                return false;
+            if (!deepEqual(a[aKeys[i]], b[bKeys[i]])) return false;
         }
 
         return true;

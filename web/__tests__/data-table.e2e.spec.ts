@@ -6,7 +6,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.goto("/");
 
         // Wait for the page to load and the table to be visible
-        await page.waitForSelector("[data-testid=\"data-table\"]", { timeout: 15000 });
+        await page.waitForSelector('[data-testid="data-table"]', { timeout: 15000 });
 
         // Also wait for the table content to load
         await page.waitForSelector("table", { timeout: 15000 });
@@ -25,7 +25,7 @@ test.describe("Data Table E2E Tests", () => {
         await expect(page.getByRole("columnheader", { name: "Input Cost" })).toBeVisible();
 
         // Check that some data rows are present
-        const rowCount = await page.locator("[data-testid=\"data-table\"] tbody tr").count();
+        const rowCount = await page.locator('[data-testid="data-table"] tbody tr').count();
 
         expect(rowCount).toBeGreaterThan(0);
     });
@@ -43,7 +43,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(500); // Wait for debounced search
 
         // Check that filtered results contain the search term
-        const rows = page.locator("[data-testid=\"data-table\"] tbody tr");
+        const rows = page.locator('[data-testid="data-table"] tbody tr');
         const rowCount = await rows.count();
 
         // At least one row should be visible after search
@@ -54,7 +54,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(500);
 
         // Should show all results again
-        const allRows = page.locator("[data-testid=\"data-table\"] tbody tr");
+        const allRows = page.locator('[data-testid="data-table"] tbody tr');
         const allRowCount = await allRows.count();
 
         expect(allRowCount).toBeGreaterThanOrEqual(rowCount);
@@ -87,7 +87,7 @@ test.describe("Data Table E2E Tests", () => {
         await providerHeader.click();
 
         // Wait for the dropdown menu to appear
-        await page.waitForSelector("[role=\"menu\"]");
+        await page.waitForSelector('[role="menu"]');
 
         // Click on "Asc" option
         const ascOption = page.getByRole("menuitem", { name: "Asc" });
@@ -102,7 +102,7 @@ test.describe("Data Table E2E Tests", () => {
 
         // Open dropdown again
         await providerHeader.click();
-        await page.waitForSelector("[role=\"menu\"]");
+        await page.waitForSelector('[role="menu"]');
 
         // Click on "Desc" option
         const descOption = page.getByRole("menuitem", { name: "Desc" });
@@ -119,7 +119,7 @@ test.describe("Data Table E2E Tests", () => {
         const lastUpdatedHeader = page.getByRole("columnheader", { exact: true, name: "Last Updated" });
 
         await lastUpdatedHeader.click();
-        await page.waitForSelector("[role=\"menu\"]");
+        await page.waitForSelector('[role="menu"]');
 
         // Click on "Desc" option for date sorting
         const descDateOption = page.getByRole("menuitem", { name: "Desc" });
@@ -140,7 +140,7 @@ test.describe("Data Table E2E Tests", () => {
         await viewOptionsButton.click();
 
         // Wait for the popover to appear
-        await page.waitForSelector("[role=\"dialog\"]");
+        await page.waitForSelector('[role="dialog"]');
 
         // Toggle a column visibility (e.g., Provider ID)
         const providerIdToggle = page.getByRole("option", { name: /provider id/i });
@@ -164,7 +164,7 @@ test.describe("Data Table E2E Tests", () => {
         await exportButton.click();
 
         // Wait for the dropdown to appear
-        await page.waitForSelector("[role=\"menu\"]");
+        await page.waitForSelector('[role="menu"]');
 
         // Click on CSV export
         const csvExportButton = page.getByRole("menuitem", { name: /csv/i });
@@ -187,7 +187,7 @@ test.describe("Data Table E2E Tests", () => {
         await dateFilterButton.click();
 
         // Wait for the date picker to appear
-        await page.waitForSelector("[role=\"dialog\"]");
+        await page.waitForSelector('[role="dialog"]');
 
         // Select a date range (this is a simplified test)
         const fromDate = page.getByRole("textbox", { name: /from/i });
@@ -226,7 +226,7 @@ test.describe("Data Table E2E Tests", () => {
 
     test("should display tooltips for modality icons", async ({ page }) => {
         // Find a row with modality icons
-        const modalityCell = page.locator("[data-testid=\"data-table\"] tbody tr").first().locator("td").nth(6); // Input column
+        const modalityCell = page.locator('[data-testid="data-table"] tbody tr').first().locator("td").nth(6); // Input column
 
         // Hover over an icon to trigger tooltip
         await modalityCell.hover();
@@ -235,7 +235,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(200);
 
         // Check that tooltip content is present (this might be subtle)
-        const tooltip = page.locator("[role=\"tooltip\"]");
+        const tooltip = page.locator('[role="tooltip"]');
 
         if (await tooltip.isVisible()) {
             expect(await tooltip.textContent()).toBeTruthy();
@@ -245,7 +245,7 @@ test.describe("Data Table E2E Tests", () => {
     test("should handle large datasets with virtualization", async ({ page }) => {
         // Scroll down to trigger virtualization
         await page.evaluate(() => {
-            const table = document.querySelector("[data-testid=\"data-table\"]");
+            const table = document.querySelector('[data-testid="data-table"]');
 
             if (table) {
                 table.scrollTop = 1000;
@@ -256,7 +256,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(500);
 
         // Check that more rows are loaded
-        const rows = page.locator("[data-testid=\"data-table\"] tbody tr");
+        const rows = page.locator('[data-testid="data-table"] tbody tr');
         const rowCount = await rows.count();
 
         expect(rowCount).toBeGreaterThan(0);
@@ -294,7 +294,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(500);
 
         // Check that no rows are displayed
-        const rows = page.locator("[data-testid=\"data-table\"] tbody tr");
+        const rows = page.locator('[data-testid="data-table"] tbody tr');
         const rowCount = await rows.count();
 
         expect(rowCount).toBe(0);
@@ -304,7 +304,7 @@ test.describe("Data Table E2E Tests", () => {
         await page.waitForTimeout(500);
 
         // Should show results again
-        const allRows = page.locator("[data-testid=\"data-table\"] tbody tr");
+        const allRows = page.locator('[data-testid="data-table"] tbody tr');
         const allRowCount = await allRows.count();
 
         expect(allRowCount).toBeGreaterThan(0);
@@ -321,7 +321,7 @@ test.describe("Data Table E2E Tests", () => {
         await expect(outputCostHeader).toBeVisible();
 
         // Check that cost values are formatted as currency
-        const costCells = page.locator("[data-testid=\"data-table\"] tbody tr").first().locator("td");
+        const costCells = page.locator('[data-testid="data-table"] tbody tr').first().locator("td");
         const inputCostCell = costCells.nth(8); // Input Cost column
         const outputCostCell = costCells.nth(9); // Output Cost column
 

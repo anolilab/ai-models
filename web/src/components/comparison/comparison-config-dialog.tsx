@@ -6,10 +6,8 @@ import { useLocalStorage } from "usehooks-ts";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Separator } from "@/components/ui/separator";
 import type { ColumnConfig, ModelTableRow } from "@/hooks/use-table";
 import { getDefaultComparisonColumns, getTableColumns } from "@/hooks/use-table";
 
@@ -153,7 +151,7 @@ const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: Comparison
                     </div>
                 </DialogHeader>
 
-                <CardContent className="flex-1 overflow-y-auto">
+                <div className="flex-1 overflow-y-auto">
                     <div className="divide-border flex flex-col divide-y">
                         {Object.entries(groupedFields).map(([group, fields]) => {
                             const groupFieldIds = fields.map((field) => field.id);
@@ -175,10 +173,10 @@ const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: Comparison
 
                                         <div className="ml-6 grid grid-cols-1 gap-2 md:grid-cols-2">
                                             {fields.map((field) => (
-                                                <div className="flex items-center gap-3 rounded-md border p-2" key={field.id}>
+                                                <div className="flex items-center gap-3 border p-2" key={field.id}>
                                                     <Checkbox checked={enabledColumns.includes(field.id)} onCheckedChange={() => handleToggleField(field.id)} />
                                                     <div className="min-w-0 flex-1">
-                                                        <div className="flex items-center gap-2">
+                                                        <div className="flex items-center justify-between gap-2">
                                                             <span className="truncate text-sm font-medium">{field.displayName}</span>
                                                             {getFieldTypeBadge(field.type)}
                                                         </div>
@@ -194,21 +192,19 @@ const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: Comparison
                             );
                         })}
                     </div>
-                </CardContent>
+                </div>
 
                 <div className="flex flex-shrink-0 justify-end gap-2 border-t pt-4">
                     {(() => {
                         const defaultConfig = getDefaultComparisonColumns();
                         const isSameAsDefaults = JSON.stringify(enabledColumns.sort()) === JSON.stringify(defaultConfig.sort());
 
-                        return !isSameAsDefaults
-                            ? (
+                        return !isSameAsDefaults ? (
                             <Button onClick={handleReset} variant="outline">
                                 <RotateCcw className="mr-2 h-4 w-4" />
                                 Reset
                             </Button>
-                            )
-                            : null;
+                        ) : null;
                     })()}
                     <Button onClick={onClose} variant="outline">
                         Cancel

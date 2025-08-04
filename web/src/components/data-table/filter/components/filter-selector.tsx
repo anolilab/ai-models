@@ -41,15 +41,13 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
     }, [property]);
 
     useEffect(() => {
-        if (!open)
-            setTimeout(() => setValue(""), 150);
+        if (!open) setTimeout(() => setValue(""), 150);
     }, [open]);
 
     // biome-ignore lint/correctness/useExhaustiveDependencies: need filters to be updated
     const content = useMemo(
         () =>
-            (property && column
-                ? (
+            property && column ? (
                 <FilterValueController
                     actions={actions}
                     column={column as Column<TData, ColumnDataType>}
@@ -57,8 +55,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
                     locale={locale}
                     strategy={strategy}
                 />
-                )
-                : (
+            ) : (
                 <Command
                     filter={(value, search, keywords) => {
                         const extendValue = `${value} ${keywords?.join(" ")}`;
@@ -78,7 +75,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
                         </CommandGroup>
                     </CommandList>
                 </Command>
-                )),
+            ),
         [property, column, filter, filters, columns, actions, value],
     );
 
@@ -87,8 +84,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
             onOpenChange={async (value) => {
                 setOpen(value);
 
-                if (!value)
-                    setTimeout(() => setProperty(undefined), 100);
+                if (!value) setTimeout(() => setProperty(undefined), 100);
             }}
             open={open}
         >
@@ -127,8 +123,7 @@ const QuickSearchFiltersElement = <TData,>({ actions, columns, filters, search }
                 const optionsCount = column.getFacetedUniqueValues();
 
                 const handleOptionSelect = (value: string, check: boolean) => {
-                    if (check)
-                        actions.addFilterValue(column, [value]);
+                    if (check) actions.addFilterValue(column, [value]);
                     else actions.removeFilterValue(column, [value]);
                 };
 
@@ -208,8 +203,7 @@ export const FilterableColumn = <TData, TType extends ColumnDataType, TVal>({
     useEffect(() => {
         const target = itemRef.current;
 
-        if (!target)
-            return;
+        if (!target) return;
 
         // Set up MutationObserver
         const observer = new MutationObserver((mutations) => {
@@ -217,8 +211,7 @@ export const FilterableColumn = <TData, TType extends ColumnDataType, TVal>({
                 if (mutation.type === "attributes") {
                     const isSelected = target.getAttribute("data-selected") === "true";
 
-                    if (isSelected)
-                        prefetch();
+                    if (isSelected) prefetch();
                 }
             }
         });

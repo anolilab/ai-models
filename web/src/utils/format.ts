@@ -6,14 +6,12 @@
  * Format ISO timestamp to readable date format (DD/MM/YYYY hh:mm A)
  */
 export function formatTimestampToReadable(timestamp: string | null | undefined): string {
-    if (!timestamp)
-        return "";
+    if (!timestamp) return "";
 
     try {
         const date = new Date(timestamp);
 
-        if (isNaN(date.getTime()))
-            return timestamp;
+        if (isNaN(date.getTime())) return timestamp;
 
         return date.toLocaleDateString("en-GB", {
             day: "2-digit",
@@ -32,14 +30,12 @@ export function formatTimestampToReadable(timestamp: string | null | undefined):
  * Format ISO date to readable date format (DD/MM/YYYY)
  */
 export function formatDateToReadable(date: string | null | undefined): string {
-    if (!date)
-        return "";
+    if (!date) return "";
 
     try {
         const dateObj = new Date(date);
 
-        if (isNaN(dateObj.getTime()))
-            return date;
+        if (isNaN(dateObj.getTime())) return date;
 
         return dateObj.toLocaleDateString("en-GB", {
             day: "2-digit",
@@ -55,13 +51,11 @@ export function formatDateToReadable(date: string | null | undefined): string {
  * Format currency values with proper symbol and formatting
  */
 export function formatCurrency(amount: number | string | null | undefined, currency = "USD"): string {
-    if (amount === null || amount === undefined || amount === "")
-        return "";
+    if (amount === null || amount === undefined || amount === "") return "";
 
     const numericAmount = typeof amount === "string" ? parseFloat(amount) : amount;
 
-    if (isNaN(numericAmount))
-        return String(amount);
+    if (isNaN(numericAmount)) return String(amount);
 
     return new Intl.NumberFormat("en-US", {
         currency,
@@ -74,13 +68,11 @@ export function formatCurrency(amount: number | string | null | undefined, curre
  * Format numbers with thousand separators
  */
 export function formatNumber(value: number | string | null | undefined): string {
-    if (value === null || value === undefined || value === "")
-        return "";
+    if (value === null || value === undefined || value === "") return "";
 
     const numericValue = typeof value === "string" ? parseFloat(value) : value;
 
-    if (isNaN(numericValue))
-        return String(value);
+    if (isNaN(numericValue)) return String(value);
 
     return new Intl.NumberFormat("en-US").format(numericValue);
 }
@@ -89,8 +81,7 @@ export function formatNumber(value: number | string | null | undefined): string 
  * Capitalize first letter of each word
  */
 export function formatToTitleCase(text: string | null | undefined): string {
-    if (!text)
-        return "";
+    if (!text) return "";
 
     return text.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 }
@@ -99,8 +90,7 @@ export function formatToTitleCase(text: string | null | undefined): string {
  * Format boolean values to human-readable text
  */
 export function formatBoolean(value: boolean | string | null | undefined, options = { false: "No", true: "Yes" }): string {
-    if (value === null || value === undefined)
-        return "";
+    if (value === null || value === undefined) return "";
 
     const boolValue = typeof value === "string" ? value.toLowerCase() === "true" : Boolean(value);
 
@@ -111,8 +101,7 @@ export function formatBoolean(value: boolean | string | null | undefined, option
  * Format phone numbers to a standard format
  */
 export function formatPhoneNumber(phone: string | null | undefined): string {
-    if (!phone)
-        return "";
+    if (!phone) return "";
 
     // Remove all non-digits
     const cleaned = phone.replace(/\D/g, "");
@@ -130,11 +119,9 @@ export function formatPhoneNumber(phone: string | null | undefined): string {
  * Truncate long text with ellipsis
  */
 export function formatTruncatedText(text: string | null | undefined, maxLength = 50): string {
-    if (!text)
-        return "";
+    if (!text) return "";
 
-    if (text.length <= maxLength)
-        return text;
+    if (text.length <= maxLength) return text;
 
     return `${text.slice(0, maxLength)}...`;
 }

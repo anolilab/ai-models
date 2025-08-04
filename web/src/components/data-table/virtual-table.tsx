@@ -98,8 +98,7 @@ const TableHead = <TData extends ExportableData>({
     // Create a key that changes when selection state or sorting changes
     const sortingState = table
         .getState()
-        .sorting
-        .map((s) => `${s.id}-${s.desc}`)
+        .sorting.map((s) => `${s.id}-${s.desc}`)
         .join(",");
     const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
 
@@ -108,8 +107,7 @@ const TableHead = <TData extends ExportableData>({
             {table.getHeaderGroups().map((headerGroup) => {
                 const sortingState = table
                     .getState()
-                    .sorting
-                    .map((s) => `${s.id}-${s.desc}`)
+                    .sorting.map((s) => `${s.id}-${s.desc}`)
                     .join(",");
 
                 return (
@@ -169,8 +167,7 @@ const TableHeadRow = <TData extends ExportableData>({
             {headersToRender.map((header) => {
                 const sortingState = table
                     .getState()
-                    .sorting
-                    .map((s) => `${s.id}-${s.desc}`)
+                    .sorting.map((s) => `${s.id}-${s.desc}`)
                     .join(",");
 
                 return <TableHeadCell enableColumnResizing={enableColumnResizing} header={header} key={`${header.id}-${sortingState}`} table={table} />;
@@ -262,8 +259,7 @@ const TableBody = <TData extends ExportableData>({
                 // Include sorting state in key to force re-render when sorting changes
                 const sortingState = table
                     .getState()
-                    .sorting
-                    .map((s) => `${s.id}-${s.desc}`)
+                    .sorting.map((s) => `${s.id}-${s.desc}`)
                     .join(",");
                 const rowKey = enableRowSelection
                     ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}-${sortingState}`
@@ -309,7 +305,7 @@ const TableBodyRow = <TData extends ExportableData>({
             onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
             onFocus={(e) => {
                 // Remove focus from other rows
-                for (const el of document.querySelectorAll("[data-focused=\"true\"]")) {
+                for (const el of document.querySelectorAll('[data-focused="true"]')) {
                     el.removeAttribute("data-focused");
                 }
 
@@ -398,9 +394,9 @@ const VirtualizedTable = <TData extends ExportableData>({
             ref={tableContainerRef}
             style={{
                 height: virtualizationOptions.containerHeight,
-                ...enableStickyHeader && {
+                ...(enableStickyHeader && {
                     position: "relative",
-                },
+                }),
             }}
         >
             <BaseTable

@@ -34,16 +34,14 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
     // Update comparison fields when config changes
     useEffect(() => {
-        if (selectedModels.length === 0)
-            return;
+        if (selectedModels.length === 0) return;
 
         const fields = columnConfigs.filter((config) => config.visibility.comparison && comparisonConfig.enabledColumns.includes(config.id));
 
         setComparisonFields(fields);
     }, [columnConfigs, comparisonConfig.enabledColumns, selectedModels.length]);
 
-    if (selectedModels.length === 0)
-        return null;
+    if (selectedModels.length === 0) return null;
 
     const handleConfigSave = (enabledColumns: string[]) => {
         // Save to localStorage
@@ -153,19 +151,20 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
         return null;
     };
 
-    const getExportData = () => comparisonFields.map((field) => {
-        const row: any = {
-            Feature: field.displayName,
-        };
+    const getExportData = () =>
+        comparisonFields.map((field) => {
+            const row: any = {
+                Feature: field.displayName,
+            };
 
-        selectedModels.forEach((model) => {
-            const value = getFieldValue(model, field.id);
+            selectedModels.forEach((model) => {
+                const value = getFieldValue(model, field.id);
 
-            row[`${model.provider} - ${model.model}`] = value;
+                row[`${model.provider} - ${model.model}`] = value;
+            });
+
+            return row;
         });
-
-        return row;
-    });
 
     return (
         <Dialog onOpenChange={onClose} open={isOpen}>
@@ -188,13 +187,11 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                         <CollapsibleTrigger asChild>
                             <button className="hover:bg-muted/70 flex w-full items-center justify-between rounded-lg p-4 transition-colors">
                                 <h3 className="font-medium">Quick Summary</h3>
-                                {isSummaryExpanded
-                                    ? (
+                                {isSummaryExpanded ? (
                                     <ChevronDown className="text-muted-foreground h-4 w-4" />
-                                    )
-                                    : (
+                                ) : (
                                     <ChevronRight className="text-muted-foreground h-4 w-4" />
-                                    )}
+                                )}
                             </button>
                         </CollapsibleTrigger>
 
@@ -336,8 +333,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                                                     })
                                                     .filter((item) => item.numeric > 0);
 
-                                                if (values.length === 0)
-                                                    return null;
+                                                if (values.length === 0) return null;
 
                                                 const maxValue = Math.max(...values.map((item) => item.numeric));
                                                 const minValue = Math.min(...values.map((item) => item.numeric));

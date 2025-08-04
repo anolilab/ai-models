@@ -3,41 +3,33 @@ import type { Model } from "@anolilab/ai-model-registry";
 import type { ModelTableRow } from "@/hooks/use-table";
 
 const formatCost = (cost: number | null): string => {
-    if (cost === null || cost === undefined)
-        return "-";
+    if (cost === null || cost === undefined) return "-";
 
-    if (cost === 0)
-        return "Free";
+    if (cost === 0) return "Free";
 
-    if (cost < 0.001)
-        return `$${(cost * 1000000).toFixed(2)}/1M tokens`;
+    if (cost < 0.001) return `$${(cost * 1000000).toFixed(2)}/1M tokens`;
 
-    if (cost < 1)
-        return `$${(cost * 1000).toFixed(2)}/1K tokens`;
+    if (cost < 1) return `$${(cost * 1000).toFixed(2)}/1K tokens`;
 
     return `$${cost.toFixed(2)}/token`;
 };
 
 const formatBoolean = (value: boolean | null | undefined): string => {
-    if (value === null || value === undefined)
-        return "-";
+    if (value === null || value === undefined) return "-";
 
     return value ? "Yes" : "No";
 };
 
 const formatNumber = (value: number | null | undefined): string => {
-    if (value === null || value === undefined)
-        return "-";
+    if (value === null || value === undefined) return "-";
 
-    if (value === 0)
-        return "-";
+    if (value === 0) return "-";
 
     return value.toLocaleString();
 };
 
 const formatModalities = (modalities: string[]): string => {
-    if (!modalities || modalities.length === 0)
-        return "-";
+    if (!modalities || modalities.length === 0) return "-";
 
     return modalities.join(", ");
 };

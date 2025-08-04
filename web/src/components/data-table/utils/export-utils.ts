@@ -23,7 +23,7 @@ function convertToCSV<T extends ExportableData>(data: T[], headers: string[], co
             const mappedHeader = columnMapping[header] || header;
 
             // Escape quotes and wrap in quotes if contains comma
-            return mappedHeader.includes(",") || mappedHeader.includes("\"") ? `"${mappedHeader.replace(/"/g, "\"\"")}"` : mappedHeader;
+            return mappedHeader.includes(",") || mappedHeader.includes('"') ? `"${mappedHeader.replace(/"/g, '""')}"` : mappedHeader;
         });
 
         csvContent = `${headerRow.join(",")}\n`;
@@ -41,7 +41,7 @@ function convertToCSV<T extends ExportableData>(data: T[], headers: string[], co
             // Convert all values to string and properly escape for CSV
             const cellValue = value === null || value === undefined ? "" : String(value);
             // Escape quotes and wrap in quotes if contains comma
-            const escapedValue = cellValue.includes(",") || cellValue.includes("\"") ? `"${cellValue.replace(/"/g, "\"\"")}"` : cellValue;
+            const escapedValue = cellValue.includes(",") || cellValue.includes('"') ? `"${cellValue.replace(/"/g, '""')}"` : cellValue;
 
             return escapedValue;
         });
@@ -166,8 +166,7 @@ export async function exportData<T extends ExportableData>(
 
     try {
         // Start loading
-        if (onLoadingStart)
-            onLoadingStart();
+        if (onLoadingStart) onLoadingStart();
 
         // Show toast for long operations using consistent ID
         toast.loading("Preparing export...", {
@@ -235,7 +234,6 @@ export async function exportData<T extends ExportableData>(
         return false;
     } finally {
         // End loading regardless of result
-        if (onLoadingEnd)
-            onLoadingEnd();
+        if (onLoadingEnd) onLoadingEnd();
     }
 }

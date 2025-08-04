@@ -103,17 +103,16 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 
             if (part === "from") {
                 if (yearFrom !== undefined) {
-                    if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1)
-                        return;
+                    if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return;
 
                     const newMonth = new Date(yearFrom, newMonthIndex, 1);
-                    const from
-                        = numberOfMonths === 2
+                    const from =
+                        numberOfMonths === 2
                             ? startOfMonth(toDate(newMonth, { timeZone }))
                             : date?.from
-                                ? new Date(date.from.getFullYear(), newMonth.getMonth(), date.from.getDate())
-                                : newMonth;
-                    const to = numberOfMonths === 2 ? date.to ? endOfDay(toDate(date.to, { timeZone })) : endOfMonth(toDate(newMonth, { timeZone })) : from;
+                              ? new Date(date.from.getFullYear(), newMonth.getMonth(), date.from.getDate())
+                              : newMonth;
+                    const to = numberOfMonths === 2 ? (date.to ? endOfDay(toDate(date.to, { timeZone })) : endOfMonth(toDate(newMonth, { timeZone }))) : from;
 
                     if (from <= to) {
                         onDateSelect({ from, to });
@@ -122,8 +121,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                     }
                 }
             } else if (yearTo !== undefined) {
-                if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1)
-                    return;
+                if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return;
 
                 const newMonth = new Date(yearTo, newMonthIndex, 1);
                 const from = date.from ? startOfDay(toDate(date.from, { timeZone })) : startOfMonth(toDate(newMonth, { timeZone }));
@@ -143,13 +141,13 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
             if (part === "from") {
                 if (years.includes(newYear)) {
                     const newMonth = monthFrom ? new Date(newYear, monthFrom ? monthFrom.getMonth() : 0, 1) : new Date(newYear, 0, 1);
-                    const from
-                        = numberOfMonths === 2
+                    const from =
+                        numberOfMonths === 2
                             ? startOfMonth(toDate(newMonth, { timeZone }))
                             : date.from
-                                ? new Date(newYear, newMonth.getMonth(), date.from.getDate())
-                                : newMonth;
-                    const to = numberOfMonths === 2 ? date.to ? endOfDay(toDate(date.to, { timeZone })) : endOfMonth(toDate(newMonth, { timeZone })) : from;
+                              ? new Date(newYear, newMonth.getMonth(), date.from.getDate())
+                              : newMonth;
+                    const to = numberOfMonths === 2 ? (date.to ? endOfDay(toDate(date.to, { timeZone })) : endOfMonth(toDate(newMonth, { timeZone }))) : from;
 
                     if (from <= to) {
                         onDateSelect({ from, to });
@@ -317,9 +315,8 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                         >
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             <span>
-                                {date?.from
-                                    ? date.to
-                                        ? (
+                                {date?.from ? (
+                                    date.to ? (
                                         <>
                                             <span
                                                 className={cn("date-part", highlightedPart === "firstDay" && "font-bold underline")}
@@ -377,8 +374,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                                                 </>
                                             )}
                                         </>
-                                        )
-                                        : (
+                                    ) : (
                                         <>
                                             <span
                                                 className={cn("date-part", highlightedPart === "day" && "font-bold underline")}
@@ -406,10 +402,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                                                 {formatWithTz(date.from, "y")}
                                             </span>
                                         </>
-                                        )
-                                    : (
+                                    )
+                                ) : (
                                     <span>Select a date</span>
-                                    )}
+                                )}
                             </span>
                         </Button>
                     </PopoverTrigger>
