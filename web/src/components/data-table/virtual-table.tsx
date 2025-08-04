@@ -152,7 +152,7 @@ const TableBodyRow = <TData extends ExportableData>({
 
 const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>): JSX.Element => (
     <BaseTableHead
-        className="group/th bg-background relative flex p-2 text-left"
+        className="group/th bg-background relative text-left flex truncate px-4.5 py-2"
         colSpan={header.colSpan}
         data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
         scope="col"

@@ -28,6 +28,10 @@ export interface ColumnOption {
     value: string;
 }
 
+export type FilterSubjectProperties<TData, TType extends ColumnDataType> = {
+    column: Column<TData, TType>;
+};
+
 export interface ColumnOptionExtended extends ColumnOption {
     count?: number;
     selected?: boolean;
