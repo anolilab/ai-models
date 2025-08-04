@@ -41,32 +41,41 @@ const parseModelId = (modelName: string): string => {
     const lowerName = modelName.toLowerCase();
 
     // Handle different naming patterns
-    if (lowerName.includes("llama 4 scout"))
+    if (lowerName.includes("llama 4 scout")) {
         return "llama-4-scout-17b-16e-instruct";
+    }
 
-    if (lowerName.includes("llama 3.1 8b"))
+    if (lowerName.includes("llama 3.1 8b")) {
         return "llama3.1-8b";
+    }
 
-    if (lowerName.includes("llama 3.3 70b"))
+    if (lowerName.includes("llama 3.3 70b")) {
         return "llama-3.3-70b";
+    }
 
-    if (lowerName.includes("qwen 3 32b"))
+    if (lowerName.includes("qwen 3 32b")) {
         return "qwen-3-32b";
+    }
 
-    if (lowerName.includes("llama 4 maverick"))
+    if (lowerName.includes("llama 4 maverick")) {
         return "llama-4-maverick-17b-128e-instruct";
+    }
 
-    if (lowerName.includes("qwen 3 235b instruct"))
+    if (lowerName.includes("qwen 3 235b instruct")) {
         return "qwen-3-235b-a22b-instruct-2507";
+    }
 
-    if (lowerName.includes("qwen 3 235b thinking"))
+    if (lowerName.includes("qwen 3 235b thinking")) {
         return "qwen-3-235b-a22b-thinking-2507";
+    }
 
-    if (lowerName.includes("qwen 3 480b coder"))
+    if (lowerName.includes("qwen 3 480b coder")) {
         return "qwen-3-coder-480b";
+    }
 
-    if (lowerName.includes("deepseek r1 distill llama 70b"))
+    if (lowerName.includes("deepseek r1 distill llama 70b")) {
         return "deepseek-r1-distill-llama-70b";
+    }
 
     // Fallback: convert to kebab case
     return modelName

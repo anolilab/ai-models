@@ -17,7 +17,7 @@ import { VirtualizedTable } from "@/components/data-table/virtual-table";
 
 import type { ColumnConfig, FilterStrategy } from "./filter/core/types";
 import { useDataTableFilters } from "./filter/hooks/use-data-table-filters";
-import { createTSTFilters } from "./filter/integrations/tanstack-table";
+import { createTSTColumns, createTSTFilters } from "./filter/integrations/tanstack-table";
 import { DataTablePagination } from "./pagination";
 import { RegularTable } from "./regular-table";
 import DataTableToolbar from "./toolbar";
@@ -258,6 +258,7 @@ const DataTable = <TData extends ExportableData, TValue>({
 
     // Set up data-table-filter if filterColumns are provided
     const filterData = useMemo(() => data, [data]);
+
     const {
         actions,
         columns: filterColumnsData,
@@ -371,6 +372,29 @@ const DataTable = <TData extends ExportableData, TValue>({
             // Determine the new row selection value
             const newRowSelection = typeof updaterOrValue === "function" ? updaterOrValue(rowSelectionRef.current) : updaterOrValue;
 
+            // Check if we have a max selection limit and if we're in comparison mode
+            if (tableConfig.selectionMode === "comparison" && tableConfig.maxSelectionLimit > 0) {
+                const selectedKeys = Object.keys(newRowSelection);
+
+                if (selectedKeys.length > tableConfig.maxSelectionLimit) {
+                    // If we're exceeding the limit, keep only the first N items
+                    const limitedSelection: Record<string, boolean> = {};
+
+                    selectedKeys.slice(0, tableConfig.maxSelectionLimit).forEach((key) => {
+                        limitedSelection[key] = true;
+                    });
+
+                    // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
+                    if (tableConfig.enableRowVirtualization) {
+                        dispatch({ payload: new Set(Object.keys(limitedSelection)), type: "SET_SELECTED_ITEMS" });
+                    } else {
+                        dispatch({ payload: limitedSelection, type: "SET_SELECTED_ITEMS" });
+                    }
+
+                    return;
+                }
+            }
+
             // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
             if (tableConfig.enableRowVirtualization) {
                 dispatch({ payload: new Set(Object.keys(newRowSelection)), type: "SET_SELECTED_ITEMS" });
@@ -378,7 +402,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                 dispatch({ payload: newRowSelection, type: "SET_SELECTED_ITEMS" });
             }
         },
-        [tableConfig.enableRowVirtualization],
+        [tableConfig.enableRowVirtualization, tableConfig.maxSelectionLimit, tableConfig.selectionMode],
     );
 
     // Get selected items data - React Compiler optimized
@@ -424,19 +448,34 @@ const DataTable = <TData extends ExportableData, TValue>({
         // Only pass deselection handler if row selection is enabled
         const columnDefs = getColumns(tableConfig.enableRowSelection ? handleRowDeselection : null);
 
-        // Pre-compute column metadata for better performance
+        // Use data-table-filter's createTSTColumns when filter columns are provided
+        if (filterColumns && filterColumns.length > 0 && filterColumnsData && filterColumnsData.length > 0) {
+            const processedColumns = createTSTColumns({
+                columns: columnDefs,
+                configs: filterColumnsData,
+            });
+
+            return processedColumns.map((column) => {
+                return {
+                    ...column,
+                    meta: {
+                        ...column.meta,
+                        _cachedAccessor: "accessorFn" in column ? column.accessorFn : "accessorKey" in column ? column.accessorKey : undefined,
+                    },
+                };
+            });
+        }
+
         return columnDefs.map((column) => {
             return {
                 ...column,
-                // Add computed properties for better performance
                 meta: {
                     ...column.meta,
-                    // Cache the accessor function result for better performance
                     _cachedAccessor: "accessorFn" in column ? column.accessorFn : "accessorKey" in column ? column.accessorKey : undefined,
                 },
             };
         });
-    }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection]);
+    }, [getColumns, handleRowDeselection, tableConfig.enableRowSelection, filterColumns, filterColumnsData]);
 
     // Create event handlers using utility functions
 
@@ -598,6 +637,11 @@ const DataTable = <TData extends ExportableData, TValue>({
         }
     }, [dataItems.length, pagination.pageSize, pagination.page]);
 
+    // Clear selections when selection mode changes
+    useEffect(() => {
+        dispatch({ type: "CLEAR_SELECTIONS" });
+    }, [tableConfig.selectionMode]);
+
     // Initialize default column sizes when columns are available and no saved sizes exist
     useEffect(() => {
         initializeColumnSizes(columns, (value) => dispatch({ payload: value, type: "SET_COLUMN_SIZING" }));
@@ -642,7 +686,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                     transformFunction={exportConfig.transformFunction}
                 />
             )}
-            
+
             {tableConfig.enableRowVirtualization && (
                 <VirtualizedTable
                     className={classes.table}

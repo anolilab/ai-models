@@ -1,8 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
-        "lastUpdated": "2025-08-02T11:21:26.072Z",
-        "totalModels": 1576,
+        "lastUpdated": "2025-08-04T11:32:23.587Z",
+        "totalModels": 1611,
         "totalProviders": 33,
         "version": "0.0.0-development"
     },
@@ -3377,7 +3377,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 384000,
+                "context": 524288,
                 "output": null
             },
             "modalities": {
@@ -3411,7 +3411,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 384000,
+                "context": 524288,
                 "output": null
             },
             "modalities": {
@@ -3460,7 +3460,7 @@
             "providerId": "chutes",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
-            "releaseDate": null,
+            "releaseDate": "2025-02-13",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -3848,16 +3848,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": 87.75648,
+                "input": 448,
                 "inputCacheHit": null,
-                "output": 87.75648
+                "output": 448
             },
             "extendedThinking": false,
             "id": "moonshotai/Kimi-K2-Instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": 360000,
                 "output": null
             },
             "modalities": {
@@ -5013,9 +5013,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 30.240000000000002,
+                "input": 72.8,
                 "inputCacheHit": null,
-                "output": 30.240000000000002
+                "output": 72.8
             },
             "extendedThinking": false,
             "id": "unsloth/gemma-3-12b-it",
@@ -5064,6 +5064,40 @@
                 "output": ["text"]
             },
             "name": "gemma-3-27b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 25.76,
+                "inputCacheHit": null,
+                "output": 25.76
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-4b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-4b-it",
             "openWeights": false,
             "provider": "chutes",
             "providerDoc": "https://llm.chutes.ai/v1/models",
@@ -6543,7 +6577,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 7968000,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -6559,12 +6593,12 @@
             "providerNpm": "@ai-sdk/cloudflare",
             "reasoning": false,
             "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
+            "streamingSupported": null,
+            "structuredOutputs": false,
+            "supportsStructuredOutput": false,
+            "supportsTools": false,
             "temperature": true,
-            "toolCall": true,
+            "toolCall": false,
             "version": null,
             "vision": false,
             "icon": "cloudflare"
@@ -6974,7 +7008,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": null,
+                "context": 4096000,
                 "output": null
             },
             "modalities": {
@@ -6990,12 +7024,12 @@
             "providerNpm": "@ai-sdk/cloudflare",
             "reasoning": false,
             "releaseDate": null,
-            "streamingSupported": null,
-            "structuredOutputs": false,
-            "supportsStructuredOutput": false,
-            "supportsTools": false,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
             "temperature": true,
-            "toolCall": false,
+            "toolCall": true,
             "version": null,
             "vision": false,
             "icon": "cloudflare"
@@ -8534,6 +8568,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.000005,
+                "inputCacheHit": null,
+                "output": 0.00003
+            },
+            "extendedThinking": false,
+            "id": "allenai/olmOCR-7B-0725-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "olmOCR-7B-0725-FP8",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
@@ -8559,7 +8628,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -8594,7 +8663,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -16125,7 +16194,7 @@
             "extendedThinking": false,
             "id": "qwen-3-30b-a3b-instruct-2507",
             "knowledge": null,
-            "lastUpdated": "2025-07-30",
+            "lastUpdated": "2025-07-29",
             "limit": {
                 "context": null,
                 "output": null
@@ -16143,7 +16212,7 @@
             "providerModelsDevId": "modelscope",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
-            "releaseDate": "2025-07-28",
+            "releaseDate": "2025-07-29",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -16300,7 +16369,7 @@
             "extendedThinking": false,
             "id": "qwen-3-coder-480b-a35b-instruct",
             "knowledge": null,
-            "lastUpdated": "2025-07-30",
+            "lastUpdated": "2025-07-24",
             "limit": {
                 "context": null,
                 "output": null
@@ -16318,7 +16387,7 @@
             "providerModelsDevId": "modelscope",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
-            "releaseDate": "2025-07-23",
+            "releaseDate": "2025-07-22",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -17658,6 +17727,76 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-flash-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Flash-8B",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.00035,
                 "inputCacheHit": null,
                 "output": 0.0010500000000000002
@@ -17780,6 +17919,41 @@
                 "output": ["text"]
             },
             "name": "Gemini 1.5 Flash\n    gemini-1.5-flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Pro",
             "openWeights": false,
             "provider": "Google",
             "providerDoc": "https://ai.google.dev/models",
@@ -18008,6 +18182,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-0-flash-lite",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.0 Flash-Lite",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.0001,
                 "inputCacheHit": null,
                 "output": 0.0004
@@ -18060,6 +18269,41 @@
                 "output": ["text"]
             },
             "name": "Gemini 2.0 Flash Live\n    gemini-2.0-flash-live-001",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-0-flash-preview-image-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.0 Flash Preview Image Generation",
             "openWeights": false,
             "provider": "Google",
             "providerDoc": "https://ai.google.dev/models",
@@ -18218,6 +18462,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.0003,
                 "inputCacheHit": null,
                 "output": 0.0025
@@ -18235,6 +18514,41 @@
                 "output": ["text"]
             },
             "name": "Gemini 2.5 Flash\n    gemini-2.5-flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-lite",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash-Lite",
             "openWeights": false,
             "provider": "Google",
             "providerDoc": "https://ai.google.dev/models",
@@ -18323,6 +18637,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-native-audio",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash Native Audio",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.0003,
                 "inputCacheHit": null,
                 "output": 0.0025
@@ -18375,6 +18724,41 @@
                 "output": ["text"]
             },
             "name": "gemini-2.5-flash-preview-04-17",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-preview-tts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash Preview TTS",
             "openWeights": false,
             "provider": "Google",
             "providerDoc": "https://ai.google.dev/models",
@@ -18550,6 +18934,41 @@
                 "output": ["text"]
             },
             "name": "gemini-2.5-pro-preview-06-05",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-pro-preview-tts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Pro Preview TTS",
             "openWeights": false,
             "provider": "Google",
             "providerDoc": "https://ai.google.dev/models",
@@ -18923,462 +19342,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "approach",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "approach",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "cloud-dot-devsite-v-2-prod",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "cloud-dot-devsite-v2-prod",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "cross-product",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Cross-product",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-cloud-innovators-plus",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_cloud_innovators_plus",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-code-assist",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_code_assist",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-developer-subscriptions",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_developer_subscriptions",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-devpro-offers",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_devpro_offers",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-enterprise",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_enterprise",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-firebase-workspaces-card",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_firebase_workspaces_card",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-free-benefits",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_free_benefits",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-google-one-card",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_google_one_card",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-nvidia-credits-card",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_nvidia_credits_card",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "dev-pro-enable-vertex-credit-card",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "DevPro__enable_vertex_credit_card",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "filters-gemini",
+            "id": "code-gemma",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19389,10 +19353,10 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "filtersGemini",
-            "openWeights": false,
+            "name": "CodeGemma",
+            "openWeights": true,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19413,7 +19377,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "flash-gemini",
+            "id": "embeddings-for-text",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19424,10 +19388,45 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "FlashGemini",
+            "name": "Embeddings for Text",
             "openWeights": false,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00007000000000000001,
+                "inputCacheHit": null,
+                "output": 0.00007000000000000001
+            },
+            "extendedThinking": false,
+            "id": "gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19448,7 +19447,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "flash-lite-gemini",
+            "id": "gemma-2",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19459,10 +19458,10 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Flash-LiteGemini",
-            "openWeights": false,
+            "name": "Gemma 2",
+            "openWeights": true,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19483,7 +19482,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "flash-lite-vertex",
+            "id": "gemma-3",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19494,10 +19493,10 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Flash-LiteVertex",
-            "openWeights": false,
+            "name": "Gemma 3",
+            "openWeights": true,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19518,392 +19517,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "image-prompt",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "imagePrompt",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "improve",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "improve",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "misc-feature-flags-enable-project-variables",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "MiscFeatureFlags__enable_project_variables",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "model-prompting",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "modelPrompting",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "monitoring-process",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "monitoringProcess",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "predictions-prompt",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "predictionsPrompt",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "pro-gemini",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "ProGemini",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "profiles-enable-profile-collections",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Profiles__enable_profile_collections",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "profiles-enable-public-developer-profiles",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Profiles__enable_public_developer_profiles",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "profiles-enable-purchase-prompts",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Profiles__enable_purchase_prompts",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "profiles-require-profile-eligibility-for-signin",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Profiles__require_profile_eligibility_for_signin",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "quickstart-vertex",
+            "id": "gemma-3-n",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19914,10 +19528,10 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "quickstartVertex",
-            "openWeights": false,
+            "name": "Gemma 3n",
+            "openWeights": true,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19938,7 +19552,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "search-scope-to-project-tenant",
+            "id": "imagen-3-for-editing-and-customization",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19947,12 +19561,187 @@
             },
             "modalities": {
                 "input": ["text", "image"],
-                "output": ["text"]
+                "output": ["image", "video"]
             },
-            "name": "Search__scope_to_project_tenant",
+            "name": "Imagen 3 for Editing and Customization",
             "openWeights": false,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-fast-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Fast Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-fast-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Fast Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-ultra-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Ultra Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19973,7 +19762,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "solved-my-problem",
+            "id": "imagen-for-captioning-&-vqa",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -19982,12 +19771,12 @@
             },
             "modalities": {
                 "input": ["text", "image"],
-                "output": ["text"]
+                "output": ["image", "video"]
             },
-            "name": "solvedMyProblem",
+            "name": "Imagen for Captioning & VQA",
             "openWeights": false,
             "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-vertex",
             "providerModelsDevId": "google-vertex",
@@ -19996,7 +19785,7 @@
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
-            "toolCall": true,
+            "toolCall": false,
             "vision": true,
             "icon": "google"
         },
@@ -20008,42 +19797,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "values-prompt",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "valuesPrompt",
-            "openWeights": false,
-            "provider": "Google Vertex",
-            "providerDoc": "https://cloud.google.com/vertex-ai/docs/generative-ai",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex",
-            "providerModelsDevId": "google-vertex",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "4-claude",
+            "id": "med-gemma",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -20054,14 +19808,14 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "4Claude",
-            "openWeights": false,
-            "provider": "Google Vertex Anthropic",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude",
+            "name": "MedGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex-anthropic",
-            "providerModelsDevId": "google-vertex-anthropic",
-            "providerNpm": "@ai-sdk/google-vertex/anthropic",
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
             "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
@@ -20078,7 +19832,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "haiku-claude",
+            "id": "multimodal-embeddings",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -20089,14 +19843,14 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "HaikuClaude",
+            "name": "Multimodal Embeddings",
             "openWeights": false,
-            "provider": "Google Vertex Anthropic",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude",
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex-anthropic",
-            "providerModelsDevId": "google-vertex-anthropic",
-            "providerNpm": "@ai-sdk/google-vertex/anthropic",
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
             "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
@@ -20104,6 +19858,423 @@
             "toolCall": false,
             "vision": false,
             "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pali-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "PaliGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "shield-gemma-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "ShieldGemma 2",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "t-5-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "T5Gemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tx-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TxGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 2",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Fast",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-fast-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Fast preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "jamba-1-5-large",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Large",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/ai21/jamba-1-5-large",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-ai21-labs",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "jamba-1-5-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Mini",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/ai21/jamba-1-5-mini",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-ai21-labs",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "claude-3-5-haiku",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Haiku",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/haiku-3-5",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false
         },
         {
             "attachment": false,
@@ -20113,7 +20284,7 @@
                 "output": null
             },
             "extendedThinking": true,
-            "id": "sonnet-claude",
+            "id": "claude-3-5-sonnet",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -20124,21 +20295,88 @@
                 "input": ["text", "image"],
                 "output": ["text"]
             },
-            "name": "SonnetClaude",
+            "name": "Claude 3.5 Sonnet",
             "openWeights": false,
-            "provider": "Google Vertex Anthropic",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude",
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex-anthropic",
-            "providerModelsDevId": "google-vertex-anthropic",
-            "providerNpm": "@ai-sdk/google-vertex/anthropic",
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
             "reasoning": true,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
-            "vision": true,
-            "icon": "google"
+            "vision": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-3-5-sonnet-v-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Sonnet v2",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5-v2",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-3-7-sonnet",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.7 Sonnet",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-7",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true
         },
         {
             "attachment": false,
@@ -20148,7 +20386,7 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "v-2-claude",
+            "id": "claude-3-haiku",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
@@ -20159,21 +20397,156 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "v2Claude",
+            "name": "Claude 3 Haiku",
             "openWeights": false,
-            "provider": "Google Vertex Anthropic",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude",
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/haiku-3",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-vertex-anthropic",
-            "providerModelsDevId": "google-vertex-anthropic",
-            "providerNpm": "@ai-sdk/google-vertex/anthropic",
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
             "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
-            "vision": false,
-            "icon": "google"
+            "vision": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-(25-01)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral (25.01)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/codestral-2501",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-(24-11)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large (24.11)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-large",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": "2024-11-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-ocr-(25-05)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral OCR (25.05)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-ocr",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-1-(25-03)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.1 (25.03)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-small-3-1",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false
         },
         {
             "attachment": false,
@@ -21670,6 +22043,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "openai-community-gpt-2-large",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openai-community/gpt2-large",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "qwen-qwen-2-5-14b-instruct",
             "knowledge": null,
             "lastUpdated": null,
@@ -22071,7 +22479,7 @@
             "provider": "inception",
             "providerDoc": "https://platform.inceptionlabs.ai/docs",
             "providerEnv": ["INCEPTION_API_KEY"],
-            "providerId": "inception/inceptionlabs-ai",
+            "providerId": "inception",
             "providerModelsDevId": "inception",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -22106,7 +22514,7 @@
             "provider": "inception",
             "providerDoc": "https://platform.inceptionlabs.ai/docs",
             "providerEnv": ["INCEPTION_API_KEY"],
-            "providerId": "inception/inceptionlabs-ai",
+            "providerId": "inception",
             "providerModelsDevId": "inception",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -24437,7 +24845,7 @@
             "extendedThinking": false,
             "id": "bge-m-3",
             "knowledge": null,
-            "lastUpdated": "2024-01-31",
+            "lastUpdated": "2024-09-14",
             "limit": {
                 "context": null,
                 "output": null
@@ -24455,7 +24863,7 @@
             "providerModelsDevId": "modelscope",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
-            "releaseDate": "2024-01-31",
+            "releaseDate": "2024-09-13",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -25240,6 +25648,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "cv-anytext-2",
+            "knowledge": null,
+            "lastUpdated": "2025-03-03",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "cv_anytext2",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-02-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "cv-anytext-text-generation-editing",
             "knowledge": null,
             "lastUpdated": "2024-01-12",
@@ -25506,6 +25949,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2022-08-03",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "cv-hrnetw-48-human-wholebody-keypoint-image",
+            "knowledge": null,
+            "lastUpdated": "2023-05-17",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "cv_hrnetw48_human-wholebody-keypoint_image",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2022-09-24",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -26780,6 +27258,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "deepseek-r-1-distill-qwen-32-b-gptq-int-4",
+            "knowledge": null,
+            "lastUpdated": "2025-03-11",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-distill-qwen-32b-gptq-int4",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "deepseek-vl-2",
             "knowledge": null,
             "lastUpdated": "2025-02-26",
@@ -26922,7 +27435,7 @@
             "extendedThinking": false,
             "id": "dots-ocr",
             "knowledge": null,
-            "lastUpdated": "2025-07-31",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -27795,6 +28308,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "flux-1-krea-dev-comfy-ui",
+            "knowledge": null,
+            "lastUpdated": "2025-08-01",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "FLUX.1-Krea-dev_ComfyUI",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-08-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "flux-1-krea-dev-gguf",
             "knowledge": null,
             "lastUpdated": "2025-07-31",
@@ -28376,6 +28924,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2025-07-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "glm-4-5-air-gptq-int-4-int-8-mix",
+            "knowledge": null,
+            "lastUpdated": "2025-07-30",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-Air-GPTQ-Int4-Int8Mix",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-30",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -29125,6 +29708,76 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "hunyuan-0-5b-instruct",
+            "knowledge": null,
+            "lastUpdated": "2025-08-04",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hunyuan-0.5B-Instruct",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-30",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "hunyuan-1-8b-instruct",
+            "knowledge": null,
+            "lastUpdated": "2025-08-04",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hunyuan-1.8B-Instruct",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-30",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "hunyuan-3-d-2-1",
             "knowledge": null,
             "lastUpdated": "2025-07-30",
@@ -29335,6 +29988,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "illustrious-xl",
+            "knowledge": null,
+            "lastUpdated": "2025-05-17",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "Illustrious-XL",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-03-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "index-anisora",
             "knowledge": null,
             "lastUpdated": "2025-07-11",
@@ -29442,7 +30130,7 @@
             "extendedThinking": false,
             "id": "intern-s1",
             "knowledge": null,
-            "lastUpdated": "2025-07-28",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -29477,7 +30165,7 @@
             "extendedThinking": false,
             "id": "intern-s1-fp8",
             "knowledge": null,
-            "lastUpdated": "2025-07-29",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -31225,6 +31913,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "monkey-ocr-3b-0709",
+            "knowledge": null,
+            "lastUpdated": "2025-07-09",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "MonkeyOCR-3B-0709",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-09",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "mplug-image-captioning-coco-base-zh",
             "knowledge": null,
             "lastUpdated": "2022-12-07",
@@ -32137,7 +32860,7 @@
             "extendedThinking": false,
             "id": "nunchaku-flux-1-dev",
             "knowledge": null,
-            "lastUpdated": "2025-08-01",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -32172,7 +32895,7 @@
             "extendedThinking": false,
             "id": "nunchaku-flux-1-fill-dev",
             "knowledge": null,
-            "lastUpdated": "2025-08-01",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -32242,7 +32965,7 @@
             "extendedThinking": false,
             "id": "nunchaku-flux-1-krea-dev",
             "knowledge": null,
-            "lastUpdated": "2025-08-01",
+            "lastUpdated": "2025-08-04",
             "limit": {
                 "context": null,
                 "output": null
@@ -32917,6 +33640,41 @@
                 "output": ["text"]
             },
             "name": "QwQ-32B",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-03-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qw-q-32b-awq",
+            "knowledge": null,
+            "lastUpdated": "2025-03-11",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QwQ-32B-AWQ",
             "openWeights": true,
             "provider": "ModelScope",
             "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
@@ -33920,6 +34678,76 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "qwen-3-0-6b-gptq-int-8",
+            "knowledge": null,
+            "lastUpdated": "2025-08-04",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-0.6B-GPTQ-Int8",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-05-08",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-3-0-6b-mlx-4-bit",
+            "knowledge": null,
+            "lastUpdated": "2025-07-29",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-0.6B-MLX-4bit",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-05-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "qwen-3-14b-awq",
             "knowledge": null,
             "lastUpdated": "2025-05-21",
@@ -34465,7 +35293,7 @@
             "providerModelsDevId": "modelscope",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": true,
-            "releaseDate": "2025-07-25",
+            "releaseDate": "2025-07-26",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -34842,6 +35670,41 @@
                 "output": ["text"]
             },
             "name": "Qwen3-30B-A3B-Instruct-2507-GPTQ-Int8",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-30",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-3-30b-a3b-instruct-2507-int-4-w4a16",
+            "knowledge": null,
+            "lastUpdated": "2025-07-31",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-30B-A3B-Instruct-2507-Int4-W4A16",
             "openWeights": true,
             "provider": "ModelScope",
             "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
@@ -35495,6 +36358,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "qwen-3-coder-30b-a3b-instruct-awq",
+            "knowledge": null,
+            "lastUpdated": "2025-08-01",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-30B-A3B-Instruct-AWQ",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-08-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "qwen-3-coder-30b-a3b-instruct-fp8",
             "knowledge": null,
             "lastUpdated": "2025-08-01",
@@ -35812,7 +36710,7 @@
             "extendedThinking": false,
             "id": "qwen-3-embedding-0-6b",
             "knowledge": null,
-            "lastUpdated": "2025-07-08",
+            "lastUpdated": "2025-08-02",
             "limit": {
                 "context": null,
                 "output": null
@@ -35917,7 +36815,7 @@
             "extendedThinking": false,
             "id": "qwen-3-embedding-4b-gguf",
             "knowledge": null,
-            "lastUpdated": "2025-07-15",
+            "lastUpdated": "2025-08-03",
             "limit": {
                 "context": null,
                 "output": null
@@ -35952,7 +36850,7 @@
             "extendedThinking": false,
             "id": "qwen-3-embedding-8b",
             "knowledge": null,
-            "lastUpdated": "2025-07-08",
+            "lastUpdated": "2025-08-02",
             "limit": {
                 "context": null,
                 "output": null
@@ -36092,7 +36990,7 @@
             "extendedThinking": false,
             "id": "qwen-3-reranker-8b",
             "knowledge": null,
-            "lastUpdated": "2025-07-08",
+            "lastUpdated": "2025-08-02",
             "limit": {
                 "context": null,
                 "output": null
@@ -36685,6 +37583,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "skywork-uni-pic-1-5b",
+            "knowledge": null,
+            "lastUpdated": "2025-08-04",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "Skywork-UniPic-1.5B",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "small-thinker-21ba3b-instruct",
             "knowledge": null,
             "lastUpdated": "2025-08-01",
@@ -36706,6 +37639,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2025-07-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "small-thinker-21ba3b-instruct-gguf",
+            "knowledge": null,
+            "lastUpdated": "2025-07-30",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "SmallThinker-21BA3B-Instruct-GGUF",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-27",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -37630,6 +38598,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "speech-paraformer-large-contextual-asr-nat-zh-cn-16-k-common-vocab-8404-onnx",
+            "knowledge": null,
+            "lastUpdated": "2024-09-25",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "speech_paraformer-large-contextual_asr_nat-zh-cn-16k-common-vocab8404-onnx",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2023-08-18",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "speech-paraformer-large-vad-punc-asr-nat-zh-cn-16-k-common-vocab-8404-onnx",
             "knowledge": null,
             "lastUpdated": "2024-09-25",
@@ -38015,6 +39018,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "stable-diffusion-2-1-base",
+            "knowledge": null,
+            "lastUpdated": "2024-12-03",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "stable-diffusion-2-1-base",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-12-03",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "stable-diffusion-3-5-large",
             "knowledge": null,
             "lastUpdated": "2025-02-26",
@@ -38071,6 +39109,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2024-10-22",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "stable-diffusion-3-5-medium",
+            "knowledge": null,
+            "lastUpdated": "2025-02-26",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "stable-diffusion-3.5-medium",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-10-29",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -38192,7 +39265,7 @@
             "extendedThinking": false,
             "id": "step-3",
             "knowledge": null,
-            "lastUpdated": "2025-08-01",
+            "lastUpdated": "2025-08-02",
             "limit": {
                 "context": null,
                 "output": null
@@ -39345,6 +40418,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "wan-2-2-t2v-a14b-bf16",
+            "knowledge": null,
+            "lastUpdated": "2025-07-30",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan2.2-T2V-A14B-BF16",
+            "openWeights": true,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-07-30",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "wan-2-2-t2v-a14b-diffusers",
             "knowledge": null,
             "lastUpdated": "2025-07-29",
@@ -39382,7 +40490,7 @@
             "extendedThinking": false,
             "id": "wan-2-2-t2v-a14b-gguf",
             "knowledge": null,
-            "lastUpdated": "2025-07-29",
+            "lastUpdated": "2025-07-28",
             "limit": {
                 "context": null,
                 "output": null
@@ -39627,7 +40735,7 @@
             "extendedThinking": false,
             "id": "wan-video-comfy-fp-8-scaled",
             "knowledge": null,
-            "lastUpdated": "2025-07-30",
+            "lastUpdated": "2025-08-03",
             "limit": {
                 "context": null,
                 "output": null
@@ -39716,6 +40824,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2025-07-10",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "modelscope"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "x-bai-o-4",
+            "knowledge": null,
+            "lastUpdated": "2025-08-01",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "XBai-o4",
+            "openWeights": false,
+            "provider": "ModelScope",
+            "providerDoc": "https://modelscope.cn/docs/model-service/API-Inference/intro",
+            "providerEnv": ["MODELSCOPE_API_KEY"],
+            "providerId": "model-scope",
+            "providerModelsDevId": "modelscope",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-08-01",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -43690,7 +44833,7 @@
             "lastUpdated": "2025-04-30",
             "limit": {
                 "context": 32000,
-                "output": null
+                "output": 32000
             },
             "modalities": {
                 "input": ["text"],
@@ -46575,6 +47718,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "cognitivecomputations/dolphin3.0-mistral-24b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Dolphin3.0 Mistral 24B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-02-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.3,
                 "inputCacheHit": null,
                 "output": 0.9
@@ -48334,7 +49512,7 @@
             "knowledge": null,
             "lastUpdated": "2025-03-24",
             "limit": {
-                "context": 128000,
+                "context": 16384,
                 "output": null
             },
             "modalities": {
@@ -50290,6 +51468,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "tngtech/deepseek-r1t-chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TNG: DeepSeek R1T Chimera",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-04-27",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "tngtech/deepseek-r1t-chimera:free",
             "knowledge": null,
             "lastUpdated": "2025-04-27",
@@ -50749,7 +51962,7 @@
             "knowledge": null,
             "lastUpdated": "2025-07-25",
             "limit": {
-                "context": 131072,
+                "context": 128000,
                 "output": 96000
             },
             "modalities": {
@@ -52235,7 +53448,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52270,7 +53483,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52305,7 +53518,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52340,7 +53553,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52375,7 +53588,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52410,7 +53623,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52445,7 +53658,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52480,7 +53693,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52515,7 +53728,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52550,7 +53763,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52585,7 +53798,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52620,7 +53833,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52655,7 +53868,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52690,7 +53903,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52725,7 +53938,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52760,7 +53973,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52795,7 +54008,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52830,7 +54043,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52865,7 +54078,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52900,7 +54113,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52935,7 +54148,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -52970,7 +54183,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53005,7 +54218,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53040,7 +54253,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53075,7 +54288,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53110,7 +54323,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53145,7 +54358,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53180,7 +54393,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53215,7 +54428,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53250,7 +54463,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53285,7 +54498,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53320,7 +54533,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53355,7 +54568,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53390,7 +54603,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53425,7 +54638,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53460,7 +54673,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53495,7 +54708,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53530,7 +54743,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53565,7 +54778,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53600,7 +54813,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53635,7 +54848,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53670,7 +54883,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53705,7 +54918,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53740,7 +54953,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53775,7 +54988,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53810,7 +55023,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53845,7 +55058,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53880,7 +55093,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53915,7 +55128,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53950,7 +55163,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -53985,7 +55198,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54020,7 +55233,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54055,7 +55268,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54090,7 +55303,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54125,7 +55338,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54144,14 +55357,14 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
-                "output": 96000
+                "context": 131072,
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "GLM 4.5",
+            "name": "GLM-4.5",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -54160,7 +55373,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -54195,7 +55408,7 @@
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
-            "releaseDate": "2025-08-02",
+            "releaseDate": "2025-08-04",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

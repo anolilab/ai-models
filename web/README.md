@@ -17,6 +17,7 @@ A modern, high-performance web application built with TanStack Start, React 19, 
 ## 🛠 Tech Stack
 
 ### Core
+
 - **React 19** - Latest React with React Compiler
 - **TanStack Router** - Type-safe routing with file-based routes
 - **TanStack Start** - Full-stack React framework
@@ -24,6 +25,7 @@ A modern, high-performance web application built with TanStack Start, React 19, 
 - **Vite** - Fast build tool and dev server
 
 ### UI & Styling
+
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Beautiful icons
@@ -31,6 +33,7 @@ A modern, high-performance web application built with TanStack Start, React 19, 
 - **Sonner** - Toast notifications
 
 ### Data & State
+
 - **TanStack React Query** - Server state management
 - **TanStack React Table** - Powerful data table
 - **TanStack React Virtual** - Virtual scrolling for performance
@@ -38,6 +41,7 @@ A modern, high-performance web application built with TanStack Start, React 19, 
 - **Zod** - Schema validation
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **Playwright** - E2E testing
@@ -81,9 +85,10 @@ web/
 ### Installation
 
 1. **Start the development server**
-   ```bash
-   pnpm run dev
-   ```
+
+    ```bash
+    pnpm run dev
+    ```
 
 2. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
@@ -91,6 +96,7 @@ web/
 ## 📝 Available Scripts
 
 ### Development
+
 ```bash
 # Start development server
 pnpm dev
@@ -100,6 +106,7 @@ pnpm dev:e2e
 ```
 
 ### Building
+
 ```bash
 # Build for production
 pnpm build
@@ -109,6 +116,7 @@ pnpm serve
 ```
 
 ### Linting & Formatting
+
 ```bash
 # Run ESLint
 pnpm lint:eslint
@@ -127,6 +135,7 @@ pnpm lint:types
 ```
 
 ### Testing
+
 ```bash
 # Run E2E tests
 pnpm test:e2e
@@ -286,4 +295,4 @@ For support and questions:
 
 - **Issues**: [GitHub Issues](https://github.com/your-org/ai-models/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/your-org/ai-models/discussions)
-- **Documentation**: [Project Wiki](https://github.com/your-org/ai-models/wiki) 
+- **Documentation**: [Project Wiki](https://github.com/your-org/ai-models/wiki)

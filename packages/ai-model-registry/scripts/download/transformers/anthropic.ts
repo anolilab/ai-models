@@ -3,34 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-
-const parsePrice = (priceString: string): number | null => {
-    if (!priceString || priceString === "N/A" || priceString === "Free") {
-        return null;
-    }
-
-    const match = priceString.match(/\$?([\d,]+\.?\d*)/);
-
-    if (match) {
-        return Number.parseFloat(match[1].replaceAll(",", ""));
-    }
-
-    return null;
-};
-
-const parseTokenLimit = (limitString: string): number | null => {
-    if (!limitString || limitString === "N/A") {
-        return null;
-    }
-
-    const match = limitString.match(/([\d,]+)/);
-
-    if (match) {
-        return Number.parseInt(match[1].replaceAll(",", ""), 10);
-    }
-
-    return null;
-};
+import { parsePrice, parseTokenLimit } from "../utils/index.js";
 
 /**
  * Transforms Anthropic model data from their documentation page into the normalized structure.

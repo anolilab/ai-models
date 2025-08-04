@@ -86,8 +86,9 @@ export const fetchLlamaModels = async (): Promise<Model[]> => {
                 .map((row) => {
                     const cells = row.querySelectorAll("td");
 
-                    if (cells.length < 4)
+                    if (cells.length < 4) {
                         return null;
+                    }
 
                     const modelLink = cells[0].querySelector("a");
                     const id = modelLink?.getAttribute("href")?.replace("#", "") || "";

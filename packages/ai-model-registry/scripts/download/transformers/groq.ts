@@ -3,55 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-
-/**
- * Parses a token limit string and converts to number
- * @param limitStr Limit string in format like "131,072" or "8,192"
- * @returns Parsed limit as number or null if parsing fails
- * @example
- * parseTokenLimit("131,072") // Returns 131072
- * parseTokenLimit("8,192") // Returns 8192
- */
-const parseTokenLimit = (limitString: string): number | null => {
-    if (!limitString || limitString === "N/A")
-        return null;
-
-    // Remove commas and parse
-    const cleanString = limitString.replace(/,/g, "");
-    const match = cleanString.match(/(\d+(?:\.\d+)?)\s*K/i);
-
-    if (match) {
-        return Math.round(Number.parseFloat(match[1]) * 1000);
-    }
-
-    // Try to match just numbers
-    const numberMatch = cleanString.match(/(\d+)/);
-
-    if (numberMatch) {
-        return Number.parseInt(numberMatch[1], 10);
-    }
-
-    return null;
-};
-
-/**
- * Parses a price string and converts to number
- * @param priceString Price string in format like "$0.05" or "$0.10"
- * @returns Parsed price as number or null if parsing fails
- */
-const parsePrice = (priceString: string): number | null => {
-    if (!priceString || priceString === "N/A" || priceString === "Free" || priceString === "Varies") {
-        return null;
-    }
-
-    const match = priceString.match(/\$?([\d,]+\.?\d*)/);
-
-    if (match) {
-        return Number.parseFloat(match[1].replace(/,/g, ""));
-    }
-
-    return null;
-};
+import { parsePrice, parseTokenLimit } from "../utils/index.js";
 
 /**
  * Determines model capabilities based on model name and details

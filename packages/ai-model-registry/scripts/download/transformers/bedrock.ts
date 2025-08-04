@@ -14,17 +14,21 @@ const parseInputModalities = (modalitiesText: string): string[] => {
     const inputMods: string[] = [];
     const text = modalitiesText.toLowerCase();
 
-    if (text.includes("text"))
+    if (text.includes("text")) {
         inputMods.push("text");
+    }
 
-    if (text.includes("image"))
+    if (text.includes("image")) {
         inputMods.push("image");
+    }
 
-    if (text.includes("audio"))
+    if (text.includes("audio")) {
         inputMods.push("audio");
+    }
 
-    if (text.includes("video"))
+    if (text.includes("video")) {
         inputMods.push("video");
+    }
 
     return inputMods;
 };

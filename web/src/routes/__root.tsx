@@ -83,10 +83,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         const fullPath = currentMatch?.fullPath?.startsWith("/") ? currentMatch.fullPath.slice(1) : currentMatch?.fullPath || "";
         const canonicalUrl = `${siteBaseUrl}${fullPath}`;
 
-        const {
-            links: generatedLinks,
-            meta: generatedMeta,
-        } = seo({
+        const { links: generatedLinks, meta: generatedMeta } = seo({
             description: defaultDescription,
             image: defaultOgImage,
             keywords: defaultKeywords,

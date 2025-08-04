@@ -25,8 +25,9 @@ const scrapeFireworksModelsPage = async (): Promise<Model[]> => {
             // Extract model name
             const modelName = $row.find("p.font-bold").first().text().trim();
 
-            if (!modelName)
+            if (!modelName) {
                 return;
+            }
 
             console.log(`[Fireworks AI] Found model: ${modelName}`);
 
