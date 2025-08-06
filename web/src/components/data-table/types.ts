@@ -1,59 +1,74 @@
-export interface TableConfig {
-    // Allow exporting new columns created by transform function
-    // When true (default): Export includes visible columns + new columns from transform function
-    // When false: Export only includes visible columns (hidden columns always excluded)
-    // Note: Hidden columns are ALWAYS excluded regardless of this setting
-    allowExportNewColumns: boolean;
+// Basic type definitions for Material React Table
+// All MRT_ prefixes removed as part of Phase 4 cleanup
 
-    // Enable/disable clicking a row to select it
-    enableClickRowSelect: boolean;
+export type RowData = Record<string, any>;
 
-    // Enable/disable column filters
-    enableColumnFilters: boolean;
+export type TableInstance<TData extends RowData> = any;
 
-    // Enable/disable column resizing
-    enableColumnResizing: boolean;
+export type TableOptions<TData extends RowData> = any;
 
-    // Enable/disable column visibility options
-    enableColumnVisibility: boolean;
+export type DefinedTableOptions<TData extends RowData> = any;
 
-    // Enable/disable data export
-    enableExport: boolean;
+export type StatefulTableOptions<TData extends RowData> = any;
 
-    // Enable/disable keyboard navigation
-    enableKeyboardNavigation: boolean;
+export type Row<TData extends RowData> = any;
 
-    // Enable/disable pagination
-    enablePagination: boolean;
+export type Column<TData extends RowData> = any;
 
-    // Enable/disable row selection
-    enableRowSelection: boolean;
+export type ColumnDef<TData extends RowData> = any;
 
-    // Enable row virtualization for large datasets
-    enableRowVirtualization: boolean;
+export type Header<TData extends RowData> = any;
 
-    // Enable/disable static header (header stays fixed while scrolling)
-    enableStickyHeader: boolean;
+export type Cell<TData extends RowData, TValue = any> = any;
 
-    // Enable/disable toolbar
-    enableToolbar: boolean;
+export type CellValue = any;
 
-    // Estimated row height for virtualization (in pixels)
-    estimatedRowHeight: number;
+export type TableState = any;
 
-    // Maximum number of items that can be selected (for comparison features)
-    // Set to 0 or undefined to disable the limit
-    maxSelectionLimit: number;
+export type ColumnOrderState = any;
 
-    // Selection mode for the table
-    // "comparison": Limited selection for model comparison (default: 5 items)
-    // "export": Unlimited selection for data export
-    selectionMode: "comparison" | "export";
+export type ColumnSizingInfoState = any;
 
-    // Control the size of buttons and inputs throughout the table
-    // sm: small, default: standard, lg: large
-    size: "sm" | "default" | "lg";
+export type ColumnFilterFnsState = any;
 
-    // Number of items to render outside the visible area (overscan)
-    virtualizationOverscan: number;
-}
+export type GroupingState = any;
+
+export type PaginationState = any;
+
+export type SortingState = any;
+
+export type DensityState = any;
+
+export type FilterOption = any;
+
+export type InternalFilterOption = any;
+
+export type Updater<T> = any;
+
+export type DefinedColumnDef<TData extends RowData> = any;
+
+export type DisplayColumnDef<TData extends RowData> = any;
+
+export type GroupColumnDef<TData extends RowData> = any;
+
+export type ColumnHelper<TData extends RowData> = any;
+
+export type DisplayColumnIds = any;
+
+export type Localization = any;
+
+export type Theme = any;
+
+export type ColumnVirtualizer = any;
+
+export type RowVirtualizer = any;
+
+export type VirtualItem = any;
+
+export type DropdownOption = any;
+
+export type Xor<T, U> = T extends U ? never : T;
+
+// Placeholder types for missing dependencies
+export type DefaultIcons = any;
+export type LocalizationEN = any;

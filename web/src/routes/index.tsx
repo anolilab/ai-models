@@ -1,18 +1,25 @@
 import { getAllModels } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
+import type { Table } from "@tanstack/react-table";
 import { BarChart3, Copy, MoreHorizontal, Trash2 } from "lucide-react";
 import { useCallback, useState } from "react";
 
 import AnolilabLogo from "@/assets/images/anolilab_text.svg?react";
 import ModelComparisonDialog from "@/components/comparison/model-comparison-dialog";
-import DataTable from "@/components/data-table/data-table";
-import SelectionModeToggle from "@/components/data-table/selection-mode-toggle";
+import { DataTable, DataTableActionBar, useDataTable } from "@/components/data-table";
 import HowToUseDialog from "@/components/how-to-use-dialog";
+import SelectionModeToggle from "@/components/selection-mode-toggle";
 import SkeletonTable from "@/components/skeleton-table";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import useIsMobile from "@/hooks/use-is-mobile";
 import { useModelTable, useSelectionMode, useTableHeight } from "@/hooks/use-table";
+
+const ActionBar = <TData,>({ table }: { table: Table<TData> }) => {
+    const { rows } = table.getFilteredSelectedRowModel();
+
+    return <DataTableActionBar table={table} visible={rows.length > 0}></DataTableActionBar>;
+};
 
 const HomeComponent = () => {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -23,7 +30,7 @@ const HomeComponent = () => {
 
     const { getValidationMessage, handleModeChange, maxSelectionLimit, selectionMode } = useSelectionMode();
 
-    const { columns, exportConfig, filterConfig, tableData } = useModelTable(allModels, {
+    const { columns, filterConfig, tableData } = useModelTable(allModels, {
         enableColumnHiding: true,
         enableColumnResizing: false,
         enableFiltering: true,
@@ -102,6 +109,57 @@ const HomeComponent = () => {
         [selectionMode, handleModeChange, getValidationMessage],
     );
 
+    // Configure the new DataTable with features
+    const { features, table } = useDataTable({
+        columns,
+        data: tableData,
+        features: {
+            clickToCopy: {
+                enabled: false,
+            },
+            columnResizing: {
+                enabled: false, // Disabled as per original config
+            },
+            filters: {
+                columns: filterConfig,
+                enabled: true,
+                strategy: "client",
+            },
+            keyboardNavigation: {
+                enableArrowKeys: true,
+                enabled: true,
+                enableEnterKey: true,
+                enableTabKey: true,
+            },
+            pagination: {
+                enabled: false, // Disabled as per original config
+            },
+            rowNumbers: {
+                enabled: false,
+            },
+            selection: {
+                enableClickRowSelect: true,
+                enabled: true,
+                maxSelectionLimit,
+                mode: selectionMode,
+            },
+            toolbar: {
+                columnVisibility: true,
+                customActions: null, // TODO: Fix type issue with customActions
+                enabled: true,
+                export: { enabled: true },
+                filters: true,
+                search: { enabled: true },
+            },
+            virtualization: {
+                containerHeight: didMount ? containerHeight : 400,
+                enabled: true, // Re-enabled virtualization with fixed renderer
+                estimatedRowHeight: 40,
+                overscan: 5,
+            },
+        },
+    });
+
     let Menu = (
         <>
             <HowToUseDialog />
@@ -150,39 +208,8 @@ const HomeComponent = () => {
             </header>
             <main>
                 <ClientOnly fallback={<SkeletonTable columns={isMobile ? 2 : 20} rows={15} />}>
-                    <DataTable<(typeof tableData)[0], unknown>
-                        config={{
-                            enableClickRowSelect: true,
-                            enableColumnResizing: false,
-                            enableColumnVisibility: true,
-                            enablePagination: false,
-                            enableRowSelection: true,
-                            // Performance optimizations
-                            enableRowVirtualization: true,
-                            enableStickyHeader: true,
-                            enableToolbar: true,
-                            estimatedRowHeight: 40,
-                            maxSelectionLimit,
-                            selectionMode,
-                            virtualizationOverscan: 5,
-                        }}
-                        containerHeight={didMount ? containerHeight : undefined}
-                        data={tableData}
-                        defaultSorting={{
-                            sortBy: "provider",
-                            sortOrder: "asc",
-                        }}
-                        exportConfig={exportConfig}
-                        filterColumns={filterConfig}
-                        filterStrategy="client"
-                        getColumns={() => columns}
-                        idField="id"
-                        renderToolbarContent={renderToolbarContent}
-                        virtualizationOptions={{
-                            estimatedRowHeight: 40,
-                            overscan: 5,
-                        }}
-                    />
+                    <DataTable features={features} table={table} />
+                    <ActionBar table={table} />
                 </ClientOnly>
 
                 <ModelComparisonDialog
