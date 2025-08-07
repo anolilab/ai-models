@@ -5,3 +5,6 @@ export { DataTableActionBar } from "./data-table-action-bar";
 
 // Hooks
 export { useDataTable } from "./hooks/use-data-table";
+
+// Types
+export type * from "./types";

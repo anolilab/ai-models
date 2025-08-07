@@ -4,6 +4,10 @@ import "@testing-library/jest-dom";
 import { configure } from "@testing-library/react";
 import { vi } from "vitest";
 
+// Ensure React is available in test environment
+import React from "react";
+global.React = React;
+
 configure({
     testIdAttribute: "data-testid",
 });

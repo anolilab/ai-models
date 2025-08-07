@@ -32,105 +32,52 @@ const Highlight = ({ children, highlight, ...props }: { [key: string]: any; chil
     return <span {...props} className="[&_mark]:rounded [&_mark]:bg-yellow-200 [&_mark]:px-0.5" dangerouslySetInnerHTML={{ __html: result }} />;
 };
 
-export const TableBodyCellValue = <TData extends RowData>({ cell, renderedColumnIndex = 0, renderedRowIndex = 0, table }: Props<TData>) => {
-    const {
-        getState,
-        options: { enableFilterMatchHighlighting, mantineHighlightProps = { size: "sm" } },
-    } = table;
+const TableBodyCellValue = <TData extends RowData>({ cell, renderedColumnIndex = 0, renderedRowIndex = 0, table }: Props<TData>) => {
     const { column, row } = cell;
     const { columnDef } = column;
-    const { globalFilter, globalFilterFn } = getState();
-    const filterValue = column.getFilterValue();
-
-    const highlightProps = parseFromValuesOrFunc(mantineHighlightProps, {
-        cell,
-        column,
-        row,
-        table,
-    });
-
-    // Helper function to ensure value is renderable
-    const ensureRenderableValue = (value: any): React.ReactNode => {
-        if (value === null || value === undefined) {
-            return "";
-        }
-
-        if (value instanceof Date) {
-            return value.toLocaleString();
-        }
-
-        if (typeof value === "object" && !React.isValidElement(value)) {
-            return JSON.stringify(value);
-        }
-
-        return value;
-    };
 
     let renderedCellValue
         = cell.getIsAggregated() && columnDef.AggregatedCell
-            ? ensureRenderableValue(
-                columnDef.AggregatedCell({
-                    cell,
-                    column,
-                    row,
-                    table,
-                }),
-            )
+            ? columnDef.AggregatedCell({
+                cell,
+                column,
+                row,
+                table,
+                renderedColumnIndex,
+                renderedRowIndex,
+            })
             : row.getIsGrouped() && !cell.getIsGrouped()
                 ? null
                 : cell.getIsGrouped() && columnDef.GroupedCell
-                    ? ensureRenderableValue(
-                        columnDef.GroupedCell({
-                            cell,
-                            column,
-                            row,
-                            table,
-                        }),
-                    )
+                    ? columnDef.GroupedCell({
+                        cell,
+                        column,
+                        row,
+                        table,
+                        renderedColumnIndex,
+                        renderedRowIndex,
+                    })
                     : undefined;
 
     const isGroupedValue = renderedCellValue !== undefined;
 
     if (!isGroupedValue) {
-        const rawValue = cell.renderValue();
-
-        renderedCellValue = ensureRenderableValue(rawValue);
-    }
-
-    if (
-        enableFilterMatchHighlighting
-        && columnDef.enableFilterMatchHighlighting !== false
-        && renderedCellValue
-        && allowedTypes.includes(typeof renderedCellValue)
-        && ((filterValue && allowedTypes.includes(typeof filterValue) && allowedFilterVariants.includes(columnDef.filterVariant as string))
-            || (globalFilter && allowedTypes.includes(typeof globalFilter) && column.getCanGlobalFilter()))
-    ) {
-        let highlight: string | string[] = (column.getFilterValue() ?? globalFilter ?? "").toString() as string;
-
-        if ((filterValue ? columnDef._filterFn : globalFilterFn) === "fuzzy") {
-            highlight = highlight.split(" ");
-        }
-
-        renderedCellValue = (
-            <Highlight highlight={highlight} {...highlightProps}>
-                {renderedCellValue?.toString()}
-            </Highlight>
-        );
+        renderedCellValue = cell.renderValue();
     }
 
     if (columnDef.Cell && !isGroupedValue) {
-        renderedCellValue = ensureRenderableValue(
-            columnDef.Cell({
-                cell,
-                column,
-                renderedCellValue,
-                renderedColumnIndex,
-                renderedRowIndex,
-                row,
-                table,
-            }),
-        );
+        renderedCellValue = columnDef.Cell({
+            cell,
+            column,
+            renderedCellValue,
+            row,
+            renderedColumnIndex,
+            renderedRowIndex,
+            table,
+        });
     }
 
     return renderedCellValue;
 };
+
+export default TableBodyCellValue;

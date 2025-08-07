@@ -34,24 +34,32 @@ export const TableHeadCell = <TData extends RowData>({
 }: Props<TData>) => {
     const {
         getState,
-        options: {
-            columnFilterDisplayMode,
-            columnResizeDirection,
-            columnResizeMode,
-            enableColumnActions,
-            enableColumnDragging,
-            enableColumnOrdering,
-            enableColumnPinning,
-            enableGrouping,
-            enableHeaderActionsHoverReveal,
-            enableMultiSort,
-            layoutMode,
-            mantineTableHeadCellProps,
-        },
-        refs: { tableHeadCellRefs },
+        options,
+        refs,
         setHoveredColumn,
     } = table;
-    const { columnSizingInfo, draggingColumn, grouping, hoveredColumn } = getState();
+    
+    // Handle missing properties with defaults
+    const {
+        columnFilterDisplayMode = 'subheader',
+        columnResizeDirection = 'ltr',
+        columnResizeMode = 'onChange',
+        enableColumnActions = false,
+        enableColumnDragging = false,
+        enableColumnOrdering = false,
+        enableColumnPinning = false,
+        enableGrouping = false,
+        enableHeaderActionsHoverReveal = false,
+        enableMultiSort = false,
+        layoutMode = 'table',
+        mantineTableHeadCellProps = {},
+    } = (options as any) || {};
+    
+    const { tableHeadCellRefs } = refs || {};
+    
+    // Handle missing getState method
+    const state = getState ? getState() : { columnSizingInfo: {}, draggingColumn: null, grouping: [], hoveredColumn: null };
+    const { columnSizingInfo = {}, draggingColumn = null, grouping = [], hoveredColumn = null } = (state as any) || {};
     const { column } = header;
     const { columnDef } = column;
     const { columnDefType } = columnDef;

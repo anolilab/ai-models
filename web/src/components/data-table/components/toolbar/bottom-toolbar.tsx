@@ -9,11 +9,12 @@ import { ToolbarDropZone } from "./toolbar-drop-zone";
 
 interface Props<TData extends RowData> {
     className?: string;
+    features?: any;
     style?: React.CSSProperties;
     table: TableInstance<TData>;
 }
 
-export const BottomToolbar = <TData extends RowData>({ className, style, table, ...rest }: Props<TData>) => {
+export const BottomToolbar = <TData extends RowData>({ className, features = {}, style, table, ...rest }: Props<TData>) => {
     const {
         getState,
         options: {

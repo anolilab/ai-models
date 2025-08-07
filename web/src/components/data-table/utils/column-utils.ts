@@ -76,7 +76,6 @@ export const prepareColumns = <TData extends RowData>({
 
             // assign sortingFns
             if (Object.keys(sortingFns).includes(columnDef.sortingFn as string)) {
-                // @ts-expect-error
                 columnDef.sortingFn = sortingFns[columnDef.sortingFn];
             }
         } else if (columnDef.columnDefType === "display") {
@@ -95,8 +94,10 @@ export const reorderColumn = <TData extends RowData>(
     targetColumn: Column<TData>,
     columnOrder: ColumnOrderState,
 ): ColumnOrderState => {
-    if (draggedColumn.getCanPin()) {
-        draggedColumn.pin(targetColumn.getIsPinned());
+    if (draggedColumn.getCanPin && typeof draggedColumn.getCanPin === 'function' && draggedColumn.getCanPin()) {
+        if (draggedColumn.pin && typeof draggedColumn.pin === 'function' && targetColumn.getIsPinned && typeof targetColumn.getIsPinned === 'function') {
+            draggedColumn.pin(targetColumn.getIsPinned());
+        }
     }
 
     const newColumnOrder = [...columnOrder];
@@ -123,8 +124,13 @@ export const getDefaultColumnFilterFn = <TData extends RowData>(columnDef: Colum
 
 export const getColumnFilterInfo = <TData extends RowData>({ header, table }: { header: Header<TData>; table: TableInstance<TData> }) => {
     const {
-        options: { columnFilterModeOptions },
+        options,
     } = table;
+    
+    // Handle missing properties with defaults
+    const {
+        columnFilterModeOptions = {},
+    } = (options as any) || {};
     const { column } = header;
     const { columnDef } = column;
     const { filterVariant } = columnDef;
@@ -171,7 +177,7 @@ export const useDropdownOptions = <TData extends RowData>({
             ?? ((isSelectFilter || isMultiSelectFilter || isAutocompleteFilter) && facetedUniqueValues
                 ? Array.from(facetedUniqueValues.keys())
                     .filter((value) => value !== null && value !== undefined)
-                    .sort((a, b) => a.localeCompare(b))
+                    .sort((a, b) => String(a).localeCompare(String(b)))
                 : undefined),
         [columnDef.filterSelectOptions, facetedUniqueValues, isMultiSelectFilter, isSelectFilter],
     );

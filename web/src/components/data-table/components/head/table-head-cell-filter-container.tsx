@@ -23,14 +23,27 @@ interface Props<TData extends RowData> {
 export const TableHeadCellFilterContainer = <TData extends RowData>({ className, header, style, table, ...rest }: Props<TData>) => {
     const {
         getState,
-        options: { columnFilterDisplayMode, columnFilterModeOptions, enableColumnFilterModes, localization },
-        refs: { filterInputRefs },
+        options,
+        refs,
     } = table;
-    const { showColumnFilters } = getState();
+    
+    // Handle missing properties with defaults
+    const {
+        columnFilterDisplayMode = "subheader",
+        columnFilterModeOptions = {},
+        enableColumnFilterModes = false,
+        localization = {},
+    } = (options as any) || {};
+
+    const { filterInputRefs } = refs || {};
+
+    // Handle missing getState method
+    const state = getState ? getState() : { showColumnFilters: false };
+    const { showColumnFilters = false } = (state as any) || {};
     const { column } = header;
     const { columnDef } = column;
 
-    const currentFilterOption = columnDef._filterFn;
+    const currentFilterOption = columnDef.filterFn;
     const allowedColumnFilterOptions = columnDef?.columnFilterModeOptions ?? columnFilterModeOptions;
     const showChangeModeButton
         = enableColumnFilterModes
@@ -44,36 +57,33 @@ export const TableHeadCellFilterContainer = <TData extends RowData>({ className,
     }
 
     return (
-        <div className="flex flex-col" style={style} {...rest}>
+        <div className={clsx("flex flex-col", className)} style={style} {...rest}>
             <div className="flex items-end gap-2">
-                {columnDef.filterVariant === "checkbox"
-                    ? (
-                    <FilterCheckbox column={column} table={table} />
-                    )
-                    : columnDef.filterVariant === "range-slider"
-                        ? (
-                    <FilterRangeSlider header={header} table={table} />
-                        )
-                        : ["date-range", "range"].includes(columnDef.filterVariant ?? "")
-                            || ["between", "betweenInclusive", "inNumberRange"].includes(columnDef._filterFn)
-                            ? (
-                    <FilterRangeFields header={header} table={table} />
-                            )
-                            : (
-                    <FilterTextInput header={header} table={table} />
-                            )}
+                {(() => {
+                    if (columnDef.filterVariant === "checkbox") {
+                        return <FilterCheckbox column={column} table={table} />;
+                    }
+                    if (columnDef.filterVariant === "range-slider") {
+                        return <FilterRangeSlider header={header} table={table} />;
+                    }
+                    if (["date-range", "range"].includes(columnDef.filterVariant ?? "") ||
+                        ["between", "betweenInclusive", "inNumberRange"].includes(columnDef.filterFn)) {
+                        return <FilterRangeFields header={header} table={table} />;
+                    }
+                    return <FilterTextInput header={header} table={table} />;
+                })()}
                 {showChangeModeButton && (
                     <DropdownMenu>
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <DropdownMenuTrigger asChild>
-                                    <Button aria-label={localization.changeFilterMode} className="h-8 w-8 p-0" size="sm" variant="ghost">
+                                    <Button aria-label={localization?.changeFilterMode || 'Change filter mode'} className="h-8 w-8 p-0" size="sm" variant="ghost">
                                         <Settings className="h-4 w-4" />
                                     </Button>
                                 </DropdownMenuTrigger>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>{localization.changeFilterMode}</p>
+                                <p>{localization?.changeFilterMode || 'Change filter mode'}</p>
                             </TooltipContent>
                         </Tooltip>
                         <DropdownMenuContent>
@@ -89,7 +99,7 @@ export const TableHeadCellFilterContainer = <TData extends RowData>({ className,
             {showChangeModeButton
                 ? (
                 <span className={clsx("mt-1 text-xs whitespace-nowrap text-gray-500")}>
-                    {localization.filterMode.replace("{filterType}", localizedFilterOption(localization, currentFilterOption))}
+                    {localization?.filterMode?.replace("{filterType}", localizedFilterOption(localization || {}, currentFilterOption)) || `Filter mode: ${currentFilterOption}`}
                 </span>
                 )
                 : null}

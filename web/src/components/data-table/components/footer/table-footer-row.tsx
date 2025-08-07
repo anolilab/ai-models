@@ -2,29 +2,39 @@ import clsx from "clsx";
 
 import { TableRow as ShadcnTableRow } from "@/components/ui/table";
 
-import type { ColumnVirtualizer, Header, HeaderGroup, RowData, TableInstance, VirtualItem } from "../../types";
+import type { ColumnVirtualizer, Header, RowData, TableInstance, VirtualItem } from "../../types";
 import { parseFromValuesOrFunc } from "../../utils/utils";
 import { TableFooterCell } from "./table-footer-cell";
 
 interface Props<TData extends RowData> {
     className?: string;
     columnVirtualizer?: ColumnVirtualizer;
-    footerGroup: HeaderGroup<TData>;
+    footerGroup: any;
     style?: React.CSSProperties;
     table: TableInstance<TData>;
 }
 
 export const TableFooterRow = <TData extends RowData>({ className, columnVirtualizer, footerGroup, style, table, ...rest }: Props<TData>) => {
     const {
-        options: { layoutMode, mantineTableFooterRowProps },
+        options,
     } = table;
+    
+    // Handle missing properties with defaults
+    const {
+        layoutMode = 'table',
+        mantineTableFooterRowProps = {},
+    } = (options as any) || {};
 
     const { virtualColumns, virtualPaddingLeft, virtualPaddingRight } = columnVirtualizer ?? {};
 
     // if no content in row, skip row
     if (
         !footerGroup.headers?.some(
-            (header) => (typeof header.column.columnDef.footer === "string" && !!header.column.columnDef.footer) || header.column.columnDef.Footer,
+            (header: any) => {
+                const column = header?.column;
+                const columnDef = column?.columnDef;
+                return (typeof columnDef?.footer === "string" && !!columnDef.footer) || columnDef?.Footer;
+            },
         )
     ) {
         return null;
@@ -49,7 +59,7 @@ export const TableFooterRow = <TData extends RowData>({ className, columnVirtual
             {...tableRowProps}
         >
             {virtualPaddingLeft ? <th style={{ display: "flex", width: virtualPaddingLeft }} /> : null}
-            {(virtualColumns ?? footerGroup.headers).map((footerOrVirtualFooter, renderedColumnIndex) => {
+            {(virtualColumns ?? footerGroup.headers).map((footerOrVirtualFooter: any, renderedColumnIndex: number) => {
                 let footer = footerOrVirtualFooter as Header<TData>;
 
                 if (columnVirtualizer) {

@@ -17,17 +17,30 @@ export interface TableBodyProps<TData extends RowData> {
     table: TableInstance<TData>;
 }
 
-export const TableBody = <TData extends RowData>({ className, columnVirtualizer, style, table, ...rest }: TableBodyProps<TData>) => {
+export const TableBody = <TData extends RowData>({ className, columnVirtualizer, style, table, ...rest }: TableBodyProps<TData>): React.JSX.Element => {
     const {
         getBottomRows,
         getIsSomeRowsPinned,
         getRowModel,
         getState,
         getTopRows,
-        options: { enableStickyFooter, enableStickyHeader, layoutMode, mantineTableBodyProps, memoMode, renderDetailPanel, rowPinningDisplayMode },
+        options,
         refs: { tableFooterRef, tableHeadRef },
     } = table;
-    const { isFullScreen, rowPinning } = getState();
+    
+    const state = getState();
+    const { isFullScreen = false, rowPinning = {} } = (state as any) || {};
+    
+    // Handle missing properties with defaults
+    const {
+        enableStickyFooter = false,
+        enableStickyHeader = false,
+        layoutMode = 'table',
+        mantineTableBodyProps = {},
+        memoMode = 'none',
+        renderDetailPanel = false,
+        rowPinningDisplayMode = '',
+    } = (options as any) || {};
 
     const tableBodyProps = {
         ...parseFromValuesOrFunc(mantineTableBodyProps, { table }),
@@ -37,14 +50,14 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
     const tableHeadHeight = ((enableStickyHeader || isFullScreen) && tableHeadRef.current?.clientHeight) || 0;
     const tableFooterHeight = (enableStickyFooter && tableFooterRef.current?.clientHeight) || 0;
 
-    const pinnedRowIds = useMemo(() => {
+    const pinnedRowIds = useMemo<string[]>(() => {
         if (!rowPinning.bottom?.length && !rowPinning.top?.length)
             return [];
 
         return getRowModel()
             .rows
-            .filter((row) => row.getIsPinned())
-            .map((r) => r.id);
+            .filter((row: Row<TData>) => row.getIsPinned())
+            .map((r: Row<TData>) => r.id);
     }, [rowPinning, getRowModel().rows]);
 
     const rows = useRows(table);
@@ -69,7 +82,7 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                         className,
                     )}
                     style={{
-                        "--ano-table-head-height": `${tableHeadHeight}`,
+                        ["--ano-table-head-height" as any]: `${tableHeadHeight}`,
                         ...style,
                     }}
                 >
@@ -89,12 +102,13 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                     "relative bg-white dark:bg-gray-900",
                     layoutMode?.startsWith("grid") && "grid",
                     !rows.length && "min-h-[100px]",
-                    rowVirtualizer && "h-[var(--ano-table-body-height)]",
                     className,
                 )}
                 style={{
-                    "--ano-table-body-height": rowVirtualizer ? `${rowVirtualizer.getTotalSize()}px` : undefined,
+                    // ✅ FIXED: Set proper height for virtualization
+                    height: rowVirtualizer ? `${rowVirtualizer.getTotalSize()}px` : undefined,
                     ...style,
+                    ...tableBodyProps.style,
                 }}
             >
                 {tableBodyProps?.children
@@ -104,7 +118,12 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                         )
                         : (
                         <>
-                            {(virtualRows ?? rows).map((rowOrVirtualRow, renderedRowIndex) => {
+                            {rowVirtualizer && virtualRows && virtualRows.length > 0 && virtualRows[0]?.start > 0 && (
+                                <tr style={{ height: `${virtualRows[0].start}px` }}>
+                                    <td colSpan={table.getVisibleLeafColumns().length} />
+                                </tr>
+                            )}
+                            {(virtualRows ?? rows).map((rowOrVirtualRow: any, renderedRowIndex: number) => {
                                 if (rowVirtualizer) {
                                     if (renderDetailPanel) {
                                         if (rowOrVirtualRow.index % 2 === 1) {
@@ -130,6 +149,18 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
 
                                 return memoMode === "rows" ? <Memo_TableBodyRow key={key} {...props} /> : <TableBodyRow key={key} {...props} />;
                             })}
+                            {rowVirtualizer && virtualRows && virtualRows.length > 0 && (
+                                (() => {
+                                    const lastVirtualRow = virtualRows[virtualRows.length - 1];
+                                    const remainingHeight = rowVirtualizer.getTotalSize() - (lastVirtualRow.start + lastVirtualRow.size);
+                                    
+                                    return remainingHeight > 0 ? (
+                                        <tr style={{ height: `${remainingHeight}px` }}>
+                                            <td colSpan={table.getVisibleLeafColumns().length} />
+                                        </tr>
+                                    ) : null;
+                                })()
+                            )}
                         </>
                         ))}
             </ShadcnTableBody>
@@ -141,7 +172,7 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                         className,
                     )}
                     style={{
-                        "--ano-table-footer-height": `${tableFooterHeight}`,
+                        ["--ano-table-footer-height" as any]: `${tableFooterHeight}`,
                         ...style,
                     }}
                 >

@@ -1,9 +1,10 @@
 import { useDataTable } from "../hooks/use-data-table";
 import type { RowData, TableInstance, TableOptions } from "../types";
-import { TablePaper } from "./table/table-paper";
+import { TablePaper } from "./table";
 
 type TableInstanceProp<TData extends RowData> = {
     table: TableInstance<TData>;
+    features?: any;
 };
 
 type Props<TData extends RowData> = TableInstanceProp<TData> | TableOptions<TData>;
@@ -12,14 +13,18 @@ const isTableInstanceProp = <TData extends RowData>(props: Props<TData>): props 
 
 const DataTable = <TData extends RowData>(props: Props<TData>) => {
     let table: TableInstance<TData>;
+    let features: any = {};
 
     if (isTableInstanceProp(props)) {
         table = props.table;
+        features = props.features || {};
     } else {
-        table = useDataTable(props);
+        const result = useDataTable(props);
+        table = result.table;
+        features = result.features;
     }
 
-    return <TablePaper table={table} />;
+    return <TablePaper features={features} table={table} />;
 };
 
 export { DataTable };

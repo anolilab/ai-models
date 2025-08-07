@@ -7,7 +7,7 @@ import { GrabHandleButton } from "../buttons/grab-handle-button";
 
 interface Props<TData extends RowData, TValue = CellValue> {
     className?: string;
-    column: Column<TData, TValue>;
+    column: Column<TData>;
     style?: React.CSSProperties;
     table: TableInstance<TData>;
     tableHeadCellRef: RefObject<HTMLTableCellElement>;
@@ -16,13 +16,25 @@ interface Props<TData extends RowData, TValue = CellValue> {
 export const TableHeadCellGrabHandle = <TData extends RowData>({ className, column, style, table, tableHeadCellRef, ...rest }: Props<TData>) => {
     const {
         getState,
-        options: { enableColumnOrdering, mantineColumnDragHandleProps },
+        options,
         setColumnOrder,
         setDraggingColumn,
         setHoveredColumn,
     } = table;
     const { columnDef } = column;
-    const { columnOrder, draggingColumn, hoveredColumn } = getState();
+    const state = getState();
+    
+    // Handle missing properties with defaults
+    const {
+        enableColumnOrdering = false,
+        mantineColumnDragHandleProps = {},
+    } = (options as any) || {};
+    
+    const {
+        columnOrder = [],
+        draggingColumn = null,
+        hoveredColumn = null,
+    } = (state as any) || {};
 
     const arg = { column, table };
     const actionIconProps = {
@@ -36,20 +48,26 @@ export const TableHeadCellGrabHandle = <TData extends RowData>({ className, colu
     const handleDragStart = (event: DragEvent<HTMLButtonElement>) => {
         actionIconProps?.onDragStart?.(event);
         setDraggingColumn(column);
-        event.dataTransfer.setDragImage(tableHeadCellRef.current as HTMLElement, 0, 0);
+        if (event.dataTransfer && event.dataTransfer.setDragImage && tableHeadCellRef.current) {
+            event.dataTransfer.setDragImage(tableHeadCellRef.current as HTMLElement, 0, 0);
+        }
     };
 
     const handleDragEnd = (event: DragEvent<HTMLButtonElement>) => {
         actionIconProps?.onDragEnd?.(event);
 
         if (hoveredColumn?.id === "drop-zone") {
-            column.toggleGrouping();
+            if (typeof column.toggleGrouping === 'function') {
+                column.toggleGrouping();
+            }
         } else if (enableColumnOrdering && hoveredColumn && hoveredColumn?.id !== draggingColumn?.id) {
-            setColumnOrder(reorderColumn(column, hoveredColumn as Column<TData>, columnOrder));
+            if (setColumnOrder && typeof setColumnOrder === 'function') {
+                setColumnOrder(reorderColumn(column, hoveredColumn as Column<TData>, columnOrder));
+            }
         }
 
-        setDraggingColumn(null);
-        setHoveredColumn(null);
+        if (setDraggingColumn) setDraggingColumn(null);
+        if (setHoveredColumn) setHoveredColumn(null);
     };
 
     return <GrabHandleButton actionIconProps={actionIconProps} onDragEnd={handleDragEnd} onDragStart={handleDragStart} table={table} />;

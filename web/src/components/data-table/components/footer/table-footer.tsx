@@ -17,10 +17,22 @@ export const TableFooter = <TData extends RowData>({ className, columnVirtualize
     const {
         getFooterGroups,
         getState,
-        options: { enableStickyFooter, layoutMode, mantineTableFooterProps },
-        refs: { tableFooterRef },
+        options,
+        refs,
     } = table;
-    const { isFullScreen } = getState();
+    
+    // Handle missing properties with defaults
+    const {
+        enableStickyFooter = false,
+        layoutMode = 'table',
+        mantineTableFooterProps = {},
+    } = (options as any) || {};
+    
+    const { tableFooterRef } = refs || {};
+    
+    // Handle missing getState method
+    const state = getState ? getState() : { isFullScreen: false };
+    const { isFullScreen = false } = (state as any) || {};
 
     const tableFooterProps = {
         ...parseFromValuesOrFunc(mantineTableFooterProps, {
@@ -40,7 +52,9 @@ export const TableFooter = <TData extends RowData>({ className, columnVirtualize
                 layoutMode?.startsWith("grid") && "grid",
             )}
             ref={(ref: HTMLTableSectionElement) => {
-                tableFooterRef.current = ref;
+                if (tableFooterRef?.current !== undefined) {
+                    tableFooterRef.current = ref;
+                }
 
                 if (tableFooterProps?.ref) {
                     // @ts-ignore
@@ -49,7 +63,7 @@ export const TableFooter = <TData extends RowData>({ className, columnVirtualize
             }}
             style={style}
         >
-            {getFooterGroups().map((footerGroup) => (
+            {(getFooterGroups ? getFooterGroups() || [] : []).map((footerGroup) => (
                 <TableFooterRow columnVirtualizer={columnVirtualizer} footerGroup={footerGroup as any} key={footerGroup.id} table={table} />
             ))}
         </ShadcnTableFooter>

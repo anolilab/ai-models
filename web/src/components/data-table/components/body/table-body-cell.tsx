@@ -9,7 +9,7 @@ import type { Cell, CellValue, RowData, TableInstance, VirtualItem } from "../..
 import { parseFromValuesOrFunc } from "../../utils/utils";
 import { CopyButton } from "../buttons/copy-button";
 import { EditCellTextInput } from "../inputs/edit-cell-text-input";
-import { TableBodyCellValue } from "./table-body-cell-value";
+import TableBodyCellValue from "./table-body-cell-value";
 
 interface Props<TData extends RowData, TValue = CellValue> {
     cell: Cell<TData, TValue>;
@@ -192,7 +192,7 @@ export const TableBodyCell = <TData extends RowData>({
                 isEditable
                 && ["cell", "table"].includes(editDisplayMode ?? "")
                 && columnDefType !== "display"
-                && "hover:outline hover:outline-1 hover:outline-gray-300",
+                && "hover:outline hover:outline-gray-300",
                 columnDefType === "data" && "text-ellipsis",
                 density === "xs" && "whitespace-nowrap",
                 columnDef.enableCellHoverReveal && "overflow-visible",

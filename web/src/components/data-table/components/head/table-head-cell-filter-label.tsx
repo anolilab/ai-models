@@ -21,10 +21,18 @@ interface Props<TData extends RowData> {
 
 export const TableHeadCellFilterLabel = <TData extends RowData>({ className, header, style, table, ...rest }: Props<TData>) => {
     const {
-        options: { columnFilterDisplayMode, localization },
-        refs: { filterInputRefs },
+        options,
+        refs,
         setShowColumnFilters,
     } = table;
+    
+    // Handle missing properties with defaults
+    const {
+        columnFilterDisplayMode = 'subheader',
+        localization = {},
+    } = (options as any) || {};
+    
+    const { filterInputRefs } = refs || {};
     const { column } = header;
     const { columnDef } = column;
 
@@ -44,7 +52,7 @@ export const TableHeadCellFilterLabel = <TData extends RowData>({ className, hea
     type FilterValueType = Parameters<typeof filterValueFn>[0];
 
     // Safety check for localization
-    if (!localization) {
+    if (!localization || Object.keys(localization).length === 0) {
         return null;
     }
 

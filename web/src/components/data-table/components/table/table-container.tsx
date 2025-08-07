@@ -17,18 +17,18 @@ interface Props<TData extends RowData> {
 export const TableContainer = <TData extends RowData>({ className, style, table, ...rest }: Props<TData>) => {
     const {
         getState,
-        options: { createDisplayMode, editDisplayMode, enableStickyHeader, mantineLoadingOverlayProps, mantineTableContainerProps },
+        options,
         refs: { bottomToolbarRef, tableContainerRef, topToolbarRef },
     } = table;
-    const { creatingRow, editingRow, isFullScreen, isLoading, showLoadingOverlay } = getState();
+    const state = getState();
 
     const [totalToolbarHeight, setTotalToolbarHeight] = useState(0);
 
     const tableContainerProps = {
-        ...parseFromValuesOrFunc(mantineTableContainerProps, { table }),
+        ...parseFromValuesOrFunc((options as any).mantineTableContainerProps, { table }),
         ...rest,
     };
-    const loadingOverlayProps = parseFromValuesOrFunc(mantineLoadingOverlayProps, { table });
+    const loadingOverlayProps = parseFromValuesOrFunc((options as any).mantineLoadingOverlayProps, { table });
 
     useIsomorphicLayoutEffect(() => {
         const topToolbarHeight = typeof document !== "undefined" ? topToolbarRef.current?.offsetHeight ?? 0 : 0;
@@ -38,8 +38,16 @@ export const TableContainer = <TData extends RowData>({ className, style, table,
         setTotalToolbarHeight(topToolbarHeight + bottomToolbarHeight);
     });
 
-    const createModalOpen = createDisplayMode === "modal" && creatingRow;
-    const editModalOpen = editDisplayMode === "modal" && editingRow;
+    const createModalOpen = (options as any).createDisplayMode === "modal" && (state as any).creatingRow;
+    const editModalOpen = (options as any).editDisplayMode === "modal" && (state as any).editingRow;
+    const isFullScreen = (state as any).isFullScreen;
+    const isLoading = (state as any).isLoading;
+    const showLoadingOverlay = (state as any).showLoadingOverlay;
+    const enableStickyHeader = (options as any).enableStickyHeader;
+
+    // ✅ FIXED: Get virtualization height from table options
+    const virtualizationHeight = (options as any).enableRowVirtualization ? 
+        (options as any).rowVirtualizerOptions?.containerHeight || 600 : undefined;
 
     return (
         <div
@@ -62,6 +70,8 @@ export const TableContainer = <TData extends RowData>({ className, style, table,
             }}
             style={{
                 "--ano-top-toolbar-height": `${totalToolbarHeight}`,
+                // ✅ FIXED: Set explicit height for virtualization
+                height: virtualizationHeight ? `${virtualizationHeight}px` : undefined,
                 ...style,
             }}
         >

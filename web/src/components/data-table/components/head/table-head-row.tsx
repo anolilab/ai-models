@@ -2,24 +2,36 @@ import clsx from "clsx";
 
 import { TableRow as ShadcnTableRow } from "@/components/ui/table";
 
-import type { ColumnVirtualizer, Header, HeaderGroup, RowData, TableInstance, VirtualItem } from "../../types";
+import type { ColumnVirtualizer, Header, RowData, TableInstance, VirtualItem } from "../../types";
 import { parseFromValuesOrFunc } from "../../utils/utils";
 import { TableHeadCell } from "./table-head-cell";
 
 interface Props<TData extends RowData> {
     className?: string;
     columnVirtualizer?: ColumnVirtualizer;
-    headerGroup: HeaderGroup<TData>;
+    headerGroup: any;
     style?: React.CSSProperties;
     table: TableInstance<TData>;
 }
 
-export const TableHeadRow = <TData extends RowData>({ className, columnVirtualizer, headerGroup, style, table, ...rest }: Props<TData>) => {
+export const TableHeadRow = <TData extends RowData>(props: Props<TData>) => {
+    const { className, columnVirtualizer, headerGroup, style, table, ...rest } = props;
+    
     const {
         getState,
-        options: { enableStickyHeader, layoutMode, mantineTableHeadRowProps },
+        options,
     } = table;
-    const { isFullScreen } = getState();
+    
+    // Handle missing properties with defaults
+    const {
+        enableStickyHeader = false,
+        layoutMode = 'table',
+        mantineTableHeadRowProps = {},
+    } = (options as any) || {};
+    
+    // Handle missing getState method
+    const state = getState ? getState() : { isFullScreen: false };
+    const { isFullScreen = false } = (state as any) || {};
 
     const { virtualColumns, virtualPaddingLeft, virtualPaddingRight } = columnVirtualizer ?? {};
 
@@ -43,19 +55,21 @@ export const TableHeadRow = <TData extends RowData>({ className, columnVirtualiz
             style={style}
         >
             {virtualPaddingLeft ? <th style={{ display: "flex", width: virtualPaddingLeft }} /> : null}
-            {(virtualColumns ?? headerGroup.headers).map((headerOrVirtualHeader, renderedHeaderIndex) => {
+            {((virtualColumns ?? headerGroup.headers) || []).map((headerOrVirtualHeader: any, renderedHeaderIndex: number) => {
                 let header = headerOrVirtualHeader as Header<TData>;
 
                 if (columnVirtualizer) {
                     renderedHeaderIndex = (headerOrVirtualHeader as VirtualItem).index;
-                    header = headerGroup.headers[renderedHeaderIndex];
+                    header = headerGroup.headers?.[renderedHeaderIndex];
                 }
+
+                if (!header) return null;
 
                 return (
                     <TableHeadCell
                         columnVirtualizer={columnVirtualizer}
                         header={header}
-                        key={header.id}
+                        key={header.id || renderedHeaderIndex}
                         renderedHeaderIndex={renderedHeaderIndex}
                         table={table}
                     />

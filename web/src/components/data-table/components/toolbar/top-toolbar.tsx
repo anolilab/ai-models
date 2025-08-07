@@ -11,11 +11,12 @@ import { ToolbarInternalButtons } from "./toolbar-internal-buttons";
 
 interface Props<TData extends RowData> {
     className?: string;
+    features?: any;
     style?: React.CSSProperties;
     table: TableInstance<TData>;
 }
 
-export const TopToolbar = <TData extends RowData>({ className, style, table, ...rest }: Props<TData>) => {
+export const TopToolbar = <TData extends RowData>({ className, features = {}, style, table, ...rest }: Props<TData>) => {
     const {
         getState,
         options: {
