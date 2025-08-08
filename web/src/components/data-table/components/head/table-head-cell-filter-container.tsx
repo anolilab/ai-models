@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { Settings } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import { localizedFilterOption } from "../../fns/filter-fns";
@@ -43,7 +43,7 @@ export const TableHeadCellFilterContainer = <TData extends RowData>({ className,
     const { column } = header;
     const { columnDef } = column;
 
-    const currentFilterOption = columnDef.filterFn;
+    const currentFilterOption = (columnDef.filterFn ?? "fuzzy") as string;
     const allowedColumnFilterOptions = columnDef?.columnFilterModeOptions ?? columnFilterModeOptions;
     const showChangeModeButton
         = enableColumnFilterModes
@@ -67,7 +67,7 @@ export const TableHeadCellFilterContainer = <TData extends RowData>({ className,
                         return <FilterRangeSlider header={header} table={table} />;
                     }
                     if (["date-range", "range"].includes(columnDef.filterVariant ?? "") ||
-                        ["between", "betweenInclusive", "inNumberRange"].includes(columnDef.filterFn)) {
+                        ["between", "betweenInclusive", "inNumberRange"].includes((columnDef.filterFn as unknown as string) ?? "")) {
                         return <FilterRangeFields header={header} table={table} />;
                     }
                     return <FilterTextInput header={header} table={table} />;
@@ -86,20 +86,19 @@ export const TableHeadCellFilterContainer = <TData extends RowData>({ className,
                                 <p>{localization?.changeFilterMode || 'Change filter mode'}</p>
                             </TooltipContent>
                         </Tooltip>
-                        <DropdownMenuContent>
-                            <FilterOptionMenu
-                                header={header}
-                                onSelect={() => setTimeout(() => filterInputRefs.current[`${column.id}-0`]?.focus(), 100)}
-                                table={table}
-                            />
-                        </DropdownMenuContent>
+                        <FilterOptionMenu
+                            header={header}
+                            onSelect={() => setTimeout(() => filterInputRefs?.current?.[`${column.id}-0`]?.focus(), 100)}
+                            table={table}
+                        />
                     </DropdownMenu>
                 )}
             </div>
             {showChangeModeButton
                 ? (
                 <span className={clsx("mt-1 text-xs whitespace-nowrap text-gray-500")}>
-                    {localization?.filterMode?.replace("{filterType}", localizedFilterOption(localization || {}, currentFilterOption)) || `Filter mode: ${currentFilterOption}`}
+                    {localization?.filterMode?.replace("{filterType}", localizedFilterOption(localization as any, currentFilterOption))
+                    || `Filter mode: ${currentFilterOption}`}
                 </span>
                 )
                 : null}

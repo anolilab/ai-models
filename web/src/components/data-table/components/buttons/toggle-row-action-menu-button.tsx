@@ -22,7 +22,7 @@ export const ToggleRowActionMenuButton = <TData extends RowData>({ cell, row, ta
             createDisplayMode,
             editDisplayMode,
             enableEditing,
-            localization: { edit },
+            localization,
             renderRowActionMenuItems,
             renderRowActions,
         },
@@ -53,12 +53,12 @@ export const ToggleRowActionMenuButton = <TData extends RowData>({ cell, row, ta
                         ? (
                 <Tooltip>
                     <TooltipTrigger asChild>
-                        <Button aria-label={edit} disabled={!!editingRow && editingRow.id !== row.id} onClick={handleStartEditMode} size="sm" variant="ghost">
+                        <Button aria-label={localization?.edit ?? "Edit"} disabled={!!editingRow && editingRow.id !== row.id} onClick={handleStartEditMode} size="sm" variant="ghost">
                             <Edit className="h-4 w-4" />
                         </Button>
                     </TooltipTrigger>
                     <TooltipContent side="right">
-                        <p>{edit}</p>
+                        <p>{localization?.edit ?? "Edit"}</p>
                     </TooltipContent>
                 </Tooltip>
                         )

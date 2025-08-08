@@ -20,10 +20,7 @@ export const CopyButton = <TData extends RowData>({ cell, children, className, o
     const [copied, setCopied] = useState(false);
 
     const {
-        options: {
-            localization: { clickToCopy, copiedToClipboard },
-            mantineCopyButtonProps,
-        },
+        options: { localization, mantineCopyButtonProps },
     } = table;
     const { column, row } = cell;
     const { columnDef } = column;
@@ -45,7 +42,7 @@ export const CopyButton = <TData extends RowData>({ cell, children, className, o
         }
     };
 
-    const tooltipText = buttonProps?.title ?? (copied ? copiedToClipboard : clickToCopy);
+    const tooltipText = buttonProps?.title ?? (copied ? localization?.copiedToClipboard ?? "Copied" : localization?.clickToCopy ?? "Click to copy");
 
     return (
         <Tooltip>

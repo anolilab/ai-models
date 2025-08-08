@@ -1,11 +1,12 @@
-import { Filter, FunnelX } from "lucide-react";
+import { FilterX, FunnelX } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { HTMLPropsRef, RowData, TableInstance } from "../../types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { RowData, TableInstance } from "../../types";
 
-interface Props<TData extends RowData> extends HTMLPropsRef<HTMLButtonElement> {
+interface Props<TData extends RowData> extends ComponentPropsWithoutRef<"button"> {
     className?: string;
     table: TableInstance<TData>;
     title?: string;
@@ -15,9 +16,7 @@ export const ToggleFiltersButton = <TData extends RowData>({
     className,
     table: {
         getState,
-        options: {
-            localization: { showHideFilters },
-        },
+        options: { localization },
         setShowColumnFilters,
     },
     title,
@@ -25,7 +24,7 @@ export const ToggleFiltersButton = <TData extends RowData>({
 }: Props<TData>) => {
     const { showColumnFilters } = getState();
 
-    const tooltipText = title ?? showHideFilters;
+    const tooltipText = title ?? localization?.showHideFilters ?? "Show/Hide Filters";
 
     return (
         <Tooltip>
@@ -38,8 +37,7 @@ export const ToggleFiltersButton = <TData extends RowData>({
                     variant="ghost"
                     {...rest}
                 >
-                    // faFilterCircleXmark
-                    {showColumnFilters ? <FunnelX className="h-4 w-4" /> : <Filter className="h-4 w-4" />}
+                    {showColumnFilters ? <FunnelX className="h-4 w-4" /> : <FilterX className="h-4 w-4" />}
                 </Button>
             </TooltipTrigger>
             <TooltipContent>

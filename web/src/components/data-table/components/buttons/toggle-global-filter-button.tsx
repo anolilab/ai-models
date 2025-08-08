@@ -3,9 +3,10 @@ import { Search, SearchX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { HTMLPropsRef, RowData, TableInstance } from "../../types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { RowData, TableInstance } from "../../types";
 
-interface Props<TData extends RowData> extends HTMLPropsRef<HTMLButtonElement> {
+interface Props<TData extends RowData> extends ComponentPropsWithoutRef<"button"> {
     className?: string;
     table: TableInstance<TData>;
     title?: string;
@@ -15,9 +16,7 @@ export const ToggleGlobalFilterButton = <TData extends RowData>({
     className,
     table: {
         getState,
-        options: {
-            localization: { showHideSearch },
-        },
+        options: { localization },
         refs: { searchInputRef },
         setShowGlobalFilter,
     },
@@ -31,7 +30,7 @@ export const ToggleGlobalFilterButton = <TData extends RowData>({
         setTimeout(() => searchInputRef.current?.focus(), 100);
     };
 
-    const tooltipText = title ?? showHideSearch;
+    const tooltipText = title ?? localization?.showHideSearch ?? "Show/Hide Search";
 
     return (
         <Tooltip>

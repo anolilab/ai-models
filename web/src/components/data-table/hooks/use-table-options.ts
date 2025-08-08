@@ -59,6 +59,7 @@ const LocalizationEN = {
     groupedBy: "Grouped by ",
     hideAll: "Hide all",
     hideColumn: "Hide {column} column",
+    showColumn: "Show {column} column",
     noRecordsToDisplay: "No records to display",
     noResultsFound: "No results found",
     of: "of",

@@ -5,10 +5,11 @@ import type { DragEventHandler } from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { HTMLPropsRef, RowData, TableInstance } from "../../types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { RowData, TableInstance } from "../../types";
 
 interface Props<TData extends RowData> {
-    actionIconProps?: HTMLPropsRef<HTMLButtonElement>;
+    actionIconProps?: ComponentPropsWithoutRef<"button">;
     onDragEnd: DragEventHandler<HTMLButtonElement>;
     onDragStart: DragEventHandler<HTMLButtonElement>;
     table: TableInstance<TData>;

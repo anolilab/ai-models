@@ -117,6 +117,7 @@ export interface Localization {
     groupedBy: string;
     hideAll: string;
     hideColumn: string;
+    showColumn: string;
     // language of the localization as BCP 47 language tag for number formatting
     language: string;
     max: string;

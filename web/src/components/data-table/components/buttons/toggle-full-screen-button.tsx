@@ -4,9 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { HTMLPropsRef, RowData, TableInstance } from "../../types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { RowData, TableInstance } from "../../types";
 
-interface Props<TData extends RowData> extends HTMLPropsRef<HTMLButtonElement> {
+interface Props<TData extends RowData> extends ComponentPropsWithoutRef<"button"> {
     className?: string;
     table: TableInstance<TData>;
     title?: string;
@@ -16,9 +17,7 @@ export const ToggleFullScreenButton = <TData extends RowData>({
     className,
     table: {
         getState,
-        options: {
-            localization: { toggleFullScreen },
-        },
+        options: { localization },
         setIsFullScreen,
     },
     title,
@@ -32,7 +31,7 @@ export const ToggleFullScreenButton = <TData extends RowData>({
         setIsFullScreen((current) => !current);
     };
 
-    const tooltipText = title ?? toggleFullScreen;
+    const tooltipText = title ?? localization?.toggleFullScreen ?? "Toggle full screen";
 
     return (
         <Tooltip onOpenChange={setTooltipOpened} open={tooltipOpened}>

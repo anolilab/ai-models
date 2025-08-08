@@ -3,29 +3,28 @@ import { Minus, Plus, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { DensityState, HTMLPropsRef, RowData, TableInstance } from "../../types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { DensityState, RowData, TableInstance } from "../../types";
 
-interface Props<TData extends RowData> extends HTMLPropsRef<HTMLButtonElement> {
+interface Props<TData extends RowData> extends ComponentPropsWithoutRef<"button"> {
     className?: string;
     table: TableInstance<TData>;
     title?: string;
 }
 
-type TogglableDensityState = Exclude<DensityState, "lg" | "sm">;
+type TogglableDensityState = Extract<DensityState, "xs" | "md" | "xl">;
 
 const next: Record<TogglableDensityState, TogglableDensityState> = {
+    xs: "xl",
     md: "xs",
     xl: "md",
-    xs: "xl",
 };
 
 export const ToggleDensePaddingButton = <TData extends RowData>({
     className,
     table: {
         getState,
-        options: {
-            localization: { toggleDensity },
-        },
+        options: { localization },
         setDensity,
     },
     title,
@@ -33,7 +32,7 @@ export const ToggleDensePaddingButton = <TData extends RowData>({
 }: Props<TData>) => {
     const { density } = getState();
 
-    const tooltipText = title ?? toggleDensity;
+    const tooltipText = title ?? localization?.toggleDensity ?? "Toggle density";
 
     return (
         <Tooltip>
@@ -46,7 +45,7 @@ export const ToggleDensePaddingButton = <TData extends RowData>({
                     variant="ghost"
                     {...rest}
                 >
-                    {density === "xs" ? <Minus className="h-4 w-4" /> : density === "md" ? <Square className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                    {density === ("xs" as DensityState) ? <Minus className="h-4 w-4" /> : density === ("md" as DensityState) ? <Square className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                 </Button>
             </TooltipTrigger>
             <TooltipContent>
