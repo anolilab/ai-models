@@ -112,7 +112,7 @@
         "@semantic-release/github": "^11.0.3",
         "@semantic-release/release-notes-generator": "14.0.3",
         "@total-typescript/ts-reset": "^0.6.1",
-        "@types/node": "^24.1.0",
+        "@types/node": "^24.2.0",
         "@visulima/colorize": "1.4.23",
         "@visulima/packem": "2.0.0-alpha.5",
         "@visulima/string": "1.5.1",
