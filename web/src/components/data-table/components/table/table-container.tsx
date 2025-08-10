@@ -28,7 +28,7 @@ export const TableContainer = <TData extends RowData>({ className, style, table,
         ...parseFromValuesOrFunc((options as any).mantineTableContainerProps, { table }),
         ...rest,
     };
-    const loadingOverlayProps = parseFromValuesOrFunc((options as any).mantineLoadingOverlayProps, { table });
+    // const loadingOverlayProps = parseFromValuesOrFunc((options as any).mantineLoadingOverlayProps, { table });
 
     useIsomorphicLayoutEffect(() => {
         const topToolbarHeight = typeof document !== "undefined" ? topToolbarRef.current?.offsetHeight ?? 0 : 0;
@@ -37,6 +37,87 @@ export const TableContainer = <TData extends RowData>({ className, style, table,
 
         setTotalToolbarHeight(topToolbarHeight + bottomToolbarHeight);
     });
+
+    // Debug listeners to diagnose scroll-edge reload/navigation issues
+    useEffect(() => {
+        const el = tableContainerRef.current;
+        if (!el) return;
+
+        const debugPrefix = "[DataTableScroll]";
+
+        const onScroll = (evt?: Event) => {
+            const { scrollLeft, scrollTop, clientWidth, clientHeight, scrollWidth, scrollHeight } = el;
+            const atStartX = scrollLeft <= 0;
+            const atEndX = Math.ceil(scrollLeft + clientWidth) >= Math.floor(scrollWidth);
+            const atStartY = scrollTop <= 0;
+            const atEndY = Math.ceil(scrollTop + clientHeight) >= Math.floor(scrollHeight);
+            // eslint-disable-next-line no-console
+            console.debug(
+                debugPrefix,
+                "scroll",
+                { scrollLeft, scrollTop, clientWidth, clientHeight, scrollWidth, scrollHeight, atStartX, atEndX, atStartY, atEndY },
+            );
+            table.options?.onTableContainerScroll?.({ element: el, event: evt as Event, table });
+        };
+
+        const onWheel = (e: WheelEvent) => {
+            const { scrollLeft, clientWidth, scrollWidth } = el;
+            const atStartX = scrollLeft <= 0;
+            const atEndX = Math.ceil(scrollLeft + clientWidth) >= Math.floor(scrollWidth);
+            // eslint-disable-next-line no-console
+            console.debug(
+                debugPrefix,
+                "wheel",
+                { deltaX: e.deltaX, deltaY: e.deltaY, ctrlKey: e.ctrlKey, metaKey: e.metaKey, shiftKey: e.shiftKey, atStartX, atEndX },
+            );
+        };
+
+        const onTouchStart = (touchEvent: TouchEvent) => {
+            // eslint-disable-next-line no-console
+            console.debug(debugPrefix, "touchstart", { touches: touchEvent.touches.length });
+        };
+
+        const onTouchMove = (_e: TouchEvent) => {
+            const { scrollLeft, clientWidth, scrollWidth } = el;
+            const atStartX = scrollLeft <= 0;
+            const atEndX = Math.ceil(scrollLeft + clientWidth) >= Math.floor(scrollWidth);
+            // eslint-disable-next-line no-console
+            console.debug(debugPrefix, "touchmove", { atStartX, atEndX });
+        };
+
+        const onTouchEnd = () => {
+            // eslint-disable-next-line no-console
+            console.debug(debugPrefix, "touchend");
+        };
+
+        const onPopState = () => {
+            // eslint-disable-next-line no-console
+            console.debug(debugPrefix, "popstate (navigation) detected");
+        };
+
+        const onVisibility = () => {
+            // eslint-disable-next-line no-console
+            console.debug(debugPrefix, "visibilitychange", { hidden: document.hidden });
+        };
+
+        el.addEventListener("scroll", onScroll as EventListener, { passive: true });
+        el.addEventListener("wheel", onWheel, { passive: true });
+        el.addEventListener("touchstart", onTouchStart, { passive: true });
+        el.addEventListener("touchmove", onTouchMove, { passive: true });
+        el.addEventListener("touchend", onTouchEnd, { passive: true });
+        window.addEventListener("popstate", onPopState);
+        document.addEventListener("visibilitychange", onVisibility);
+
+        return () => {
+            el.removeEventListener("scroll", onScroll as EventListener);
+            el.removeEventListener("wheel", onWheel);
+            el.removeEventListener("touchstart", onTouchStart);
+            el.removeEventListener("touchmove", onTouchMove);
+            el.removeEventListener("touchend", onTouchEnd);
+            window.removeEventListener("popstate", onPopState);
+            document.removeEventListener("visibilitychange", onVisibility);
+        };
+    }, [tableContainerRef]);
 
     const createModalOpen = (options as any).createDisplayMode === "modal" && (state as any).creatingRow;
     const editModalOpen = (options as any).editDisplayMode === "modal" && (state as any).editingRow;
@@ -72,6 +153,10 @@ export const TableContainer = <TData extends RowData>({ className, style, table,
                 "--ano-top-toolbar-height": `${totalToolbarHeight}`,
                 // ✅ FIXED: Set explicit height for virtualization
                 height: virtualizationHeight ? `${virtualizationHeight}px` : undefined,
+                // ✅ Prevent browser back/forward or pull-to-refresh when reaching scroll edges
+                overscrollBehaviorX: "contain",
+                overscrollBehaviorY: "contain",
+                touchAction: "pan-x pan-y",
                 ...style,
             }}
         >

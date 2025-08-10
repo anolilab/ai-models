@@ -5,8 +5,8 @@ import { Table as ShadcnTable } from "@/components/ui/table";
 
 import { useColumnVirtualizer } from "../../hooks/use-column-virtualizer";
 import type { RowData, TableInstance } from "../../types";
-import { parseCSSVarId, parseFromValuesOrFunc } from "../../utils/utils";
-import { Memo_TableBody, TableBody } from "../body/table-body";
+import { parseCSSVarId } from "../../utils/utils";
+import { Memo_TableBody } from "../body/table-body";
 import { TableFooter } from "../footer/table-footer";
 import { TableHead } from "../head/table-head";
 
@@ -20,7 +20,7 @@ export const Table = <TData extends RowData>({ className, style, table, ...rest 
     const {
         getFlatHeaders,
         getState,
-        options: { columns, enableTableFooter, enableTableHead, layoutMode, mantineTableProps, memoMode },
+        options: { columns, enableTableFooter, enableTableHead, layoutMode, memoMode },
     } = table;
     const { columnSizing, columnSizingInfo, columnVisibility, density } = getState();
 
@@ -28,9 +28,8 @@ export const Table = <TData extends RowData>({ className, style, table, ...rest 
         highlightOnHover: true,
         horizontalSpacing: density,
         verticalSpacing: density,
-        ...parseFromValuesOrFunc(mantineTableProps, { table }),
         ...rest,
-    };
+    } as any;
 
     const columnSizeVars = useMemo(() => {
         const headers = getFlatHeaders();
@@ -48,6 +47,7 @@ export const Table = <TData extends RowData>({ className, style, table, ...rest 
     }, [columns, columnSizing, columnSizingInfo, columnVisibility]);
 
     const columnVirtualizer = useColumnVirtualizer(table);
+    const totalColumnWidth = columnVirtualizer?.getTotalSize?.();
 
     const commonTableGroupProps = {
         columnVirtualizer,
@@ -56,23 +56,24 @@ export const Table = <TData extends RowData>({ className, style, table, ...rest 
 
     const { stripedColor } = tableProps;
 
+    const tableElementProps = {
+        className: clsx("ano-table bg-white dark:bg-gray-900", layoutMode?.startsWith("grid") && "grid", className),
+        style: {
+            ...columnSizeVars,
+            ["--ano-striped-row-background-color" as any]: stripedColor,
+            minWidth: totalColumnWidth ? `${totalColumnWidth}px` : undefined,
+            ...style,
+        },
+    } as any;
+
     return (
-        <ShadcnTable
-            className={clsx("ano-table bg-white dark:bg-gray-900", layoutMode?.startsWith("grid") && "grid", className)}
-            style={{
-                ...columnSizeVars,
-                "--ano-striped-row-background-color": stripedColor,
-                ...style,
-            }}
-        >
+        <ShadcnTable {...tableElementProps}>
             {enableTableHead && <TableHead {...commonTableGroupProps} />}
-            {memoMode === "table-body" || columnSizingInfo.isResizingColumn
-                ? (
-                <Memo_TableBody {...commonTableGroupProps} columnVirtualizer={columnVirtualizer} />
-                )
-                : (
-                <TableBody {...commonTableGroupProps} />
-                )}
+            <Memo_TableBody
+                {...commonTableGroupProps}
+                columnVirtualizer={columnVirtualizer}
+                skipMemoization={!(memoMode === "table-body" || columnSizingInfo.isResizingColumn)}
+            />
             {enableTableFooter && <TableFooter {...commonTableGroupProps} />}
         </ShadcnTable>
     );

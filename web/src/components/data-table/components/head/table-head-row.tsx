@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useMemo } from "react";
 
 import { TableRow as ShadcnTableRow } from "@/components/ui/table";
 
@@ -35,6 +36,11 @@ export const TableHeadRow = <TData extends RowData>(props: Props<TData>) => {
 
     const { virtualColumns, virtualPaddingLeft, virtualPaddingRight } = columnVirtualizer ?? {};
 
+    const headerColumns: (VirtualItem | Header<TData>)[] = useMemo(
+        () => (virtualColumns?.length ? (virtualColumns as VirtualItem[]) : (headerGroup.headers as Header<TData>[])),
+        [headerGroup.headers, virtualColumns],
+    );
+
     const tableRowProps = {
         ...parseFromValuesOrFunc(mantineTableHeadRowProps, {
             headerGroup,
@@ -55,10 +61,10 @@ export const TableHeadRow = <TData extends RowData>(props: Props<TData>) => {
             style={style}
         >
             {virtualPaddingLeft ? <th style={{ display: "flex", width: virtualPaddingLeft }} /> : null}
-            {((virtualColumns ?? headerGroup.headers) || []).map((headerOrVirtualHeader: any, renderedHeaderIndex: number) => {
+            {headerColumns.map((headerOrVirtualHeader: any, renderedHeaderIndex: number) => {
                 let header = headerOrVirtualHeader as Header<TData>;
 
-                if (columnVirtualizer) {
+                if (columnVirtualizer && virtualColumns?.length) {
                     renderedHeaderIndex = (headerOrVirtualHeader as VirtualItem).index;
                     header = headerGroup.headers?.[renderedHeaderIndex];
                 }

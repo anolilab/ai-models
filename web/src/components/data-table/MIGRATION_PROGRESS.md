@@ -739,13 +739,13 @@
     - `MRT_DisplayColumnIds` → `DisplayColumnIds`
     - `MRT_Localization` → `Localization`
 - **ID Modernization**: Updated all column IDs to use "ano-" prefix
-    - `mrt-row-pin` → `ano-row-pin`
-    - `mrt-row-drag` → `ano-row-drag`
-    - `mrt-row-actions` → `ano-row-actions`
-    - `mrt-row-expand` → `ano-row-expand`
-    - `mrt-row-select` → `ano-row-select`
-    - `mrt-row-numbers` → `ano-row-numbers`
-    - `mrt-row-spacer` → `ano-row-spacer`
+    - `ano-row-pin` → `ano-row-pin`
+    - `ano-row-drag` → `ano-row-drag`
+    - `ano-row-actions` → `ano-row-actions`
+    - `ano-row-expand` → `ano-row-expand`
+    - `ano-row-select` → `ano-row-select`
+    - `ano-row-numbers` → `ano-row-numbers`
+    - `ano-row-spacer` → `ano-row-spacer`
 - **Import Updates**: Fixed all display-column imports to use default export
 - **Code Quality**: Added proper TypeScript types and return types
 - **Linter Clean**: Zero linter errors with proper formatting

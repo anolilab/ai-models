@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuContent, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 
-import type { Column, RowData, TableInstance } from "../../types";
+import type { Column, RowData, TableInstance, VisibilityState } from "../../types";
 import { getDefaultColumnOrderIds } from "../../utils/display-column-utils";
 import { ShowHideColumnsMenuItems } from "./show-hide-columns-menu-items";
 
@@ -23,15 +23,21 @@ export const ShowHideColumnsMenu = <TData extends RowData>({ table }: Props<TDat
         getLeftLeafColumns,
         getRightLeafColumns,
         getState,
-        options: { enableColumnOrdering, enableColumnPinning, enableHiding, localization },
+        options: { enableColumnOrdering, enableColumnPinning, enableColumnUnpinAll, enableColumnResetPins, enableHiding, localization },
     } = table;
     const { columnOrder, columnPinning } = getState();
 
     const handleToggleAllColumns = (value?: boolean) => {
-        getAllLeafColumns()
-            .filter((col) => col.columnDef.enableHiding !== false)
-            .forEach((col) => col.toggleVisibility(value));
-    };
+        const updates =
+          getAllLeafColumns()
+            .filter((column) => column.columnDef.enableHiding !== false)
+            .reduce((acc, column) => {
+              acc[column.id] = value ?? !column.getIsVisible()
+              return acc;
+            }, {} as VisibilityState);
+    
+        table.setColumnVisibility((old) => ({ ...old, ...updates }));
+      };
 
     const allColumns = useMemo(() => {
         const columns = getAllColumns();
@@ -54,22 +60,29 @@ export const ShowHideColumnsMenu = <TData extends RowData>({ table }: Props<TDat
             <div className="justify-between gap-2 pt-1 pb-1">
                 {enableHiding && (
                     <Button disabled={!getIsSomeColumnsVisible()} onClick={() => handleToggleAllColumns(false)} variant="ghost">
-                        {localization.hideAll}
+                        {localization?.hideAll ?? "Hide all"}
                     </Button>
                 )}
                 {enableColumnOrdering && (
                     <Button onClick={() => table.setColumnOrder(getDefaultColumnOrderIds(table.options as any, true))} variant="ghost">
-                        {localization.resetOrder}
+                        {localization?.resetOrder ?? "Reset order"}
                     </Button>
                 )}
-                {enableColumnPinning && (
+                {enableColumnPinning && enableColumnUnpinAll && (
                     <Button disabled={!getIsSomeColumnsPinned()} onClick={() => table.resetColumnPinning(true)} variant="ghost">
-                        {localization.unpinAll}
+                        {localization?.unpinAll ?? "Unpin all"}
                     </Button>
                 )}
+                {enableColumnPinning && enableColumnResetPins && (
+                    <Button
+                        onClick={() => table.resetColumnPinning()}
+                    >
+                        {localization?.resetPins ?? "Reset pins"}
+                    </Button>
+                    )}
                 {enableHiding && (
                     <Button disabled={getIsAllColumnsVisible()} onClick={() => handleToggleAllColumns(true)} variant="ghost">
-                        {localization.showAll}
+                        {localization?.showAll ?? "Show all"}
                     </Button>
                 )}
             </div>

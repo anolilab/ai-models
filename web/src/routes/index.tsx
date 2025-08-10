@@ -272,7 +272,7 @@ const HomeComponent = () => {
      */
     const columns = useRef([
         columnHelper.accessor("providerIcon", {
-            cell: ({ row }) => {
+            Cell: ({ row }) => {
                 const { provider } = row.original;
                 const { providerIcon } = row.original;
 

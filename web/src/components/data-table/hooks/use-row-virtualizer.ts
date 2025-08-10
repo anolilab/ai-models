@@ -42,13 +42,12 @@ export const useRowVirtualizer = <
 
     const rowVirtualizer = useVirtualizer({
         count: renderDetailPanel ? rowCount * 2 : rowCount,
-        estimateSize: (index) => (renderDetailPanel && index % 2 === 1 ? expanded === true ? 100 : 0 : normalRowHeight),
+        estimateSize: (index) => (renderDetailPanel && index % 2 === 1 ? (expanded === true ? 100 : 0) : normalRowHeight),
         getScrollElement: () => tableContainerRef.current,
         measureElement:
             typeof window !== "undefined" && navigator.userAgent.indexOf("Firefox") === -1 ? (element) => element?.getBoundingClientRect().height : undefined,
         overscan: 5, // ✅ IMPROVED: Increased overscan for better scrolling
         rangeExtractor: useCallback((range: Range) => extraIndexRangeExtractor(range, draggingRowIndex), [draggingRowIndex]),
-        // ✅ FIXED: Ensure proper scroll behavior and sizing
         scrollMargin: 0,
         initialOffset: 0,
         ...rowVirtualizerProps,

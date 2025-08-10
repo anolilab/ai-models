@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { CSSProperties, DragEventHandler, MutableRefObject } from "react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 
 import { TableHead as ShadcnTableHead } from "@/components/ui/table";
 
@@ -127,6 +127,20 @@ export const TableHeadCell = <TData extends RowData>({
         }
     };
 
+    const handleRef = useCallback(
+        (node: HTMLTableCellElement) => {
+          if (node) {
+            if (tableHeadCellRefs.current) {
+              tableHeadCellRefs.current[column.id] = node;
+            }
+            if (columnDefType !== 'group') {
+              columnVirtualizer?.measureElement?.(node);
+            }
+          }
+        },
+        [column.id, columnDefType, columnVirtualizer, tableHeadCellRefs],
+      );
+
     const headerElement
         = columnDef.Header?.({
             column,
@@ -155,15 +169,7 @@ export const TableHeadCell = <TData extends RowData>({
             onDragEnter={handleDragEnter}
             onMouseEnter={() => setIsHoveredHeadCell(true)}
             onMouseLeave={() => setIsHoveredHeadCell(false)}
-            ref={(node: HTMLTableCellElement) => {
-                if (node) {
-                    tableHeadCellRefs.current[column.id] = node;
-
-                    if (tableCellProps?.ref) {
-                        (tableCellProps.ref as MutableRefObject<HTMLTableCellElement>).current = node;
-                    }
-                }
-            }}
+            ref={handleRef}
             style={{
                 ...widthStyles,
                 ...style,

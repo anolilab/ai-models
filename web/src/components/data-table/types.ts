@@ -132,6 +132,7 @@ export interface Localization {
     pinToRight: string;
     resetColumnSize: string;
     resetOrder: string;
+    resetPins: string;
     rowActions: string;
     rowNumber: string;
     rowNumbers: string;
@@ -231,10 +232,13 @@ export type TableInstance<TData extends RowData> = Omit<
         lastSelectedRowId: RefObject<null | string>;
         searchInputRef: RefObject<HTMLInputElement | null>;
         tableContainerRef: RefObject<HTMLDivElement | null>;
+        tableBodyRef?: RefObject<HTMLTableSectionElement | null>;
         tableFooterRef: RefObject<HTMLTableSectionElement | null>;
         tableHeadCellRefs: RefObject<Record<string, HTMLTableCellElement> | null>;
         tableHeadRef: RefObject<HTMLTableSectionElement | null>;
-        tablePaperRef: RefObject<HTMLDivElement | null>;
+        tableRef?: RefObject<HTMLTableElement | null>;
+        tableRowRefsMap?: RefObject<Map<number, HTMLTableRowElement> | null>;
+        // tablePaperRef removed
         topToolbarRef: RefObject<HTMLDivElement | null>;
     };
     setActionCell: Dispatch<SetStateAction<Cell<TData> | null>>;
@@ -547,13 +551,13 @@ export type InternalFilterOption = {
 };
 
 export type DisplayColumnIds
-  = | "mrt-row-actions"
-      | "mrt-row-drag"
-      | "mrt-row-expand"
-      | "mrt-row-numbers"
-      | "mrt-row-pin"
-      | "mrt-row-select"
-      | "mrt-row-spacer";
+  = | "ano-row-actions"
+      | "ano-row-drag"
+      | "ano-row-expand"
+      | "ano-row-numbers"
+      | "ano-row-pin"
+      | "ano-row-select"
+      | "ano-row-spacer";
 
 export interface TableOptions<TData extends RowData>
     extends Omit<
@@ -597,8 +601,10 @@ export interface TableOptions<TData extends RowData>
     enableColumnDragging?: boolean;
     enableColumnFilterModes?: boolean;
     enableColumnOrdering?: boolean;
+    enableColumnResetPins?: boolean;
     enableColumnVirtualization?: boolean;
     enableDensityToggle?: boolean;
+    enableColumnUnpinAll?: boolean;
     enableEditing?: ((row: Row<TData>) => boolean) | boolean;
     enableExpandAll?: boolean;
     enableFacetedValues?: boolean;
@@ -613,6 +619,7 @@ export interface TableOptions<TData extends RowData>
     enableRowNumbers?: boolean;
     enableRowOrdering?: boolean;
     enableRowSelection?: ((row: Row<TData>) => boolean) | boolean;
+    enableSubRowSelection?: boolean;
     enableRowVirtualization?: boolean;
     enableSelectAll?: boolean;
     enableStickyFooter?: boolean;
@@ -670,6 +677,11 @@ export interface TableOptions<TData extends RowData>
     onShowColumnFiltersChange?: OnChangeFn<boolean>;
     onShowGlobalFilterChange?: OnChangeFn<boolean>;
     onShowToolbarDropZoneChange?: OnChangeFn<boolean>;
+    /**
+     * Called whenever the internal table container scrolls.
+     * Useful for implementing infinite scrolling or sync scroll behaviors.
+     */
+    onTableContainerScroll?: (args: { element: HTMLDivElement; event: Event; table: TableInstance<TData> }) => void;
     paginationDisplayMode?: "custom" | "default" | "pages";
     positionActionsColumn?: "first" | "last";
     positionCreatingRow?: "bottom" | "top" | number;

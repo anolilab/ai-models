@@ -17,8 +17,7 @@ interface Props<TData extends RowData> {
 export const TablePaper = <TData extends RowData>({ className, features = {}, style, table, ...rest }: Props<TData>): React.JSX.Element => {
     const {
         getState,
-        options: { enableBottomToolbar, enableTopToolbar, mantinePaperProps, renderBottomToolbar, renderTopToolbar },
-        refs: { tablePaperRef },
+        options: { enableBottomToolbar, enableTopToolbar, renderBottomToolbar, renderTopToolbar },
     } = table;
     const { isFullScreen } = getState();
 
@@ -33,12 +32,7 @@ export const TablePaper = <TData extends RowData>({ className, features = {}, st
         }
     }, [isFullScreen]);
 
-    const tablePaperProps = {
-        ...parseFromValuesOrFunc(mantinePaperProps, { table }),
-        className,
-        style,
-        ...rest,
-    };
+    const tablePaperProps = rest as any;
 
     const fullScreenStyles = isFullScreen
         ? {
@@ -62,15 +56,10 @@ export const TablePaper = <TData extends RowData>({ className, features = {}, st
                 isFullScreen && 'ano-table-paper-fullscreen',
                 tablePaperProps?.className,
             )}
-            ref={(ref: HTMLDivElement) => {
-                tablePaperRef.current = ref;
-                if (tablePaperProps?.ref) {
-                    tablePaperProps.ref.current = ref;
-                }
-            }}
+            ref={undefined}
             style={{
                 ...fullScreenStyles,
-                ...parseFromValuesOrFunc(tablePaperProps?.style, {}),
+                ...(parseFromValuesOrFunc((tablePaperProps as any)?.style, {}) as any),
             }}
         >
             {enableTopToolbar && (parseFromValuesOrFunc(renderTopToolbar, { table }) ?? <TopToolbar features={features} table={table} />)}

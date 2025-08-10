@@ -81,10 +81,14 @@ export const getIsRankingRows = <TData extends RowData>(table: TableInstance<TDa
 
 export const getIsRowSelected = <TData extends RowData>({ row, table }: { row: Row<TData>; table: TableInstance<TData> }) => {
     const {
-        options: { enableRowSelection },
+        options: { enableRowSelection, enableSubRowSelection },
     } = table;
 
-    return row.getIsSelected() || (parseFromValuesOrFunc(enableRowSelection, row) && row.getCanSelectSubRows() && row.getIsAllSubRowsSelected());
+    return (
+        row.getIsSelected()
+        || (enableSubRowSelection ? row.getIsSelected() && !row.getCanExpand() : row.getIsSelected())
+        || (parseFromValuesOrFunc(enableRowSelection, row) && row.getCanSelectSubRows() && row.getIsAllSubRowsSelected())
+    );
 };
 
 export const getRowSelectionHandler

@@ -127,7 +127,6 @@ export const TableBodyRow = <TData extends RowData>({
                 className={clsx(
                     "box-border w-full transition-all duration-150 ease-in-out",
                     layoutMode?.startsWith("grid") && "flex",
-                    virtualRow && "absolute top-0 translate-y-[calc(var(--ano-virtual-row-start)*1px)] transform transition-none will-change-transform",
                     className,
                 )}
                 data-dragging-row={isDraggingRow || undefined}
@@ -149,12 +148,9 @@ export const TableBodyRow = <TData extends RowData>({
                         !virtualRow && bottomPinnedIndex !== undefined && isRowPinned
                             ? `${bottomPinnedIndex * rowHeight + (enableStickyFooter ? tableFooterHeight - 1 : 0)}`
                             : undefined,
-                    "--ano-pinned-row-top": virtualRow
-                        ? undefined
-                        : topPinnedIndex !== undefined && isRowPinned
+                    "--ano-pinned-row-top": topPinnedIndex !== undefined && isRowPinned
                             ? `${topPinnedIndex * rowHeight + (enableStickyHeader || isFullScreen ? tableHeadHeight - 1 : 0)}`
                             : undefined,
-                    "--ano-virtual-row-start": virtualRow ? `${virtualRow.start}` : undefined,
                     ...style,
                 }}
             >

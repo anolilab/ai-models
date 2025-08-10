@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { memo, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 
 import { TableBody as ShadcnTableBody } from "@/components/ui/table";
 
@@ -25,7 +25,7 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
         getState,
         getTopRows,
         options,
-        refs: { tableFooterRef, tableHeadRef },
+        refs: { tableFooterRef, tableHeadRef, tableBodyRef },
     } = table;
     
     const state = getState();
@@ -93,7 +93,7 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                             row,
                         };
 
-                        return memoMode === "rows" ? <Memo_TableBodyRow key={row.id} {...rowProps} /> : <TableBodyRow key={row.id} {...rowProps} />;
+                        return memoMode === "rows" || rowVirtualizer?.isScrolling ? <Memo_TableBodyRow key={row.id} {...rowProps} /> : <TableBodyRow key={row.id} {...rowProps} />;
                     })}
                 </ShadcnTableBody>
             )}
@@ -104,8 +104,20 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
                     !rows.length && "min-h-[100px]",
                     className,
                 )}
+                ref={useCallback((node: HTMLTableSectionElement) => {
+                    if (node) {
+                      tableBodyRef.current = node;
+                      if (tableBodyProps?.ref) {
+                        //@ts-expect-error
+                        tableBodyProps.ref.current = node;
+                      }
+                      if (rowVirtualizer) {
+                        tableBodyRef.current.style.height = `${rowVirtualizer.getTotalSize()}px`;
+                      }
+                    }
+                  }, [])}
                 style={{
-                    // ✅ FIXED: Set proper height for virtualization
+                    // Ensure the inner body isn't the scroll container; height expands to total size
                     height: rowVirtualizer ? `${rowVirtualizer.getTotalSize()}px` : undefined,
                     ...style,
                     ...tableBodyProps.style,
@@ -191,4 +203,14 @@ export const TableBody = <TData extends RowData>({ className, columnVirtualizer,
     );
 };
 
-export const Memo_TableBody = memo(TableBody, (prev, next) => prev.table.options.data === next.table.options.data) as typeof TableBody;
+type TableBodyWithMemoizationHintsProps<TData extends RowData> = TableBodyProps<TData> & { skipMemoization?: boolean };
+
+const TableBodyWithMemoizationHints = <TData extends RowData>(props: TableBodyWithMemoizationHintsProps<TData>) => {
+    const { skipMemoization: _skip, ...rest } = props;
+    return <TableBody {...rest} />;
+};
+
+export const Memo_TableBody = memo(
+    TableBodyWithMemoizationHints as any,
+    (prev: any, next: any) => prev.table.options.data === next.table.options.data && !next.skipMemoization,
+) as typeof TableBodyWithMemoizationHints;
