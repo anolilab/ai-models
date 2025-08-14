@@ -1,7 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 /// <reference types="unplugin-fonts/client" />
 /// <reference types="vite/client" />
-/// <reference types="vitest" />
 
 import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
 import tailwindcss from "@tailwindcss/vite";
@@ -54,13 +53,4 @@ export default defineConfig({
             },
         }),
     ],
-    test: {
-        alias: {
-            react: "react",
-            "react-dom": "react-dom",
-        },
-        environment: "jsdom",
-        globals: true,
-        setupFiles: ["./src/test-setup.ts"],
-    },
 });
