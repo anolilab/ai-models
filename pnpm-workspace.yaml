@@ -16,3 +16,4 @@ onlyBuiltDependencies:
 
 overrides:
   next@>=15.0.0 <15.2.3: '>=15.2.3'
+  tmp@<=0.2.3: '>=0.2.4'
