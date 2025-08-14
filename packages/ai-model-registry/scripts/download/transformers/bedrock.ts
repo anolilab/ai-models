@@ -41,25 +41,27 @@ const parseInputModalities = (modalitiesText: string): string[] => {
  * parseOutputModalities("Text, Image") // Returns ['text', 'image']
  */
 const parseOutputModalities = (modalitiesText: string): string[] => {
-    const outputMods: string[] = [];
+    const outputMods = new Set<string>();
     const text = modalitiesText.toLowerCase();
 
-    if (text.includes("text"))
-        outputMods.push("text");
+    // Check for text output (including chat, which is also text)
+    if (text.includes("text") || text.includes("chat")) {
+        outputMods.add("text");
+    }
 
-    if (text.includes("chat"))
-        outputMods.push("text"); // Chat is text output
+    if (text.includes("image")) {
+        outputMods.add("image");
+    }
 
-    if (text.includes("image"))
-        outputMods.push("image");
+    if (text.includes("video")) {
+        outputMods.add("video");
+    }
 
-    if (text.includes("video"))
-        outputMods.push("video");
+    if (text.includes("embedding")) {
+        outputMods.add("embedding");
+    }
 
-    if (text.includes("embedding"))
-        outputMods.push("embedding");
-
-    return outputMods;
+    return Array.from(outputMods);
 };
 
 /**
@@ -67,7 +69,7 @@ const parseOutputModalities = (modalitiesText: string): string[] => {
  * @param regionsCell Cheerio element containing regions data
  * @returns Array of parsed regions
  */
-const parseRegions = (regionsCell: cheerio.Cheerio<any>): string[] => {
+const parseRegions = (regionsCell: cheerio.Cheerio<unknown>): string[] => {
     const regionsArray: string[] = [];
 
     if (regionsCell.length > 0) {
