@@ -4,7 +4,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite dev --port 3000",
+        "dev": "vite dev",
         "dev:e2e": "vite dev",
         "lint:eslint": "eslint .",
         "lint:eslint:fix": "eslint . --fix",
