@@ -21,12 +21,11 @@ import { createTSTColumns, createTSTFilters } from "./filter/integrations/tansta
 import { DataTablePagination } from "./pagination";
 import { RegularTable } from "./regular-table";
 import DataTableToolbar from "./toolbar";
+import type { TableConfig } from "./types";
 import { cleanupColumnResizing, initializeColumnSizes, trackColumnResizing } from "./utils/column-sizing";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import { createKeyboardNavigationHandler } from "./utils/keyboard-navigation";
 import { usePerformanceMonitor } from "./utils/performance-utils";
-import type { TableConfig } from "./utils/table-config";
-import { useTableConfig } from "./utils/table-config";
 import { createColumnSizingHandler, createPaginationHandler } from "./utils/table-state-handlers";
 
 type RowSelectionUpdater = (prev: Record<string, boolean>) => Record<string, boolean>;
@@ -122,7 +121,7 @@ type TableAction
         | { payload: string; type: "REMOVE_SELECTED_ITEM" }
         | { type: "CLEAR_SELECTIONS" };
 
-function tableReducer(state: TableState, action: TableAction): TableState {
+const tableReducer = (state: TableState, action: TableAction): TableState => {
     switch (action.type) {
         case "ADD_SELECTED_ITEM": {
             const isVirtualized = state.selectedItemIds instanceof Set;
@@ -232,7 +231,26 @@ const DataTable = <TData extends ExportableData, TValue>({
     }
 
     // Load table configuration with any overrides
-    const tableConfig = useTableConfig(config);
+    const tableConfig = {
+        allowExportNewColumns: true, // Allow new columns from transform function by default
+        enableClickRowSelect: false, // Clicking row to select disabled by default
+        enableColumnFilters: true, // Column filters enabled by default
+        enableColumnResizing: true, // Column resizing enabled by default
+        enableColumnVisibility: true, // Column visibility options enabled by default
+        enableExport: true, // Data export enabled by default
+        enableKeyboardNavigation: false, // Keyboard navigation disabled by default
+        enablePagination: true, // Pagination enabled by default
+        enableRowSelection: true, // Row selection enabled by default
+        enableRowVirtualization: false, // Disabled by default for backward compatibility
+        enableStickyHeader: false, // Static header disabled by default
+        enableToolbar: true, // Toolbar enabled by default
+        estimatedRowHeight: 40, // Default row height estimate
+        maxSelectionLimit: 5, // Default to 5 items for comparison
+        selectionMode: "comparison", // Default to comparison mode
+        size: "default", // Default size for buttons and inputs
+        virtualizationOverscan: 5, // Default overscan for smooth scrolling
+        ...config,
+    };
 
     // Consolidated state management using useReducer
     const [state, dispatch] = useReducer(tableReducer, {
@@ -574,9 +592,9 @@ const DataTable = <TData extends ExportableData, TValue>({
                 return id != null ? String(id) : "";
             },
             getSortedRowModel: getSortedRowModel<TData>(),
-            manualFiltering: false,
-            manualPagination: false,
-            manualSorting: false,
+            manualFiltering: true,
+            manualPagination: true,
+            manualSorting: true,
             onColumnFiltersChange: (
                 value: { id: string; value: unknown }[] | ((prev: { id: string; value: unknown }[]) => { id: string; value: unknown }[]),
             ) => {

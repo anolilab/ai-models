@@ -52,11 +52,17 @@
 - **Build optimization**: Optimized bundle size and tree-shaking support
 - **Documentation**: Comprehensive JSDoc documentation for all functions
 
-## Web Application ✅ INTEGRATED
+## Web Application ✅ INTEGRATED WITH SELECTION MODE TOGGLE
 - Modern React application with TanStack Router
 - Data table with advanced filtering, sorting, and pagination
 - Provider registry integration for model data
 - **How to Use Dialog**: Comprehensive help dialog explaining project purpose, NPM package usage, and contribution guidelines
+- **Selection Mode Toggle**: Dual-mode selection system with comparison (10 items max) and export (unlimited) modes
+- **Mode Toggle Component**: Visual toggle with tooltips explaining each mode's purpose
+- **Smart Selection Logic**: Selection limits only apply in comparison mode, export mode allows unlimited selection
+- **Export Functionality**: Users can now select and export unlimited models for data analysis
+- **Comparison Functionality**: Users can select up to 10 models for side-by-side comparison
+- **Automatic Mode Switching**: Selections are cleared when switching modes to avoid confusion
 - Responsive design with mobile support
 - Comprehensive test suite with Playwright E2E tests
 - **Provider registry integration**: Successfully integrated @anolilab/ai-model-registry package
@@ -86,3 +92,13 @@
 ## Known Issues
 - **Web E2E tests**: Playwright configuration needs build script fix (resolved)
 - All other critical issues have been resolved 
+
+## Provider Registry Package ✅ COMPLETE
+- **Core functionality**: Complete model aggregation and processing pipeline
+- **Data quality**: Enhanced model data with cross-provider synchronization
+- **Icon system**: Complete icon coverage with custom icon support
+- **Build system**: Optimized with packem for tree-shaking and efficient builds
+- **Documentation complete**: All functions have comprehensive documentation
+- **Web integration**: Successfully integrated with provider registry package
+- **Performance optimized**: Efficient aggregation and processing pipeline
+- **Selection mode toggle**: Fixed selection limit issue with dual-mode system 

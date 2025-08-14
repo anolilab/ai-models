@@ -61,37 +61,3 @@ export interface TableConfig {
     // Number of items to render outside the visible area (overscan)
     virtualizationOverscan: number;
 }
-
-// Default configuration
-const defaultConfig: TableConfig = {
-    allowExportNewColumns: true, // Allow new columns from transform function by default
-    enableClickRowSelect: false, // Clicking row to select disabled by default
-    enableColumnFilters: true, // Column filters enabled by default
-    enableColumnResizing: true, // Column resizing enabled by default
-    enableColumnVisibility: true, // Column visibility options enabled by default
-    enableExport: true, // Data export enabled by default
-    enableKeyboardNavigation: false, // Keyboard navigation disabled by default
-    enablePagination: true, // Pagination enabled by default
-    enableRowSelection: true, // Row selection enabled by default
-    // PERFORMANCE DEFAULTS
-    enableRowVirtualization: false, // Disabled by default for backward compatibility
-    enableStickyHeader: false, // Static header disabled by default
-    enableToolbar: true, // Toolbar enabled by default
-    estimatedRowHeight: 40, // Default row height estimate
-    maxSelectionLimit: 5, // Default to 5 items for comparison
-
-    selectionMode: "comparison", // Default to comparison mode
-    size: "default", // Default size for buttons and inputs
-    virtualizationOverscan: 5, // Default overscan for smooth scrolling
-};
-
-/**
- * Hook to provide table configuration
- * Allows overriding default configuration
- */
-export function useTableConfig(overrideConfig?: Partial<TableConfig>): TableConfig {
-    // Merge default config with any overrides
-    const config = { ...defaultConfig, ...overrideConfig };
-
-    return config;
-}

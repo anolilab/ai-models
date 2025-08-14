@@ -121,11 +121,10 @@ const TableBodyRow = <TData extends ExportableData>({
             onClick={enableClickRowSelect ? () => row.toggleSelected() : undefined}
             onFocus={(e) => {
                 // Remove focus from other rows
-                for (const el of document.querySelectorAll("[data-focused=\"true\"]")) {
-                    el.removeAttribute("data-focused");
-                }
+                const allRows = e.currentTarget.parentElement?.querySelectorAll("[data-focus-row]");
 
-                e.currentTarget.setAttribute("data-focused", "true");
+                allRows?.forEach((r) => r.removeAttribute("data-focus-row"));
+                e.currentTarget.setAttribute("data-focus-row", "true");
             }}
             ref={(node) => rowVirtualizer.measureElement(node)}
             style={{
@@ -152,7 +151,7 @@ const TableBodyRow = <TData extends ExportableData>({
 
 const TableHeadCell = <TData extends ExportableData>({ enableColumnResizing = false, header }: TableHeadCellProps<TData>): JSX.Element => (
     <BaseTableHead
-        className="group/th bg-background relative flex p-2 text-left"
+        className="group/th bg-background relative flex truncate px-4.5 py-2 text-left"
         colSpan={header.colSpan}
         data-column-resizing={enableColumnResizing && header.column.getIsResizing() ? "true" : undefined}
         scope="col"

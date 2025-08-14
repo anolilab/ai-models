@@ -123,13 +123,11 @@ const createSelectionColumn = (): ColumnDef<ModelTableRow> =>
         enableResizing: false,
         enableSorting: false,
         header: ({ table }) => (
-            <div className="p-2">
-                <Checkbox
-                    aria-label="Select all"
-                    checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
-                    onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                />
-            </div>
+            <Checkbox
+                aria-label="Select all"
+                checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
+                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            />
         ),
         id: "select",
         maxSize: 60,
@@ -231,32 +229,6 @@ export interface ModelTableRow {
 }
 
 export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
-    // Selection column
-    {
-        cell: ({ row }) => <Checkbox aria-label="Select row" checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} />,
-        displayName: "Select",
-        group: ColumnGroup.BASIC,
-        header: ({ table }) => (
-            <div className="p-2">
-                <Checkbox
-                    aria-label="Select all"
-                    checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
-                    onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                />
-            </div>
-        ),
-        id: "select",
-        size: 60,
-        type: ColumnType.SELECT,
-        visibility: {
-            comparison: false,
-            default: ColumnVisibility.ALWAYS,
-            export: false,
-            filterable: false,
-            sortable: false,
-        },
-    },
-
     // Provider Icon
     {
         accessorKey: "providerIcon",
@@ -743,26 +715,6 @@ export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], 
         return column;
     });
 
-export const createColumnsWithSelection = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] => {
-    const hasSelectionColumn = configs.some((config) => config.id === "select");
-
-    if (hasSelectionColumn) {
-        return createColumnsFromConfig(configs, options);
-    }
-
-    return [createSelectionColumn(), ...createColumnsFromConfig(configs, options)];
-};
-
-export const createColumnsByVisibility = (
-    configs: ColumnConfig<ModelTableRow>[],
-    visibleColumns: string[],
-    options: ColumnFactoryOptions = {},
-): ColumnDef<ModelTableRow>[] => {
-    const filteredConfigs = configs.filter((config) => visibleColumns.includes(config.id) || config.visibility.default === "always");
-
-    return createColumnsWithSelection(filteredConfigs, options);
-};
-
 export const createExportConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
     const exportableConfigs = configs.filter((config) => config.visibility.export && enabledColumns.includes(config.id));
 
@@ -992,18 +944,30 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create columns with visibility filtering
     const columns = useMemo(() => {
-        if (columnConfigs.length === 0)
+        if (columnConfigs.length === 0) {
             return [];
+        }
 
         try {
             const visibleColumns = getDefaultColumnOrder();
 
-            return createColumnsByVisibility(columnConfigs, visibleColumns, {
-                enableFilter: options.enableFiltering,
-                enableHiding: options.enableColumnHiding,
-                enableResizing: options.enableColumnResizing,
-                enableSort: options.enableSorting,
-            });
+            let filteredConfigs = columnConfigs.filter((config) => visibleColumns.includes(config.id) || config.visibility.default === "always");
+            const hasSelectionColumn = filteredConfigs.some((config) => config.id === "select");
+
+            if (hasSelectionColumn) {
+                // Filter out the select column from configs and create it separately with selection mode
+                filteredConfigs = filteredConfigs.filter((config) => config.id !== "select");
+            }
+
+            return [
+                createSelectionColumn(),
+                ...createColumnsFromConfig(filteredConfigs, {
+                    enableFilter: options.enableFiltering,
+                    enableHiding: options.enableColumnHiding,
+                    enableResizing: options.enableColumnResizing,
+                    enableSort: options.enableSorting,
+                }),
+            ];
         } catch (err) {
             const tableError: TableError = {
                 code: "COLUMN_CREATION_ERROR",
@@ -1015,7 +979,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return [];
         }
-    }, [columnConfigs, options]);
+    }, [columnConfigs, options.enableFiltering, options.enableColumnHiding, options.enableColumnResizing, options.enableSorting, options.selectionMode]);
 
     // Create export configuration
     const exportConfig = useMemo(() => {
@@ -1080,20 +1044,23 @@ export interface UseSelectionModeReturn {
 export const useSelectionMode = (): UseSelectionModeReturn => {
     const [selectionMode, setSelectionMode] = useState<SelectionMode>("comparison");
 
-    const maxSelectionLimit = useMemo(() => (selectionMode === "comparison" ? 10 : 1000), [selectionMode]);
+    const maxSelectionLimit = useMemo(() => (selectionMode === "comparison" ? 10 : undefined), [selectionMode]);
 
     const handleModeChange = useCallback((mode: SelectionMode) => {
         setSelectionMode(mode);
     }, []);
 
-    const isSelectionValid = useCallback((count: number) => count >= 0 && count <= maxSelectionLimit, [maxSelectionLimit]);
+    const isSelectionValid = useCallback((count: number) => count >= 0 && (maxSelectionLimit === undefined || count <= maxSelectionLimit), [maxSelectionLimit]);
 
     const canCompare = useCallback(
-        (count: number) => selectionMode === "comparison" && count >= 2 && count <= maxSelectionLimit,
+        (count: number) => selectionMode === "comparison" && count >= 2 && (maxSelectionLimit === undefined || count <= maxSelectionLimit),
         [selectionMode, maxSelectionLimit],
     );
 
-    const canExport = useCallback((count: number) => selectionMode === "export" && count > 0 && count <= maxSelectionLimit, [selectionMode, maxSelectionLimit]);
+    const canExport = useCallback(
+        (count: number) => selectionMode === "export" && count > 0 && (maxSelectionLimit === undefined || count <= maxSelectionLimit),
+        [selectionMode, maxSelectionLimit],
+    );
 
     const getValidationMessage = useCallback(
         (count: number) => {
@@ -1101,7 +1068,7 @@ export const useSelectionMode = (): UseSelectionModeReturn => {
                 return "No models selected";
             }
 
-            if (count > maxSelectionLimit) {
+            if (maxSelectionLimit !== undefined && count > maxSelectionLimit) {
                 return `Too many models selected (max: ${maxSelectionLimit})`;
             }
 
@@ -1158,7 +1125,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
         const footerHeight = footerRef.current?.offsetHeight || 0;
 
         // Calculate available height for table
-        const availableHeight = windowHeight - headerHeight - footerHeight - (isMobile ? 64 : 54);
+        const availableHeight = windowHeight - headerHeight - footerHeight - (isMobile ? 64 : 58);
 
         setContainerHeight(Math.max(400, availableHeight)); // Minimum 400px height
 
