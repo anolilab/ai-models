@@ -47,7 +47,48 @@ const renderModalityCell = (props: any) => {
     );
 };
 
-const renderCostCell = (props: any) => <span className="text-right">{props.getValue()}</span>;
+const renderCostCell = (props: any) => {
+    const value = props.getValue();
+
+    if (value === "-" || value === null || value === undefined) {
+        return (
+            <span className="text-muted-foreground text-right text-xs">
+                -
+            </span>
+        );
+    }
+
+    if (value === "Free") {
+        return (
+            <span className="text-green-600 dark:text-green-400 text-right font-medium text-xs px-2 py-1">
+                Free
+            </span>
+        );
+    }
+
+    // Extract the numeric value and unit for tooltip
+    const numericMatch = value.match(/\$([\d,]+\.?\d*)/);
+    const unitMatch = value.match(/\/([^/]+)$/);
+
+    const numericValue = numericMatch ? numericMatch[1] : "";
+    const unit = unitMatch ? unitMatch[1] : "";
+
+    return (
+        <span
+            className="text-right font-mono text-sm cursor-help px-2 py-1"
+            title={`${value}${unit ? ` (${unit})` : ""}`}
+        >
+            <span className="text-blue-600 dark:text-blue-400 font-medium">
+                ${numericValue}
+            </span>
+            {unit && (
+                <span className="text-muted-foreground text-xs ml-1">
+                    / {unit}
+                </span>
+            )}
+        </span>
+    );
+};
 
 const renderNumberCell = (props: any) => {
     const value = props.getValue();
@@ -66,7 +107,7 @@ const renderNumberCell = (props: any) => {
         return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
 
-    if (isNaN(num) || num === 0) {
+    if (Number.isNaN(num) || num === 0) {
         return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
 
@@ -434,7 +475,7 @@ export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
 
     // Input Cost
     {
-        accessorFn: (row) => extractLimitValue(row.inputCost),
+        accessorFn: (row) => row.inputCost,
         cell: renderCostCell,
         comparison: { highlightDifferences: true },
         displayName: "Input Cost",
@@ -442,7 +483,7 @@ export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
         filter: { type: "number" },
         group: ColumnGroup.COSTS,
         id: "inputCost",
-        size: 150,
+        size: 180,
         sort: { type: "basic" },
         type: ColumnType.COST,
         visibility: {
@@ -456,7 +497,7 @@ export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
 
     // Output Cost
     {
-        accessorFn: (row) => extractLimitValue(row.outputCost),
+        accessorFn: (row) => row.outputCost,
         cell: renderCostCell,
         comparison: { highlightDifferences: true },
         displayName: "Output Cost",
@@ -464,7 +505,7 @@ export const getTableColumns = (): ColumnConfig<ModelTableRow>[] => [
         filter: { type: "number" },
         group: ColumnGroup.COSTS,
         id: "outputCost",
-        size: 150,
+        size: 180,
         sort: { type: "basic" },
         type: ColumnType.COST,
         visibility: {

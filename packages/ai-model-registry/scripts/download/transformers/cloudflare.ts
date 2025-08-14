@@ -152,16 +152,38 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
             .text();
 
         if (pricingText) {
-            const priceMatch = pricingText.match(/\$([\d.]+)/g);
+            // Look for pricing patterns like "$0.027 per M input tokens" and "$0.201 per M output tokens"
+            const inputMatch = pricingText.match(/\$([\d.]+)\s+per\s+M\s+input\s+tokens?/i);
+            const outputMatch = pricingText.match(/\$([\d.]+)\s+per\s+M\s+output\s+tokens?/i);
 
-            if (priceMatch && priceMatch.length >= 2) {
-                const inputCost = parseFloat(priceMatch[0].replace("$", ""));
-                const outputCost = parseFloat(priceMatch[1].replace("$", ""));
+            if (inputMatch && outputMatch) {
+                const inputCostPerM = parseFloat(inputMatch[1]);
+                const outputCostPerM = parseFloat(outputMatch[1]);
+
+                // Convert from per million tokens to per token
+                const inputCostPerToken = inputCostPerM / 1000000;
+                const outputCostPerToken = outputCostPerM / 1000000;
 
                 details.pricing = {
-                    input: Number.isNaN(inputCost) ? undefined : inputCost,
-                    output: Number.isNaN(outputCost) ? undefined : outputCost,
+                    input: Number.isNaN(inputCostPerToken) ? undefined : parseFloat(inputCostPerToken.toFixed(10)),
+                    output: Number.isNaN(outputCostPerToken) ? undefined : parseFloat(outputCostPerToken.toFixed(10)),
                 };
+            } else {
+                // Fallback: try to find any dollar amounts and assume they're in order (input, output)
+                const priceMatches = pricingText.match(/\$([\d.]+)/g);
+                if (priceMatches && priceMatches.length >= 2) {
+                    const inputCostPerM = parseFloat(priceMatches[0].replace("$", ""));
+                    const outputCostPerM = parseFloat(priceMatches[1].replace("$", ""));
+
+                    // Convert from per million tokens to per token
+                    const inputCostPerToken = inputCostPerM / 1000000;
+                    const outputCostPerToken = outputCostPerM / 1000000;
+
+                    details.pricing = {
+                        input: Number.isNaN(inputCostPerToken) ? undefined : parseFloat(inputCostPerToken.toFixed(10)),
+                        output: Number.isNaN(outputCostPerToken) ? undefined : parseFloat(outputCostPerToken.toFixed(10)),
+                    };
+                }
             }
         }
 

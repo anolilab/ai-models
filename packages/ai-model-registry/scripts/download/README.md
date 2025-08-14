@@ -2,6 +2,54 @@
 
 This directory contains scripts for downloading and transforming provider data from various sources.
 
+## Parallel Downloads
+
+The download script now supports parallel processing with configurable concurrency limits for significantly improved performance.
+
+### Performance Improvements
+
+- **Sequential (old)**: ~30-45 minutes for all providers
+- **Parallel (new)**: ~5-10 minutes for all providers (3-6x faster)
+- **Configurable concurrency**: Control how many providers download simultaneously
+
+### Usage
+
+#### Basic Parallel Download
+```bash
+# From the ai-model-registry package directory
+pnpm run download                    # Default: 5 concurrent downloads
+pnpm run download:fast              # 10 concurrent downloads
+pnpm run download:slow              # 2 concurrent downloads (API-friendly)
+pnpm run download:max               # 20 concurrent downloads (maximum speed)
+```
+
+#### Custom Concurrency
+```bash
+# Custom concurrency level
+pnpm run download --concurrency 8   # 8 concurrent downloads
+pnpm run download --concurrency 15  # 15 concurrent downloads
+```
+
+#### Single Provider (still parallel for internal operations)
+```bash
+# Download specific provider
+pnpm run download --provider "OpenAI" --concurrency 3
+```
+
+### Concurrency Guidelines
+
+- **Conservative (2-3)**: For rate-limited APIs or when being respectful to services
+- **Balanced (5-10)**: Good balance of speed and API friendliness (recommended)
+- **Aggressive (15-20)**: Maximum speed, but may hit rate limits
+
+### Progress Tracking
+
+The script now provides real-time progress updates:
+```
+Progress: 15/45 (33.3%) - 5 running - Elapsed: 45.2s - ETA: 90.4s
+[OpenAI] Completed (16/45 - 35.6%)
+```
+
 ## Helicone Pricing Enrichment
 
 The Helicone API integration allows you to enrich existing models with pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs).

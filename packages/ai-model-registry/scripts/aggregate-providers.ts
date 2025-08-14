@@ -171,8 +171,8 @@ async function enrichModelsWithPricing(models: Model[]): Promise<Model[]> {
                 ...model,
                 cost: {
                     ...model.cost,
-                    input: model.cost.input ?? pricing.input_cost_per_1m / 1000, // Convert from per 1M to per 1K tokens
-                    output: model.cost.output ?? pricing.output_cost_per_1m / 1000, // Convert from per 1M to per 1K tokens
+                    input: model.cost.input ?? parseFloat((pricing.input_cost_per_1m / 1000).toFixed(10)), // Convert from per 1M to per 1K tokens
+                    output: model.cost.output ?? parseFloat((pricing.output_cost_per_1m / 1000).toFixed(10)), // Convert from per 1M to per 1K tokens
                 },
             };
         }
@@ -188,6 +188,74 @@ async function enrichModelsWithPricing(models: Model[]): Promise<Model[]> {
 
     return enrichedModels;
 }
+
+/**
+ * Normalizes cost values to ensure they are proper decimal numbers
+ * @param models Array of models to normalize
+ * @returns Array of models with normalized cost values
+ */
+const normalizeCostValues = (models: Model[]): Model[] => {
+    return models.map((model) => ({
+        ...model,
+        cost: {
+            ...model.cost,
+            input: model.cost.input !== null && model.cost.input !== undefined 
+                ? parseFloat(model.cost.input.toFixed(10)) 
+                : model.cost.input,
+            output: model.cost.output !== null && model.cost.output !== undefined 
+                ? parseFloat(model.cost.output.toFixed(10)) 
+                : model.cost.output,
+            inputCacheHit: model.cost.inputCacheHit !== null && model.cost.inputCacheHit !== undefined 
+                ? parseFloat(model.cost.inputCacheHit.toFixed(10)) 
+                : model.cost.inputCacheHit,
+            imageGeneration: model.cost.imageGeneration !== null && model.cost.imageGeneration !== undefined 
+                ? parseFloat(model.cost.imageGeneration.toFixed(10)) 
+                : model.cost.imageGeneration,
+            imageGenerationUltra: model.cost.imageGenerationUltra !== null && model.cost.imageGenerationUltra !== undefined 
+                ? parseFloat(model.cost.imageGenerationUltra.toFixed(10)) 
+                : model.cost.imageGenerationUltra,
+            videoGeneration: model.cost.videoGeneration !== null && model.cost.videoGeneration !== undefined 
+                ? parseFloat(model.cost.videoGeneration.toFixed(10)) 
+                : model.cost.videoGeneration,
+            videoGenerationWithAudio: model.cost.videoGenerationWithAudio !== null && model.cost.videoGenerationWithAudio !== undefined 
+                ? parseFloat(model.cost.videoGenerationWithAudio.toFixed(10)) 
+                : model.cost.videoGenerationWithAudio,
+            videoGenerationWithoutAudio: model.cost.videoGenerationWithoutAudio !== null && model.cost.videoGenerationWithoutAudio !== undefined 
+                ? parseFloat(model.cost.videoGenerationWithoutAudio.toFixed(10)) 
+                : model.cost.videoGenerationWithoutAudio,
+        },
+    }));
+};
+
+/**
+ * Normalizes cost values in a single model to ensure they are proper decimal numbers
+ * @param model Model to normalize
+ * @returns Model with normalized cost values
+ */
+const normalizeModelCostValues = (model: Model): Model => {
+    if (!model.cost) return model;
+
+    const normalizedCost = { ...model.cost };
+
+    // Normalize each cost field
+    Object.keys(normalizedCost).forEach((key) => {
+        const value = normalizedCost[key as keyof typeof normalizedCost];
+        if (typeof value === "number") {
+            // For very small numbers, use toFixed to prevent scientific notation
+            if (Math.abs(value) < 0.000001 && value !== 0) {
+                normalizedCost[key as keyof typeof normalizedCost] = parseFloat(value.toFixed(10));
+            } else {
+                // For other numbers, ensure they're not converted to scientific notation
+                normalizedCost[key as keyof typeof normalizedCost] = parseFloat(value.toString());
+            }
+        }
+    });
+
+    return {
+        ...model,
+        cost: normalizedCost,
+    };
+};
 
 /**
  * Maps directory names to proper brand names
@@ -689,7 +757,10 @@ const aggregateModels = async (): Promise<Model[]> => {
             // Fill missing fields from OpenRouter reference data
             const enhancedData = fillMissingFieldsFromReference(convertedData, referenceMap);
 
-            const parsed = ModelSchema.safeParse(enhancedData);
+            // Normalize cost values in the individual model
+            const normalizedModelData = normalizeModelCostValues(enhancedData);
+
+            const parsed = ModelSchema.safeParse(normalizedModelData);
 
             if (parsed.success) {
                 models.push(parsed.data);
@@ -760,10 +831,13 @@ const main = async (): Promise<void> => {
         // Add icon information
         const modelsWithIcons = addIconInformation(enrichedModels);
 
-        // Synchronize data between models with the same ID
-        const synchronizedModels = synchronizeModelData(modelsWithIcons);
+        // Normalize cost values
+        const normalizedModels = normalizeCostValues(modelsWithIcons);
 
-        writeFileSync(OUTPUT_JSON, JSON.stringify(synchronizedModels, null, 2));
+        // Synchronize data between models with the same ID
+        const synchronizedModels = synchronizeModelData(normalizedModels);
+
+        writeFileSync(OUTPUT_JSON, customJsonStringify(synchronizedModels, 2));
 
         console.log(`[DONE] Aggregated and synchronized ${synchronizedModels.length} models to ${OUTPUT_JSON}`);
 
@@ -779,7 +853,7 @@ const main = async (): Promise<void> => {
             models: synchronizedModels,
         };
 
-        writeFileSync(OUTPUT_API_JSON, JSON.stringify(apiJson, null, 2));
+        writeFileSync(OUTPUT_API_JSON, customJsonStringify(apiJson, 2));
 
         console.log(`[DONE] Generated API JSON at ${OUTPUT_API_JSON} with ${synchronizedModels.length} models`);
     } catch (error) {
@@ -787,6 +861,27 @@ const main = async (): Promise<void> => {
 
         process.exit(1);
     }
+};
+
+/**
+ * Custom JSON serializer that preserves decimal numbers and prevents scientific notation
+ * @param obj Object to serialize
+ * @param space Number of spaces for indentation
+ * @returns JSON string with preserved decimal numbers
+ */
+const customJsonStringify = (obj: unknown, space?: number): string => {
+    return JSON.stringify(obj, (key, value) => {
+        // If the value is a number, ensure it's formatted as a decimal
+        if (typeof value === "number") {
+            // For very small numbers, convert to string to prevent scientific notation
+            if (Math.abs(value) < 0.000001 && value !== 0) {
+                return value.toFixed(10);
+            }
+            // For other numbers, ensure they're not converted to scientific notation
+            return value.toString();
+        }
+        return value;
+    }, space);
 };
 
 main();

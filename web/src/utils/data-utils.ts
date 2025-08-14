@@ -1,22 +1,7 @@
 import type { Model } from "@anolilab/ai-model-registry";
 
 import type { ModelTableRow } from "@/hooks/use-table";
-
-const formatCost = (cost: number | null): string => {
-    if (cost === null || cost === undefined)
-        return "-";
-
-    if (cost === 0)
-        return "Free";
-
-    if (cost < 0.001)
-        return `$${(cost * 1000000).toFixed(2)}/1M tokens`;
-
-    if (cost < 1)
-        return `$${(cost * 1000).toFixed(2)}/1K tokens`;
-
-    return `$${cost.toFixed(2)}/token`;
-};
+import { formatModelCost } from "@/utils/format";
 
 const formatBoolean = (value: boolean | null | undefined): string => {
     if (value === null || value === undefined)
@@ -42,21 +27,21 @@ const formatModalities = (modalities: string[]): string => {
     return modalities.join(", ");
 };
 
-export const transformModelToTableRow = (model: Model, index: number): ModelTableRow => {
+const transformModelToTableRow = (model: Model, index: number): ModelTableRow => {
     return {
-        cacheReadCost: formatCost(model.cost.inputCacheHit),
+        cacheReadCost: formatModelCost(model.cost.inputCacheHit),
         cacheWriteCost: "-",
         contextLimit: model.limit.context ? formatNumber(model.limit.context) : "-",
         id: model.id,
         index,
         input: formatModalities(model.modalities.input),
-        inputCost: formatCost(model.cost.input),
+        inputCost: formatModelCost(model.cost.input),
         knowledge: model.knowledge || "-",
         lastUpdated: model.lastUpdated || "-",
         model: (model.name || model.id).toLowerCase(),
         modelId: model.id,
         output: formatModalities(model.modalities.output),
-        outputCost: formatCost(model.cost.output),
+        outputCost: formatModelCost(model.cost.output),
         outputLimit: model.limit.output ? formatNumber(model.limit.output) : "-",
         provider: model.provider || "Unknown",
         providerIcon: model.icon || null,
@@ -69,7 +54,7 @@ export const transformModelToTableRow = (model: Model, index: number): ModelTabl
     };
 };
 
-export const transformModelsToTableRows = (models: Model[]): ModelTableRow[] =>
+const transformModelsToTableRows = (models: Model[]): ModelTableRow[] =>
     models.map((model, index) => transformModelToTableRow(model, index)).sort((a, b) => a.provider.localeCompare(b.provider));
 
 const createMemoizedTransformer = <T, R>(transformFn: (data: T) => R, getDependency: (data: T) => any) => {
@@ -90,4 +75,5 @@ const createMemoizedTransformer = <T, R>(transformFn: (data: T) => R, getDepende
     };
 };
 
-export const memoizedTransformModels = createMemoizedTransformer(transformModelsToTableRows, (models: Model[]) => models.length + models[0]?.id);
+export { transformModelToTableRow, transformModelsToTableRows };
+export const memoizedTransformModels = createMemoizedTransformer(transformModelsToTableRows, (models: Model[]) => models.length + (models[0]?.id ?? ""));

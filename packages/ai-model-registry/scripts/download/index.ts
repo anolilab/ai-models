@@ -113,12 +113,15 @@ const showHelp = (): never => {
 Usage: node index.js [options]
 
 Options:
-  --provider <name>   Process only the specified provider
-  --help, -h         Show this help message
+  --provider <name>      Process only the specified provider
+  --concurrency <num>    Number of concurrent downloads (default: 5)
+  --help, -h            Show this help message
 
 Examples:
-  node index.js                           # Process all providers
-  node index.js --provider "OpenRouter"   # Process only OpenRouter
+  node index.js                                    # Process all providers with default concurrency (5)
+  node index.js --provider "OpenRouter"            # Process only OpenRouter
+  node index.js --concurrency 10                   # Process all providers with 10 concurrent downloads
+  node index.js --provider "OpenAI" --concurrency 3 # Process OpenAI with 3 concurrent downloads
 `);
     process.exit(0);
 };
@@ -326,14 +329,95 @@ const main = async (): Promise<void> => {
         consoleColors.info(`Processing all ${PROVIDERS_CONFIG.length} providers...`);
     }
 
-    const results: ProcessingResult[] = [];
+    // Parse concurrency from command line arguments (default: 5)
+    const concurrencyIndex = process.argv.indexOf("--concurrency");
+    const concurrency = concurrencyIndex !== -1 && concurrencyIndex + 1 < process.argv.length 
+        ? parseInt(process.argv[concurrencyIndex + 1], 10) 
+        : 5;
 
-    for (const providerConfig of providersToProcess) {
-        // eslint-disable-next-line no-await-in-loop
-        const result = await processProvider(providerConfig, arguments_.outputPath);
-
-        results.push(result);
+    if (isNaN(concurrency) || concurrency < 1) {
+        consoleColors.error("Invalid concurrency value. Must be a positive integer.");
+        process.exit(1);
     }
+
+    consoleColors.info(`Running downloads with concurrency: ${concurrency}`);
+
+    // Process providers in parallel with concurrency limit
+    const processProvidersInParallel = async (): Promise<ProcessingResult[]> => {
+        const queue = [...providersToProcess];
+        const results: ProcessingResult[] = [];
+        let completedCount = 0;
+        let runningCount = 0;
+
+        // Progress tracking
+        const startTime = Date.now();
+        const updateProgress = () => {
+            const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+            const progress = ((completedCount / providersToProcess.length) * 100).toFixed(1);
+            const eta = completedCount > 0 ? ((elapsed * (providersToProcess.length - completedCount)) / completedCount).toFixed(1) : "?";
+            
+            consoleColors.info(`Progress: ${completedCount}/${providersToProcess.length} (${progress}%) - ${runningCount} running - Elapsed: ${elapsed}s - ETA: ${eta}s`);
+        };
+
+        // Worker function to process a single provider
+        const worker = async (): Promise<void> => {
+            while (queue.length > 0) {
+                const providerConfig = queue.shift()!;
+                if (!providerConfig) continue;
+
+                runningCount++;
+                consoleColors.info(`[${providerConfig.name}] Starting download (${runningCount} running, ${queue.length} queued)`);
+
+                try {
+                    const result = await processProvider(providerConfig, arguments_.outputPath);
+                    results.push(result);
+                    completedCount++;
+                    runningCount--;
+
+                    // Update progress
+                    updateProgress();
+
+                    // Small delay to be respectful to APIs
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                } catch (error) {
+                    const errorResult: ProcessingResult = {
+                        error: error instanceof Error ? error.message : String(error),
+                        name: providerConfig.name,
+                    };
+                    results.push(errorResult);
+                    completedCount++;
+                    runningCount--;
+
+                    consoleColors.error(`[${providerConfig.name}] Failed: ${errorResult.error}`);
+                    updateProgress();
+
+                    // Small delay to be respectful to APIs
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+        };
+
+        // Start worker pool
+        const initialBatch = Math.min(concurrency, queue.length);
+        const workers: Promise<void>[] = [];
+
+        consoleColors.info(`Starting ${initialBatch} concurrent workers...`);
+
+        for (let i = 0; i < initialBatch; i++) {
+            workers.push(worker());
+        }
+
+        // Wait for all workers to complete
+        await Promise.all(workers);
+
+        const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+        consoleColors.success(`All downloads completed in ${totalTime}s!`);
+
+        return results;
+    };
+
+    // Run parallel downloads
+    const results = await processProvidersInParallel();
 
     // Print summary
     const summaryTitle = arguments_.providerName ? `=== ${arguments_.providerName} Summary ===` : "=== Batch Summary ===";
