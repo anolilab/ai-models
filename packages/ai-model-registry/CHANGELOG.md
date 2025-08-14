@@ -1,3 +1,13 @@
+## @anolilab/ai-model-registry [1.3.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.3...@anolilab/ai-model-registry@1.3.0) (2025-08-14)
+
+### Features
+
+* update AI model registry with new models and enhance documentation links ([dc06631](https://github.com/anolilab/ai-models/commit/dc066313a223584d60c77622179a431d5c56234c))
+
+### Miscellaneous Chores
+
+* update dependencies and improve package configurations ([26b2a56](https://github.com/anolilab/ai-models/commit/26b2a56cb0cbff477e6c6fa0b7c6260f45cea8da))
+
 ## @anolilab/ai-model-registry [1.2.3](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.2...@anolilab/ai-model-registry@1.2.3) (2025-08-04)
 
 ### Bug Fixes
