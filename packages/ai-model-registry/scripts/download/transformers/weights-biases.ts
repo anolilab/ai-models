@@ -3,7 +3,7 @@ import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
 
-const WANDB_DOCS_URL = "https://weave-docs.wandb.ai/guides/integrations/inference/";
+const WANDB_DOCS_URL = "https://docs.wandb.ai/guides/inference/models/";
 const WANDB_PRICING_URL = "https://wandb.ai/site/pricing/inference";
 
 /**
@@ -73,7 +73,7 @@ const fetchModelInfo = async (): Promise<Record<string, WandBModelInfo>> => {
         // Look for the models table structure
         // The table has: Model | Model ID (for API usage) | Type(s) | Context Window | Parameters | Description
         const tableRegex
-            = /<tr>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g;
+            = /<tr>\s*<td>([^<]+)<\/td>\s*<td><code>([^<]+)<\/code><\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g;
 
         let match;
 
