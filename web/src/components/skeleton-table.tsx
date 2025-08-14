@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface SkeletonTableProps {
@@ -5,7 +7,7 @@ interface SkeletonTableProps {
     rows?: number;
 }
 
-const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps) => (
+const SkeletonTable = memo(({ columns = 19, rows = 10 }: SkeletonTableProps) => (
     <div className="w-full">
         <div className="border">
             <div className="bg-muted/50 border-b">
@@ -31,6 +33,6 @@ const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps) => (
             </div>
         </div>
     </div>
-);
+));
 
 export default SkeletonTable;
