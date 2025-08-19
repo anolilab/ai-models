@@ -95,8 +95,8 @@ importers:
         specifier: ^0.18.2
         version: 0.18.2
       '@lobehub/icons-static-svg':
-        specifier: ^1.62.0
-        version: 1.62.0
+        specifier: ^1.63.0
+        version: 1.63.0
       '@secretlint/secretlint-rule-preset-recommend':
         specifier: ^11.0.2
         version: 11.0.2
@@ -1773,8 +1773,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@lobehub/icons-static-svg@1.62.0':
-    resolution: {integrity: sha512-5H6RAhSxe9UoL2MBFHUBZ7lyUrxqBzXufhkOP5+CVZAhpsNcTZ8t4dV9WD49si5xyMNVTChXyN10qshWuzwqxQ==}
+  '@lobehub/icons-static-svg@1.63.0':
+    resolution: {integrity: sha512-3ZF1d6ADj6Q2pSK9XHjF/aXEHLT9YorhSGGKuqBsd1iudLohyeMVQPllTW2rnCDG0In1HPBEf5493J8TPtorRg==}
 
   '@mapbox/node-pre-gyp@2.0.0':
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
@@ -12025,7 +12025,7 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.1
 
-  '@lobehub/icons-static-svg@1.62.0': {}
+  '@lobehub/icons-static-svg@1.63.0': {}
 
   '@mapbox/node-pre-gyp@2.0.0':
     dependencies:
