@@ -63,7 +63,7 @@
     "semantic-release": "^24.2.7",
     "sort-package-json": "^3.4.0"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.1",
   "nx": {
     "affected": {
       "defaultBase": "main"

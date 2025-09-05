@@ -98,7 +98,7 @@
         "test:watch": "vitest"
     },
     "dependencies": {
-        "zod": "^4.0.17"
+        "zod": "^4.1.5"
     },
     "devDependencies": {
         "@anolilab/eslint-config": "^16.2.23",
@@ -106,7 +106,7 @@
         "@anolilab/semantic-release-clean-package-json": "3.0.3",
         "@anolilab/semantic-release-pnpm": "^2.0.3",
         "@arethetypeswrong/cli": "^0.18.2",
-        "@lobehub/icons-static-svg": "^1.63.0",
+        "@lobehub/icons-static-svg": "^1.65.0",
         "@secretlint/secretlint-rule-preset-recommend": "^11.0.2",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "13.0.1",
