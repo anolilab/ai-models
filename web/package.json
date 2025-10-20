@@ -75,7 +75,7 @@
         "@anolilab/unplugin-favicons": "1.0.5",
         "@babel/core": "7.28.3",
         "@c15t/backend": "1.5.0",
-        "@playwright/test": "^1.54.2",
+        "@playwright/test": "^1.56.1",
         "@tanstack/eslint-plugin-query": "5.83.1",
         "@tanstack/eslint-plugin-router": "1.131.2",
         "@tanstack/react-query-devtools": "^5.85.3",
