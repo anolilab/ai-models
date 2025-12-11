@@ -42,28 +42,28 @@
     "test:e2e": "nx run web:test:e2e"
   },
   "dependencies": {
-    "@anolilab/commitlint-config": "^6.0.2",
-    "@anolilab/lint-staged-config": "^3.0.27",
-    "@anolilab/multi-semantic-release": "^2.0.3",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@anolilab/commitlint-config": "^7.0.0",
+    "@anolilab/lint-staged-config": "^3.0.41",
+    "@anolilab/multi-semantic-release": "^3.2.2",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
     "@nrwl/tao": "19.8.4",
     "@nrwl/workspace": "19.8.4",
-    "@secretlint/secretlint-rule-preset-recommend": "^11.0.2",
-    "@types/node": "24.2.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
+    "@types/node": "25.0.0",
     "audit-ci": "^7.1.0",
     "commitizen": "^4.3.1",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "lint-staged": "^16.1.5",
-    "nx": "^21.4.0",
-    "pkg-pr-new": "^0.0.54",
-    "rimraf": "6.0.1",
-    "secretlint": "11.0.2",
-    "semantic-release": "^24.2.7",
-    "sort-package-json": "^3.4.0"
+    "lint-staged": "^16.2.7",
+    "nx": "^22.2.1",
+    "pkg-pr-new": "^0.0.62",
+    "rimraf": "6.1.2",
+    "secretlint": "11.2.5",
+    "semantic-release": "^25.0.2",
+    "sort-package-json": "^3.5.1"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.25.0",
   "nx": {
     "affected": {
       "defaultBase": "main"
