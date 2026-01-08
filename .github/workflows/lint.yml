@@ -88,7 +88,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c" # v46.0.5
+              uses: "tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891" # v47.0.1
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -140,7 +140,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c" # v46.0.5
+              uses: "tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891" # v47.0.1
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -191,7 +191,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c" # v46.0.5
+              uses: "tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891" # v47.0.1
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -242,7 +242,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c" # v46.0.5
+              uses: "tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891" # v47.0.1
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"

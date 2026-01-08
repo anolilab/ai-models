@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
+import { toNumber } from "../utils/index.js";
 
 /**
  * Deep Infra model data from their website API
@@ -55,16 +56,16 @@ const transformDeepInfraModels = (modelsData: DeepInfraModelData[]): Model[] => 
         const model: Model = {
             attachment: false, // Default value, not available in API
             cost: {
-                input: modelData.pricing.cents_per_input_token || null,
+                input: toNumber(modelData.pricing.cents_per_input_token) || null,
                 inputCacheHit: null,
-                output: modelData.pricing.cents_per_output_token || null,
+                output: toNumber(modelData.pricing.cents_per_output_token) || null,
             },
             extendedThinking: false, // Default value, not available in API
             id: modelData.full_name,
             knowledge: null, // Not available in API
             lastUpdated: null, // Not available in API
             limit: {
-                context: modelData.max_tokens,
+                context: toNumber(modelData.max_tokens),
                 output: null, // Not available in API
             },
             modalities: {

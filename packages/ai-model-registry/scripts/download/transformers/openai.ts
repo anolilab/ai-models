@@ -1,4 +1,5 @@
 import type { Model } from "../../../src/schema.js";
+import { toNumber } from "../utils/index.js";
 
 /**
  * OpenAI model data from models.dev API
@@ -53,17 +54,17 @@ export const transformOpenAIModels = (providerData: OpenAIProviderData): Model[]
         const model: Model = {
             attachment: modelData.attachment,
             cost: {
-                input: modelData.cost.input,
-                inputCacheHit: modelData.cost.cache_read || null,
-                output: modelData.cost.output,
+                input: toNumber(modelData.cost.input),
+                inputCacheHit: toNumber(modelData.cost.cache_read) || null,
+                output: toNumber(modelData.cost.output),
             },
             extendedThinking: modelData.reasoning, // Use reasoning as extended thinking
             id: modelId,
             knowledge: modelData.knowledge,
             lastUpdated: modelData.last_updated || null,
             limit: {
-                context: modelData.limit.context,
-                output: modelData.limit.output,
+                context: toNumber(modelData.limit.context),
+                output: toNumber(modelData.limit.output),
             },
             modalities: {
                 input: modelData.modalities.input,

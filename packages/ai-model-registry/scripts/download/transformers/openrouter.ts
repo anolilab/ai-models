@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
+import { toNumber } from "../utils/index.js";
 
 /**
  * Raw model data from OpenRouter API
@@ -61,17 +62,17 @@ export const transformOpenRouterModel = (model: OpenRouterModel): Model => {
     return {
         attachment: false,
         cost: {
-            input: typeof pricing.prompt === "number" ? pricing.prompt : null,
+            input: toNumber(pricing.prompt) || null,
             inputCacheHit: null,
-            output: typeof pricing.completion === "number" ? pricing.completion : null,
+            output: toNumber(pricing.completion) || null,
         },
         extendedThinking: false,
         id: model.id,
         knowledge: null,
         lastUpdated: null,
         limit: {
-            context: model.context_length || get(model.top_provider, "context_length", null),
-            output: get(model.top_provider, "max_completion_tokens", null),
+            context: toNumber(model.context_length) || toNumber(get(model.top_provider, "context_length", null)) || null,
+            output: toNumber(get(model.top_provider, "max_completion_tokens", null)) || null,
         },
         modalities: {
             input: get(model.architecture, "input_modalities", ["text"]),

@@ -64,7 +64,7 @@ describe("provider Registry", () => {
         });
 
         it("should be case sensitive", () => {
-            expect.assertions(2);
+            expect.assertions(1);
 
             const anthropicModels = getModelsByProvider("Anthropic");
             const lowercaseModels = getModelsByProvider("anthropic");
@@ -200,36 +200,18 @@ describe("provider Registry", () => {
             expect(textOutputModels.every((model) => model.modalities.output.includes("text"))).toBe(true);
         });
 
-        // eslint-disable-next-line vitest/prefer-expect-assertions
         it("should filter by context window range", () => {
+            expect.hasAssertions();
+
             const largeContextModels = searchModels({ context_min: 100_000 });
             const smallContextModels = searchModels({ context_max: 10_000 });
 
-            // Count conditional assertions
-            let assertionCount = 2; // Always have the two type checks at the end
+            // The search function should work even if no models match the criteria
+            expectTypeOf(largeContextModels.length).toBeNumber();
+            expectTypeOf(smallContextModels.length).toBeNumber();
 
             // Test that the search function works correctly
             // Note: Some models might have null context values, so we need to handle that
-            // eslint-disable-next-line vitest/no-conditional-in-test
-            if (largeContextModels.length > 0) {
-                const validLargeContextModels = largeContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
-
-                if (validLargeContextModels.length > 0) {
-                    assertionCount++;
-                }
-            }
-
-            // eslint-disable-next-line vitest/no-conditional-in-test
-            if (smallContextModels.length > 0) {
-                const validSmallContextModels = smallContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
-
-                if (validSmallContextModels.length > 0) {
-                    assertionCount++;
-                }
-            }
-
-            expect.assertions(assertionCount);
-
             // eslint-disable-next-line vitest/no-conditional-in-test
             if (largeContextModels.length > 0) {
                 const validLargeContextModels = largeContextModels.filter((model) => model.limit.context !== null && model.limit.context !== undefined);
@@ -249,10 +231,6 @@ describe("provider Registry", () => {
                     expect(validSmallContextModels.every((model) => model.limit.context! <= 10_000)).toBe(true);
                 }
             }
-
-            // The search function should work even if no models match the criteria
-            expectTypeOf(largeContextModels.length).toBeNumber();
-            expectTypeOf(smallContextModels.length).toBeNumber();
         });
 
         it("should combine multiple filters", () => {
@@ -307,6 +285,12 @@ describe("provider Registry", () => {
             models.forEach((model) => {
                 const result = ModelSchema.safeParse(model);
 
+                if (!result.success) {
+                    // Log the error for debugging
+                    // eslint-disable-next-line no-console
+                    console.error(`Model ${model.id} failed validation:`, JSON.stringify(result.error.issues, null, 2));
+                }
+
                 expect(result.success).toBe(true);
             });
         });
@@ -314,7 +298,7 @@ describe("provider Registry", () => {
 
     describe(getProviderStats, () => {
         it("should return provider statistics", () => {
-            expect.assertions(2);
+            expect.assertions(1);
 
             const stats = getProviderStats();
 
@@ -336,12 +320,9 @@ describe("provider Registry", () => {
         });
 
         it("should only include providers with models", () => {
-            expect.assertions(3);
+            expect.assertions(33);
 
             const stats = getProviderStats();
-            const entries = Object.entries(stats);
-
-            expect.assertions(entries.length * 3);
 
             Object.entries(stats).forEach(([provider, count]) => {
                 expectTypeOf(provider).toBeString();

@@ -3,7 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength } from "../utils/index.js";
+import { parseContextLength, toNumber } from "../utils/index.js";
 
 const VENICE_API_URL = "https://api.venice.ai/v1/models";
 const VENICE_DOCS_URL = "https://docs.venice.ai/";
@@ -39,7 +39,7 @@ export const fetchVeniceModels = async (): Promise<Model[]> => {
                         knowledge: null,
                         lastUpdated: null,
                         limit: {
-                            context: modelData.context_length || null,
+                            context: toNumber(modelData.context_length) || null,
                             output: null,
                         },
                         modalities: {

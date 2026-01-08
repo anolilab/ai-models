@@ -1,0 +1,6 @@
+"package: ai-model-registry":
+    - changed-files:
+          - any-glob-to-any-file: "packages/ai-model-registry/**/*"
+"documentation":
+    - changed-files:
+          - any-glob-to-any-file: "docs/**/*"
