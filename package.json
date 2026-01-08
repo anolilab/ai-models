@@ -45,10 +45,10 @@
   "dependencies": {
     "@anolilab/commitlint-config": "^8.1.0",
     "@anolilab/lint-staged-config": "^4.0.1",
-    "@anolilab/multi-semantic-release": "^3.2.2",
+    "@anolilab/multi-semantic-release": "^4.0.0",
     "@anolilab/prettier-config": "^8.0.1",
-    "@commitlint/cli": "^20.3.0",
-    "@commitlint/config-conventional": "^20.3.0",
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
     "@nrwl/tao": "19.8.4",
     "@nrwl/workspace": "19.8.4",
     "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",

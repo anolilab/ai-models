@@ -2,4 +2,4 @@ node_modules
 .nx
 
 packages/ai-model-registry/data
-port-*.text
+port-*.txt

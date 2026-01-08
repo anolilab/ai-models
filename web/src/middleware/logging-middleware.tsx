@@ -1,10 +1,10 @@
 import { createMiddleware } from "@tanstack/react-start";
 
 const preLogMiddleware = createMiddleware({ type: "function" })
-    .client(async (ctx) => {
+    .client(async (context) => {
         const clientTime = new Date();
 
-        return ctx.next({
+        return context.next({
             context: {
                 clientTime,
             },
@@ -13,12 +13,12 @@ const preLogMiddleware = createMiddleware({ type: "function" })
             },
         });
     })
-    .server(async (ctx) => {
+    .server(async (context) => {
         const serverTime = new Date();
 
-        return ctx.next({
+        return context.next({
             sendContext: {
-                durationToServer: serverTime.getTime() - ctx.context.clientTime.getTime(),
+                durationToServer: serverTime.getTime() - context.context.clientTime.getTime(),
                 serverTime,
             },
         });
@@ -26,18 +26,18 @@ const preLogMiddleware = createMiddleware({ type: "function" })
 
 const logMiddleware = createMiddleware({ type: "function" })
     .middleware([preLogMiddleware])
-    .client(async (ctx) => {
-        const res = await ctx.next();
+    .client(async (context) => {
+        const result = await context.next();
 
         const now = new Date();
 
         console.log("Client Req/Res:", {
-            duration: res.context.clientTime.getTime() - now.getTime(),
-            durationFromServer: now.getTime() - res.context.serverTime.getTime(),
-            durationToServer: res.context.durationToServer,
+            duration: result.context.clientTime.getTime() - now.getTime(),
+            durationFromServer: now.getTime() - result.context.serverTime.getTime(),
+            durationToServer: result.context.durationToServer,
         });
 
-        return res;
+        return result;
     });
 
 export default logMiddleware;

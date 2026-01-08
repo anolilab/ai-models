@@ -20,10 +20,7 @@ export default defineConfig({
             logo: "./src/assets/images/logo.svg",
         }),
         tailwindcss(),
-        tanstackStart({
-            customViteReactPlugin: true,
-            target: "netlify",
-        }),
+        tanstackStart(),
         react({
             babel: {
                 plugins: [["babel-plugin-react-compiler", { target: "19" }]],

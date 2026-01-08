@@ -1,6 +1,7 @@
+/// <reference types="vite/client" />
 import "unfonts.css";
 
-import { ConsentManagerDialog, CookieBanner } from "@c15t/react";
+import { ConsentManagerDialog, ConsentManagerProvider, CookieBanner } from "@c15t/react";
 import { baseTranslations } from "@c15t/translations";
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -9,7 +10,6 @@ import type { LinkHTMLAttributes, MetaHTMLAttributes } from "react";
 
 import Loader from "@/components/loader";
 import { Toaster } from "@/components/ui/sonner";
-import ConsentManagerProvider from "@/providers/consent-manager";
 import { AnalyticsProvider } from "@/providers/posthog";
 import { IconSpriteSheet } from "@/utils/provider-icons";
 import seo from "@/utils/seo";

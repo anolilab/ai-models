@@ -5,15 +5,17 @@ import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import Loader from "./components/loader";
 import { routeTree } from "./routeTree.gen";
 
-export const createRouter = () => {
+export const getRouter = () => {
     const router = createTanStackRouter({
         context: {},
         defaultNotFoundComponent: () => <div>Not Found</div>,
         defaultPendingComponent: () => <Loader />,
+        defaultPreload: "intent",
         defaultPreloadStaleTime: 0,
+        defaultStaleTime: 0,
+        defaultViewTransition: true,
         routeTree,
         scrollRestoration: true,
-        Wrap: ({ children }) => <>{children}</>,
     });
 
     return router;
@@ -21,6 +23,6 @@ export const createRouter = () => {
 
 declare module "@tanstack/react-router" {
     interface Register {
-        router: ReturnType<typeof createRouter>;
+        router: ReturnType<typeof getRouter>;
     }
 }
