@@ -98,15 +98,15 @@
         "test:watch": "vitest"
     },
     "dependencies": {
-        "zod": "^4.1.13"
+        "zod": "^4.3.5"
     },
     "devDependencies": {
-        "@anolilab/eslint-config": "^17.0.2",
-        "@anolilab/prettier-config": "^7.0.0",
+        "@anolilab/eslint-config": "^19.0.0",
+        "@anolilab/prettier-config": "^8.0.1",
         "@anolilab/semantic-release-clean-package-json": "4.2.2",
         "@anolilab/semantic-release-pnpm": "^3.2.2",
         "@arethetypeswrong/cli": "^0.18.2",
-        "@lobehub/icons-static-svg": "^1.74.0",
+        "@lobehub/icons-static-svg": "^1.77.0",
         "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "13.0.1",
@@ -115,27 +115,27 @@
         "@semantic-release/github": "^12.0.2",
         "@semantic-release/release-notes-generator": "14.1.0",
         "@total-typescript/ts-reset": "^0.6.1",
-        "@types/node": "^25.0.0",
+        "@types/node": "^25.0.3",
         "@visulima/colorize": "1.4.29",
         "@visulima/packem": "2.0.0-alpha.5",
         "@visulima/string": "2.0.6",
-        "@vitest/coverage-v8": "^4.0.15",
+        "@vitest/coverage-v8": "^4.0.16",
         "axios": "^1.13.2",
         "cheerio": "^1.1.2",
         "conventional-changelog-conventionalcommits": "9.1.0",
-        "eslint": "^9.39.1",
+        "eslint": "^9.39.2",
         "eslint-plugin-zod": "^1.4.0",
         "prettier": "3.7.4",
-        "puppeteer": "^24.33.0",
+        "puppeteer": "^24.34.0",
         "rss-parser": "3.13.0",
         "secretlint": "11.2.5",
         "semantic-release": "^25.0.2",
         "semantic-release-plugin-update-version-in-files": "^2.0.1",
-        "sort-package-json": "^3.5.1",
+        "sort-package-json": "^3.6.0",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3",
-        "typescript-eslint": "^8.49.0",
-        "vitest": "^4.0.15"
+        "typescript-eslint": "^8.52.0",
+        "vitest": "^4.0.16"
     },
     "engines": {
         "node": ">=20"

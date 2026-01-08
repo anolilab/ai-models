@@ -171,6 +171,7 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
             } else {
                 // Fallback: try to find any dollar amounts and assume they're in order (input, output)
                 const priceMatches = pricingText.match(/\$([\d.]+)/g);
+
                 if (priceMatches && priceMatches.length >= 2) {
                     const inputCostPerM = parseFloat(priceMatches[0].replace("$", ""));
                     const outputCostPerM = parseFloat(priceMatches[1].replace("$", ""));

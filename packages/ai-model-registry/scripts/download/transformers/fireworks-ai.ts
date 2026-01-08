@@ -1,176 +1,171 @@
 import { kebabCase } from "@visulima/string";
 import axios from "axios";
-import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
 
-const FIREWORKS_MODELS_URL = "https://app.fireworks.ai/models?filter=All%20Models";
+/* eslint-disable no-secrets/no-secrets */
+const FIREWORKS_SANITY_API_URL
+    = "https://pv37i0yn.apicdn.sanity.io/v2024-07-09/data/query/production?query=*%5B_type+%3D%3D+%22model%22%5D%5BmodelName+match+%24search+%7C%7C+count%28modelType%5B_type+%3D%3D+%22reference%22+%26%26+%40-%3Ename+match+%24search%5D%29+%3E+0%5D%5Bpublic+%3D%3D+true%5D+%7B+_id%2C+modelName%2C+new%2C+%22provider%22%3A+provider-%3E+%7B+%22company%22%3A+company-%3E+%7B+name%2C+%22lightLogo%22%3A+lightLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22darkLogo%22%3A+darkLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22mark%22%3A+mark+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D+%7D+%7D%2C+%22modelType%22%3A+modelType%5B%5D-%3E+%7B+_id%2C+name%2C+iconColor%2C+icon+%7D%2C+contextLength%2C+pricingInput%2C+pricingOutput%2C+pricingUnit%2C+collapsePricing%2C+%22slug%22%3A+seo.slug.current+%7D&%24search=%22*%22&returnQuery=false&perspective=published";
+/* eslint-enable no-secrets/no-secrets */
 const FIREWORKS_DOCS_URL = "https://readme.fireworks.ai/";
 
 /**
- * Scrapes Fireworks AI models page for model information.
+ * Sanity API response model structure
  */
-const scrapeFireworksModelsPage = async (): Promise<Model[]> => {
-    try {
-        console.log("[Fireworks AI] Scraping models page:", FIREWORKS_MODELS_URL);
-        const response = await axios.get(FIREWORKS_MODELS_URL);
-        const $ = load(response.data);
+interface SanityModel {
+    _id: string;
+    collapsePricing: boolean | null;
+    contextLength: string | null;
+    modelName: string;
+    modelType: {
+        _id: string;
+        icon: string;
+        iconColor: {
+            label: string;
+            value: string;
+        };
+        name: string;
+    }[];
+    new: boolean;
+    pricingInput: number | null;
+    pricingOutput: number | null;
+    pricingUnit: string | null;
+    provider: {
+        company: {
+            name: string;
+        };
+    };
+    slug: string;
+}
 
-        const models: Model[] = [];
+interface SanityApiResponse {
+    result: SanityModel[];
+}
 
-        // Find all model rows using the data-testid attribute
-        $("[data-testid=\"model-row\"]").each((index, element) => {
-            const $row = $(element);
+/**
+ * Determines if a model has vision capabilities based on name and model type.
+ */
+const hasVisionCapability = (modelName: string, modelTypes: SanityModel["modelType"]): boolean => {
+    const nameLower = modelName.toLowerCase();
 
-            // Extract model name
-            const modelName = $row.find("p.font-bold").first().text().trim();
-
-            if (!modelName) {
-                return;
-            }
-
-            console.log(`[Fireworks AI] Found model: ${modelName}`);
-
-            // Extract pricing information
-            const pricingText = $row
-                .find(String.raw`.text-muted-foreground\/60`)
-                .text()
-                .trim();
-            const cost = parsePricing(pricingText);
-
-            // Extract context length
-            const contextMatch = pricingText.match(/(\d+)k\s+Context/);
-            const contextLength = contextMatch ? Number.parseInt(contextMatch[1]) * 1024 : null;
-
-            // Extract model type/capabilities from badges
-            const badges = $row
-                .find(".gap-1 .bg-white")
-                .map((_, badge) => $(badge).text().trim())
-                .get();
-            const isVision = badges.some((badge) => badge.toLowerCase().includes("vision"));
-
-            const model: Model = {
-                attachment: false,
-                cost,
-                extendedThinking: modelName.toLowerCase().includes("thinking"),
-                id: kebabCase(modelName).replace("accounts-fireworks-models-", "accounts/fireworks/models/"),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: contextLength,
-                    output: null,
-                },
-                modalities: {
-                    input: isVision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelName,
-                openWeights: false,
-                provider: "Fireworks AI",
-                providerDoc: FIREWORKS_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["FIREWORKS_API_KEY"],
-                providerModelsDevId: "fireworks-ai",
-                providerNpm: "@ai-sdk/fireworks",
-                reasoning: modelName.toLowerCase().includes("thinking"),
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true, // Most models support temperature
-                toolCall: false, // Need to check documentation for this
-                vision: isVision,
-            };
-
-            models.push(model);
-        });
-
-        console.log(`[Fireworks AI] Scraped ${models.length} models from models page`);
-
-        return models;
-    } catch (error) {
-        console.error("[Fireworks AI] Error scraping models page:", error instanceof Error ? error.message : String(error));
-
-        return [];
+    if (nameLower.includes("vision") || nameLower.includes("vl") || nameLower.includes("multimodal") || nameLower.includes("image")) {
+        return true;
     }
+
+    return modelTypes.some((type) => {
+        const typeName = type.name.toLowerCase();
+
+        return typeName.includes("vision") || typeName.includes("multimodal") || typeName.includes("image");
+    });
 };
 
 /**
- * Parse pricing information from text (e.g., "$0.22/M Input • $0.88/M Output")
+ * Converts pricing from Sanity API format to our cost format.
+ * Pricing values are per unit (million tokens by default).
  */
-const parsePricing = (pricingText: string): { input: number | null; inputCacheHit: number | null; output: number | null } => {
+const convertPricing = (
+    pricingInput: number | null,
+    pricingOutput: number | null,
+    _pricingUnit: string | null,
+): { input: number | null; inputCacheHit: number | null; output: number | null } => {
     let input: number | null = null;
     let output: number | null = null;
     const inputCacheHit: number | null = null;
 
-    if (!pricingText)
-        return { input, inputCacheHit, output };
-
-    // Extract input cost
-    const inputMatch = pricingText.match(/\$([\d.]+)\/M\s+Input/);
-
-    if (inputMatch) {
-        const parsed = Number.parseFloat(inputMatch[1]);
-
-        input = Number.isNaN(parsed) ? null : parsed;
+    if (pricingInput !== null && !Number.isNaN(pricingInput)) {
+        input = pricingInput;
     }
 
-    // Extract output cost
-    const outputMatch = pricingText.match(/\$([\d.]+)\/M\s+Output/);
-
-    if (outputMatch) {
-        const parsed = Number.parseFloat(outputMatch[1]);
-
-        output = Number.isNaN(parsed) ? null : parsed;
+    if (pricingOutput !== null && !Number.isNaN(pricingOutput)) {
+        output = pricingOutput;
     }
 
     return { input, inputCacheHit, output };
 };
 
 /**
- * Transforms Fireworks AI model data into the normalized structure.
- * @param rawData Raw data from Fireworks AI API
+ * Transforms a single Sanity model into our Model format.
+ */
+const transformSingleModel = (modelData: SanityModel): Model | null => {
+    /* Filter for Fireworks AI models - check if slug starts with "fireworks/" */
+    if (!modelData.slug || !modelData.slug.startsWith("fireworks/")) {
+        return null;
+    }
+
+    if (!modelData.modelName) {
+        return null;
+    }
+
+    const { contextLength: contextLengthStr, modelName, modelType, pricingInput, pricingOutput, pricingUnit, slug } = modelData;
+    const isVision = hasVisionCapability(modelName, modelType);
+    const isThinking = modelName.toLowerCase().includes("thinking");
+
+    /* Convert context length from string to number */
+    let contextLength: number | null = null;
+
+    if (contextLengthStr) {
+        const parsed = Number.parseInt(contextLengthStr, 10);
+
+        contextLength = Number.isNaN(parsed) ? null : parsed;
+    }
+
+    /* Convert pricing */
+    const cost = convertPricing(pricingInput, pricingOutput, pricingUnit);
+
+    /* Generate model ID from slug or model name */
+    const modelId
+        = slug.replace("fireworks/", "accounts/fireworks/models/") || kebabCase(modelName).replace("accounts-fireworks-models-", "accounts/fireworks/models/");
+
+    return {
+        attachment: false,
+        cost,
+        extendedThinking: isThinking,
+        id: modelId,
+        knowledge: null,
+        lastUpdated: null,
+        limit: {
+            context: contextLength,
+            output: null,
+        },
+        modalities: {
+            input: isVision ? ["text", "image"] : ["text"],
+            output: ["text"],
+        },
+        name: modelName,
+        openWeights: false,
+        provider: "Fireworks AI",
+        providerDoc: FIREWORKS_DOCS_URL,
+        /* Provider metadata */
+        providerEnv: ["FIREWORKS_API_KEY"],
+        providerModelsDevId: "fireworks-ai",
+        providerNpm: "@ai-sdk/fireworks",
+        reasoning: isThinking,
+        releaseDate: null,
+        streamingSupported: true,
+        temperature: true,
+        toolCall: false,
+        vision: isVision,
+    };
+};
+
+/**
+ * Transforms Fireworks AI model data from Sanity API into the normalized structure.
+ * @param rawData Raw data from Sanity API
  * @returns Array of normalized model objects
  */
-export const transformFireworksAIModels = (rawData: any): Model[] => {
+export const transformFireworksAIModels = (rawData: SanityApiResponse | unknown): Model[] => {
     const models: Model[] = [];
 
-    // This function is kept for interface compatibility but the main logic is in fetchFireworksAIModels
-    if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
-            const model: Model = {
-                attachment: false,
-                cost: {
-                    input: null,
-                    inputCacheHit: null,
-                    output: null,
-                },
-                extendedThinking: false,
-                id: kebabCase(modelData.id || modelData.name).replace("accounts-fireworks-models-", "accounts/fireworks/models/"),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: modelData.context_length || null,
-                    output: null,
-                },
-                modalities: {
-                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelData.name || modelData.id,
-                openWeights: false,
-                provider: "Fireworks AI",
-                providerDoc: FIREWORKS_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["FIREWORKS_API_KEY"],
-                providerModelsDevId: "fireworks-ai",
-                providerNpm: "@ai-sdk/fireworks",
-                reasoning: false,
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true,
-                toolCall: false,
-                vision: modelData.capabilities?.vision || false,
-            };
+    if (!rawData || typeof rawData !== "object" || !("result" in rawData) || !Array.isArray(rawData.result)) {
+        return models;
+    }
 
+    const apiResponse = rawData as SanityApiResponse;
+
+    for (const modelData of apiResponse.result) {
+        const model = transformSingleModel(modelData);
+
+        if (model) {
             models.push(model);
         }
     }
@@ -179,14 +174,28 @@ export const transformFireworksAIModels = (rawData: any): Model[] => {
 };
 
 /**
- * Fetches Fireworks AI models from their models page.
+ * Fetches Fireworks AI models from Sanity API.
  * @returns Promise that resolves to an array of transformed models
  */
 export const fetchFireworksAIModels = async (): Promise<Model[]> => {
-    console.log("[Fireworks AI] Fetching models from models page...");
+    console.log("[Fireworks AI] Fetching models from Sanity API...");
 
     try {
-        const models = await scrapeFireworksModelsPage();
+        console.log("[Fireworks AI] Fetching from:", FIREWORKS_SANITY_API_URL);
+        const response = await axios.get<SanityApiResponse>(FIREWORKS_SANITY_API_URL, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (compatible; AI-Model-Registry/1.0)",
+            },
+            timeout: 30_000,
+        });
+
+        if (!response.data || !response.data.result) {
+            console.error("[Fireworks AI] Invalid API response structure");
+
+            return [];
+        }
+
+        const models = transformFireworksAIModels(response.data);
 
         console.log(`[Fireworks AI] Total models found: ${models.length}`);
 

@@ -331,9 +331,7 @@ const main = async (): Promise<void> => {
 
     // Parse concurrency from command line arguments (default: 5)
     const concurrencyIndex = process.argv.indexOf("--concurrency");
-    const concurrency = concurrencyIndex !== -1 && concurrencyIndex + 1 < process.argv.length 
-        ? parseInt(process.argv[concurrencyIndex + 1], 10) 
-        : 5;
+    const concurrency = concurrencyIndex !== -1 && concurrencyIndex + 1 < process.argv.length ? parseInt(process.argv[concurrencyIndex + 1], 10) : 5;
 
     if (isNaN(concurrency) || concurrency < 1) {
         consoleColors.error("Invalid concurrency value. Must be a positive integer.");
@@ -355,21 +353,26 @@ const main = async (): Promise<void> => {
             const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
             const progress = ((completedCount / providersToProcess.length) * 100).toFixed(1);
             const eta = completedCount > 0 ? ((elapsed * (providersToProcess.length - completedCount)) / completedCount).toFixed(1) : "?";
-            
-            consoleColors.info(`Progress: ${completedCount}/${providersToProcess.length} (${progress}%) - ${runningCount} running - Elapsed: ${elapsed}s - ETA: ${eta}s`);
+
+            consoleColors.info(
+                `Progress: ${completedCount}/${providersToProcess.length} (${progress}%) - ${runningCount} running - Elapsed: ${elapsed}s - ETA: ${eta}s`,
+            );
         };
 
         // Worker function to process a single provider
         const worker = async (): Promise<void> => {
             while (queue.length > 0) {
                 const providerConfig = queue.shift()!;
-                if (!providerConfig) continue;
+
+                if (!providerConfig)
+                    continue;
 
                 runningCount++;
                 consoleColors.info(`[${providerConfig.name}] Starting download (${runningCount} running, ${queue.length} queued)`);
 
                 try {
                     const result = await processProvider(providerConfig, arguments_.outputPath);
+
                     results.push(result);
                     completedCount++;
                     runningCount--;
@@ -378,12 +381,13 @@ const main = async (): Promise<void> => {
                     updateProgress();
 
                     // Small delay to be respectful to APIs
-                    await new Promise(resolve => setTimeout(resolve, 100));
+                    await new Promise((resolve) => setTimeout(resolve, 100));
                 } catch (error) {
                     const errorResult: ProcessingResult = {
                         error: error instanceof Error ? error.message : String(error),
                         name: providerConfig.name,
                     };
+
                     results.push(errorResult);
                     completedCount++;
                     runningCount--;
@@ -392,7 +396,7 @@ const main = async (): Promise<void> => {
                     updateProgress();
 
                     // Small delay to be respectful to APIs
-                    await new Promise(resolve => setTimeout(resolve, 100));
+                    await new Promise((resolve) => setTimeout(resolve, 100));
                 }
             }
         };
@@ -411,6 +415,7 @@ const main = async (): Promise<void> => {
         await Promise.all(workers);
 
         const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+
         consoleColors.success(`All downloads completed in ${totalTime}s!`);
 
         return results;

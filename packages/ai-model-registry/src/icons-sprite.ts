@@ -1,190 +1,190 @@
 /* Auto-generated file - do not edit manually
  * Generated using @lobehub/icons-static-svg and custom icons
- * 
+ *
  * To regenerate this file, run: pnpm run generate-icons
  */
 
 // SVG icons in sprite sheet
 export const iconSymbols: Record<string, string> = {
-  "alibaba": "icon_alibaba",
-  "bedrock": "icon_amazon_bedrock",
-  "anthropic": "icon_anthropic",
-  "azure": "icon_azure_openai",
-  "cerebras": "icon_cerebras",
-  "modelscope": "icon_modelscope",
-  "chutes": "icon_chutes",
-  "openrouter": "icon_openrouter",
-  "cloudflare": "icon_cloudflare",
-  "fireworks": "icon_fireworks_ai",
-  "deepinfra": "icon_deep_infra",
-  "deepseek": "icon_deepseek",
-  "githubcopilot": "icon_github_copilot",
-  "github": "icon_github_models",
-  "google": "icon_google_partner",
-  "vertexai": "icon_google_vertex",
-  "groq": "icon_groq",
-  "huggingface": "icon_hugging_face",
-  "weights & biases": "icon_weights_&_biases",
-  "inception": "icon_inception",
-  "inference": "icon_inference",
-  "meta": "icon_meta",
-  "mistral": "icon_mistral",
-  "morph": "icon_morph",
-  "openai": "icon_openai",
-  "requesty": "icon_requesty",
-  "together": "icon_together_ai",
-  "upstage": "icon_upstage",
-  "v0": "icon_v_0",
-  "venice": "icon_venice",
-  "vercel": "icon_vercel",
-  "xai": "icon_xai"
+    alibaba: "icon_alibaba",
+    bedrock: "icon_amazon_bedrock",
+    anthropic: "icon_anthropic",
+    azure: "icon_azure_openai",
+    cerebras: "icon_cerebras",
+    modelscope: "icon_modelscope",
+    chutes: "icon_chutes",
+    openrouter: "icon_openrouter",
+    cloudflare: "icon_cloudflare",
+    fireworks: "icon_fireworks_ai",
+    deepinfra: "icon_deep_infra",
+    deepseek: "icon_deepseek",
+    githubcopilot: "icon_github_copilot",
+    github: "icon_github_models",
+    google: "icon_google_partner",
+    vertexai: "icon_google_vertex",
+    groq: "icon_groq",
+    huggingface: "icon_hugging_face",
+    "weights & biases": "icon_weights_&_biases",
+    inception: "icon_inception",
+    inference: "icon_inference",
+    meta: "icon_meta",
+    mistral: "icon_mistral",
+    morph: "icon_morph",
+    openai: "icon_openai",
+    requesty: "icon_requesty",
+    together: "icon_together_ai",
+    upstage: "icon_upstage",
+    v0: "icon_v_0",
+    venice: "icon_venice",
+    vercel: "icon_vercel",
+    xai: "icon_xai",
 } as const;
 
 // Provider name to LobeHub icon name mapping
 export const providerIconMap: Record<string, string> = {
-  "agentica-org": "agentica-org",
-  "aion-labs": "aionlabs",
-  "aionlabs": "aionlabs",
-  "alfredpros": "alfredpros",
-  "alibaba": "alibaba",
-  "alpindale": "alpindale",
-  "amazon": "bedrock",
-  "amazon-bedrock": "bedrock",
-  "amazon bedrock": "bedrock",
-  "anthracite-org": "anthracite-org",
-  "anthropic": "anthropic",
-  "arcee-ai": "arcee-ai",
-  "arliai": "arliai",
-  "atlascloud": "atlascloud",
-  "atoma": "atoma",
-  "avian": "avian",
-  "azure": "azure",
-  "azure-open-ai": "azure",
-  "azure openai": "azure",
-  "baidu": "baidu",
-  "bytedance": "bytedance",
-  "cerebras": "cerebras",
-  "chutes": "chutes",
-  "claude": "anthropic",
-  "cloudflare": "cloudflare",
-  "cloudflare workers": "cloudflare",
-  "cloudflare workers ai": "cloudflare",
-  "cognitivecomputations": "cognitive-computations",
-  "cohere": "cohere",
-  "crusoe": "crusoe",
-  "deep-infra": "deepinfra",
-  "deep-seek": "deepseek",
-  "deep infra": "deepinfra",
-  "deepinfra": "deepinfra",
-  "deepseek": "deepseek",
-  "eleutherai": "eleutherai",
-  "enfer": "enfer",
-  "featherless": "featherless",
-  "featherless-ai": "featherless",
-  "fireworks": "fireworks",
-  "fireworks-ai": "fireworks",
-  "fireworks ai": "fireworks",
-  "friendli": "friendli",
-  "git-hub-copilot": "githubcopilot",
-  "git-hub-models": "github",
-  "github": "github",
-  "github copilot": "githubcopilot",
-  "github models": "github",
-  "gmicloud": "gmicloud",
-  "google": "google",
-  "google-vertex": "vertexai",
-  "google-vertex-partner": "vertexai",
-  "google partner": "google",
-  "google vertex": "vertexai",
-  "google vertex ai21 labs": "vertexai",
-  "google vertex anthropic": "vertexai",
-  "google vertex claude": "vertexai",
-  "google vertex mistral ai": "vertexai",
-  "grok": "grok",
-  "groq": "groq",
-  "gryphe": "gryphe",
-  "hugging-face": "huggingface",
-  "huggingface": "huggingface",
-  "hugging face": "huggingface",
-  "hyperbolic": "hyperbolic",
-  "inception": "inception",
-  "inference": "inference",
-  "inferencenet": "inferencenet",
-  "infermatic": "infermatic",
-  "inflection": "inflection",
-  "kluster": "kluster",
-  "lambda": "lambda",
-  "liquid": "liquid",
-  "luma": "luma",
-  "mancer": "mancer",
-  "meta": "meta",
-  "meta-llama": "meta",
-  "miatral": "miatral",
-  "microsoft": "microsoft",
-  "minimax": "minimax",
-  "mistral": "mistral",
-  "mistralai": "mistral",
-  "mistral ai": "mistral",
-  "modelscope": "modelscope",
-  "moonshot-ai": "moonshot",
-  "moonshotai": "moonshot",
-  "morph": "morph",
-  "ncompass": "ncompass",
-  "nebius": "nebius",
-  "neversleep": "neversleep",
-  "nineteen": "nineteen",
-  "nothingiisreal": "nothing-is-real",
-  "nousresearch": "nousresearch",
-  "novita": "novita",
-  "nscale": "nscale",
-  "nvidia": "nvidia",
-  "ollama": "ollama",
-  "open-ai": "openai",
-  "open-router": "openrouter",
-  "openai": "openai",
-  "opengvlab": "opengvlab",
-  "openinference": "openinference",
-  "openrouter": "openrouter",
-  "parasail": "parasail",
-  "perplexity": "perplexity",
-  "phala": "phala",
-  "pygmalionai": "pygmalion-ai",
-  "qwen": "qwen",
-  "raifle": "raifle",
-  "rekaai": "reka-ai",
-  "requesty": "requesty",
-  "sambanova": "sambanova",
-  "sao10k": "sao10k",
-  "sarvamai": "sarvam-ai",
-  "scb10x": "scb10x",
-  "shisa-ai": "shisa-ai",
-  "sophosympatheia": "sophosympatheia",
-  "stability ai": "stability",
-  "switchpoint": "switchpoint",
-  "targon": "targon",
-  "tencent": "tencent",
-  "thedrummer": "the-drummer",
-  "thudm": "thudm",
-  "tngtech": "tngtech",
-  "together": "together",
-  "together-ai": "together",
-  "togetherai": "together",
-  "together ai": "together",
-  "ubicloud": "ubicloud",
-  "undi95": "undi95",
-  "upstage": "upstage",
-  "v0": "v0",
-  "venice": "venice",
-  "vercel": "vercel",
-  "vertexai": "google",
-  "wandb": "weights & biases",
-  "weights & biases": "weights & biases",
-  "weights-biases": "weights & biases",
-  "writer": "writer",
-  "x-ai": "xai",
-  "xai": "xai",
-  "z-ai": "z-ai",
-  "zai": "z-ai"
+    "agentica-org": "agentica-org",
+    "aion-labs": "aionlabs",
+    aionlabs: "aionlabs",
+    alfredpros: "alfredpros",
+    alibaba: "alibaba",
+    alpindale: "alpindale",
+    amazon: "bedrock",
+    "amazon-bedrock": "bedrock",
+    "amazon bedrock": "bedrock",
+    "anthracite-org": "anthracite-org",
+    anthropic: "anthropic",
+    "arcee-ai": "arcee-ai",
+    arliai: "arliai",
+    atlascloud: "atlascloud",
+    atoma: "atoma",
+    avian: "avian",
+    azure: "azure",
+    "azure-open-ai": "azure",
+    "azure openai": "azure",
+    baidu: "baidu",
+    bytedance: "bytedance",
+    cerebras: "cerebras",
+    chutes: "chutes",
+    claude: "anthropic",
+    cloudflare: "cloudflare",
+    "cloudflare workers": "cloudflare",
+    "cloudflare workers ai": "cloudflare",
+    cognitivecomputations: "cognitive-computations",
+    cohere: "cohere",
+    crusoe: "crusoe",
+    "deep-infra": "deepinfra",
+    "deep-seek": "deepseek",
+    "deep infra": "deepinfra",
+    deepinfra: "deepinfra",
+    deepseek: "deepseek",
+    eleutherai: "eleutherai",
+    enfer: "enfer",
+    featherless: "featherless",
+    "featherless-ai": "featherless",
+    fireworks: "fireworks",
+    "fireworks-ai": "fireworks",
+    "fireworks ai": "fireworks",
+    friendli: "friendli",
+    "git-hub-copilot": "githubcopilot",
+    "git-hub-models": "github",
+    github: "github",
+    "github copilot": "githubcopilot",
+    "github models": "github",
+    gmicloud: "gmicloud",
+    google: "google",
+    "google-vertex": "vertexai",
+    "google-vertex-partner": "vertexai",
+    "google partner": "google",
+    "google vertex": "vertexai",
+    "google vertex ai21 labs": "vertexai",
+    "google vertex anthropic": "vertexai",
+    "google vertex claude": "vertexai",
+    "google vertex mistral ai": "vertexai",
+    grok: "grok",
+    groq: "groq",
+    gryphe: "gryphe",
+    "hugging-face": "huggingface",
+    huggingface: "huggingface",
+    "hugging face": "huggingface",
+    hyperbolic: "hyperbolic",
+    inception: "inception",
+    inference: "inference",
+    inferencenet: "inferencenet",
+    infermatic: "infermatic",
+    inflection: "inflection",
+    kluster: "kluster",
+    lambda: "lambda",
+    liquid: "liquid",
+    luma: "luma",
+    mancer: "mancer",
+    meta: "meta",
+    "meta-llama": "meta",
+    miatral: "miatral",
+    microsoft: "microsoft",
+    minimax: "minimax",
+    mistral: "mistral",
+    mistralai: "mistral",
+    "mistral ai": "mistral",
+    modelscope: "modelscope",
+    "moonshot-ai": "moonshot",
+    moonshotai: "moonshot",
+    morph: "morph",
+    ncompass: "ncompass",
+    nebius: "nebius",
+    neversleep: "neversleep",
+    nineteen: "nineteen",
+    nothingiisreal: "nothing-is-real",
+    nousresearch: "nousresearch",
+    novita: "novita",
+    nscale: "nscale",
+    nvidia: "nvidia",
+    ollama: "ollama",
+    "open-ai": "openai",
+    "open-router": "openrouter",
+    openai: "openai",
+    opengvlab: "opengvlab",
+    openinference: "openinference",
+    openrouter: "openrouter",
+    parasail: "parasail",
+    perplexity: "perplexity",
+    phala: "phala",
+    pygmalionai: "pygmalion-ai",
+    qwen: "qwen",
+    raifle: "raifle",
+    rekaai: "reka-ai",
+    requesty: "requesty",
+    sambanova: "sambanova",
+    sao10k: "sao10k",
+    sarvamai: "sarvam-ai",
+    scb10x: "scb10x",
+    "shisa-ai": "shisa-ai",
+    sophosympatheia: "sophosympatheia",
+    "stability ai": "stability",
+    switchpoint: "switchpoint",
+    targon: "targon",
+    tencent: "tencent",
+    thedrummer: "the-drummer",
+    thudm: "thudm",
+    tngtech: "tngtech",
+    together: "together",
+    "together-ai": "together",
+    togetherai: "together",
+    "together ai": "together",
+    ubicloud: "ubicloud",
+    undi95: "undi95",
+    upstage: "upstage",
+    v0: "v0",
+    venice: "venice",
+    vercel: "vercel",
+    vertexai: "google",
+    wandb: "weights & biases",
+    "weights & biases": "weights & biases",
+    "weights-biases": "weights & biases",
+    writer: "writer",
+    "x-ai": "xai",
+    xai: "xai",
+    "z-ai": "z-ai",
+    zai: "z-ai",
 } as const;
 
 // Sprite sheet containing all icons
@@ -292,41 +292,41 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
 </svg>`;
 
 export function getIcon(providerName: string): string | null {
-  // First check if the provider name maps to a LobeHub icon
-  const iconName = providerIconMap[providerName];
-  if (iconName) {
-    const symbolId = iconSymbols[iconName];
-    if (symbolId) {
-      return `#${symbolId}`;
+    // First check if the provider name maps to a LobeHub icon
+    const iconName = providerIconMap[providerName];
+    if (iconName) {
+        const symbolId = iconSymbols[iconName];
+        if (symbolId) {
+            return `#${symbolId}`;
+        }
     }
-  }
-  
-  // Fallback: check if the provider name directly matches an icon
-  const symbolId = iconSymbols[providerName];
-  if (symbolId) {
-    return `#${symbolId}`;
-  }
-  
-  return null;
+
+    // Fallback: check if the provider name directly matches an icon
+    const symbolId = iconSymbols[providerName];
+    if (symbolId) {
+        return `#${symbolId}`;
+    }
+
+    return null;
 }
 
 export function hasProviderIcon(providerName: string): boolean {
-  // First check if the provider name maps to a LobeHub icon
-  const iconName = providerIconMap[providerName];
-  if (iconName) {
-    return iconName in iconSymbols;
-  }
-  
-  // Fallback: check if the provider name directly matches an icon
-  return providerName in iconSymbols;
+    // First check if the provider name maps to a LobeHub icon
+    const iconName = providerIconMap[providerName];
+    if (iconName) {
+        return iconName in iconSymbols;
+    }
+
+    // Fallback: check if the provider name directly matches an icon
+    return providerName in iconSymbols;
 }
 
 export function isSvgIcon(providerName: string): boolean {
-  // All icons are SVG
-  return hasProviderIcon(providerName);
+    // All icons are SVG
+    return hasProviderIcon(providerName);
 }
 
 export function isBase64Icon(providerName: string): boolean {
-  // No base64 icons when using LobeHub icons
-  return false;
+    // No base64 icons when using LobeHub icons
+    return false;
 }

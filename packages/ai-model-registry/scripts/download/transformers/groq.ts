@@ -1,6 +1,5 @@
 import { kebabCase } from "@visulima/string";
 import axios from "axios";
-import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
 import { parsePrice, parseTokenLimit } from "../utils/index.js";
@@ -66,242 +65,284 @@ const getOutputModalities = (modelName: string, details: any): string[] => {
 };
 
 /**
- * Fetches model details from a model's detail page
+ * Parses a markdown table row into cells.
+ * @param row The markdown table row string
+ * @returns Array of cell values
  */
-const fetchModelDetails = async (detailUrl: string): Promise<any> => {
-    try {
-        const response = await axios.get(detailUrl);
-        const $ = load(response.data);
+const parseMarkdownTableRow = (row: string): string[] => row
+    .split("|")
+    .map((cell) => cell.trim())
+    .filter((cell) => cell.length > 0);
 
-        const details: any = {};
+/**
+ * Extracts model ID from a markdown table cell that may contain links and images.
+ * The model ID typically appears after the link, e.g., `[![Meta](...)Llama 3.1 8B](/docs/model/llama-3.1-8b-instant)llama-3.1-8b-instant`
+ * @param cell The markdown table cell content
+ * @returns The extracted model ID
+ */
+const extractModelId = (cell: string): string | null => {
+    // Pattern to match model IDs after markdown links
+    // Example: `[![Meta](...)Llama 3.1 8B](/docs/model/llama-3.1-8b-instant)llama-3.1-8b-instant`
+    // The model ID appears after the closing parenthesis of the link
+    const linkPattern = /\]\([^)]+\)([a-z0-9\-./]+)/i;
+    const match = cell.match(linkPattern);
 
-        // Extract pricing information
-        $("h2, h3").each((_, element) => {
-            const text = $(element).text().toLowerCase();
+    if (match && match[1]) {
+        const modelId = match[1].trim();
 
-            if (text.includes("pricing")) {
-                const pricingSection = $(element).nextUntil("h2, h3");
-
-                // Look for price information in the section
-                pricingSection.find("td, .price, .cost").each((_, priceEl) => {
-                    const priceText = $(priceEl).text();
-
-                    if (priceText.includes("$")) {
-                        details.pricing = priceText;
-                    }
-                });
-            }
-        });
-
-        // Extract capabilities from the page content
-        const pageText = $.text().toLowerCase();
-
-        details.vision = pageText.includes("vision") || pageText.includes("image");
-        details.audio = pageText.includes("audio") || pageText.includes("speech");
-        details.reasoning = pageText.includes("reasoning") || pageText.includes("compound");
-        details.preview = pageText.includes("preview") || pageText.includes("beta");
-
-        return details;
-    } catch (error) {
-        console.warn(`[Groq] Error fetching model details from ${detailUrl}:`, error instanceof Error ? error.message : String(error));
-
-        return {};
+        // Validate it looks like a model ID (contains at least one slash or hyphen, or is a simple ID)
+        if (modelId.length >= 3 && /^[a-z0-9\-./]+$/i.test(modelId)) {
+            return modelId;
+        }
     }
+
+    // Fallback: look for any valid model ID pattern in the cell
+    // Model IDs typically have format like: llama-3.1-8b-instant, meta-llama/llama-guard-4-12b, etc.
+    const modelIdPattern = /([a-z0-9]+(?:[-./][a-z0-9]+)+)/i;
+    const fallbackMatch = cell.match(modelIdPattern);
+
+    if (fallbackMatch && fallbackMatch[1]) {
+        return fallbackMatch[1];
+    }
+
+    return null;
 };
 
 /**
- * Transforms Groq model data from their documentation into the normalized structure.
- * @param htmlContent The HTML content from the Groq documentation
+ * Extracts detail URL from a markdown table cell.
+ * @param cell The markdown table cell content
+ * @returns The extracted detail URL or null
+ */
+const extractDetailUrl = (cell: string): string | null => {
+    const linkPattern = /\]\(([^)]+)\)/;
+    const match = cell.match(linkPattern);
+
+    if (match && match[1]) {
+        const url = match[1];
+
+        return url.startsWith("http") ? url : `https://console.groq.com${url}`;
+    }
+
+    return null;
+};
+
+/**
+ * Parses price string that may contain "input" and "output" prices.
+ * Examples: "$0.05 input$0.08 output", "$0.111 per hour"
+ * @param priceText The price text to parse
+ * @returns Object with input and output prices, or null for per-hour pricing
+ */
+const parsePriceString = (priceText: string): { input: string | null; output: string | null } | null => {
+    if (!priceText || priceText.trim() === "-" || priceText.trim() === "") {
+        return { input: null, output: null };
+    }
+
+    // Check for per-hour pricing (e.g., "$0.111 per hour")
+    if (priceText.toLowerCase().includes("per hour")) {
+        return null; // Special handling needed for per-hour models
+    }
+
+    // Extract input and output prices
+    const inputMatch = priceText.match(/\$([\d.]+)\s*input/i);
+    const outputMatch = priceText.match(/\$([\d.]+)\s*output/i);
+
+    return {
+        input: inputMatch ? `$${inputMatch[1]}` : null,
+        output: outputMatch ? `$${outputMatch[1]}` : null,
+    };
+};
+
+/**
+ * Transforms Groq model data from their markdown documentation into the normalized structure.
+ * @param markdownContent The markdown content from the Groq documentation
  * @returns Array of normalized model objects
  */
-export const transformGroqModels = async (htmlContent: string): Promise<Model[]> => {
-    const $ = load(htmlContent);
+export const transformGroqModels = async (markdownContent: string): Promise<Model[]> => {
     const models: Model[] = [];
-    const modelDataToProcess: {
-        cells: string[];
-        detailUrl: string | null;
-        modelId: string;
-        modelName: string;
-    }[] = [];
+    const lines = markdownContent.split("\n");
+    let currentSection: "production" | "preview" | "systems" | null = null;
+    let inTable = false;
+    let headers: string[] = [];
+    let headerIndexMap: Record<string, number> = {};
 
-    // Look for model IDs in the HTML content
-    const modelIdPattern = /"([a-zA-Z0-9\-./]+)"[^"]*"font-mono"/g;
-    const matches = htmlContent.matchAll(modelIdPattern);
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
 
-    for (const match of matches) {
-        const modelId = match[1];
+        // Detect section headers
+        if (line.startsWith("## ")) {
+            const sectionText = line.toLowerCase();
 
-        // Skip if it's not a valid model ID
-        if (!modelId || modelId.includes("$") || modelId.includes("span") || modelId.length < 3) {
+            if (sectionText.includes("production models")) {
+                currentSection = "production";
+            } else if (sectionText.includes("preview models")) {
+                currentSection = "preview";
+            } else if (sectionText.includes("production systems")) {
+                currentSection = "systems";
+            } else {
+                currentSection = null;
+            }
+
+            inTable = false;
+            headers = [];
+            headerIndexMap = {};
+
             continue;
         }
 
-        console.log(`[Groq] Found model ID: ${modelId}`);
+        // Detect table start (header row)
+        if (line.startsWith("|") && line.endsWith("|") && !inTable) {
+            const cells = parseMarkdownTableRow(line);
 
-        // Look for the detail URL near this model ID
-        const detailUrlPattern = new RegExp(`"${modelId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}-details"[^}]*href":"([^"]+)"`, "g");
-        const detailMatches = htmlContent.matchAll(detailUrlPattern);
-        let detailUrl = null;
+            // Check if this looks like a table header (contains "MODEL ID" or similar)
+            if (cells.length > 0 && (cells[0].includes("MODEL") || cells[0].includes("Model"))) {
+                headers = cells;
+                headerIndexMap = {};
 
-        for (const detailMatch of detailMatches) {
-            detailUrl = detailMatch[1].startsWith("http") ? detailMatch[1] : `https://console.groq.com${detailMatch[1]}`;
-            break;
-        }
+                headers.forEach((header, index) => {
+                    const normalizedHeader = header.toLowerCase().trim();
 
-        // Look for the specific model row in the table and extract the context window and max tokens
-        // We'll use a simpler approach: find the model ID and then look for the next two numbers in the same row
-        const modelRowPattern = new RegExp(
-            `"${modelId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^}]*"font-mono"[^}]*>[^<]+<\/span>[^}]*>([^<]+)<\/div>[^}]*>([0-9,]+)<\/div>[^}]*>([0-9,]+)<\/div>`,
-            "g",
-        );
-        const modelRowMatches = htmlContent.matchAll(modelRowPattern);
-        const cells: string[] = [];
+                    if (normalizedHeader.includes("model") && headerIndexMap["model"] === undefined) {
+                        headerIndexMap["model"] = index;
+                    }
 
-        for (const modelRowMatch of modelRowMatches) {
-            const developer = modelRowMatch[1];
-            const contextWindow = modelRowMatch[2];
-            const maxTokens = modelRowMatch[3];
+                    if (normalizedHeader.includes("speed") && headerIndexMap["speed"] === undefined) {
+                        headerIndexMap["speed"] = index;
+                    }
 
-            // Skip if the developer doesn't look like a valid developer name
-            if (developer && !developer.includes("$") && developer.length > 1) {
-                cells.push(contextWindow);
-                cells.push(maxTokens);
-                console.log(`[Groq] Found model row data for ${modelId}: ${developer}, ${contextWindow}, ${maxTokens}`);
-                break;
+                    if (normalizedHeader.includes("price") && headerIndexMap["price"] === undefined) {
+                        headerIndexMap["price"] = index;
+                    }
+
+                    if (normalizedHeader.includes("context") && headerIndexMap["context"] === undefined) {
+                        headerIndexMap["context"] = index;
+                    }
+
+                    if ((normalizedHeader.includes("completion") || normalizedHeader.includes("max")) && headerIndexMap["completion"] === undefined) {
+                        headerIndexMap["completion"] = index;
+                    }
+
+                    if (normalizedHeader.includes("file") && headerIndexMap["file"] === undefined) {
+                        headerIndexMap["file"] = index;
+                    }
+                });
+
+                inTable = true;
+                // Skip the separator row
+                i++;
+
+                continue;
             }
         }
 
-        // If we didn't find the data, try a simpler approach
-        if (cells.length === 0) {
-            // Look for numbers near the model ID in the HTML
-            const numberPattern = new RegExp(`"${modelId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^}]*"([0-9,]+)"`, "g");
-            const numberMatches = htmlContent.matchAll(numberPattern);
-            const numbers: string[] = [];
-
-            for (const numberMatch of numberMatches) {
-                numbers.push(numberMatch[1]);
+        // Process table rows
+        if (inTable && line.startsWith("|") && line.endsWith("|")) {
+            // Skip separator rows
+            if (line.match(/^\|[\s:|-]+\|$/)) {
+                continue;
             }
 
-            // Take the first two numbers as context and max tokens
-            if (numbers.length >= 2) {
-                cells.push(numbers[0]);
-                cells.push(numbers[1]);
-                console.log(`[Groq] Found number data for ${modelId}: ${numbers[0]}, ${numbers[1]}`);
-            } else {
-                console.log(`[Groq] No context data found for ${modelId}`);
+            const cells = parseMarkdownTableRow(line);
+
+            if (cells.length === 0) {
+                continue;
             }
+
+            // Extract model ID from first column
+            const modelIndex = headerIndexMap["model"] ?? 0;
+
+            if (modelIndex < 0 || modelIndex >= cells.length) {
+                continue;
+            }
+
+            const modelIdCell = cells[modelIndex] || "";
+            const modelId = extractModelId(modelIdCell);
+
+            if (!modelId || modelId.length < 3) {
+                continue;
+            }
+
+            const detailUrl = extractDetailUrl(modelIdCell);
+            const priceIndex = headerIndexMap["price"] ?? -1;
+            const contextIndex = headerIndexMap["context"] ?? -1;
+            const completionIndex = headerIndexMap["completion"] ?? -1;
+            const fileIndex = headerIndexMap["file"] ?? -1;
+
+            const priceCell = priceIndex >= 0 && priceIndex < cells.length ? cells[priceIndex] : "";
+            const contextCell = contextIndex >= 0 && contextIndex < cells.length ? cells[contextIndex] : "";
+            const completionCell = completionIndex >= 0 && completionIndex < cells.length ? cells[completionIndex] : "";
+            const fileSizeCell = fileIndex >= 0 && fileIndex < cells.length ? cells[fileIndex] : "";
+
+            // Parse pricing
+            const priceInfo = parsePriceString(priceCell);
+            const isPreview = currentSection === "preview";
+            const isSystem = currentSection === "systems";
+
+            // Determine model name (use model ID as fallback)
+            const modelName = modelId;
+
+            // Determine capabilities based on model name and section
+            const lowerName = modelName.toLowerCase();
+            const details: any = {
+                audio: lowerName.includes("whisper") || lowerName.includes("audio"),
+                preview: isPreview,
+                reasoning: lowerName.includes("reasoning") || lowerName.includes("compound"),
+                vision: lowerName.includes("vision") || lowerName.includes("image"),
+            };
+
+            const capabilities = getModelCapabilities(modelName, details);
+
+            // Handle special cases (e.g., Whisper has per-hour pricing)
+            const costInput = priceInfo ? parsePrice(priceInfo.input || "") : null;
+            const costOutput = priceInfo ? parsePrice(priceInfo.output || "") : null;
+
+            const model: Model = {
+                attachment: false,
+                cost: {
+                    input: costInput,
+                    inputCacheHit: null,
+                    output: costOutput,
+                },
+                extendedThinking: capabilities.reasoning,
+                id: kebabCase(modelId),
+                knowledge: null,
+                lastUpdated: null,
+                limit: {
+                    context: parseTokenLimit(contextCell),
+                    output: parseTokenLimit(completionCell),
+                },
+                modalities: {
+                    input: getInputModalities(modelName, details),
+                    output: getOutputModalities(modelName, details),
+                },
+                name: modelName,
+                openWeights: false,
+                preview: isPreview,
+                provider: "Groq",
+                providerDoc: "https://console.groq.com/docs/models",
+                providerEnv: ["GROQ_API_KEY"],
+                providerModelsDevId: "groq",
+                providerNpm: "@ai-sdk/groq",
+                reasoning: capabilities.reasoning,
+                releaseDate: null,
+                streamingSupported: capabilities.streaming,
+                temperature: capabilities.temperature,
+                toolCall: capabilities.toolCall,
+                vision: capabilities.vision,
+            };
+
+            models.push(model);
+            console.log(`[Groq] Extracted model: ${modelId} (${isPreview ? "preview" : "production"})`);
         }
 
-        modelDataToProcess.push({
-            cells,
-            detailUrl,
-            modelId,
-            modelName: modelId,
-        });
+        // Reset table state if we hit a non-table line
+        if (inTable && !line.startsWith("|")) {
+            inTable = false;
+            headers = [];
+            headerIndexMap = {};
+        }
     }
 
-    // If no models found with the pattern approach, try the table approach as fallback
-    if (modelDataToProcess.length === 0) {
-        $("table").each((tableIndex, table) => {
-            const tableText = $(table).text();
-
-            // Look for tables that contain model information
-            if (tableText.includes("Model") || tableText.includes("Production") || tableText.includes("Preview")) {
-                console.log(`[Groq] Processing table ${tableIndex + 1}: ${tableText.substring(0, 100)}...`);
-
-                $(table)
-                    .find("tbody tr")
-                    .each((rowIndex, row) => {
-                        const cells = $(row)
-                            .find("td")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
-
-                        // Skip header rows or empty rows
-                        if (cells.length < 2 || !cells[0] || cells[0].includes("Model")) {
-                            return;
-                        }
-
-                        const modelName = cells[0];
-                        const modelId = cells[1] || modelName;
-
-                        // Find the detail page link
-                        const detailLink = $(row).find("a").attr("href");
-                        let detailUrl = null;
-
-                        if (detailLink) {
-                            detailUrl = detailLink.startsWith("http") ? detailLink : `https://console.groq.com${detailLink}`;
-                        }
-
-                        console.log(`[Groq] Found model: ${modelName} (${modelId}) - ${detailUrl}`);
-
-                        modelDataToProcess.push({
-                            cells,
-                            detailUrl,
-                            modelId,
-                            modelName,
-                        });
-                    });
-            }
-        });
-    }
-
-    // Process all models asynchronously
-    for await (const modelData of modelDataToProcess) {
-        // Fetch model details if we have a detail URL
-        let modelDetails = {};
-
-        if (modelData.detailUrl) {
-            modelDetails = await fetchModelDetails(modelData.detailUrl);
-        }
-
-        // Extract basic information from the table row
-        const contextLength = modelData.cells[0] || "";
-        const maxOutput = modelData.cells[1] || "";
-        const inputCost = modelData.cells[2] || "";
-        const outputCost = modelData.cells[3] || "";
-
-        const capabilities = getModelCapabilities(modelData.modelName, modelDetails);
-
-        const model: Model = {
-            attachment: false,
-            cost: {
-                input: parsePrice(inputCost),
-                inputCacheHit: null,
-                output: parsePrice(outputCost),
-            },
-            extendedThinking: capabilities.reasoning,
-            id: kebabCase(modelData.modelId),
-            knowledge: null, // Will be extracted from details if available
-            lastUpdated: null,
-            limit: {
-                context: parseTokenLimit(contextLength),
-                output: parseTokenLimit(maxOutput),
-            },
-            modalities: {
-                input: getInputModalities(modelData.modelName, modelDetails),
-                output: getOutputModalities(modelData.modelName, modelDetails),
-            },
-            name: modelData.modelName,
-            openWeights: false,
-            preview: capabilities.preview,
-            provider: "Groq",
-            providerDoc: "https://console.groq.com/docs/models",
-            providerEnv: ["GROQ_API_KEY"],
-            providerModelsDevId: "groq",
-            providerNpm: "@ai-sdk/groq",
-            reasoning: capabilities.reasoning,
-            releaseDate: null,
-            streamingSupported: capabilities.streaming,
-            temperature: capabilities.temperature,
-            toolCall: capabilities.toolCall,
-            vision: capabilities.vision,
-        };
-
-        models.push(model);
-    }
-
-    console.log(`[Groq] Extracted ${models.length} models from documentation`);
+    console.log(`[Groq] Extracted ${models.length} models from markdown documentation`);
 
     return models;
 };
@@ -311,13 +352,13 @@ export const transformGroqModels = async (htmlContent: string): Promise<Model[]>
  * @returns Promise that resolves to an array of transformed models
  */
 export const fetchGroqModels = async (): Promise<Model[]> => {
-    console.log("[Groq] Fetching: https://console.groq.com/docs/models");
+    console.log("[Groq] Fetching: https://console.groq.com/docs/models.md");
 
     try {
-        const response = await axios.get("https://console.groq.com/docs/models");
-        const htmlContent = response.data;
+        const response = await axios.get("https://console.groq.com/docs/models.md");
+        const markdownContent = response.data;
 
-        const models = await transformGroqModels(htmlContent);
+        const models = await transformGroqModels(markdownContent);
 
         console.log(`[Groq] Successfully transformed ${models.length} models`);
 

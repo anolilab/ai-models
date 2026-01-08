@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, expectTypeOf, it } from "vitest";
 
 import type { Model } from "./index";
 import { getAllModels, getModelById, getModelsByProvider, getProviders, getProviderStats, ModelSchema, searchModels } from "./index";
@@ -70,9 +70,10 @@ describe("provider Registry", () => {
             const lowercaseModels = getModelsByProvider("anthropic");
 
             expect(anthropicModels.length).toBeGreaterThan(0);
+
             // Note: Some providers might be case-insensitive in the actual data
             // This test verifies that the function works, regardless of case sensitivity
-            expect(typeof lowercaseModels.length).toBe("number");
+            expectTypeOf(lowercaseModels.length).toBeNumber();
         });
     });
 
@@ -250,8 +251,8 @@ describe("provider Registry", () => {
             }
 
             // The search function should work even if no models match the criteria
-            expect(typeof largeContextModels.length).toBe("number");
-            expect(typeof smallContextModels.length).toBe("number");
+            expectTypeOf(largeContextModels.length).toBeNumber();
+            expectTypeOf(smallContextModels.length).toBeNumber();
         });
 
         it("should combine multiple filters", () => {
@@ -317,7 +318,8 @@ describe("provider Registry", () => {
 
             const stats = getProviderStats();
 
-            expect(typeof stats).toBe("object");
+            expectTypeOf(stats).toBeObject();
+
             expect(Object.keys(stats).length).toBeGreaterThan(0);
         });
 
@@ -342,8 +344,9 @@ describe("provider Registry", () => {
             expect.assertions(entries.length * 3);
 
             Object.entries(stats).forEach(([provider, count]) => {
-                expect(typeof provider).toBe("string");
-                expect(typeof count).toBe("number");
+                expectTypeOf(provider).toBeString();
+                expectTypeOf(count).toBeNumber();
+
                 expect(count).toBeGreaterThan(0);
             });
         });

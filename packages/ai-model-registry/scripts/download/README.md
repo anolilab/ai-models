@@ -15,6 +15,7 @@ The download script now supports parallel processing with configurable concurren
 ### Usage
 
 #### Basic Parallel Download
+
 ```bash
 # From the ai-model-registry package directory
 pnpm run download                    # Default: 5 concurrent downloads
@@ -24,6 +25,7 @@ pnpm run download:max               # 20 concurrent downloads (maximum speed)
 ```
 
 #### Custom Concurrency
+
 ```bash
 # Custom concurrency level
 pnpm run download --concurrency 8   # 8 concurrent downloads
@@ -31,6 +33,7 @@ pnpm run download --concurrency 15  # 15 concurrent downloads
 ```
 
 #### Single Provider (still parallel for internal operations)
+
 ```bash
 # Download specific provider
 pnpm run download --provider "OpenAI" --concurrency 3
@@ -45,6 +48,7 @@ pnpm run download --provider "OpenAI" --concurrency 3
 ### Progress Tracking
 
 The script now provides real-time progress updates:
+
 ```
 Progress: 15/45 (33.3%) - 5 running - Elapsed: 45.2s - ETA: 90.4s
 [OpenAI] Completed (16/45 - 35.6%)
