@@ -11,6 +11,7 @@ onlyBuiltDependencies:
   - oxc-resolver
   - protobufjs
   - puppeteer
+  - rs-module-lexer
   - sharp
   - unrs-resolver
 

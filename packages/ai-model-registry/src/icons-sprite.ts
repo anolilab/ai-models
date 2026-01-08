@@ -1,190 +1,190 @@
 /* Auto-generated file - do not edit manually
  * Generated using @lobehub/icons-static-svg and custom icons
- *
+ * 
  * To regenerate this file, run: pnpm run generate-icons
  */
 
 // SVG icons in sprite sheet
 export const iconSymbols: Record<string, string> = {
-    alibaba: "icon_alibaba",
-    bedrock: "icon_amazon_bedrock",
-    anthropic: "icon_anthropic",
-    azure: "icon_azure_openai",
-    cerebras: "icon_cerebras",
-    modelscope: "icon_modelscope",
-    chutes: "icon_chutes",
-    openrouter: "icon_openrouter",
-    cloudflare: "icon_cloudflare",
-    fireworks: "icon_fireworks_ai",
-    deepinfra: "icon_deep_infra",
-    deepseek: "icon_deepseek",
-    githubcopilot: "icon_github_copilot",
-    github: "icon_github_models",
-    google: "icon_google_partner",
-    vertexai: "icon_google_vertex",
-    groq: "icon_groq",
-    huggingface: "icon_hugging_face",
-    "weights & biases": "icon_weights_&_biases",
-    inception: "icon_inception",
-    inference: "icon_inference",
-    meta: "icon_meta",
-    mistral: "icon_mistral",
-    morph: "icon_morph",
-    openai: "icon_openai",
-    requesty: "icon_requesty",
-    together: "icon_together_ai",
-    upstage: "icon_upstage",
-    v0: "icon_v_0",
-    venice: "icon_venice",
-    vercel: "icon_vercel",
-    xai: "icon_xai",
+  "alibaba": "icon_alibaba",
+  "bedrock": "icon_amazon_bedrock",
+  "anthropic": "icon_anthropic",
+  "azure": "icon_azure_openai",
+  "cerebras": "icon_cerebras",
+  "modelscope": "icon_modelscope",
+  "chutes": "icon_chutes",
+  "openrouter": "icon_openrouter",
+  "cloudflare": "icon_cloudflare",
+  "fireworks": "icon_fireworks_ai",
+  "groq": "icon_groq",
+  "deepinfra": "icon_deep_infra",
+  "deepseek": "icon_deepseek",
+  "githubcopilot": "icon_github_copilot",
+  "github": "icon_github_models",
+  "google": "icon_google_partner",
+  "vertexai": "icon_google_vertex",
+  "huggingface": "icon_hugging_face",
+  "weights & biases": "icon_weights_&_biases",
+  "inception": "icon_inception",
+  "inference": "icon_inference",
+  "meta": "icon_meta",
+  "mistral": "icon_mistral",
+  "morph": "icon_morph",
+  "openai": "icon_openai",
+  "requesty": "icon_requesty",
+  "together": "icon_together_ai",
+  "upstage": "icon_upstage",
+  "v0": "icon_v_0",
+  "venice": "icon_venice",
+  "vercel": "icon_vercel",
+  "xai": "icon_xai"
 } as const;
 
 // Provider name to LobeHub icon name mapping
 export const providerIconMap: Record<string, string> = {
-    "agentica-org": "agentica-org",
-    "aion-labs": "aionlabs",
-    aionlabs: "aionlabs",
-    alfredpros: "alfredpros",
-    alibaba: "alibaba",
-    alpindale: "alpindale",
-    amazon: "bedrock",
-    "amazon-bedrock": "bedrock",
-    "amazon bedrock": "bedrock",
-    "anthracite-org": "anthracite-org",
-    anthropic: "anthropic",
-    "arcee-ai": "arcee-ai",
-    arliai: "arliai",
-    atlascloud: "atlascloud",
-    atoma: "atoma",
-    avian: "avian",
-    azure: "azure",
-    "azure-open-ai": "azure",
-    "azure openai": "azure",
-    baidu: "baidu",
-    bytedance: "bytedance",
-    cerebras: "cerebras",
-    chutes: "chutes",
-    claude: "anthropic",
-    cloudflare: "cloudflare",
-    "cloudflare workers": "cloudflare",
-    "cloudflare workers ai": "cloudflare",
-    cognitivecomputations: "cognitive-computations",
-    cohere: "cohere",
-    crusoe: "crusoe",
-    "deep-infra": "deepinfra",
-    "deep-seek": "deepseek",
-    "deep infra": "deepinfra",
-    deepinfra: "deepinfra",
-    deepseek: "deepseek",
-    eleutherai: "eleutherai",
-    enfer: "enfer",
-    featherless: "featherless",
-    "featherless-ai": "featherless",
-    fireworks: "fireworks",
-    "fireworks-ai": "fireworks",
-    "fireworks ai": "fireworks",
-    friendli: "friendli",
-    "git-hub-copilot": "githubcopilot",
-    "git-hub-models": "github",
-    github: "github",
-    "github copilot": "githubcopilot",
-    "github models": "github",
-    gmicloud: "gmicloud",
-    google: "google",
-    "google-vertex": "vertexai",
-    "google-vertex-partner": "vertexai",
-    "google partner": "google",
-    "google vertex": "vertexai",
-    "google vertex ai21 labs": "vertexai",
-    "google vertex anthropic": "vertexai",
-    "google vertex claude": "vertexai",
-    "google vertex mistral ai": "vertexai",
-    grok: "grok",
-    groq: "groq",
-    gryphe: "gryphe",
-    "hugging-face": "huggingface",
-    huggingface: "huggingface",
-    "hugging face": "huggingface",
-    hyperbolic: "hyperbolic",
-    inception: "inception",
-    inference: "inference",
-    inferencenet: "inferencenet",
-    infermatic: "infermatic",
-    inflection: "inflection",
-    kluster: "kluster",
-    lambda: "lambda",
-    liquid: "liquid",
-    luma: "luma",
-    mancer: "mancer",
-    meta: "meta",
-    "meta-llama": "meta",
-    miatral: "miatral",
-    microsoft: "microsoft",
-    minimax: "minimax",
-    mistral: "mistral",
-    mistralai: "mistral",
-    "mistral ai": "mistral",
-    modelscope: "modelscope",
-    "moonshot-ai": "moonshot",
-    moonshotai: "moonshot",
-    morph: "morph",
-    ncompass: "ncompass",
-    nebius: "nebius",
-    neversleep: "neversleep",
-    nineteen: "nineteen",
-    nothingiisreal: "nothing-is-real",
-    nousresearch: "nousresearch",
-    novita: "novita",
-    nscale: "nscale",
-    nvidia: "nvidia",
-    ollama: "ollama",
-    "open-ai": "openai",
-    "open-router": "openrouter",
-    openai: "openai",
-    opengvlab: "opengvlab",
-    openinference: "openinference",
-    openrouter: "openrouter",
-    parasail: "parasail",
-    perplexity: "perplexity",
-    phala: "phala",
-    pygmalionai: "pygmalion-ai",
-    qwen: "qwen",
-    raifle: "raifle",
-    rekaai: "reka-ai",
-    requesty: "requesty",
-    sambanova: "sambanova",
-    sao10k: "sao10k",
-    sarvamai: "sarvam-ai",
-    scb10x: "scb10x",
-    "shisa-ai": "shisa-ai",
-    sophosympatheia: "sophosympatheia",
-    "stability ai": "stability",
-    switchpoint: "switchpoint",
-    targon: "targon",
-    tencent: "tencent",
-    thedrummer: "the-drummer",
-    thudm: "thudm",
-    tngtech: "tngtech",
-    together: "together",
-    "together-ai": "together",
-    togetherai: "together",
-    "together ai": "together",
-    ubicloud: "ubicloud",
-    undi95: "undi95",
-    upstage: "upstage",
-    v0: "v0",
-    venice: "venice",
-    vercel: "vercel",
-    vertexai: "google",
-    wandb: "weights & biases",
-    "weights & biases": "weights & biases",
-    "weights-biases": "weights & biases",
-    writer: "writer",
-    "x-ai": "xai",
-    xai: "xai",
-    "z-ai": "z-ai",
-    zai: "z-ai",
+  "agentica-org": "agentica-org",
+  "aion-labs": "aionlabs",
+  "aionlabs": "aionlabs",
+  "alfredpros": "alfredpros",
+  "alibaba": "alibaba",
+  "alpindale": "alpindale",
+  "amazon": "bedrock",
+  "amazon-bedrock": "bedrock",
+  "amazon bedrock": "bedrock",
+  "anthracite-org": "anthracite-org",
+  "anthropic": "anthropic",
+  "arcee-ai": "arcee-ai",
+  "arliai": "arliai",
+  "atlascloud": "atlascloud",
+  "atoma": "atoma",
+  "avian": "avian",
+  "azure": "azure",
+  "azure-open-ai": "azure",
+  "azure openai": "azure",
+  "baidu": "baidu",
+  "bytedance": "bytedance",
+  "cerebras": "cerebras",
+  "chutes": "chutes",
+  "claude": "anthropic",
+  "cloudflare": "cloudflare",
+  "cloudflare workers": "cloudflare",
+  "cloudflare workers ai": "cloudflare",
+  "cognitivecomputations": "cognitive-computations",
+  "cohere": "cohere",
+  "crusoe": "crusoe",
+  "deep-infra": "deepinfra",
+  "deep-seek": "deepseek",
+  "deep infra": "deepinfra",
+  "deepinfra": "deepinfra",
+  "deepseek": "deepseek",
+  "eleutherai": "eleutherai",
+  "enfer": "enfer",
+  "featherless": "featherless",
+  "featherless-ai": "featherless",
+  "fireworks": "fireworks",
+  "fireworks-ai": "fireworks",
+  "fireworks ai": "fireworks",
+  "friendli": "friendli",
+  "git-hub-copilot": "githubcopilot",
+  "git-hub-models": "github",
+  "github": "github",
+  "github copilot": "githubcopilot",
+  "github models": "github",
+  "gmicloud": "gmicloud",
+  "google": "google",
+  "google-vertex": "vertexai",
+  "google-vertex-partner": "vertexai",
+  "google partner": "google",
+  "google vertex": "vertexai",
+  "google vertex ai21 labs": "vertexai",
+  "google vertex anthropic": "vertexai",
+  "google vertex claude": "vertexai",
+  "google vertex mistral ai": "vertexai",
+  "grok": "grok",
+  "groq": "groq",
+  "gryphe": "gryphe",
+  "hugging-face": "huggingface",
+  "huggingface": "huggingface",
+  "hugging face": "huggingface",
+  "hyperbolic": "hyperbolic",
+  "inception": "inception",
+  "inference": "inference",
+  "inferencenet": "inferencenet",
+  "infermatic": "infermatic",
+  "inflection": "inflection",
+  "kluster": "kluster",
+  "lambda": "lambda",
+  "liquid": "liquid",
+  "luma": "luma",
+  "mancer": "mancer",
+  "meta": "meta",
+  "meta-llama": "meta",
+  "miatral": "miatral",
+  "microsoft": "microsoft",
+  "minimax": "minimax",
+  "mistral": "mistral",
+  "mistralai": "mistral",
+  "mistral ai": "mistral",
+  "modelscope": "modelscope",
+  "moonshot-ai": "moonshot",
+  "moonshotai": "moonshot",
+  "morph": "morph",
+  "ncompass": "ncompass",
+  "nebius": "nebius",
+  "neversleep": "neversleep",
+  "nineteen": "nineteen",
+  "nothingiisreal": "nothing-is-real",
+  "nousresearch": "nousresearch",
+  "novita": "novita",
+  "nscale": "nscale",
+  "nvidia": "nvidia",
+  "ollama": "ollama",
+  "open-ai": "openai",
+  "open-router": "openrouter",
+  "openai": "openai",
+  "opengvlab": "opengvlab",
+  "openinference": "openinference",
+  "openrouter": "openrouter",
+  "parasail": "parasail",
+  "perplexity": "perplexity",
+  "phala": "phala",
+  "pygmalionai": "pygmalion-ai",
+  "qwen": "qwen",
+  "raifle": "raifle",
+  "rekaai": "reka-ai",
+  "requesty": "requesty",
+  "sambanova": "sambanova",
+  "sao10k": "sao10k",
+  "sarvamai": "sarvam-ai",
+  "scb10x": "scb10x",
+  "shisa-ai": "shisa-ai",
+  "sophosympatheia": "sophosympatheia",
+  "stability ai": "stability",
+  "switchpoint": "switchpoint",
+  "targon": "targon",
+  "tencent": "tencent",
+  "thedrummer": "the-drummer",
+  "thudm": "thudm",
+  "tngtech": "tngtech",
+  "together": "together",
+  "together-ai": "together",
+  "togetherai": "together",
+  "together ai": "together",
+  "ubicloud": "ubicloud",
+  "undi95": "undi95",
+  "upstage": "upstage",
+  "v0": "v0",
+  "venice": "venice",
+  "vercel": "vercel",
+  "vertexai": "google",
+  "wandb": "weights & biases",
+  "weights & biases": "weights & biases",
+  "weights-biases": "weights & biases",
+  "writer": "writer",
+  "x-ai": "xai",
+  "xai": "xai",
+  "z-ai": "z-ai",
+  "zai": "z-ai"
 } as const;
 
 // Sprite sheet containing all icons
@@ -220,6 +220,9 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
   <symbol id="icon_fireworks_ai" viewBox="0 0 24 24">
     <title>Fireworks</title><path d="M14.8 5l-2.801 6.795L9.195 5H7.397l3.072 7.428a1.64 1.64 0 003.038.002L16.598 5H14.8zm1.196 10.352l5.124-5.244-.699-1.669-5.596 5.739a1.664 1.664 0 00-.343 1.807 1.642 1.642 0 001.516 1.012L16 17l8-.02-.699-1.669-7.303.041h-.002zM2.88 10.104l.699-1.669 5.596 5.739c.468.479.603 1.189.343 1.807a1.643 1.643 0 01-1.516 1.012l-8-.018-.002.002.699-1.669 7.303.042-5.122-5.246z"></path>
   </symbol>
+  <symbol id="icon_groq" viewBox="0 0 24 24">
+    <title>Groq</title><path d="M12.036 2c-3.853-.035-7 3-7.036 6.781-.035 3.782 3.055 6.872 6.908 6.907h2.42v-2.566h-2.292c-2.407.028-4.38-1.866-4.408-4.23-.029-2.362 1.901-4.298 4.308-4.326h.1c2.407 0 4.358 1.915 4.365 4.278v6.305c0 2.342-1.944 4.25-4.323 4.279a4.375 4.375 0 01-3.033-1.252l-1.851 1.818A7 7 0 0012.029 22h.092c3.803-.056 6.858-3.083 6.879-6.816v-6.5C18.907 4.963 15.817 2 12.036 2z"></path>
+  </symbol>
   <symbol id="icon_deep_infra" viewBox="0 0 24 24">
     <title>DeepInfra</title><path d="M3.294 7.821A2.297 2.297 0 011 5.527a2.297 2.297 0 012.294-2.295A2.297 2.297 0 015.59 5.527 2.297 2.297 0 013.294 7.82zm0-3.688a1.396 1.396 0 000 2.79 1.396 1.396 0 000-2.79zM3.294 14.293A2.297 2.297 0 011 11.998a2.297 2.297 0 012.294-2.294 2.297 2.297 0 012.295 2.294 2.297 2.297 0 01-2.295 2.295zm0-3.688a1.395 1.395 0 000 2.788 1.395 1.395 0 100-2.788zM3.294 20.761A2.297 2.297 0 011 18.467a2.297 2.297 0 012.294-2.295 2.297 2.297 0 012.295 2.295 2.297 2.297 0 01-2.295 2.294zm0-3.688a1.396 1.396 0 000 2.79 1.396 1.396 0 000-2.79zM20.738 7.821a2.297 2.297 0 01-2.295-2.294 2.297 2.297 0 012.294-2.295 2.297 2.297 0 012.295 2.295 2.297 2.297 0 01-2.294 2.294zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.626-1.395-1.395-1.395zM20.738 14.293a2.297 2.297 0 01-2.295-2.295 2.297 2.297 0 012.294-2.294 2.297 2.297 0 012.295 2.294 2.297 2.297 0 01-2.294 2.295zm0-3.688c-.769 0-1.395.625-1.395 1.393a1.396 1.396 0 002.79 0c0-.77-.626-1.393-1.395-1.393zM20.738 20.761a2.297 2.297 0 01-2.295-2.294 2.297 2.297 0 012.294-2.295 2.297 2.297 0 012.295 2.295 2.297 2.297 0 01-2.294 2.294zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.626-1.395-1.395-1.395zM12.016 11.057a2.297 2.297 0 01-2.294-2.294 2.297 2.297 0 012.294-2.295 2.297 2.297 0 012.295 2.295 2.297 2.297 0 01-2.295 2.294zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.625-1.395-1.395-1.395zM12.017 4.589a2.297 2.297 0 01-2.295-2.295A2.297 2.297 0 0112.017 0a2.297 2.297 0 012.294 2.294 2.297 2.297 0 01-2.294 2.295zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.626-1.395-1.395-1.395zM12.017 17.529a2.297 2.297 0 01-2.295-2.295 2.297 2.297 0 012.295-2.294 2.297 2.297 0 012.294 2.294 2.297 2.297 0 01-2.294 2.295zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.626-1.395-1.395-1.395zM12.016 24a2.297 2.297 0 01-2.294-2.295 2.297 2.297 0 012.294-2.294 2.297 2.297 0 012.295 2.294A2.297 2.297 0 0112.016 24zm0-3.688a1.396 1.396 0 101.395 1.395c0-.77-.625-1.395-1.395-1.395z"></path><path d="M8.363 8.222a.742.742 0 01-.277-.053l-1.494-.596a.75.75 0 11.557-1.392l1.493.595a.75.75 0 01-.278 1.446h-.001zM8.363 14.566a.743.743 0 01-.277-.053l-1.494-.595a.75.75 0 11.557-1.393l1.493.596a.75.75 0 01-.278 1.445h-.001zM17.124 11.397a.741.741 0 01-.277-.054l-1.493-.595a.75.75 0 11.555-1.392l1.493.595a.75.75 0 01-.278 1.446zM17.124 5.05a.744.744 0 01-.277-.054L15.354 4.4a.75.75 0 01.555-1.392l1.493.596a.75.75 0 01-.278 1.445zM17.124 17.739a.743.743 0 01-.277-.053l-1.494-.596a.75.75 0 11.556-1.392l1.493.596a.75.75 0 01-.278 1.445zM6.91 17.966a.75.75 0 01-.279-1.445l1.494-.595a.749.749 0 11.556 1.392l-1.493.595a.743.743 0 01-.277.053H6.91zM6.91 11.66a.75.75 0 01-.279-1.446l1.494-.595a.75.75 0 01.556 1.392l-1.493.595a.743.743 0 01-.277.053H6.91zM6.91 5.033a.75.75 0 01-.279-1.446l1.494-.595a.75.75 0 01.556 1.392l-1.493.596a.744.744 0 01-.277.053H6.91zM8.363 21.364a.743.743 0 01-.277-.053l-1.494-.596a.75.75 0 01.555-1.392l1.494.595a.75.75 0 01-.278 1.446zM15.63 8.223a.75.75 0 01-.278-1.447l1.494-.595a.75.75 0 01.556 1.393l-1.494.595a.744.744 0 01-.276.054h-.002zM15.63 14.567a.75.75 0 01-.278-1.446l1.494-.596a.75.75 0 01.556 1.394l-1.494.595a.743.743 0 01-.276.053h-.002zM15.63 21.363a.749.749 0 01-.278-1.445l1.494-.595a.75.75 0 11.555 1.392l-1.494.595a.741.741 0 01-.277.053z"></path>
   </symbol>
@@ -241,9 +244,6 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
   <symbol id="icon_google_partner" viewBox="0 0 24 24">
     <title>Google</title><path d="M23 12.245c0-.905-.075-1.565-.236-2.25h-10.54v4.083h6.186c-.124 1.014-.797 2.542-2.294 3.569l-.021.136 3.332 2.53.23.022C21.779 18.417 23 15.593 23 12.245z"></path><path d="M12.225 23c3.03 0 5.574-.978 7.433-2.665l-3.542-2.688c-.948.648-2.22 1.1-3.891 1.1a6.745 6.745 0 01-6.386-4.572l-.132.011-3.465 2.628-.045.124C4.043 20.531 7.835 23 12.225 23z"></path><path d="M5.84 14.175A6.65 6.65 0 015.463 12c0-.758.138-1.491.361-2.175l-.006-.147-3.508-2.67-.115.054A10.831 10.831 0 001 12c0 1.772.436 3.447 1.197 4.938l3.642-2.763z"></path><path d="M12.225 5.253c2.108 0 3.529.892 4.34 1.638l3.167-3.031C17.787 2.088 15.255 1 12.225 1 7.834 1 4.043 3.469 2.197 7.062l3.63 2.763a6.77 6.77 0 016.398-4.572z"></path>
   </symbol>
-  <symbol id="icon_groq" viewBox="0 0 24 24">
-    <title>Groq</title><path d="M12.036 2c-3.853-.035-7 3-7.036 6.781-.035 3.782 3.055 6.872 6.908 6.907h2.42v-2.566h-2.292c-2.407.028-4.38-1.866-4.408-4.23-.029-2.362 1.901-4.298 4.308-4.326h.1c2.407 0 4.358 1.915 4.365 4.278v6.305c0 2.342-1.944 4.25-4.323 4.279a4.375 4.375 0 01-3.033-1.252l-1.851 1.818A7 7 0 0012.029 22h.092c3.803-.056 6.858-3.083 6.879-6.816v-6.5C18.907 4.963 15.817 2 12.036 2z"></path>
-  </symbol>
   <symbol id="icon_hugging_face" viewBox="0 0 24 24">
     <title>HuggingFace</title><path d="M16.781 3.277c2.997 1.704 4.844 4.851 4.844 8.258 0 .995-.155 1.955-.443 2.857a1.332 1.332 0 011.125.4 1.41 1.41 0 01.2 1.723c.204.165.352.385.428.632l.017.062c.06.222.12.69-.2 1.166.244.37.279.836.093 1.236-.255.57-.893 1.018-2.128 1.5l-.202.078-.131.048c-.478.173-.89.295-1.061.345l-.086.024c-.89.243-1.808.375-2.732.394-1.32 0-2.3-.36-2.923-1.067a9.852 9.852 0 01-3.18.018C9.778 21.647 8.802 22 7.494 22a11.249 11.249 0 01-2.541-.343l-.221-.06-.273-.08a16.574 16.574 0 01-1.175-.405c-1.237-.483-1.875-.93-2.13-1.501-.186-.4-.151-.867.093-1.236a1.42 1.42 0 01-.2-1.166c.069-.273.226-.516.447-.694a1.41 1.41 0 01.2-1.722c.233-.248.557-.391.917-.407l.078-.001a9.385 9.385 0 01-.44-2.85c0-3.407 1.847-6.554 4.844-8.258a9.822 9.822 0 019.687 0zM4.188 14.758c.125.687 2.357 2.35 2.14 2.707-.19.315-.796-.239-.948-.386l-.041-.04-.168-.147c-.561-.479-2.304-1.9-2.74-1.432-.43.46.119.859 1.055 1.42l.784.467.136.083c1.045.643 1.12.84.95 1.113-.188.295-3.07-2.1-3.34-1.083-.27 1.011 2.942 1.304 2.744 2.006-.2.7-2.265-1.324-2.685-.537-.425.79 2.913 1.718 2.94 1.725l.16.04.175.042c1.227.284 3.565.65 4.435-.604.673-.973.64-1.709-.248-2.61l-.057-.057c-.945-.928-1.495-2.288-1.495-2.288l-.017-.058-.025-.072c-.082-.22-.284-.639-.63-.584-.46.073-.798 1.21.12 1.933l.05.038c.977.721-.195 1.21-.573.534l-.058-.104-.143-.25c-.463-.799-1.282-2.111-1.739-2.397-.532-.332-.907-.148-.782.541zm14.842-.541c-.533.335-1.563 2.074-1.94 2.751a.613.613 0 01-.687.302.436.436 0 01-.176-.098.303.303 0 01-.049-.06l-.014-.028-.008-.02-.007-.019-.003-.013-.003-.017a.289.289 0 01-.004-.048c0-.12.071-.266.25-.427.026-.024.054-.047.084-.07l.047-.036c.022-.016.043-.032.063-.049.883-.71.573-1.81.131-1.917l-.031-.006-.056-.004a.368.368 0 00-.062.006l-.028.005-.042.014-.039.017-.028.015-.028.019-.036.027-.023.02c-.173.158-.273.428-.31.542l-.016.054s-.53 1.309-1.439 2.234l-.054.054c-.365.358-.596.69-.702 1.018-.143.437-.066.868.21 1.353.055.097.117.195.187.296.882 1.275 3.282.876 4.494.59l.286-.07.25-.074c.276-.084.736-.233 1.2-.42l.188-.077.065-.028.064-.028.124-.056.081-.038c.529-.252.964-.543.994-.827l.001-.036a.299.299 0 00-.037-.139c-.094-.176-.271-.212-.491-.168l-.045.01c-.044.01-.09.024-.136.04l-.097.035-.054.022c-.559.23-1.238.705-1.607.745h.006a.452.452 0 01-.05.003h-.024l-.024-.003-.023-.005c-.068-.016-.116-.06-.14-.142a.22.22 0 01-.005-.1c.062-.345.958-.595 1.713-.91l.066-.028c.528-.224.97-.483.985-.832v-.04a.47.47 0 00-.016-.098c-.048-.18-.175-.251-.36-.251-.785 0-2.55 1.36-2.92 1.36-.025 0-.048-.007-.058-.024a.6.6 0 01-.046-.088c-.1-.238.068-.462 1.06-1.066l.209-.126c.538-.32 1.01-.588 1.341-.831.29-.212.475-.406.503-.6l.003-.028c.008-.113-.038-.227-.147-.344a.266.266 0 00-.07-.054l-.034-.015-.013-.005a.403.403 0 00-.13-.02c-.162 0-.369.07-.595.18-.637.313-1.431.952-1.826 1.285l-.249.215-.033.033c-.08.078-.288.27-.493.386l-.071.037-.041.019a.535.535 0 01-.122.036h.005a.346.346 0 01-.031.003l.01-.001-.013.001c-.079.005-.145-.021-.19-.095a.113.113 0 01-.014-.065c.027-.465 2.034-1.991 2.152-2.642l.009-.048c.1-.65-.271-.817-.791-.493zM11.938 2.984c-4.798 0-8.688 3.829-8.688 8.55 0 .692.083 1.364.24 2.008l.008-.009c.252-.298.612-.46 1.017-.46.355.008.699.117.993.312.22.14.465.384.715.694.261-.372.69-.598 1.15-.605.852 0 1.367.728 1.562 1.383l.047.105.06.127c.192.396.595 1.139 1.143 1.68 1.06 1.04 1.324 2.115.8 3.266a8.865 8.865 0 002.024-.014c-.505-1.12-.26-2.17.74-3.186l.066-.066c.695-.684 1.157-1.69 1.252-1.912.195-.655.708-1.383 1.56-1.383.46.007.889.233 1.15.605.25-.31.495-.553.718-.694a1.87 1.87 0 01.99-.312c.357 0 .682.126.925.36.14-.61.215-1.245.215-1.898 0-4.722-3.89-8.55-8.687-8.55zm1.857 8.926l.439-.212c.553-.264.89-.383.89.152 0 1.093-.771 3.208-3.155 3.262h-.184c-2.325-.052-3.116-2.06-3.156-3.175l-.001-.087c0-1.107 1.452.586 3.25.586.716 0 1.379-.272 1.917-.526zm4.017-3.143c.45 0 .813.358.813.8 0 .441-.364.8-.813.8a.806.806 0 01-.812-.8c0-.442.364-.8.812-.8zm-11.624 0c.448 0 .812.358.812.8 0 .441-.364.8-.812.8a.806.806 0 01-.813-.8c0-.442.364-.8.813-.8zm7.79-.841c.32-.384.846-.54 1.33-.394.483.146.83.564.878 1.06.048.495-.212.97-.659 1.203-.322.168-.447-.477-.767-.585l.002-.003c-.287-.098-.772.362-.925.079a1.215 1.215 0 01.14-1.36zm-4.323 0c.322.384.377.92.14 1.36-.152.283-.64-.177-.925-.079l.003.003c-.108.036-.194.134-.273.24l-.118.165c-.11.15-.22.262-.377.18a1.226 1.226 0 01-.658-1.204c.048-.495.395-.913.878-1.059a1.262 1.262 0 011.33.394z"></path>
   </symbol>
@@ -251,7 +251,7 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
     <path d="M20.3906 5.34777C20.1746 4.12318 21.1167 3.00049 22.3602 3.00049H27C28.1046 3.00049 29 3.89592 29 5.00049V5.56202C29 6.53261 28.3031 7.36309 27.3473 7.53164L22.9434 8.30818C21.8556 8.49999 20.8183 7.77365 20.6265 6.68585L20.3906 5.34777Z" fill="white"/><path d="M9.83007 5.34776C9.61416 4.12317 10.5562 3.00049 11.7997 3.00049L16.1862 3.00049C17.1568 3.00049 17.9873 3.69735 18.1558 4.6532L18.578 7.04718C18.7698 8.13497 18.0434 9.17229 16.9556 9.36409L12.7013 10.1142C11.6135 10.306 10.5762 9.57969 10.3844 8.49189L9.83007 5.34776Z" fill="white"/><path d="M5.34732 11.4111C4.12272 11.627 3 10.685 3 9.44146V5.00049C3 3.89592 3.89543 3.00049 5 3.00049H5.62575C6.59635 3.00049 7.42684 3.69736 7.59537 4.65321L8.33591 8.85325C8.52771 9.94103 7.80139 10.9783 6.71362 11.1701L5.34732 11.4111Z" fill="white"/><path d="M5.3473 21.9716C4.1227 22.1875 3 21.2454 3 20.002V15.6154C3 14.6448 3.69685 13.8144 4.65267 13.6458L7.07485 13.2187C8.16265 13.0269 9.19998 13.7532 9.39179 14.841L10.1419 19.0953C10.3337 20.1831 9.6074 21.2204 8.51961 21.4122L5.3473 21.9716Z" fill="white"/><path d="M11.4747 26.6532C11.6906 27.8778 10.7485 29.0005 9.50504 29.0005H5C3.89543 29.0005 3 28.1051 3 27.0005V26.1757C3 25.2051 3.69686 24.3746 4.65269 24.206L8.88087 23.4605C9.96867 23.2687 11.006 23.995 11.1978 25.0828L11.4747 26.6532Z" fill="white"/><path d="M26.2392 29.0005C25.2686 29.0005 24.4381 28.3036 24.2696 27.3478L23.4881 22.9157C23.2963 21.8279 24.0227 20.7906 25.1104 20.5988L26.6527 20.3268C27.8773 20.1109 29 21.053 29 22.2964V27.0005C29 28.1051 28.1046 29.0005 27 29.0005H26.2392Z" fill="white"/><path d="M29 16.1228C29 17.0933 28.3032 17.9238 27.3473 18.0924L24.7494 18.5505C23.6616 18.7423 22.6243 18.016 22.4325 16.9282L21.6824 12.6739C21.4906 11.5861 22.2169 10.5488 23.3047 10.357L26.6527 9.76661C27.8773 9.55068 29 10.4927 29 11.7362L29 16.1228Z" fill="white"/><path d="M22.0351 26.6532C22.251 27.8778 21.309 29.0005 20.0655 29.0005H15.6789C14.7083 29.0005 13.8779 28.3037 13.7093 27.3478L13.2461 24.7215C13.0543 23.6337 13.7807 22.5964 14.8685 22.4046L19.123 21.6544C20.2108 21.4626 21.2481 22.189 21.4399 23.2768L22.0351 26.6532Z" fill="white"/><path d="M20.384 17.2893C20.5758 18.377 19.8495 19.4144 18.7617 19.6062L14.5074 20.3563C13.4196 20.5481 12.3822 19.8218 12.1904 18.734L11.4403 14.4797C11.2485 13.3919 11.9748 12.3546 13.0626 12.1627L17.3169 11.4126C18.4047 11.2208 19.4421 11.9471 19.6339 13.0349L20.384 17.2893Z" fill="white"/><path d="M9.82979 5.34783C9.61387 4.12324 10.5559 3.00056 11.7994 3.00056L16.1859 3.00056C17.1565 3.00056 17.987 3.69743 18.1556 4.65327L18.5777 7.04726C18.7695 8.13504 18.0431 9.17236 16.9554 9.36416L12.7011 10.1143C11.6133 10.3061 10.5759 9.57976 10.3841 8.49196L9.82979 5.34783Z" fill="#FFD95C"/><path d="M20.3906 5.34774C20.1746 4.12314 21.1167 3.00045 22.3602 3.00045L27 3.00045C28.1046 3.00045 29 3.89588 29 5.00045V5.56199C29 6.53257 28.3031 7.36306 27.3473 7.5316L22.9434 8.30815C21.8556 8.49996 20.8183 7.77361 20.6265 6.68582L20.3906 5.34774Z" fill="#00CDDB"/><path d="M29 16.1226C29 17.0932 28.3032 17.9237 27.3473 18.0922L24.7494 18.5503C23.6616 18.7422 22.6243 18.0158 22.4325 16.928L21.6824 12.6737C21.4906 11.5859 22.2169 10.5486 23.3047 10.3568L26.6527 9.76646C27.8773 9.55053 29 10.4926 29 11.7361V16.1226Z" fill="#DE72FF"/><path d="M20.3843 17.2894C20.5761 18.3772 19.8498 19.4145 18.762 19.6063L14.5077 20.3565C13.4199 20.5483 12.3826 19.822 12.1908 18.7342L11.4406 14.4798C11.2488 13.3921 11.9752 12.3547 13.0629 12.1629L17.3173 11.4128C18.4051 11.221 19.4424 11.9473 19.6342 13.0351L20.3843 17.2894Z" fill="#454B52"/><path d="M26.2392 29.0005C25.2686 29.0005 24.4381 28.3036 24.2696 27.3478L23.4881 22.9157C23.2963 21.8279 24.0227 20.7906 25.1104 20.5988L26.6527 20.3268C27.8773 20.1109 29 21.053 29 22.2964V27.0005C29 28.1051 28.1046 29.0005 27 29.0005H26.2392Z" fill="#FFCBAD"/><path d="M22.0355 26.6532C22.2514 27.8778 21.3093 29.0005 20.0659 29.0005H15.6792C14.7087 29.0005 13.8782 28.3037 13.7096 27.3478L13.2465 24.7215C13.0547 23.6337 13.781 22.5964 14.8688 22.4046L19.1233 21.6544C20.2111 21.4626 21.2484 22.189 21.4402 23.2768L22.0355 26.6532Z" fill="#FFD95C"/><path d="M5.3469 11.4114C4.1223 11.6274 2.99958 10.6853 2.99958 9.44184L2.99958 5.00086C2.99958 3.89629 3.89501 3.00086 4.99958 3.00086H5.62533C6.59593 3.00086 7.42642 3.69773 7.59495 4.65358L8.3355 8.85363C8.52729 9.9414 7.80097 10.9787 6.7132 11.1705L5.3469 11.4114Z" fill="#FFCBAD"/><path d="M5.3475 21.9715C4.12291 22.1874 3.0002 21.2454 3.0002 20.0019L3.0002 15.6154C3.0002 14.6448 3.69705 13.8143 4.65288 13.6457L7.07505 13.2186C8.16285 13.0268 9.20019 13.7531 9.392 14.8409L10.1421 19.0952C10.3339 20.183 9.6076 21.2203 8.51982 21.4121L5.3475 21.9715Z" fill="#DE72FF"/><path d="M11.4749 26.6532C11.6908 27.8778 10.7488 29.0005 9.50531 29.0005H5.00027C3.8957 29.0005 3.00027 28.1051 3.00027 27.0005V26.1757C3.00027 25.2051 3.69713 24.3746 4.65297 24.206L8.88114 23.4605C9.96895 23.2687 11.0063 23.995 11.1981 25.0828L11.4749 26.6532Z" fill="#00CDDB"/>
   </symbol>
   <symbol id="icon_inception" viewBox="0 0 24 24">
-    <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFnSURBVHgB7drbTcNQEIThMaKAlEAH0AIVQAdAJbRiKkkLtEAH6eCwA3l0nGPv2tFePinKQ1Ckf2Rb2ApQSinFXmttbHqf2NgdNsB4eXuDA+YDeIon0wG8xZPZAB7j6R5KEn6Qt6O8nuCQ6gjwHk+rB4gQT6sGiBJPiweIFE+LBogWT90DRIynrgGixtPVASLH0+wA0ePp4gAZ4mnuX2Ft/Ele39D5wa00vSMc2OSBiCfqu8G9yBH1Km8HKAzDMHb/cdMzPQX4fU1p6nvTnwI1AJKrAZBcDYDkagAkVwMgubobnPnsHTonOHBxALl1/EICdQpgB+3/YcYLdB6gM/l8cq8nQo/QX1M0GP889UGGU+AvXq5pkxfl6APMxlPkAa7GU9QBuuIp4gDd8RRtgEXxFGmAxfEUZYBV8RRhgNXx5H0AVTx5HkAdT14HMIknjwOMMIonN78POBsl/AOGPB0B5vGllFKy+wXdznlRtPyYogAAAABJRU5ErkJggg==" width="24" height="24"/>
+    <title>Inception</title><path d="M14.767 1H7.884L1 7.883v6.884h6.884V7.883h6.883V1zM9.234 23h6.882L23 16.116V9.233h-6.884v6.883H9.234V23z"></path>
   </symbol>
   <symbol id="icon_inference" viewBox="0 0 24 24">
     <title>Inference</title><path d="M22 21.376h-4.89V2.62H22v18.756zM14.532 21.376h-3.469V2.62h3.469v18.756zM8.764 21.376h-2.66V2.62h2.66v18.756zM3.903 21.376H2V2.62h1.903v18.756z"></path>
@@ -262,8 +262,8 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
   <symbol id="icon_mistral" viewBox="0 0 24 24">
     <title>Mistral</title><path d="M3.428 3.4h3.429v3.428h3.429v3.429h-.002 3.431V6.828h3.427V3.4h3.43v13.714H24v3.429H13.714v-3.428h-3.428v-3.429h-3.43v3.428h3.43v3.429H0v-3.429h3.428V3.4zm10.286 13.715h3.428v-3.429h-3.427v3.429z"></path>
   </symbol>
-  <symbol id="icon_morph" viewBox="0 0 48 48">
-    <path d="M16.5586 6C17.4193 6.00005 18.1838 6.55068 18.4561 7.36719L19.5439 10.6328C19.8162 11.4493 20.5807 12 21.4414 12H26.5586C27.4193 12 28.1838 11.4493 28.4561 10.6328L29.5439 7.36719C29.8162 6.55068 30.5807 6.00005 31.4414 6H34.5586C35.4193 6.00005 36.1838 6.55068 36.4561 7.36719L37.6523 10.958C37.8686 11.6067 38.402 12.1008 39.0654 12.2666L44.4854 13.6211C45.3756 13.8438 46 14.6439 46 15.5615V32.4385C46 33.3561 45.3756 34.1562 44.4854 34.3789L39.0654 35.7334C38.402 35.8992 37.8686 36.3933 37.6523 37.042L36.4561 40.6328C36.1838 41.4493 35.4193 42 34.5586 42H31.4414C30.5807 42 29.8162 41.4493 29.5439 40.6328L28.8779 38.6328C28.4463 37.3379 29.4095 36.0003 30.7744 36H36C37.1046 36 38 35.1046 38 34V14C38 12.8954 37.1046 12 36 12H30C28.8954 12 28 12.8954 28 14V28C28 29.1046 27.1046 30 26 30H22C20.8954 30 20 29.1046 20 28V14C20 12.8954 19.1046 12 18 12H12C10.8954 12 10 12.8954 10 14V34C10 35.1046 10.8954 36 12 36H17.2256C18.5905 36.0003 19.5537 37.3379 19.1221 38.6328L18.4561 40.6328C18.1838 41.4493 17.4193 42 16.5586 42H13.4414C12.5807 42 11.8162 41.4493 11.5439 40.6328L10.3477 37.042C10.1314 36.3933 9.59795 35.8992 8.93457 35.7334L3.51465 34.3789C2.62444 34.1562 2.00001 33.3561 2 32.4385V15.5615C2.00001 14.6439 2.62444 13.8438 3.51465 13.6211L8.93457 12.2666C9.59795 12.1008 10.1314 11.6067 10.3477 10.958L11.5439 7.36719C11.8162 6.55068 12.5807 6.00005 13.4414 6H16.5586Z" fill="#99D52A"/>
+  <symbol id="icon_morph" viewBox="0 0 24 24">
+    <title>Morph</title><path d="M7.941 2c.23 0 .452.073.638.21.186.136.325.328.397.55l.593 1.814c.073.221.212.413.397.55.186.136.409.21.638.21h2.791c.23 0 .452-.074.638-.21a1.11 1.11 0 00.397-.55l.594-1.815a1.11 1.11 0 01.397-.55c.185-.136.408-.209.637-.209h1.7c.23 0 .453.073.639.21.185.136.324.328.397.55l.652 1.994c.118.361.41.635.77.728l2.957.752c.236.06.446.199.596.394.15.195.23.436.231.684v9.376c0 .248-.081.488-.231.684a1.09 1.09 0 01-.595.394l-2.957.752a1.086 1.086 0 00-.477.263 1.114 1.114 0 00-.293.465l-.653 1.994a1.11 1.11 0 01-.396.55c-.186.136-.41.21-.638.21h-1.702c-.229 0-.452-.073-.637-.21a1.11 1.11 0 01-.397-.55l-.364-1.11a1.131 1.131 0 01.15-1.002 1.074 1.074 0 01.885-.462h2.85c.29 0 .567-.116.772-.325.204-.208.32-.49.32-.785V6.444c0-.294-.116-.577-.32-.785a1.08 1.08 0 00-.771-.326h-3.273c-.29 0-.567.117-.772.326-.204.208-.32.49-.32.785v7.778c0 .295-.114.578-.319.786a1.08 1.08 0 01-.771.325h-2.182a1.08 1.08 0 01-.771-.325 1.122 1.122 0 01-.32-.786V6.444c0-.294-.115-.577-.32-.785a1.081 1.081 0 00-.77-.326H5.454c-.29 0-.567.117-.772.326-.204.208-.32.49-.32.785v11.112c0 .294.116.577.32.785.205.209.482.326.772.326h2.85a1.075 1.075 0 01.885.461 1.122 1.122 0 01.15 1.001l-.364 1.112a1.11 1.11 0 01-.397.55c-.185.136-.408.209-.637.209H6.24c-.229 0-.452-.073-.638-.21a1.11 1.11 0 01-.397-.55l-.652-1.994a1.114 1.114 0 00-.294-.465 1.086 1.086 0 00-.477-.263l-2.956-.752a1.09 1.09 0 01-.595-.394A1.124 1.124 0 010 16.688V7.312c0-.248.081-.489.231-.684.15-.195.36-.334.595-.394l2.957-.753c.178-.045.342-.136.477-.263.134-.127.235-.287.293-.464l.653-1.995a1.11 1.11 0 01.397-.55C5.788 2.075 6.01 2 6.24 2h1.701z"></path>
   </symbol>
   <symbol id="icon_openai" viewBox="0 0 24 24">
     <title>OpenAI</title><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path>
@@ -292,41 +292,41 @@ export const spriteSheet = `<svg xmlns="http://www.w3.org/2000/svg" style="displ
 </svg>`;
 
 export function getIcon(providerName: string): string | null {
-    // First check if the provider name maps to a LobeHub icon
-    const iconName = providerIconMap[providerName];
-    if (iconName) {
-        const symbolId = iconSymbols[iconName];
-        if (symbolId) {
-            return `#${symbolId}`;
-        }
-    }
-
-    // Fallback: check if the provider name directly matches an icon
-    const symbolId = iconSymbols[providerName];
+  // First check if the provider name maps to a LobeHub icon
+  const iconName = providerIconMap[providerName];
+  if (iconName) {
+    const symbolId = iconSymbols[iconName];
     if (symbolId) {
-        return `#${symbolId}`;
+      return `#${symbolId}`;
     }
-
-    return null;
+  }
+  
+  // Fallback: check if the provider name directly matches an icon
+  const symbolId = iconSymbols[providerName];
+  if (symbolId) {
+    return `#${symbolId}`;
+  }
+  
+  return null;
 }
 
 export function hasProviderIcon(providerName: string): boolean {
-    // First check if the provider name maps to a LobeHub icon
-    const iconName = providerIconMap[providerName];
-    if (iconName) {
-        return iconName in iconSymbols;
-    }
-
-    // Fallback: check if the provider name directly matches an icon
-    return providerName in iconSymbols;
+  // First check if the provider name maps to a LobeHub icon
+  const iconName = providerIconMap[providerName];
+  if (iconName) {
+    return iconName in iconSymbols;
+  }
+  
+  // Fallback: check if the provider name directly matches an icon
+  return providerName in iconSymbols;
 }
 
 export function isSvgIcon(providerName: string): boolean {
-    // All icons are SVG
-    return hasProviderIcon(providerName);
+  // All icons are SVG
+  return hasProviderIcon(providerName);
 }
 
 export function isBase64Icon(providerName: string): boolean {
-    // No base64 icons when using LobeHub icons
-    return false;
+  // No base64 icons when using LobeHub icons
+  return false;
 }

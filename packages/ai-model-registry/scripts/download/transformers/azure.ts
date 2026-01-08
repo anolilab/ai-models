@@ -6,6 +6,8 @@ import type { Model } from "../../../src/schema.js";
 const AZURE_MODELS_URL = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md";
 const AZURE_CHAT_COMPLETIONS_URL
     = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/model-matrix/standard-chat-completions.md";
+const AZURE_RETIREMENT_URL
+    = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/retirement/models.md";
 
 /**
  * Parse training cutoff date from string.
@@ -84,7 +86,126 @@ const extractModelNamesFromChatCompletions = (markdownContent: string): string[]
 };
 
 /**
- * Extract model data from the models table.
+ * Retirement information for a model.
+ */
+interface RetirementInfo {
+    deprecationDate: string | null;
+    lifecycleStatus: string | null;
+    modelName: string;
+    modelVersion: string | null;
+    replacementModel: string | null;
+    retirementDate: string | null;
+}
+
+/**
+ * Parse a single retirement table row.
+ */
+const parseRetirementRow = (cells: string[]): RetirementInfo | null => {
+    if (cells.length < 6) {
+        return null;
+    }
+
+    const modelName = cells[0].replace(/`/g, "").trim();
+    const modelVersion = cells[1].replace(/`/g, "").trim() || null;
+    const lifecycleStatus = cells[2].trim() || null;
+    const deprecationDate = cells[3].trim() || null;
+    const retirementDate = cells[4].trim() || null;
+    const replacementModel = cells[5].replace(/`/g, "").trim() || null;
+
+    if (!modelName || modelName === "Model Name") {
+        return null;
+    }
+
+    return {
+        deprecationDate: deprecationDate === "n/a" ? null : deprecationDate,
+        lifecycleStatus,
+        modelName,
+        modelVersion,
+        replacementModel: replacementModel === "" ? null : replacementModel,
+        retirementDate: retirementDate === "" ? null : retirementDate,
+    };
+};
+
+/**
+ * Extract retirement information from the retirement table.
+ */
+const extractRetirementInfo = (markdownContent: string): Map<string, RetirementInfo> => {
+    const retirementMap = new Map<string, RetirementInfo>();
+    const lines = markdownContent.split("\n");
+
+    let inTable = false;
+    let headerFound = false;
+
+    for (let i = 0; i < lines.length; i += 1) {
+        const line = lines[i];
+
+        // Detect tab sections (reset table state)
+        if (
+            line.includes("# [Text generation](#tab/text)")
+            || line.includes("### Text generation")
+            || line.includes("# [Audio](#tab/audio)")
+            || line.includes("### Audio")
+            || line.includes("# [Image and video](#tab/image)")
+            || line.includes("### Image and video")
+            || line.includes("# [Embedding](#tab/embedding)")
+            || line.includes("### Embedding")
+        ) {
+            inTable = false;
+            headerFound = false;
+
+            continue;
+        }
+
+        // Look for table header
+        if (line.includes("| Model Name |") && line.includes("Model Version") && line.includes("Lifecycle Status")) {
+            inTable = true;
+            headerFound = true;
+
+            continue;
+        }
+
+        // Process table rows
+        if (inTable && headerFound && line.trim().startsWith("|") && line.includes("`")) {
+            // Skip separator rows
+            if (line.includes("---") || line.includes(":--")) {
+                continue;
+            }
+
+            const cells = line
+                .split("|")
+                .map((c) => c.trim())
+                .filter((c) => c && c !== "");
+
+            // Expected columns: Model Name | Model Version | Lifecycle Status | Deprecation Date | Retirement Date | Replacement Model
+            const retirementInfo = parseRetirementRow(cells);
+
+            if (retirementInfo) {
+                // Create a key that includes both model name and version for uniqueness
+                const key = retirementInfo.modelVersion
+                    ? `${retirementInfo.modelName}-${retirementInfo.modelVersion}`
+                    : retirementInfo.modelName;
+
+                retirementMap.set(key, retirementInfo);
+
+                // Also store by model name only for easier lookup
+                if (retirementInfo.modelVersion) {
+                    retirementMap.set(retirementInfo.modelName, retirementInfo);
+                }
+            }
+        }
+
+        // Stop processing table when we hit a new section
+        if (inTable && (line.trim() === "" || line.startsWith("---") || line.startsWith("##") || line.startsWith("# ["))) {
+            inTable = false;
+            headerFound = false;
+        }
+    }
+
+    return retirementMap;
+};
+
+/**
+ * Extract model data including context limits and training cutoff from the models table.
  */
 const extractModelDataFromModelsTable = (markdownContent: string): Map<string, Partial<Model>> => {
     const modelDataMap = new Map<string, Partial<Model>>();
@@ -280,15 +401,25 @@ const createBaseModel = (modelName: string): Model => {
  * Transforms Azure OpenAI model data from their markdown documentation into the normalized structure.
  * @param modelsMarkdown The markdown content from the models documentation
  * @param chatCompletionsMarkdown The markdown content from the chat completions documentation
+ * @param retirementMarkdown Optional markdown content from the retirement documentation
  * @returns Array of normalized model objects
  */
-export const transformAzureModels = (modelsMarkdown: string, chatCompletionsMarkdown: string): Model[] => {
+export const transformAzureModels = (
+    modelsMarkdown: string,
+    chatCompletionsMarkdown: string,
+    retirementMarkdown?: string,
+): Model[] => {
     console.log("[Azure OpenAI] Transforming model data from markdown sources");
 
     // Extract detailed model data from models table first
     const modelDataMap = extractModelDataFromModelsTable(modelsMarkdown);
 
     console.log(`[Azure OpenAI] Found ${modelDataMap.size} models with detailed data`);
+
+    // Extract retirement information if available
+    const retirementMap = retirementMarkdown ? extractRetirementInfo(retirementMarkdown) : new Map<string, RetirementInfo>();
+
+    console.log(`[Azure OpenAI] Found ${retirementMap.size} retirement entries`);
 
     // Extract model names from chat completions table
     const modelNames = extractModelNamesFromChatCompletions(chatCompletionsMarkdown);
@@ -325,13 +456,50 @@ export const transformAzureModels = (modelsMarkdown: string, chatCompletionsMark
         // Create base model
         const baseModel = createBaseModel(cleanModelName);
 
+        // Look up retirement information
+        let retirementInfo: RetirementInfo | undefined = retirementMap.get(cleanModelName);
+
+        // If not found, try partial match
+        if (!retirementInfo) {
+            for (const [key, value] of retirementMap.entries()) {
+                if (key.includes(cleanModelName) || cleanModelName.includes(key)) {
+                    retirementInfo = value;
+
+                    break;
+                }
+            }
+        }
+
+        // Build description with retirement info if available
+        const descriptionParts: string[] = [];
+
+        if (retirementInfo) {
+            if (retirementInfo.lifecycleStatus) {
+                descriptionParts.push(`Lifecycle: ${retirementInfo.lifecycleStatus}`);
+            }
+
+            if (retirementInfo.deprecationDate && retirementInfo.deprecationDate !== "n/a") {
+                descriptionParts.push(`Deprecation: ${retirementInfo.deprecationDate}`);
+            }
+
+            if (retirementInfo.retirementDate) {
+                descriptionParts.push(`Retirement: ${retirementInfo.retirementDate}`);
+            }
+
+            if (retirementInfo.replacementModel) {
+                descriptionParts.push(`Replacement: ${retirementInfo.replacementModel}`);
+            }
+        }
+
         // Merge with detailed data if available
         const model: Model = {
             ...baseModel,
+            description: descriptionParts.length > 0 ? descriptionParts.join(" | ") : undefined,
             limit: {
                 context: detailedData?.limit?.context || baseModel.limit.context,
                 output: detailedData?.limit?.output || baseModel.limit.output,
             },
+            preview: retirementInfo?.lifecycleStatus === "Preview" || baseModel.preview,
             trainingCutoff: detailedData?.trainingCutoff || baseModel.trainingCutoff,
         };
 
@@ -351,8 +519,8 @@ export const transformAzureModels = (modelsMarkdown: string, chatCompletionsMark
 export const fetchAzureModels = async (): Promise<Model[]> => {
     console.log("[Azure OpenAI] Fetching markdown documentation");
 
-    // Fetch both markdown files
-    const [modelsResponse, chatCompletionsResponse] = await Promise.all([
+    // Fetch all markdown files
+    const [modelsResponse, chatCompletionsResponse, retirementResponse] = await Promise.allSettled([
         axios.get(AZURE_MODELS_URL, {
             headers: {
                 "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
@@ -365,12 +533,32 @@ export const fetchAzureModels = async (): Promise<Model[]> => {
             },
             timeout: 10_000,
         }),
+        axios.get(AZURE_RETIREMENT_URL, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
+            },
+            timeout: 10_000,
+        }),
     ]);
 
-    const modelsMarkdown = modelsResponse.data;
-    const chatCompletionsMarkdown = chatCompletionsResponse.data;
+    if (chatCompletionsResponse.status === "rejected") {
+        throw new Error(`Failed to fetch Azure chat completions: ${chatCompletionsResponse.reason}`);
+    }
 
-    const models = transformAzureModels(modelsMarkdown, chatCompletionsMarkdown);
+    const modelsMarkdown = modelsResponse.status === "fulfilled" ? modelsResponse.value.data : "";
+    const chatCompletionsMarkdown = chatCompletionsResponse.value.data;
+    const retirementMarkdown
+        = retirementResponse.status === "fulfilled" ? retirementResponse.value.data : undefined;
+
+    if (modelsResponse.status === "rejected") {
+        console.warn("[Azure OpenAI] Failed to fetch models data, continuing without it");
+    }
+
+    if (retirementResponse.status === "rejected") {
+        console.warn("[Azure OpenAI] Failed to fetch retirement data, continuing without it");
+    }
+
+    const models = transformAzureModels(modelsMarkdown, chatCompletionsMarkdown, retirementMarkdown);
 
     console.log(`[Azure OpenAI] Found ${models.length} models`);
 
