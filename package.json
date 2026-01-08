@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "audit": "audit-ci --config ./audit-ci.jsonc",
     "build": "nx run-many --target=build --all --parallel",
     "build:affected:packages": "nx affected --target=build --nxBail",
     "build:affected:prod:packages": "nx affected --target=build:prod --nxBail",
@@ -14,9 +15,8 @@
     "build:packages:prod": "nx run-many --target=build:prod --parallel --projects=tag:type:package",
     "clean": "nx run-many --target=clean --all --parallel && rimraf ./node_modules",
     "dev:web": "nx run web:dev",
-    "preinstall": "node -e \"if(process.env.CI == 'true') {console.info('Skipping preinstall...')} else {process.exit(1)}\" || (node verify-node-version.js && npm -y exec only-allow pnpm)",
-    "postinstall": "is-ci || husky || exit 0",
-    "lint": "pnpm run lint:prettier && pnpm run lint:eslint && lint:dedupe --check",
+    "preinstall": "node verify-node-version.js && npx only-allow pnpm",
+    "postinstall": "(is-ci || husky || exit 0) && node scripts/generate-labeler-config.js",    "lint": "pnpm run lint:prettier && pnpm run lint:eslint && lint:dedupe --check",
     "lint:affected:attw": "nx affected --target=lint:attw --parallel --nxBail",
     "lint:affected:eslint": "nx affected --target=lint:eslint --parallel --nxBail",
     "lint:affected:eslint:fix": "nx affected --target=lint:eslint:fix --parallel --nxBail",
