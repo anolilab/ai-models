@@ -69,10 +69,11 @@ const getOutputModalities = (modelName: string, details: any): string[] => {
  * @param row The markdown table row string
  * @returns Array of cell values
  */
-const parseMarkdownTableRow = (row: string): string[] => row
-    .split("|")
-    .map((cell) => cell.trim())
-    .filter((cell) => cell.length > 0);
+const parseMarkdownTableRow = (row: string): string[] =>
+    row
+        .split("|")
+        .map((cell) => cell.trim())
+        .filter((cell) => cell.length > 0);
 
 /**
  * Extracts model ID from a markdown table cell that may contain links and images.

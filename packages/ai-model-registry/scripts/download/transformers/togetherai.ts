@@ -3,7 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength } from "../utils/index.js";
+import { parseContextLength, toNumber } from "../utils/index.js";
 
 const TOGETHER_AI_API_URL = "https://api.together.ai/v1/models";
 const TOGETHER_AI_DOCS_URL = "https://docs.together.ai/";
@@ -30,17 +30,17 @@ export const fetchTogetherAIModels = async (): Promise<Model[]> => {
                     const model: Model = {
                         attachment: false,
                         cost: {
-                            input: modelData.pricing?.input || null,
+                            input: toNumber(modelData.pricing?.input) || null,
                             inputCacheHit: null,
-                            output: modelData.pricing?.output || null,
+                            output: toNumber(modelData.pricing?.output) || null,
                         },
                         extendedThinking: false,
                         id: kebabCase(modelData.id || modelData.name),
                         knowledge: null,
                         lastUpdated: null,
                         limit: {
-                            context: modelData.context_length || null,
-                            output: modelData.max_output || null,
+                            context: toNumber(modelData.context_length) || null,
+                            output: toNumber(modelData.max_output) || null,
                         },
                         modalities: {
                             input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
@@ -237,17 +237,17 @@ export const transformTogetherAIModels = (rawData: any): Model[] => {
             const model: Model = {
                 attachment: false,
                 cost: {
-                    input: modelData.pricing?.input || null,
+                    input: toNumber(modelData.pricing?.input) || null,
                     inputCacheHit: null,
-                    output: modelData.pricing?.output || null,
+                    output: toNumber(modelData.pricing?.output) || null,
                 },
                 extendedThinking: false,
                 id: kebabCase(modelData.id || modelData.name),
                 knowledge: null,
                 lastUpdated: null,
                 limit: {
-                    context: modelData.context_length || null,
-                    output: modelData.max_output || null,
+                    context: toNumber(modelData.context_length) || null,
+                    output: toNumber(modelData.max_output) || null,
                 },
                 modalities: {
                     input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],

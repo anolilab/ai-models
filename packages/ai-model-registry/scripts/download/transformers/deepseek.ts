@@ -9,7 +9,7 @@ import type { Model } from "../../../src/schema.js";
  * @param htmlContent The HTML content from the DeepSeek pricing page
  * @returns Array of normalized model objects
  */
-import { parsePrice, parseTokenLimit } from "../utils/index.js";
+import { parsePrice, parseTokenLimit, toNumber } from "../utils/index.js";
 
 export const transformDeepSeekModels = (htmlContent: string): Model[] => {
     const $ = load(htmlContent);
@@ -149,17 +149,17 @@ export const transformDeepSeekModels = (htmlContent: string): Model[] => {
                 const model: Model = {
                     attachment: false,
                     cost: {
-                        input: inputPrice,
-                        inputCacheHit: inputPrice, // Use same price for cache hit
-                        output: outputPrice,
+                        input: toNumber(inputPrice),
+                        inputCacheHit: toNumber(inputPrice), // Use same price for cache hit
+                        output: toNumber(outputPrice),
                     },
                     extendedThinking: hasExtendedThinking,
                     id: kebabCase(actualModelName),
                     knowledge: knowledgeCutoff,
                     lastUpdated: null,
                     limit: {
-                        context: contextLength,
-                        output: maxOutput,
+                        context: toNumber(contextLength),
+                        output: toNumber(maxOutput),
                     },
                     modalities: {
                         input: ["text"],
