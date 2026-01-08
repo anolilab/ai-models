@@ -2,6 +2,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
+import { toNumber } from "../utils/index.js";
 
 /**
  * Cloudflare Workers AI model data interface
@@ -243,9 +244,9 @@ export const transformCloudflareModels = (modelsData: CloudflareModelData[]): Mo
             // Additional capabilities
             audioGeneration: modelData.capabilities?.audio || false,
             cost: {
-                input: modelData.pricing?.input || null,
+                input: toNumber(modelData.pricing?.input) || null,
                 inputCacheHit: null, // Cloudflare doesn't provide cache hit pricing
-                output: modelData.pricing?.output || null,
+                output: toNumber(modelData.pricing?.output) || null,
             },
             // Description
             description: modelData.description || undefined,
@@ -253,8 +254,8 @@ export const transformCloudflareModels = (modelsData: CloudflareModelData[]): Mo
             knowledge: null, // Not provided by Cloudflare
             lastUpdated: null, // Not provided by Cloudflare
             limit: {
-                context: modelData.context_length || null,
-                output: modelData.max_tokens || null,
+                context: toNumber(modelData.context_length) || null,
+                output: toNumber(modelData.max_tokens) || null,
             },
             modalities: {
                 input: inputModalities,

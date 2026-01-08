@@ -1,36 +1,54 @@
-# @anolilab/ai-model-registry
+<!-- START_PACKAGE_OG_IMAGE_PLACEHOLDER -->
 
-[![npm version](https://badge.fury.io/js/@anolilab%2Fai-model-registry.svg)](https://badge.fury.io/js/@anolilab%2Fai-model-registry)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-blue.svg)](https://www.typescriptlang.org/)
+<a href="https://www.anolilab.com/open-source" align="center">
 
-A comprehensive, unified registry for AI model providers and their metadata. This package provides a tree-shakable interface to access model information from 50+ AI providers including OpenAI, Anthropic, Google, Meta, Groq, and many others.
+  <img src="__assets__/package-og.svg" alt="ai-model-registry" />
 
-## ✨ Features
+</a>
 
-- **🔄 Unified Interface**: Access models from multiple providers through a single API
-- **🛡️ Type Safety**: Full TypeScript support with Zod schema validation
-- **📦 Tree Shaking**: Import only what you need to minimize bundle size
-- **💰 Rich Metadata**: Comprehensive model information including capabilities, pricing, and limits
-- **🔍 Powerful Search**: Advanced search and filtering capabilities across all models
-- **🔄 Auto-Sync**: Automatic data synchronization between models with the same ID
-- **💸 Pricing Integration**: Real-time pricing data from Helicone API (840+ models)
-- **📊 Provider Stats**: Detailed statistics and analytics
+<h3 align="center">Unified registry for AI model providers and their metadata</h3>
 
-## 📦 Installation
+<!-- END_PACKAGE_OG_IMAGE_PLACEHOLDER -->
 
-```bash
-# Using npm
+<br />
+
+<div align="center">
+
+[![typescript-image][typescript-badge]][typescript-url]
+[![apache licence][license-badge]][license]
+[![npm downloads][npm-downloads-badge]][npm-downloads]
+[![Chat][chat-badge]][chat]
+[![PRs Welcome][prs-welcome-badge]][prs-welcome]
+
+</div>
+
+---
+
+<div align="center">
+    <p>
+        <sup>
+            Daniel Bannert's open source work is supported by the community on <a href="https://github.com/sponsors/prisis">GitHub Sponsors</a>
+        </sup>
+    </p>
+</div>
+
+---
+
+## Install
+
+```sh
 npm install @anolilab/ai-model-registry
+```
 
-# Using yarn
+```sh
 yarn add @anolilab/ai-model-registry
+```
 
-# Using pnpm
+```sh
 pnpm add @anolilab/ai-model-registry
 ```
 
-## 🚀 Quick Start
+## Usage
 
 ```typescript
 import { getProviders, getModelsByProvider, getModelById, searchModels, getAllModels } from "@anolilab/ai-model-registry";
@@ -62,7 +80,18 @@ const toolCallModels = searchModels({ tool_call: true });
 const allModels = getAllModels();
 ```
 
-## 📚 API Reference
+## Features
+
+- Unified interface to access models from multiple providers through a single API
+- Full TypeScript support with Zod schema validation for type safety
+- Tree shaking support - import only what you need to minimize bundle size
+- Comprehensive model information including capabilities, pricing, and limits
+- Advanced search and filtering capabilities across all models
+- Automatic data synchronization between models with the same ID
+- Real-time pricing data integration from Helicone API (840+ models)
+- Detailed provider statistics and analytics
+
+## API Reference
 
 ### Core Functions
 
@@ -190,7 +219,7 @@ const streamingModels = searchModels({ streaming_supported: true });
 const previewModels = searchModels({ preview: true });
 ```
 
-## 🏗️ Model Schema
+## Model Schema
 
 Each model follows a comprehensive schema with the following structure:
 
@@ -283,7 +312,7 @@ interface Model {
 }
 ```
 
-## 🌳 Tree Shaking
+## Tree Shaking
 
 The package supports tree shaking, so you can import only what you need:
 
@@ -298,39 +327,126 @@ import { ModelSchema } from "@anolilab/ai-model-registry/schema";
 import { getIcon } from "@anolilab/ai-model-registry/icons";
 ```
 
-## 🏢 Supported Providers
+## Supported Providers
 
 The registry includes models from 50+ providers:
 
 ### Major Providers
 
-- **OpenAI** (GPT-4, GPT-3.5, O1, O3, etc.)
-- **Anthropic** (Claude 3.5, Claude 3, Claude 2.1, etc.)
-- **Google** (Gemini 2.5, Gemini 1.5, PaLM, etc.)
-- **Meta** (Llama 3, Llama 2, Code Llama, etc.)
-- **Groq** (Various models with ultra-fast inference)
-- **DeepSeek** (DeepSeek R1, DeepSeek V3, etc.)
+- OpenAI (GPT-4, GPT-3.5, O1, O3, etc.)
+- Anthropic (Claude 3.5, Claude 3, Claude 2.1, etc.)
+- Google (Gemini 2.5, Gemini 1.5, PaLM, etc.)
+- Meta (Llama 3, Llama 2, Code Llama, etc.)
+- Groq (Various models with ultra-fast inference)
+- DeepSeek (DeepSeek R1, DeepSeek V3, etc.)
 
 ### Specialized Providers
 
-- **Mistral AI** (Mistral Large, Mixtral, etc.)
-- **Cohere** (Command R, Command A, etc.)
-- **Perplexity** (Sonar, Sonar Pro, etc.)
-- **Together AI** (Various open models)
-- **Fireworks AI** (Various models)
-- **Vercel** (v0 models)
+- Mistral AI (Mistral Large, Mixtral, etc.)
+- Cohere (Command R, Command A, etc.)
+- Perplexity (Sonar, Sonar Pro, etc.)
+- Together AI (Various open models)
+- Fireworks AI (Various models)
+- Vercel (v0 models)
 
 ### Open Source & Research
 
-- **HuggingFace** (Various hosted models)
-- **ModelScope** (Chinese models)
-- **OpenRouter** (Aggregated models)
-- **GitHub Copilot** (Code models)
-- **Azure** (OpenAI models)
+- HuggingFace (Various hosted models)
+- ModelScope (Chinese models)
+- OpenRouter (Aggregated models)
+- GitHub Copilot (Code models)
+- Azure (OpenAI models)
 
 And many more...
 
-## 🛠️ Development
+## Pricing Data Integration
+
+This package automatically includes real-time pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs) during the aggregation process.
+
+### Features
+
+- Automatic enrichment: Pricing data is automatically added during aggregation
+- Smart matching: Uses multiple strategies to match models with pricing data
+- Non-destructive: Preserves existing pricing data while filling in missing values
+- Cost conversion: Automatically converts from per 1M tokens to per 1K tokens format
+- 840+ models: Covers pricing for 840+ models across all major providers
+
+### Supported Pricing Providers
+
+Helicone provides pricing data for models from:
+
+- OpenAI (GPT-4, GPT-3.5, O1, O3, etc.)
+- Anthropic (Claude models)
+- Google (Gemini models)
+- Meta (Llama models)
+- Mistral (Mistral models)
+- Groq (Various models)
+- And many more...
+
+## Model Data Synchronization
+
+The provider registry includes a powerful data synchronization system that automatically merges missing data between models with the same ID across different providers.
+
+### How It Works
+
+1. Groups models by ID: Finds all models with the same ID across different providers
+2. Calculates completeness scores: Evaluates how complete each model's data is (excluding cost fields)
+3. Uses the most complete model as base: Selects the model with the highest data completeness
+4. Merges missing data: Fills in missing fields from other models with the same ID
+5. Preserves cost data: Never overwrites existing cost information
+
+### Protected Fields
+
+The following cost-related fields are never synchronized to preserve pricing accuracy:
+
+- `cost` (entire cost object)
+- `input` (input cost)
+- `output` (output cost)
+- `inputCacheHit` (cache hit pricing)
+- `imageGeneration` (image generation pricing)
+- `videoGeneration` (video generation pricing)
+
+### Example
+
+If you have the same model (e.g., `gpt-4`) from multiple providers:
+
+**OpenAI Provider:**
+
+```json
+{
+    "id": "gpt-4",
+    "name": "GPT-4",
+    "cost": { "input": 0.03, "output": 0.06 },
+    "description": null,
+    "releaseDate": "2023-03-14"
+}
+```
+
+**Azure Provider:**
+
+```json
+{
+    "id": "gpt-4",
+    "name": null,
+    "cost": { "input": 0.03, "output": 0.06 },
+    "description": "GPT-4 is a large multimodal model",
+    "releaseDate": null
+}
+```
+
+**Result after synchronization:**
+
+```json
+{
+    "id": "gpt-4",
+    "name": "GPT-4",
+    "cost": { "input": 0.03, "output": 0.06 },
+    "description": "GPT-4 is a large multimodal model",
+    "releaseDate": "2023-03-14"
+}
+```
+
+## Development
 
 ### Prerequisites
 
@@ -450,106 +566,15 @@ packages/ai-model-registry/
     └── icons/            # Provider icons
 ```
 
-## 💰 Pricing Data Integration
+## Supported Node.js Versions
 
-This package automatically includes real-time pricing data from [Helicone's LLM Cost API](https://helicone.ai/api/llm-costs) during the aggregation process.
+Libraries in this ecosystem make the best effort to track [Node.js' release schedule](https://nodejs.org/en/about/releases/). Here's [a post on why we think this is important](https://medium.com/the-node-js-collection/maintainers-should-consider-following-node-js-release-schedule-ab08ed4de71a).
 
-### Features
+## Contributing
 
-- **🔄 Automatic Enrichment**: Pricing data is automatically added during aggregation
-- **🎯 Smart Matching**: Uses multiple strategies to match models with pricing data
-- **🛡️ Non-Destructive**: Preserves existing pricing data while filling in missing values
-- **🔄 Cost Conversion**: Automatically converts from per 1M tokens to per 1K tokens format
-- **📊 840+ Models**: Covers pricing for 840+ models across all major providers
+If you would like to help take a look at the [list of issues](https://github.com/anolilab/ai-models/issues) and check our [Contributing](.github/CONTRIBUTING.md) guide.
 
-### Supported Pricing Providers
-
-Helicone provides pricing data for models from:
-
-- OpenAI (GPT-4, GPT-3.5, O1, O3, etc.)
-- Anthropic (Claude models)
-- Google (Gemini models)
-- Meta (Llama models)
-- Mistral (Mistral models)
-- Groq (Various models)
-- And many more...
-
-### Usage
-
-```bash
-# Aggregate all models with pricing data
-pnpm run aggregate
-
-# Build the package (includes aggregation with pricing)
-pnpm run build
-```
-
-## 🔄 Model Data Synchronization
-
-The provider registry includes a powerful data synchronization system that automatically merges missing data between models with the same ID across different providers.
-
-### How It Works
-
-1. **Groups models by ID**: Finds all models with the same ID across different providers
-2. **Calculates completeness scores**: Evaluates how complete each model's data is (excluding cost fields)
-3. **Uses the most complete model as base**: Selects the model with the highest data completeness
-4. **Merges missing data**: Fills in missing fields from other models with the same ID
-5. **Preserves cost data**: Never overwrites existing cost information
-
-### Protected Fields
-
-The following cost-related fields are **never synchronized** to preserve pricing accuracy:
-
-- `cost` (entire cost object)
-- `input` (input cost)
-- `output` (output cost)
-- `inputCacheHit` (cache hit pricing)
-- `imageGeneration` (image generation pricing)
-- `videoGeneration` (video generation pricing)
-
-### Example
-
-If you have the same model (e.g., `gpt-4`) from multiple providers:
-
-**OpenAI Provider:**
-
-```json
-{
-    "id": "gpt-4",
-    "name": "GPT-4",
-    "cost": { "input": 0.03, "output": 0.06 },
-    "description": null,
-    "releaseDate": "2023-03-14"
-}
-```
-
-**Azure Provider:**
-
-```json
-{
-    "id": "gpt-4",
-    "name": null,
-    "cost": { "input": 0.03, "output": 0.06 },
-    "description": "GPT-4 is a large multimodal model",
-    "releaseDate": null
-}
-```
-
-**Result after synchronization:**
-
-```json
-{
-    "id": "gpt-4",
-    "name": "GPT-4",
-    "cost": { "input": 0.03, "output": 0.06 },
-    "description": "GPT-4 is a large multimodal model",
-    "releaseDate": "2023-03-14"
-}
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+> **Note:** please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
 ### Adding New Providers
 
@@ -562,24 +587,29 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 Please use our [Issue Tracker](https://github.com/anolilab/ai-models/issues) to report bugs or request features.
 
-## 📄 License
+## Credits
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE.md) file for details.
+- [Daniel Bannert](https://github.com/prisis)
+- [All Contributors](https://github.com/anolilab/ai-models/graphs/contributors)
 
-## 🙏 Acknowledgments
+## Made with ❤️ at Anolilab
 
-- [Helicone](https://helicone.ai/) for providing pricing data
-- [OpenRouter](https://openrouter.ai/) for reference data
-- All the AI providers for their amazing models
-- The open source community for inspiration and tools
+This is an open source project and will always remain free to use. If you think it's cool, please star it 🌟. [Anolilab](https://www.anolilab.com/open-source) is a Development and AI Studio. Contact us at [hello@anolilab.com](mailto:hello@anolilab.com) if you need any help with these technologies or just want to say hi!
 
-## 📞 Support
+## License
 
-- **Documentation**: [GitHub Wiki](https://github.com/anolilab/ai-models/wiki)
-- **Issues**: [GitHub Issues](https://github.com/anolilab/ai-models/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/anolilab/ai-models/discussions)
-- **Email**: support@anolilab.com
+The anolilab ai-model-registry is open-sourced software licensed under the [Apache License 2.0][license-url]
 
----
+<!-- badges -->
 
-Made with ❤️ by [AnoliLab](https://anolilab.com)
+[license-badge]: https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge
+[license]: https://github.com/anolilab/ai-models/blob/main/packages/ai-model-registry/LICENSE.md
+[npm-downloads-badge]: https://img.shields.io/npm/dm/@anolilab/ai-model-registry?style=for-the-badge
+[npm-downloads]: https://www.npmjs.com/package/@anolilab/ai-model-registry
+[prs-welcome-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge
+[prs-welcome]: https://github.com/anolilab/ai-models/blob/main/.github/CONTRIBUTING.md
+[chat-badge]: https://img.shields.io/discord/902465130518949899.svg?style=for-the-badge
+[chat]: https://discord.gg/TtFJY8xkFK
+[typescript-badge]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
+[typescript-url]: https://www.typescriptlang.org/
+[license-url]: LICENSE.md

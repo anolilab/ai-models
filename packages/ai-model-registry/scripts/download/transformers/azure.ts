@@ -181,9 +181,7 @@ const extractRetirementInfo = (markdownContent: string): Map<string, RetirementI
 
             if (retirementInfo) {
                 // Create a key that includes both model name and version for uniqueness
-                const key = retirementInfo.modelVersion
-                    ? `${retirementInfo.modelName}-${retirementInfo.modelVersion}`
-                    : retirementInfo.modelName;
+                const key = retirementInfo.modelVersion ? `${retirementInfo.modelName}-${retirementInfo.modelVersion}` : retirementInfo.modelName;
 
                 retirementMap.set(key, retirementInfo);
 
@@ -404,11 +402,7 @@ const createBaseModel = (modelName: string): Model => {
  * @param retirementMarkdown Optional markdown content from the retirement documentation
  * @returns Array of normalized model objects
  */
-export const transformAzureModels = (
-    modelsMarkdown: string,
-    chatCompletionsMarkdown: string,
-    retirementMarkdown?: string,
-): Model[] => {
+export const transformAzureModels = (modelsMarkdown: string, chatCompletionsMarkdown: string, retirementMarkdown?: string): Model[] => {
     console.log("[Azure OpenAI] Transforming model data from markdown sources");
 
     // Extract detailed model data from models table first
@@ -547,8 +541,7 @@ export const fetchAzureModels = async (): Promise<Model[]> => {
 
     const modelsMarkdown = modelsResponse.status === "fulfilled" ? modelsResponse.value.data : "";
     const chatCompletionsMarkdown = chatCompletionsResponse.value.data;
-    const retirementMarkdown
-        = retirementResponse.status === "fulfilled" ? retirementResponse.value.data : undefined;
+    const retirementMarkdown = retirementResponse.status === "fulfilled" ? retirementResponse.value.data : undefined;
 
     if (modelsResponse.status === "rejected") {
         console.warn("[Azure OpenAI] Failed to fetch models data, continuing without it");

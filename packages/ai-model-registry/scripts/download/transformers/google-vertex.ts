@@ -3,7 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength } from "../utils/index.js";
+import { parseContextLength, toNumber } from "../utils/index.js";
 
 const GOOGLE_VERTEX_API_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 const GOOGLE_VERTEX_DOCS_URL = "https://cloud.google.com/vertex-ai/generative-ai/docs/models";
@@ -213,8 +213,8 @@ export const transformGoogleVertexModels = (rawData: unknown): Model[] => {
                 knowledge: null,
                 lastUpdated: null,
                 limit: {
-                    context: modelData.inputTokenLimit || null,
-                    output: modelData.outputTokenLimit || null,
+                    context: toNumber(modelData.inputTokenLimit) || null,
+                    output: toNumber(modelData.outputTokenLimit) || null,
                 },
                 modalities: {
                     input: modelData.supportedGenerationMethods?.includes("generate-content") ? ["text", "image"] : ["text"],
