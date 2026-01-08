@@ -2,52 +2,52 @@
 
 A modern, high-performance web application built with TanStack Start, React 19, and TypeScript. This application provides a comprehensive interface for exploring and comparing AI models from various providers.
 
-## 🚀 Features
+## Features
 
-- **Modern Tech Stack**: Built with React 19, TanStack Router, and TypeScript
-- **High Performance**: Optimized with React Compiler and virtual scrolling
-- **Responsive Design**: Mobile-first design with Tailwind CSS
-- **Advanced Data Table**: Feature-rich table with filtering, sorting, and pagination
-- **SEO Optimized**: Server-side rendering with meta tags and structured data
-- **Accessibility**: WCAG compliant with keyboard navigation support
-- **Analytics**: PostHog integration for user analytics
-- **Consent Management**: GDPR-compliant cookie and consent management
-- **Testing**: Comprehensive E2E testing with Playwright
+- Modern tech stack built with React 19, TanStack Router, and TypeScript
+- High performance optimized with React Compiler and virtual scrolling
+- Responsive design with mobile-first approach using Tailwind CSS
+- Advanced data table with filtering, sorting, and pagination
+- SEO optimized with server-side rendering, meta tags, and structured data
+- Accessibility compliant with WCAG standards and keyboard navigation support
+- Analytics integration with PostHog for user analytics
+- GDPR-compliant cookie and consent management
+- Comprehensive E2E testing with Playwright
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Core
 
-- **React 19** - Latest React with React Compiler
-- **TanStack Router** - Type-safe routing with file-based routes
-- **TanStack Start** - Full-stack React framework
-- **TypeScript** - Type-safe development
-- **Vite** - Fast build tool and dev server
+- React 19 with React Compiler
+- TanStack Router for type-safe routing with file-based routes
+- TanStack Start as the full-stack React framework
+- TypeScript for type-safe development
+- Vite as the build tool and dev server
 
 ### UI & Styling
 
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Radix UI** - Accessible component primitives
-- **Lucide React** - Beautiful icons
-- **Motion** - Animation library
-- **Sonner** - Toast notifications
+- Tailwind CSS 4 for utility-first styling
+- Radix UI for accessible component primitives
+- Lucide React for icons
+- Motion for animations
+- Sonner for toast notifications
 
 ### Data & State
 
-- **TanStack React Query** - Server state management
-- **TanStack React Table** - Powerful data table
-- **TanStack React Virtual** - Virtual scrolling for performance
-- **React Hook Form** - Form state management
-- **Zod** - Schema validation
+- TanStack React Query for server state management
+- TanStack React Table for powerful data table functionality
+- TanStack React Virtual for virtual scrolling performance
+- React Hook Form for form state management
+- Zod for schema validation
 
 ### Development Tools
 
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Playwright** - E2E testing
-- **React Compiler** - Performance optimization
+- ESLint for code linting
+- Prettier for code formatting
+- Playwright for E2E testing
+- React Compiler for performance optimization
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 web/
@@ -74,26 +74,25 @@ web/
 └── netlify.toml            # Deployment configuration
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 22+
+- Node.js 22 or higher
 - pnpm (recommended) or npm
 - Git
 
-### Installation
+### Quick Start
 
-1. **Start the development server**
+1. Start the development server:
 
     ```bash
     pnpm run dev
     ```
 
-2. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+2. Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📝 Available Scripts
+## Available Scripts
 
 ### Development
 
@@ -147,38 +146,38 @@ pnpm test:e2e:debug
 pnpm test:e2e:ui
 ```
 
-## 🏗 Architecture
+## Architecture
 
 ### TanStack Start Integration
 
 This project uses TanStack Start, which provides:
 
-- **File-based routing** with automatic code splitting
-- **Server-side rendering** for better SEO and performance
-- **Type-safe routing** with full TypeScript support
-- **Built-in optimizations** for React 19 and React Compiler
+- File-based routing with automatic code splitting
+- Server-side rendering for better SEO and performance
+- Type-safe routing with full TypeScript support
+- Built-in optimizations for React 19 and React Compiler
 
 ### Data Table Architecture
 
 The data table implementation includes:
 
-- **Virtual scrolling** for handling large datasets
-- **Advanced filtering** with multiple operators
-- **Column resizing** and reordering
-- **Export functionality** (CSV, JSON)
-- **Keyboard navigation** support
-- **Responsive design** for mobile devices
+- Virtual scrolling for handling large datasets
+- Advanced filtering with multiple operators
+- Column resizing and reordering
+- Export functionality (CSV, JSON)
+- Keyboard navigation support
+- Responsive design for mobile devices
 
 ### Performance Optimizations
 
-- **React Compiler** for automatic performance optimizations
-- **Virtual scrolling** for large datasets
-- **Code splitting** with TanStack Router
-- **Image optimization** with Vite
-- **Font optimization** with unplugin-fonts
-- **SVG optimization** with vite-plugin-svgr
+- React Compiler for automatic performance optimizations
+- Virtual scrolling for large datasets
+- Code splitting with TanStack Router
+- Image optimization with Vite
+- Font optimization with unplugin-fonts
+- SVG optimization with vite-plugin-svgr
 
-## 🧪 Testing
+## Testing
 
 ### E2E Testing with Playwright
 
@@ -197,22 +196,22 @@ pnpm test:e2e:ui
 
 ### Test Structure
 
-- **Setup**: Automatic port management and server startup
-- **Global setup/teardown**: Database seeding and cleanup
-- **Page objects**: Reusable test components
-- **Visual testing**: Screenshot comparisons
+- Setup: Automatic port management and server startup
+- Global setup/teardown: Database seeding and cleanup
+- Page objects: Reusable test components
+- Visual testing: Screenshot comparisons
 
-## 🚀 Deployment
+## Deployment
 
 ### Netlify Deployment
 
 The project is configured for Netlify deployment with:
 
-- **Automatic builds** on git push
-- **Preview deployments** for pull requests
-- **Edge functions** for server-side logic
-- **CDN optimization** for static assets
-- **Security headers** for production
+- Automatic builds on git push
+- Preview deployments for pull requests
+- Edge functions for server-side logic
+- CDN optimization for static assets
+- Security headers for production
 
 ### Environment Variables
 
@@ -225,74 +224,74 @@ VITE_POSTHOG_KEY=your-posthog-key
 VITE_POSTHOG_HOST=https://app.posthog.com
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Vite Configuration
 
 The Vite config includes:
 
-- **TanStack Start plugin** for SSR and routing
-- **React Compiler** for performance optimization
-- **Tailwind CSS** for styling
-- **Font optimization** with unplugin-fonts
-- **SVG optimization** with vite-plugin-svgr
-- **Favicon generation** with unplugin-favicons
+- TanStack Start plugin for SSR and routing
+- React Compiler for performance optimization
+- Tailwind CSS for styling
+- Font optimization with unplugin-fonts
+- SVG optimization with vite-plugin-svgr
+- Favicon generation with unplugin-favicons
 
 ### Tailwind Configuration
 
-- **Custom color palette** for brand consistency
-- **Responsive breakpoints** for mobile-first design
-- **Custom animations** for smooth interactions
-- **Dark mode** support
+- Custom color palette for brand consistency
+- Responsive breakpoints for mobile-first design
+- Custom animations for smooth interactions
+- Dark mode support
 
-## 📊 Analytics & Monitoring
+## Analytics & Monitoring
 
 ### PostHog Integration
 
-- **User analytics** and behavior tracking
-- **Feature flags** for A/B testing
-- **Session recordings** for debugging
-- **GDPR compliance** with consent management
+- User analytics and behavior tracking
+- Feature flags for A/B testing
+- Session recordings for debugging
+- GDPR compliance with consent management
 
 ### Performance Monitoring
 
-- **Core Web Vitals** tracking
-- **Custom performance metrics**
-- **Error tracking** and reporting
+- Core Web Vitals tracking
+- Custom performance metrics
+- Error tracking and reporting
 
-## 🤝 Contributing
+## Contributing
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Make your changes**
-4. **Run tests** (`pnpm test:e2e`)
-5. **Commit your changes** (`git commit -m 'Add amazing feature'`)
-6. **Push to the branch** (`git push origin feature/amazing-feature`)
-7. **Open a Pull Request**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests (`pnpm test:e2e`)
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
 ### Code Style
 
-- **ESLint** for code quality
-- **Prettier** for code formatting
-- **TypeScript** for type safety
-- **Conventional commits** for commit messages
+- ESLint for code quality
+- Prettier for code formatting
+- TypeScript for type safety
+- Conventional commits for commit messages
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **TanStack** for the amazing React ecosystem
-- **Radix UI** for accessible components
-- **Tailwind CSS** for the utility-first approach
-- **Vite** for the fast build tool
-- **Playwright** for reliable E2E testing
+- TanStack for the React ecosystem
+- Radix UI for accessible components
+- Tailwind CSS for the utility-first approach
+- Vite for the fast build tool
+- Playwright for reliable E2E testing
 
-## 📞 Support
+## Support
 
 For support and questions:
 
-- **Issues**: [GitHub Issues](https://github.com/your-org/ai-models/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/ai-models/discussions)
-- **Documentation**: [Project Wiki](https://github.com/your-org/ai-models/wiki)
+- Issues: [GitHub Issues](https://github.com/anolilab/ai-models/issues)
+- Discussions: [GitHub Discussions](https://github.com/anolilab/ai-models/discussions)
+- Documentation: [Project Wiki](https://github.com/anolilab/ai-models/wiki)

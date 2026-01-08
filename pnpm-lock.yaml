@@ -24,6 +24,9 @@ importers:
       '@anolilab/multi-semantic-release':
         specifier: ^3.2.2
         version: 3.2.2(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)
+      '@anolilab/prettier-config':
+        specifier: ^8.0.1
+        version: 8.0.1(prettier@3.7.4)
       '@commitlint/cli':
         specifier: ^20.3.0
         version: 20.3.0(@types/node@25.0.3)(typescript@5.9.3)
@@ -63,6 +66,9 @@ importers:
       pkg-pr-new:
         specifier: ^0.0.62
         version: 0.0.62
+      prettier:
+        specifier: 3.7.4
+        version: 3.7.4
       rimraf:
         specifier: 6.1.2
         version: 6.1.2

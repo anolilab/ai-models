@@ -3,7 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseTokenLimit } from "../utils/index.js";
+import { parseTokenLimit, toNumber } from "../utils/index.js";
 
 const DEEPSEEK_DOCS_URL = "https://help.aliyun.com/zh/model-studio/deepseek-api";
 const KIMI_DOCS_URL = "https://help.aliyun.com/zh/model-studio/kimi-api";
@@ -50,17 +50,17 @@ const fetchDeepSeekModels = async (): Promise<Model[]> => {
                             const model: Model = {
                                 attachment: false,
                                 cost: {
-                                    input: parseCost(inputCost),
+                                    input: toNumber(parseCost(inputCost)),
                                     inputCacheHit: null,
-                                    output: parseCost(outputCost),
+                                    output: toNumber(parseCost(outputCost)),
                                 },
                                 extendedThinking: modelName.includes("r1"), // DeepSeek-R1 has extended thinking
                                 id: kebabCase(modelName),
                                 knowledge: null,
                                 lastUpdated: null,
                                 limit: {
-                                    context: parseTokenLimit(contextLength),
-                                    output: parseTokenLimit(maxOutput),
+                                    context: toNumber(parseTokenLimit(contextLength)),
+                                    output: toNumber(parseTokenLimit(maxOutput)),
                                 },
                                 modalities: { input: ["text"], output: ["text"] },
                                 name: modelName,
@@ -135,16 +135,16 @@ const fetchKimiModels = async (): Promise<Model[]> => {
                             const model: Model = {
                                 attachment: false,
                                 cost: {
-                                    input: parseCost(inputCost),
+                                    input: toNumber(parseCost(inputCost)),
                                     inputCacheHit: null,
-                                    output: parseCost(outputCost),
+                                    output: toNumber(parseCost(outputCost)),
                                 },
                                 extendedThinking: false,
                                 id: kebabCase(modelName),
                                 knowledge: null,
                                 lastUpdated: null,
                                 limit: {
-                                    context: parseTokenLimit(contextLength),
+                                    context: toNumber(parseTokenLimit(contextLength)),
                                     output: null, // Not specified in Kimi table
                                 },
                                 modalities: { input: ["text"], output: ["text"] },

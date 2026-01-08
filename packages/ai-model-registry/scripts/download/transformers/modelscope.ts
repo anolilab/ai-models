@@ -3,7 +3,7 @@ import axios from "axios";
 import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength } from "../utils/index.js";
+import { parseContextLength, toNumber } from "../utils/index.js";
 
 const MODELSCOPE_API_URL = "https://modelscope.cn/api/v1/dolphin/models";
 const MODELSCOPE_DOCS_URL = "https://modelscope.cn/docs/model-service/API-Inference/intro";
@@ -439,7 +439,7 @@ export const transformModelScopeModels = (rawData: any): Model[] => {
                 knowledge: null,
                 lastUpdated: null,
                 limit: {
-                    context: modelData.context_length || null,
+                    context: toNumber(modelData.context_length) || null,
                     output: null,
                 },
                 modalities: {
