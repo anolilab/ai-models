@@ -1,6 +1,6 @@
 name: "Data Update"
 
-on:
+on: # yamllint disable-line rule:truthy
     schedule:
         - cron: "0 2 * * *" # At 2:00 AM UTC every day
     workflow_dispatch: # Allow manual triggering
@@ -39,19 +39,15 @@ jobs:
                   cache-prefix: "data-update"
 
             - name: "Install Chrome for Puppeteer"
-              if: "${{ success() }}"
               run: "pnpm exec nx run ai-model-registry:install:chrome"
 
             - name: "Ensure data directory exists"
-              if: "${{ success() }}"
               run: "mkdir -p packages/ai-model-registry/data/providers"
 
             - name: "Prepare AI Model Registry Data"
-              if: "${{ success() }}"
               run: "pnpm exec nx run ai-model-registry:prepare-data"
 
             - name: "Format and lint generated files"
-              if: "${{ success() }}"
               run: |
                   cd packages/ai-model-registry
                   pnpm exec prettier --write public/api.json src/icons-sprite.ts
