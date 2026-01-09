@@ -103,8 +103,8 @@
     "devDependencies": {
         "@anolilab/eslint-config": "^19.0.0",
         "@anolilab/prettier-config": "^8.0.1",
-        "@anolilab/semantic-release-clean-package-json": "4.2.2",
-        "@anolilab/semantic-release-pnpm": "^3.2.2",
+        "@anolilab/semantic-release-clean-package-json": "5.0.0",
+        "@anolilab/semantic-release-pnpm": "^4.0.0",
         "@arethetypeswrong/cli": "^0.18.2",
         "@lobehub/icons-static-svg": "^1.77.0",
         "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",

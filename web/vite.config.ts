@@ -9,11 +9,17 @@ import react from "@vitejs/plugin-react";
 import Unfonts from "unplugin-fonts/vite";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
-import tsconfigPaths from "vite-tsconfig-paths";
+import viteTsConfigPaths from "vite-tsconfig-paths";
+import errorOverlay from "@visulima/vite-overlay";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 
 export default defineConfig({
+    build: {
+        target: "esnext",
+    },
     plugins: [
-        tsconfigPaths(),
+        errorOverlay(),
+        viteTsConfigPaths(),
         unpluginFavicons({
             cache: true,
             inject: true,
@@ -49,5 +55,22 @@ export default defineConfig({
                 },
             },
         }),
+        netlify(),
     ],
+    server: {
+        proxy: {
+            "/pr/posthog": {
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/pr\/posthog/, ""),
+                target: "https://eu.i.posthog.com",
+            },
+        },
+    },
+    ssr: {
+        noExternal: ["@c15t/react"],
+        // Optimize SSR performance
+        optimizeDeps: {
+            include: ["react", "react-dom"],
+        },
+    },
 });
