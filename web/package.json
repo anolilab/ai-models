@@ -1,6 +1,7 @@
 {
     "name": "web",
     "private": true,
+    "sideEffects": false,
     "type": "module",
     "scripts": {
         "build": "vite build",
@@ -17,6 +18,12 @@
         "test:e2e:debug": "rm -rf port*.txt; playwright test --project=chromium --debug",
         "test:e2e:ui": "rm -rf port*.txt; playwright test --project=chromium --ui"
     },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ],
     "dependencies": {
         "@anolilab/ai-model-registry": "workspace:*",
         "@c15t/react": "^1.8.2",

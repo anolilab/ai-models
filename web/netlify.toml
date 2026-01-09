@@ -5,6 +5,9 @@ publish = "web/dist/client"
 [functions]
 directory = "web/netlify/functions"
 
+[dev]
+targetPort = 5173
+
 [build.environment]
 NODE_VERSION = "22"
 

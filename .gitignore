@@ -3,3 +3,6 @@ node_modules
 
 packages/ai-model-registry/data
 port-*.txt
+
+# Local Netlify folder
+.netlify
