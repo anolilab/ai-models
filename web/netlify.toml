@@ -1,7 +1,9 @@
 [build]
-# Build command that builds the ai-model-registry package first, then the web app
 command = "pnpm install && nx build web"
-publish = "dist/client"
+publish = "web/dist/client"
+
+[functions]
+directory = "web/netlify/functions"
 
 [build.environment]
 NODE_VERSION = "22"
