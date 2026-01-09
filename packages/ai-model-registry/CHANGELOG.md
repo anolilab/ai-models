@@ -1,3 +1,24 @@
+## @anolilab/ai-model-registry [1.4.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.3.0...@anolilab/ai-model-registry@1.4.0) (2026-01-09)
+
+### Features
+
+* **deps:** update dependencies and improve package configurations ([858afd8](https://github.com/anolilab/ai-models/commit/858afd894ee24e8abe9cbaa5f6d0d00dc76344ae))
+* enhance AI model registry with new models and cost normalization ([b64800b](https://github.com/anolilab/ai-models/commit/b64800b47b7523c54652e0385571689e7b268232))
+* enhance AI model registry with retirement information and update dependencies ([ec66750](https://github.com/anolilab/ai-models/commit/ec66750f8ca504fe12b3ca372b4051f220f97b05))
+
+### Bug Fixes
+
+* **deps:** update dependency @lobehub/icons-static-svg to ^1.63.0 ([#19](https://github.com/anolilab/ai-models/issues/19)) ([e932ae1](https://github.com/anolilab/ai-models/commit/e932ae18983628ad47abb7538567de6892a129dd))
+* enhance AI model registry with new download scripts and cost formatting improvements ([8a6ff27](https://github.com/anolilab/ai-models/commit/8a6ff27697638865062bf1dbadc5395cd203ebd7))
+* update API and improve output modality parsing ([36d197a](https://github.com/anolilab/ai-models/commit/36d197aaeb7e4495923428d469c27296b0f4b824))
+* update package configurations and enhance README documentation ([4483be1](https://github.com/anolilab/ai-models/commit/4483be12f5a3d7c692e0ad06576e70f681e5e218))
+
+### Miscellaneous Chores
+
+* add Prettier configuration and ignore files ([490f841](https://github.com/anolilab/ai-models/commit/490f841c983064f2143b14e5ebd6b21960aece5e))
+* **deps:** update dependencies and package configurations ([b5b2005](https://github.com/anolilab/ai-models/commit/b5b20053824074ccf1981bccb38cc7dd4d1dd228))
+* **deps:** update package dependencies and configurations ([1deefef](https://github.com/anolilab/ai-models/commit/1deefef4c1a400b018b687b7c3d4da88f7125ad5))
+
 ## @anolilab/ai-model-registry [1.3.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.2.3...@anolilab/ai-model-registry@1.3.0) (2025-08-14)
 
 ### Features
