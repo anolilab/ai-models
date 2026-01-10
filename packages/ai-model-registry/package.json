@@ -74,6 +74,7 @@
         "./dist",
         "./public",
         "README.md",
+        "MIGRATION.md",
         "CHANGELOG.md",
         "LICENSE.md"
     ],
