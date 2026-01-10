@@ -51,19 +51,19 @@ pnpm add @anolilab/ai-model-registry
 ## Usage
 
 ```typescript
-import { getProviders, getModelsByProvider, getModelById, searchModels, getAllModels } from "@anolilab/ai-model-registry";
+import { getProviders, getModelsByProvider, getModelById, searchModels, getAllModels, type ProviderName } from "@anolilab/ai-model-registry";
 
-// Get all available providers
-const providers = getProviders();
+// Get all available providers (async)
+const providers = await getProviders();
 console.log(providers);
 // ['Anthropic', 'Google', 'Groq', 'Meta', 'OpenAI', 'DeepSeek', ...]
 
-// Get all models from a specific provider
-const anthropicModels = getModelsByProvider("Anthropic");
+// Get all models from a specific provider (type-safe provider name)
+const anthropicModels = await getModelsByProvider("Anthropic" as ProviderName);
 console.log(`Found ${anthropicModels.length} Anthropic models`);
 
 // Get a specific model by ID
-const model = getModelById("claude-3-opus-20240229");
+const model = await getModelById("claude-3-opus-20240229");
 if (model) {
     console.log(`Model: ${model.name}`);
     console.log(`Provider: ${model.provider}`);
@@ -72,18 +72,38 @@ if (model) {
 }
 
 // Search for models with specific capabilities
-const visionModels = searchModels({ vision: true });
-const reasoningModels = searchModels({ reasoning: true });
-const toolCallModels = searchModels({ tool_call: true });
+const visionModels = await searchModels({ vision: true });
+const reasoningModels = await searchModels({ reasoning: true });
+const toolCallModels = await searchModels({ tool_call: true });
 
 // Get all models for advanced filtering
-const allModels = getAllModels();
+const allModels = await getAllModels();
+```
+
+### Type-Safe Provider and Model Names
+
+The package provides TypeScript types for provider names and model IDs:
+
+```typescript
+import type { ProviderName } from "@anolilab/ai-model-registry";
+import type ModelName from "@anolilab/ai-model-registry/types/open-router";
+
+// Type-safe provider names
+const provider: ProviderName = "OpenAI"; // ✅ Valid
+const invalid: ProviderName = "InvalidProvider"; // ❌ TypeScript error
+
+// Type-safe model IDs for specific providers
+const modelId: ModelName = "meta-llama/llama-3.1-8b-instruct"; // ✅ Valid
+const invalidId: ModelName = "invalid-model"; // ❌ TypeScript error
 ```
 
 ## Features
 
 - Unified interface to access models from multiple providers through a single API
 - Full TypeScript support with Zod schema validation for type safety
+- Type-safe provider names and model IDs with generated union types
+- Dynamic imports for optimal code splitting and tree shaking
+- Provider-specific JSON files for efficient loading
 - Tree shaking support - import only what you need to minimize bundle size
 - Comprehensive model information including capabilities, pricing, and limits
 - Advanced search and filtering capabilities across all models
@@ -95,48 +115,52 @@ const allModels = getAllModels();
 
 ### Core Functions
 
-#### `getProviders(): string[]`
+All functions are async and use dynamic imports for optimal code splitting.
+
+#### `getProviders(): Promise<ProviderName[]>`
 
 Returns an array of all available provider names.
 
 ```typescript
-const providers = getProviders();
+const providers = await getProviders();
 // ['Anthropic', 'Google', 'Groq', 'Meta', 'OpenAI', ...]
 ```
 
-#### `getModelsByProvider(provider: string): Model[]`
+#### `getModelsByProvider(provider: ProviderName): Promise<Model[]>`
 
-Returns all models for a specific provider.
+Returns all models for a specific provider. Uses provider-specific JSON files for efficient loading.
 
 ```typescript
-const openAIModels = getModelsByProvider("OpenAI");
-const anthropicModels = getModelsByProvider("Anthropic");
+import type { ProviderName } from "@anolilab/ai-model-registry";
+
+const openAIModels = await getModelsByProvider("OpenAI" as ProviderName);
+const anthropicModels = await getModelsByProvider("Anthropic" as ProviderName);
 ```
 
-#### `getModelById(id: string): Model | undefined`
+#### `getModelById(id: string): Promise<Model | undefined>`
 
 Returns a specific model by its ID, or `undefined` if not found.
 
 ```typescript
-const gpt4 = getModelById("gpt-4");
-const claude = getModelById("claude-3-opus-20240229");
+const gpt4 = await getModelById("gpt-4");
+const claude = await getModelById("claude-3-opus-20240229");
 ```
 
-#### `getAllModels(): Model[]`
+#### `getAllModels(): Promise<Model[]>`
 
-Returns all models (useful for advanced filtering and custom logic).
+Returns all models (useful for advanced filtering and custom logic). Loads all provider files in parallel.
 
 ```typescript
-const allModels = getAllModels();
+const allModels = await getAllModels();
 const expensiveModels = allModels.filter((model) => (model.cost.input || 0) > 0.1 || (model.cost.output || 0) > 0.1);
 ```
 
-#### `getProviderStats(): Record<string, number>`
+#### `getProviderStats(): Promise<Record<ProviderName, number>>`
 
 Returns provider statistics with model counts.
 
 ```typescript
-const stats = getProviderStats();
+const stats = await getProviderStats();
 console.log(stats);
 // {
 //   'OpenAI': 15,
@@ -149,9 +173,9 @@ console.log(stats);
 
 ### Advanced Search
 
-#### `searchModels(criteria: SearchCriteria): Model[]`
+#### `searchModels(criteria: SearchCriteria): Promise<Model[]>`
 
-Search models by various criteria with powerful filtering options.
+Search models by various criteria with powerful filtering options. Automatically uses provider-specific files when a provider filter is specified.
 
 ```typescript
 interface SearchCriteria {
@@ -163,7 +187,7 @@ interface SearchCriteria {
     preview?: boolean;
 
     // Provider filter
-    provider?: string;
+    provider?: ProviderName;
 
     // Modality filters
     modalities?: {
@@ -185,38 +209,32 @@ interface SearchCriteria {
 
 ```typescript
 // Find all vision-capable models
-const visionModels = searchModels({ vision: true });
+const visionModels = await searchModels({ vision: true });
 
 // Find models with reasoning capabilities
-const reasoningModels = searchModels({ reasoning: true });
+const reasoningModels = await searchModels({ reasoning: true });
 
 // Find models that support tool calling
-const toolCallModels = searchModels({ tool_call: true });
+const toolCallModels = await searchModels({ tool_call: true });
 
-// Find models from a specific provider
-const openAIModels = searchModels({ provider: "OpenAI" });
+// Find models from a specific provider (uses provider-specific file)
+const openAIModels = await searchModels({ provider: "OpenAI" as ProviderName });
 
 // Find models with large context windows
-const largeContextModels = searchModels({ context_min: 100000 });
-
-// Find affordable models
-const affordableModels = searchModels({
-    max_input_cost: 0.01,
-    max_output_cost: 0.02,
-});
+const largeContextModels = await searchModels({ context_min: 100000 });
 
 // Find models that accept text and image input
-const multimodalModels = searchModels({
+const multimodalModels = await searchModels({
     modalities: {
         input: ["text", "image"],
     },
 });
 
 // Find models with streaming support
-const streamingModels = searchModels({ streaming_supported: true });
+const streamingModels = await searchModels({ streaming_supported: true });
 
 // Find preview/beta models
-const previewModels = searchModels({ preview: true });
+const previewModels = await searchModels({ preview: true });
 ```
 
 ## Model Schema
@@ -312,20 +330,33 @@ interface Model {
 }
 ```
 
-## Tree Shaking
+## Tree Shaking and Code Splitting
 
-The package supports tree shaking, so you can import only what you need:
+The package supports tree shaking and uses dynamic imports for optimal code splitting:
 
 ```typescript
 // Only import specific functions
-import { getProviders, getModelById } from "@anolilab/ai-model-registry";
+import { getProviders, getModelById, type ProviderName } from "@anolilab/ai-model-registry";
 
 // Import schema for validation
 import { ModelSchema } from "@anolilab/ai-model-registry/schema";
 
 // Import icons (if needed)
 import { getIcon } from "@anolilab/ai-model-registry/icons";
+
+// Import provider-specific model ID types
+import type ModelName from "@anolilab/ai-model-registry/types/open-router";
+import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
 ```
+
+### Dynamic Loading
+
+The package uses dynamic imports to load provider-specific JSON files on demand:
+
+- **Single provider queries**: Only loads the specific provider's JSON file
+- **All models queries**: Loads all provider files in parallel
+- **Automatic caching**: Results are cached to avoid re-loading
+- **Better code splitting**: Bundlers can split provider files into separate chunks
 
 ## Supported Providers
 
@@ -500,7 +531,11 @@ pnpm run build
     - Fetches pricing data from Helicone API
     - Enriches models with icon information
     - Synchronizes data between models with the same ID
-    - Generates `data/all-models.json` and `src/models-data.ts`
+    - Generates `public/api.json` (main API file)
+    - Generates `public/{provider-name}.json` (provider-specific files)
+    - Generates `public/providers.json` (provider index)
+    - Generates `src/types/providers.ts` (ProviderName type)
+    - Generates `src/types/{provider-name}.ts` (ModelName types per provider)
 
 3. **Generate Icons (`pnpm run generate-icons`)**:
     - Creates SVG sprite sheet from LobeHub icons and custom icons
@@ -552,15 +587,25 @@ pnpm run lint:types
 ```
 packages/ai-model-registry/
 ├── src/
-│   ├── index.ts          # Main exports
+│   ├── index.ts          # Main exports (async functions)
 │   ├── schema.ts         # Model schema definitions
-│   └── models-data.ts    # Generated model data
+│   ├── icons-sprite.ts   # Generated icon sprite
+│   └── types/            # Generated TypeScript types
+│       ├── providers.ts  # ProviderName type
+│       ├── open-router.ts  # ModelName type for OpenRouter
+│       ├── open-ai.ts    # ModelName type for OpenAI
+│       └── ...           # Other provider model types
 ├── scripts/
 │   ├── aggregate-providers.ts    # Data aggregation script
 │   ├── generate-svg-sprite.ts    # Icon generation
 │   └── download/                 # Provider data downloaders
+├── public/               # Generated JSON files
+│   ├── api.json          # Main API file (all models)
+│   ├── providers.json    # Provider index
+│   ├── open-router.json  # Provider-specific models
+│   ├── open-ai.json      # Provider-specific models
+│   └── ...               # Other provider files
 ├── data/
-│   ├── all-models.json   # Generated model data
 │   └── providers/        # Raw provider data
 └── assets/
     └── icons/            # Provider icons

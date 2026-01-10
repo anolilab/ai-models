@@ -1,0 +1,606 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from OpenAI",
+        "lastUpdated": "2026-01-10T23:24:47.806Z",
+        "provider": "OpenAI",
+        "totalModels": 17,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": true,
+            "cost": {
+                "input": 1.5,
+                "inputCacheHit": 0.375,
+                "output": 6
+            },
+            "extendedThinking": true,
+            "id": "codex-mini-latest",
+            "knowledge": "2024-04",
+            "lastUpdated": "2025-05-16",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codex Mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2025-05-16",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.5,
+                "inputCacheHit": 1.25,
+                "output": 1.5
+            },
+            "extendedThinking": false,
+            "id": "gpt-3.5-turbo",
+            "knowledge": "2021-09-01",
+            "lastUpdated": "2023-11-06",
+            "limit": {
+                "context": 16385,
+                "output": 4096
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-3.5-turbo",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2023-03-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 10,
+                "inputCacheHit": null,
+                "output": 30
+            },
+            "extendedThinking": false,
+            "id": "gpt-4",
+            "knowledge": "2023-11",
+            "lastUpdated": "2024-04-09",
+            "limit": {
+                "context": 8192,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-4",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2023-11-06",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 2,
+                "inputCacheHit": 0.5,
+                "output": 8
+            },
+            "extendedThinking": false,
+            "id": "gpt-4.1",
+            "knowledge": "2024-05",
+            "lastUpdated": "2025-04-14",
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4.1",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2025-04-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 0.4,
+                "inputCacheHit": 0.1,
+                "output": 1.6
+            },
+            "extendedThinking": false,
+            "id": "gpt-4.1-mini",
+            "knowledge": "2024-04",
+            "lastUpdated": "2025-04-14",
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4.1 mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2025-04-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 0.1,
+                "inputCacheHit": 0.03,
+                "output": 0.4
+            },
+            "extendedThinking": false,
+            "id": "gpt-4.1-nano",
+            "knowledge": "2024-04",
+            "lastUpdated": "2025-04-14",
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4.1 nano",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2025-04-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 60,
+                "inputCacheHit": null,
+                "output": 120
+            },
+            "extendedThinking": false,
+            "id": "gpt-4-32k",
+            "knowledge": "2023-11",
+            "lastUpdated": "2023-03-14",
+            "limit": {
+                "context": 32768,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-4 32K",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2023-03-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 2.5,
+                "inputCacheHit": 1.25,
+                "output": 10
+            },
+            "extendedThinking": false,
+            "id": "gpt-4o",
+            "knowledge": "2023-09",
+            "lastUpdated": "2024-05-13",
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4o",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2024-05-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 0.15,
+                "inputCacheHit": 0.08,
+                "output": 0.6
+            },
+            "extendedThinking": false,
+            "id": "gpt-4o-mini",
+            "knowledge": "2023-09",
+            "lastUpdated": "2024-07-18",
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4o mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2024-07-18",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 10,
+                "inputCacheHit": null,
+                "output": 30
+            },
+            "extendedThinking": false,
+            "id": "gpt-4-turbo",
+            "knowledge": "2023-11",
+            "lastUpdated": "2024-04-09",
+            "limit": {
+                "context": 128000,
+                "output": 4096
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "GPT-4 Turbo",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": false,
+            "releaseDate": "2023-11-06",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15,
+                "inputCacheHit": 7.5,
+                "output": 60
+            },
+            "extendedThinking": true,
+            "id": "o1",
+            "knowledge": "2023-09",
+            "lastUpdated": "2024-12-05",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "o1",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2024-12-05",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1.1,
+                "inputCacheHit": 0.55,
+                "output": 4.4
+            },
+            "extendedThinking": true,
+            "id": "o1-mini",
+            "knowledge": "2023-09",
+            "lastUpdated": "2024-09-12",
+            "limit": {
+                "context": 128000,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o1-mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2024-09-12",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": false,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15,
+                "inputCacheHit": 7.5,
+                "output": 60
+            },
+            "extendedThinking": true,
+            "id": "o1-preview",
+            "knowledge": "2023-09",
+            "lastUpdated": "2024-09-12",
+            "limit": {
+                "context": 128000,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o1-preview",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2024-09-12",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 2,
+                "inputCacheHit": 0.5,
+                "output": 8
+            },
+            "extendedThinking": true,
+            "id": "o3",
+            "knowledge": "2024-05",
+            "lastUpdated": "2025-04-16",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "o3",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2025-04-16",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1.1,
+                "inputCacheHit": 0.55,
+                "output": 4.4
+            },
+            "extendedThinking": true,
+            "id": "o3-mini",
+            "knowledge": "2024-05",
+            "lastUpdated": "2025-01-29",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o3-mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2024-12-20",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 20,
+                "inputCacheHit": null,
+                "output": 80
+            },
+            "extendedThinking": true,
+            "id": "o3-pro",
+            "knowledge": "2024-05",
+            "lastUpdated": "2025-06-10",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "o3-pro",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2025-06-10",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        },
+        {
+            "attachment": true,
+            "cost": {
+                "input": 1.1,
+                "inputCacheHit": 0.28,
+                "output": 4.4
+            },
+            "extendedThinking": true,
+            "id": "o4-mini",
+            "knowledge": "2024-05",
+            "lastUpdated": "2025-04-16",
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "o4-mini",
+            "openWeights": false,
+            "provider": "OpenAI",
+            "providerDoc": "https://platform.openai.com/docs/models",
+            "providerEnv": ["OPENAI_API_KEY"],
+            "providerId": "open-ai",
+            "providerModelsDevId": "openai",
+            "providerNpm": "@ai-sdk/openai",
+            "reasoning": true,
+            "releaseDate": "2025-04-16",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openai"
+        }
+    ]
+}

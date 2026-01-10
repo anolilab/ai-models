@@ -1,0 +1,3094 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Cloudflare",
+        "lastUpdated": "2026-01-10T23:24:47.798Z",
+        "provider": "Cloudflare",
+        "totalModels": 79,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Aura is a context-aware text-to-speech (TTS) model that applies natural pacing, expressiveness, and fillers based on the context of the provided text. The quality of your text input directly impacts the naturalness of the audio output.",
+            "id": "aura-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "aura-1",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Aura-2 is a context-aware text-to-speech (TTS) model that applies natural pacing, expressiveness, and fillers based on the context of the provided text. The quality of your text input directly impacts the naturalness of the audio output.",
+            "id": "aura-2-en",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "aura-2-en",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Aura-2 is a context-aware text-to-speech (TTS) model that applies natural pacing, expressiveness, and fillers based on the context of the provided text. The quality of your text input directly impacts the naturalness of the audio output.",
+            "id": "aura-2-es",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "aura-2-es",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder. You can use this model for text summarization.",
+            "id": "bart-large-cnn",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "bart-large-cnn",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "BAAI general embedding (Base) model that transforms any given text into a 768-dimensional vector",
+            "id": "bge-base-en-v1.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "bge-base-en-v1.5",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "BAAI general embedding (Large) model that transforms any given text into a 1024-dimensional vector",
+            "id": "bge-large-en-v1.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "bge-large-en-v1.5",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Multi-Functionality, Multi-Linguality, and Multi-Granularity embeddings model.",
+            "id": "bge-m3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 60000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "bge-m3",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "BAAI general embedding (Small) model that transforms any given text into a 384-dimensional vector",
+            "id": "bge-small-en-v1.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "bge-small-en-v1.5",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Deepseek Coder is composed of a series of code language models, each trained from scratch on 2T tokens, with a composition of 87% code and 13% natural language in both English and Chinese.",
+            "id": "deepseek-coder-6.7b-base-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-coder-6.7b-base-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Deepseek Coder is composed of a series of code language models, each trained from scratch on 2T tokens, with a composition of 87% code and 13% natural language in both English and Chinese.",
+            "id": "deepseek-coder-6.7b-instruct-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-coder-6.7b-instruct-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "DeepSeekMath-Instruct 7B is a mathematically instructed tuning model derived from DeepSeekMath-Base 7B. DeepSeekMath is initialized with DeepSeek-Coder-v1.5 7B and continues pre-training on math-related tokens sourced from Common Crawl, together with natural language and code data for 500B tokens.",
+            "id": "deepseek-math-7b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-math-7b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "DeepSeek-R1-Distill-Qwen-32B is a model distilled from DeepSeek-R1 based on Qwen2.5. It outperforms OpenAI-o1-mini across various benchmarks, achieving new state-of-the-art results for dense models.",
+            "extendedThinking": false,
+            "id": "deepseek-r1-distill-qwen-32b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 80000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-distill-qwen-32b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": "2025-01-29",
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "DEtection TRansformer (DETR) model trained end-to-end on COCO 2017 object detection (118k annotated images).",
+            "id": "detr-resnet-50",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "detr-resnet-50",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "DiscoLM German 7b is a Mistral-based large language model with a focus on German-language applications. AWQ is an efficient, accurate and blazing-fast low-bit weight quantization method, currently supporting 4-bit quantization.",
+            "id": "discolm-german-7b-v1-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "discolm-german-7b-v1-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Distilled BERT model that was finetuned on SST-2 for sentiment classification",
+            "id": "distilbert-sst-2-int8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "distilbert-sst-2-int8",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Stable Diffusion model that has been fine-tuned to be better at photorealism without sacrificing range.",
+            "id": "dreamshaper-8-lcm",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "dreamshaper-8-lcm",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "EmbeddingGemma is a 300M parameter, state-of-the-art for its size, open embedding model from Google, built from Gemma 3 (with T5Gemma initialization) and the same research and technology used to create Gemini models. EmbeddingGemma produces vector representations of text, making it well-suited for search and retrieval tasks, including classification, clustering, and semantic similarity search. This model was trained with data in 100+ spoken languages.",
+            "id": "embeddinggemma-300m",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "embeddinggemma-300m",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Falcon-7B-Instruct is a 7B parameters causal decoder-only model built by TII based on Falcon-7B and finetuned on a mixture of chat/instruct datasets.",
+            "id": "falcon-7b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "falcon-7b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "description": "Flux is the first conversational speech recognition model built specifically for voice agents.",
+            "id": "flux",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "flux",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "This is a Gemma-2B base model that Cloudflare dedicates for inference with LoRA adapters. Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.",
+            "id": "gemma-2b-it-lora",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-2b-it-lora",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "Gemma 3 models are well-suited for a variety of text generation and image understanding tasks, including question answering, summarization, and reasoning. Gemma 3 models are multimodal, handling text and image input and generating text output, with a large, 128K context window, multilingual support in over 140 languages, and is available in more sizes than previous versions.",
+            "id": "gemma-3-12b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 80000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-12b-it",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00007,
+                "inputCacheHit": null,
+                "output": 0.00007
+            },
+            "description": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants.",
+            "id": "gemma-7b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-7b-it",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00007,
+                "inputCacheHit": null,
+                "output": 0.00007
+            },
+            "description": "This is a Gemma-7B base model that Cloudflare dedicates for inference with LoRA adapters. Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.",
+            "id": "gemma-7b-it-lora",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 3500000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-7b-it-lora",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "SEA-LION stands for Southeast Asian Languages In One Network, which is a collection of Large Language Models (LLMs) which have been pretrained and instruct-tuned for the Southeast Asia (SEA) region.",
+            "id": "gemma-sea-lion-v4-27b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-sea-lion-v4-27b-it",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases – gpt-oss-20b is for lower latency, and local or specialized use-cases.",
+            "id": "gpt-oss-20b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gpt-oss-20b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.000017,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "description": "Granite 4.0 instruct models deliver strong performance across benchmarks, achieving industry-leading results in key agentic tasks like instruction following and function calling. These efficiencies make the models well-suited for a wide range of use cases like retrieval-augmented generation (RAG), multi-agent workflows, and edge deployments.",
+            "id": "granite-4.0-h-micro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "granite-4.0-h-micro",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "IndicTrans2 is the first open-source transformer-based multilingual NMT model that supports high-quality translations across all the 22 scheduled Indic languages",
+            "id": "indictrans2-en-indic-1B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "indictrans2-en-indic-1B",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Llama 2 13B Chat AWQ is an efficient, accurate and blazing-fast low-bit weight quantized Llama 2 variant.",
+            "id": "llama-2-13b-chat-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-2-13b-chat-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Full precision (fp16) generative text model with 7 billion parameters from Meta",
+            "id": "llama-2-7b-chat-fp16",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-2-7b-chat-fp16",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "This is a Llama2 base model that Cloudflare dedicated for inference with LoRA adapters. Llama 2 is a collection of pretrained and fine-tuned generative text models ranging in scale from 7 billion to 70 billion parameters. This is the repository for the 7B fine-tuned model, optimized for dialogue use cases and converted for the Hugging Face Transformers format.",
+            "id": "llama-2-7b-chat-hf-lora",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-2-7b-chat-hf-lora",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Quantized (int8) generative text model with 7 billion parameters from Meta",
+            "id": "llama-2-7b-chat-int8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-2-7b-chat-int8",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00045,
+                "inputCacheHit": null,
+                "output": 0.00045
+            },
+            "description": "The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models. The Llama 3.1 instruction tuned text only models are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+            "id": "llama-3.1-70b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-70b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models. The Llama 3.1 instruction tuned text only models are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+            "id": "llama-3.1-8b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 7968000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-8b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Quantized (int4) generative text model with 8 billion parameters from Meta.",
+            "id": "llama-3.1-8b-instruct-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-8b-instruct-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "[Fast version] The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models. The Llama 3.1 instruction tuned text only models are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+            "id": "llama-3.1-8b-instruct-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-8b-instruct-fast",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Llama 3.1 8B quantized to FP8 precision",
+            "id": "llama-3.1-8b-instruct-fp8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-8b-instruct-fp8",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00006,
+                "inputCacheHit": null,
+                "output": 0.00006
+            },
+            "description": "The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image.",
+            "id": "llama-3.2-11b-vision-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "llama-3.2-11b-vision-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00002,
+                "inputCacheHit": null,
+                "output": 0.00002
+            },
+            "description": "The Llama 3.2 instruction-tuned text only models are optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks.",
+            "id": "llama-3.2-1b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 60000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.2-1b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00005
+            },
+            "description": "The Llama 3.2 instruction-tuned text only models are optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks.",
+            "id": "llama-3.2-3b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.2-3b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "description": "Llama 3.3 70B quantized to fp8 precision, optimized to be faster.",
+            "id": "llama-3.3-70b-instruct-fp8-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.3-70b-instruct-fp8-fast",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Quantized (int4) generative text model with 8 billion parameters from Meta.",
+            "id": "llama-3-8b-instruct-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3-8b-instruct-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Llama Guard is a model for classifying the safety of LLM prompts and responses, using a taxonomy of safety risks.",
+            "id": "llamaguard-7b-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llamaguard-7b-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "LLaVA is an open-source chatbot trained by fine-tuning LLaMA/Vicuna on GPT-generated multimodal instruction-following data. It is an auto-regressive language model, based on the transformer architecture.",
+            "id": "llava-1.5-7b-hf",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "llava-1.5-7b-hf",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Lucid Origin from Leonardo.AI is their most adaptable and prompt-responsive model to date. Whether you're generating images with sharp graphic design, stunning full-HD renders, or highly specific creative direction, it adheres closely to your prompts, renders text with accuracy, and supports a wide array of visual styles and aesthetics – from stylized concept art to crisp product mockups.",
+            "id": "lucid-origin",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "lucid-origin",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Multilingual encoder-decoder (seq-to-seq) model trained for Many-to-Many multilingual translation",
+            "id": "m2m100-1.2b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "m2m100-1.2b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "MeloTTS is a high-quality multi-lingual text-to-speech library by MyShell.ai.",
+            "id": "melotts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "melotts",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "description": "Instruct fine-tuned version of the Mistral-7b generative text model with 7 billion parameters",
+            "id": "mistral-7b-instruct-v0.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2824000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mistral-7b-instruct-v0.1",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "description": "Mistral 7B Instruct v0.1 AWQ is an efficient, accurate and blazing-fast low-bit weight quantized Mistral variant.",
+            "id": "mistral-7b-instruct-v0.1-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mistral-7b-instruct-v0.1-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "description": "The Mistral-7B-Instruct-v0.2 Large Language Model (LLM) is an instruct fine-tuned version of the Mistral-7B-v0.2. Mistral-7B-v0.2 has the following changes compared to Mistral-7B-v0.1: 32k context window (vs 8k context in v0.1), rope-theta = 1e6, and no Sliding-Window Attention.",
+            "id": "mistral-7b-instruct-v0.2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 3072000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mistral-7b-instruct-v0.2",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "description": "The Mistral-7B-Instruct-v0.2 Large Language Model (LLM) is an instruct fine-tuned version of the Mistral-7B-v0.2.",
+            "id": "mistral-7b-instruct-v0.2-lora",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 15000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mistral-7b-instruct-v0.2-lora",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "description": "Building upon Mistral Small 3 (2501), Mistral Small 3.1 (2503) adds state-of-the-art vision understanding and enhances long context capabilities up to 128k tokens without compromising text performance. With 24 billion parameters, this model achieves top-tier capabilities in both text and vision tasks.",
+            "id": "mistral-small-3.1-24b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "mistral-small-3.1-24b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "This model is a fine-tuned 7B parameter LLM on the Intel Gaudi 2 processor from the mistralai/Mistral-7B-v0.1 on the open source dataset Open-Orca/SlimOrca.",
+            "id": "neural-chat-7b-v3-1-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "neural-chat-7b-v3-1-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": 5.2e-9,
+                "inputCacheHit": null,
+                "output": 9.2e-9
+            },
+            "description": "Transcribe audio using Deepgram’s speech-to-text model",
+            "id": "nova-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "nova-3",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "OpenChat is an innovative library of open-source language models, fine-tuned with C-RLFT - a strategy inspired by offline reinforcement learning.",
+            "id": "openchat-3.5-0106",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openchat-3.5-0106",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "OpenHermes 2.5 Mistral 7B is a state of the art Mistral Fine-tune, a continuation of OpenHermes 2 model, which trained on additional code datasets.",
+            "id": "openhermes-2.5-mistral-7b-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openhermes-2.5-mistral-7b-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "Phi-2 is a Transformer-based model with a next-word prediction objective, trained on 1.4T tokens from multiple passes on a mixture of Synthetic and Web datasets for NLP and coding.",
+            "id": "phi-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2048000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "phi-2",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Phoenix 1.0 is a model by Leonardo.Ai that generates images with exceptional prompt adherence and coherent text.",
+            "id": "phoenix-1.0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "phoenix-1.0",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "PLaMo-Embedding-1B is a Japanese text embedding model developed by Preferred Networks, Inc.\n\nIt can convert Japanese text input into numerical vectors and can be used for a wide range of applications, including information retrieval, text classification, and clustering.",
+            "id": "plamo-embedding-1b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "plamo-embedding-1b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "Qwen1.5 is the improved version of Qwen, the large language model series developed by Alibaba Cloud.",
+            "id": "qwen1.5-0.5b-chat",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen1.5-0.5b-chat",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Qwen1.5 is the improved version of Qwen, the large language model series developed by Alibaba Cloud. AWQ is an efficient, accurate and blazing-fast low-bit weight quantization method, currently supporting 4-bit quantization.",
+            "id": "qwen1.5-14b-chat-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 7500000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen1.5-14b-chat-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "Qwen1.5 is the improved version of Qwen, the large language model series developed by Alibaba Cloud.",
+            "id": "qwen1.5-1.8b-chat",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen1.5-1.8b-chat",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Qwen1.5 is the improved version of Qwen, the large language model series developed by Alibaba Cloud. AWQ is an efficient, accurate and blazing-fast low-bit weight quantization method, currently supporting 4-bit quantization.",
+            "id": "qwen1.5-7b-chat-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 20000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen1.5-7b-chat-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0008,
+                "inputCacheHit": null,
+                "output": 0.0008
+            },
+            "description": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). As of now, Qwen2.5-Coder has covered six mainstream model sizes, 0.5, 1.5, 3, 7, 14, 32 billion parameters, to meet the needs of different developers. Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:",
+            "extendedThinking": false,
+            "id": "qwen2.5-coder-32b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768000,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen2.5-coder-32b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": "2024-11-11",
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. Built upon extensive training, Qwen3 delivers groundbreaking advancements in reasoning, instruction-following, agent capabilities, and multilingual support.",
+            "id": "qwen3-30b-a3b-fp8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen3-30b-a3b-fp8",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "The Qwen3 Embedding model series is the latest proprietary model of the Qwen family, specifically designed for text embedding and ranking tasks.",
+            "id": "qwen3-embedding-0.6b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "qwen3-embedding-0.6b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "50 layers deep image classification CNN trained on more than 1M images from ImageNet",
+            "id": "resnet-50",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "resnet-50",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "An open source, community-driven, native audio turn detection model in 2nd version",
+            "id": "smart-turn-v2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["audio"]
+            },
+            "name": "smart-turn-v2",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "This model is intended to be used by non-technical users to understand data inside their SQL databases.",
+            "id": "sqlcoder-7b-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 10000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "sqlcoder-7b-2",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Stable Diffusion is a latent text-to-image diffusion model capable of generating photo-realistic images. Img2img generate a new image from an input image with Stable Diffusion.",
+            "id": "stable-diffusion-v1-5-img2img",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "stable-diffusion-v1-5-img2img",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Stable Diffusion Inpainting is a latent text-to-image diffusion model capable of generating photo-realistic images given any text input, with the extra capability of inpainting the pictures by using a mask.",
+            "id": "stable-diffusion-v1-5-inpainting",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "stable-diffusion-v1-5-inpainting",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Diffusion-based text-to-image generative model by Stability AI. Generates and modify images based on text prompts.",
+            "id": "stable-diffusion-xl-base-1.0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "stable-diffusion-xl-base-1.0",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "SDXL-Lightning is a lightning-fast text-to-image generation model. It can generate high-quality 1024px images in a few steps.",
+            "id": "stable-diffusion-xl-lightning",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "stable-diffusion-xl-lightning",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "We introduce Starling-LM-7B-beta, an open large language model (LLM) trained by Reinforcement Learning from AI Feedback (RLAIF). Starling-LM-7B-beta is trained from Openchat-3.5-0106 with our new reward model Nexusflow/Starling-RM-34B and policy optimization method Fine-Tuning Language Models from Human Preferences (PPO).",
+            "id": "starling-lm-7b-beta",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "starling-lm-7b-beta",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "The TinyLlama project aims to pretrain a 1.1B Llama model on 3 trillion tokens. This is the chat model finetuned on top of TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T.",
+            "id": "tinyllama-1.1b-chat-v1.0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2048000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "tinyllama-1.1b-chat-v1.0",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "UForm-Gen is a small generative vision-language model primarily designed for Image Captioning and Visual Question Answering. The model was pre-trained on the internal image captioning dataset and fine-tuned on public instructions datasets: SVIT, LVIS, VQAs datasets.",
+            "id": "uform-gen2-qwen-500m",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "uform-gen2-qwen-500m",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Cybertron 7B v2 is a 7B MistralAI based model, best on it's series. It was trained with SFT, DPO and UNA (Unified Neural Alignment) on multiple datasets.",
+            "id": "una-cybertron-7b-v2-bf16",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 15000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "una-cybertron-7b-v2-bf16",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation.",
+            "id": "whisper-large-v3-turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "whisper-large-v3-turbo",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labelled data, Whisper models demonstrate a strong ability to generalize to many datasets and domains without the need for fine-tuning. This is the English-only version of the Whisper Tiny model which was trained on the task of speech recognition.",
+            "id": "whisper-tiny-en",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["audio"],
+                "output": ["text"]
+            },
+            "name": "whisper-tiny-en",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Zephyr 7B Beta AWQ is an efficient, accurate and blazing-fast low-bit weight quantized Zephyr model variant.",
+            "id": "zephyr-7b-beta-awq",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "zephyr-7b-beta-awq",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        }
+    ]
+}

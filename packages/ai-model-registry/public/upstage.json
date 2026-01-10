@@ -1,0 +1,606 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Upstage",
+        "lastUpdated": "2026-01-10T23:24:47.810Z",
+        "provider": "Upstage",
+        "totalModels": 17,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-10.7b-v1.0 model from Upstage",
+            "id": "solar-10-7b-v1-0",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-10.7b-v1.0",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-107b-v10",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-docvision-preview model from Upstage",
+            "id": "solar-docvision-preview",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "solar-docvision-preview",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-docvision-preview",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-embedding-1-large-passage beta model from Upstage",
+            "id": "solar-embedding-1-large-passage-beta",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-embedding-1-large-passage beta",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-embedding-1-large-passage-beta",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-embedding-1-large-query beta model from Upstage",
+            "id": "solar-embedding-1-large-query-beta",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-embedding-1-large-query beta",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-embedding-1-large-query-beta",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "Solar LLM model from Upstage",
+            "id": "solar-llm",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Solar LLM",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-llm",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-mini-240612 model from Upstage",
+            "id": "solar-mini-240612",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-mini-240612",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-mini-240612",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-mini-250123 model from Upstage",
+            "id": "solar-mini-250123",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-mini-250123",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-mini-250123",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-mini-250422 model from Upstage",
+            "id": "solar-mini-250422",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-mini-250422",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-mini-250422",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-mini-ja-240612 model from Upstage",
+            "id": "solar-mini-ja-240612",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-mini-ja-240612",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-mini-ja-240612",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-mini-ja-250123 model from Upstage",
+            "id": "solar-mini-ja-250123",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-mini-ja-250123",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-mini-ja-250123",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": false,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro-241126 model from Upstage",
+            "id": "solar-pro-241126",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro-241126",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro-241126",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro-250422 model from Upstage",
+            "id": "solar-pro-250422",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro-250422",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro-250422",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro2-250710 model from Upstage",
+            "id": "solar-pro2-250710",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro2-250710",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro2-250710",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro2-250909 model from Upstage",
+            "id": "solar-pro2-250909",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro2-250909",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro2-250909",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro2-251215 model from Upstage",
+            "id": "solar-pro2-251215",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro2-251215",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro2-251215",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro2-preview model from Upstage",
+            "id": "solar-pro2-preview",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro2-preview",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro2-preview",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "solar-pro-preview model from Upstage",
+            "id": "solar-pro-preview",
+            "knowledge": "Mar 2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "solar-pro-preview",
+            "openWeights": false,
+            "provider": "Upstage",
+            "providerDoc": "https://console.upstage.ai/docs/models/history#solar-pro-preview",
+            "providerEnv": ["UPSTAGE_API_KEY"],
+            "providerId": "upstage",
+            "providerModelsDevId": "upstage",
+            "providerNpm": "@ai-sdk/upstage",
+            "reasoning": true,
+            "releaseDate": "2025-12-15",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "upstage"
+        }
+    ]
+}

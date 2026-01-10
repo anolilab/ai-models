@@ -1,0 +1,256 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from GitHub Models",
+        "lastUpdated": "2026-01-10T23:24:47.803Z",
+        "provider": "GitHub Models",
+        "totalModels": 7,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "about-github-models",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "about-github-models",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ask-copilot-open",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "askCopilotOpen",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ask-copilot-select",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "askCopilotSelect",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "github-models",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "github-models",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "optimizing-your-ai-powered-app-with-github-models",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "optimizing-your-ai-powered-app-with-github-models",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "prototyping-with-ai-models",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "prototyping-with-ai-models",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "use-github-models",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "use-github-models",
+            "openWeights": false,
+            "provider": "GitHub Models",
+            "providerDoc": "https://docs.github.com/en/github-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-models",
+            "providerModelsDevId": "github-models",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "github"
+        }
+    ]
+}

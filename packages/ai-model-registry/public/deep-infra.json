@@ -1,0 +1,956 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Deep Infra",
+        "lastUpdated": "2026-01-10T23:24:47.802Z",
+        "provider": "Deep Infra",
+        "totalModels": 27,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000009,
+                "inputCacheHit": null,
+                "output": 0.000019
+            },
+            "extendedThinking": false,
+            "id": "allenai/olmOCR-2-7B-1025",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 16384,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "olmOCR-2-7B-1025",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00018
+            },
+            "extendedThinking": false,
+            "id": "allenai/olmOCR-7B-0725-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "olmOCR-7B-0725-FP8",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00165,
+                "inputCacheHit": null,
+                "output": 0.00825
+            },
+            "extendedThinking": false,
+            "id": "anthropic/claude-4-opus",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "claude-4-opus",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00033,
+                "inputCacheHit": null,
+                "output": 0.00165
+            },
+            "extendedThinking": false,
+            "id": "anthropic/claude-4-sonnet",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "claude-4-sonnet",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000003,
+                "inputCacheHit": null,
+                "output": 0.00001
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-OCR",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-OCR",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528-Turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528-Turbo",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-0324-Turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324-Turbo",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000021,
+                "inputCacheHit": null,
+                "output": 0.000079
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.1",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000021,
+                "inputCacheHit": null,
+                "output": 0.000079
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.1-Terminus",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000026,
+                "inputCacheHit": null,
+                "output": 0.000039
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.2",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000023,
+                "inputCacheHit": null,
+                "output": 0.00004
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-3.3-70B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.3-70B-Instruct",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00001,
+                "inputCacheHit": null,
+                "output": 0.000032
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.3-70B-Instruct-Turbo",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000015,
+                "inputCacheHit": null,
+                "output": 0.00006
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00005
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-Turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Maverick-17B-128E-Instruct-Turbo",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000008,
+                "inputCacheHit": null,
+                "output": 0.00003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 327680,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Scout-17B-16E-Instruct",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000018,
+                "inputCacheHit": null,
+                "output": 0.000018
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/Llama-Guard-4-12B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-Guard-4-12B",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000254,
+                "inputCacheHit": null,
+                "output": 0.000102
+            },
+            "extendedThinking": false,
+            "id": "MiniMaxAI/MiniMax-M2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax-M2",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000007,
+                "inputCacheHit": null,
+                "output": 0.000028
+            },
+            "extendedThinking": false,
+            "id": "mistralai/Devstral-Small-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral-Small-2507",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000075,
+                "inputCacheHit": null,
+                "output": 0.00002
+            },
+            "extendedThinking": false,
+            "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.2-24B-Instruct-2506",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000047,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2-Thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2-Thinking",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000006,
+                "inputCacheHit": null,
+                "output": 0.000024
+            },
+            "extendedThinking": false,
+            "id": "nvidia/Nemotron-3-Nano-30B-A3B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Nemotron-3-Nano-30B-A3B",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000014,
+                "inputCacheHit": null,
+                "output": 0.00008
+            },
+            "extendedThinking": false,
+            "id": "PaddlePaddle/PaddleOCR-VL-0.9B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 16384,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "PaddleOCR-VL-0.9B",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000075,
+                "inputCacheHit": null,
+                "output": 0.000015
+            },
+            "extendedThinking": false,
+            "id": "Qwen/QwQ-32B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QwQ-32B",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00004,
+                "inputCacheHit": null,
+                "output": 0.00016
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-480B-A35B-Instruct",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000028,
+                "inputCacheHit": null,
+                "output": 0.00012
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-480B-A35B-Instruct-Turbo",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000055,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00017
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5V",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5V",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        }
+    ]
+}

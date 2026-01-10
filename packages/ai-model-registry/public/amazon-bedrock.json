@@ -1,0 +1,2141 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Amazon Bedrock",
+        "lastUpdated": "2026-01-10T23:24:47.785Z",
+        "provider": "Amazon Bedrock",
+        "totalModels": 66,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "ai21.jamba-1-5-large-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-23",
+            "launchDate": "9/23/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Large",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/ai21-labs",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-09-23",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "ai21.jamba-1-5-mini-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-23",
+            "launchDate": "9/23/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Mini",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/ai21-labs",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-09-23",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "ai21.jamba-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-06-25",
+            "launchDate": "6/25/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba-Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/ai21-labs",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-06-25",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.nova-canvas-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-04",
+            "launchDate": "12/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Nova Canvas",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-12-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.nova-lite-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-04",
+            "launchDate": "12/4/202412/4/202412/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image", "video"]
+            },
+            "name": "Nova Lite",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2024-12-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.nova-micro-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-04",
+            "launchDate": "12/4/202412/4/202412/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Nova Micro",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2024-12-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.nova-pro-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-04",
+            "launchDate": "12/4/202412/4/202412/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image", "video"]
+            },
+            "name": "Nova Pro",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2024-12-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.nova-reel-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-04",
+            "launchDate": "12/4/202412/4/202412/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Nova Reel",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-12-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.rerank-v1:0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "launchDate": "",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Rerank 1.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-west-2", "ap-northeast-1", "ca-central-1", "eu-central-1"],
+            "releaseDate": null,
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-embed-image-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "11/29/202311/29/20234/30/20243/27/20246/13/20246/27/20244/30/20246/13/20243/27/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Titan Multimodal Embeddings G1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-west-2",
+                "ap-south-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-west-1 (Gated)",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-embed-text-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "11/29/202311/29/202311/29/202311/29/2023",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Titan Embeddings G1 - Text",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-northeast-1", "eu-central-1"],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-embed-text-v2:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-30",
+            "launchDate": "4/30/20244/30/202411/8/20248/13/202412/13/20249/30/202412/13/202410/10/20246/13/20246/27/202410/31/20246/13/202412/13/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Titan Text Embeddings V2",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-east-2",
+                "us-west-2",
+                "us-gov-east-1",
+                "us-gov-west-1",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-south-1",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2024-04-30",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-image-generator-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-12-01",
+            "launchDate": "12/1/202312/1/20234/30/20244/30/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "Titan Image Generator G1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-south-1", "eu-west-1 (Gated)", "eu-west-2"],
+            "releaseDate": "2023-12-01",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-image-generator-v2:0",
+            "knowledge": null,
+            "lastUpdated": "2024-08-06",
+            "launchDate": "8/6/20248/6/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Titan Image Generator G1 v2",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2"],
+            "releaseDate": "2024-08-06",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-text-express-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "11/29/202311/29/202311/29/202311/29/20234/30/20243/27/20246/13/202411/29/20234/30/20246/13/20243/27/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Titan Text G1 - Express",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-west-2",
+                "us-gov-west-1",
+                "ap-northeast-1",
+                "ap-south-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-west-1 (Gated)",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-text-lite-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "11/29/202311/29/20234/30/20243/27/20246/13/20246/27/20244/30/20246/13/20243/27/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Titan Text G1 - Lite",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-west-2",
+                "ap-south-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-west-1 (Gated)",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "amazon.titan-text-premier-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-05-07",
+            "launchDate": "5/7/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Titan Text G1 - Premier",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/amazon",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-05-07",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-11-04",
+            "launchDate": "11/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Haiku",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2"],
+            "releaseDate": "2024-11-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-5-sonnet-20240620-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-06-20",
+            "launchDate": "6/20/20247/30/20248/7/20248/5/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude 3.5 Sonnet v1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-gov-east-1*", "us-gov-west-1", "ap-northeast-1", "ap-northeast-2", "ap-south-1*", "ap-southeast-1 (Gated)", "ap-southeast-2*"],
+            "releaseDate": "2024-06-20",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+            "knowledge": null,
+            "lastUpdated": "2024-10-22",
+            "launchDate": "10/22/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude 3.5 Sonnet v2",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2"],
+            "releaseDate": "2024-10-22",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-7-sonnet-20250219-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-02-24",
+            "launchDate": "2/24/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude 3.7 Sonnet",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "releaseDate": "2025-02-24",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-haiku-20240307-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-03-14",
+            "launchDate": "3/14/20243/14/20248/30/20247/30/20244/30/20248/7/20244/6/20246/13/20244/30/20245/9/20244/4/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude 3 Haiku",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-east-2*",
+                "us-west-2",
+                "us-gov-east-1*",
+                "us-gov-west-1",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-south-1",
+                "ap-southeast-1 (Gated)",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-west-1 (Gated)",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2024-03-14",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-3-sonnet-20240229-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-03-04",
+            "launchDate": "3/4/20243/4/2024--4/30/2024-4/6/20246/13/20245/29/20244/30/20245/9/20244/4/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3 Sonnet",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": [
+                "us-east-1",
+                "us-west-2",
+                "ap-northeast-1*",
+                "ap-northeast-2*",
+                "ap-south-1",
+                "ap-southeast-1 (Gated)*",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-west-1 (Gated)",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1"
+            ],
+            "releaseDate": "2024-03-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-haiku-4-5-20251001-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-10-01",
+            "launchDate": "10/1/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude Haiku 4.5",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2025-10-01",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-instant-v1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "--11/29/202311/29/2023",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude Instant",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-northeast-1", "ap-southeast-1 (Gated)", "eu-central-1"],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-opus-4-1-20250805-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-07-31",
+            "launchDate": "7/31/20257/31/20257/31/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude Opus 4.1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2025-07-31",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-opus-4-20250514-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-05-22",
+            "launchDate": "5/22/20255/22/20255/22/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude Opus 4.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2025-05-22",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-sonnet-4-20250514-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-05-22",
+            "launchDate": "5/22/20255/22/20255/22/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude Sonnet 4.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2025-05-22",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-09-29",
+            "launchDate": "9/29/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Claude Sonnet 4.5",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2025-09-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-v2",
+            "knowledge": null,
+            "lastUpdated": "2023-08-01",
+            "launchDate": "8/1/2023-11/29/2024-",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude 2",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-southeast-1 (Gated)", "eu-central-1"],
+            "releaseDate": "2023-08-01",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "anthropic.claude-v2:1",
+            "knowledge": null,
+            "lastUpdated": "2023-11-29",
+            "launchDate": "11/29/202311/29/202312/21/2023-",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude 2.1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/anthropic",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-northeast-1", "eu-central-1"],
+            "releaseDate": "2023-11-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.command-light-text-v14",
+            "knowledge": null,
+            "lastUpdated": "2023-11-13",
+            "launchDate": "11/13/202311/13/2023",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Command Light",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2"],
+            "releaseDate": "2023-11-13",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.command-r-plus-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-29",
+            "launchDate": "4/29/20244/29/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Command R+",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2"],
+            "releaseDate": "2024-04-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.command-r-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-29",
+            "launchDate": "4/29/20244/29/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Command R",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2"],
+            "releaseDate": "2024-04-29",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0005,
+                "inputCacheHit": null,
+                "output": 0.0015
+            },
+            "id": "cohere.command-text-v14",
+            "knowledge": null,
+            "lastUpdated": "2023-11-13",
+            "launchDate": "11/13/202311/13/2023",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Command",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2"],
+            "releaseDate": "2023-11-13",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.embed-english-v3",
+            "knowledge": null,
+            "lastUpdated": "2025-01-24",
+            "launchDate": "1/24/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cohere Embed English",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "releaseDate": "2025-01-24",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.embed-multilingual-v3",
+            "knowledge": null,
+            "lastUpdated": "2025-01-24",
+            "launchDate": "1/24/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cohere Embed Multilingual",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "releaseDate": "2025-01-24",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "cohere.rerank-v3-5:0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "launchDate": "",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Rerank 3.5",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/cohere",
+            "reasoning": false,
+            "regions": ["us-west-2", "ap-northeast-1", "ca-central-1", "eu-central-1"],
+            "releaseDate": null,
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": false,
+            "id": "deepseek.r1-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-03-10",
+            "launchDate": "3/10/2025",
+            "limit": {
+                "context": 163840,
+                "output": 163840
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/deep-seek",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2", "us-west-2"],
+            "releaseDate": "2025-03-10",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "luma.ray-v2:0",
+            "knowledge": null,
+            "lastUpdated": "2025-01-23",
+            "launchDate": "1/23/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Luma Ray v2",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/luma",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2025-01-23",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-1-405b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-03",
+            "launchDate": "12/3/20247/23/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 405B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-2*", "us-west-2"],
+            "releaseDate": "2024-12-03",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-1-70b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-10-26",
+            "launchDate": "10/26/202410/26/20247/23/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 70B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2"],
+            "releaseDate": "2024-10-26",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-1-8b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-10-26",
+            "launchDate": "10/26/202410/26/20247/23/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 8B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2"],
+            "releaseDate": "2024-10-26",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-2-11b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-25",
+            "launchDate": "9/25/202410/26/20249/25/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Llama 3.2 11B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2024-09-25",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-2-1b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-25",
+            "launchDate": "9/25/202410/26/20249/25/20249/25/20249/25/20249/25/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.2 1B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*", "eu-central-1*", "eu-west-1 (Gated)*", "eu-west-3*"],
+            "releaseDate": "2024-09-25",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-2-3b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-25",
+            "launchDate": "9/25/202410/26/20249/25/20249/25/20249/25/20249/25/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.2 3B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*", "eu-central-1*", "eu-west-1 (Gated)*", "eu-west-3*"],
+            "releaseDate": "2024-09-25",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-2-90b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-25",
+            "launchDate": "9/25/202410/26/20249/25/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Llama 3.2 90B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2*", "us-west-2*"],
+            "releaseDate": "2024-09-25",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-3-70b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-19",
+            "launchDate": "12/19/202412/19/202412/19/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.3 70B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1*", "us-east-2", "us-west-2*"],
+            "releaseDate": "2024-12-19",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-70b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-23",
+            "launchDate": "4/23/20244/23/20248/1/20244/30/20246/13/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3 70B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "us-gov-west-1", "ap-south-1", "ca-central-1", "eu-west-2"],
+            "releaseDate": "2024-04-23",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama3-8b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-23",
+            "launchDate": "4/23/20244/23/20248/1/20244/30/20246/13/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3 8B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "us-gov-west-1", "ap-south-1", "ca-central-1", "eu-west-2"],
+            "releaseDate": "2024-04-23",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama4-maverick-17b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-04-28",
+            "launchDate": "4/28/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Llama 4 Maverick 17B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2", "us-west-2"],
+            "releaseDate": "2025-04-28",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "meta.llama4-scout-17b-instruct-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-04-28",
+            "launchDate": "4/28/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Llama 4 Scout 17B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/meta",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-east-2", "us-west-2"],
+            "releaseDate": "2025-04-28",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "mistral.pixtral-large-2502-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-04-08",
+            "launchDate": "4/8/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Pixtral Large (25.02)",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/miatral",
+            "reasoning": false,
+            "releaseDate": "2025-04-08",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "mistral.mistral-7b-instruct-v0:2",
+            "knowledge": null,
+            "lastUpdated": "2024-03-09",
+            "launchDate": "3/9/20243/1/20244/30/20243/29/20246/13/20244/30/20246/13/20243/29/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral 7B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/mistral-ai",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-south-1", "ap-southeast-2", "ca-central-1", "eu-west-1 (Gated)", "eu-west-2", "eu-west-3", "sa-east-1"],
+            "releaseDate": "2024-03-09",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "mistral.mistral-large-2402-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-04-03",
+            "launchDate": "4/3/20244/3/20244/30/20244/4/20246/13/20244/30/20246/13/20244/3/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large (24.02)",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/mistral-ai",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-south-1", "ap-southeast-2", "ca-central-1", "eu-west-1 (Gated)", "eu-west-2", "eu-west-3", "sa-east-1"],
+            "releaseDate": "2024-04-03",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral.mistral-large-2407-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-07-24",
+            "launchDate": "7/24/2024",
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large (24.07)",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/mistral-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-07-24",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "id": "mistral.mistral-small-2402-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-05-24",
+            "launchDate": "5/24/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small (24.02)",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/mistral-ai",
+            "reasoning": false,
+            "regions": ["us-east-1"],
+            "releaseDate": "2024-05-24",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "mistral.mixtral-8x7b-instruct-v0:1",
+            "knowledge": null,
+            "lastUpdated": "2024-03-09",
+            "launchDate": "3/9/20243/1/20244/30/20243/29/20246/13/20244/30/20246/13/20243/29/20246/13/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mixtral 8x7B Instruct",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/mistral-ai",
+            "reasoning": false,
+            "regions": ["us-east-1", "us-west-2", "ap-south-1", "ap-southeast-2", "ca-central-1", "eu-west-1 (Gated)", "eu-west-2", "eu-west-3", "sa-east-1"],
+            "releaseDate": "2024-03-09",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.sd3-5-large-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-12-19",
+            "launchDate": "12/19/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "Stable Diffusion 3.5 Large",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-12-19",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.sd3-large-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-04",
+            "launchDate": "9/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text", "image"]
+            },
+            "name": "SD3 Large 1.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-09-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.stable-image-core-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-04",
+            "launchDate": "9/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Stable Image Core 1.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-09-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.stable-image-core-v1:1",
+            "knowledge": null,
+            "lastUpdated": "2024-12-19",
+            "launchDate": "12/19/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Stable Image Core 1.1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-12-19",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.stable-image-ultra-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2024-09-04",
+            "launchDate": "9/4/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Stable Image Ultra 1.0",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-09-04",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "stability.stable-image-ultra-v1:1",
+            "knowledge": null,
+            "lastUpdated": "2024-12-19",
+            "launchDate": "12/19/2024",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Stable Image Ultra 1.1",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/stability-ai",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2024-12-19",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "writer.palmyra-x4-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-04-28",
+            "launchDate": "4/28/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Palmyra X4",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/writer",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2025-04-28",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "id": "writer.palmyra-x5-v1:0",
+            "knowledge": null,
+            "lastUpdated": "2025-04-28",
+            "launchDate": "4/28/2025",
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Palmyra X5",
+            "openWeights": true,
+            "provider": "Amazon Bedrock",
+            "providerId": "amazon-bedrock/writer",
+            "reasoning": false,
+            "regions": ["us-west-2"],
+            "releaseDate": "2025-04-28",
+            "streamingSupported": null,
+            "temperature": true,
+            "toolCall": true,
+            "icon": "bedrock"
+        }
+    ]
+}

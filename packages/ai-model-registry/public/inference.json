@@ -1,0 +1,291 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Inference",
+        "lastUpdated": "2026-01-10T23:24:47.804Z",
+        "provider": "Inference",
+        "totalModels": 8,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.002,
+                "inputCacheHit": null,
+                "output": 0.01
+            },
+            "extendedThinking": false,
+            "id": "2-vision",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "2-Vision",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "3-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "3Gemma",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "id-meta-fp-16-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "IDMetaFP16Llama",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "id-meta-fp-8-fp-16-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "IDMetaFP8FP16Llama",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "id-meta-fp-8-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "IDMetaFP8Llama",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "id-mistral-fp-8-mistral",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "IDMistralFP8Mistral",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "instruct-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "InstructLlama",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "instruct-mistral-ne-mo-12b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "InstructMistral-NeMo-12B-Instruct",
+            "openWeights": false,
+            "provider": "Inference",
+            "providerDoc": "https://inference.net/models",
+            "providerEnv": ["INFERENCE_API_KEY"],
+            "providerId": "inference",
+            "providerModelsDevId": "inference",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "inference"
+        }
+    ]
+}

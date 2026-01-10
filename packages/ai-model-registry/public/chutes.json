@@ -1,0 +1,3220 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from chutes",
+        "lastUpdated": "2026-01-10T23:24:47.794Z",
+        "provider": "chutes",
+        "totalModels": 94,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000015,
+                "inputCacheHit": null,
+                "output": 0.000015
+            },
+            "extendedThinking": false,
+            "id": "agentica-org/DeepCoder-14B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 384000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepCoder-14B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "all-hands/openhands-lm-32b-v0.1-ep3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openhands-lm-32b-v0.1-ep3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "extendedThinking": false,
+            "id": "ArliAI/QwQ-32B-ArliAI-RpR-v1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QwQ-32B-ArliAI-RpR-v1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00022
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Devstral-Small-2505",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral-Small-2505",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 512000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Mistral-Small-3.1-24B-Instruct-2503",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.1-24B-Instruct-2503",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Mistral-Small-3.2-24B-Instruct-2506",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.2-24B-Instruct-2506",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00004,
+                "inputCacheHit": null,
+                "output": 0.00017
+            },
+            "extendedThinking": false,
+            "id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Dolphin3.0-Mistral-24B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-02-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "cognitivecomputations/Dolphin3.0-R1-Mistral-24B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Dolphin3.0-R1-Mistral-24B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-02-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": 163840
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0004,
+                "inputCacheHit": null,
+                "output": 0.00175
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-05-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528-Qwen3-8B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-0528-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-0528-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-Distill-Llama-70B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0009,
+                "inputCacheHit": null,
+                "output": 0.0009
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-0324",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-0324-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.1-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.1-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.1-Terminus-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.1-Terminus-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.2-Speciale-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.2-Speciale-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3.2-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3.2-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-V3-Base",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-Base",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "internlm/Intern-S1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Intern-S1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "microsoft/MAI-DS-R1-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MAI-DS-R1-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "MiniMaxAI/MiniMax-M2.1-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 786432,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax-M2.1-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "miromind-ai/MiroThinker-v1.5-235B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiroThinker-v1.5-235B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mistralai/Devstral-2-123B-Instruct-2512",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral-2-123B-Instruct-2512",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mistralai/Devstral-2-123B-Instruct-2512-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral-2-123B-Instruct-2512-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00029,
+                "inputCacheHit": null,
+                "output": 0.00115
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-Dev-72B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-Dev-72B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.001,
+                "inputCacheHit": null,
+                "output": 0.003
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 300000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2-Instruct-0905",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2-Instruct-0905",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2-Thinking-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2-Thinking-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-VL-A3B-Thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-VL-A3B-Thinking",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/DeepHermes-3-Llama-3-8B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepHermes-3-Llama-3-8B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00015,
+                "inputCacheHit": null,
+                "output": 0.00059
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/DeepHermes-3-Mistral-24B-Preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepHermes-3-Mistral-24B-Preview",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/Hermes-4-14B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hermes-4-14B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/Hermes-4.3-36B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2097152,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hermes-4.3-36B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/Hermes-4-405B-FP8-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hermes-4-405B-FP8-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00011,
+                "inputCacheHit": null,
+                "output": 0.00038
+            },
+            "extendedThinking": false,
+            "id": "NousResearch/Hermes-4-70B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hermes-4-70B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3_3-Nemotron-Super-49B-v1_5",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "OpenGVLab/InternVL3-78B-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "InternVL3-78B-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-oss-120b-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gpt-oss-120b-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0012,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-72B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-72B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-09-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0008,
+                "inputCacheHit": null,
+                "output": 0.0008
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-Coder-32B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-11-11",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00022
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-VL-32B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-VL-32B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00008,
+                "inputCacheHit": null,
+                "output": 0.00033
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-VL-72B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-VL-72B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-VL-72B-Instruct-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-VL-72B-Instruct-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00022
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-14B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-14B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00018,
+                "inputCacheHit": null,
+                "output": 0.00054
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Instruct-2507",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B-Instruct-2507-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Instruct-2507-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00011,
+                "inputCacheHit": null,
+                "output": 0.0006
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-235B-A22B-Thinking-2507",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00006,
+                "inputCacheHit": null,
+                "output": 0.00022
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-30B-A3B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-30B-A3B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00008,
+                "inputCacheHit": null,
+                "output": 0.00033
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-30B-A3B-Instruct-2507",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00029,
+                "inputCacheHit": null,
+                "output": 0.00059
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-32B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-32B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-8B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-8B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00006,
+                "inputCacheHit": null,
+                "output": 0.00025
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-30B-A3B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-480B-A35B-Instruct-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Coder-480B-A35B-Instruct-FP8-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3Guard-Gen-0.6B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3Guard-Gen-0.6B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0008
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-Next-80B-A3B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3-VL-235B-A22B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "rednote-hilab/dots.ocr",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "dots.ocr",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Salesforce/xgen-small-9B-instruct-r",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "xgen-small-9B-instruct-r",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00003
+            },
+            "extendedThinking": false,
+            "id": "tencent/Hunyuan-A13B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Hunyuan-A13B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "Tesslate/UIGEN-X-32B-0727",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "UIGEN-X-32B-0727",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Cydonia-24B-v2.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cydonia-24B-v2.1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Gemmasutra-Pro-27B-v1.1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemmasutra-Pro-27B-v1.1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00008,
+                "inputCacheHit": null,
+                "output": 0.00033
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Skyfall-36B-v2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Skyfall-36B-v2",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "TheDrummer/Tunguska-39B-v1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Tunguska-39B-v1",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "tngtech/DeepSeek-R1T-Chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1T-Chimera",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tngtech/DeepSeek-TNG-R1T2-Chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-TNG-R1T2-Chimera",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tngtech/TNG-R1T-Chimera-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TNG-R1T-Chimera-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tplr/TEMPLAR-I",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TEMPLAR-I",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00008,
+                "inputCacheHit": null,
+                "output": 0.00008
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-2-9b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-2-9b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-12b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4194304,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-12b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00009,
+                "inputCacheHit": null,
+                "output": 0.00016
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-27b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4194304,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-27b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000170301,
+                "inputCacheHit": null,
+                "output": 0.0000681536
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-4b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-4b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00002,
+                "inputCacheHit": null,
+                "output": 0.00002
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Llama-3.2-1B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.2-1B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00005
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Llama-3.2-3B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.2-3B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Mistral-Nemo-Instruct-2407",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Nemo-Instruct-2407",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "extendedThinking": false,
+            "id": "unsloth/Mistral-Small-24B-Instruct-2501",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-24B-Instruct-2501",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "XiaomiMiMo/MiMo-V2-Flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiMo-V2-Flash",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4-32B-0414",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4-32B-0414",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00013,
+                "inputCacheHit": null,
+                "output": 0.00085
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5-Air",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-Air",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 393216,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.5V-FP8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.5V-FP8",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.6-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 811008,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.6-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.6V",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.6V",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.7-TEE",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 811008,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.7-TEE",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-Z1-32B-0414",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-Z1-32B-0414",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes"
+        }
+    ]
+}

@@ -1,0 +1,256 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from XAI",
+        "lastUpdated": "2026-01-10T23:24:47.812Z",
+        "provider": "XAI",
+        "totalModels": 7,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "grok-2-image-1212",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "grok-2-image-1212",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.002,
+                "inputCacheHit": null,
+                "output": 0.01
+            },
+            "extendedThinking": false,
+            "id": "grok-2-vision-1212",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "grok-2-vision-1212",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.015
+            },
+            "extendedThinking": false,
+            "id": "grok-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "grok-3",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.015
+            },
+            "extendedThinking": false,
+            "id": "grok-3-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "grok-3-fast",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.015
+            },
+            "extendedThinking": false,
+            "id": "grok-3-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "grok-3-mini",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.015
+            },
+            "extendedThinking": false,
+            "id": "grok-3-mini-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "grok-3-mini-fast",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "xai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.015
+            },
+            "extendedThinking": false,
+            "id": "grok-4-0709",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "grok-4-0709",
+            "openWeights": false,
+            "provider": "XAI",
+            "providerDoc": "https://docs.x.ai/docs/models",
+            "providerEnv": ["XAI_API_KEY"],
+            "providerId": "xai",
+            "providerModelsDevId": "xai",
+            "providerNpm": "@ai-sdk/xai",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "xai"
+        }
+    ]
+}

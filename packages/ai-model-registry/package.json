@@ -64,6 +64,10 @@
             "types": "./dist/icons-sprite.d.ts",
             "import": "./dist/icons-sprite.js"
         },
+        "./types/*": {
+            "types": "./dist/types/*.d.ts",
+            "import": "./dist/types/*.js"
+        },
         "./api.json": "./public/api.json"
     },
     "files": [

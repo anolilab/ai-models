@@ -1,0 +1,501 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Venice",
+        "lastUpdated": "2026-01-10T23:24:47.810Z",
+        "provider": "Venice",
+        "totalModels": 14,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "about-venice",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "about-venice",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ask-venice",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "AskVenice",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "askvenice",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "askvenice",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "character-slug",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "character_slug",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "disable-thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "disable_thinking",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "enable-web-citations",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "enable_web_citations",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "enable-web-scraping",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "enable_web_scraping",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "enable-web-search",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "enable_web_search",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "how-to-use-venice-api",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "how-to-use-venice-api",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "include-venice-system-prompt",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "include_venice_system_prompt",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "introducing-the-venice-token-vvv",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "introducing-the-venice-token-vvv",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "page-venice",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "pageVenice",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "strip-thinking-response",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "strip_thinking_response",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "what-can-i-do-with-venice-api",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "what-can-i-do-with-venice-api",
+            "openWeights": false,
+            "provider": "Venice",
+            "providerDoc": "https://docs.venice.ai/",
+            "providerEnv": ["VENICE_API_KEY"],
+            "providerId": "venice",
+            "providerModelsDevId": "venice",
+            "providerNpm": "@ai-sdk/venice",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "venice"
+        }
+    ]
+}

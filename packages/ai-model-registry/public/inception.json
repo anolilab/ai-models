@@ -1,0 +1,81 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from inception",
+        "lastUpdated": "2026-01-10T23:24:47.804Z",
+        "provider": "inception",
+        "totalModels": 2,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.25,
+                "inputCacheHit": 0.25,
+                "output": 1
+            },
+            "extendedThinking": false,
+            "id": "mercury",
+            "knowledge": "2023-10",
+            "lastUpdated": "2025-07-31",
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mercury",
+            "openWeights": false,
+            "provider": "inception",
+            "providerDoc": "https://platform.inceptionlabs.ai/docs",
+            "providerEnv": ["INCEPTION_API_KEY"],
+            "providerId": "inception",
+            "providerModelsDevId": "inception",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-06-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "inception"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.25,
+                "inputCacheHit": 0.25,
+                "output": 1
+            },
+            "extendedThinking": false,
+            "id": "mercury-coder",
+            "knowledge": "2023-10",
+            "lastUpdated": "2025-07-31",
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mercury Coder",
+            "openWeights": false,
+            "provider": "inception",
+            "providerDoc": "https://platform.inceptionlabs.ai/docs",
+            "providerEnv": ["INCEPTION_API_KEY"],
+            "providerId": "inception",
+            "providerModelsDevId": "inception",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-02-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "inception"
+        }
+    ]
+}

@@ -1,0 +1,332 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Azure OpenAI",
+        "lastUpdated": "2026-01-10T23:24:47.786Z",
+        "provider": "Azure OpenAI",
+        "totalModels": 9,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0015,
+                "inputCacheHit": null,
+                "output": 0.002
+            },
+            "extendedThinking": false,
+            "id": "gpt-35-turbo-(0125)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gpt-35-turbo (0125)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0015,
+                "inputCacheHit": null,
+                "output": 0.002
+            },
+            "extendedThinking": false,
+            "id": "gpt-35-turbo-(1106)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gpt-35-turbo (1106)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "extendedThinking": false,
+            "id": "gpt-4-(turbo-2024-04-09)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gpt-4 (turbo-2024-04-09)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-11-20 | Retirement: 2026-06-03 | Replacement: gpt-5.1",
+            "extendedThinking": false,
+            "id": "gpt-4-o-(2024-05-13)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4o (2024-05-13)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-11-20 | Retirement: 2026-06-03 | Replacement: gpt-5.1",
+            "extendedThinking": false,
+            "id": "gpt-4-o-(2024-08-06)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4o (2024-08-06)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-11-20 | Retirement: 2026-06-03 | Replacement: gpt-5.1",
+            "extendedThinking": false,
+            "id": "gpt-4-o-(2024-11-20)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4o (2024-11-20)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-11-20 | Retirement: 2026-06-03 | Replacement: gpt-5.1",
+            "extendedThinking": false,
+            "id": "gpt-4-o-mini-(2024-07-18)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4o-mini (2024-07-18)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.015,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-12-17 | Retirement: 2026-06-18 | Replacement: o3",
+            "extendedThinking": false,
+            "id": "o-1-mini-(2024-09-12)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o1-mini (2024-09-12)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "azure"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.015,
+                "inputCacheHit": null,
+                "output": 0.06
+            },
+            "description": "Lifecycle: Generally Available | Deprecation: 2025-12-17 | Retirement: 2026-06-18 | Replacement: o3",
+            "extendedThinking": false,
+            "id": "o-1-preview-(2024-09-12)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o1-preview (2024-09-12)",
+            "openWeights": false,
+            "provider": "Azure OpenAI",
+            "providerDoc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+            "providerEnv": ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT"],
+            "providerId": "azure-open-ai",
+            "providerModelsDevId": "azure-openai",
+            "providerNpm": "@ai-sdk/azure-openai",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "azure"
+        }
+    ]
+}

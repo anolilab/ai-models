@@ -1,0 +1,396 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Anthropic",
+        "lastUpdated": "2026-01-10T23:24:47.786Z",
+        "provider": "Anthropic",
+        "totalModels": 11,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.25,
+                "inputCacheHit": null,
+                "output": 1.25
+            },
+            "extendedThinking": false,
+            "id": "claude-haiku-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 4000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Haiku 3",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": false,
+            "releaseDate": "2024-03-07",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1.6,
+                "inputCacheHit": null,
+                "output": 0.08
+            },
+            "extendedThinking": false,
+            "id": "claude-haiku-3-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": 1
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Haiku 3.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://docs.anthropic.com/en/docs/about-claude/models",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": false,
+            "releaseDate": "2024-03-04",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1,
+                "inputCacheHit": null,
+                "output": 5
+            },
+            "extendedThinking": true,
+            "id": "claude-haiku-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Haiku 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-10-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 30,
+                "inputCacheHit": null,
+                "output": 1.5
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-3-(deprecated)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 15,
+                "output": 18
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 3 (deprecated)",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://docs.anthropic.com/en/docs/about-claude/models",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2024-02-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15,
+                "inputCacheHit": null,
+                "output": 75
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-05-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15,
+                "inputCacheHit": null,
+                "output": 75
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4-1",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4.1",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-08-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5,
+                "inputCacheHit": null,
+                "output": 25
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-11-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6,
+                "inputCacheHit": null,
+                "output": 0.3
+            },
+            "extendedThinking": true,
+            "id": "claude-sonnet-3-5-(deprecated)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 3,
+                "output": 3
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude Sonnet 3.5 (deprecated)",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://docs.anthropic.com/en/docs/about-claude/models",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2024-03-04",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3,
+                "inputCacheHit": null,
+                "output": 15
+            },
+            "extendedThinking": true,
+            "id": "claude-sonnet-3-7",
+            "knowledge": "2024",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Sonnet 3.7",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-02-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3,
+                "inputCacheHit": null,
+                "output": 15
+            },
+            "extendedThinking": true,
+            "id": "claude-sonnet-4",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Sonnet 4",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-05-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3,
+                "inputCacheHit": null,
+                "output": 15
+            },
+            "extendedThinking": true,
+            "id": "claude-sonnet-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Sonnet 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-09-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic"
+        }
+    ]
+}

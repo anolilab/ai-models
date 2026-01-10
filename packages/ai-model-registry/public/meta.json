@@ -1,0 +1,151 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Meta",
+        "lastUpdated": "2026-01-10T23:24:47.804Z",
+        "provider": "Meta",
+        "totalModels": 4,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "llama-4-maverick-17b-128e-instruct-fp8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cerebras-Llama-4-Maverick-17B-128E-Instruct (Preview)",
+            "openWeights": true,
+            "provider": "Meta",
+            "providerDoc": "https://llama.meta.com/llama/",
+            "providerEnv": ["META_API_KEY"],
+            "providerId": "meta/cerebras",
+            "providerModelsDevId": "meta",
+            "providerNpm": "@ai-sdk/meta",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "meta"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "llama-4-scout-17b-16e-instruct-fp8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Cerebras-Llama-4-Scout-17B-16E-Instruct (Preview)",
+            "openWeights": true,
+            "provider": "Meta",
+            "providerDoc": "https://llama.meta.com/llama/",
+            "providerEnv": ["META_API_KEY"],
+            "providerId": "meta/cerebras",
+            "providerModelsDevId": "meta",
+            "providerNpm": "@ai-sdk/meta",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "meta"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00045,
+                "inputCacheHit": null,
+                "output": 0.00045
+            },
+            "extendedThinking": false,
+            "id": "llama-3_3-70b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.3-70B-Instruct",
+            "openWeights": true,
+            "provider": "Meta",
+            "providerDoc": "https://llama.meta.com/llama/",
+            "providerEnv": ["META_API_KEY"],
+            "providerId": "meta",
+            "providerModelsDevId": "meta",
+            "providerNpm": "@ai-sdk/meta",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "meta"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "llama-3_3-8b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama-3.3-8B-Instruct",
+            "openWeights": true,
+            "provider": "Meta",
+            "providerDoc": "https://llama.meta.com/llama/",
+            "providerEnv": ["META_API_KEY"],
+            "providerId": "meta",
+            "providerModelsDevId": "meta",
+            "providerNpm": "@ai-sdk/meta",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "meta"
+        }
+    ]
+}

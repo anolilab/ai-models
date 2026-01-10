@@ -97,6 +97,7 @@ export const ModelSchema = z
                 preview: z.string().nullable().optional(),
                 stable: z.string().nullable().optional(),
             })
+            .strict()
             .optional(),
         vision: z.boolean().optional(),
     })

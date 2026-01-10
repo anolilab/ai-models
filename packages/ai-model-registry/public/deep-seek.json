@@ -1,0 +1,46 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from DeepSeek",
+        "lastUpdated": "2026-01-10T23:24:47.803Z",
+        "provider": "DeepSeek",
+        "totalModels": 1,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "deep-seek-v3-0324",
+            "knowledge": null,
+            "lastUpdated": "2025-03-25",
+            "limit": {
+                "context": null,
+                "output": 8000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-V3-0324",
+            "openWeights": false,
+            "provider": "DeepSeek",
+            "providerDoc": "https://api-docs.deepseek.com/quick_start/pricing",
+            "providerEnv": ["DEEPSEEK_API_KEY"],
+            "providerId": "deep-seek",
+            "providerModelsDevId": "deepseek",
+            "providerNpm": "@ai-sdk/deepseek",
+            "reasoning": false,
+            "releaseDate": "2024-03-24",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "deepseek"
+        }
+    ]
+}

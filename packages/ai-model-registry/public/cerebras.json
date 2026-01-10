@@ -1,0 +1,288 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from cerebras",
+        "lastUpdated": "2026-01-10T23:24:47.786Z",
+        "provider": "cerebras",
+        "totalModels": 8,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": true,
+            "id": "FP16",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen-3-32b",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "FP16/FP8 (weights only)1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 202752,
+                "output": 65535
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "zai-glm-4.7",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": "2025-12-22",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.35,
+                "inputCacheHit": null,
+                "output": 0.75
+            },
+            "extendedThinking": true,
+            "id": "gpt-oss-120b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 16384,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "OpenAI GPT OSS",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras",
+            "audioGeneration": false,
+            "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases – gpt-oss-120b is for production, general purpose, high reasoning use-cases.",
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.1
+            },
+            "extendedThinking": true,
+            "id": "llama3.1-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 8B",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.85,
+                "inputCacheHit": null,
+                "output": 1.2
+            },
+            "extendedThinking": true,
+            "id": "llama-3.3-70b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.3 70B",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2,
+                "inputCacheHit": null,
+                "output": 2
+            },
+            "extendedThinking": true,
+            "id": "qwen-3-coder-480b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen 3 480B Coder",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.25,
+                "inputCacheHit": null,
+                "output": 2.75
+            },
+            "extendedThinking": true,
+            "id": "zai-glm-4.6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Z.ai GLM 4.6",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": "2025-09-30",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.25,
+                "inputCacheHit": null,
+                "output": 2.75
+            },
+            "extendedThinking": true,
+            "id": "zai-glm-4.7",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Z.ai GLM 4.7 1",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras"
+        }
+    ]
+}

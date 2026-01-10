@@ -1,0 +1,43 @@
+{
+    "metadata": {
+        "description": "AI Models API - List of available providers",
+        "lastUpdated": "2026-01-10T23:24:47.812Z",
+        "totalProviders": 33,
+        "version": "0.0.0-development"
+    },
+    "providers": [
+        "Alibaba",
+        "Amazon Bedrock",
+        "Anthropic",
+        "Azure OpenAI",
+        "Cloudflare",
+        "Deep Infra",
+        "DeepSeek",
+        "Fireworks AI",
+        "GitHub Copilot",
+        "GitHub Models",
+        "Google",
+        "Google Partner",
+        "Google Vertex",
+        "Groq",
+        "Hugging Face",
+        "Inference",
+        "Meta",
+        "Mistral",
+        "ModelScope",
+        "Morph",
+        "OpenAI",
+        "OpenRouter",
+        "Requesty",
+        "Together AI",
+        "Upstage",
+        "V0",
+        "Venice",
+        "Vercel",
+        "Weights & Biases",
+        "XAI",
+        "cerebras",
+        "chutes",
+        "inception"
+    ]
+}

@@ -1,0 +1,2181 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Mistral",
+        "lastUpdated": "2026-01-10T23:24:47.804Z",
+        "provider": "Mistral",
+        "totalModels": 62,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-2405",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral 2405",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-2501",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral 2501",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-2508",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral 2508",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-embed",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral Embed",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-mamba",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral Mamba",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-mamba-7b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral Mamba 7B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "devstral-medium",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral Medium",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "devstral-small-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral Small 1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "devstral-small-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral Small 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "devstral-small-1-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Devstral Small 1.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-medium-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Medium 1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-medium-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Medium 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-medium-1-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Medium 1.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-medium-1-1-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Medium 1.1 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-small-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Small 1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-small-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Small 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-small-1-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Small 1.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "magistral-small-1-1-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Magistral Small 1.1 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mathstral-7b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mathstral 7B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mathstral-7b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mathstral 7B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ministral-3b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Ministral 3B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ministral-3b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Ministral 3B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ministral-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Ministral 8B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ministral-8b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Ministral 8B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-7b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral 7B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-embed",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Embed",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-2402",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2402,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large 2402",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-2407",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large 2407",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": "2024-11-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-2-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large 2.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-2-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large 2.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-medium-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 23,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Medium 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-medium-2312",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2312,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Medium 2312",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-medium-3-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Medium 3.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-moderation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Moderation",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-nemo-12b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Nemo 12B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-next-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Next ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-ocr-2503",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2503,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral OCR 2503",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-ocr-2505",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral OCR 2505",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-saba-2502",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2502,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Saba 2502",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-saba-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Saba ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": "2025-02-17",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-1-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 1.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 2",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-2402",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2402,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 2402",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-2-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 2.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-0-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.0 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.1",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-1-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.1 ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.2",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mixtral-8-x-22-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mixtral 8x22B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mixtral-8-x-22-b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mixtral 8x22B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mixtral-8-x-7-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mixtral 8x7B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mixtral-8-x-7-b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mixtral 8x7B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ocr-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 25,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "OCR ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pixtral-12b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Pixtral 12B",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pixtral-12b-↗",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Pixtral 12B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pixtral-large",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Pixtral Large",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "voxtral-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Voxtral Mini",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "voxtral-mini-transcribe",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Voxtral Mini Transcribe",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "voxtral-small",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Voxtral Small",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        }
+    ]
+}

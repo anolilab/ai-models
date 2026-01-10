@@ -1,0 +1,46 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Morph",
+        "lastUpdated": "2026-01-10T23:24:47.806Z",
+        "provider": "Morph",
+        "totalModels": 1,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "more-morph",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "moreMorph",
+            "openWeights": false,
+            "provider": "Morph",
+            "providerDoc": "https://morph.ai/",
+            "providerEnv": ["MORPH_API_KEY"],
+            "providerId": "morph",
+            "providerModelsDevId": "morph",
+            "providerNpm": "@ai-sdk/morph",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "morph"
+        }
+    ]
+}

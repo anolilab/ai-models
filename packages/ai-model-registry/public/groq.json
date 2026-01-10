@@ -1,0 +1,882 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Groq",
+        "lastUpdated": "2026-01-10T23:24:47.802Z",
+        "provider": "Groq",
+        "totalModels": 24,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "whisper",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "audio"],
+                "output": ["text", "audio"]
+            },
+            "name": "Whisper",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq",
+            "audioGeneration": true,
+            "description": "Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multitasking model that can perform multilingual speech recognition, speech translation, and language identification.",
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "canopy",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4000,
+                "output": 50000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Canopy",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "compound",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Compound",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "compound-beta",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "compound-beta",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "compound-beta-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "compound-beta-mini",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": false,
+            "id": "deepseek-r-1-distill-llama-70-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-distill-llama-70b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": "2025-01-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.075,
+                "inputCacheHit": null,
+                "output": 0.3
+            },
+            "extendedThinking": false,
+            "id": "gpt",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1,
+                "inputCacheHit": null,
+                "output": 3
+            },
+            "extendedThinking": false,
+            "id": "kimi",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.03,
+                "inputCacheHit": null,
+                "output": 0.03
+            },
+            "extendedThinking": false,
+            "id": "llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 512,
+                "output": 512
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.00008
+            },
+            "extendedThinking": false,
+            "id": "llama-3-1-8-b-instant",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.1-8b-instant",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00059,
+                "inputCacheHit": null,
+                "output": 0.00079
+            },
+            "extendedThinking": false,
+            "id": "llama-3-3-70-b-versatile",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3.3-70b-versatile",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0006
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-llama-4-maverick-17-b-128-e-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama/llama-4-maverick-17b-128e-instruct",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00011,
+                "inputCacheHit": null,
+                "output": 0.00034
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-llama-4-scout-17-b-16-e-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama/llama-4-scout-17b-16e-instruct",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-llama-guard-4-12-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama/llama-guard-4-12b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-llama-prompt-guard-2-22-m",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama/llama-prompt-guard-2-22m",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-llama-prompt-guard-2-86-m",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama/llama-prompt-guard-2-86m",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.001,
+                "inputCacheHit": null,
+                "output": 0.003
+            },
+            "extendedThinking": false,
+            "id": "moonshotai-kimi-k-2-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "moonshotai/kimi-k2-instruct",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00015,
+                "inputCacheHit": null,
+                "output": 0.00075
+            },
+            "extendedThinking": false,
+            "id": "openai-gpt-oss-120-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openai/gpt-oss-120b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": "2025-08-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq",
+            "description": "Efficient Mixture-of-Experts model designed for high-reasoning, agentic and general-purpose use cases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0005
+            },
+            "extendedThinking": false,
+            "id": "openai-gpt-oss-20-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "openai/gpt-oss-20b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": "2025-08-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq",
+            "description": "Lower latency Mixture-of-Experts model trained on OpenAI’s Harmony response format with reasoning capabilities"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "playai-tts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "playai-tts",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "playai-tts-arabic",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "playai-tts-arabic",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.04,
+                "inputCacheHit": null,
+                "output": 0.04
+            },
+            "extendedThinking": false,
+            "id": "prompt",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 512,
+                "output": 512
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Prompt",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00029,
+                "inputCacheHit": null,
+                "output": 0.00059
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-3-32-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen/qwen3-32b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": "2025-04-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.075,
+                "inputCacheHit": null,
+                "output": 0.3
+            },
+            "extendedThinking": false,
+            "id": "safety",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Safety",
+            "openWeights": false,
+            "preview": true,
+            "provider": "Groq",
+            "providerDoc": "https://console.groq.com/docs/models",
+            "providerEnv": ["GROQ_API_KEY"],
+            "providerId": "groq",
+            "providerModelsDevId": "groq",
+            "providerNpm": "@ai-sdk/groq",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "groq"
+        }
+    ]
+}

@@ -1,0 +1,1376 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Google Vertex",
+        "lastUpdated": "2026-01-10T23:24:47.803Z",
+        "provider": "Google Vertex",
+        "totalModels": 39,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "code-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "CodeGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "embeddings-for-text",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Embeddings for Text",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-image",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash Image",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-with-gemini-live-api",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash with Gemini Live API",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-3-pro-image",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Gemini 3 Pro Image",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00007,
+                "inputCacheHit": null,
+                "output": 0.00007
+            },
+            "extendedThinking": false,
+            "id": "gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemma-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemma 2",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemma-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemma 3",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemma-3-n",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemma 3n",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-editing-and-customization",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Editing and Customization",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-fast-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Fast Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-generation-001",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Generation 001",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-3-for-generation-002",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 3 for Generation 002",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-fast-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Fast Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-4-for-ultra-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen 4 for Ultra Generation",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-for-captioning-&-vqa",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen for Captioning & VQA",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "imagen-product-recontext-on-vertex-ai",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image", "video"]
+            },
+            "name": "Imagen product recontext on Vertex AI",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "med-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MedGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "multimodal-embeddings",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Multimodal Embeddings",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pali-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "PaliGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "shield-gemma-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "ShieldGemma 2",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "t-5-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "T5Gemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "tx-gemma",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "TxGemma",
+            "openWeights": true,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 2",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-2-experimental",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 2 Experimental",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-2-generate",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 2 Generate",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-2-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 2 Preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-1-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3.1 Fast",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-1-fast-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3.1 Fast preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-1-generate",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3.1 Generate",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-1-generate-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3.1 Generate preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Fast",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-fast-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Fast preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-generate",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Generate",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-generate-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 Generate preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "veo-3-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["image", "video"]
+            },
+            "name": "Veo 3 preview",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        }
+    ]
+}

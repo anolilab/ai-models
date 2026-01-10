@@ -1,0 +1,431 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from V0",
+        "lastUpdated": "2026-01-10T23:24:47.810Z",
+        "provider": "V0",
+        "totalModels": 12,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "4-nwqv-0-zkit-3-b-9-v-6-h",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "4nwqv0zkit3b9v6h",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "5v0h3h13h14",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "5V0H3H13H14",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "classic-v-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "classic-v0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "create-v-0-sdk-app",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "create-v0-sdk-app",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "featuresv-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Featuresv0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "logo-particles-v-0-aws-ad-fq-yl-ef-vd-c",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "logo-particles-v0-aws-AdFqYlEFVdC",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "pagev-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "pagev0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "product-home-enterprise-pricingv-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "ProductHomeEnterprisePricingv0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "what-can-you-do-with-v-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "what-can-you-do-with-v0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "what-makes-v-0-different",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "what-makes-v0-different",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "who-is-v-0-for",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "who-is-v0-for",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "why-should-i-choose-v-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "why-should-i-choose-v0",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        }
+    ]
+}

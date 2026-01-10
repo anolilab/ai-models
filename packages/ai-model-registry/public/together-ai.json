@@ -1,0 +1,641 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Together AI",
+        "lastUpdated": "2026-01-10T23:24:47.810Z",
+        "provider": "Together AI",
+        "totalModels": 18,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "1gpt-oss-120-b-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "1GPT-OSS-120BLlama",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "252-ftogetherai-52386018",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "252Ftogetherai-52386018",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "2-b-together",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "2BTogether",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "ai-together",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "AITogether",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "content-together",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "contentTogether",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "how-to-use-qwen-code",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "how-to-use-qwen-code",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "i-together",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "ITogether",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "maverick-qwen",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MaverickQwen",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0015,
+                "inputCacheHit": null,
+                "output": 0.0015
+            },
+            "extendedThinking": false,
+            "id": "meta-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "meta-llama",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0015,
+                "inputCacheHit": null,
+                "output": 0.0015
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Meta-Llama-3",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "models-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "modelsLlama",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "quickstart-llama",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "QuickstartLlama",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "salesforce-llamarank",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "salesforce-llamarank",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "scout-qwen-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "ScoutQwen2",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "together-and-llamarank",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "together-and-llamarank",
+            "openWeights": true,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "using-together-with-mastra",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "using-together-with-mastra",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "using-together-with-vercels-ai-sdk",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "using-together-with-vercels-ai-sdk",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "workflows-together",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "WorkflowsTogether",
+            "openWeights": false,
+            "provider": "Together AI",
+            "providerDoc": "https://docs.together.ai/",
+            "providerEnv": ["TOGETHER_API_KEY"],
+            "providerId": "together-ai",
+            "providerModelsDevId": "together-ai",
+            "providerNpm": "@ai-sdk/together",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "together"
+        }
+    ]
+}

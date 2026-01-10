@@ -1,0 +1,326 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Alibaba",
+        "lastUpdated": "2026-01-10T23:24:47.784Z",
+        "provider": "Alibaba",
+        "totalModels": 9,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": true,
+            "id": "deepseek-r-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": 163840
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": true,
+            "releaseDate": "2025-01-20",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0004,
+                "inputCacheHit": null,
+                "output": 0.00175
+            },
+            "extendedThinking": true,
+            "id": "deepseek-r-1-0528",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-0528",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": true,
+            "releaseDate": "2025-05-28",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.004,
+                "inputCacheHit": null,
+                "output": 0.016
+            },
+            "extendedThinking": true,
+            "id": "deepseek-r-1-685b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1 685B",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "deepseek-r-1-distill-qwen-1-5-b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-r1-distill-qwen-1.5b",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": true,
+            "releaseDate": "2025-01-31",
+            "streamingSupported": true,
+            "temperature": false,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0009,
+                "inputCacheHit": null,
+                "output": 0.0009
+            },
+            "extendedThinking": false,
+            "id": "deepseek-v-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-v3",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00023,
+                "inputCacheHit": null,
+                "output": 0.0009
+            },
+            "extendedThinking": false,
+            "id": "deepseek-v-3-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-v3.1",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00027,
+                "inputCacheHit": null,
+                "output": 0.0004
+            },
+            "extendedThinking": false,
+            "id": "deepseek-v-3-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-v3.2",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00027,
+                "inputCacheHit": null,
+                "output": 0.0004
+            },
+            "extendedThinking": false,
+            "id": "deepseek-v-3-2-exp",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "deepseek-v3.2-exp",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "alibaba"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1,
+                "inputCacheHit": null,
+                "output": 0
+            },
+            "extendedThinking": false,
+            "id": "moonshot-kimi-k2-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Moonshot-Kimi-K2-Instruct",
+            "openWeights": false,
+            "provider": "Alibaba",
+            "providerDoc": "https://help.aliyun.com/zh/model-studio/kimi-api",
+            "providerEnv": ["ALIBABA_API_KEY"],
+            "providerId": "alibaba",
+            "providerModelsDevId": "alibaba",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "alibaba"
+        }
+    ]
+}

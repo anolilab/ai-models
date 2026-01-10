@@ -1,0 +1,536 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Google",
+        "lastUpdated": "2026-01-10T23:24:47.803Z",
+        "provider": "Google",
+        "totalModels": 15,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-flash-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Flash-8B",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-1-5-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 1.5 Pro",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-0-flash-lite",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.0 Flash-Lite",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-0-flash-preview-image-generation",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.0 Flash Preview Image Generation",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-lite",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash-Lite",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-native-audio",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash Native Audio",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-flash-preview-tts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Flash Preview TTS",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-2-5-pro-preview-tts",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 2.5 Pro Preview TTS",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-api-card-width",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "--gemini-api-card-width",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-api-elevation-1-dp",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "--gemini-api-elevation-1dp",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-api-elevation-3-dp",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "--gemini-api-elevation-3dp",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-api-model-font",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "--gemini-api-model-font",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-api-table-font-color",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "--gemini-api-table-font-color",
+            "openWeights": false,
+            "provider": "Google",
+            "providerDoc": "https://ai.google.dev/models",
+            "providerEnv": ["GOOGLE_API_KEY"],
+            "providerId": "google",
+            "providerModelsDevId": "google",
+            "providerNpm": "@ai-sdk/google",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -16,8 +16,25 @@ const __dirname = dirname(__filename);
 
 const PROVIDERS_DIR = resolve(__dirname, "../data/providers");
 const OPENROUTER_DIR = resolve(__dirname, "../data/providers/openrouter");
-const OUTPUT_JSON = join(__dirname, "../data/all-models.json");
 const OUTPUT_API_JSON = join(__dirname, "../public/api.json");
+const OUTPUT_PUBLIC_DIR = join(__dirname, "../public");
+
+/**
+ * Custom JSON serializer that preserves decimal numbers and prevents scientific notation
+ * @param obj Object to serialize
+ * @param space Number of spaces for indentation
+ * @returns JSON string with preserved decimal numbers
+ */
+const customJsonStringify = (obj: unknown, space?: number): string =>
+    // Use a custom replacer to ensure numbers are preserved as numbers
+    JSON.stringify(
+        obj,
+        (key, value) =>
+            // Return numbers as-is - JSON.stringify will handle them correctly
+            // Don't convert numbers to strings, as that breaks type validation
+            value,
+        space,
+    );
 
 /**
  * Adds icon information to models based on their provider
@@ -80,7 +97,7 @@ interface HeliconeApiResponse {
  * Fetches pricing data from Helicone API
  * @returns Promise that resolves to pricing data
  */
-async function fetchHeliconePricing(): Promise<HeliconeCostData[]> {
+const fetchHeliconePricing = async (): Promise<HeliconeCostData[]> => {
     const url = "https://helicone.ai/api/llm-costs";
 
     console.log(`[Helicone] Fetching pricing data from: ${url}`);
@@ -103,14 +120,14 @@ async function fetchHeliconePricing(): Promise<HeliconeCostData[]> {
 
         return [];
     }
-}
+};
 
 /**
  * Enriches models with pricing data from Helicone
  * @param models Array of models to enrich
  * @returns Promise that resolves to enriched models
  */
-async function enrichModelsWithPricing(models: Model[]): Promise<Model[]> {
+const enrichModelsWithPricing = async (models: Model[]): Promise<Model[]> => {
     console.log(`[Helicone] Enriching ${models.length} models with pricing data`);
 
     // Fetch all pricing data from Helicone
@@ -187,7 +204,7 @@ async function enrichModelsWithPricing(models: Model[]): Promise<Model[]> {
     console.log(`[Helicone] Enriched ${enrichedCount} models with pricing data`);
 
     return enrichedModels;
-}
+};
 
 /**
  * Normalizes cost values to ensure they are proper decimal numbers
@@ -716,6 +733,67 @@ const synchronizeModelData = (models: Model[]): Model[] => {
 };
 
 /**
+ * Processes a single JSON file and returns a validated model
+ * @param file Path to the JSON file
+ * @param referenceMap OpenRouter reference data map
+ * @returns Validated Model or null if processing failed
+ */
+const processModelFile = (file: string, referenceMap: Map<string, any>): Model | null => {
+    try {
+        const raw = readFileSync(file, "utf8");
+        const data = JSON.parse(raw);
+
+        // Convert snake_case keys to camelCase
+        const convertedData = convertSnakeToCamel(data) as Record<string, unknown>;
+
+        // Store the original provider field (sub-provider information) before overwriting
+        const originalProvider = convertedData.provider as string | undefined;
+
+        // Set the provider field to the main provider name from the file path
+        const mainProvider = getMainProviderFromPath(file);
+
+        if (mainProvider) {
+            convertedData.provider = mainProvider;
+        }
+
+        // Generate provider ID from file path and original provider field (sub-provider)
+        // Only set providerId if it's not already present (to respect transformer-set values)
+        if (!convertedData.providerId) {
+            convertedData.providerId = generateProviderId(file, originalProvider);
+        }
+
+        // Fix empty IDs by using the name or filename as fallback
+        if (!convertedData.id || convertedData.id === "") {
+            const fileName = basename(file, ".json");
+            const modelName = (convertedData.name as string) || fileName;
+
+            convertedData.id = kebabCase(modelName);
+            console.log(`[INFO] Fixed empty ID for model "${modelName}" using "${convertedData.id}"`);
+        }
+
+        // Fill missing fields from OpenRouter reference data
+        const enhancedData = fillMissingFieldsFromReference(convertedData, referenceMap);
+
+        // Normalize cost values in the individual model
+        const normalizedModelData = normalizeModelCostValues(enhancedData);
+
+        const parsed = ModelSchema.safeParse(normalizedModelData);
+
+        if (parsed.success) {
+            return parsed.data;
+        }
+
+        console.warn(`[WARN] Validation failed for ${file}:`, parsed.error.issues);
+
+        return null;
+    } catch (error) {
+        console.error(`[ERROR] Failed to process ${file}:`, (error as Error).message);
+
+        return null;
+    }
+};
+
+/**
  * Aggregates and validates model data from all JSON files in the providers directory
  * @returns Promise resolving to an array of validated Model objects
  */
@@ -724,60 +802,155 @@ const aggregateModels = async (): Promise<Model[]> => {
     const referenceMap = loadOpenRouterReference();
 
     const allFiles = getAllJsonFiles(PROVIDERS_DIR);
-    const models: Model[] = [];
 
-    for (const file of allFiles) {
-        try {
-            const raw = readFileSync(file, "utf8");
-            const data = JSON.parse(raw);
+    console.log(`[INFO] Processing all providers`);
+    console.log(`[INFO] Found ${allFiles.length} files to process`);
 
-            // Convert snake_case keys to camelCase
-            const convertedData = convertSnakeToCamel(data) as Record<string, unknown>;
+    // Process files in parallel for better performance
+    const processPromises = allFiles.map((file) => Promise.resolve(processModelFile(file, referenceMap)));
 
-            // Store the original provider field (sub-provider information) before overwriting
-            const originalProvider = convertedData.provider as string | undefined;
+    const results = await Promise.all(processPromises);
 
-            // Set the provider field to the main provider name from the file path
-            const mainProvider = getMainProviderFromPath(file);
-
-            if (mainProvider) {
-                convertedData.provider = mainProvider;
-            }
-
-            // Generate provider ID from file path and original provider field (sub-provider)
-            // Only set providerId if it's not already present (to respect transformer-set values)
-            if (!convertedData.providerId) {
-                convertedData.providerId = generateProviderId(file, originalProvider);
-            }
-
-            // Fix empty IDs by using the name or filename as fallback
-            if (!convertedData.id || convertedData.id === "") {
-                const fileName = basename(file, ".json");
-                const modelName = (convertedData.name as string) || fileName;
-
-                convertedData.id = kebabCase(modelName);
-                console.log(`[INFO] Fixed empty ID for model "${modelName}" using "${convertedData.id}"`);
-            }
-
-            // Fill missing fields from OpenRouter reference data
-            const enhancedData = fillMissingFieldsFromReference(convertedData, referenceMap);
-
-            // Normalize cost values in the individual model
-            const normalizedModelData = normalizeModelCostValues(enhancedData);
-
-            const parsed = ModelSchema.safeParse(normalizedModelData);
-
-            if (parsed.success) {
-                models.push(parsed.data);
-            } else {
-                console.warn(`[WARN] Validation failed for ${file}:`, parsed.error.issues);
-            }
-        } catch (error) {
-            console.error(`[ERROR] Failed to process ${file}:`, (error as Error).message);
-        }
-    }
+    // Filter out null results (failed validations)
+    const models = results.filter((model): model is Model => model !== null);
 
     return models;
+};
+
+/**
+ * Generates per-provider JSON files
+ * @param models Array of all models grouped by provider
+ * @param outputDir Directory to write provider files to
+ */
+const generateProviderFiles = (models: Model[], outputDir: string): void => {
+    // Group models by provider
+    const modelsByProvider = new Map<string, Model[]>();
+
+    for (const model of models) {
+        const { provider } = model;
+
+        if (!provider) {
+            continue;
+        }
+
+        if (!modelsByProvider.has(provider)) {
+            modelsByProvider.set(provider, []);
+        }
+
+        modelsByProvider.get(provider)!.push(model);
+    }
+
+    // Ensure output directory exists
+    if (!existsSync(outputDir)) {
+        mkdirSync(outputDir, { recursive: true });
+    }
+
+    // Generate file for each provider
+    let filesGenerated = 0;
+
+    for (const [provider, providerModels] of modelsByProvider) {
+        const providerFileName = `${kebabCase(provider)}.json`;
+        const providerFilePath = join(outputDir, providerFileName);
+
+        const providerJson = {
+            metadata: {
+                description: `AI Models API - Models from ${provider}`,
+                lastUpdated: new Date().toISOString(),
+                provider,
+                totalModels: providerModels.length,
+                version: "0.0.0-development",
+            },
+            models: providerModels,
+        };
+
+        writeFileSync(providerFilePath, customJsonStringify(providerJson, 2));
+        filesGenerated += 1;
+
+        console.log(`[DONE] Generated provider file: ${providerFileName} with ${providerModels.length} models`);
+    }
+
+    console.log(`[DONE] Generated ${filesGenerated} provider-specific JSON files`);
+
+    // Generate providers index file
+    const providersList = Array.from(modelsByProvider.keys()).sort();
+    const providersIndex = {
+        metadata: {
+            description: "AI Models API - List of available providers",
+            lastUpdated: new Date().toISOString(),
+            totalProviders: providersList.length,
+            version: "0.0.0-development",
+        },
+        providers: providersList,
+    };
+
+    const providersIndexPath = join(outputDir, "providers.json");
+
+    writeFileSync(providersIndexPath, customJsonStringify(providersIndex, 2));
+
+    console.log(`[DONE] Generated providers index at ${providersIndexPath} with ${providersList.length} providers`);
+
+    // Generate TypeScript types files
+    const typesDir = join(__dirname, "../src/types");
+
+    if (!existsSync(typesDir)) {
+        mkdirSync(typesDir, { recursive: true });
+    }
+
+    // Generate TypeScript types file for provider names
+    const typesOutputPath = join(typesDir, "providers.ts");
+    const providerNamesType = providersList.map((p) => `    "${p}"`).join(" |\n");
+    const typesContent = `/* Auto-generated file - do not edit manually
+ * Generated by aggregate-providers.ts
+ * 
+ * To regenerate this file, run: pnpm run aggregate
+ */
+
+/**
+ * Union type of all available AI model provider names
+ */
+export type ProviderName =
+${providerNamesType};
+
+/**
+ * Array of all available provider names
+ */
+export const PROVIDER_NAMES = ${JSON.stringify(providersList, null, 2)} as const satisfies readonly ProviderName[];
+`;
+
+    writeFileSync(typesOutputPath, typesContent);
+
+    console.log(`[DONE] Generated provider types at ${typesOutputPath}`);
+
+    let modelTypesGenerated = 0;
+
+    for (const [provider, providerModels] of modelsByProvider) {
+        const modelIds = providerModels.map((model) => model.id).sort();
+        const providerTypeFileName = `${kebabCase(provider)}.ts`;
+        const providerTypeFilePath = join(typesDir, providerTypeFileName);
+
+        const modelIdsType = modelIds.map((id) => `    "${id}"`).join(" |\n");
+        const modelTypeContent = `/* Auto-generated file - do not edit manually
+ * Generated by aggregate-providers.ts
+ * 
+ * To regenerate this file, run: pnpm run aggregate
+ */
+
+/**
+ * Union type of all model IDs for ${provider}.
+ */
+type ModelName =
+${modelIdsType};
+
+export default ModelName;
+`;
+
+        writeFileSync(providerTypeFilePath, modelTypeContent);
+        modelTypesGenerated += 1;
+
+        console.log(`[DONE] Generated model types for ${provider}: ${providerTypeFileName} with ${modelIds.length} models`);
+    }
+
+    console.log(`[DONE] Generated ${modelTypesGenerated} provider model type files`);
 };
 
 /**
@@ -822,7 +995,7 @@ const main = async (): Promise<void> => {
         // Flatten the provider models back into a single array
         const deduplicatedModels: Model[] = [];
 
-        for (const [provider, modelMap] of providerModels) {
+        for (const [, modelMap] of providerModels) {
             deduplicatedModels.push(...modelMap.values());
         }
 
@@ -842,10 +1015,6 @@ const main = async (): Promise<void> => {
         // Synchronize data between models with the same ID
         const synchronizedModels = synchronizeModelData(normalizedModels);
 
-        writeFileSync(OUTPUT_JSON, customJsonStringify(synchronizedModels, 2));
-
-        console.log(`[DONE] Aggregated and synchronized ${synchronizedModels.length} models to ${OUTPUT_JSON}`);
-
         // Generate API JSON file for CDN serving
         const apiJson = {
             metadata: {
@@ -861,29 +1030,14 @@ const main = async (): Promise<void> => {
         writeFileSync(OUTPUT_API_JSON, customJsonStringify(apiJson, 2));
 
         console.log(`[DONE] Generated API JSON at ${OUTPUT_API_JSON} with ${synchronizedModels.length} models`);
+
+        // Generate per-provider JSON files
+        generateProviderFiles(synchronizedModels, OUTPUT_PUBLIC_DIR);
     } catch (error) {
         console.error("Error during aggregation:", error);
 
         process.exit(1);
     }
 };
-
-/**
- * Custom JSON serializer that preserves decimal numbers and prevents scientific notation
- * @param obj Object to serialize
- * @param space Number of spaces for indentation
- * @returns JSON string with preserved decimal numbers
- */
-const customJsonStringify = (obj: unknown, space?: number): string =>
-    // Use a custom replacer to ensure numbers are preserved as numbers
-    JSON.stringify(
-        obj,
-        (key, value) =>
-            // Return numbers as-is - JSON.stringify will handle them correctly
-            // Don't convert numbers to strings, as that breaks type validation
-            value,
-        space,
-    )
-;
 
 main();

@@ -1,146 +1,53 @@
 import { kebabCase } from "@visulima/string";
 import axios from "axios";
-import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength } from "../utils/index.js";
 
-const REQUESTY_API_URL = "https://api.requesty.ai/v1/models";
+const REQUESTY_API_URL = "https://router.requesty.ai/v1/models";
 const REQUESTY_DOCS_URL = "https://docs.requesty.ai/";
 
 /**
- * Scrapes Requesty documentation for model information.
+ * Interface for the Requesty API response model structure
  */
-const scrapeRequestyDocs = async (): Promise<Model[]> => {
+interface RequestyModel {
+    api?: string;
+    cached_price: number;
+    caching_price: number;
+    context_window: number;
+    created: number;
+    description: string;
+    id: string;
+    input_price: number;
+    max_output_tokens: number;
+    object: string;
+    output_price: number;
+    owned_by: string;
+    supports_caching: boolean;
+    supports_computer_use: boolean;
+    supports_reasoning: boolean;
+    supports_vision: boolean;
+}
+
+/**
+ * Interface for the Requesty API response
+ */
+interface RequestyApiResponse {
+    data: RequestyModel[];
+    object: "list";
+}
+
+/**
+ * Converts a Unix timestamp to an ISO date string
+ */
+const timestampToDateString = (timestamp: number): string | null => {
+    if (!timestamp || timestamp <= 0) {
+        return null;
+    }
+
     try {
-        const response = await axios.get(REQUESTY_DOCS_URL);
-        const $ = load(response.data);
-
-        const models: Model[] = [];
-
-        // Look for model tables or lists in the documentation
-        $("table, .model-list, .models-table").each((index, element) => {
-            const tableText = $(element).text().toLowerCase();
-
-            // Check if this table contains model information
-            if (tableText.includes("model") || tableText.includes("requesty") || tableText.includes("llama") || tableText.includes("mistral")) {
-                console.log(`[Requesty] Found potential model table ${index + 1}`);
-
-                $(element)
-                    .find("tr, .model-item")
-                    .each((_, row) => {
-                        const cells = $(row)
-                            .find("td, .model-cell")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
-
-                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
-                            const modelName = cells[0];
-
-                            console.log(`[Requesty] Found model: ${modelName}`);
-
-                            const model: Model = {
-                                attachment: false,
-                                cost: {
-                                    input: null,
-                                    inputCacheHit: null,
-                                    output: null,
-                                },
-                                extendedThinking: false,
-                                id: kebabCase(modelName),
-                                knowledge: null,
-                                lastUpdated: null,
-                                limit: {
-                                    context: parseContextLength(cells[1] || cells[2]),
-                                    output: null,
-                                },
-                                modalities: {
-                                    input: modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                    output: ["text"],
-                                },
-                                name: modelName,
-                                openWeights: false,
-                                provider: "Requesty",
-                                providerDoc: REQUESTY_DOCS_URL,
-                                // Provider metadata
-                                providerEnv: ["REQUESTY_API_KEY"],
-                                providerModelsDevId: "requesty",
-                                providerNpm: "@ai-sdk/requesty",
-                                reasoning: false,
-                                releaseDate: null,
-                                streamingSupported: true,
-                                temperature: true,
-                                toolCall: false,
-                                vision: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("vl"),
-                            };
-
-                            models.push(model);
-                        }
-                    });
-            }
-        });
-
-        // If no tables found, try to extract from text content
-        if (models.length === 0) {
-            const bodyText = $("body").text();
-            const modelMatches = bodyText.match(/([\w\-]+(?:requesty|llama|mistral|gemma)[\w\-]*)/gi);
-
-            if (modelMatches) {
-                console.log(`[Requesty] Found ${modelMatches.length} potential models in text`);
-
-                for (const match of modelMatches.slice(0, 20)) {
-                    // Limit to first 20 matches
-                    const modelName = match.trim();
-
-                    if (modelName.length > 3 && modelName.length < 50) {
-                        const model: Model = {
-                            attachment: false,
-                            cost: {
-                                input: null,
-                                inputCacheHit: null,
-                                output: null,
-                            },
-                            extendedThinking: false,
-                            id: kebabCase(modelName),
-                            knowledge: null,
-                            lastUpdated: null,
-                            limit: {
-                                context: null,
-                                output: null,
-                            },
-                            modalities: {
-                                input: modelName.toLowerCase().includes("vision") ? ["text", "image"] : ["text"],
-                                output: ["text"],
-                            },
-                            name: modelName,
-                            openWeights: false,
-                            provider: "Requesty",
-                            providerDoc: REQUESTY_DOCS_URL,
-                            // Provider metadata
-                            providerEnv: ["REQUESTY_API_KEY"],
-                            providerModelsDevId: "requesty",
-                            providerNpm: "@ai-sdk/requesty",
-                            reasoning: false,
-                            releaseDate: null,
-                            streamingSupported: true,
-                            temperature: true,
-                            toolCall: false,
-                            vision: modelName.toLowerCase().includes("vision"),
-                        };
-
-                        models.push(model);
-                    }
-                }
-            }
-        }
-
-        console.log(`[Requesty] Scraped ${models.length} models from documentation`);
-
-        return models;
-    } catch (error) {
-        console.error("[Requesty] Error scraping documentation:", error instanceof Error ? error.message : String(error));
-
-        return [];
+        return new Date(timestamp * 1000).toISOString();
+    } catch {
+        return null;
     }
 };
 
@@ -149,124 +56,85 @@ const scrapeRequestyDocs = async (): Promise<Model[]> => {
  * @param rawData Raw data from Requesty API
  * @returns Array of normalized model objects
  */
-export const transformRequestyModels = (rawData: any): Model[] => {
+export const transformRequestyModels = (rawData: RequestyApiResponse | RequestyModel[]): Model[] => {
     const models: Model[] = [];
 
-    // This function is kept for interface compatibility but the main logic is in fetchRequestyModels
-    if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
-            const model: Model = {
-                attachment: false,
-                cost: {
-                    input: null,
-                    inputCacheHit: null,
-                    output: null,
-                },
-                extendedThinking: false,
-                id: kebabCase(modelData.id || modelData.name),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: modelData.context_length || null,
-                    output: null,
-                },
-                modalities: {
-                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelData.name || modelData.id,
-                openWeights: false,
-                provider: "Requesty",
-                providerDoc: REQUESTY_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["REQUESTY_API_KEY"],
-                providerModelsDevId: "requesty",
-                providerNpm: "@ai-sdk/requesty",
-                reasoning: false,
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true,
-                toolCall: false,
-                vision: modelData.capabilities?.vision || false,
-            };
+    // Handle both the full API response and just the data array
+    const modelDataArray: RequestyModel[] = "data" in rawData && Array.isArray(rawData.data) ? rawData.data : Array.isArray(rawData) ? rawData : [];
 
-            models.push(model);
-        }
+    for (const modelData of modelDataArray) {
+        // Determine input modalities based on vision support
+        const inputModalities = modelData.supports_vision ? ["text", "image"] : ["text"];
+
+        // Convert pricing from per-token to per-1M tokens (if needed)
+        // The API returns prices that might already be in the right format, but we'll use them as-is
+        const inputPrice = modelData.input_price != null && modelData.input_price > 0 ? modelData.input_price : null;
+        const cachedPrice = modelData.cached_price != null && modelData.cached_price > 0 ? modelData.cached_price : null;
+        const outputPrice = modelData.output_price != null && modelData.output_price > 0 ? modelData.output_price : null;
+
+        const model: Model = {
+            attachment: false,
+            cost: {
+                input: inputPrice,
+                inputCacheHit: cachedPrice,
+                output: outputPrice,
+            },
+            description: modelData.description || undefined,
+            extendedThinking: modelData.supports_reasoning || false,
+            id: kebabCase(modelData.id),
+            knowledge: null,
+            lastUpdated: null,
+            limit: {
+                context: modelData.context_window > 0 ? modelData.context_window : null,
+                output: modelData.max_output_tokens > 0 ? modelData.max_output_tokens : null,
+            },
+            modalities: {
+                input: inputModalities,
+                output: ["text"],
+            },
+            name: modelData.id,
+            openWeights: false,
+            ownedBy: modelData.owned_by || undefined,
+            provider: "Requesty",
+            providerDoc: REQUESTY_DOCS_URL,
+            // Provider metadata
+            providerEnv: ["REQUESTY_API_KEY"],
+            providerModelsDevId: "requesty",
+            providerNpm: "@ai-sdk/requesty",
+            reasoning: modelData.supports_reasoning || false,
+            releaseDate: timestampToDateString(modelData.created),
+            streamingSupported: true,
+            temperature: true,
+            toolCall: modelData.supports_computer_use || false,
+            vision: modelData.supports_vision || false,
+        };
+
+        models.push(model);
     }
 
     return models;
 };
 
 /**
- * Fetches Requesty models from their API and documentation.
+ * Fetches Requesty models from their API.
  * @returns Promise that resolves to an array of transformed models
  */
 export const fetchRequestyModels = async (): Promise<Model[]> => {
-    console.log("[Requesty] Fetching models from API and documentation...");
+    console.log("[Requesty] Fetching models from API...");
 
     try {
-        const models: Model[] = [];
+        console.log("[Requesty] Fetching from API:", REQUESTY_API_URL);
+        const apiResponse = await axios.get<RequestyApiResponse>(REQUESTY_API_URL);
 
-        // Try to fetch from their API first
-        try {
-            console.log("[Requesty] Attempting to fetch from API:", REQUESTY_API_URL);
-            const apiResponse = await axios.get(REQUESTY_API_URL);
+        if (!apiResponse.data) {
+            console.warn("[Requesty] API returned no data");
 
-            if (apiResponse.data && Array.isArray(apiResponse.data)) {
-                console.log(`[Requesty] Found ${apiResponse.data.length} models via API`);
-
-                for (const modelData of apiResponse.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: modelData.context_length || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "Requesty",
-                        providerDoc: REQUESTY_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["REQUESTY_API_KEY"],
-                        providerModelsDevId: "requesty",
-                        providerNpm: "@ai-sdk/requesty",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Requesty] API fetch failed, falling back to documentation scraping");
+            return [];
         }
 
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Requesty] Scraping documentation for model information");
-            const docsModels = await scrapeRequestyDocs();
+        const models = transformRequestyModels(apiResponse.data);
 
-            models.push(...docsModels);
-        }
-
-        console.log(`[Requesty] Total models found: ${models.length}`);
+        console.log(`[Requesty] Successfully fetched and transformed ${models.length} models`);
 
         return models;
     } catch (error) {

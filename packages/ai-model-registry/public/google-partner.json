@@ -1,0 +1,536 @@
+{
+    "metadata": {
+        "description": "AI Models API - Models from Google Partner",
+        "lastUpdated": "2026-01-10T23:24:47.804Z",
+        "provider": "Google Partner",
+        "totalModels": 15,
+        "version": "0.0.0-development"
+    },
+    "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "jamba-1-5-large",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Large",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/ai21/jamba-1-5-large",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-ai21-labs",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "jamba-1-5-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Jamba 1.5 Mini",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/ai21/jamba-1-5-mini",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-ai21-labs",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "claude-3-5-haiku",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Haiku",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/haiku-3-5",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-3-5-sonnet",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Sonnet",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-3-5-sonnet-v-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.5 Sonnet v2",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5-v2",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-3-7-sonnet",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude 3.7 Sonnet",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-7",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "claude-3-haiku",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude 3 Haiku",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/haiku-3",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "safety-classifiers",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Safety classifiers",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/safety",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "web-search",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Web search",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/web-search",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-claude",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-(25-01)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral (25.01)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/codestral-2501",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.3,
+                "inputCacheHit": null,
+                "output": 0.9
+            },
+            "extendedThinking": false,
+            "id": "codestral-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Codestral 2",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/codestral-2",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-large-(24-11)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Large (24.11)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-large",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": "2024-11-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-medium-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Medium 3",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-medium-3",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-ocr-(25-05)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Mistral OCR (25.05)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-ocr",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "google"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-small-3-1-(25-03)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 0,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral Small 3.1 (25.03)",
+            "openWeights": false,
+            "provider": "Google Partner",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/mistral/mistral-small-3-1",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-partner/google-vertex-mistral-ai",
+            "providerModelsDevId": "google-vertex-partner",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "google"
+        }
+    ]
+}
