@@ -1,33 +1,34 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
-import type { Model } from "./index";
-import { getAllModels, getModelById, getModelsByProvider, getProviders, getProviderStats, ModelSchema, searchModels } from "./index";
+import type { Model, ProviderName } from "./index";
+import { getAllModels, getModelById, getModelsByProvider, getProviders, getProviderStats, searchModels } from "./index";
+import { ModelSchema } from "./schema";
 
 describe("provider Registry", () => {
     describe(getProviders, () => {
-        it("should return an array of provider names", () => {
+        it("should return an array of provider names", async () => {
             expect.assertions(3);
 
-            const providers = getProviders();
+            const providers = await getProviders();
 
             expect(Array.isArray(providers)).toBe(true);
             expect(providers.length).toBeGreaterThan(0);
             expect(providers.every((provider) => typeof provider === "string")).toBe(true);
         });
 
-        it("should return unique provider names", () => {
+        it("should return unique provider names", async () => {
             expect.assertions(1);
 
-            const providers = getProviders();
+            const providers = await getProviders();
             const uniqueProviders = new Set(providers);
 
             expect(providers).toHaveLength(uniqueProviders.size);
         });
 
-        it("should return providers in alphabetical order", () => {
+        it("should return providers in alphabetical order", async () => {
             expect.assertions(1);
 
-            const providers = getProviders();
+            const providers = await getProviders();
             const sortedProviders = [...providers].sort();
 
             expect(providers).toStrictEqual(sortedProviders);
@@ -35,39 +36,39 @@ describe("provider Registry", () => {
     });
 
     describe(getModelsByProvider, () => {
-        it("should return models for a valid provider", () => {
+        it("should return models for a valid provider", async () => {
             expect.assertions(3);
 
-            const anthropicModels = getModelsByProvider("Anthropic");
+            const anthropicModels = await getModelsByProvider("Anthropic" as ProviderName);
 
             expect(Array.isArray(anthropicModels)).toBe(true);
             expect(anthropicModels.length).toBeGreaterThan(0);
             expect(anthropicModels.every((model) => model.provider === "Anthropic")).toBe(true);
         });
 
-        it("should return empty array for non-existent provider", () => {
+        it("should return empty array for non-existent provider", async () => {
             expect.assertions(2);
 
-            const models = getModelsByProvider("NonExistentProvider");
+            const models = await getModelsByProvider("NonExistentProvider" as ProviderName);
 
             expect(Array.isArray(models)).toBe(true);
             expect(models).toHaveLength(0);
         });
 
-        it("should return empty array for empty provider name", () => {
+        it("should return empty array for empty provider name", async () => {
             expect.assertions(2);
 
-            const models = getModelsByProvider("");
+            const models = await getModelsByProvider("" as ProviderName);
 
             expect(Array.isArray(models)).toBe(true);
             expect(models).toHaveLength(0);
         });
 
-        it("should be case sensitive", () => {
+        it("should be case sensitive", async () => {
             expect.assertions(1);
 
-            const anthropicModels = getModelsByProvider("Anthropic");
-            const lowercaseModels = getModelsByProvider("anthropic");
+            const anthropicModels = await getModelsByProvider("Anthropic" as ProviderName);
+            const lowercaseModels = await getModelsByProvider("anthropic" as ProviderName);
 
             expect(anthropicModels.length).toBeGreaterThan(0);
 
@@ -78,9 +79,9 @@ describe("provider Registry", () => {
     });
 
     describe(getModelById, () => {
-        it("should return a model for a valid ID", () => {
+        it("should return a model for a valid ID", async () => {
             // Get a known model ID from the actual data
-            const allModels = getAllModels();
+            const allModels = await getAllModels();
             const anthropicModel = allModels.find((m) => m.provider === "Anthropic");
             const testModel = anthropicModel;
 
@@ -89,7 +90,7 @@ describe("provider Registry", () => {
                 // eslint-disable-next-line vitest/no-conditional-expect
                 expect.assertions(3);
 
-                const model = getModelById(testModel.id);
+                const model = await getModelById(testModel.id);
 
                 // eslint-disable-next-line vitest/no-conditional-expect
                 expect(model).toBeDefined();
@@ -106,105 +107,105 @@ describe("provider Registry", () => {
             }
         });
 
-        it("should return undefined for non-existent ID", () => {
+        it("should return undefined for non-existent ID", async () => {
             expect.assertions(1);
 
-            const model = getModelById("non-existent-model-id");
+            const model = await getModelById("non-existent-model-id");
 
             expect(model).toBeUndefined();
         });
 
-        it("should return undefined for empty ID", () => {
+        it("should return undefined for empty ID", async () => {
             expect.assertions(1);
 
-            const model = getModelById("");
+            const model = await getModelById("");
 
             expect(model).toBeUndefined();
         });
     });
 
     describe(searchModels, () => {
-        it("should filter by vision capability", () => {
+        it("should filter by vision capability", async () => {
             expect.assertions(2);
 
-            const visionModels = searchModels({ vision: true });
-            const nonVisionModels = searchModels({ vision: false });
+            const visionModels = await searchModels({ vision: true });
+            const nonVisionModels = await searchModels({ vision: false });
 
             expect(visionModels.every((model) => model.vision === true)).toBe(true);
             expect(nonVisionModels.every((model) => model.vision === false)).toBe(true);
         });
 
-        it("should filter by reasoning capability", () => {
+        it("should filter by reasoning capability", async () => {
             expect.assertions(2);
 
-            const reasoningModels = searchModels({ reasoning: true });
-            const nonReasoningModels = searchModels({ reasoning: false });
+            const reasoningModels = await searchModels({ reasoning: true });
+            const nonReasoningModels = await searchModels({ reasoning: false });
 
             expect(reasoningModels.every((model) => model.reasoning === true)).toBe(true);
             expect(nonReasoningModels.every((model) => model.reasoning === false)).toBe(true);
         });
 
-        it("should filter by tool_call capability", () => {
+        it("should filter by tool_call capability", async () => {
             expect.assertions(2);
 
-            const toolCallModels = searchModels({ tool_call: true });
-            const nonToolCallModels = searchModels({ tool_call: false });
+            const toolCallModels = await searchModels({ tool_call: true });
+            const nonToolCallModels = await searchModels({ tool_call: false });
 
             expect(toolCallModels.every((model) => model.toolCall === true)).toBe(true);
             expect(nonToolCallModels.every((model) => model.toolCall === false)).toBe(true);
         });
 
-        it("should filter by streaming support", () => {
+        it("should filter by streaming support", async () => {
             expect.assertions(2);
 
-            const streamingModels = searchModels({ streaming_supported: true });
-            const nonStreamingModels = searchModels({ streaming_supported: false });
+            const streamingModels = await searchModels({ streaming_supported: true });
+            const nonStreamingModels = await searchModels({ streaming_supported: false });
 
             expect(streamingModels.every((model) => model.streamingSupported === true)).toBe(true);
             expect(nonStreamingModels.every((model) => model.streamingSupported === false)).toBe(true);
         });
 
-        it("should filter by provider", () => {
+        it("should filter by provider", async () => {
             expect.assertions(1);
 
-            const anthropicModels = searchModels({ provider: "Anthropic" });
+            const anthropicModels = await searchModels({ provider: "Anthropic" as ProviderName });
 
             expect(anthropicModels.every((model) => model.provider === "Anthropic")).toBe(true);
         });
 
-        it("should filter by preview status", () => {
+        it("should filter by preview status", async () => {
             expect.assertions(2);
 
-            const previewModels = searchModels({ preview: true });
-            const nonPreviewModels = searchModels({ preview: false });
+            const previewModels = await searchModels({ preview: true });
+            const nonPreviewModels = await searchModels({ preview: false });
 
             expect(previewModels.every((model) => model.preview === true)).toBe(true);
             expect(nonPreviewModels.every((model) => model.preview === false)).toBe(true);
         });
 
-        it("should filter by input modalities", () => {
+        it("should filter by input modalities", async () => {
             expect.assertions(2);
 
-            const textModels = searchModels({ modalities: { input: ["text"] } });
-            const imageModels = searchModels({ modalities: { input: ["image"] } });
+            const textModels = await searchModels({ modalities: { input: ["text"] } });
+            const imageModels = await searchModels({ modalities: { input: ["image"] } });
 
             expect(textModels.every((model) => model.modalities.input.includes("text"))).toBe(true);
             expect(imageModels.every((model) => model.modalities.input.includes("image"))).toBe(true);
         });
 
-        it("should filter by output modalities", () => {
+        it("should filter by output modalities", async () => {
             expect.assertions(1);
 
-            const textOutputModels = searchModels({ modalities: { output: ["text"] } });
+            const textOutputModels = await searchModels({ modalities: { output: ["text"] } });
 
             expect(textOutputModels.every((model) => model.modalities.output.includes("text"))).toBe(true);
         });
 
-        it("should filter by context window range", () => {
+        it("should filter by context window range", async () => {
             expect.hasAssertions();
 
-            const largeContextModels = searchModels({ context_min: 100_000 });
-            const smallContextModels = searchModels({ context_max: 10_000 });
+            const largeContextModels = await searchModels({ context_min: 100_000 });
+            const smallContextModels = await searchModels({ context_max: 10_000 });
 
             // The search function should work even if no models match the criteria
             expectTypeOf(largeContextModels.length).toBeNumber();
@@ -233,11 +234,11 @@ describe("provider Registry", () => {
             }
         });
 
-        it("should combine multiple filters", () => {
+        it("should combine multiple filters", async () => {
             expect.assertions(1);
 
-            const filteredModels = searchModels({
-                provider: "Anthropic",
+            const filteredModels = await searchModels({
+                provider: "Anthropic" as ProviderName,
                 reasoning: true,
                 vision: true,
             });
@@ -245,40 +246,40 @@ describe("provider Registry", () => {
             expect(filteredModels.every((model) => model.provider === "Anthropic" && model.vision === true && model.reasoning === true)).toBe(true);
         });
 
-        it("should return all models when no criteria provided", () => {
+        it("should return all models when no criteria provided", async () => {
             expect.assertions(1);
 
-            const allModels = getAllModels();
-            const searchResults = searchModels({});
+            const allModels = await getAllModels();
+            const searchResults = await searchModels({});
 
             expect(searchResults).toHaveLength(allModels.length);
         });
     });
 
     describe(getAllModels, () => {
-        it("should return all models", () => {
+        it("should return all models", async () => {
             expect.assertions(2);
 
-            const models = getAllModels();
+            const models = await getAllModels();
 
             expect(Array.isArray(models)).toBe(true);
             expect(models.length).toBeGreaterThan(0);
         });
 
-        it("should return a copy of the models array", () => {
+        it("should return a copy of the models array", async () => {
             expect.assertions(2);
 
-            const models1 = getAllModels();
-            const models2 = getAllModels();
+            const models1 = await getAllModels();
+            const models2 = await getAllModels();
 
             expect(models1).not.toBe(models2); // Should be different references
             expect(models1).toStrictEqual(models2); // But same content
         });
 
-        it("should return models that pass schema validation", () => {
+        it("should return models that pass schema validation", async () => {
             expect.assertions(1);
 
-            const models = getAllModels();
+            const models = await getAllModels();
 
             expect.assertions(models.length);
 
@@ -297,21 +298,21 @@ describe("provider Registry", () => {
     });
 
     describe(getProviderStats, () => {
-        it("should return provider statistics", () => {
+        it("should return provider statistics", async () => {
             expect.assertions(1);
 
-            const stats = getProviderStats();
+            const stats = await getProviderStats();
 
             expectTypeOf(stats).toBeObject();
 
             expect(Object.keys(stats).length).toBeGreaterThan(0);
         });
 
-        it("should return correct model counts", () => {
+        it("should return correct model counts", async () => {
             expect.assertions(1);
 
-            const stats = getProviderStats();
-            const allModels = getAllModels();
+            const stats = await getProviderStats();
+            const allModels = await getAllModels();
 
             // Sum of all provider counts should equal total models
             const totalCount = Object.values(stats).reduce((sum, count) => sum + count, 0);
@@ -319,10 +320,10 @@ describe("provider Registry", () => {
             expect(totalCount).toBe(allModels.length);
         });
 
-        it("should only include providers with models", () => {
+        it("should only include providers with models", async () => {
             expect.assertions(33);
 
-            const stats = getProviderStats();
+            const stats = await getProviderStats();
 
             Object.entries(stats).forEach(([provider, count]) => {
                 expectTypeOf(provider).toBeString();
@@ -334,12 +335,12 @@ describe("provider Registry", () => {
     });
 
     describe("data integrity", () => {
-        it("should have consistent data across all functions", () => {
+        it("should have consistent data across all functions", async () => {
             expect.assertions(3);
 
-            const allModels = getAllModels();
-            const providers = getProviders();
-            const stats = getProviderStats();
+            const allModels = await getAllModels();
+            const providers = await getProviders();
+            const stats = await getProviderStats();
 
             expect.assertions(1 + Object.keys(stats).length + providers.length);
 
@@ -356,17 +357,17 @@ describe("provider Registry", () => {
             });
 
             // All providers in the list should have models
-            providers.forEach((provider) => {
-                const providerModels = getModelsByProvider(provider);
+            for (const provider of providers) {
+                const providerModels = await getModelsByProvider(provider);
 
                 expect(providerModels.length).toBeGreaterThan(0);
-            });
+            }
         });
 
-        it("should have unique model IDs per provider", () => {
+        it("should have unique model IDs per provider", async () => {
             expect.assertions(3);
 
-            const allModels = getAllModels();
+            const allModels = await getAllModels();
 
             // Group models by provider
             const modelsByProvider = new Map<string, Model[]>();

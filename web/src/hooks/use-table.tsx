@@ -809,10 +809,25 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
         [ColumnType.TEXT]: "text",
     };
 
+    // Default options for boolean columns
+    const booleanOptions = [
+        { label: "Yes", value: "true" },
+        { label: "No", value: "false" },
+    ];
+
     const result = filterableConfigs.map((config) => {
         const mappedType = typeMap[config.type] || "text";
 
-        const options = config.filter?.options;
+        // For boolean columns mapped to option type, provide default options if not specified
+        const options = config.filter?.options || (config.type === ColumnType.BOOLEAN ? booleanOptions : undefined);
+
+        // For boolean columns, provide a transform function to convert boolean to ColumnOption
+        const transformOptionFn = config.type === ColumnType.BOOLEAN
+            ? (value: boolean) => ({
+                label: value ? "Yes" : "No",
+                value: String(value),
+            })
+            : undefined;
 
         const accessor
             = config.accessorFn
@@ -830,6 +845,7 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
             icon: iconMap[config.type] || Search,
             id: config.id,
             options,
+            transformOptionFn,
             type: mappedType,
         };
     });
