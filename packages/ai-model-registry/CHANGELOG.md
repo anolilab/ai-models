@@ -1,3 +1,44 @@
+## @anolilab/ai-model-registry [2.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.4.0...@anolilab/ai-model-registry@2.0.0) (2026-01-10)
+
+### ⚠ BREAKING CHANGES
+
+* **ai-model-registry:** All API functions are now async
+
+All exported functions now return Promises and must be awaited. This enables
+code splitting, dynamic imports, and better performance by loading provider
+data on-demand.
+
+Migration:
+- getAllModels() → await getAllModels()
+- getProviders() → await getProviders()
+- getModelsByProvider(provider) → await getModelsByProvider(provider)
+- getModelById(id) → await getModelById(id)
+- searchModels(criteria) → await searchModels(criteria)
+- getProviderStats() → await getProviderStats()
+
+This change enables:
+- Code splitting and dynamic imports for better bundle sizes
+- On-demand loading of provider data
+- Improved tree-shaking capabilities
+- Better scalability as the registry grows
+
+Additional changes:
+- Provider-specific JSON files generated (public/{provider-name}.json)
+- New type exports: @anolilab/ai-model-registry/types/{provider-name}
+- api.json still generated but no longer statically imported
+
+### Features
+
+* add new AI model provider configurations and update package structure ([e2badcb](https://github.com/anolilab/ai-models/commit/e2badcbc204be1a3ff14571c12ad2a3bdcac4afc))
+
+### Bug Fixes
+
+* **ai-model-registry:** update tests for async API ([6795524](https://github.com/anolilab/ai-models/commit/67955243f292dee0ae35e411e04081e6409a5c6d))
+
+### Documentation
+
+* **ai-model-registry:** add migration guide for v1 to v2 transition ([e5d9c4b](https://github.com/anolilab/ai-models/commit/e5d9c4bdbb957e184ac04dfe510544c2ed835bff))
+
 ## @anolilab/ai-model-registry [1.4.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.3.0...@anolilab/ai-model-registry@1.4.0) (2026-01-09)
 
 ### Features
