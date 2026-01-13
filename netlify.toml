@@ -44,10 +44,12 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# API redirect to Unpkg CDN
+# API redirect to internal route
+# Note: This redirect is handled by TanStack Start route at /api.json.tsx
+# The route redirects to /api/json which serves the API data
 [[redirects]]
   from = "/api.json"
-  to = "https://unpkg.com/@anolilab/ai-model-registry/api.json"
+  to = "/api/json"
   status = 302
   force = false
   headers = {Access-Control-Allow-Origin = "*"} 

@@ -25,7 +25,7 @@
         "not ie 11"
     ],
     "dependencies": {
-        "@anolilab/ai-model-registry": "workspace:*",
+        "@anolilab/ai-model-registry": "latest",
         "@c15t/react": "^1.8.2",
         "@c15t/translations": "^1.8.0",
         "@dnd-kit/core": "^6.3.1",
