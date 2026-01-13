@@ -68,7 +68,10 @@
             "types": "./dist/types/*.d.ts",
             "import": "./dist/types/*.js"
         },
-        "./api.json": "./public/api.json"
+        "./providers/*": {
+            "types": "./dist/providers/*.d.ts",
+            "import": "./dist/providers/*.js"
+        }
     },
     "files": [
         "./dist",

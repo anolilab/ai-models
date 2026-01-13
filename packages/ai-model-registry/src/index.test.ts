@@ -229,7 +229,7 @@ describe("provider Registry", () => {
 
                 if (validSmallContextModels.length > 0) {
                     // eslint-disable-next-line vitest/no-conditional-expect
-                    expect(validSmallContextModels.every((model) => model.limit.context! <= 10_000)).toBe(true);
+                    expect(validSmallContextModels.every((model) => model.limit.context <= 10_000)).toBe(true);
                 }
             }
         });
@@ -357,7 +357,7 @@ describe("provider Registry", () => {
             });
 
             // All providers in the list should have models
-            for (const provider of providers) {
+            for await (const provider of providers) {
                 const providerModels = await getModelsByProvider(provider);
 
                 expect(providerModels.length).toBeGreaterThan(0);
@@ -378,7 +378,7 @@ describe("provider Registry", () => {
                 }
 
                 if (model.provider) {
-                    modelsByProvider.get(model.provider)!.push(model);
+                    modelsByProvider.get(model.provider).push(model);
                 }
             });
 

@@ -1,4 +1,231 @@
-# Migration Guide: v1 → v2
+# Migration Guides
+
+## Migration Guide: v2 → v3
+
+This guide will help you migrate from `@anolilab/ai-model-registry` v2.x to v3.0.0.
+
+### Overview
+
+Version 3.0.0 introduces a **breaking change**: the `api.json` export has been removed to improve tree-shaking. Instead, you can now use provider-specific helper functions that import JSON data directly, enabling better code splitting and smaller bundle sizes.
+
+### What Changed?
+
+- ❌ **Removed**: `@anolilab/ai-model-registry/api.json` export
+- ✅ **Added**: Provider-specific helper functions at `@anolilab/ai-model-registry/providers/*`
+- ✅ **Improved**: Better tree-shaking - only import the providers you need
+
+### What Stayed the Same?
+
+- All main API functions (`getModelsByProvider`, `getAllModels`, etc.) still work
+- Model schema and data structure unchanged
+- TypeScript type definitions unchanged
+- Provider-specific JSON files in `public/` directory still exist
+
+### Quick Migration Checklist
+
+- [ ] Find all imports of `@anolilab/ai-model-registry/api.json`
+- [ ] Replace with provider-specific imports or use main API functions
+- [ ] Update any direct JSON fetching/parsing code
+- [ ] Test your application thoroughly
+
+## Step-by-Step Migration
+
+### 1. Update Package Version
+
+```bash
+npm install @anolilab/ai-model-registry@^3.0.0
+# or
+yarn add @anolilab/ai-model-registry@^3.0.0
+# or
+pnpm add @anolilab/ai-model-registry@^3.0.0
+```
+
+### 2. Migrating from Direct JSON Import
+
+#### Before (v2.x)
+
+```typescript
+// ❌ This no longer works
+import apiData from "@anolilab/ai-model-registry/api.json";
+
+const allModels = apiData.models;
+const { metadata } = apiData;
+```
+
+#### After (v3.0.0) - Option 1: Use Main API Functions
+
+```typescript
+// ✅ Use the main API functions (recommended for cross-provider queries)
+import { getAllModels } from "@anolilab/ai-model-registry";
+
+const allModels = await getAllModels();
+```
+
+#### After (v3.0.0) - Option 2: Use Provider-Specific Functions
+
+```typescript
+// ✅ Import only the provider you need (better tree-shaking)
+import { getModels as getAnthropicModels } from "@anolilab/ai-model-registry/providers/anthropic";
+import { getModels } from "@anolilab/ai-model-registry/providers/open-ai";
+
+// Synchronous - no await needed!
+const openAIModels = getModels();
+const anthropicModels = getAnthropicModels();
+```
+
+### 3. Migrating from Fetching JSON via CDN/URL
+
+#### Before (v2.x)
+
+```typescript
+// ❌ Fetching from CDN
+const response = await fetch("https://unpkg.com/@anolilab/ai-model-registry/api.json");
+const apiData = await response.json();
+const allModels = apiData.models;
+```
+
+#### After (v3.0.0)
+
+```typescript
+// ✅ Use the main API function
+import { getAllModels } from "@anolilab/ai-model-registry";
+
+const allModels = await getAllModels();
+```
+
+### 4. Migrating Provider-Specific Code
+
+#### Before (v2.x)
+
+```typescript
+// ❌ Filtering from full API JSON
+import apiData from "@anolilab/ai-model-registry/api.json";
+
+const openAIModels = apiData.models.filter((model) => model.provider === "OpenAI");
+```
+
+#### After (v3.0.0) - Option 1: Provider-Specific Import
+
+```typescript
+// ✅ Direct provider import (best for tree-shaking)
+import { getModels } from "@anolilab/ai-model-registry/providers/open-ai";
+
+const openAIModels = getModels(); // Synchronous!
+```
+
+#### After (v3.0.0) - Option 2: Main API Function
+
+```typescript
+// ✅ Use main API (works for all providers)
+import { getModelsByProvider } from "@anolilab/ai-model-registry";
+
+const openAIModels = await getModelsByProvider("OpenAI");
+```
+
+### 5. Available Provider-Specific Functions
+
+Each provider file exports the following functions:
+
+```typescript
+import {
+    getModelById, // Get a specific model by ID
+    getModelCount, // Get total model count
+    getModels, // Get all models for this provider
+    searchModels, // Search/filter models
+} from "@anolilab/ai-model-registry/providers/open-ai";
+
+// All functions are synchronous (no await needed)
+const models = getModels();
+const model = getModelById("gpt-4");
+const visionModels = searchModels({ vision: true });
+const count = getModelCount();
+```
+
+### 6. Provider File Names
+
+Provider file names use kebab-case. Here are some examples:
+
+| Provider Name  | Import Path                                            |
+| -------------- | ------------------------------------------------------ |
+| OpenAI         | `@anolilab/ai-model-registry/providers/open-ai`        |
+| Anthropic      | `@anolilab/ai-model-registry/providers/anthropic`      |
+| Google         | `@anolilab/ai-model-registry/providers/google`         |
+| Azure OpenAI   | `@anolilab/ai-model-registry/providers/azure-open-ai`  |
+| Amazon Bedrock | `@anolilab/ai-model-registry/providers/amazon-bedrock` |
+| Hugging Face   | `@anolilab/ai-model-registry/providers/hugging-face`   |
+
+### 7. Example: Migrating a React Component
+
+#### Before (v2.x)
+
+```typescript
+import { useEffect, useState } from "react";
+import apiData from "@anolilab/ai-model-registry/api.json";
+
+function ModelList() {
+    const [models, setModels] = useState(apiData.models);
+
+    return <div>{/* render models */}</div>;
+}
+```
+
+#### After (v3.0.0) - Option 1: Provider-Specific
+
+```typescript
+import { useState } from "react";
+import { getModels } from "@anolilab/ai-model-registry/providers/open-ai";
+
+function ModelList() {
+    const [models] = useState(() => getModels()); // Synchronous!
+
+    return <div>{/* render models */}</div>;
+}
+```
+
+#### After (v3.0.0) - Option 2: Main API
+
+```typescript
+import { useEffect, useState } from "react";
+import { getAllModels } from "@anolilab/ai-model-registry";
+
+function ModelList() {
+    const [models, setModels] = useState([]);
+
+    useEffect(() => {
+        getAllModels().then(setModels);
+    }, []);
+
+    return <div>{/* render models */}</div>;
+}
+```
+
+## Benefits of v3.0.0
+
+- **Better Tree-Shaking**: Import only the providers you need
+- **Smaller Bundles**: Unused providers won't be included in your bundle
+- **Synchronous Provider Functions**: Provider-specific functions are synchronous (no await needed)
+- **Improved Performance**: Direct JSON imports enable better optimization by bundlers
+
+## Breaking Changes Summary
+
+| Feature                   | v2.x                                                   | v3.0.0                                                                      |
+| ------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------- |
+| `api.json` export         | ✅ Available at `@anolilab/ai-model-registry/api.json` | ❌ Removed                                                                  |
+| Provider-specific imports | ❌ Not available                                       | ✅ Available at `@anolilab/ai-model-registry/providers/*`                   |
+| Provider functions        | ❌ Not available                                       | ✅ Synchronous functions: `getModels()`, `getModelById()`, `searchModels()` |
+| Main API functions        | ✅ Async: `await getAllModels()`                       | ✅ Still async: `await getAllModels()` (unchanged)                          |
+
+## Need Help?
+
+If you encounter issues during migration:
+
+1. Check the [README.md](./README.md) for the latest API documentation
+2. Review the [examples](#step-by-step-migration) above
+3. Open an issue on [GitHub](https://github.com/anolilab/ai-models/issues)
+
+---
+
+## Migration Guide: v1 → v2
 
 This guide will help you migrate from `@anolilab/ai-model-registry` v1.x to v2.0.0.
 
@@ -327,7 +554,7 @@ async function loadProviderModels(providerNames: ProviderName[]) {
             return {
                 models: await getModelsByProvider(provider),
                 provider,
-            }
+            };
         }),
     );
 

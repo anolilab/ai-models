@@ -4,6 +4,7 @@ import transformer from "@visulima/packem/transformer/esbuild";
 
 export default defineConfig({
     runtime: "node",
+    cjsInterop: false,
     rollup: {
         license: {
             path: "./LICENSE.md",

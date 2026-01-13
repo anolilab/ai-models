@@ -158,6 +158,7 @@ export const searchModels = async (criteria: {
 }): Promise<Model[]> => {
     const modelsToSearch = criteria.provider ? await loadProviderModels(criteria.provider) ?? await loadAllModels() : await loadAllModels();
 
+    // eslint-disable-next-line sonarjs/cognitive-complexity
     return modelsToSearch.filter((model) => {
         if (criteria.vision !== undefined && model.vision !== criteria.vision) {
             return false;
