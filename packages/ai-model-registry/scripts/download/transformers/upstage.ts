@@ -8,7 +8,10 @@ const UPSTAGE_MODELS_URL = "https://console.upstage.ai/docs/models/history";
  * Extract model information from the Upstage models page using Puppeteer.
  */
 const extractModelsFromPage = async (): Promise<Model[]> => {
-    const browser = await launch({ headless: true });
+    const browser = await launch({
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+        headless: true,
+    });
     const page = await browser.newPage();
 
     try {
