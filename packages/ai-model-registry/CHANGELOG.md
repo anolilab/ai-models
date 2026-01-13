@@ -1,3 +1,10 @@
+## @anolilab/ai-model-registry [4.0.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.0...@anolilab/ai-model-registry@4.0.1) (2026-01-13)
+
+### Bug Fixes
+
+* Added package.json mapping for the package.json file in the ai-model-registry directory. ([c50ed28](https://github.com/anolilab/ai-models/commit/c50ed28a4f1538084b8fc516dbff533051df4341))
+* **upstage:** add Puppeteer launch arguments for improved browser performance ([a5cc143](https://github.com/anolilab/ai-models/commit/a5cc14391b60c8b37e5636745e86e6bf07a8a264))
+
 ## @anolilab/ai-model-registry [4.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@3.0.0...@anolilab/ai-model-registry@4.0.0) (2026-01-13)
 
 ### ⚠ BREAKING CHANGES

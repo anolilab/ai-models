@@ -1,6 +1,6 @@
 {
     "name": "@anolilab/ai-model-registry",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "Unified registry for AI model providers and their metadata",
     "keywords": [
         "ai",
