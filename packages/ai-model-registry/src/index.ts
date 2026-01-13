@@ -1,30 +1,77 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { kebabCase } from "@visulima/string";
+/* eslint-disable import/no-namespace */
 
+import * as alibabaProvider from "./providers/alibaba";
+import * as amazonBedrockProvider from "./providers/amazon-bedrock";
+import * as anthropicProvider from "./providers/anthropic";
+import * as azureOpenAiProvider from "./providers/azure-open-ai";
+import * as cerebrasProvider from "./providers/cerebras";
+import * as chutesProvider from "./providers/chutes";
+import * as cloudflareProvider from "./providers/cloudflare";
+import * as deepInfraProvider from "./providers/deep-infra";
+import * as deepSeekProvider from "./providers/deep-seek";
+import * as fireworksAiProvider from "./providers/fireworks-ai";
+import * as gitHubCopilotProvider from "./providers/git-hub-copilot";
+import * as gitHubModelsProvider from "./providers/git-hub-models";
+import * as googleProvider from "./providers/google";
+import * as googlePartnerProvider from "./providers/google-partner";
+import * as googleVertexProvider from "./providers/google-vertex";
+import * as groqProvider from "./providers/groq";
+import * as huggingFaceProvider from "./providers/hugging-face";
+import * as inceptionProvider from "./providers/inception";
+import * as inferenceProvider from "./providers/inference";
+import * as metaProvider from "./providers/meta";
+import * as mistralProvider from "./providers/mistral";
+import * as modelScopeProvider from "./providers/model-scope";
+import * as morphProvider from "./providers/morph";
+import * as openAiProvider from "./providers/open-ai";
+import * as openRouterProvider from "./providers/open-router";
+import * as requestyProvider from "./providers/requesty";
+import * as togetherAiProvider from "./providers/together-ai";
+import * as upstageProvider from "./providers/upstage";
+import * as v0Provider from "./providers/v0";
+import * as veniceProvider from "./providers/venice";
+import * as vercelProvider from "./providers/vercel";
+import * as weightsBiasesProvider from "./providers/weights-&-biases";
+import * as xaiProvider from "./providers/xai";
 import type { Model } from "./schema";
 import type { ProviderName } from "./types/providers";
 
-interface ApiJsonResponse {
-    metadata: {
-        description: string;
-        lastUpdated: string;
-        provider?: ProviderName;
-        totalModels: number;
-        totalProviders?: number;
-        version: string;
-    };
-    models: Model[];
-}
-
-interface ProvidersIndex {
-    metadata: {
-        description: string;
-        lastUpdated: string;
-        totalProviders: number;
-        version: string;
-    };
-    providers: ProviderName[];
-}
+// Map provider names to their provider modules
+const providerMap = new Map<ProviderName, { getModels: () => Model[] }>([
+    ["Alibaba", alibabaProvider],
+    ["Amazon Bedrock", amazonBedrockProvider],
+    ["Anthropic", anthropicProvider],
+    ["Azure OpenAI", azureOpenAiProvider],
+    ["cerebras", cerebrasProvider],
+    ["chutes", chutesProvider],
+    ["Cloudflare", cloudflareProvider],
+    ["Deep Infra", deepInfraProvider],
+    ["DeepSeek", deepSeekProvider],
+    ["Fireworks AI", fireworksAiProvider],
+    ["GitHub Copilot", gitHubCopilotProvider],
+    ["GitHub Models", gitHubModelsProvider],
+    ["Google", googleProvider],
+    ["Google Partner", googlePartnerProvider],
+    ["Google Vertex", googleVertexProvider],
+    ["Groq", groqProvider],
+    ["Hugging Face", huggingFaceProvider],
+    ["inception", inceptionProvider],
+    ["Inference", inferenceProvider],
+    ["Meta", metaProvider],
+    ["Mistral", mistralProvider],
+    ["ModelScope", modelScopeProvider],
+    ["Morph", morphProvider],
+    ["OpenAI", openAiProvider],
+    ["OpenRouter", openRouterProvider],
+    ["Requesty", requestyProvider],
+    ["Together AI", togetherAiProvider],
+    ["Upstage", upstageProvider],
+    ["V0", v0Provider],
+    ["Venice", veniceProvider],
+    ["Vercel", vercelProvider],
+    ["Weights & Biases", weightsBiasesProvider],
+    ["XAI", xaiProvider],
+]);
 
 let allModelsCache: Model[] | null = null;
 const modelsByProviderCache = new Map<ProviderName, Model[]>();
@@ -37,17 +84,17 @@ const loadProviderModels = async (provider: ProviderName): Promise<Model[] | nul
         return cached;
     }
 
-    try {
-        const {
-            default: { models },
-        } = (await import(`../public/${kebabCase(provider)}.json`)) as { default: ApiJsonResponse };
+    const providerModule = providerMap.get(provider);
+
+    if (providerModule) {
+        const models = providerModule.getModels();
 
         modelsByProviderCache.set(provider, models);
 
         return models;
-    } catch {
-        return null;
     }
+
+    return null;
 };
 
 const loadProvidersList = async (): Promise<ProviderName[]> => {
@@ -55,18 +102,10 @@ const loadProvidersList = async (): Promise<ProviderName[]> => {
         return providersListCache;
     }
 
-    try {
-        // @ts-ignore - File is generated at build time
-        const {
-            default: { providers },
-        } = (await import("../public/providers.json")) as { default: ProvidersIndex };
+    // Use all providers from the provider map (no dynamic imports needed)
+    providersListCache = Array.from(providerMap.keys()).sort();
 
-        providersListCache = providers as ProviderName[];
-
-        return providersListCache;
-    } catch {
-        return [];
-    }
+    return providersListCache;
 };
 
 const loadAllModels = async (): Promise<Model[]> => {
@@ -103,7 +142,7 @@ export const getProviders = async (): Promise<ProviderName[]> => {
 
 /**
  * Retrieves all AI models for a specific provider.
- * First tries to load from provider-specific JSON file, falls back to filtering all models.
+ * First tries to load from provider-specific module, falls back to filtering all models.
  * @param provider The name of the provider to filter by.
  * @returns Promise that resolves to an array of models belonging to the specified provider.
  */
