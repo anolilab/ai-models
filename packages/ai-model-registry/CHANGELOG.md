@@ -1,3 +1,18 @@
+## @anolilab/ai-model-registry [3.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@2.0.0...@anolilab/ai-model-registry@3.0.0) (2026-01-13)
+
+### ⚠ BREAKING CHANGES
+
+* **ai-model-registry:** See MIGRATION.md
+
+### Features
+
+* **ai-model-registry:** enhance provider integration and update migration guide ([bfd965e](https://github.com/anolilab/ai-models/commit/bfd965e84d8dcf21b5d0423c6625e38782f0d68f))
+* **ai-model-registry:** refactor provider loading mechanism ([26c7ccc](https://github.com/anolilab/ai-models/commit/26c7cccc4ebe40873b9ec17855de368b8fafd64b))
+
+### Miscellaneous Chores
+
+* **deps:** update dependencies across multiple packages ([32a60c5](https://github.com/anolilab/ai-models/commit/32a60c51ba1128f1703ef5ae8320af742040c11b))
+
 ## @anolilab/ai-model-registry [2.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@1.4.0...@anolilab/ai-model-registry@2.0.0) (2026-01-10)
 
 ### ⚠ BREAKING CHANGES
