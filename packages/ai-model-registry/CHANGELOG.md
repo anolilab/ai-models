@@ -1,3 +1,16 @@
+## @anolilab/ai-model-registry [4.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@3.0.0...@anolilab/ai-model-registry@4.0.0) (2026-01-13)
+
+### ⚠ BREAKING CHANGES
+
+* **ai-model-registry:** Ensure to update any references to the modified model structures in your implementation.
+* **ai-model-registry:** Ensure to update any references to the removed api.json in your implementation.
+
+### Features
+
+* **ai-model-registry:** add AIHubMix provider and update model configurations ([3c00caf](https://github.com/anolilab/ai-models/commit/3c00caf6368c24f118cbd765b4ac12cf0c0afed3))
+* **ai-model-registry:** add new provider and update model configurations ([ff86548](https://github.com/anolilab/ai-models/commit/ff86548ec782bb8ded318a291a96aaa5332baff3))
+* **ai-model-registry:** update release configuration and add TODO for missing providers ([89d47bd](https://github.com/anolilab/ai-models/commit/89d47bd438e77f112aa847b5cd88c4e57987b90d))
+
 ## @anolilab/ai-model-registry [3.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@2.0.0...@anolilab/ai-model-registry@3.0.0) (2026-01-13)
 
 ### ⚠ BREAKING CHANGES
