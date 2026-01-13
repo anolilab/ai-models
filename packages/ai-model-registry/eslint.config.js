@@ -19,6 +19,10 @@ export default createConfig(
             "data",
             "assets",
             "src/icons-sprite.ts",
+            "scripts",
+            "public",
+            ".prettierrc.cjs",
+            "MIGRATION.md",
         ],
         jsx: false,
         react: false,
@@ -35,9 +39,10 @@ export default createConfig(
         },
     },
     {
-        files: ["src/models-data.ts"],
+        files: ["src/providers/*.ts", "src/types/*.ts"],
         rules: {
             "no-secrets/no-secrets": "off",
+            "sonarjs/cognitive-complexity": "off",
         },
     },
     {
