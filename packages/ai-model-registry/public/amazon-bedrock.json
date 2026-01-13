@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Amazon Bedrock",
-        "lastUpdated": "2026-01-13T13:52:36.123Z",
+        "lastUpdated": "2026-01-13T19:46:51.724Z",
         "provider": "Amazon Bedrock",
         "totalModels": 66,
         "version": "0.0.0-development"

@@ -157,15 +157,15 @@ const discoverPartnerModels = async (): Promise<PartnerModel[]> => {
                 const linkText = $link.text().trim();
 
                 if (
-                    href
-                    && linkText
-                    && href.includes(`/partner-models/${partner.slug}/`)
-                    && !linkText.includes("Overview")
-                    && !linkText.includes("Request predictions")
-                    && !linkText.includes("Batch predictions")
-                    && !linkText.includes("Prompt caching")
-                    && !linkText.includes("Count tokens")
-                    && !linkText.includes("Learn how to use")
+                    href &&
+                    linkText &&
+                    href.includes(`/partner-models/${partner.slug}/`) &&
+                    !linkText.includes("Overview") &&
+                    !linkText.includes("Request predictions") &&
+                    !linkText.includes("Batch predictions") &&
+                    !linkText.includes("Prompt caching") &&
+                    !linkText.includes("Count tokens") &&
+                    !linkText.includes("Learn how to use")
                 ) {
                     const urlParts = href.split("/");
                     const slug = urlParts[urlParts.length - 1];

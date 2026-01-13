@@ -4,10 +4,10 @@ import axios from "axios";
 import type { Model } from "../../../src/schema.js";
 
 const AZURE_MODELS_URL = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md";
-const AZURE_CHAT_COMPLETIONS_URL
-    = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/model-matrix/standard-chat-completions.md";
-const AZURE_RETIREMENT_URL
-    = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/retirement/models.md";
+const AZURE_CHAT_COMPLETIONS_URL =
+    "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/model-matrix/standard-chat-completions.md";
+const AZURE_RETIREMENT_URL =
+    "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/retirement/models.md";
 
 /**
  * Parse training cutoff date from string.
@@ -61,14 +61,14 @@ const extractModelNamesFromChatCompletions = (markdownContent: string): string[]
 
                     // Only include actual model names (not regions, categories, etc.)
                     if (
-                        modelName
-                        && modelName !== "Region"
-                        && !modelName.includes("Region")
-                        && (modelName.startsWith("gpt-")
-                            || modelName.startsWith("o1")
-                            || modelName.startsWith("o3")
-                            || modelName.startsWith("o4")
-                            || modelName.startsWith("codex"))
+                        modelName &&
+                        modelName !== "Region" &&
+                        !modelName.includes("Region") &&
+                        (modelName.startsWith("gpt-") ||
+                            modelName.startsWith("o1") ||
+                            modelName.startsWith("o3") ||
+                            modelName.startsWith("o4") ||
+                            modelName.startsWith("codex"))
                     ) {
                         // Combine model name and version
                         const fullModelName = `${modelName} (${version})`;
@@ -141,14 +141,14 @@ const extractRetirementInfo = (markdownContent: string): Map<string, RetirementI
 
         // Detect tab sections (reset table state)
         if (
-            line.includes("# [Text generation](#tab/text)")
-            || line.includes("### Text generation")
-            || line.includes("# [Audio](#tab/audio)")
-            || line.includes("### Audio")
-            || line.includes("# [Image and video](#tab/image)")
-            || line.includes("### Image and video")
-            || line.includes("# [Embedding](#tab/embedding)")
-            || line.includes("### Embedding")
+            line.includes("# [Text generation](#tab/text)") ||
+            line.includes("### Text generation") ||
+            line.includes("# [Audio](#tab/audio)") ||
+            line.includes("### Audio") ||
+            line.includes("# [Image and video](#tab/image)") ||
+            line.includes("### Image and video") ||
+            line.includes("# [Embedding](#tab/embedding)") ||
+            line.includes("### Embedding")
         ) {
             inTable = false;
             headerFound = false;
@@ -352,12 +352,12 @@ const createBaseModel = (modelName: string): Model => {
     const hasVision = modelName.toLowerCase().includes("gpt-4o") || modelName.toLowerCase().includes("gpt-4v") || modelName.toLowerCase().includes("vision");
 
     // Determine if model supports tool calling
-    const hasToolCall
-        = modelName.toLowerCase().includes("gpt-4")
-            || modelName.toLowerCase().includes("claude")
-            || modelName.toLowerCase().includes("o1")
-            || modelName.toLowerCase().includes("o3")
-            || modelName.toLowerCase().includes("o4");
+    const hasToolCall =
+        modelName.toLowerCase().includes("gpt-4") ||
+        modelName.toLowerCase().includes("claude") ||
+        modelName.toLowerCase().includes("o1") ||
+        modelName.toLowerCase().includes("o3") ||
+        modelName.toLowerCase().includes("o4");
 
     return {
         attachment: false,

@@ -102,14 +102,11 @@ const parseParameters = (paramStr: string): number | null => {
  */
 const estimateContextLength = (parameters: number): number => {
     // Rough estimation based on model size
-    if (parameters >= 200)
-        return 32768; // Large models
+    if (parameters >= 200) return 32768; // Large models
 
-    if (parameters >= 100)
-        return 16384; // Medium-large models
+    if (parameters >= 100) return 16384; // Medium-large models
 
-    if (parameters >= 50)
-        return 8192; // Medium models
+    if (parameters >= 50) return 8192; // Medium models
 
     return 4096; // Small models
 };

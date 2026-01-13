@@ -553,11 +553,11 @@ export const fetchModelScopeModels = async (): Promise<Model[]> => {
                             const hasAttachment = hasAttachmentCapability(tasks, modelType, modelName, tags);
 
                             // Determine streaming support
-                            const streamingSupported
-                                = modelData.SupportInference === "txt2txt"
-                                    || modelData.SupportInference === "txt2img"
-                                    || modelData.SupportInference === "img2txt"
-                                    || true; // Most models support streaming
+                            const streamingSupported =
+                                modelData.SupportInference === "txt2txt" ||
+                                modelData.SupportInference === "txt2img" ||
+                                modelData.SupportInference === "img2txt" ||
+                                true; // Most models support streaming
 
                             const model: Model = {
                                 attachment: hasAttachment,

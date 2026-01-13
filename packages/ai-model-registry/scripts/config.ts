@@ -198,6 +198,7 @@ export const BRAND_NAME_MAP: Record<string, string> = {
     requesty: "Requesty",
     togetherai: "Together AI",
     upstage: "Upstage",
+    ollama: "Ollama Cloud",
     v0: "V0",
     venice: "Venice",
     vercel: "Vercel",
@@ -504,5 +505,14 @@ export const PROVIDERS_CONFIG: ProviderConfig[] = [
         npm: "@ai-sdk/openai-compatible",
         output: "inception",
         transformer: "./transformers/inception.ts",
+    },
+    {
+        doc: "https://docs.ollama.com/cloud",
+        env: ["OLLAMA_API_KEY"],
+        modelsDevId: "ollama-cloud",
+        name: "Ollama Cloud",
+        npm: "@ai-sdk/openai-compatible",
+        output: "ollama-cloud",
+        transformer: "./transformers/ollama-cloud.ts",
     },
 ];

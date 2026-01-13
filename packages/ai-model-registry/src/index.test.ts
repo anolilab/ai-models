@@ -29,7 +29,7 @@ describe("provider Registry", () => {
             expect.assertions(1);
 
             const providers = await getProviders();
-            const sortedProviders = [...providers].sort();
+            const sortedProviders = providers.toSorted();
 
             expect(providers).toStrictEqual(sortedProviders);
         });
@@ -321,9 +321,10 @@ describe("provider Registry", () => {
         });
 
         it("should only include providers with models", async () => {
-            expect.assertions(33);
-
             const stats = await getProviderStats();
+            const providerCount = Object.keys(stats).length;
+
+            expect.assertions(providerCount);
 
             Object.entries(stats).forEach(([provider, count]) => {
                 expectTypeOf(provider).toBeString();

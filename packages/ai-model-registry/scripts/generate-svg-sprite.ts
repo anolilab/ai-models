@@ -106,11 +106,11 @@ const extractSvgFromCustomIcon = (providerName: string): string | null => {
             `${providerName.replace(" ", "_")}.svg`,
             `${providerName.replace(" ", "_")}.png`,
             // Special case for xai -> x-ai
-            ...providerName === "xai" ? ["x-ai.svg", "x-ai.png"] : [],
+            ...(providerName === "xai" ? ["x-ai.svg", "x-ai.png"] : []),
             // Special case for amazon bedrock -> amazon-bedrock
-            ...providerName === "amazon bedrock" ? ["amazon-bedrock.svg", "amazon-bedrock.png"] : [],
+            ...(providerName === "amazon bedrock" ? ["amazon-bedrock.svg", "amazon-bedrock.png"] : []),
             // Special case for weights & biases -> wandb
-            ...providerName === "weights & biases" ? ["wandb.svg", "wandb.png"] : [],
+            ...(providerName === "weights & biases" ? ["wandb.svg", "wandb.png"] : []),
         ];
 
         for (const fileName of possibleNames) {
@@ -253,7 +253,7 @@ const extractSvgContent = (iconName: string, isCustom = false): { content: strin
 
 const generateSpriteSheet = (): void => {
     const iconSymbols: IconData = {};
-    let spriteContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">\n";
+    let spriteContent = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n';
 
     // Get unique providers from model data
     const uniqueProviders = getUniqueProvidersFromModels();

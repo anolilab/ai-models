@@ -47,7 +47,7 @@ const parseModelsFromMainPage = (
     const models: { badges: string[]; category: string; description: string; detailUrl: string; id: string; name: string; provider: string }[] = [];
 
     // Find all model cards (links with href containing /workers-ai/models/)
-    $("a[href*=\"/workers-ai/models/\"]").each((index, element) => {
+    $('a[href*="/workers-ai/models/"]').each((index, element) => {
         const $link = $(element);
         const href = $link.attr("href");
 
@@ -123,7 +123,7 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
         const details: Partial<CloudflareModelData> = {};
 
         // Try to extract context length
-        const contextText = $("*:contains(\"context\")")
+        const contextText = $('*:contains("context")')
             .filter((i, el) => {
                 const text = $(el).text().toLowerCase();
 
@@ -143,7 +143,7 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
         }
 
         // Try to extract pricing information
-        const pricingText = $("*:contains(\"pricing\")")
+        const pricingText = $('*:contains("pricing")')
             .filter((i, el) => {
                 const text = $(el).text().toLowerCase();
 

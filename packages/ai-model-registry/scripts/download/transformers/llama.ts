@@ -94,13 +94,13 @@ export const fetchLlamaModels = async (): Promise<Model[]> => {
                     const id = modelLink?.getAttribute("href")?.replace("#", "") || "";
                     const name = cells[0].textContent?.trim() || "";
                     const provider = cells[1].textContent?.trim() || "";
-                    const inputModalities
-                        = cells[2].textContent
+                    const inputModalities =
+                        cells[2].textContent
                             ?.trim()
                             .split(",")
                             .map((m) => m.trim().toLowerCase()) || [];
-                    const outputModalities
-                        = cells[3].textContent
+                    const outputModalities =
+                        cells[3].textContent
                             ?.trim()
                             .split(",")
                             .map((m) => m.trim().toLowerCase()) || [];

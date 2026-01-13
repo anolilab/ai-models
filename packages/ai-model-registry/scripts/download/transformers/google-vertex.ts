@@ -31,21 +31,21 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
 
                     // Check if this looks like a model name and has a valid href
                     if (
-                        href
-                        && modelName
-                        && modelName.length > 3
-                        && modelName.length < 100
-                        && (modelName.toLowerCase().includes("gemini")
-                            || modelName.toLowerCase().includes("palm")
-                            || modelName.toLowerCase().includes("pro")
-                            || modelName.toLowerCase().includes("ultra")
-                            || modelName.toLowerCase().includes("imagen")
-                            || modelName.toLowerCase().includes("veo")
-                            || modelName.toLowerCase().includes("gemma")
-                            || modelName.toLowerCase().includes("embedding"))
-                        && !modelName.toLowerCase().includes("overview")
-                        && !modelName.toLowerCase().includes("tutorial")
-                        && !modelName.toLowerCase().includes("quickstart")
+                        href &&
+                        modelName &&
+                        modelName.length > 3 &&
+                        modelName.length < 100 &&
+                        (modelName.toLowerCase().includes("gemini") ||
+                            modelName.toLowerCase().includes("palm") ||
+                            modelName.toLowerCase().includes("pro") ||
+                            modelName.toLowerCase().includes("ultra") ||
+                            modelName.toLowerCase().includes("imagen") ||
+                            modelName.toLowerCase().includes("veo") ||
+                            modelName.toLowerCase().includes("gemma") ||
+                            modelName.toLowerCase().includes("embedding")) &&
+                        !modelName.toLowerCase().includes("overview") &&
+                        !modelName.toLowerCase().includes("tutorial") &&
+                        !modelName.toLowerCase().includes("quickstart")
                     ) {
                         console.log(`[Google Vertex] Found model: ${modelName}`);
 
@@ -77,10 +77,10 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                             },
                             modalities: {
                                 input:
-                                    modelName.toLowerCase().includes("vision")
-                                    || modelName.toLowerCase().includes("pro")
-                                    || modelName.toLowerCase().includes("ultra")
-                                    || modelName.toLowerCase().includes("imagen")
+                                    modelName.toLowerCase().includes("vision") ||
+                                    modelName.toLowerCase().includes("pro") ||
+                                    modelName.toLowerCase().includes("ultra") ||
+                                    modelName.toLowerCase().includes("imagen")
                                         ? ["text", "image"]
                                         : ["text"],
                                 output: modelName.toLowerCase().includes("imagen") || modelName.toLowerCase().includes("veo") ? ["image", "video"] : ["text"],
@@ -99,10 +99,10 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                             temperature: true,
                             toolCall: modelName.toLowerCase().includes("pro") || modelName.toLowerCase().includes("ultra"),
                             vision:
-                                modelName.toLowerCase().includes("vision")
-                                || modelName.toLowerCase().includes("pro")
-                                || modelName.toLowerCase().includes("ultra")
-                                || modelName.toLowerCase().includes("imagen"),
+                                modelName.toLowerCase().includes("vision") ||
+                                modelName.toLowerCase().includes("pro") ||
+                                modelName.toLowerCase().includes("ultra") ||
+                                modelName.toLowerCase().includes("imagen"),
                         };
 
                         models.push(model);
@@ -140,10 +140,10 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                             },
                             modalities: {
                                 input:
-                                    modelName.toLowerCase().includes("vision")
-                                    || modelName.toLowerCase().includes("pro")
-                                    || modelName.toLowerCase().includes("ultra")
-                                    || modelName.toLowerCase().includes("imagen")
+                                    modelName.toLowerCase().includes("vision") ||
+                                    modelName.toLowerCase().includes("pro") ||
+                                    modelName.toLowerCase().includes("ultra") ||
+                                    modelName.toLowerCase().includes("imagen")
                                         ? ["text", "image"]
                                         : ["text"],
                                 output: modelName.toLowerCase().includes("imagen") || modelName.toLowerCase().includes("veo") ? ["image", "video"] : ["text"],
@@ -162,10 +162,10 @@ const scrapeGoogleVertexDocs = async (): Promise<Model[]> => {
                             temperature: true,
                             toolCall: modelName.toLowerCase().includes("pro") || modelName.toLowerCase().includes("ultra"),
                             vision:
-                                modelName.toLowerCase().includes("vision")
-                                || modelName.toLowerCase().includes("pro")
-                                || modelName.toLowerCase().includes("ultra")
-                                || modelName.toLowerCase().includes("imagen"),
+                                modelName.toLowerCase().includes("vision") ||
+                                modelName.toLowerCase().includes("pro") ||
+                                modelName.toLowerCase().includes("ultra") ||
+                                modelName.toLowerCase().includes("imagen"),
                         };
 
                         models.push(model);

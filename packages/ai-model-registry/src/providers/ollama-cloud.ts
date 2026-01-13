@@ -1,5 +1,5 @@
 // Import JSON data directly - this enables better tree-shaking
-import providerData from "../../public/inception.json";
+import providerData from "../../public/ollama-cloud.json";
 import type { Model } from "../schema.js";
 
 interface ApiJsonResponse {
@@ -16,13 +16,13 @@ interface ApiJsonResponse {
 const { models } = providerData as ApiJsonResponse;
 
 /**
- * Retrieves all AI models for inception.
- * @returns Array of models belonging to inception.
+ * Retrieves all AI models for Ollama Cloud.
+ * @returns Array of models belonging to Ollama Cloud.
  */
 export const getModels = (): Model[] => [...models];
 
 /**
- * Retrieves a specific AI model by its unique identifier for inception.
+ * Retrieves a specific AI model by its unique identifier for Ollama Cloud.
  * @param id The unique identifier of the model to retrieve.
  * @returns The model if found, undefined otherwise.
  */
@@ -35,7 +35,7 @@ export const getModelById = (id: string): Model | undefined => {
 };
 
 /**
- * Searches and filters AI models for inception based on various criteria.
+ * Searches and filters AI models for Ollama Cloud based on various criteria.
  * @param criteria The search criteria to filter models by.
  * @param criteria.context_min Minimum context window size (excludes models with null/undefined context).
  * @param criteria.context_max Maximum context window size (excludes models with null/undefined context).
@@ -103,7 +103,7 @@ export const searchModels = (criteria: {
     });
 
 /**
- * Gets the total number of models for inception.
+ * Gets the total number of models for Ollama Cloud.
  * @returns The number of models.
  */
 export const getModelCount = (): number => models.length;

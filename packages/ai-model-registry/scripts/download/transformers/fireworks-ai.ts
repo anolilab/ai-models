@@ -4,8 +4,8 @@ import axios from "axios";
 import type { Model } from "../../../src/schema.js";
 
 /* eslint-disable no-secrets/no-secrets */
-const FIREWORKS_SANITY_API_URL
-    = "https://pv37i0yn.apicdn.sanity.io/v2024-07-09/data/query/production?query=*%5B_type+%3D%3D+%22model%22%5D%5BmodelName+match+%24search+%7C%7C+count%28modelType%5B_type+%3D%3D+%22reference%22+%26%26+%40-%3Ename+match+%24search%5D%29+%3E+0%5D%5Bpublic+%3D%3D+true%5D+%7B+_id%2C+modelName%2C+new%2C+%22provider%22%3A+provider-%3E+%7B+%22company%22%3A+company-%3E+%7B+name%2C+%22lightLogo%22%3A+lightLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22darkLogo%22%3A+darkLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22mark%22%3A+mark+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D+%7D+%7D%2C+%22modelType%22%3A+modelType%5B%5D-%3E+%7B+_id%2C+name%2C+iconColor%2C+icon+%7D%2C+contextLength%2C+pricingInput%2C+pricingOutput%2C+pricingUnit%2C+collapsePricing%2C+%22slug%22%3A+seo.slug.current+%7D&%24search=%22*%22&returnQuery=false&perspective=published";
+const FIREWORKS_SANITY_API_URL =
+    "https://pv37i0yn.apicdn.sanity.io/v2024-07-09/data/query/production?query=*%5B_type+%3D%3D+%22model%22%5D%5BmodelName+match+%24search+%7C%7C+count%28modelType%5B_type+%3D%3D+%22reference%22+%26%26+%40-%3Ename+match+%24search%5D%29+%3E+0%5D%5Bpublic+%3D%3D+true%5D+%7B+_id%2C+modelName%2C+new%2C+%22provider%22%3A+provider-%3E+%7B+%22company%22%3A+company-%3E+%7B+name%2C+%22lightLogo%22%3A+lightLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22darkLogo%22%3A+darkLogo+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D%2C+%22mark%22%3A+mark+%7B+%22asset%22%3A+asset-%3E%2C+alt%2C+caption+%7D+%7D+%7D%2C+%22modelType%22%3A+modelType%5B%5D-%3E+%7B+_id%2C+name%2C+iconColor%2C+icon+%7D%2C+contextLength%2C+pricingInput%2C+pricingOutput%2C+pricingUnit%2C+collapsePricing%2C+%22slug%22%3A+seo.slug.current+%7D&%24search=%22*%22&returnQuery=false&perspective=published";
 /* eslint-enable no-secrets/no-secrets */
 const FIREWORKS_DOCS_URL = "https://readme.fireworks.ai/";
 
@@ -113,8 +113,8 @@ const transformSingleModel = (modelData: SanityModel): Model | null => {
     const cost = convertPricing(pricingInput, pricingOutput, pricingUnit);
 
     /* Generate model ID from slug or model name */
-    const modelId
-        = slug.replace("fireworks/", "accounts/fireworks/models/") || kebabCase(modelName).replace("accounts-fireworks-models-", "accounts/fireworks/models/");
+    const modelId =
+        slug.replace("fireworks/", "accounts/fireworks/models/") || kebabCase(modelName).replace("accounts-fireworks-models-", "accounts/fireworks/models/");
 
     return {
         attachment: false,

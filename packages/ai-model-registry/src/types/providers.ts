@@ -28,6 +28,7 @@ export type ProviderName
         | "Mistral"
         | "ModelScope"
         | "Morph"
+        | "Ollama Cloud"
         | "OpenAI"
         | "OpenRouter"
         | "Requesty"
@@ -66,6 +67,7 @@ export const PROVIDER_NAMES = [
     "Mistral",
     "ModelScope",
     "Morph",
+    "Ollama Cloud",
     "OpenAI",
     "OpenRouter",
     "Requesty",

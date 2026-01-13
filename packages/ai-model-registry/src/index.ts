@@ -23,6 +23,7 @@ import * as metaProvider from "./providers/meta";
 import * as mistralProvider from "./providers/mistral";
 import * as modelScopeProvider from "./providers/model-scope";
 import * as morphProvider from "./providers/morph";
+import * as ollamaCloudProvider from "./providers/ollama-cloud";
 import * as openAiProvider from "./providers/open-ai";
 import * as openRouterProvider from "./providers/open-router";
 import * as requestyProvider from "./providers/requesty";
@@ -61,6 +62,7 @@ const providerMap = new Map<ProviderName, { getModels: () => Model[] }>([
     ["Mistral", mistralProvider],
     ["ModelScope", modelScopeProvider],
     ["Morph", morphProvider],
+    ["Ollama Cloud", ollamaCloudProvider],
     ["OpenAI", openAiProvider],
     ["OpenRouter", openRouterProvider],
     ["Requesty", requestyProvider],
@@ -103,7 +105,7 @@ const loadProvidersList = async (): Promise<ProviderName[]> => {
     }
 
     // Use all providers from the provider map (no dynamic imports needed)
-    providersListCache = Array.from(providerMap.keys()).sort();
+    providersListCache = providerMap.keys().toSorted();
 
     return providersListCache;
 };
@@ -137,7 +139,7 @@ export const getProviders = async (): Promise<ProviderName[]> => {
         }
     });
 
-    return [...providers].sort();
+    return providers.toSorted();
 };
 
 /**

@@ -34,8 +34,7 @@ export const transformDeepSeekModels = (htmlContent: string): Model[] => {
                     .map((_, td) => $(td).text().trim())
                     .get();
 
-                if (cells.length === 0)
-                    return;
+                if (cells.length === 0) return;
 
                 // Extract model names from first row
                 if (rowIndex === 0 && cells.length >= 3) {

@@ -581,8 +581,7 @@ async function getModelWithFallback(modelId: string) {
     try {
         const model = await getModelById(modelId);
 
-        if (model)
-            return model;
+        if (model) return model;
     } catch (error) {
         console.warn("Failed to load model:", error);
     }

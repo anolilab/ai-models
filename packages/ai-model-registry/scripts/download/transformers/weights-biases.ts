@@ -72,8 +72,8 @@ const fetchModelInfo = async (): Promise<Record<string, WandBModelInfo>> => {
 
         // Look for the models table structure
         // The table has: Model | Model ID (for API usage) | Type(s) | Context Window | Parameters | Description
-        const tableRegex
-            = /<tr>\s*<td>([^<]+)<\/td>\s*<td><code>([^<]+)<\/code><\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g;
+        const tableRegex =
+            /<tr>\s*<td>([^<]+)<\/td>\s*<td><code>([^<]+)<\/code><\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g;
 
         let match;
 
@@ -124,8 +124,8 @@ const fetchPricingData = async (modelInfo: Record<string, WandBModelInfo>): Prom
 
         // Look for pricing table structure
         // The table has: Model | Input Tokens | Output Tokens
-        const pricingRegex
-            = /<div class="comparison-row__label">([^<]+)<\/div>\s*<div class="comparison-row__value">\$([^<]+)<\/div>\s*<div class="comparison-row__value">\$([^<]+)<\/div>/g;
+        const pricingRegex =
+            /<div class="comparison-row__label">([^<]+)<\/div>\s*<div class="comparison-row__value">\$([^<]+)<\/div>\s*<div class="comparison-row__value">\$([^<]+)<\/div>/g;
 
         let match;
 
@@ -138,8 +138,7 @@ const fetchPricingData = async (modelInfo: Record<string, WandBModelInfo>): Prom
             // The pricing page uses API IDs, so we need to find the matching model
             const matchingModel = Object.values(modelInfo).find((model) => {
                 // Try to match by model ID first
-                if (model.modelId === modelName)
-                    return true;
+                if (model.modelId === modelName) return true;
 
                 // Try to match by display name (with some normalization)
                 const normalizedPricingName = modelName.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -186,10 +185,10 @@ const transformWandBModel = (modelData: WandBModelData, pricingData?: WandBPrici
         attachment: false,
         cost: pricingData
             ? {
-                input: pricingData.inputCost / 1_000_000, // Convert from per 1M tokens to per token
-                inputCacheHit: null,
-                output: pricingData.outputCost / 1_000_000,
-            }
+                  input: pricingData.inputCost / 1_000_000, // Convert from per 1M tokens to per token
+                  inputCacheHit: null,
+                  output: pricingData.outputCost / 1_000_000,
+              }
             : null,
         description,
         extendedThinking: false,

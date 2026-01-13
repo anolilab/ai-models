@@ -61,45 +61,46 @@ export const searchModels = (criteria: {
     streaming_supported?: boolean;
     tool_call?: boolean;
     vision?: boolean;
-}): Model[] => models.filter((model) => {
-    if (criteria.vision !== undefined && model.vision !== criteria.vision) {
-        return false;
-    }
+}): Model[] =>
+    models.filter((model) => {
+        if (criteria.vision !== undefined && model.vision !== criteria.vision) {
+            return false;
+        }
 
-    if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
-        return false;
-    }
+        if (criteria.reasoning !== undefined && model.reasoning !== criteria.reasoning) {
+            return false;
+        }
 
-    if (criteria.tool_call !== undefined && model.toolCall !== criteria.tool_call) {
-        return false;
-    }
+        if (criteria.tool_call !== undefined && model.toolCall !== criteria.tool_call) {
+            return false;
+        }
 
-    if (criteria.streaming_supported !== undefined && model.streamingSupported !== criteria.streaming_supported) {
-        return false;
-    }
+        if (criteria.streaming_supported !== undefined && model.streamingSupported !== criteria.streaming_supported) {
+            return false;
+        }
 
-    if (criteria.preview !== undefined && model.preview !== criteria.preview) {
-        return false;
-    }
+        if (criteria.preview !== undefined && model.preview !== criteria.preview) {
+            return false;
+        }
 
-    if (criteria.modalities?.input && !criteria.modalities.input.every((modality) => model.modalities.input.includes(modality))) {
-        return false;
-    }
+        if (criteria.modalities?.input && !criteria.modalities.input.every((modality) => model.modalities.input.includes(modality))) {
+            return false;
+        }
 
-    if (criteria.modalities?.output && !criteria.modalities.output.every((modality) => model.modalities.output.includes(modality))) {
-        return false;
-    }
+        if (criteria.modalities?.output && !criteria.modalities.output.every((modality) => model.modalities.output.includes(modality))) {
+            return false;
+        }
 
-    if (criteria.context_min !== undefined && (!model.limit.context || model.limit.context < criteria.context_min)) {
-        return false;
-    }
+        if (criteria.context_min !== undefined && (!model.limit.context || model.limit.context < criteria.context_min)) {
+            return false;
+        }
 
-    if (criteria.context_max !== undefined && (!model.limit.context || model.limit.context > criteria.context_max)) {
-        return false;
-    }
+        if (criteria.context_max !== undefined && (!model.limit.context || model.limit.context > criteria.context_max)) {
+            return false;
+        }
 
-    return true;
-});
+        return true;
+    });
 
 /**
  * Gets the total number of models for Meta.

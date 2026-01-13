@@ -81,6 +81,7 @@ interface TransformerModule {
     fetchMistralModels?: () => Promise<Model[]>;
     fetchModelScopeModels?: () => Promise<Model[]>;
     fetchMorphModels?: () => Promise<Model[]>;
+    fetchOllamaModels?: () => Promise<Model[]>;
     fetchOpenAIModels?: () => Promise<Model[]>;
     fetchOpenRouterModels?: () => Promise<Model[]>;
     fetchRequestyModels?: () => Promise<Model[]>;
@@ -133,14 +134,11 @@ const ensureDirSync = (dir: string): void => {
 };
 
 const getProvider = (model: Model): string => {
-    if (model.ownedBy)
-        return snakeCase(model.ownedBy);
+    if (model.ownedBy) return snakeCase(model.ownedBy);
 
-    if ("author" in model && model.author)
-        return snakeCase(model.author as string);
+    if ("author" in model && model.author) return snakeCase(model.author as string);
 
-    if (model.provider)
-        return snakeCase(model.provider);
+    if (model.provider) return snakeCase(model.provider);
 
     if (model.id && typeof model.id === "string" && model.id.includes("/")) {
         return snakeCase(model.id.split("/")[0]);
@@ -152,41 +150,42 @@ const getProvider = (model: Model): string => {
 const getModelId = (model: Model): string => snakeCase(model.id || model.name || "unknown-model");
 
 const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<Model[]>) | null =>
-    transformerModule.fetchAzureModels
-    || transformerModule.fetchOpenRouterModels
-    || transformerModule.fetchVercelModels
-    || transformerModule.fetchBedrockModels
-    || transformerModule.fetchAnthropicModels
-    || transformerModule.fetchDeepSeekModels
-    || transformerModule.fetchGitHubCopilotModels
-    || transformerModule.fetchGoogleModels
-    || transformerModule.fetchGroqModels
-    || transformerModule.fetchHuggingFaceModels
-    || transformerModule.fetchInceptionModels
-    || transformerModule.fetchInferenceModels
-    || transformerModule.fetchLlamaModels
-    || transformerModule.fetchOpenAIModels
-    || transformerModule.fetchDeepInfraModels
-    || transformerModule.fetchAlibabaModels
-    || transformerModule.fetchFireworksAIModels
-    || transformerModule.fetchGitHubModels
-    || transformerModule.fetchGoogleVertexModels
-    || transformerModule.fetchGooglePartnerModels
-    || transformerModule.fetchMistralModels
-    || transformerModule.fetchMorphModels
-    || transformerModule.fetchRequestyModels
-    || transformerModule.fetchTogetherAIModels
-    || transformerModule.fetchUpstageModels
-    || transformerModule.fetchV0Models
-    || transformerModule.fetchVeniceModels
-    || transformerModule.fetchXAIModels
-    || transformerModule.fetchModelScopeModels
-    || transformerModule.fetchCloudflareModels
-    || transformerModule.fetchWeightsBiasesModels
-    || transformerModule.fetchCerebrasModels
-    || transformerModule.fetchChutesModels
-    || transformerModule.default
-    || null;
+    transformerModule.fetchAzureModels ||
+    transformerModule.fetchOpenRouterModels ||
+    transformerModule.fetchVercelModels ||
+    transformerModule.fetchBedrockModels ||
+    transformerModule.fetchAnthropicModels ||
+    transformerModule.fetchDeepSeekModels ||
+    transformerModule.fetchGitHubCopilotModels ||
+    transformerModule.fetchGoogleModels ||
+    transformerModule.fetchGroqModels ||
+    transformerModule.fetchHuggingFaceModels ||
+    transformerModule.fetchInceptionModels ||
+    transformerModule.fetchInferenceModels ||
+    transformerModule.fetchLlamaModels ||
+    transformerModule.fetchOpenAIModels ||
+    transformerModule.fetchDeepInfraModels ||
+    transformerModule.fetchAlibabaModels ||
+    transformerModule.fetchFireworksAIModels ||
+    transformerModule.fetchGitHubModels ||
+    transformerModule.fetchGoogleVertexModels ||
+    transformerModule.fetchGooglePartnerModels ||
+    transformerModule.fetchMistralModels ||
+    transformerModule.fetchMorphModels ||
+    transformerModule.fetchOllamaModels ||
+    transformerModule.fetchRequestyModels ||
+    transformerModule.fetchTogetherAIModels ||
+    transformerModule.fetchUpstageModels ||
+    transformerModule.fetchV0Models ||
+    transformerModule.fetchVeniceModels ||
+    transformerModule.fetchXAIModels ||
+    transformerModule.fetchModelScopeModels ||
+    transformerModule.fetchCloudflareModels ||
+    transformerModule.fetchWeightsBiasesModels ||
+    transformerModule.fetchCerebrasModels ||
+    transformerModule.fetchChutesModels ||
+    transformerModule.default ||
+    null;
 
 /**
  * Processes a single provider: fetches data, transforms models, and saves them.
@@ -364,8 +363,7 @@ const main = async (): Promise<void> => {
             while (queue.length > 0) {
                 const providerConfig = queue.shift()!;
 
-                if (!providerConfig)
-                    continue;
+                if (!providerConfig) continue;
 
                 runningCount++;
                 consoleColors.info(`[${providerConfig.name}] Starting download (${runningCount} running, ${queue.length} queued)`);

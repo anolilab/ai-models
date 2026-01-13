@@ -209,11 +209,11 @@ export const transformHuggingFaceModels = (modelsData: HuggingFaceModel[]): Mode
 
             return tags.some(
                 (tag) =>
-                    tag.includes("text-generation")
-                    || tag.includes("text2text-generation")
-                    || tag.includes("conversational")
-                    || tag.includes("chat")
-                    || tag.includes("llm"),
+                    tag.includes("text-generation") ||
+                    tag.includes("text2text-generation") ||
+                    tag.includes("conversational") ||
+                    tag.includes("chat") ||
+                    tag.includes("llm"),
             );
         })
         .slice(0, 50); // Limit to top 50 models

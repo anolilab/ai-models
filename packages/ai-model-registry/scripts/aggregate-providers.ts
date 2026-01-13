@@ -16,7 +16,6 @@ const __dirname = dirname(__filename);
 
 const PROVIDERS_DIR = resolve(__dirname, "../data/providers");
 const OPENROUTER_DIR = resolve(__dirname, "../data/providers/openrouter");
-const OUTPUT_API_JSON = join(__dirname, "../public/api.json");
 const OUTPUT_PUBLIC_DIR = join(__dirname, "../public");
 
 /**
@@ -253,8 +252,7 @@ const normalizeCostValues = (models: Model[]): Model[] =>
  * @returns Model with normalized cost values
  */
 const normalizeModelCostValues = (model: Model): Model => {
-    if (!model.cost)
-        return model;
+    if (!model.cost) return model;
 
     const normalizedCost = { ...model.cost };
 
@@ -581,22 +579,19 @@ const calculateCompletenessScore = (model: Model): number => {
 
     // Count all non-excluded fields
     for (const [key, value] of Object.entries(modelObject)) {
-        if (EXCLUDED_FIELDS.has(key))
-            continue;
+        if (EXCLUDED_FIELDS.has(key)) continue;
 
         totalFields++;
 
         // Check if field has meaningful data
         if (value !== null && value !== undefined && value !== "") {
             if (Array.isArray(value)) {
-                if (value.length > 0)
-                    filledFields++;
+                if (value.length > 0) filledFields++;
             } else if (typeof value === "object") {
                 // For nested objects, check if they have any non-null properties
                 const hasData = Object.values(value as Record<string, unknown>).some((v) => v !== null && v !== undefined && v !== "");
 
-                if (hasData)
-                    filledFields++;
+                if (hasData) filledFields++;
             } else {
                 filledFields++;
             }
@@ -620,17 +615,16 @@ const mergeModelData = (target: Model, source: Model): Model => {
 
     for (const [key, sourceValue] of Object.entries(sourceObject)) {
         // Skip excluded fields (cost-related)
-        if (EXCLUDED_FIELDS.has(key))
-            continue;
+        if (EXCLUDED_FIELDS.has(key)) continue;
 
         const targetValue = targetObject[key];
 
         // If target field is empty/null/undefined and source has data
         if (
-            (targetValue === null || targetValue === undefined || targetValue === "")
-            && sourceValue !== null
-            && sourceValue !== undefined
-            && sourceValue !== ""
+            (targetValue === null || targetValue === undefined || targetValue === "") &&
+            sourceValue !== null &&
+            sourceValue !== undefined &&
+            sourceValue !== ""
         ) {
             // Handle arrays
             if (Array.isArray(sourceValue)) {
@@ -1014,22 +1008,6 @@ const main = async (): Promise<void> => {
 
         // Synchronize data between models with the same ID
         const synchronizedModels = synchronizeModelData(normalizedModels);
-
-        // Generate API JSON file for CDN serving
-        const apiJson = {
-            metadata: {
-                description: "AI Models API - Comprehensive database of AI model specifications, pricing, and features",
-                lastUpdated: new Date().toISOString(),
-                totalModels: synchronizedModels.length,
-                totalProviders: new Set(synchronizedModels.map((m) => m.provider)).size,
-                version: "0.0.0-development",
-            },
-            models: synchronizedModels,
-        };
-
-        writeFileSync(OUTPUT_API_JSON, customJsonStringify(apiJson, 2));
-
-        console.log(`[DONE] Generated API JSON at ${OUTPUT_API_JSON} with ${synchronizedModels.length} models`);
 
         // Generate per-provider JSON files
         generateProviderFiles(synchronizedModels, OUTPUT_PUBLIC_DIR);
