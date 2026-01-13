@@ -109,7 +109,7 @@ const loadProvidersList = async (): Promise<ProviderName[]> => {
     // Use all providers from the provider map (no dynamic imports needed)
     providersListCache = [...providerMap.keys()].toSorted();
 
-    return providersListCache;
+    return providersListCache as ProviderName[];
 };
 
 const loadAllModels = async (): Promise<Model[]> => {
