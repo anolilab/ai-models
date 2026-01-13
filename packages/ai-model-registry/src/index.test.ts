@@ -321,6 +321,8 @@ describe("provider Registry", () => {
         });
 
         it("should only include providers with models", async () => {
+            expect.hasAssertions();
+
             const stats = await getProviderStats();
             const providerCount = Object.keys(stats).length;
 

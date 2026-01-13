@@ -1,12 +1,48 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Fireworks AI",
-        "lastUpdated": "2026-01-13T19:46:51.735Z",
+        "lastUpdated": "2026-01-13T20:03:21.325Z",
         "provider": "Fireworks AI",
         "totalModels": 413,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.003,
+                "inputCacheHit": null,
+                "output": 0.003
+            },
+            "extendedThinking": false,
+            "id": "yi-large",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Yi-Large",
+            "openWeights": false,
+            "provider": "Fireworks AI",
+            "providerDoc": "https://readme.fireworks.ai/",
+            "providerEnv": ["FIREWORKS_API_KEY"],
+            "providerId": "fireworks-ai",
+            "providerModelsDevId": "fireworks-ai",
+            "providerNpm": "@ai-sdk/fireworks",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "fireworks",
+            "preview": false
+        },
         {
             "attachment": false,
             "cost": {
@@ -14397,41 +14433,6 @@
                 "output": ["text"]
             },
             "name": "Yi 6B",
-            "openWeights": false,
-            "provider": "Fireworks AI",
-            "providerDoc": "https://readme.fireworks.ai/",
-            "providerEnv": ["FIREWORKS_API_KEY"],
-            "providerId": "fireworks-ai",
-            "providerModelsDevId": "fireworks-ai",
-            "providerNpm": "@ai-sdk/fireworks",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "fireworks"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.003,
-                "inputCacheHit": null,
-                "output": 0.003
-            },
-            "extendedThinking": false,
-            "id": "yi-large",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 32768,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Yi-Large",
             "openWeights": false,
             "provider": "Fireworks AI",
             "providerDoc": "https://readme.fireworks.ai/",

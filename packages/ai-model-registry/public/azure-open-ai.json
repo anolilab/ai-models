@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Azure OpenAI",
-        "lastUpdated": "2026-01-13T19:46:51.724Z",
+        "lastUpdated": "2026-01-13T20:03:21.327Z",
         "provider": "Azure OpenAI",
         "totalModels": 9,
         "version": "0.0.0-development"

@@ -1,12 +1,94 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Cloudflare",
-        "lastUpdated": "2026-01-13T19:46:51.735Z",
+        "lastUpdated": "2026-01-13T20:03:21.321Z",
         "provider": "Cloudflare",
-        "totalModels": 79,
+        "totalModels": 76,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "description": "Gemma 3 models are well-suited for a variety of text generation and image understanding tasks, including question answering, summarization, and reasoning. Gemma 3 models are multimodal, handling text and image input and generating text output, with a large, 128K context window, multilingual support in over 140 languages, and is available in more sizes than previous versions.",
+            "id": "gemma-3-12b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 80000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-12b-it",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare",
+            "extendedThinking": false,
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00007,
+                "inputCacheHit": null,
+                "output": 0.00007
+            },
+            "description": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants.",
+            "id": "gemma-7b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-7b-it",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare",
+            "extendedThinking": false,
+            "preview": false
+        },
         {
             "attachment": false,
             "audioGeneration": true,
@@ -792,84 +874,6 @@
             "attachment": false,
             "audioGeneration": false,
             "cost": {
-                "input": 0.00003,
-                "inputCacheHit": null,
-                "output": 0.0001
-            },
-            "description": "Gemma 3 models are well-suited for a variety of text generation and image understanding tasks, including question answering, summarization, and reasoning. Gemma 3 models are multimodal, handling text and image input and generating text output, with a large, 128K context window, multilingual support in over 140 languages, and is available in more sizes than previous versions.",
-            "id": "gemma-3-12b-it",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 80000000,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "gemma-3-12b-it",
-            "openWeights": false,
-            "provider": "Cloudflare",
-            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
-            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
-            "providerId": "cloudflare",
-            "providerNpm": "@ai-sdk/cloudflare",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
-            "temperature": true,
-            "toolCall": true,
-            "version": null,
-            "vision": true,
-            "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": false,
-            "cost": {
-                "input": 0.00007,
-                "inputCacheHit": null,
-                "output": 0.00007
-            },
-            "description": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants.",
-            "id": "gemma-7b-it",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 8192000,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "gemma-7b-it",
-            "openWeights": false,
-            "provider": "Cloudflare",
-            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
-            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
-            "providerId": "cloudflare",
-            "providerNpm": "@ai-sdk/cloudflare",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
-            "temperature": true,
-            "toolCall": true,
-            "version": null,
-            "vision": false,
-            "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": false,
-            "cost": {
                 "input": 0.00007,
                 "inputCacheHit": null,
                 "output": 0.00007
@@ -926,45 +930,6 @@
                 "output": ["text"]
             },
             "name": "gemma-sea-lion-v4-27b-it",
-            "openWeights": false,
-            "provider": "Cloudflare",
-            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
-            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
-            "providerId": "cloudflare",
-            "providerNpm": "@ai-sdk/cloudflare",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
-            "temperature": true,
-            "toolCall": true,
-            "version": null,
-            "vision": false,
-            "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": false,
-            "cost": {
-                "input": 0.0001,
-                "inputCacheHit": null,
-                "output": 0.0001
-            },
-            "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases – gpt-oss-20b is for lower latency, and local or specialized use-cases.",
-            "id": "gpt-oss-20b",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 128000000,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "gpt-oss-20b",
             "openWeights": false,
             "provider": "Cloudflare",
             "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
@@ -2513,45 +2478,6 @@
                 "inputCacheHit": null,
                 "output": null
             },
-            "description": "The Qwen3 Embedding model series is the latest proprietary model of the Qwen family, specifically designed for text embedding and ranking tasks.",
-            "id": "qwen3-embedding-0.6b",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["embedding"]
-            },
-            "name": "qwen3-embedding-0.6b",
-            "openWeights": false,
-            "provider": "Cloudflare",
-            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
-            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
-            "providerId": "cloudflare",
-            "providerNpm": "@ai-sdk/cloudflare",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
-            "temperature": true,
-            "toolCall": true,
-            "version": null,
-            "vision": false,
-            "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
             "description": "50 layers deep image classification CNN trained on more than 1M images from ImageNet",
             "id": "resnet-50",
             "knowledge": null,
@@ -2955,45 +2881,6 @@
                 "output": ["text"]
             },
             "name": "una-cybertron-7b-v2-bf16",
-            "openWeights": false,
-            "provider": "Cloudflare",
-            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
-            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
-            "providerId": "cloudflare",
-            "providerNpm": "@ai-sdk/cloudflare",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true,
-            "temperature": true,
-            "toolCall": true,
-            "version": null,
-            "vision": false,
-            "icon": "cloudflare"
-        },
-        {
-            "attachment": false,
-            "audioGeneration": true,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "description": "Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation.",
-            "id": "whisper-large-v3-turbo",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["audio"],
-                "output": ["text"]
-            },
-            "name": "whisper-large-v3-turbo",
             "openWeights": false,
             "provider": "Cloudflare",
             "providerDoc": "https://developers.cloudflare.com/workers-ai/models",

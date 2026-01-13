@@ -10,7 +10,6 @@
 type ModelName
     = | "MiniMaxAI/MiniMax-M2"
         | "PaddlePaddle/PaddleOCR-VL-0.9B"
-        | "Qwen/QwQ-32B"
         | "Qwen/Qwen3-Coder-480B-A35B-Instruct"
         | "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo"
         | "allenai/olmOCR-2-7B-1025"

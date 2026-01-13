@@ -1,11 +1,12 @@
 {
     "metadata": {
         "description": "AI Models API - List of available providers",
-        "lastUpdated": "2026-01-13T19:46:51.744Z",
-        "totalProviders": 34,
+        "lastUpdated": "2026-01-13T20:03:21.334Z",
+        "totalProviders": 35,
         "version": "0.0.0-development"
     },
     "providers": [
+        "AIHubMix",
         "Alibaba",
         "Amazon Bedrock",
         "Anthropic",

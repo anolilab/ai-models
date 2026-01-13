@@ -19,6 +19,7 @@ export const PROVIDER_ICON_MAP: Record<string, string> = {
     "agentica-org": "agentica-org",
     "aion-labs": "aionlabs",
     // Additional providers with LobeHub icons
+    aihubmix: "aihubmix",
     aionlabs: "aionlabs",
     alfredpros: "alfredpros",
     alibaba: "alibaba",
@@ -199,6 +200,7 @@ export const BRAND_NAME_MAP: Record<string, string> = {
     togetherai: "Together AI",
     upstage: "Upstage",
     ollama: "Ollama Cloud",
+    aihubmix: "AIHubMix",
     v0: "V0",
     venice: "Venice",
     vercel: "Vercel",
@@ -514,5 +516,13 @@ export const PROVIDERS_CONFIG: ProviderConfig[] = [
         npm: "@ai-sdk/openai-compatible",
         output: "ollama-cloud",
         transformer: "./transformers/ollama-cloud.ts",
+    },
+    {
+        doc: "https://docs.aihubmix.com",
+        env: ["AIHUBMIX_API_KEY"],
+        name: "AIHubMix",
+        npm: "@aihubmix/ai-sdk-provider",
+        output: "aihubmix",
+        transformer: "./transformers/aihubmix.ts",
     },
 ];

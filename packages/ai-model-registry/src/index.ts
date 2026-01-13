@@ -1,5 +1,6 @@
 /* eslint-disable import/no-namespace */
 
+import * as aihubmixProvider from "./providers/aihubmix";
 import * as alibabaProvider from "./providers/alibaba";
 import * as amazonBedrockProvider from "./providers/amazon-bedrock";
 import * as anthropicProvider from "./providers/anthropic";
@@ -39,6 +40,7 @@ import type { ProviderName } from "./types/providers";
 
 // Map provider names to their provider modules
 const providerMap = new Map<ProviderName, { getModels: () => Model[] }>([
+    ["AIHubMix", aihubmixProvider],
     ["Alibaba", alibabaProvider],
     ["Amazon Bedrock", amazonBedrockProvider],
     ["Anthropic", anthropicProvider],
@@ -105,7 +107,7 @@ const loadProvidersList = async (): Promise<ProviderName[]> => {
     }
 
     // Use all providers from the provider map (no dynamic imports needed)
-    providersListCache = providerMap.keys().toSorted();
+    providersListCache = [...providerMap.keys()].toSorted();
 
     return providersListCache;
 };
@@ -139,7 +141,7 @@ export const getProviders = async (): Promise<ProviderName[]> => {
         }
     });
 
-    return providers.toSorted();
+    return [...providers].toSorted();
 };
 
 /**

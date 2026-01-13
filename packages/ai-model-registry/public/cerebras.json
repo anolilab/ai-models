@@ -1,12 +1,48 @@
 {
     "metadata": {
         "description": "AI Models API - Models from cerebras",
-        "lastUpdated": "2026-01-13T19:46:51.725Z",
+        "lastUpdated": "2026-01-13T20:03:21.325Z",
         "provider": "cerebras",
-        "totalModels": 8,
+        "totalModels": 6,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.1
+            },
+            "extendedThinking": true,
+            "id": "llama3.1-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4096,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Llama 3.1 8B",
+            "openWeights": false,
+            "provider": "cerebras",
+            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
+            "providerEnv": ["CEREBRAS_API_KEY"],
+            "providerId": "cerebras",
+            "providerNpm": "@ai-sdk/cerebras",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "cerebras",
+            "description": "cerebras",
+            "preview": false
+        },
         {
             "attachment": false,
             "cost": {
@@ -69,113 +105,6 @@
             "providerNpm": "@ai-sdk/cerebras",
             "reasoning": true,
             "releaseDate": "2025-12-22",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "cerebras"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.35,
-                "inputCacheHit": null,
-                "output": 0.75
-            },
-            "extendedThinking": true,
-            "id": "gpt-oss-120b",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 16384,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "OpenAI GPT OSS",
-            "openWeights": false,
-            "provider": "cerebras",
-            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
-            "providerEnv": ["CEREBRAS_API_KEY"],
-            "providerId": "cerebras",
-            "providerNpm": "@ai-sdk/cerebras",
-            "reasoning": true,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "cerebras",
-            "audioGeneration": false,
-            "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases – gpt-oss-120b is for production, general purpose, high reasoning use-cases.",
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.1,
-                "inputCacheHit": null,
-                "output": 0.1
-            },
-            "extendedThinking": true,
-            "id": "llama3.1-8b",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 4096,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Llama 3.1 8B",
-            "openWeights": false,
-            "provider": "cerebras",
-            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
-            "providerEnv": ["CEREBRAS_API_KEY"],
-            "providerId": "cerebras",
-            "providerNpm": "@ai-sdk/cerebras",
-            "reasoning": true,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "cerebras"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.85,
-                "inputCacheHit": null,
-                "output": 1.2
-            },
-            "extendedThinking": true,
-            "id": "llama-3.3-70b",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 8192,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Llama 3.3 70B",
-            "openWeights": false,
-            "provider": "cerebras",
-            "providerDoc": "https://inference-docs.cerebras.ai/models/overview",
-            "providerEnv": ["CEREBRAS_API_KEY"],
-            "providerId": "cerebras",
-            "providerNpm": "@ai-sdk/cerebras",
-            "reasoning": true,
-            "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

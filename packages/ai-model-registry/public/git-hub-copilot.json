@@ -1,9 +1,9 @@
 {
     "metadata": {
         "description": "AI Models API - Models from GitHub Copilot",
-        "lastUpdated": "2026-01-13T19:46:51.738Z",
+        "lastUpdated": "2026-01-13T20:03:21.328Z",
         "provider": "GitHub Copilot",
-        "totalModels": 19,
+        "totalModels": 15,
         "version": "0.0.0-development"
     },
     "models": [
@@ -260,41 +260,6 @@
                 "output": 0.01
             },
             "extendedThinking": false,
-            "id": "gpt-5",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "GPT-5",
-            "openWeights": false,
-            "provider": "GitHub Copilot",
-            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
-            "providerEnv": ["GITHUB_TOKEN"],
-            "providerId": "git-hub-copilot",
-            "providerModelsDevId": "github-copilot",
-            "providerNpm": "@ai-sdk/github-copilot",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "githubcopilot"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00125,
-                "inputCacheHit": null,
-                "output": 0.01
-            },
-            "extendedThinking": false,
             "id": "gpt-5-1",
             "knowledge": null,
             "lastUpdated": null,
@@ -459,111 +424,6 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
-            "vision": false,
-            "icon": "githubcopilot"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00125,
-                "inputCacheHit": null,
-                "output": 0.01
-            },
-            "extendedThinking": false,
-            "id": "gpt-5-codex",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "GPT-5-Codex",
-            "openWeights": false,
-            "provider": "GitHub Copilot",
-            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
-            "providerEnv": ["GITHUB_TOKEN"],
-            "providerId": "git-hub-copilot",
-            "providerModelsDevId": "github-copilot",
-            "providerNpm": "@ai-sdk/github-copilot",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "githubcopilot"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00125,
-                "inputCacheHit": null,
-                "output": 0.01
-            },
-            "extendedThinking": false,
-            "id": "gpt-5-mini",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "GPT-5 mini",
-            "openWeights": false,
-            "provider": "GitHub Copilot",
-            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
-            "providerEnv": ["GITHUB_TOKEN"],
-            "providerId": "git-hub-copilot",
-            "providerModelsDevId": "github-copilot",
-            "providerNpm": "@ai-sdk/github-copilot",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "githubcopilot"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "grok-code-fast-1",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Grok Code Fast 1",
-            "openWeights": false,
-            "provider": "GitHub Copilot",
-            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
-            "providerEnv": ["GITHUB_TOKEN"],
-            "providerId": "git-hub-copilot",
-            "providerModelsDevId": "github-copilot",
-            "providerNpm": "@ai-sdk/github-copilot",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
             "vision": false,
             "icon": "githubcopilot"
         },

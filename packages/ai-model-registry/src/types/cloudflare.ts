@@ -32,7 +32,6 @@ type ModelName
         | "gemma-7b-it"
         | "gemma-7b-it-lora"
         | "gemma-sea-lion-v4-27b-it"
-        | "gpt-oss-20b"
         | "granite-4.0-h-micro"
         | "indictrans2-en-indic-1B"
         | "llama-2-13b-chat-awq"
@@ -72,7 +71,6 @@ type ModelName
         | "qwen1.5-7b-chat-awq"
         | "qwen2.5-coder-32b-instruct"
         | "qwen3-30b-a3b-fp8"
-        | "qwen3-embedding-0.6b"
         | "resnet-50"
         | "smart-turn-v2"
         | "sqlcoder-7b-2"
@@ -84,7 +82,6 @@ type ModelName
         | "tinyllama-1.1b-chat-v1.0"
         | "uform-gen2-qwen-500m"
         | "una-cybertron-7b-v2-bf16"
-        | "whisper-large-v3-turbo"
         | "whisper-tiny-en"
         | "zephyr-7b-beta-awq";
 

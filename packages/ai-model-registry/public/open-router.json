@@ -1,12 +1,265 @@
 {
     "metadata": {
         "description": "AI Models API - Models from OpenRouter",
-        "lastUpdated": "2026-01-13T19:46:51.732Z",
+        "lastUpdated": "2026-01-13T20:03:21.322Z",
         "provider": "OpenRouter",
         "totalModels": 438,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "google/gemma-2-27b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Google: Gemma 2 27B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-07-13",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "google/gemma-2-9b-it:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Google: Gemma 2 9B (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-06-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/llama-3.1-405b-instruct:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Meta: Llama 3.1 405B Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-07-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/llama-3.2-11b-vision-instruct:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 2048
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Meta: Llama 3.2 11B Vision Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-09-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "meta-llama/llama-3.2-3b-instruct:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Meta: Llama 3.2 3B Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-09-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistralai/mistral-7b-instruct:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral: Mistral 7B Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2024-05-27",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "stepfun-ai/step3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["text"]
+            },
+            "name": "StepFun: Step3",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-08-28",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter",
+            "description": "Step3 is a multimodal reasoning model released by StepFun. It uses a Mixture‑of‑Experts (MoE) architecture with 321 billion total parameters and 38 billion activation parameters. The model follows an end‑to‑end design that reduces decoding cost while delivering top‑tier performance on vision‑language reasoning tasks. Thanks to the combined use of Multi‑Head Factorized Attention (MFA) and Attention‑FFN Decoupling (AFD), Step3 remains highly efficient on both flagship and low‑end accelerators. During pre‑training, it processed over 20 trillion text tokens and 4 trillion image‑text mixed tokens, covering more than ten languages. On benchmarks for mathematics, code, and multimodal tasks, Step3 consistently outperforms other open‑source models.",
+            "preview": false
+        },
         {
             "attachment": false,
             "cost": {
@@ -110,41 +363,6 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "stepfun-ai/step3",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 65536,
-                "output": 65536
-            },
-            "modalities": {
-                "input": ["image", "text"],
-                "output": ["text"]
-            },
-            "name": "StepFun: Step3",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2025-08-28",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
             "icon": "openrouter"
         },
         {
@@ -4460,41 +4678,6 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "google/gemma-2-27b-it",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 8192,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Google: Gemma 2 27B",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-07-13",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
             "id": "google/gemma-2-9b-it",
             "knowledge": null,
             "lastUpdated": null,
@@ -4507,41 +4690,6 @@
                 "output": ["text"]
             },
             "name": "Google: Gemma 2 9B",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-06-28",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "google/gemma-2-9b-it:free",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 8192,
-                "output": 8192
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Google: Gemma 2 9B (free)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -5405,41 +5553,6 @@
                 "output": 0.0003
             },
             "extendedThinking": false,
-            "id": "meta-llama/llama-3.1-405b-instruct:free",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Meta: Llama 3.1 405B Instruct (free)",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-07-23",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0003
-            },
-            "extendedThinking": false,
             "id": "meta-llama/llama-3.1-70b-instruct",
             "knowledge": null,
             "lastUpdated": null,
@@ -5545,41 +5658,6 @@
                 "output": 0.0003
             },
             "extendedThinking": false,
-            "id": "meta-llama/llama-3.2-11b-vision-instruct:free",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": 2048
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Meta: Llama 3.2 11B Vision Instruct (free)",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-09-25",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0003
-            },
-            "extendedThinking": false,
             "id": "meta-llama/llama-3.2-1b-instruct",
             "knowledge": null,
             "lastUpdated": null,
@@ -5627,41 +5705,6 @@
                 "output": ["text"]
             },
             "name": "Meta: Llama 3.2 3B Instruct",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-09-25",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0003
-            },
-            "extendedThinking": false,
-            "id": "meta-llama/llama-3.2-3b-instruct:free",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Meta: Llama 3.2 3B Instruct (free)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -7027,41 +7070,6 @@
                 "output": ["text"]
             },
             "name": "Mistral: Mistral 7B Instruct",
-            "openWeights": false,
-            "provider": "OpenRouter",
-            "providerDoc": "https://openrouter.ai/docs",
-            "providerEnv": ["OPENROUTER_API_KEY"],
-            "providerId": "open-router",
-            "providerModelsDevId": "openrouter",
-            "providerNpm": "@ai-sdk/openrouter",
-            "reasoning": false,
-            "releaseDate": "2024-05-27",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "openrouter"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0003
-            },
-            "extendedThinking": false,
-            "id": "mistralai/mistral-7b-instruct:free",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 32768,
-                "output": 16384
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Mistral: Mistral 7B Instruct (free)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",

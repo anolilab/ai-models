@@ -8,7 +8,8 @@
  * Union type of all available AI model provider names
  */
 export type ProviderName
-    = | "Alibaba"
+    = | "AIHubMix"
+        | "Alibaba"
         | "Amazon Bedrock"
         | "Anthropic"
         | "Azure OpenAI"
@@ -47,6 +48,7 @@ export type ProviderName
  * Array of all available provider names
  */
 export const PROVIDER_NAMES = [
+    "AIHubMix",
     "Alibaba",
     "Amazon Bedrock",
     "Anthropic",

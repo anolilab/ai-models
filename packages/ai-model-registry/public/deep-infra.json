@@ -1,9 +1,9 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Deep Infra",
-        "lastUpdated": "2026-01-13T19:46:51.738Z",
+        "lastUpdated": "2026-01-13T20:03:21.328Z",
         "provider": "Deep Infra",
-        "totalModels": 27,
+        "totalModels": 26,
         "version": "0.0.0-development"
     },
     "models": [
@@ -762,41 +762,6 @@
                 "output": ["text"]
             },
             "name": "PaddleOCR-VL-0.9B",
-            "openWeights": false,
-            "provider": "Deep Infra",
-            "providerDoc": "https://deepinfra.com/docs",
-            "providerEnv": [],
-            "providerId": "deep-infra",
-            "providerModelsDevId": "deepinfra",
-            "providerNpm": "@deepinfra/sdk",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0000075,
-                "inputCacheHit": null,
-                "output": 0.000015
-            },
-            "extendedThinking": false,
-            "id": "Qwen/QwQ-32B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "QwQ-32B",
             "openWeights": false,
             "provider": "Deep Infra",
             "providerDoc": "https://deepinfra.com/docs",

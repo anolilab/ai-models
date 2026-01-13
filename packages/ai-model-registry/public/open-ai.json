@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from OpenAI",
-        "lastUpdated": "2026-01-13T19:46:51.741Z",
+        "lastUpdated": "2026-01-13T20:03:21.321Z",
         "provider": "OpenAI",
         "totalModels": 17,
         "version": "0.0.0-development"
@@ -40,7 +40,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "Only supports v1/responses API calls.https://docs.aihubmix.com/en/api/Responses-API\ncodex-mini-latest is a fine-tuned version of o4-mini specifically for use in Codex CLI. For direct use in the API, we recommend starting with gpt-4.1.",
+            "preview": false
         },
         {
             "attachment": false,
@@ -75,7 +77,9 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "Since the GPT-3.5-turbo model has been officially deprecated, all requests targeting this model will be automatically routed to GPT-40-mini. We recommend using GPT-40-mini directly as a replacement.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -110,7 +114,8 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "preview": false
         },
         {
             "attachment": true,
@@ -145,7 +150,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "The latest flagship multimodal model supports million-token context, with encoding capability (SWE-bench 54.6%) and instruction-following (Scale AI 38.3%) performance significantly surpassing GPT-4o, while reducing costs by 26%, making it suitable for complex tasks. Its automatic caching mechanism offers a 75% cost reduction on cache hits.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -180,7 +187,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "Lightweight, high-performance model with million-token context and near-flagship-level encoding and image understanding capabilities, while reducing costs by 83%. It is suitable for rapid development and small to medium-sized applications. The automatic caching mechanism provides a 75% cost reduction on cache hits.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -215,7 +224,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "Ultra-lightweight model with million-token context, optimized for speed and low latency, costing only $0.10 per million input tokens. It is suitable for edge computing and real-time interaction. The automatic caching mechanism offers a 75% cost reduction on cache hits.",
+            "preview": false
         },
         {
             "attachment": false,
@@ -250,7 +261,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "The smartest version of GPT-4; OpenAI no longer offers it officially. All the 32k versions on this site are provided by Microsoft, deployed on Azure OpenAI by the official Microsoft service.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -285,7 +298,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "GPT-4o (“o” stands for “omni”) is a new-generation multimodal model designed for more natural human–computer interaction. It can accept any combination of text, audio, image, and video as input, and generate multimodal outputs including text, audio, and images. With audio response latency as low as 232 milliseconds on average around 320 milliseconds, it approaches real human conversational speed. The model delivers strong performance in English text and code, significantly improved multilingual understanding, and outstanding capabilities in visual and audio perception, while offering faster API performance and substantially reduced cost for real-time and complex multimodal applications.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -320,7 +335,9 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "The lightweight version of GPT-4o, which is affordable and fast, suitable for handling simple tasks; our site supports the official automatic caching for this model, and charges for cache hits will be automatically halved.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -355,7 +372,8 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "preview": false
         },
         {
             "attachment": false,
@@ -390,7 +408,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "OpenAI's most powerful O-series model supports official cache hits that halve the input cost.",
+            "preview": false
         },
         {
             "attachment": false,
@@ -425,7 +445,9 @@
             "temperature": false,
             "toolCall": false,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "o1-mini is faster and 80% cheaper, and is competitive with o1-preview on coding tasks. AiHubMix uses both OpenAI and Microsoft Azure OpenAI channels simultaneously.",
+            "preview": false
         },
         {
             "attachment": false,
@@ -460,7 +482,9 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "The latest and most powerful inference model from OpenAI; AiHubMix uses both OpenAI and Microsoft Azure OpenAI channels simultaneously to achieve high-concurrency load balancing.",
+            "preview": true
         },
         {
             "attachment": true,
@@ -495,7 +519,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "OpenAI o3 is a powerful model across multiple domains, setting a new standard for coding, math, science, and visual reasoning tasks.",
+            "preview": false
         },
         {
             "attachment": false,
@@ -530,7 +556,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": false,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "OpenAI's latest fast inference model excels at STEAM tasks and offers exceptional cost-effectiveness. Official support for cache hits reduces input prices by half.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -565,7 +593,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "o3-pro\nThis model only supports Requests API interface requests.The model's thinking time is relatively long, so the response will be slow.",
+            "preview": false
         },
         {
             "attachment": true,
@@ -600,7 +630,9 @@
             "temperature": false,
             "toolCall": true,
             "vision": true,
-            "icon": "openai"
+            "icon": "openai",
+            "description": "o4-mini is a remarkably smart model for its speed and cost-efficiency. This allows it to support significantly higher usage limits than o3, making it a strong high-volume, high-throughput option for everyone with questions that benefit from reasoning.",
+            "preview": false
         }
     ]
 }

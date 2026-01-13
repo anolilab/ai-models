@@ -58,6 +58,7 @@ interface ProcessingResult {
  */
 interface TransformerModule {
     default?: () => Promise<Model[]>;
+    fetchAIHubMixModels?: () => Promise<Model[]>;
     fetchAlibabaModels?: () => Promise<Model[]>;
     fetchAnthropicModels?: () => Promise<Model[]>;
     fetchAzureModels?: () => Promise<Model[]>;
@@ -150,6 +151,7 @@ const getProvider = (model: Model): string => {
 const getModelId = (model: Model): string => snakeCase(model.id || model.name || "unknown-model");
 
 const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<Model[]>) | null =>
+    transformerModule.fetchAIHubMixModels ||
     transformerModule.fetchAzureModels ||
     transformerModule.fetchOpenRouterModels ||
     transformerModule.fetchVercelModels ||

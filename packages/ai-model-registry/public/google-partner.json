@@ -1,9 +1,9 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Google Partner",
-        "lastUpdated": "2026-01-13T19:46:51.739Z",
+        "lastUpdated": "2026-01-13T20:03:21.329Z",
         "provider": "Google Partner",
-        "totalModels": 15,
+        "totalModels": 12,
         "version": "0.0.0-development"
     },
     "models": [
@@ -84,76 +84,6 @@
                 "inputCacheHit": null,
                 "output": null
             },
-            "extendedThinking": false,
-            "id": "claude-3-5-haiku",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Claude 3.5 Haiku",
-            "openWeights": false,
-            "provider": "Google Partner",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/haiku-3-5",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-partner/google-vertex-claude",
-            "providerModelsDevId": "google-vertex-partner",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": true,
-            "id": "claude-3-5-sonnet",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude 3.5 Sonnet",
-            "openWeights": false,
-            "provider": "Google Partner",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-partner/google-vertex-claude",
-            "providerModelsDevId": "google-vertex-partner",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": true,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
             "extendedThinking": true,
             "id": "claude-3-5-sonnet-v-2",
             "knowledge": null,
@@ -170,41 +100,6 @@
             "openWeights": false,
             "provider": "Google Partner",
             "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-5-v2",
-            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
-            "providerId": "google-partner/google-vertex-claude",
-            "providerModelsDevId": "google-vertex-partner",
-            "providerNpm": "@ai-sdk/google-vertex",
-            "reasoning": true,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "google"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": true,
-            "id": "claude-3-7-sonnet",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude 3.7 Sonnet",
-            "openWeights": false,
-            "provider": "Google Partner",
-            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude/sonnet-3-7",
             "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
             "providerId": "google-partner/google-vertex-claude",
             "providerModelsDevId": "google-vertex-partner",

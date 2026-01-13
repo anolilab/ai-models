@@ -8,10 +8,7 @@
  * Union type of all model IDs for Google Partner.
  */
 type ModelName
-    = | "claude-3-5-haiku"
-        | "claude-3-5-sonnet"
-        | "claude-3-5-sonnet-v-2"
-        | "claude-3-7-sonnet"
+    = | "claude-3-5-sonnet-v-2"
         | "claude-3-haiku"
         | "codestral-(25-01)"
         | "codestral-2"

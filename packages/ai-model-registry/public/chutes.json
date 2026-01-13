@@ -1,12 +1,262 @@
 {
     "metadata": {
         "description": "AI Models API - Models from chutes",
-        "lastUpdated": "2026-01-13T19:46:51.731Z",
+        "lastUpdated": "2026-01-13T20:03:21.321Z",
         "provider": "chutes",
-        "totalModels": 94,
+        "totalModels": 86,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00014,
+                "inputCacheHit": null,
+                "output": 0.00042
+            },
+            "extendedThinking": false,
+            "id": "chutesai/Mistral-Small-3.1-24B-Instruct-2503",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral-Small-3.1-24B-Instruct-2503",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "description": "Mistral's latest open-source small model; provided by chutes.ai.",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00075,
+                "inputCacheHit": null,
+                "output": 0.00099
+            },
+            "extendedThinking": false,
+            "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 524288,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1-Distill-Llama-70B",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-01-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "providerModelsDevId": "deepinfra",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0012,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-72B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-72B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-09-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0008,
+                "inputCacheHit": null,
+                "output": 0.0008
+            },
+            "extendedThinking": false,
+            "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5-Coder-32B-Instruct",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2024-11-11",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "tngtech/DeepSeek-R1T-Chimera",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 655360,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "DeepSeek-R1T-Chimera",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "description": "Provided by chutes.ai\nDeepSeek-R1T-Chimera merges DeepSeek-R1’s reasoning strengths with DeepSeek-V3 (0324)’s token-efficiency improvements into a MoE Transformer optimized for general text generation. It integrates pretrained weights from both models and is released under the MIT license for research and commercial use.\n",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-12b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4194304,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-12b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "description": "Provided by chutes.ai.",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00009,
+                "inputCacheHit": null,
+                "output": 0.00016
+            },
+            "extendedThinking": false,
+            "id": "unsloth/gemma-3-27b-it",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 4194304,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "gemma-3-27b-it",
+            "openWeights": false,
+            "provider": "chutes",
+            "providerDoc": "https://llm.chutes.ai/v1/models",
+            "providerEnv": ["CHUTES_API_KEY"],
+            "providerId": "chutes",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "chutes",
+            "description": "Google's latest open-source model; provided by chutes.ai",
+            "preview": false
+        },
         {
             "attachment": false,
             "cost": {
@@ -163,40 +413,6 @@
                 "output": ["text"]
             },
             "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00014,
-                "inputCacheHit": null,
-                "output": 0.00042
-            },
-            "extendedThinking": false,
-            "id": "chutesai/Mistral-Small-3.1-24B-Instruct-2503",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 524288,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Mistral-Small-3.1-24B-Instruct-2503",
             "openWeights": false,
             "provider": "chutes",
             "providerDoc": "https://llm.chutes.ai/v1/models",
@@ -449,41 +665,6 @@
             "toolCall": false,
             "vision": false,
             "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00075,
-                "inputCacheHit": null,
-                "output": 0.00099
-            },
-            "extendedThinking": false,
-            "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 524288,
-                "output": 131072
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-R1-Distill-Llama-70B",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-01-23",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes",
-            "providerModelsDevId": "deepinfra"
         },
         {
             "attachment": false,
@@ -1000,40 +1181,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00029,
-                "inputCacheHit": null,
-                "output": 0.00115
-            },
-            "extendedThinking": false,
-            "id": "moonshotai/Kimi-Dev-72B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 524288,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Kimi-Dev-72B",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": 0.001,
                 "inputCacheHit": null,
                 "output": 0.003
@@ -1512,142 +1659,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0012,
-                "inputCacheHit": null,
-                "output": 0.0012
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen2.5-72B-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": 16384
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen2.5-72B-Instruct",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2024-09-19",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.0008,
-                "inputCacheHit": null,
-                "output": 0.0008
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": 32768
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen2.5-Coder-32B-Instruct",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2024-11-11",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00005,
-                "inputCacheHit": null,
-                "output": 0.00022
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen2.5-VL-32B-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 65536,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen2.5-VL-32B-Instruct",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00008,
-                "inputCacheHit": null,
-                "output": 0.00033
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen2.5-VL-72B-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen2.5-VL-72B-Instruct",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
@@ -1678,41 +1689,6 @@
             "toolCall": false,
             "vision": false,
             "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00005,
-                "inputCacheHit": null,
-                "output": 0.00022
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-14B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 163840,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-14B",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes",
-            "providerModelsDevId": "deepinfra"
         },
         {
             "attachment": false,
@@ -1855,41 +1831,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00006,
-                "inputCacheHit": null,
-                "output": 0.00022
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-30B-A3B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 163840,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-30B-A3B",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes",
-            "providerModelsDevId": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": 0.00008,
                 "inputCacheHit": null,
                 "output": 0.00033
@@ -1907,75 +1848,6 @@
                 "output": ["text"]
             },
             "name": "Qwen3-30B-A3B-Instruct-2507",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00029,
-                "inputCacheHit": null,
-                "output": 0.00059
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-32B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 163840,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-32B",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes",
-            "providerModelsDevId": "deepinfra"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00003,
-                "inputCacheHit": null,
-                "output": 0.00011
-            },
-            "extendedThinking": false,
-            "id": "Qwen/Qwen3-8B",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 163840,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen3-8B",
             "openWeights": false,
             "provider": "chutes",
             "providerDoc": "https://llm.chutes.ai/v1/models",
@@ -2266,40 +2138,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00003,
-                "inputCacheHit": null,
-                "output": 0.00003
-            },
-            "extendedThinking": false,
-            "id": "tencent/Hunyuan-A13B-Instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Hunyuan-A13B-Instruct",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
@@ -2470,40 +2308,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
-                "inputCacheHit": null,
-                "output": 0.0012
-            },
-            "extendedThinking": false,
-            "id": "tngtech/DeepSeek-R1T-Chimera",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 655360,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "DeepSeek-R1T-Chimera",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
@@ -2623,74 +2427,6 @@
                 "output": ["text"]
             },
             "name": "gemma-2-9b-it",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00003,
-                "inputCacheHit": null,
-                "output": 0.0001
-            },
-            "extendedThinking": false,
-            "id": "unsloth/gemma-3-12b-it",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 4194304,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "gemma-3-12b-it",
-            "openWeights": false,
-            "provider": "chutes",
-            "providerDoc": "https://llm.chutes.ai/v1/models",
-            "providerEnv": ["CHUTES_API_KEY"],
-            "providerId": "chutes",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "chutes"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00009,
-                "inputCacheHit": null,
-                "output": 0.00016
-            },
-            "extendedThinking": false,
-            "id": "unsloth/gemma-3-27b-it",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 4194304,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "gemma-3-27b-it",
             "openWeights": false,
             "provider": "chutes",
             "providerDoc": "https://llm.chutes.ai/v1/models",

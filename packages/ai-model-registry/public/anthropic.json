@@ -1,12 +1,160 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Anthropic",
-        "lastUpdated": "2026-01-13T19:46:51.724Z",
+        "lastUpdated": "2026-01-13T20:03:21.321Z",
         "provider": "Anthropic",
         "totalModels": 11,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1,
+                "inputCacheHit": null,
+                "output": 5
+            },
+            "extendedThinking": true,
+            "id": "claude-haiku-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Haiku 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-10-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic",
+            "description": "Claude Haiku 4.5 is a fast, affordable, and highly capable AI model, excelling at coding and agentic tasks. Its combination of speed and low cost makes it ideal for powering real-time applications like chatbots, high-volume free services, and specialized \"sub-agents\" for complex tasks in coding, finance, and research. It can also handle common business tasks like creating office documents and assisting with strategy and analysis.",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 15,
+                "inputCacheHit": null,
+                "output": 75
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4-1",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4.1",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-08-05",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic",
+            "description": "Opus 4.1 is an upgraded version of Claude Opus 4, with improvements mainly in agent tasks, practical coding, and reasoning. Compared to Opus 4, there is a slight improvement in software engineering accuracy; Opus 4.1 has higher accuracy at 74.5%.",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5,
+                "inputCacheHit": null,
+                "output": 25
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-11-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic",
+            "description": "Claude Opus 4.5 is Anthropic’s latest frontier reasoning model, optimized for complex engineering, agentic workflows, and long-horizon computer use. It features strong multimodal capabilities, improved resistance to prompt injection, and a new Verbosity parameter to control token efficiency. With advanced tool use, extended context, and multi-agent support, Opus 4.5 excels in autonomous research, debugging, planning, and spreadsheet/browser operations.",
+            "preview": false
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3,
+                "inputCacheHit": null,
+                "output": 15
+            },
+            "extendedThinking": true,
+            "id": "claude-sonnet-4-5",
+            "knowledge": "2025",
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Claude Sonnet 4.5",
+            "openWeights": false,
+            "provider": "Anthropic",
+            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "providerEnv": ["ANTHROPIC_API_KEY"],
+            "providerId": "anthropic",
+            "providerModelsDevId": "anthropic",
+            "providerNpm": "@ai-sdk/anthropic",
+            "reasoning": true,
+            "releaseDate": "2025-09-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "anthropic",
+            "description": "Sonnet 4.5 is the best model in the world for agents, coding, and computer usage. It is also our most accurate and detailed model for long-running tasks, with enhanced knowledge in coding, finance, and cybersecurity.  \nThis model supports a thinking parameter to enable thinking requests in Claude mode.",
+            "preview": false
+        },
         {
             "attachment": false,
             "cost": {
@@ -80,41 +228,6 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1,
-                "inputCacheHit": null,
-                "output": 5
-            },
-            "extendedThinking": true,
-            "id": "claude-haiku-4-5",
-            "knowledge": "2025",
-            "lastUpdated": null,
-            "limit": {
-                "context": 200000,
-                "output": 64000
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude Haiku 4.5",
-            "openWeights": false,
-            "provider": "Anthropic",
-            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
-            "providerEnv": ["ANTHROPIC_API_KEY"],
-            "providerId": "anthropic",
-            "providerModelsDevId": "anthropic",
-            "providerNpm": "@ai-sdk/anthropic",
-            "reasoning": true,
-            "releaseDate": "2025-10-01",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "anthropic"
-        },
-        {
-            "attachment": false,
-            "cost": {
                 "input": 30,
                 "inputCacheHit": null,
                 "output": 1.5
@@ -176,76 +289,6 @@
             "providerNpm": "@ai-sdk/anthropic",
             "reasoning": true,
             "releaseDate": "2025-05-14",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "anthropic"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 15,
-                "inputCacheHit": null,
-                "output": 75
-            },
-            "extendedThinking": true,
-            "id": "claude-opus-4-1",
-            "knowledge": "2025",
-            "lastUpdated": null,
-            "limit": {
-                "context": 200000,
-                "output": 32000
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude Opus 4.1",
-            "openWeights": false,
-            "provider": "Anthropic",
-            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
-            "providerEnv": ["ANTHROPIC_API_KEY"],
-            "providerId": "anthropic",
-            "providerModelsDevId": "anthropic",
-            "providerNpm": "@ai-sdk/anthropic",
-            "reasoning": true,
-            "releaseDate": "2025-08-05",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "anthropic"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 5,
-                "inputCacheHit": null,
-                "output": 25
-            },
-            "extendedThinking": true,
-            "id": "claude-opus-4-5",
-            "knowledge": "2025",
-            "lastUpdated": null,
-            "limit": {
-                "context": 200000,
-                "output": 64000
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude Opus 4.5",
-            "openWeights": false,
-            "provider": "Anthropic",
-            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
-            "providerEnv": ["ANTHROPIC_API_KEY"],
-            "providerId": "anthropic",
-            "providerModelsDevId": "anthropic",
-            "providerNpm": "@ai-sdk/anthropic",
-            "reasoning": true,
-            "releaseDate": "2025-11-01",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -351,41 +394,6 @@
             "providerNpm": "@ai-sdk/anthropic",
             "reasoning": true,
             "releaseDate": "2025-05-14",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": true,
-            "icon": "anthropic"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 3,
-                "inputCacheHit": null,
-                "output": 15
-            },
-            "extendedThinking": true,
-            "id": "claude-sonnet-4-5",
-            "knowledge": "2025",
-            "lastUpdated": null,
-            "limit": {
-                "context": 200000,
-                "output": 64000
-            },
-            "modalities": {
-                "input": ["text", "image"],
-                "output": ["text"]
-            },
-            "name": "Claude Sonnet 4.5",
-            "openWeights": false,
-            "provider": "Anthropic",
-            "providerDoc": "https://platform.claude.com/docs/en/about-claude/models/overview",
-            "providerEnv": ["ANTHROPIC_API_KEY"],
-            "providerId": "anthropic",
-            "providerModelsDevId": "anthropic",
-            "providerNpm": "@ai-sdk/anthropic",
-            "reasoning": true,
-            "releaseDate": "2025-09-29",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

@@ -7,6 +7,6 @@
 /**
  * Union type of all model IDs for cerebras.
  */
-type ModelName = "FP16" | "FP16/FP8 (weights only)1" | "gpt-oss-120b" | "llama-3.3-70b" | "llama3.1-8b" | "qwen-3-coder-480b" | "zai-glm-4.6" | "zai-glm-4.7";
+type ModelName = "FP16" | "FP16/FP8 (weights only)1" | "llama3.1-8b" | "qwen-3-coder-480b" | "zai-glm-4.6" | "zai-glm-4.7";
 
 export default ModelName;
