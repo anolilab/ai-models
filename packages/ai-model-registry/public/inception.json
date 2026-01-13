@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from inception",
-        "lastUpdated": "2026-01-13T20:03:21.329Z",
+        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "pricingUnit": "1K",
         "provider": "inception",
         "totalModels": 2,
         "version": "0.0.0-development"
@@ -10,9 +11,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.25,
-                "inputCacheHit": 0.25,
-                "output": 1
+                "input": 0.00025,
+                "inputCacheHit": 0.00025,
+                "output": 0.001
             },
             "extendedThinking": false,
             "id": "mercury",
@@ -45,9 +46,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.25,
-                "inputCacheHit": 0.25,
-                "output": 1
+                "input": 0.00025,
+                "inputCacheHit": 0.00025,
+                "output": 0.001
             },
             "extendedThinking": false,
             "id": "mercury-coder",

@@ -1,9 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Fireworks AI",
-        "lastUpdated": "2026-01-13T20:03:21.325Z",
+        "lastUpdated": "2026-01-13T21:44:10.325Z",
+        "pricingUnit": "1K",
         "provider": "Fireworks AI",
-        "totalModels": 413,
+        "totalModels": 415,
         "version": "0.0.0-development"
     },
     "models": [
@@ -206,9 +207,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/chronos-hermes-13b-v2",
@@ -241,9 +242,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-13b",
@@ -276,9 +277,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-13b-instruct",
@@ -311,9 +312,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-13b-python",
@@ -346,9 +347,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-34b",
@@ -381,9 +382,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-34b-instruct",
@@ -416,9 +417,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-34b-python",
@@ -451,9 +452,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-70b",
@@ -486,9 +487,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-70b-instruct",
@@ -521,9 +522,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-70b-python",
@@ -556,9 +557,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-7b",
@@ -591,9 +592,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-7b-instruct",
@@ -626,9 +627,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-llama-7b-python",
@@ -661,9 +662,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/code-qwen-1p5-7b",
@@ -696,9 +697,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/codegemma-2b",
@@ -731,9 +732,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/codegemma-7b",
@@ -766,9 +767,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/cogito-v1-preview-llama-3b",
@@ -801,9 +802,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/cogito-v1-preview-llama-70b",
@@ -836,9 +837,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/cogito-v1-preview-llama-8b",
@@ -871,9 +872,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/cogito-v1-preview-qwen-14b",
@@ -906,9 +907,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/cogito-v1-preview-qwen-32b",
@@ -941,9 +942,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/dbrx-instruct",
@@ -976,9 +977,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-1b-base",
@@ -1011,9 +1012,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-33b-instruct",
@@ -1046,9 +1047,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-7b-base",
@@ -1081,9 +1082,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-7b-base-v1p5",
@@ -1116,9 +1117,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-7b-instruct-v1p5",
@@ -1151,9 +1152,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-v2-instruct",
@@ -1186,9 +1187,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-v2-lite-base",
@@ -1221,9 +1222,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-coder-v2-lite-instruct",
@@ -1256,9 +1257,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-prover-v2",
@@ -1291,9 +1292,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.35,
+                "input": 0.00135,
                 "inputCacheHit": null,
-                "output": 5.4
+                "output": 0.0054
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1",
@@ -1326,9 +1327,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.35,
+                "input": 0.00135,
                 "inputCacheHit": null,
-                "output": 5.4
+                "output": 0.0054
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-0528",
@@ -1361,9 +1362,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-0528-distill-qwen3-8b",
@@ -1396,9 +1397,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.55,
+                "input": 0.00055,
                 "inputCacheHit": null,
-                "output": 2.19
+                "output": 0.00219
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-basic",
@@ -1431,9 +1432,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-llama-70b",
@@ -1466,9 +1467,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-llama-8b",
@@ -1501,9 +1502,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-qwen-14b",
@@ -1536,9 +1537,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-qwen-1p5b",
@@ -1571,9 +1572,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-qwen-32b",
@@ -1606,9 +1607,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-r1-distill-qwen-7b",
@@ -1641,9 +1642,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v2-lite-chat",
@@ -1676,9 +1677,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v2p5",
@@ -1711,9 +1712,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v3",
@@ -1746,9 +1747,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v3-0324",
@@ -1781,9 +1782,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.56,
+                "input": 0.00056,
                 "inputCacheHit": null,
-                "output": 1.68
+                "output": 0.00168
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v3p1",
@@ -1816,9 +1817,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.56,
+                "input": 0.00056,
                 "inputCacheHit": null,
-                "output": 1.68
+                "output": 0.00168
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/deepseek-v3p2",
@@ -1851,9 +1852,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/devstral-small-2505",
@@ -1886,9 +1887,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/devstral-small-2-24b-instruct-2512",
@@ -1921,9 +1922,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/dolphin-2-9-2-qwen2-72b",
@@ -1956,9 +1957,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/dolphin-2p6-mixtral-8x7b",
@@ -1991,9 +1992,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/ernie-4p5-21b-a3b-pt",
@@ -2026,9 +2027,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/ernie-4p5-300b-a47b-pt",
@@ -2061,9 +2062,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/fare-20b",
@@ -2096,9 +2097,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/firefunction-v1",
@@ -2131,9 +2132,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/firefunction-v2",
@@ -2166,9 +2167,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/firellava-13b",
@@ -2201,9 +2202,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/firesearch-ocr-v6",
@@ -2306,9 +2307,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-1-dev-controlnet-union",
@@ -2341,9 +2342,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0005,
+                "input": 5e-7,
                 "inputCacheHit": null,
-                "output": 0.0005
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-1-dev-fp8",
@@ -2376,9 +2377,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-1-schnell",
@@ -2411,9 +2412,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00035,
+                "input": 3.5e-7,
                 "inputCacheHit": null,
-                "output": 0.00035
+                "output": 3.5e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-1-schnell-fp8",
@@ -2446,9 +2447,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.08,
+                "input": 0.00008,
                 "inputCacheHit": null,
-                "output": 0.08
+                "output": 0.00008
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-kontext-max",
@@ -2481,9 +2482,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.04,
+                "input": 0.00004,
                 "inputCacheHit": null,
-                "output": 0.04
+                "output": 0.00004
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/flux-kontext-pro",
@@ -2516,9 +2517,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma2-9b-it",
@@ -2551,9 +2552,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-2b-it",
@@ -2586,9 +2587,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-3-12b-it",
@@ -2621,9 +2622,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-3-27b-it",
@@ -2656,9 +2657,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-3-4b-it",
@@ -2691,9 +2692,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-7b",
@@ -2726,9 +2727,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gemma-7b-it",
@@ -2761,9 +2762,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.55,
+                "input": 0.00055,
                 "inputCacheHit": null,
-                "output": 2.19
+                "output": 0.00219
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/glm-4p5",
@@ -2796,9 +2797,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/glm-4p5-air",
@@ -2831,9 +2832,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/glm-4p5v",
@@ -2866,9 +2867,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.55,
+                "input": 0.00055,
                 "inputCacheHit": null,
-                "output": 2.19
+                "output": 0.00219
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/glm-4p6",
@@ -2901,9 +2902,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.6,
+                "input": 0.0006,
                 "inputCacheHit": null,
-                "output": 2.2
+                "output": 0.0022
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/glm-4p7",
@@ -2936,9 +2937,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gpt-oss-120b",
@@ -2971,9 +2972,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.07,
+                "input": 0.00007,
                 "inputCacheHit": null,
-                "output": 0.3
+                "output": 0.0003
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gpt-oss-20b",
@@ -3006,9 +3007,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gpt-oss-safeguard-120b",
@@ -3041,9 +3042,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/gpt-oss-safeguard-20b",
@@ -3076,9 +3077,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/hermes-2-pro-mistral-7b",
@@ -3111,9 +3112,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/internvl3-38b",
@@ -3146,9 +3147,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/internvl3-78b",
@@ -3181,9 +3182,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/internvl3-8b",
@@ -3216,9 +3217,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00013,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": 0.00013
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/japanese-stable-diffusion-xl",
@@ -3251,9 +3252,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/kat-coder",
@@ -3286,9 +3287,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/kat-dev-32b",
@@ -3321,9 +3322,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/kat-dev-72b-exp",
@@ -3356,9 +3357,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.6,
+                "input": 0.0006,
                 "inputCacheHit": null,
-                "output": 2.5
+                "output": 0.0025
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/kimi-k2-instruct",
@@ -3391,9 +3392,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.6,
+                "input": 0.0006,
                 "inputCacheHit": null,
-                "output": 2.5
+                "output": 0.0025
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/kimi-k2-instruct-0905",
@@ -3426,9 +3427,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.6,
+                "input": 0.0006,
                 "inputCacheHit": null,
-                "output": 2.5
+                "output": 0.0025
             },
             "extendedThinking": true,
             "id": "accounts/fireworks/models/kimi-k2-thinking",
@@ -3461,9 +3462,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama4-maverick-instruct-basic",
@@ -3496,9 +3497,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama4-scout-instruct-basic",
@@ -3531,9 +3532,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-guard-2-8b",
@@ -3566,9 +3567,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-guard-3-1b",
@@ -3601,9 +3602,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-guard-3-8b",
@@ -3636,9 +3637,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-13b",
@@ -3671,9 +3672,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-13b-chat",
@@ -3706,9 +3707,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-70b",
@@ -3741,9 +3742,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-70b-chat",
@@ -3776,9 +3777,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-7b",
@@ -3811,9 +3812,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v2-7b-chat",
@@ -3846,9 +3847,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3-70b-instruct",
@@ -3881,9 +3882,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3-70b-instruct-hf",
@@ -3916,9 +3917,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3-8b",
@@ -3951,9 +3952,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3-8b-instruct-hf",
@@ -3986,9 +3987,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 3,
+                "input": 0.003,
                 "inputCacheHit": null,
-                "output": 3
+                "output": 0.003
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-405b-instruct",
@@ -4021,9 +4022,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-405b-instruct-long",
@@ -4056,9 +4057,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-70b-instruct",
@@ -4091,9 +4092,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-70b-instruct-1b",
@@ -4126,9 +4127,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-8b-instruct",
@@ -4161,9 +4162,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p1-nemotron-70b-instruct",
@@ -4196,9 +4197,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-11b-vision-instruct",
@@ -4231,9 +4232,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-1b",
@@ -4266,9 +4267,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-1b-instruct",
@@ -4301,9 +4302,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-3b",
@@ -4336,9 +4337,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-3b-instruct",
@@ -4371,9 +4372,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p2-90b-vision-instruct",
@@ -4406,9 +4407,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llama-v3p3-70b-instruct",
@@ -4441,9 +4442,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llamaguard-7b",
@@ -4476,9 +4477,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/llava-yi-34b",
@@ -4511,9 +4512,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/minimax-m1-80k",
@@ -4546,9 +4547,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.3,
+                "input": 0.0003,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/minimax-m2",
@@ -4581,9 +4582,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.3,
+                "input": 0.0003,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/minimax-m2p1",
@@ -4616,9 +4617,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/ministral-3-14b-instruct-2512",
@@ -4651,9 +4652,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/ministral-3-3b-instruct-2512",
@@ -4686,9 +4687,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/ministral-3-8b-instruct-2512",
@@ -4721,9 +4722,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-7b",
@@ -4756,9 +4757,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-7b-instruct-4k",
@@ -4791,9 +4792,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-7b-instruct-v0p2",
@@ -4826,9 +4827,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-7b-instruct-v3",
@@ -4861,9 +4862,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-7b-v0p2",
@@ -4896,9 +4897,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-large-3-fp8",
@@ -4931,9 +4932,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-nemo-base-2407",
@@ -4966,9 +4967,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-nemo-instruct-2407",
@@ -5001,9 +5002,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mistral-small-24b-instruct-2501",
@@ -5036,9 +5037,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mixtral-8x22b",
@@ -5071,9 +5072,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mixtral-8x22b-instruct",
@@ -5106,9 +5107,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mixtral-8x7b",
@@ -5141,9 +5142,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mixtral-8x7b-instruct",
@@ -5176,9 +5177,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mixtral-8x7b-instruct-hf",
@@ -5211,9 +5212,79 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0001
+            },
+            "extendedThinking": false,
+            "id": "accounts/fireworks/models/molmo2-4b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 36864,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Molmo2-4B",
+            "openWeights": false,
+            "provider": "Fireworks AI",
+            "providerDoc": "https://readme.fireworks.ai/",
+            "providerEnv": ["FIREWORKS_API_KEY"],
+            "providerId": "fireworks-ai",
+            "providerModelsDevId": "fireworks-ai",
+            "providerNpm": "@ai-sdk/fireworks",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "fireworks"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "extendedThinking": false,
+            "id": "accounts/fireworks/models/molmo2-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 36864,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Molmo2-8B",
+            "openWeights": false,
+            "provider": "Fireworks AI",
+            "providerDoc": "https://readme.fireworks.ai/",
+            "providerEnv": ["FIREWORKS_API_KEY"],
+            "providerId": "fireworks-ai",
+            "providerModelsDevId": "fireworks-ai",
+            "providerNpm": "@ai-sdk/fireworks",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "fireworks"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/mythomax-l2-13b",
@@ -5246,9 +5317,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nemotron-nano-3-30b-a3b",
@@ -5281,9 +5352,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nemotron-nano-v2-12b-vl",
@@ -5316,9 +5387,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-capybara-7b-v1p9",
@@ -5351,9 +5422,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-hermes-2-mixtral-8x7b-dpo",
@@ -5386,9 +5457,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-hermes-2-yi-34b",
@@ -5421,9 +5492,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-hermes-llama2-13b",
@@ -5456,9 +5527,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-hermes-llama2-70b",
@@ -5491,9 +5562,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nous-hermes-llama2-7b",
@@ -5526,9 +5597,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nvidia-nemotron-nano-12b-v2",
@@ -5561,9 +5632,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/nvidia-nemotron-nano-9b-v2",
@@ -5596,9 +5667,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/openchat-3p5-0106-7b",
@@ -5631,9 +5702,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/openhermes-2-mistral-7b",
@@ -5666,9 +5737,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/openhermes-2p5-mistral-7b",
@@ -5701,9 +5772,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/openorca-7b",
@@ -5736,9 +5807,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phi-2-3b",
@@ -5771,9 +5842,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phi-3-mini-128k-instruct",
@@ -5806,9 +5877,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phi-3-vision-128k-instruct",
@@ -5841,9 +5912,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phind-code-llama-34b-python-v1",
@@ -5876,9 +5947,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phind-code-llama-34b-v1",
@@ -5911,9 +5982,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/phind-code-llama-34b-v2",
@@ -5946,9 +6017,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00013,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": 0.00013
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/playground-v2-1024px-aesthetic",
@@ -5981,9 +6052,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00013,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": 0.00013
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/playground-v2-5-1024px-aesthetic",
@@ -6016,9 +6087,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/pythia-12b",
@@ -6051,9 +6122,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen1p5-72b-chat",
@@ -6086,9 +6157,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2-72b-instruct",
@@ -6121,9 +6192,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2-7b-instruct",
@@ -6156,9 +6227,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-0p5b-instruct",
@@ -6191,9 +6262,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-14b",
@@ -6226,9 +6297,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-1p5b-instruct",
@@ -6261,9 +6332,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-32b",
@@ -6296,9 +6367,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-32b-instruct",
@@ -6331,9 +6402,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-72b",
@@ -6366,9 +6437,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-72b-instruct",
@@ -6401,9 +6472,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-7b-instruct",
@@ -6436,9 +6507,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-0p5b",
@@ -6471,9 +6542,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-0p5b-instruct",
@@ -6506,9 +6577,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-14b",
@@ -6541,9 +6612,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-14b-instruct",
@@ -6576,9 +6647,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-1p5b",
@@ -6611,9 +6682,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-1p5b-instruct",
@@ -6646,9 +6717,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-32b",
@@ -6681,9 +6752,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-32b-instruct",
@@ -6716,9 +6787,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-32b-instruct-128k",
@@ -6751,9 +6822,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-32b-instruct-32k-rope",
@@ -6786,9 +6857,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-32b-instruct-64k",
@@ -6821,9 +6892,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-3b",
@@ -6856,9 +6927,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-3b-instruct",
@@ -6891,9 +6962,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-7b",
@@ -6926,9 +6997,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-coder-7b-instruct",
@@ -6961,9 +7032,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-math-72b-instruct",
@@ -6996,9 +7067,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-vl-32b-instruct",
@@ -7031,9 +7102,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-vl-3b-instruct",
@@ -7066,9 +7137,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-vl-72b-instruct",
@@ -7101,9 +7172,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2p5-vl-7b-instruct",
@@ -7136,9 +7207,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2-vl-2b-instruct",
@@ -7171,9 +7242,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2-vl-72b-instruct",
@@ -7206,9 +7277,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen2-vl-7b-instruct",
@@ -7241,9 +7312,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-0p6b",
@@ -7276,9 +7347,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-14b",
@@ -7311,9 +7382,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-1p7b",
@@ -7346,9 +7417,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-1p7b-fp8-draft",
@@ -7381,9 +7452,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-1p7b-fp8-draft-131072",
@@ -7416,9 +7487,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-1p7b-fp8-draft-40960",
@@ -7451,9 +7522,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-235b-a22b",
@@ -7486,9 +7557,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-235b-a22b-instruct-2507",
@@ -7521,9 +7592,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-30b-a3b",
@@ -7556,9 +7627,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-30b-a3b-instruct-2507",
@@ -7591,9 +7662,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": true,
             "id": "accounts/fireworks/models/qwen3-30b-a3b-thinking-2507",
@@ -7626,9 +7697,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-32b",
@@ -7661,9 +7732,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-4b",
@@ -7696,9 +7767,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-4b-instruct-2507",
@@ -7731,9 +7802,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-8b",
@@ -7766,9 +7837,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-coder-30b-a3b-instruct",
@@ -7801,9 +7872,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.45,
+                "input": 0.00045,
                 "inputCacheHit": null,
-                "output": 1.8
+                "output": 0.0018
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-coder-480b-a35b-instruct",
@@ -7836,9 +7907,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.2,
+                "input": 0.0012,
                 "inputCacheHit": null,
-                "output": 1.2
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-coder-480b-instruct-bf16",
@@ -7976,9 +8047,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-next-80b-a3b-instruct",
@@ -8011,9 +8082,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": true,
             "id": "accounts/fireworks/models/qwen3-next-80b-a3b-thinking",
@@ -8046,9 +8117,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.5,
+                "input": 0.0005,
                 "inputCacheHit": null,
-                "output": 0.5
+                "output": 0.0005
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-omni-30b-a3b-instruct",
@@ -8186,9 +8257,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-vl-235b-a22b-instruct",
@@ -8221,9 +8292,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.22,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 0.88
+                "output": 0.00088
             },
             "extendedThinking": true,
             "id": "accounts/fireworks/models/qwen3-vl-235b-a22b-thinking",
@@ -8256,9 +8327,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-vl-30b-a3b-instruct",
@@ -8291,9 +8362,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.15,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.6
+                "output": 0.0006
             },
             "extendedThinking": true,
             "id": "accounts/fireworks/models/qwen3-vl-30b-a3b-thinking",
@@ -8326,9 +8397,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-vl-32b-instruct",
@@ -8361,9 +8432,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen3-vl-8b-instruct",
@@ -8396,9 +8467,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen-qwq-32b-preview",
@@ -8431,9 +8502,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen-v2p5-14b-instruct",
@@ -8466,9 +8537,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwen-v2p5-7b",
@@ -8501,9 +8572,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/qwq-32b",
@@ -8536,9 +8607,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/rolm-ocr",
@@ -8571,9 +8642,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/seed-oss-36b-instruct",
@@ -8606,9 +8677,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/snorkel-mistral-7b-pairrm-dpo",
@@ -8641,9 +8712,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00013,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": 0.00013
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/SSD-1B",
@@ -8676,9 +8747,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00013,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": 0.00013
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/stable-diffusion-xl-1024-v1-0",
@@ -8711,9 +8782,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/stablecode-3b",
@@ -8746,9 +8817,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/starcoder-16b",
@@ -8781,9 +8852,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/starcoder2-15b",
@@ -8816,9 +8887,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/starcoder2-3b",
@@ -8851,9 +8922,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/starcoder2-7b",
@@ -8886,9 +8957,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/starcoder-7b",
@@ -8921,9 +8992,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/toppy-m-7b",
@@ -9026,9 +9097,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.9,
+                "input": 0.0009,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 0.0009
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/yi-34b-200k-capybara",
@@ -9061,9 +9132,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.2,
+                "input": 0.0002,
                 "inputCacheHit": null,
-                "output": 0.2
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "accounts/fireworks/models/zephyr-7b-beta",

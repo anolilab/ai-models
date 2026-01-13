@@ -850,6 +850,7 @@ const generateProviderFiles = (models: Model[], outputDir: string): void => {
             metadata: {
                 description: `AI Models API - Models from ${provider}`,
                 lastUpdated: new Date().toISOString(),
+                pricingUnit: "1K", // Cost values are stored as "per 1K tokens" (per 1000 tokens)
                 provider,
                 totalModels: providerModels.length,
                 version: "0.0.0-development",

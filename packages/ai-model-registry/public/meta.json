@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Meta",
-        "lastUpdated": "2026-01-13T20:03:21.329Z",
+        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "pricingUnit": "1K",
         "provider": "Meta",
         "totalModels": 4,
         "version": "0.0.0-development"

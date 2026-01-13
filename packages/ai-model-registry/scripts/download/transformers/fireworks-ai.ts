@@ -62,6 +62,7 @@ const hasVisionCapability = (modelName: string, modelTypes: SanityModel["modelTy
 /**
  * Converts pricing from Sanity API format to our cost format.
  * Pricing values are per unit (million tokens by default).
+ * Converts from per 1M tokens to per 1K tokens.
  */
 const convertPricing = (
     pricingInput: number | null,
@@ -72,12 +73,13 @@ const convertPricing = (
     let output: number | null = null;
     const inputCacheHit: number | null = null;
 
+    // Convert from per 1M tokens to per 1K tokens (divide by 1000)
     if (pricingInput !== null && !Number.isNaN(pricingInput)) {
-        input = pricingInput;
+        input = pricingInput / 1000;
     }
 
     if (pricingOutput !== null && !Number.isNaN(pricingOutput)) {
-        output = pricingOutput;
+        output = pricingOutput / 1000;
     }
 
     return { input, inputCacheHit, output };

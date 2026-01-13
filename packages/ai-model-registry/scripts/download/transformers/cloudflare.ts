@@ -161,13 +161,13 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
                 const inputCostPerM = parseFloat(inputMatch[1]);
                 const outputCostPerM = parseFloat(outputMatch[1]);
 
-                // Convert from per million tokens to per token
-                const inputCostPerToken = inputCostPerM / 1000000;
-                const outputCostPerToken = outputCostPerM / 1000000;
+                // Convert from per million tokens to per 1K tokens (divide by 1000)
+                const inputCostPer1K = inputCostPerM / 1000;
+                const outputCostPer1K = outputCostPerM / 1000;
 
                 details.pricing = {
-                    input: Number.isNaN(inputCostPerToken) ? undefined : parseFloat(inputCostPerToken.toFixed(10)),
-                    output: Number.isNaN(outputCostPerToken) ? undefined : parseFloat(outputCostPerToken.toFixed(10)),
+                    input: Number.isNaN(inputCostPer1K) ? undefined : parseFloat(inputCostPer1K.toFixed(10)),
+                    output: Number.isNaN(outputCostPer1K) ? undefined : parseFloat(outputCostPer1K.toFixed(10)),
                 };
             } else {
                 // Fallback: try to find any dollar amounts and assume they're in order (input, output)
@@ -177,13 +177,13 @@ const fetchModelDetails = async (detailUrl: string): Promise<Partial<CloudflareM
                     const inputCostPerM = parseFloat(priceMatches[0].replace("$", ""));
                     const outputCostPerM = parseFloat(priceMatches[1].replace("$", ""));
 
-                    // Convert from per million tokens to per token
-                    const inputCostPerToken = inputCostPerM / 1000000;
-                    const outputCostPerToken = outputCostPerM / 1000000;
+                    // Convert from per million tokens to per 1K tokens (divide by 1000)
+                    const inputCostPer1K = inputCostPerM / 1000;
+                    const outputCostPer1K = outputCostPerM / 1000;
 
                     details.pricing = {
-                        input: Number.isNaN(inputCostPerToken) ? undefined : parseFloat(inputCostPerToken.toFixed(10)),
-                        output: Number.isNaN(outputCostPerToken) ? undefined : parseFloat(outputCostPerToken.toFixed(10)),
+                        input: Number.isNaN(inputCostPer1K) ? undefined : parseFloat(inputCostPer1K.toFixed(10)),
+                        output: Number.isNaN(outputCostPer1K) ? undefined : parseFloat(outputCostPer1K.toFixed(10)),
                     };
                 }
             }

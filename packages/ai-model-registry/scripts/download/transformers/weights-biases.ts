@@ -185,9 +185,9 @@ const transformWandBModel = (modelData: WandBModelData, pricingData?: WandBPrici
         attachment: false,
         cost: pricingData
             ? {
-                  input: pricingData.inputCost / 1_000_000, // Convert from per 1M tokens to per token
+                  input: pricingData.inputCost / 1000, // Convert from per 1M tokens to per 1K tokens
                   inputCacheHit: null,
-                  output: pricingData.outputCost / 1_000_000,
+                  output: pricingData.outputCost / 1000, // Convert from per 1M tokens to per 1K tokens
               }
             : null,
         description,

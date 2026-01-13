@@ -152,6 +152,8 @@ type ModelName
         | "accounts/fireworks/models/mixtral-8x7b"
         | "accounts/fireworks/models/mixtral-8x7b-instruct"
         | "accounts/fireworks/models/mixtral-8x7b-instruct-hf"
+        | "accounts/fireworks/models/molmo2-4b"
+        | "accounts/fireworks/models/molmo2-8b"
         | "accounts/fireworks/models/mythomax-l2-13b"
         | "accounts/fireworks/models/nemotron-nano-3-30b-a3b"
         | "accounts/fireworks/models/nemotron-nano-v2-12b-vl"

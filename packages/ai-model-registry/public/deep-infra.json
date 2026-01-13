@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Deep Infra",
-        "lastUpdated": "2026-01-13T20:03:21.328Z",
+        "lastUpdated": "2026-01-13T21:44:10.328Z",
+        "pricingUnit": "1K",
         "provider": "Deep Infra",
         "totalModels": 26,
         "version": "0.0.0-development"
@@ -10,9 +11,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000009,
+                "input": 0.00009,
                 "inputCacheHit": null,
-                "output": 0.000019
+                "output": 0.00019
             },
             "extendedThinking": false,
             "id": "allenai/olmOCR-2-7B-1025",
@@ -80,9 +81,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00165,
+                "input": 0.0165,
                 "inputCacheHit": null,
-                "output": 0.00825
+                "output": 0.0825
             },
             "extendedThinking": false,
             "id": "anthropic/claude-4-opus",
@@ -115,9 +116,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00033,
+                "input": 0.0033,
                 "inputCacheHit": null,
-                "output": 0.00165
+                "output": 0.0165
             },
             "extendedThinking": false,
             "id": "anthropic/claude-4-sonnet",
@@ -150,9 +151,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000003,
+                "input": 0.00003,
                 "inputCacheHit": null,
-                "output": 0.00001
+                "output": 0.0001
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-OCR",
@@ -185,9 +186,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0001,
+                "input": 0.001,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.003
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-R1-0528-Turbo",
@@ -255,9 +256,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000021,
+                "input": 0.00021,
                 "inputCacheHit": null,
-                "output": 0.000079
+                "output": 0.00079
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-V3.1",
@@ -290,9 +291,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000021,
+                "input": 0.00021,
                 "inputCacheHit": null,
-                "output": 0.000079
+                "output": 0.00079
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-V3.1-Terminus",
@@ -325,9 +326,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000026,
+                "input": 0.00026,
                 "inputCacheHit": null,
-                "output": 0.000039
+                "output": 0.00039
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-V3.2",
@@ -395,9 +396,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00001,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.000032
+                "output": 0.00032
             },
             "extendedThinking": false,
             "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
@@ -430,9 +431,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000015,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.00006
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -500,9 +501,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000008,
+                "input": 0.00008,
                 "inputCacheHit": null,
-                "output": 0.00003
+                "output": 0.0003
             },
             "extendedThinking": false,
             "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
@@ -535,9 +536,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000018,
+                "input": 0.00018,
                 "inputCacheHit": null,
-                "output": 0.000018
+                "output": 0.00018
             },
             "extendedThinking": false,
             "id": "meta-llama/Llama-Guard-4-12B",
@@ -570,9 +571,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0000254,
+                "input": 0.000254,
                 "inputCacheHit": null,
-                "output": 0.000102
+                "output": 0.00102
             },
             "extendedThinking": false,
             "id": "MiniMaxAI/MiniMax-M2",
@@ -640,9 +641,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0000075,
+                "input": 0.000075,
                 "inputCacheHit": null,
-                "output": 0.00002
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
@@ -675,9 +676,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000047,
+                "input": 0.00047,
                 "inputCacheHit": null,
-                "output": 0.0002
+                "output": 0.002
             },
             "extendedThinking": false,
             "id": "moonshotai/Kimi-K2-Thinking",
@@ -710,9 +711,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000006,
+                "input": 0.00006,
                 "inputCacheHit": null,
-                "output": 0.000024
+                "output": 0.00024
             },
             "extendedThinking": false,
             "id": "nvidia/Nemotron-3-Nano-30B-A3B",
@@ -745,9 +746,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000014,
+                "input": 0.00014,
                 "inputCacheHit": null,
-                "output": 0.00008
+                "output": 0.0008
             },
             "extendedThinking": false,
             "id": "PaddlePaddle/PaddleOCR-VL-0.9B",
@@ -780,9 +781,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00004,
+                "input": 0.0004,
                 "inputCacheHit": null,
-                "output": 0.00016
+                "output": 0.0016
             },
             "extendedThinking": false,
             "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
@@ -815,9 +816,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000028,
+                "input": 0.00028,
                 "inputCacheHit": null,
-                "output": 0.00012
+                "output": 0.0012
             },
             "extendedThinking": false,
             "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",

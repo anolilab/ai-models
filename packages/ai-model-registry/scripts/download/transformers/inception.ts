@@ -31,9 +31,9 @@ const INCEPTION_MODEL_INFO: Record<string, Partial<Model>> = {
     mercury: {
         attachment: false,
         cost: {
-            input: 0.25, // Cost per million input tokens (USD)
-            inputCacheHit: 0.25, // Cost per million cached read tokens (USD)
-            output: 1.0, // Cost per million output tokens (USD)
+            input: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            inputCacheHit: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            output: 1.0 / 1000, // Convert from per 1M tokens to per 1K tokens
         },
         knowledge: "2023-10",
         lastUpdated: "2025-07-31",
@@ -54,9 +54,9 @@ const INCEPTION_MODEL_INFO: Record<string, Partial<Model>> = {
     "mercury-coder": {
         attachment: false,
         cost: {
-            input: 0.25, // Cost per million input tokens (USD)
-            inputCacheHit: 0.25, // Cost per million cached read tokens (USD)
-            output: 1.0, // Cost per million output tokens (USD)
+            input: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            inputCacheHit: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            output: 1.0 / 1000, // Convert from per 1M tokens to per 1K tokens
         },
         knowledge: "2023-10",
         lastUpdated: "2025-07-31",
@@ -77,9 +77,9 @@ const INCEPTION_MODEL_INFO: Record<string, Partial<Model>> = {
     "mercury-coder-small": {
         attachment: false,
         cost: {
-            input: 0.25, // Cost per million input tokens (USD)
-            inputCacheHit: 0.25, // Cost per million cached read tokens (USD)
-            output: 1.0, // Cost per million output tokens (USD)
+            input: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            inputCacheHit: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            output: 1.0 / 1000, // Convert from per 1M tokens to per 1K tokens
         },
         knowledge: "2023-10",
         lastUpdated: "2025-07-31",
@@ -100,9 +100,9 @@ const INCEPTION_MODEL_INFO: Record<string, Partial<Model>> = {
     "mercury-small": {
         attachment: false,
         cost: {
-            input: 0.25, // Cost per million input tokens (USD)
-            inputCacheHit: 0.25, // Cost per million cached read tokens (USD)
-            output: 1.0, // Cost per million output tokens (USD)
+            input: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            inputCacheHit: 0.25 / 1000, // Convert from per 1M tokens to per 1K tokens
+            output: 1.0 / 1000, // Convert from per 1M tokens to per 1K tokens
         },
         knowledge: "2023-10",
         lastUpdated: "2025-07-31",

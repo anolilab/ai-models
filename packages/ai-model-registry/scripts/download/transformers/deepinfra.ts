@@ -53,12 +53,22 @@ const transformDeepInfraModels = (modelsData: DeepInfraModelData[]): Model[] => 
             continue;
         }
 
+        // DeepInfra API returns pricing in cents per token
+        // Convert to dollars per 1K tokens: (cents / 100) * 1000 = cents * 10
+        const convertCentsPerTokenToDollarsPer1K = (cents: number | null | undefined): number | null => {
+            if (cents === null || cents === undefined) {
+                return null;
+            }
+            const numValue = typeof cents === "number" ? cents : parseFloat(String(cents));
+            return Number.isNaN(numValue) ? null : (numValue / 100) * 1000;
+        };
+
         const model: Model = {
             attachment: false, // Default value, not available in API
             cost: {
-                input: toNumber(modelData.pricing.cents_per_input_token) || null,
+                input: convertCentsPerTokenToDollarsPer1K(modelData.pricing.cents_per_input_token),
                 inputCacheHit: null,
-                output: toNumber(modelData.pricing.cents_per_output_token) || null,
+                output: convertCentsPerTokenToDollarsPer1K(modelData.pricing.cents_per_output_token),
             },
             extendedThinking: false, // Default value, not available in API
             id: modelData.full_name,

@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Morph",
-        "lastUpdated": "2026-01-13T20:03:21.330Z",
+        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "pricingUnit": "1K",
         "provider": "Morph",
         "totalModels": 1,
         "version": "0.0.0-development"

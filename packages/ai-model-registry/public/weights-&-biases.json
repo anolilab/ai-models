@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Weights & Biases",
-        "lastUpdated": "2026-01-13T20:03:21.329Z",
+        "lastUpdated": "2026-01-13T21:44:10.329Z",
+        "pricingUnit": "1K",
         "provider": "Weights & Biases",
         "totalModels": 15,
         "version": "0.0.0-development"
@@ -10,9 +11,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 2.2e-7,
+                "input": 0.00022,
                 "inputCacheHit": null,
-                "output": 2.2e-7
+                "output": 0.00022
             },
             "description": "Efficient conversational model optimized for responsive multilingual chatbot interactions",
             "extendedThinking": false,
@@ -46,9 +47,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 6e-8,
+                "input": 0.00006,
                 "inputCacheHit": null,
-                "output": 2.4e-7
+                "output": 0.00024
             },
             "description": "Dense multilingual instruction-tuned model with tool-use and structured output support",
             "extendedThinking": false,
@@ -82,9 +83,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00000135,
+                "input": 0.00135,
                 "inputCacheHit": null,
-                "output": 0.0000054
+                "output": 0.0054
             },
             "description": "Optimized for precise reasoning tasks including complex coding, math, and structured document analysis",
             "extendedThinking": false,
@@ -118,9 +119,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00000114,
+                "input": 0.00114,
                 "inputCacheHit": null,
-                "output": 0.00000275
+                "output": 0.00275
             },
             "description": "Robust Mixture-of-Experts model tailored for high-complexity language processing and comprehensive document analysis",
             "extendedThinking": false,
@@ -154,9 +155,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 5.5e-7,
+                "input": 0.00055,
                 "inputCacheHit": null,
-                "output": 0.00000165
+                "output": 0.00165
             },
             "description": "A large hybrid model that supports both thinking and non-thinking modes via prompt templates",
             "extendedThinking": false,
@@ -190,9 +191,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 8e-7,
+                "input": 0.0008,
                 "inputCacheHit": null,
-                "output": 8e-7
+                "output": 0.0008
             },
             "description": "Efficient conversational model optimized for responsive multilingual chatbot interactions",
             "extendedThinking": false,
@@ -226,9 +227,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 7.1e-7,
+                "input": 0.00071,
                 "inputCacheHit": null,
-                "output": 7.1e-7
+                "output": 0.00071
             },
             "description": "Multilingual model excelling in conversational tasks, detailed instruction-following, and coding",
             "extendedThinking": false,
@@ -262,9 +263,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1.7e-7,
+                "input": 0.00017,
                 "inputCacheHit": null,
-                "output": 6.6e-7
+                "output": 0.00066
             },
             "description": "Multi-modal model integrating text and image understanding, ideal for visual tasks and combined analysis",
             "extendedThinking": false,
@@ -298,9 +299,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 8e-8,
+                "input": 0.00008,
                 "inputCacheHit": null,
-                "output": 3.5e-7
+                "output": 0.00035
             },
             "description": "Compact, efficient model ideal for fast responses in resource-constrained environments",
             "extendedThinking": false,
@@ -334,9 +335,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00000135,
+                "input": 0.00135,
                 "inputCacheHit": null,
-                "output": 0.000004
+                "output": 0.004
             },
             "description": "Mixture-of-Experts model optimized for complex tool use, reasoning, and code synthesis",
             "extendedThinking": false,
@@ -370,9 +371,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 5e-8,
+                "input": 0.00005,
                 "inputCacheHit": null,
-                "output": 2.2e-7
+                "output": 0.00022
             },
             "description": "An efficient multilingual, dense, instruction-tuned model, optimized by OpenPipe for building agents with finetuning.",
             "extendedThinking": false,
@@ -406,9 +407,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1e-7,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 1e-7
+                "output": 0.0001
             },
             "description": "Efficient multilingual, Mixture-of-Experts, instruction-tuned model, optimized for logical reasoning",
             "extendedThinking": false,
@@ -442,9 +443,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 1e-7,
+                "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 1e-7
+                "output": 0.0001
             },
             "description": "High-performance Mixture-of-Experts model optimized for structured reasoning, math, and long-form generation",
             "extendedThinking": false,
@@ -478,9 +479,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000001,
+                "input": 0.001,
                 "inputCacheHit": null,
-                "output": 0.0000015
+                "output": 0.0015
             },
             "description": "Mixture-of-Experts model optimized for coding tasks such as function calling, tooling use, and long-context reasoning",
             "extendedThinking": false,
@@ -514,9 +515,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 5.5e-7,
+                "input": 0.00055,
                 "inputCacheHit": null,
-                "output": 0.000002
+                "output": 0.002
             },
             "description": "Mixture-of-Experts model with user-controllable thinking/non-thinking modes for reasoning, code, and agents",
             "extendedThinking": false,

@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Ollama Cloud",
-        "lastUpdated": "2026-01-13T20:03:21.330Z",
+        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "pricingUnit": "1K",
         "provider": "Ollama Cloud",
         "totalModels": 28,
         "version": "0.0.0-development"

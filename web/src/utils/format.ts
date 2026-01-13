@@ -53,7 +53,7 @@ export function formatDateToReadable(date: string | null | undefined): string {
 
 /**
  * Format AI model costs with appropriate units and precision
- * @param cost Cost per token as a decimal number
+ * @param cost Cost per 1K tokens as a decimal number (schema stores costs as per 1K tokens)
  * @returns Formatted cost string with appropriate units
  */
 export const formatModelCost = (cost: number | null | undefined): string => {
@@ -68,23 +68,27 @@ export const formatModelCost = (cost: number | null | undefined): string => {
     // Ensure we have a proper decimal number (handle scientific notation)
     const decimalCost = typeof cost === "number" ? cost : parseFloat(String(cost));
 
-    // For very small costs, show per billion tokens
+    // Cost is already in "per 1K tokens" format, so we display it directly
+    // For very small costs (< $0.000001 per 1K = $1 per 1B), show per billion tokens
     if (decimalCost < 0.000001) {
-        return `$${(decimalCost * 1000000000).toFixed(3)}/1B tokens`;
+        return `$${(decimalCost * 1000000).toFixed(3)}/1B tokens`;
     }
 
-    // For small costs, show per million tokens
-    if (decimalCost < 0.0001) {
-        return `$${(decimalCost * 1000000).toFixed(2)}/1M tokens`;
+    // For small costs (< $0.001 per 1K = $1 per 1M), show per million tokens
+    // Example: 0.0004 per 1K = $0.40 per 1M tokens
+    if (decimalCost < 0.001) {
+        return `$${(decimalCost * 1000).toFixed(2)}/1M tokens`;
     }
 
-    // For costs less than $1, show per thousand tokens
+    // For costs less than $1 per 1K tokens, show per 1K tokens
     if (decimalCost < 1) {
-        return `$${(decimalCost * 1000).toFixed(2)}/1K tokens`;
+        return `$${decimalCost.toFixed(2)}/1K tokens`;
     }
 
-    // For costs $1 and above, show per token
-    return `$${decimalCost.toFixed(4)}/token`;
+    // For costs $1 and above per 1K tokens, show per 1K tokens
+    // Remove trailing zeros for whole numbers
+    const formatted = decimalCost % 1 === 0 ? decimalCost.toFixed(0) : decimalCost.toFixed(4).replace(/\.?0+$/, "");
+    return `$${formatted}/1K tokens`;
 };
 
 /**

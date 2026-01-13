@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Requesty",
-        "lastUpdated": "2026-01-13T20:03:21.330Z",
+        "lastUpdated": "2026-01-13T21:44:10.331Z",
+        "pricingUnit": "1K",
         "provider": "Requesty",
         "totalModels": 373,
         "version": "0.0.0-development"

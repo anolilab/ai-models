@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Google Vertex",
-        "lastUpdated": "2026-01-13T20:03:21.328Z",
+        "lastUpdated": "2026-01-13T21:44:10.329Z",
+        "pricingUnit": "1K",
         "provider": "Google Vertex",
         "totalModels": 39,
         "version": "0.0.0-development"

@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Cloudflare",
-        "lastUpdated": "2026-01-13T20:03:21.321Z",
+        "lastUpdated": "2026-01-13T21:44:10.322Z",
+        "pricingUnit": "1K",
         "provider": "Cloudflare",
         "totalModels": 76,
         "version": "0.0.0-development"
@@ -2005,9 +2006,9 @@
             "attachment": false,
             "audioGeneration": true,
             "cost": {
-                "input": 5.2e-9,
+                "input": 0.0000052,
                 "inputCacheHit": null,
-                "output": 9.2e-9
+                "output": 0.0000092
             },
             "description": "Transcribe audio using Deepgram’s speech-to-text model",
             "id": "nova-3",

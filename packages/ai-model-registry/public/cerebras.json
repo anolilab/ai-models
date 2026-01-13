@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from cerebras",
-        "lastUpdated": "2026-01-13T20:03:21.325Z",
+        "lastUpdated": "2026-01-13T21:44:10.325Z",
+        "pricingUnit": "1K",
         "provider": "cerebras",
         "totalModels": 6,
         "version": "0.0.0-development"

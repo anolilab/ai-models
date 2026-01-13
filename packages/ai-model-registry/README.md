@@ -276,8 +276,8 @@ interface Model {
 
     // Pricing structure
     cost: {
-        input: number | null; // per 1K tokens
-        output: number | null; // per 1K tokens
+        input: number | null; // per 1K tokens (see metadata.pricingUnit)
+        output: number | null; // per 1K tokens (see metadata.pricingUnit)
         inputCacheHit: number | null; // cache hit pricing
         imageGeneration?: number | null;
         imageGenerationUltra?: number | null;
@@ -285,6 +285,32 @@ interface Model {
         videoGenerationWithAudio?: number | null;
         videoGenerationWithoutAudio?: number | null;
     };
+```
+
+### JSON File Structure
+
+Provider-specific JSON files include metadata about the pricing unit:
+
+```typescript
+interface ProviderJsonFile {
+    metadata: {
+        description: string;
+        lastUpdated: string;
+        pricingUnit: "1K"; // Cost values are stored as "per 1K tokens" (per 1000 tokens)
+        provider: string;
+        totalModels: number;
+        version: string;
+    };
+    models: Model[];
+}
+```
+
+**Important:** All cost values in the `cost` object are stored according to the `metadata.pricingUnit` field. Currently, all providers use `"1K"` (per 1000 tokens), meaning:
+
+- `cost.input: 0.4` means $0.40 per 1,000 input tokens
+- `cost.output: 1.2` means $1.20 per 1,000 output tokens
+
+This metadata field makes the pricing unit explicit and helps prevent confusion when working with the data.
 
     // Limits
     limit: {
@@ -327,8 +353,10 @@ interface Model {
     providerStatus?: string;
     supportsTools?: boolean;
     supportsStructuredOutput?: boolean;
+
 }
-```
+
+````
 
 ## Tree Shaking and Code Splitting
 
@@ -347,7 +375,7 @@ import { getIcon } from "@anolilab/ai-model-registry/icons";
 // Import provider-specific model ID types
 import type ModelName from "@anolilab/ai-model-registry/types/open-router";
 import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
-```
+````
 
 ### Dynamic Loading
 

@@ -1,7 +1,8 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Vercel",
-        "lastUpdated": "2026-01-13T20:03:21.333Z",
+        "lastUpdated": "2026-01-13T21:44:10.333Z",
+        "pricingUnit": "1K",
         "provider": "Vercel",
         "totalModels": 116,
         "version": "0.0.0-development"
