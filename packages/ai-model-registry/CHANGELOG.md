@@ -1,3 +1,9 @@
+## @anolilab/ai-model-registry [4.0.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.1...@anolilab/ai-model-registry@4.0.2) (2026-01-13)
+
+### Bug Fixes
+
+* update README and JSON files to clarify pricing structure ([837cf9e](https://github.com/anolilab/ai-models/commit/837cf9eec452652f734df3e21afa49c70806c79f))
+
 ## @anolilab/ai-model-registry [4.0.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.0...@anolilab/ai-model-registry@4.0.1) (2026-01-13)
 
 ### Bug Fixes
