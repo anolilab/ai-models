@@ -71,7 +71,8 @@
         "./providers/*": {
             "types": "./dist/providers/*.d.ts",
             "import": "./dist/providers/*.js"
-        }
+        },
+        "./package.json": "./package.json"
     },
     "files": [
         "./dist",
