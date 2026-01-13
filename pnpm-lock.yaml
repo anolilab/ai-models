@@ -198,8 +198,8 @@ importers:
   web:
     dependencies:
       '@anolilab/ai-model-registry':
-        specifier: latest
-        version: 4.0.1
+        specifier: workspace:*
+        version: link:../packages/ai-model-registry
       '@c15t/react':
         specifier: ^1.8.2
         version: 1.8.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)
@@ -497,10 +497,6 @@ packages:
 
   '@andrewbranch/untar.js@1.0.3':
     resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
-
-  '@anolilab/ai-model-registry@4.0.1':
-    resolution: {integrity: sha512-JpvSyhTvYaYF7vEouAJ6KtR+pEXXcr7YA3O8W/KDMnP0Ctxgms4JwlqVlvFqGzpHIvsWEndJ8HTLxHS0+45AAQ==}
-    engines: {node: '>=20'}
 
   '@anolilab/commitlint-config@9.0.0':
     resolution: {integrity: sha512-Xn8SMWCwzzVqsJqifY6P4u0nI2rKAfXjSYR2qs4xHIThA4iKyQx74d8MLF3AoJgmZbF/T7ibVLcIIp90NXxJ6A==}
@@ -10934,10 +10930,6 @@ snapshots:
   '@adobe/css-tools@4.4.3': {}
 
   '@andrewbranch/untar.js@1.0.3': {}
-
-  '@anolilab/ai-model-registry@4.0.1':
-    dependencies:
-      zod: 4.3.5
 
   '@anolilab/commitlint-config@9.0.0(@commitlint/cli@20.3.1(@types/node@25.0.8)(typescript@5.9.3))(@types/node@25.0.8)(typescript@5.9.3)':
     dependencies:

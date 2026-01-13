@@ -1,4 +1,4 @@
-import { getAllModels } from "@anolilab/ai-model-registry";
+import { getAllModels, getProviders } from "@anolilab/ai-model-registry";
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import { BarChart3, Copy, MoreHorizontal, Trash2 } from "lucide-react";
 import { useCallback, useState } from "react";
@@ -16,7 +16,7 @@ import { useModelTable, useSelectionMode, useTableHeight } from "@/hooks/use-tab
 
 const HomeComponent = () => {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    const { allModels } = Route.useLoaderData();
+    const { allModels, allProviders } = Route.useLoaderData();
     const isMobile = useIsMobile();
 
     // Custom hooks
@@ -103,7 +103,7 @@ const HomeComponent = () => {
 
     let Menu = (
         <>
-            <HowToUseDialog />
+            <HowToUseDialog allProviders={allProviders} allModels={allModels} />
             <a className="github" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
                 <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -232,9 +232,10 @@ const HomeComponent = () => {
 
 export const Route = createFileRoute("/")({
     component: HomeComponent,
-    loader: () => {
-        const allModels = getAllModels();
+    loader: async () => {
+        const allModels = await getAllModels();
+        const allProviders = await getProviders()
 
-        return { allModels };
+        return { allModels, allProviders };
     },
 });

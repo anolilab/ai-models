@@ -4,8 +4,10 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
+import type { Model } from "@anolilab/ai-model-registry/schema";
 
-const HowToUseDialog: FC = () => {
+const HowToUseDialog: FC<{ allProviders: ProviderName[], allModels: Model[] }> = ({ allProviders, allModels }) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -39,9 +41,6 @@ const HowToUseDialog: FC = () => {
                             <div>
                                 <p className="mb-1 text-sm font-medium">API Endpoints:</p>
                                 <div className="space-y-2">
-                                    <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                                        curl https://unpkg.com/@anolilab/ai-model-registry@latest/public/api.json{" "}
-                                    </div>
                                     <div className="bg-muted rounded-md p-3 font-mono text-sm">curl https://ai-models.anolilab.com/api.json</div>
                                 </div>
                             </div>
@@ -81,17 +80,32 @@ const HowToUseDialog: FC = () => {
                             <div>
                                 <p className="mb-1 text-sm font-medium">JavaScript/TypeScript:</p>
                                 <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                                    import {`{ getAllModels, getModelById }`} from '@anolilab/ai-model-registry';
+                                    import {`{ getProviders, getModelsByProvider, getModelById, searchModels, getAllModels, type ProviderName }`} from '@anolilab/ai-model-registry';
                                     <br />
                                     <br />
-                                    // Get all models
+                                    // Get all available providers
                                     <br />
-                                    const allModels = getAllModels();
+                                    const providers = await getProviders();
+                                    <br />
+                                    <br />
+                                    // Get all models from a specific provider
+                                    <br />
+                                    const anthropicModels = await getModelsByProvider('Anthropic' as ProviderName);
                                     <br />
                                     <br />
                                     // Get specific model by ID
                                     <br />
-                                    const model = getModelById('gpt-4');
+                                    const model = await getModelById('claude-3-opus-20240229');
+                                    <br />
+                                    <br />
+                                    // Search for models with specific capabilities
+                                    <br />
+                                    const visionModels = await searchModels({`{ vision: true }`});
+                                    <br />
+                                    <br />
+                                    // Get all models for advanced filtering
+                                    <br />
+                                    const allModels = await getAllModels();
                                     <br />
                                 </div>
                             </div>
@@ -101,8 +115,8 @@ const HowToUseDialog: FC = () => {
                                     {`{
   "models": [...],
   "metadata": {
-    "totalModels": 1676,
-    "totalProviders": 25,
+    "totalModels": ${allModels.length},
+    "totalProviders": ${allProviders.length},
     "lastUpdated": "2024-01-XX...",
     "version": "1.0.0"
   }
@@ -116,11 +130,11 @@ const HowToUseDialog: FC = () => {
                         <h3 className="mb-2 text-lg font-semibold">Features</h3>
                         <div className="grid grid-cols-2 gap-4 text-sm">
                             <div className="bg-muted rounded-md p-3">
-                                <div className="font-semibold">1,676+ Models</div>
+                                <div className="font-semibold">{allModels.length} Models</div>
                                 <div className="text-muted-foreground">Comprehensive coverage</div>
                             </div>
                             <div className="bg-muted rounded-md p-3">
-                                <div className="font-semibold">25+ Providers</div>
+                                <div className="font-semibold">{allProviders.length} Providers</div>
                                 <div className="text-muted-foreground">Major AI platforms</div>
                             </div>
                             <div className="bg-muted rounded-md p-3">
