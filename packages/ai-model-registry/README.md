@@ -386,6 +386,129 @@ The package uses dynamic imports to load provider-specific JSON files on demand:
 - **Automatic caching**: Results are cached to avoid re-loading
 - **Better code splitting**: Bundlers can split provider files into separate chunks
 
+## Icons
+
+The package provides icon utilities for displaying provider icons. Icons can be either SVG (using sprite sheets) or base64 encoded images.
+
+### Basic Usage
+
+```typescript
+import { getIcon, isSvgIcon, spriteSheet } from "@anolilab/ai-model-registry/icons";
+
+// Get icon data for a provider
+const providerIcon = "openai"; // or any provider icon identifier
+const iconData = getIcon(providerIcon);
+
+if (iconData) {
+    if (isSvgIcon(providerIcon)) {
+        // SVG icon - use with sprite sheet
+        // First, inject the sprite sheet into your DOM (see example below)
+        // Then use: <svg><use href={iconData} /></svg>
+    } else {
+        // Base64 icon - use directly as image source
+        // <img src={iconData} alt="Provider icon" />
+    }
+}
+```
+
+### React Example
+
+Here's a complete React component example:
+
+```typescript
+import { getIcon, isSvgIcon, spriteSheet } from "@anolilab/ai-model-registry/icons";
+import React from "react";
+
+interface ProviderIconProps {
+    className?: string;
+    provider: string;
+    providerIcon: string | null;
+}
+
+export const ProviderIcon: React.FC<ProviderIconProps> = ({ 
+    className = "w-5 h-5", 
+    provider, 
+    providerIcon 
+}) => {
+    if (!providerIcon) {
+        return (
+            <div className={`${className} bg-muted flex items-center justify-center rounded`}>
+                <span className="text-muted-foreground text-xs font-medium">
+                    {provider.slice(0, 2).toUpperCase()}
+                </span>
+            </div>
+        );
+    }
+
+    // Get the icon data from the provider registry
+    const iconData = getIcon(providerIcon);
+
+    if (iconData) {
+        // Check if it's an SVG icon or base64 icon
+        if (isSvgIcon(providerIcon)) {
+            return (
+                <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
+                    <svg className="h-full w-full">
+                        <use href={iconData} />
+                    </svg>
+                </div>
+            );
+        }
+
+        // Base64 icon - use img tag
+        return (
+            <div className={`${className} flex items-center justify-center overflow-hidden rounded bg-white/50 p-0.5`}>
+                <img alt={provider} className="h-full w-full object-contain" src={iconData} />
+            </div>
+        );
+    }
+
+    // Fallback to text if no icon is found
+    return (
+        <div className={`${className} bg-muted flex items-center justify-center rounded`}>
+            <span className="text-muted-foreground text-xs font-medium">
+                {providerIcon.toUpperCase().slice(0, 2)}
+            </span>
+        </div>
+    );
+};
+
+// Component to inject the sprite sheet into the DOM (required for SVG icons)
+export const IconSpriteSheet: React.FC = () => {
+    React.useEffect(() => {
+        // Inject the sprite sheet into the DOM if it doesn't exist
+        if (!document.getElementById("icon-sprite-sheet")) {
+            const spriteElement = document.createElement("div");
+            spriteElement.id = "icon-sprite-sheet";
+            spriteElement.innerHTML = spriteSheet;
+            spriteElement.style.display = "none";
+            document.body.appendChild(spriteElement);
+        }
+    }, []);
+
+    return null;
+};
+```
+
+**Important:** For SVG icons to work, you must inject the sprite sheet into your DOM. Include the `IconSpriteSheet` component once in your app (e.g., in your root component).
+
+### API Reference
+
+#### `getIcon(iconId: string): string | undefined`
+
+Returns the icon data for a given icon identifier. Returns `undefined` if the icon is not found.
+
+- For SVG icons: Returns a fragment identifier (e.g., `#icon-openai`) to use with `<use href="...">`
+- For base64 icons: Returns the base64 data URL directly
+
+#### `isSvgIcon(iconId: string): boolean`
+
+Checks if an icon identifier corresponds to an SVG icon (requires sprite sheet) or a base64 image.
+
+#### `spriteSheet: string`
+
+The SVG sprite sheet HTML string that contains all SVG icons. Must be injected into the DOM for SVG icons to work.
+
 ## Supported Providers
 
 The registry includes models from 50+ providers:
