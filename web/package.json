@@ -94,7 +94,7 @@
         "@testing-library/user-event": "^14.6.1",
         "@types/react": "^19.2.8",
         "@types/react-dom": "^19.2.3",
-        "@visulima/vite-overlay": "2.0.0-alpha.3",
+        "@visulima/vite-overlay": "2.0.0-alpha.5",
         "@vitejs/plugin-react": "^5.1.2",
         "babel-plugin-react-compiler": "19.1.0-rc.2",
         "eslint": "^9.39.2",

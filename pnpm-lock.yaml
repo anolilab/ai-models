@@ -142,8 +142,8 @@ importers:
         specifier: 1.4.29
         version: 1.4.29
       '@visulima/packem':
-        specifier: 2.0.0-alpha.49
-        version: 2.0.0-alpha.49(@arethetypeswrong/core@0.18.2)(@babel/core@7.28.6)(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@opentelemetry/api@1.9.0)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(github-slugger@2.0.0)(lightningcss@1.30.2)(package-manager-detector@1.3.0)(postcss@8.5.6)(rolldown@1.0.0-beta.59)(typescript@5.9.3)(yaml@2.8.2)
+        specifier: 2.0.0-alpha.51
+        version: 2.0.0-alpha.51(@arethetypeswrong/core@0.18.2)(@babel/core@7.28.6)(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@opentelemetry/api@1.9.0)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(github-slugger@2.0.0)(lightningcss@1.30.2)(package-manager-detector@1.3.0)(postcss@8.5.6)(rolldown@1.0.0-beta.59)(typescript@5.9.3)(yaml@2.8.2)
       '@visulima/string':
         specifier: 2.0.6
         version: 2.0.6
@@ -404,8 +404,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.8)
       '@visulima/vite-overlay':
-        specifier: 2.0.0-alpha.3
-        version: 2.0.0-alpha.3(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
+        specifier: 2.0.0-alpha.5
+        version: 2.0.0-alpha.5(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@vitejs/plugin-react':
         specifier: ^5.1.2
         version: 5.1.2(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
@@ -4036,27 +4036,27 @@ packages:
   '@semrel-extra/topo@1.14.1':
     resolution: {integrity: sha512-V7hlOQoBXgqLSa4ai9S0LGOO7cKTqRu5dh0T83xfE+VqZQmDkuRm956ooJ2/M8y62kWIxS2VEfePnEoB74x6fg==}
 
-  '@shikijs/cli@3.19.0':
-    resolution: {integrity: sha512-Naam+9tWFBz/OZmOu5EJjdooBlYCopqSmEFoZCDwEc3Pqwu9tK4wbMdxMXpAJOdjHIJu6SJzLizcP3OA6q10SQ==}
+  '@shikijs/cli@3.21.0':
+    resolution: {integrity: sha512-LFxbWSkLXC9UnUd2lHITRXPBCIJgUlEioYam/y7VCLexLx7pbXYeV0jC2LGphCTg+yyhBMIAe2OjJmSZUzFVdA==}
     hasBin: true
 
-  '@shikijs/core@3.19.0':
-    resolution: {integrity: sha512-L7SrRibU7ZoYi1/TrZsJOFAnnHyLTE1SwHG1yNWjZIVCqjOEmCSuK2ZO9thnRbJG6TOkPp+Z963JmpCNw5nzvA==}
+  '@shikijs/core@3.21.0':
+    resolution: {integrity: sha512-AXSQu/2n1UIQekY8euBJlvFYZIw0PHY63jUzGbrOma4wPxzznJXTXkri+QcHeBNaFxiiOljKxxJkVSoB3PjbyA==}
 
-  '@shikijs/engine-javascript@3.19.0':
-    resolution: {integrity: sha512-ZfWJNm2VMhKkQIKT9qXbs76RRcT0SF/CAvEz0+RkpUDAoDaCx0uFdCGzSRiD9gSlhm6AHkjdieOBJMaO2eC1rQ==}
+  '@shikijs/engine-javascript@3.21.0':
+    resolution: {integrity: sha512-ATwv86xlbmfD9n9gKRiwuPpWgPENAWCLwYCGz9ugTJlsO2kOzhOkvoyV/UD+tJ0uT7YRyD530x6ugNSffmvIiQ==}
 
-  '@shikijs/engine-oniguruma@3.19.0':
-    resolution: {integrity: sha512-1hRxtYIJfJSZeM5ivbUXv9hcJP3PWRo5prG/V2sWwiubUKTa+7P62d2qxCW8jiVFX4pgRHhnHNp+qeR7Xl+6kg==}
+  '@shikijs/engine-oniguruma@3.21.0':
+    resolution: {integrity: sha512-OYknTCct6qiwpQDqDdf3iedRdzj6hFlOPv5hMvI+hkWfCKs5mlJ4TXziBG9nyabLwGulrUjHiCq3xCspSzErYQ==}
 
-  '@shikijs/langs@3.19.0':
-    resolution: {integrity: sha512-dBMFzzg1QiXqCVQ5ONc0z2ebyoi5BKz+MtfByLm0o5/nbUu3Iz8uaTCa5uzGiscQKm7lVShfZHU1+OG3t5hgwg==}
+  '@shikijs/langs@3.21.0':
+    resolution: {integrity: sha512-g6mn5m+Y6GBJ4wxmBYqalK9Sp0CFkUqfNzUy2pJglUginz6ZpWbaWjDB4fbQ/8SHzFjYbtU6Ddlp1pc+PPNDVA==}
 
-  '@shikijs/themes@3.19.0':
-    resolution: {integrity: sha512-H36qw+oh91Y0s6OlFfdSuQ0Ld+5CgB/VE6gNPK+Hk4VRbVG/XQgkjnt4KzfnnoO6tZPtKJKHPjwebOCfjd6F8A==}
+  '@shikijs/themes@3.21.0':
+    resolution: {integrity: sha512-BAE4cr9EDiZyYzwIHEk7JTBJ9CzlPuM4PchfcA5ao1dWXb25nv6hYsoDiBq2aZK9E3dlt3WB78uI96UESD+8Mw==}
 
-  '@shikijs/types@3.19.0':
-    resolution: {integrity: sha512-Z2hdeEQlzuntf/BZpFG8a+Fsw9UVXdML7w0o3TgSXV3yNESGon+bs9ITkQb3Ki7zxoXOOu5oJWqZ2uto06V9iQ==}
+  '@shikijs/types@3.21.0':
+    resolution: {integrity: sha512-zGrWOxZ0/+0ovPY7PvBU2gIS9tmhSUUt30jAcNV0Bq0gb2S98gwfjIs1vxlmH5zM7/4YxLamT6ChlqqAJmPPjA==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -4855,8 +4855,8 @@ packages:
     engines: {node: '>=18.0.0 <=25.x'}
     os: [darwin, linux, win32]
 
-  '@visulima/error@6.0.0-alpha.2':
-    resolution: {integrity: sha512-xFC8KC/r3yfIfVrICVX42WRq4r24Wukp4dTlDjHGh5maB2yvhm8FSOapjwAIm152Zd6s9KdrByvd6cqezJfLsQ==}
+  '@visulima/error@6.0.0-alpha.4':
+    resolution: {integrity: sha512-POLzdhKAk+8QT+K/oD1lWfrqGpAtXNwpYyw6XqE81EoI8yl6RvamoGVtQ3dzpveeiIMk4bTLe2UsjW/mnRhnNA==}
     engines: {node: '>=22.13 <=25.x'}
     os: [darwin, linux, win32]
     peerDependencies:
@@ -4912,8 +4912,8 @@ packages:
     engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
 
-  '@visulima/packem-rollup@1.0.0-alpha.37':
-    resolution: {integrity: sha512-Hv/SSrJ40ov8JXapPVp9+AcS4cXfcacXgSOHU76DtJe8sNrgjCCVnZ5HC33/JDZjRaTPm0ezvOSmf3UDBS8Hxg==}
+  '@visulima/packem-rollup@1.0.0-alpha.38':
+    resolution: {integrity: sha512-arGYj0XQmYoAkZBvZ+3/x5LYBjOxKyveGJnG4jJORToUa2evm5AFCDlNKo+BPKrgzRB+TFvowShLNwCCEKaqcg==}
     engines: {node: '>=20.19.* <=25.*'}
     peerDependencies:
       '@babel/core': '*'
@@ -4940,14 +4940,14 @@ packages:
       typescript:
         optional: true
 
-  '@visulima/packem-share@1.0.0-alpha.18':
-    resolution: {integrity: sha512-48/+JaaGAW92H8F6ciUeektuZOf4BoPl7yq4VTOdZFpIRxqv+1HFuyc2MmX9hbpseesFSjRnPy3uEmDWgNOeIg==}
+  '@visulima/packem-share@1.0.0-alpha.19':
+    resolution: {integrity: sha512-sV49jc5ZjHuy+y90w+eCn2wqvFmlC6pAs/f0t8lxctNChzwY8xfMnX28uqUGrNYx4kRN3YrhKaEKR3eHUgEASQ==}
     engines: {node: '>=20.19 <=25.*'}
     peerDependencies:
       rollup: 4.54.0
 
-  '@visulima/packem@2.0.0-alpha.49':
-    resolution: {integrity: sha512-aN/W9BWZuTgdKje2WuZmnOnUDN76ikKek3o0K14jQVD5We1QGaHqpFqbgC30NxPjfwggr/nH9qfI4v8WQ3JX8w==}
+  '@visulima/packem@2.0.0-alpha.51':
+    resolution: {integrity: sha512-0Xv0++b81d8m6K76m/DunFVZsd6EFu5ouZglMF+REXfOgqmRF01eMPvw3AsogiTq9B3miWS+MiHzoYniHeAVkg==}
     engines: {node: '>=20.19 <=25.*'}
     hasBin: true
     peerDependencies:
@@ -4955,8 +4955,8 @@ packages:
       '@babel/core': '*'
       '@ckeditor/typedoc-plugins': '*'
       '@swc/core': '>=1.11.29'
-      '@tailwindcss/node': ^4.1.18
-      '@tailwindcss/oxide': ^4.1.18
+      '@tailwindcss/node': 4.1.18
+      '@tailwindcss/oxide': 4.1.18
       cssnano: '>=7.0.6'
       esbuild: '>=0.20.2'
       icss-utils: '>=5.1.0'
@@ -5070,8 +5070,8 @@ packages:
     engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
 
-  '@visulima/rollup-plugin-css@1.0.0-alpha.17':
-    resolution: {integrity: sha512-C+iidG9tejnM4kXHYqhWuiFaY9s2TcG3tmZykMkhH8up2gWpH7FC1s0Vxh1mpPuNF0i2wbgkWdB7UG/Jurystg==}
+  '@visulima/rollup-plugin-css@1.0.0-alpha.18':
+    resolution: {integrity: sha512-l/K4ExlGG+PWEYiY4GdH/8kcE8hSVVwEBptGFY9s7KRSq40EzoG2ZZPspqelNIBgsEv+nhyOvSESgJQ/z5Mj1g==}
     engines: {node: '>=20.19 <=25.*'}
     peerDependencies:
       '@ckeditor/typedoc-plugins': '*'
@@ -5081,7 +5081,7 @@ packages:
       '@swc/core': '*'
       '@tailwindcss/node': '>=4.1.12'
       '@tailwindcss/oxide': '>=4.1.12'
-      '@visulima/css-style-inject': 1.0.0-alpha.14
+      '@visulima/css-style-inject': 1.0.0-alpha.15
       cssnano: '>=7.0.0'
       esbuild: '*'
       icss-utils: '>=5.1.0'
@@ -5172,8 +5172,8 @@ packages:
     resolution: {integrity: sha512-q53VQIgT67MxxUciKn/3faiYUw4yC8jseA0xaVu00yuQIb6a15SHx/sgEathNropsyaUdDgzwlOH+L3de8Fs8g==}
     engines: {node: '>=20.19 <=25.x'}
 
-  '@visulima/vite-overlay@2.0.0-alpha.3':
-    resolution: {integrity: sha512-kFLE7xs1iB9kGj7U4x/M86s8JmX3k7FC+EgfBeLx+8xWWHZ/ys8iBwdf/bYywJlUvxgn7rlpa8Hsf9QlYR1kww==}
+  '@visulima/vite-overlay@2.0.0-alpha.5':
+    resolution: {integrity: sha512-1oKyM5rLYjVeMSNU200+yatTG2YyvDuD6oJ58mQH+WwQ3vqwt8Od2+q82tZHXhUrEjwA4SL2qxhJCeuZTt0UgQ==}
     engines: {node: '>=22.13 <=25.x'}
     peerDependencies:
       vite: 8.0.0-beta.7
@@ -9716,8 +9716,8 @@ packages:
     resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
     engines: {node: '>= 0.4'}
 
-  shiki@3.19.0:
-    resolution: {integrity: sha512-77VJr3OR/VUZzPiStyRhADmO2jApMM0V2b1qf0RpfWya8Zr1PeZev5AEpPGAAKWdiYUtcZGBE4F5QvJml1PvWA==}
+  shiki@3.21.0:
+    resolution: {integrity: sha512-N65B/3bqL/TI2crrXr+4UivctrAGEjmsib5rPMMPpFp1xAx/w03v8WZ9RDDFYteXoEgY7qZ4HGgl5KBIu1153w==}
 
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
@@ -10038,10 +10038,12 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   temp-dir@3.0.0:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
@@ -14872,40 +14874,40 @@ snapshots:
       js-yaml: 4.1.1
       toposource: 1.2.0
 
-  '@shikijs/cli@3.19.0':
+  '@shikijs/cli@3.21.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       ansis: 4.2.0
       cac: 6.7.14
-      shiki: 3.19.0
+      shiki: 3.21.0
 
-  '@shikijs/core@3.19.0':
+  '@shikijs/core@3.21.0':
     dependencies:
-      '@shikijs/types': 3.19.0
+      '@shikijs/types': 3.21.0
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
-  '@shikijs/engine-javascript@3.19.0':
+  '@shikijs/engine-javascript@3.21.0':
     dependencies:
-      '@shikijs/types': 3.19.0
+      '@shikijs/types': 3.21.0
       '@shikijs/vscode-textmate': 10.0.2
       oniguruma-to-es: 4.3.4
 
-  '@shikijs/engine-oniguruma@3.19.0':
+  '@shikijs/engine-oniguruma@3.21.0':
     dependencies:
-      '@shikijs/types': 3.19.0
+      '@shikijs/types': 3.21.0
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@shikijs/langs@3.19.0':
+  '@shikijs/langs@3.21.0':
     dependencies:
-      '@shikijs/types': 3.19.0
+      '@shikijs/types': 3.21.0
 
-  '@shikijs/themes@3.19.0':
+  '@shikijs/themes@3.21.0':
     dependencies:
-      '@shikijs/types': 3.19.0
+      '@shikijs/types': 3.21.0
 
-  '@shikijs/types@3.19.0':
+  '@shikijs/types@3.21.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -15814,7 +15816,7 @@ snapshots:
     dependencies:
       '@visulima/is-ansi-color-supported': 2.3.5
 
-  '@visulima/error@6.0.0-alpha.2': {}
+  '@visulima/error@6.0.0-alpha.4': {}
 
   '@visulima/find-cache-dir@1.0.31(yaml@2.8.2)':
     dependencies:
@@ -15864,7 +15866,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@visulima/packem-rollup@1.0.0-alpha.37(@babel/core@7.28.6)(@types/node@25.0.9)(picomatch@4.0.3)(rolldown@1.0.0-beta.59)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)':
+  '@visulima/packem-rollup@1.0.0-alpha.38(@babel/core@7.28.6)(@types/node@25.0.9)(picomatch@4.0.3)(rolldown@1.0.0-beta.59)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
       '@babel/parser': 7.28.5
       '@rollup/plugin-alias': 6.0.0(rollup@4.54.0)
@@ -15879,7 +15881,7 @@ snapshots:
       '@visulima/find-cache-dir': 2.0.7
       '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/package': 4.1.7(@types/node@25.0.9)
-      '@visulima/packem-share': 1.0.0-alpha.18(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
+      '@visulima/packem-share': 1.0.0-alpha.19(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
       '@visulima/path': 2.0.5
       '@visulima/source-map': 2.0.5
       cjs-module-lexer: 2.2.0
@@ -15908,18 +15910,19 @@ snapshots:
       - rolldown
       - yaml
 
-  '@visulima/packem-share@1.0.0-alpha.18(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)':
+  '@visulima/packem-share@1.0.0-alpha.19(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)':
     dependencies:
       '@visulima/colorize': 1.4.29
       '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/package': 4.1.7(@types/node@25.0.9)
       '@visulima/path': 2.0.5
       rollup: 4.54.0
+      safe-stable-stringify: 2.5.0
     transitivePeerDependencies:
       - '@types/node'
       - yaml
 
-  '@visulima/packem@2.0.0-alpha.49(@arethetypeswrong/core@0.18.2)(@babel/core@7.28.6)(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@opentelemetry/api@1.9.0)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(github-slugger@2.0.0)(lightningcss@1.30.2)(package-manager-detector@1.3.0)(postcss@8.5.6)(rolldown@1.0.0-beta.59)(typescript@5.9.3)(yaml@2.8.2)':
+  '@visulima/packem@2.0.0-alpha.51(@arethetypeswrong/core@0.18.2)(@babel/core@7.28.6)(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@opentelemetry/api@1.9.0)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(github-slugger@2.0.0)(lightningcss@1.30.2)(package-manager-detector@1.3.0)(postcss@8.5.6)(rolldown@1.0.0-beta.59)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@clack/prompts': 0.11.0
@@ -15930,21 +15933,17 @@ snapshots:
       '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/humanizer': 2.0.5
       '@visulima/package': 4.1.7(@types/node@25.0.9)
-      '@visulima/packem-rollup': 1.0.0-alpha.37(@babel/core@7.28.6)(@types/node@25.0.9)(picomatch@4.0.3)(rolldown@1.0.0-beta.59)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)
-      '@visulima/packem-share': 1.0.0-alpha.18(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
+      '@visulima/packem-rollup': 1.0.0-alpha.38(@babel/core@7.28.6)(@types/node@25.0.9)(picomatch@4.0.3)(rolldown@1.0.0-beta.59)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)
+      '@visulima/packem-share': 1.0.0-alpha.19(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
       '@visulima/pail': 3.2.2(@opentelemetry/api@1.9.0)
       '@visulima/path': 2.0.5
-      '@visulima/rollup-plugin-css': 1.0.0-alpha.17(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(lightningcss@1.30.2)(postcss@8.5.6)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)
-      '@visulima/source-map': 2.0.5
+      '@visulima/rollup-plugin-css': 1.0.0-alpha.18(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(lightningcss@1.30.2)(postcss@8.5.6)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)
       '@visulima/tabular': 3.1.3
       '@visulima/tsconfig': 2.1.3(yaml@2.8.2)
       browserslist: 4.28.1
-      cjs-module-lexer: 2.2.0
-      clean-css: 5.3.3
       defu: 6.1.4
       fastest-levenshtein: 1.0.16
       hookable: 6.0.1
-      html-minifier-next: 4.16.3
       jiti: 2.6.1
       magic-string: 0.30.21
       mlly: 1.8.0
@@ -15988,14 +15987,14 @@ snapshots:
 
   '@visulima/path@2.0.5': {}
 
-  '@visulima/rollup-plugin-css@1.0.0-alpha.17(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(lightningcss@1.30.2)(postcss@8.5.6)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)':
+  '@visulima/rollup-plugin-css@1.0.0-alpha.18(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)(@tailwindcss/node@4.1.18)(@tailwindcss/oxide@4.1.18)(@types/node@25.0.9)(lightningcss@1.30.2)(postcss@8.5.6)(rollup@4.54.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
       '@rollup/pluginutils': 5.3.0(rollup@4.54.0)
       '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/package': 4.1.7(@types/node@25.0.9)
-      '@visulima/packem-share': 1.0.0-alpha.18(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
+      '@visulima/packem-share': 1.0.0-alpha.19(@types/node@25.0.9)(rollup@4.54.0)(yaml@2.8.2)
       '@visulima/path': 2.0.5
       mlly: 1.8.0
       oxc-resolver: 11.16.2
@@ -16029,13 +16028,13 @@ snapshots:
     transitivePeerDependencies:
       - yaml
 
-  '@visulima/vite-overlay@2.0.0-alpha.3(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
+  '@visulima/vite-overlay@2.0.0-alpha.5(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@shikijs/cli': 3.19.0
-      '@shikijs/langs': 3.19.0
-      '@visulima/error': 6.0.0-alpha.2
+      '@shikijs/cli': 3.21.0
+      '@shikijs/langs': 3.21.0
+      '@visulima/error': 6.0.0-alpha.4
       fastest-levenshtein: 1.0.16
-      shiki: 3.19.0
+      shiki: 3.21.0
       vite: 8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - ai
@@ -21069,14 +21068,14 @@ snapshots:
 
   shell-quote@1.8.3: {}
 
-  shiki@3.19.0:
+  shiki@3.21.0:
     dependencies:
-      '@shikijs/core': 3.19.0
-      '@shikijs/engine-javascript': 3.19.0
-      '@shikijs/engine-oniguruma': 3.19.0
-      '@shikijs/langs': 3.19.0
-      '@shikijs/themes': 3.19.0
-      '@shikijs/types': 3.19.0
+      '@shikijs/core': 3.21.0
+      '@shikijs/engine-javascript': 3.21.0
+      '@shikijs/engine-oniguruma': 3.21.0
+      '@shikijs/langs': 3.21.0
+      '@shikijs/themes': 3.21.0
+      '@shikijs/types': 3.21.0
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
