@@ -90,12 +90,12 @@ importers:
   packages/ai-model-registry:
     dependencies:
       zod:
-        specifier: ^4.3.5
-        version: 4.3.5
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@anolilab/eslint-config':
         specifier: ^20.0.0
-        version: 20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)
+        version: 20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)
       '@anolilab/prettier-config':
         specifier: ^9.0.0
         version: 9.0.0(prettier@3.8.0)
@@ -164,7 +164,7 @@ importers:
         version: 9.39.2(jiti@2.6.1)
       eslint-plugin-zod:
         specifier: ^3.0.2
-        version: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5)
+        version: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6)
       prettier:
         specifier: 3.8.0
         version: 3.8.0
@@ -205,8 +205,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/ai-model-registry
       '@c15t/react':
-        specifier: ^1.8.2
-        version: 1.8.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)
+        specifier: ^1.8.3
+        version: 1.8.3(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)
       '@c15t/translations':
         specifier: ^1.8.0
         version: 1.8.0
@@ -349,12 +349,12 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(react@19.2.3)
       zod:
-        specifier: ^4.3.5
-        version: 4.3.5
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@anolilab/eslint-config':
         specifier: 20.0.0
-        version: 20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)
+        version: 20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)
       '@anolilab/prettier-config':
         specifier: 9.0.0
         version: 9.0.0(prettier@3.8.0)
@@ -368,8 +368,8 @@ importers:
         specifier: 1.8.0
         version: 1.8.0(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(ws@8.19.0)
       '@netlify/vite-plugin-tanstack-start':
-        specifier: ^1.2.6
-        version: 1.2.6(@tanstack/react-start@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)))(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
+        specifier: ^1.2.7
+        version: 1.2.7(@tanstack/react-start@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)))(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@playwright/test':
         specifier: ^1.57.0
         version: 1.57.0
@@ -423,7 +423,7 @@ importers:
         version: 7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-zod:
         specifier: ^3.0.2
-        version: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5)
+        version: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6)
       favicons:
         specifier: ^7.2.0
         version: 7.2.0
@@ -461,8 +461,8 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       vite-tsconfig-paths:
-        specifier: ^6.0.4
-        version: 6.0.4(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
+        specifier: ^6.0.5
+        version: 6.0.5(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       web-vitals:
         specifier: ^5.1.0
         version: 5.1.0
@@ -861,8 +861,8 @@ packages:
   '@c15t/logger@1.0.1':
     resolution: {integrity: sha512-Yz+HkHjsGWPkJ7nWGqlSgF3LG9WtV72Om5NoWrW6YJHLMNasC5Z6opi9GM8B1Nm8ivZBzJpADEc4gVIBCkqamw==}
 
-  '@c15t/react@1.8.2':
-    resolution: {integrity: sha512-fyTcwrAbcehFkkTH3TB+nzo9vOPR9atdE9nQVeIdMbh1lWSdchRIjH+iVaNKtoEcA1cB3SStCXzvqja9F5GQEw==}
+  '@c15t/react@1.8.3':
+    resolution: {integrity: sha512-BOOtA5AeGaJo+bcPdzRXsTtH7trdpcAcUEN9Rv+72qUzcQ7melV8JycZFwgrd0hgQ0PCGJ19YXp60EBbJraIzg==}
     peerDependencies:
       react: ^19.0.0 || ^19.0.0-rc || ^18.0.0 || ^17.0.0 || ^16.8.0
       react-dom: ^19.0.0 || ^19.0.0-rc || ^18.0.0 || ^17.0.0 || ^16.8.0
@@ -1765,8 +1765,8 @@ packages:
     resolution: {integrity: sha512-qziF8R9kf7mRNgSpmUH96O0aV1ZiwK4c9ZecFQbDSQuYhgy9GY1WTjiQF0oQnohjTjWNtXhrU39LAeXWNLaBJg==}
     engines: {node: ^18.14.0 || >=20}
 
-  '@netlify/dev@4.8.7':
-    resolution: {integrity: sha512-nQwyJwHXgT356VxFbmRN27l5Pr+5UDWEivS8ijX+Jau9DOJeAuSRCHAQ/tSB/P3EIIiJ+Qc0ebjUuAjB4uRztQ==}
+  '@netlify/dev@4.8.8':
+    resolution: {integrity: sha512-tvucXIB5t0R6nSC+L/W9xPX1uV4588pwfCcSqPstkQhS8tHg6cYrnzjUTvxfUL3lPUm1zVFGDz39ExK9tqiL1Q==}
     engines: {node: '>=20.6.1'}
 
   '@netlify/edge-bundler@14.9.2':
@@ -1776,16 +1776,16 @@ packages:
   '@netlify/edge-functions-bootstrap@2.16.0':
     resolution: {integrity: sha512-v8QQihSbBHj3JxtJsHoepXALpNumD9M7egHoc8z62FYl5it34dWczkaJoFFopEyhiBVKi4K/n0ZYpdzwfujd6g==}
 
-  '@netlify/edge-functions-dev@1.0.7':
-    resolution: {integrity: sha512-PlkG3PxULQ7z/CSzx5LthGsVtJPOo8E+sA67cOwNq/eHxtwpCUfCPOmxq3AGKqMR1pzUGC6k5yewhgXoG8Zm7w==}
+  '@netlify/edge-functions-dev@1.0.8':
+    resolution: {integrity: sha512-SvOWcPqKjDjhOKKpp5VFCgONKgRPNM3YsssVG3s2xi5OvNGSw+1KPAlzGplM+MqOfv+3oIs7N+6pULk0MtaimA==}
     engines: {node: '>=20.6.1'}
 
   '@netlify/edge-functions@3.0.3':
     resolution: {integrity: sha512-grElRK+rTBdYrPsULPKrhcHhrW+fwpDRLPbGByqa6Xrz0fhzcFJ2D9ijxEQ/onFcSVPYHT1u1mI48GhS5bZ/Ag==}
     engines: {node: '>=18.0.0'}
 
-  '@netlify/functions-dev@1.1.7':
-    resolution: {integrity: sha512-0f/yMvc3XZQDbD3BmI0oJiMHXyocO+ovYCoKtjUlLbvmeM35iVIy+G/XuSjBtvjBmiRF0VM++E7X/ACTvB7tzw==}
+  '@netlify/functions-dev@1.1.8':
+    resolution: {integrity: sha512-zl5IWvs5B4ck1w8KcV6NUsdkVF1BmW2deF5FwZj14jy5yiF6Errska+lSr9S5tZZ0vJUSs75is7vauP2AxewDA==}
     engines: {node: '>=20.6.1'}
 
   '@netlify/functions@5.1.2':
@@ -1840,8 +1840,8 @@ packages:
     resolution: {integrity: sha512-5gxMWh/S7wr0uHKSTbMv4bjWmWSpwpeLYvErWeVNAPll5/QNFo9aWimMAUuh8ReLY3/fg92XAroVVu7+z27Snw==}
     engines: {node: ^18.14.0 || >=20}
 
-  '@netlify/vite-plugin-tanstack-start@1.2.6':
-    resolution: {integrity: sha512-/96ALjfuvkxJDF+9Xg5cx69oavS5Umwb9yKqPcKPH89nHhQUBS4Z7y0QpvMJIznHFE6EHUg/GYf4bS/nUtNmVQ==}
+  '@netlify/vite-plugin-tanstack-start@1.2.7':
+    resolution: {integrity: sha512-koJbct4u+tvHHG551+dS1dlU9wkkiiiUUzDVqi39tTY9B4173N/eflnBc/+JCE13/z9TPTV+fZlIsGZA8A2YcA==}
     engines: {node: ^22.12.0 || >=24.0.0}
     peerDependencies:
       '@tanstack/react-start': '>=1.132.0'
@@ -1853,8 +1853,8 @@ packages:
       '@tanstack/solid-start':
         optional: true
 
-  '@netlify/vite-plugin@2.7.19':
-    resolution: {integrity: sha512-2EFGOqm3tThLTnPqOlPIt8BebP5pZVAAJtpW+eyPQixnyKZKXOd90U8sDowEKykXANMW9s49/5jcJBI+oXcSdA==}
+  '@netlify/vite-plugin@2.7.20':
+    resolution: {integrity: sha512-3CA6NkHH/g7G5GJbocuAFfZtdTSgOfKcRx+GFglrPFvLvUpBrRXMzZ1TIn2lvS0ICNqAGVT6+eL2tYEH0cTMCg==}
     engines: {node: ^20.6.1 || >=22}
     peerDependencies:
       vite: 8.0.0-beta.7
@@ -5659,8 +5659,8 @@ packages:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
 
-  c15t@1.8.2:
-    resolution: {integrity: sha512-oy4PN+NL7PnlngBu5S0LFOO3pCnXTMZjJc/FG3OcJBwiVZ/+gsu5WhikB0eth3I9X8du1DYn216woX1iI25Mgg==}
+  c15t@1.8.3:
+    resolution: {integrity: sha512-qZSlabDUNkY6Wfv/q0ah07e2ERMiX7xg/qaXSa7A80mMOa5/fXqW7nkw5IWIEgq61g+/l2Eunjm99sA+pSsJQQ==}
 
   cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
@@ -10038,10 +10038,12 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   temp-dir@3.0.0:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
@@ -10542,13 +10544,10 @@ packages:
     peerDependencies:
       vite: 8.0.0-beta.7
 
-  vite-tsconfig-paths@6.0.4:
-    resolution: {integrity: sha512-iIsEJ+ek5KqRTK17pmxtgIxXtqr3qDdE6OxrP9mVeGhVDNXRJTKN/l9oMbujTQNzMLe6XZ8qmpztfbkPu2TiFQ==}
+  vite-tsconfig-paths@6.0.5:
+    resolution: {integrity: sha512-f/WvY6ekHykUF1rWJUAbCU7iS/5QYDIugwpqJA+ttwKbxSbzNlqlE8vZSrsnxNQciUW+z6lvhlXMaEyZn9MSig==}
     peerDependencies:
       vite: 8.0.0-beta.7
-    peerDependenciesMeta:
-      vite:
-        optional: true
 
   vite@8.0.0-beta.7:
     resolution: {integrity: sha512-Q0xCPeahlSj0XMSPARLmycykV2Q7/KjSAkX0DE+EjNVeYgVuzUC2irMk0bNL5Y5zsmAbw1f00VyvsPsPQDCtEA==}
@@ -10863,8 +10862,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.3.5:
-    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
   zustand@5.0.6:
     resolution: {integrity: sha512-ihAqNeUVhe0MAD+X8M5UzqyZ9k3FFZLBTtqo6JLPwV53cbRB/mJwBI0PxcIgqhBBHlEs8G45OTDTMq3gNcLq3A==}
@@ -10939,7 +10938,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@anolilab/eslint-config@20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)':
+  '@anolilab/eslint-config@20.0.0(@tanstack/eslint-plugin-query@5.91.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@types/node@25.0.9)(@typescript-eslint/eslint-plugin@8.53.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-testing-library@7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6))(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)(typescript@5.9.3)(vitest@4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(happy-dom@20.3.1)(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)':
     dependencies:
       '@e18e/eslint-plugin': 0.1.3(eslint@9.39.2(jiti@2.6.1))
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.39.2(jiti@2.6.1))
@@ -10999,7 +10998,7 @@ snapshots:
       '@tanstack/eslint-plugin-router': 1.141.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-react-compiler: 19.1.0-rc.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-testing-library: 7.15.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
-      eslint-plugin-zod: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5)
+      eslint-plugin-zod: 3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6)
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@eslint/json'
@@ -11364,7 +11363,7 @@ snapshots:
       '@orpc/openapi': 1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0)
       '@orpc/otel': 1.12.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))
       '@orpc/server': 1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0)
-      '@orpc/zod': 1.8.1(@opentelemetry/api@1.9.0)(@orpc/contract@1.8.1(@opentelemetry/api@1.9.0))(@orpc/server@1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0))(ws@8.19.0)(zod@4.3.5)
+      '@orpc/zod': 1.8.1(@opentelemetry/api@1.9.0)(@orpc/contract@1.8.1(@opentelemetry/api@1.9.0))(@orpc/server@1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0))(ws@8.19.0)(zod@4.3.6)
       base-x: 5.0.1
       defu: 6.1.4
       drizzle-orm: 0.44.7(@opentelemetry/api@1.9.0)(kysely@0.27.6)
@@ -11372,7 +11371,7 @@ snapshots:
       kysely: 0.27.6
       neverthrow: 8.2.0
       superjson: 2.2.2
-      zod: 4.3.5
+      zod: 4.3.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
       - '@cloudflare/workers-types'
@@ -11415,12 +11414,12 @@ snapshots:
       neverthrow: 8.2.0
       picocolors: 1.1.1
 
-  '@c15t/react@1.8.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)':
+  '@c15t/react@1.8.3(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)':
     dependencies:
       '@radix-ui/react-accordion': 1.2.4(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-slot': 1.2.0(@types/react@19.2.8)(react@19.2.3)
       '@radix-ui/react-switch': 1.1.4(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      c15t: 1.8.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)
+      c15t: 1.8.3(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0)
       clsx: 2.1.1
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
@@ -12320,7 +12319,7 @@ snapshots:
       validate-npm-package-name: 5.0.1
       yaml: 2.8.2
       yargs: 17.7.2
-      zod: 4.3.5
+      zod: 4.3.6
 
   '@netlify/dev-utils@4.3.3':
     dependencies:
@@ -12340,14 +12339,14 @@ snapshots:
       uuid: 13.0.0
       write-file-atomic: 5.0.1
 
-  '@netlify/dev@4.8.7':
+  '@netlify/dev@4.8.8':
     dependencies:
       '@netlify/ai': 0.3.5
       '@netlify/blobs': 10.5.0
       '@netlify/config': 24.2.0
       '@netlify/dev-utils': 4.3.3
-      '@netlify/edge-functions-dev': 1.0.7
-      '@netlify/functions-dev': 1.1.7
+      '@netlify/edge-functions-dev': 1.0.8
+      '@netlify/functions-dev': 1.1.8
       '@netlify/headers': 2.1.3
       '@netlify/images': 1.3.3(@netlify/blobs@10.5.0)
       '@netlify/redirects': 3.1.4
@@ -12402,7 +12401,7 @@ snapshots:
 
   '@netlify/edge-functions-bootstrap@2.16.0': {}
 
-  '@netlify/edge-functions-dev@1.0.7':
+  '@netlify/edge-functions-dev@1.0.8':
     dependencies:
       '@netlify/dev-utils': 4.3.3
       '@netlify/edge-bundler': 14.9.2
@@ -12415,7 +12414,7 @@ snapshots:
     dependencies:
       '@netlify/types': 2.3.0
 
-  '@netlify/functions-dev@1.1.7':
+  '@netlify/functions-dev@1.1.8':
     dependencies:
       '@netlify/blobs': 10.5.0
       '@netlify/dev-utils': 4.3.3
@@ -12522,9 +12521,9 @@ snapshots:
 
   '@netlify/types@2.3.0': {}
 
-  '@netlify/vite-plugin-tanstack-start@1.2.6(@tanstack/react-start@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)))(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
+  '@netlify/vite-plugin-tanstack-start@1.2.7(@tanstack/react-start@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)))(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@netlify/vite-plugin': 2.7.19(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
+      '@netlify/vite-plugin': 2.7.20(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       vite: 8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)
     optionalDependencies:
       '@tanstack/react-start': 1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
@@ -12552,9 +12551,9 @@ snapshots:
       - supports-color
       - uploadthing
 
-  '@netlify/vite-plugin@2.7.19(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
+  '@netlify/vite-plugin@2.7.20(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@netlify/dev': 4.8.7
+      '@netlify/dev': 4.8.8
       '@netlify/dev-utils': 4.3.3
       dedent: 1.7.1
       vite: 8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)
@@ -13365,7 +13364,7 @@ snapshots:
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/zod@1.8.1(@opentelemetry/api@1.9.0)(@orpc/contract@1.8.1(@opentelemetry/api@1.9.0))(@orpc/server@1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0))(ws@8.19.0)(zod@4.3.5)':
+  '@orpc/zod@1.8.1(@opentelemetry/api@1.9.0)(@orpc/contract@1.8.1(@opentelemetry/api@1.9.0))(@orpc/server@1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0))(ws@8.19.0)(zod@4.3.6)':
     dependencies:
       '@orpc/contract': 1.8.1(@opentelemetry/api@1.9.0)
       '@orpc/json-schema': 1.8.1(@opentelemetry/api@1.9.0)(ws@8.19.0)
@@ -13374,7 +13373,7 @@ snapshots:
       '@orpc/shared': 1.8.1(@opentelemetry/api@1.9.0)
       escape-string-regexp: 5.0.0
       wildcard-match: 5.1.4
-      zod: 4.3.5
+      zod: 4.3.6
     transitivePeerDependencies:
       - '@opentelemetry/api'
       - crossws
@@ -16532,7 +16531,7 @@ snapshots:
 
   bytes@3.1.2: {}
 
-  c15t@1.8.2(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0):
+  c15t@1.8.3(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))(ws@8.19.0):
     dependencies:
       '@c15t/backend': 1.8.0(@opentelemetry/instrumentation@0.203.0(@opentelemetry/api@1.9.0))(ws@8.19.0)
       '@c15t/translations': 1.8.0
@@ -17785,13 +17784,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.5):
+  eslint-plugin-zod@3.0.2(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)(zod@4.3.6):
     dependencies:
       '@typescript-eslint/utils': 8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.2(jiti@2.6.1)
       esquery: 1.7.0
     optionalDependencies:
-      zod: 4.3.5
+      zod: 4.3.6
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -18181,7 +18180,7 @@ snapshots:
       kysely: 0.28.8
       kysely-typeorm: 0.3.0(kysely@0.28.8)
       semver: 7.7.3
-      zod: 4.3.5
+      zod: 4.3.6
     optionalDependencies:
       drizzle-orm: 0.44.7(@opentelemetry/api@1.9.0)(kysely@0.27.6)
 
@@ -21848,12 +21847,11 @@ snapshots:
       - supports-color
       - typescript
 
-  vite-tsconfig-paths@6.0.4(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)):
+  vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.3)
-    optionalDependencies:
       vite: 8.0.0-beta.7(@types/node@25.0.9)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
@@ -22137,7 +22135,7 @@ snapshots:
 
   zod@3.25.76: {}
 
-  zod@4.3.5: {}
+  zod@4.3.6: {}
 
   zustand@5.0.6(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3)):
     optionalDependencies:
