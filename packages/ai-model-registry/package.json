@@ -107,7 +107,7 @@
         "test:watch": "vitest"
     },
     "dependencies": {
-        "zod": "^4.3.5"
+        "zod": "^4.3.6"
     },
     "devDependencies": {
         "@anolilab/eslint-config": "^20.0.0",
@@ -129,7 +129,7 @@
         "@visulima/packem": "2.0.0-alpha.49",
         "@visulima/string": "2.0.6",
         "@vitest/coverage-v8": "^4.0.17",
-        "axios": "^1.13.2",
+        "axios": "^1.13.3",
         "cheerio": "^1.1.2",
         "conventional-changelog-conventionalcommits": "9.1.0",
         "eslint": "^9.39.2",
@@ -140,7 +140,7 @@
         "secretlint": "11.3.0",
         "semantic-release": "^25.0.2",
         "semantic-release-plugin-update-version-in-files": "^2.0.1",
-        "sort-package-json": "^3.6.0",
+        "sort-package-json": "^3.6.1",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.53.0",
