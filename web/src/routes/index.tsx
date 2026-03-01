@@ -139,11 +139,16 @@ const HomeComponent = () => {
 
     return (
         <>
-            <header className="flex items-center justify-between border-b px-3 py-2" ref={headerRef} style={{ height: "56px" }}>
-                <div className="left flex min-w-0 items-center gap-2">
-                    <h1 className="text-lg font-bold tracking-tight uppercase">Models</h1>
+            <header className="flex items-center justify-between border-b px-4 py-0" ref={headerRef} style={{ height: "56px" }}>
+                <div className="left flex min-w-0 items-center gap-3">
+                    <div className="flex items-center gap-2">
+                        <h1 className="text-primary text-base font-extrabold tracking-[0.18em] uppercase">Models</h1>
+                        <span className="model-count-badge bg-primary/15 text-primary inline-flex items-center rounded px-1.5 py-0.5 text-[10px] leading-none font-bold tabular-nums">
+                            {allModels.length.toLocaleString()}
+                        </span>
+                    </div>
                     <span className="slash" />
-                    <p className="truncate text-sm text-[var(--color-text-tertiary)]">An open-source database of AI models</p>
+                    <p className="text-muted-foreground truncate text-sm">Open-source AI model registry</p>
                 </div>
                 <div className="right flex items-center gap-3">{Menu}</div>
             </header>
@@ -191,12 +196,12 @@ const HomeComponent = () => {
             </main>
             <footer className="flex flex-col items-center justify-between gap-4 px-4 py-3 sm:flex-row sm:gap-10" ref={footerRef}>
                 <div className="flex items-center gap-2">
-                    <p className="text-sm text-[var(--color-text-tertiary)]">Powered by</p>
+                    <p className="text-muted-foreground text-sm">Powered by</p>
                     <a href="https://anolilab.com" rel="noopener noreferrer" target="_blank">
-                        <AnolilabLogo className="h-6 fill-white" />
+                        <AnolilabLogo className="fill-foreground h-6" />
                     </a>
                 </div>
-                <ul className="flex items-center justify-center gap-2 text-sm text-white">
+                <ul className="text-muted-foreground flex items-center justify-center gap-2 text-sm">
                     <li>
                         <a
                             className="hover:text-primary text-sm transition-colors"
@@ -207,13 +212,13 @@ const HomeComponent = () => {
                             Imprint
                         </a>
                     </li>
-                    <li className="text-muted-foreground">|</li>
+                    <li className="opacity-30">|</li>
                     <li>
                         <a className="hover:text-primary text-sm transition-colors" href="https://anolilab.com/terms" rel="noopener noreferrer" target="_blank">
                             Terms of Service
                         </a>
                     </li>
-                    <li className="text-muted-foreground">|</li>
+                    <li className="opacity-30">|</li>
                     <li>
                         <a
                             className="hover:text-primary text-sm transition-colors"

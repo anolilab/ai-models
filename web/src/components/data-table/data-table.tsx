@@ -392,17 +392,30 @@ const DataTable = <TData extends ExportableData, TValue>({
 
             // Check if we have a max selection limit and if we're in comparison mode
             if (tableConfig.selectionMode === "comparison" && tableConfig.maxSelectionLimit > 0) {
-                const selectedKeys = Object.keys(newRowSelection);
+                const newKeys = Object.keys(newRowSelection);
 
-                if (selectedKeys.length > tableConfig.maxSelectionLimit) {
-                    // If we're exceeding the limit, keep only the first N items
+                if (newKeys.length > tableConfig.maxSelectionLimit) {
+                    const currentCount = Object.keys(rowSelectionRef.current).length;
+
+                    // Already at the limit: "select all" should act as "deselect all" so
+                    // the user can escape the indeterminate checkbox state.
+                    if (currentCount >= tableConfig.maxSelectionLimit) {
+                        if (tableConfig.enableRowVirtualization) {
+                            dispatch({ payload: new Set<string>(), type: "SET_SELECTED_ITEMS" });
+                        } else {
+                            dispatch({ payload: {}, type: "SET_SELECTED_ITEMS" });
+                        }
+
+                        return;
+                    }
+
+                    // Not yet at the limit: clamp to the first N items
                     const limitedSelection: Record<string, boolean> = {};
 
-                    selectedKeys.slice(0, tableConfig.maxSelectionLimit).forEach((key) => {
+                    newKeys.slice(0, tableConfig.maxSelectionLimit).forEach((key) => {
                         limitedSelection[key] = true;
                     });
 
-                    // CRITICAL: Update our selectedItemIds state to match TanStack Table's state
                     if (tableConfig.enableRowVirtualization) {
                         dispatch({ payload: new Set(Object.keys(limitedSelection)), type: "SET_SELECTED_ITEMS" });
                     } else {

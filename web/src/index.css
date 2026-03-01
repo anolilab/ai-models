@@ -70,6 +70,11 @@
     --table-row-selected: oklch(0.93 0.24 116 / 0.08);
     --table-border: oklch(0.9 0.02 116);
     --table-stripe: oklch(0.995 0.002 116);
+
+    /* Brand and text variant colors */
+    --text-tertiary: oklch(0.55 0.02 116);
+    --brand: oklch(0.93 0.24 116);
+    --text-invert: oklch(0.15 0.02 116);
 }
 
 .dark {
@@ -130,6 +135,11 @@
     --table-row-selected: oklch(0.93 0.24 116 / 0.12);
     --table-border: oklch(0.25 0 0);
     --table-stripe: oklch(0.12 0 0);
+
+    /* Brand and text variant colors */
+    --text-tertiary: oklch(0.5 0 0);
+    --brand: oklch(0.93 0.24 116);
+    --text-invert: oklch(0.12 0 0);
 }
 
 /* Debug: Force border color in dark mode */
@@ -205,6 +215,11 @@
     --color-table-row-selected: var(--table-row-selected);
     --color-table-border: var(--table-border);
     --color-table-stripe: var(--table-stripe);
+
+    /* Brand and text variant colors */
+    --color-text-tertiary: var(--text-tertiary);
+    --color-brand: var(--brand);
+    --color-text-invert: var(--text-invert);
 
     /* Typography scale optimized for data tables */
     --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -550,6 +565,36 @@ input[type="week"] {
 [id="rdp-2"],
 [id="rdp-2"] * {
     cursor: pointer !important;
+}
+
+/* Header brand and layout primitives */
+@layer components {
+    /* Thin vertical divider used between header title and description */
+    .slash {
+        display: inline-block;
+        width: 1px;
+        height: 1rem;
+        background-color: var(--color-border);
+        flex-shrink: 0;
+        align-self: center;
+        opacity: 0.7;
+    }
+
+    /* Subtle pop-in for the model count badge */
+    .model-count-badge {
+        animation: badge-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes badge-pop {
+        from {
+            opacity: 0;
+            transform: scale(0.75);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 }
 
 /* Table column resizer styles */
