@@ -88,6 +88,7 @@ export const formatModelCost = (cost: number | null | undefined): string => {
     // For costs $1 and above per 1K tokens, show per 1K tokens
     // Remove trailing zeros for whole numbers
     const formatted = decimalCost % 1 === 0 ? decimalCost.toFixed(0) : decimalCost.toFixed(4).replace(/\.?0+$/, "");
+
     return `$${formatted}/1K tokens`;
 };
 

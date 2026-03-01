@@ -1,7 +1,7 @@
 import type { Table } from "@tanstack/react-table";
 import { flexRender } from "@tanstack/react-table";
 import type { CSSProperties, KeyboardEvent } from "react";
-import { memo, useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 import { Table as BaseTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import cn from "@/lib/utils";
@@ -60,7 +60,7 @@ export const RegularTable = <TData,>({
     }, [containerHeight]);
 
     // OPTIMIZATION: Memoize header styles
-    const headerStyles = useMemo(() => (enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10" : ""), [enableStickyHeader]);
+    const headerStyles = useMemo(() => enableStickyHeader ? "sticky top-0 z-50 bg-background border-b shadow-sm min-h-10" : "", [enableStickyHeader]);
 
     // OPTIMIZATION: Memoize click handler
     const handleRowClick = useCallback(

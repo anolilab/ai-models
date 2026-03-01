@@ -13,7 +13,7 @@ export function optionFilterFn<TData>(inputData: string, filterValue: FilterMode
 
     const value = inputData.toString().toLowerCase();
 
-    const found = !!filterValue.values.find((v) => v.toLowerCase() === value);
+    const found = filterValue.values.some((v) => v.toLowerCase() === value);
 
     switch (filterValue.operator) {
         case "is":

@@ -4,7 +4,7 @@ import posthog from "posthog-js";
 import type { FC, PropsWithChildren } from "react";
 import { useEffect } from "react";
 
-let PostHogProvider: FC<{ client: typeof posthog } & PropsWithChildren> | null = null;
+let PostHogProvider: FC<PropsWithChildren & { client: typeof posthog }> | null = null;
 
 if (typeof globalThis.window !== "undefined") {
     import("posthog-js/react").then(
@@ -30,11 +30,11 @@ export const AnalyticsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         if (
-            import.meta.env.DEV ||
-            globalThis.window === undefined ||
-            !import.meta.env.VITE_POSTHOG_API_KEY ||
-            !import.meta.env.VITE_POSTHOG_HOST ||
-            !hasAnalyticsConsent
+            import.meta.env.DEV
+                || globalThis.window === undefined
+                || !import.meta.env.VITE_POSTHOG_API_KEY
+                || !import.meta.env.VITE_POSTHOG_HOST
+                || !hasAnalyticsConsent
         ) {
             return;
         }

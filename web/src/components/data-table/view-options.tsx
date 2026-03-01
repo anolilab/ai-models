@@ -37,7 +37,7 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
         }
 
         // Create a new array with columns sorted according to the columnOrder
-        return [...columns].sort((a, b) => {
+        return columns.toSorted((a, b) => {
             const aIndex = columnOrder.indexOf(a.id);
             const bIndex = columnOrder.indexOf(b.id);
 

@@ -51,19 +51,11 @@ const renderCostCell = (props: any) => {
     const value = props.getValue();
 
     if (value === "-" || value === null || value === undefined) {
-        return (
-            <span className="text-muted-foreground text-right text-xs">
-                -
-            </span>
-        );
+        return <span className="text-muted-foreground text-right text-xs">-</span>;
     }
 
     if (value === "Free") {
-        return (
-            <span className="text-green-600 dark:text-green-400 text-right font-medium text-xs px-2 py-1">
-                Free
-            </span>
-        );
+        return <span className="px-2 py-1 text-right text-xs font-medium text-green-600 dark:text-green-400">Free</span>;
     }
 
     // Extract the numeric value and unit for tooltip
@@ -74,18 +66,9 @@ const renderCostCell = (props: any) => {
     const unit = unitMatch ? unitMatch[1] : "";
 
     return (
-        <span
-            className="text-right font-mono text-sm cursor-help px-2 py-1"
-            title={`${value}${unit ? ` (${unit})` : ""}`}
-        >
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
-                ${numericValue}
-            </span>
-            {unit && (
-                <span className="text-muted-foreground text-xs ml-1">
-                    / {unit}
-                </span>
-            )}
+        <span className="cursor-help px-2 py-1 text-right font-mono text-sm" title={`${value}${unit ? ` (${unit})` : ""}`}>
+            <span className="font-medium text-blue-600 dark:text-blue-400">${numericValue}</span>
+            {unit && <span className="text-muted-foreground ml-1 text-xs">/ {unit}</span>}
         </span>
     );
 };
@@ -822,12 +805,15 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
         const options = config.filter?.options || (config.type === ColumnType.BOOLEAN ? booleanOptions : undefined);
 
         // For boolean columns, provide a transform function to convert boolean to ColumnOption
-        const transformOptionFn = config.type === ColumnType.BOOLEAN
-            ? (value: boolean) => ({
-                label: value ? "Yes" : "No",
-                value: String(value),
-            })
-            : undefined;
+        const transformOptionFn
+            = config.type === ColumnType.BOOLEAN
+                ? (value: boolean) => {
+                    return {
+                        label: value ? "Yes" : "No",
+                        value: String(value),
+                    };
+                }
+                : undefined;
 
         const accessor
             = config.accessorFn
@@ -1101,7 +1087,7 @@ export interface UseSelectionModeReturn {
 export const useSelectionMode = (): UseSelectionModeReturn => {
     const [selectionMode, setSelectionMode] = useState<SelectionMode>("comparison");
 
-    const maxSelectionLimit = useMemo(() => (selectionMode === "comparison" ? 10 : undefined), [selectionMode]);
+    const maxSelectionLimit = useMemo(() => selectionMode === "comparison" ? 10 : undefined, [selectionMode]);
 
     const handleModeChange = useCallback((mode: SelectionMode) => {
         setSelectionMode(mode);

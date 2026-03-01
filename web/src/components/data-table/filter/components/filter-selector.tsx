@@ -42,14 +42,13 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
 
     useEffect(() => {
         if (!open)
-            setTimeout(() => setValue(""), 150);
+            setTimeout(setValue, 150, "");
     }, [open]);
 
     // biome-ignore lint/correctness/useExhaustiveDependencies: need filters to be updated
     const content = useMemo(
         () =>
-            (property && column
-                ? (
+            property && column ? (
                 <FilterValueController
                     actions={actions}
                     column={column as Column<TData, ColumnDataType>}
@@ -57,8 +56,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
                     locale={locale}
                     strategy={strategy}
                 />
-                )
-                : (
+            ) : (
                 <Command
                     filter={(value, search, keywords) => {
                         const extendValue = `${value} ${keywords?.join(" ")}`;
@@ -78,7 +76,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
                         </CommandGroup>
                     </CommandList>
                 </Command>
-                )),
+            ),
         [property, column, filter, filters, columns, actions, value],
     );
 
@@ -88,7 +86,7 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
                 setOpen(value);
 
                 if (!value)
-                    setTimeout(() => setProperty(undefined), 100);
+                    setTimeout(setProperty, 100, undefined);
             }}
             open={open}
         >

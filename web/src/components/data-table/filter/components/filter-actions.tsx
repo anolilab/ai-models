@@ -2,7 +2,6 @@ import { X } from "lucide-react";
 import { memo } from "react";
 
 import { Button } from "@/components/ui/button";
-import cn from "@/lib/utils";
 
 import type { DataTableFilterActions } from "../core/types";
 import type { Locale } from "../lib/i18n";

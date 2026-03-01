@@ -120,14 +120,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         const newOperator = determineNewOperator("option", oldValues, newValues, filter.operator);
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -160,14 +160,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -201,14 +201,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 
@@ -233,14 +233,14 @@ export function useDataTableFilters<TData, TColumns extends ReadonlyArray<Column
                         }
 
                         return prev.map((f) =>
-                            (f.columnId === column.id
+                            f.columnId === column.id
                                 ? {
-                                    columnId: column.id,
-                                    operator: newOperator,
-                                    type: column.type,
-                                    values: newValues,
-                                }
-                                : f),
+                                      columnId: column.id,
+                                      operator: newOperator,
+                                      type: column.type,
+                                      values: newValues,
+                                  }
+                                : f,
                         );
                     });
 

@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
     component: RootDocument,
 
     head: (context) => {
-        const currentMatch = context.matches[context.matches.length - 1];
+        const currentMatch = context.matches.at(-1);
         const fullPath = currentMatch?.fullPath?.startsWith("/") ? currentMatch.fullPath.slice(1) : currentMatch?.fullPath || "";
         const canonicalUrl = `${siteBaseUrl}${fullPath}`;
 
