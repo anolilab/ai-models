@@ -18,7 +18,6 @@ examples/**
 .textlintignore
 .textlintrc
 .yamllint.yaml
-audit-ci.jsonc
 codecov.yml
 commitlint.config.cjs
 nx.json
