@@ -1,4 +1,5 @@
-import { z } from "zod";
+// eslint-disable-next-line import/no-namespace
+import * as z from "zod";
 
 export const ModelSchema = z
     .object({
@@ -26,20 +27,20 @@ export const ModelSchema = z
                 videoGenerationWithoutAudio: z.number().nullable().optional(),
             })
             .strict(),
-        deploymentType: z.string().optional(),
+        deploymentType: z.string().trim().optional(),
         // Additional metadata
-        description: z.string().optional(),
+        description: z.string().trim().optional(),
 
         extendedThinking: z.boolean().optional(),
-        icon: z.string().optional(), // Provider icon identifier (e.g., LobeHub icon name)
+        icon: z.string().trim().optional(), // Provider icon identifier (e.g., LobeHub icon name)
         // Core identification fields
-        id: z.string(),
+        id: z.string().trim(),
         imageGeneration: z.boolean().optional(),
 
         // Knowledge and context
-        knowledge: z.string().nullable(),
-        lastUpdated: z.string().nullable(),
-        launchDate: z.string().optional(),
+        knowledge: z.string().trim().nullable(),
+        lastUpdated: z.string().trim().nullable(),
+        launchDate: z.string().trim().optional(),
         // Limits
         limit: z
             .object({
@@ -50,35 +51,35 @@ export const ModelSchema = z
         // Modalities
         modalities: z
             .object({
-                input: z.array(z.string()),
-                output: z.array(z.string()),
+                input: z.array(z.string().trim()),
+                output: z.array(z.string().trim()),
             })
             .strict(),
-        name: z.string().nullable(),
+        name: z.string().trim().nullable(),
         openWeights: z.boolean(),
-        originalModelId: z.string().optional(),
+        originalModelId: z.string().trim().optional(),
 
         // HuggingFace-specific fields
-        ownedBy: z.string().optional(),
+        ownedBy: z.string().trim().optional(),
 
         preview: z.boolean().optional(),
 
-        provider: z.string().optional(),
+        provider: z.string().trim().optional(),
 
-        providerDoc: z.string().optional(), // Documentation URL
+        providerDoc: z.string().trim().optional(), // Documentation URL
 
         // Provider metadata (from models.dev API)
-        providerEnv: z.array(z.string()).optional(), // Environment variables required
-        providerId: z.string().optional(),
-        providerModelsDevId: z.string().optional(), // ID from models.dev API
-        providerNpm: z.string().optional(), // NPM package name
+        providerEnv: z.array(z.string().trim()).optional(), // Environment variables required
+        providerId: z.string().trim().optional(),
+        providerModelsDevId: z.string().trim().optional(), // ID from models.dev API
+        providerNpm: z.string().trim().optional(), // NPM package name
 
-        providerStatus: z.string().optional(),
+        providerStatus: z.string().trim().optional(),
         reasoning: z.boolean(),
         // Infrastructure and deployment
-        regions: z.array(z.string()).optional(),
+        regions: z.array(z.string().trim()).optional(),
         // Date fields
-        releaseDate: z.string().nullable(),
+        releaseDate: z.string().trim().nullable(),
         searchGrounding: z.boolean().optional(),
         streamingSupported: z.boolean().nullable().optional(),
         structuredOutputs: z.boolean().optional(),
@@ -89,13 +90,13 @@ export const ModelSchema = z
         temperature: z.boolean(),
 
         toolCall: z.boolean(),
-        trainingCutoff: z.string().nullable().optional(),
-        version: z.string().nullable().optional(),
+        trainingCutoff: z.string().trim().nullable().optional(),
+        version: z.string().trim().nullable().optional(),
         // Version management
         versions: z
             .object({
-                preview: z.string().nullable().optional(),
-                stable: z.string().nullable().optional(),
+                preview: z.string().trim().nullable().optional(),
+                stable: z.string().trim().nullable().optional(),
             })
             .strict()
             .optional(),
@@ -107,28 +108,28 @@ export type Model = z.infer<typeof ModelSchema>;
 
 export const ProviderSchema = z
     .object({
-        capabilities: z.array(z.string()).optional(),
+        capabilities: z.array(z.string().trim()).optional(),
         // Additional metadata
-        description: z.string().optional(),
-        displayName: z.string().optional(),
+        description: z.string().trim().optional(),
+        displayName: z.string().trim().optional(),
 
-        doc: z.string().optional(), // Documentation URL
+        doc: z.string().trim().optional(), // Documentation URL
 
         // Provider metadata
-        env: z.array(z.string()).optional(), // Environment variables required
+        env: z.array(z.string().trim()).optional(), // Environment variables required
         // Icon information
-        icon: z.string().optional(), // LobeHub icon name or custom icon identifier
+        icon: z.string().trim().optional(), // LobeHub icon name or custom icon identifier
         // Core identification
-        id: z.string(),
+        id: z.string().trim(),
         // Model count and capabilities
         modelCount: z.number().optional(),
 
-        modelsDevId: z.string().optional(), // ID from models.dev API
-        name: z.string(),
-        npm: z.string().optional(), // NPM package name
+        modelsDevId: z.string().trim().optional(), // ID from models.dev API
+        name: z.string().trim(),
+        npm: z.string().trim().optional(), // NPM package name
 
         status: z.enum(["active", "inactive", "deprecated"]).optional(),
-        website: z.string().optional(),
+        website: z.string().trim().optional(),
     })
     .strict();
 

@@ -103,7 +103,7 @@ const HomeComponent = () => {
 
     let Menu = (
         <>
-            <HowToUseDialog allProviders={allProviders} allModels={allModels} />
+            <HowToUseDialog allModels={allModels} allProviders={allProviders} />
             <a className="github" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
                 <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -234,7 +234,7 @@ export const Route = createFileRoute("/")({
     component: HomeComponent,
     loader: async () => {
         const allModels = await getAllModels();
-        const allProviders = await getProviders()
+        const allProviders = await getProviders();
 
         return { allModels, allProviders };
     },

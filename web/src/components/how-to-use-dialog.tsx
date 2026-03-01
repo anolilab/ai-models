@@ -1,13 +1,13 @@
+import type { Model } from "@anolilab/ai-model-registry/schema";
+import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
 import { ExternalLink, Github, Package } from "lucide-react";
 import type { FC } from "react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
-import type { Model } from "@anolilab/ai-model-registry/schema";
 
-const HowToUseDialog: FC<{ allProviders: ProviderName[], allModels: Model[] }> = ({ allProviders, allModels }) => {
+const HowToUseDialog: FC<{ allModels: Model[]; allProviders: ProviderName[] }> = ({ allModels, allProviders }) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -80,7 +80,8 @@ const HowToUseDialog: FC<{ allProviders: ProviderName[], allModels: Model[] }> =
                             <div>
                                 <p className="mb-1 text-sm font-medium">JavaScript/TypeScript:</p>
                                 <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                                    import {`{ getProviders, getModelsByProvider, getModelById, searchModels, getAllModels, type ProviderName }`} from '@anolilab/ai-model-registry';
+                                    import {`{ getProviders, getModelsByProvider, getModelById, searchModels, getAllModels, type ProviderName }`} from
+                                    '@anolilab/ai-model-registry';
                                     <br />
                                     <br />
                                     // Get all available providers

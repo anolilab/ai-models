@@ -1,6 +1,6 @@
 import { getAllModels, getProviders } from "@anolilab/ai-model-registry";
-import { createFileRoute } from "@tanstack/react-router";
 import pkg from "@anolilab/ai-model-registry/package.json";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/api/json")({
     server: {

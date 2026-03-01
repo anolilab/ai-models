@@ -75,5 +75,5 @@ const createMemoizedTransformer = <T, R>(transformFn: (data: T) => R, getDepende
     };
 };
 
-export { transformModelToTableRow, transformModelsToTableRows };
+export { transformModelsToTableRows, transformModelToTableRow };
 export const memoizedTransformModels = createMemoizedTransformer(transformModelsToTableRows, (models: Model[]) => models.length + (models[0]?.id ?? ""));

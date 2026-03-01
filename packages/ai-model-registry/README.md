@@ -425,10 +425,10 @@ interface ProviderIconProps {
     providerIcon: string | null;
 }
 
-export const ProviderIcon: React.FC<ProviderIconProps> = ({ 
-    className = "w-5 h-5", 
-    provider, 
-    providerIcon 
+export const ProviderIcon: React.FC<ProviderIconProps> = ({
+    className = "w-5 h-5",
+    provider,
+    providerIcon
 }) => {
     if (!providerIcon) {
         return (

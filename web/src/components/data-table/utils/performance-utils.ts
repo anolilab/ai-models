@@ -307,7 +307,7 @@ export function useMemoizedSorting<T>(data: T[], sortConfig: { desc: boolean; id
         if (!sortConfig || !data.length)
             return data;
 
-        const sortedData = [...data].sort((a, b) => {
+        const sortedData = data.toSorted((a, b) => {
             const sortFn = sortFunctions[sortConfig.id];
 
             if (!sortFn)

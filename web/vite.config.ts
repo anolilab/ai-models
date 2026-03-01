@@ -3,15 +3,15 @@
 /// <reference types="vite/client" />
 
 import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import errorOverlay from "@visulima/vite-overlay";
 import react from "@vitejs/plugin-react";
 import Unfonts from "unplugin-fonts/vite";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import viteTsConfigPaths from "vite-tsconfig-paths";
-import errorOverlay from "@visulima/vite-overlay";
-import netlify from "@netlify/vite-plugin-tanstack-start";
 
 export default defineConfig({
     build: {

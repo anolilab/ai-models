@@ -381,7 +381,7 @@ const VirtualizedTable = <TData extends ExportableData>({
 
     // Calculate virtual padding for smooth horizontal scrolling
     const virtualPaddingLeft = virtualColumns[0]?.start ?? 0;
-    const virtualPaddingRight = virtualColumns.length > 0 ? columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0) : 0;
+    const virtualPaddingRight = virtualColumns.length > 0 ? columnVirtualizer.getTotalSize() - (virtualColumns.at(-1)?.end ?? 0) : 0;
 
     return (
         <div

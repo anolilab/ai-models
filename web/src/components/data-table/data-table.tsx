@@ -206,7 +206,7 @@ const tableReducer = (state: TableState, action: TableAction): TableState => {
         default:
             return state;
     }
-}
+};
 
 const DataTable = <TData extends ExportableData, TValue>({
     classes = {},
@@ -313,7 +313,7 @@ const DataTable = <TData extends ExportableData, TValue>({
     // Helper functions to handle both Record and Set selection states
     const isItemSelected = useCallback(
         (itemId: string): boolean =>
-            (tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId]),
+            tableConfig.enableRowVirtualization ? (selectedItemIds as Set<string>).has(itemId) : !!(selectedItemIds as Record<string, boolean>)[itemId],
         [selectedItemIds, tableConfig.enableRowVirtualization],
     );
 
@@ -335,7 +335,7 @@ const DataTable = <TData extends ExportableData, TValue>({
 
     const getSelectedIds = useCallback((): (string | number)[] => {
         if (tableConfig.enableRowVirtualization) {
-            return Array.from(selectedItemIds as Set<string>);
+            return [...(selectedItemIds as Set<string>)];
         }
 
         return Object.keys(selectedItemIds as Record<string, boolean>);

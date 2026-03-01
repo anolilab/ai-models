@@ -1,10 +1,5 @@
 "use client";
 
-import { GripVertical } from "lucide-react";
-
-import { Separator } from "@/components/ui/separator";
-import cn from "@/lib/utils";
-
 // Simplified resizer component without complex types
 const DataTableResizer = ({ header }: { header: any }) => (
     <div

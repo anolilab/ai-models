@@ -151,7 +151,7 @@ export function DataTableExport<TData extends ExportableData>({
             const { columnOrder } = table.getState();
             const orderedVisibleColumns
                 = columnOrder.length > 0
-                    ? [...visibleColumns].sort((a, b) => {
+                    ? visibleColumns.toSorted((a, b) => {
                         const aIndex = columnOrder.indexOf(a.id);
                         const bIndex = columnOrder.indexOf(b.id);
 
