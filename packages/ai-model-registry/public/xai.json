@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from XAI",
-        "lastUpdated": "2026-01-13T21:44:10.325Z",
+        "lastUpdated": "2026-03-02T07:56:54.911Z",
         "pricingUnit": "1K",
         "provider": "XAI",
         "totalModels": 7,
@@ -42,6 +42,7 @@
             "toolCall": false,
             "vision": true,
             "icon": "xai",
+            "description": "grok-2-vision-1212 is the latest vision model in the Grok family, delivering outstanding performance on vision-based tasks and achieving state-of-the-art results in visual mathematical reasoning and document-based question answering. It supports a wide range of visual inputs, including documents, charts, screenshots, and real-world images, making it well-suited for advanced visual understanding and reasoning use cases.\n\nThe price of calling this model in AIhubMix is ​​10% lower than on the official website.",
             "preview": false
         },
         {

@@ -8,8 +8,10 @@
  * Union type of all model IDs for V0.
  */
 type ModelName
-    = | "4-nwqv-0-zkit-3-b-9-v-6-h"
+    = | "14h91v0h127"
+        | "4-nwqv-0-zkit-3-b-9-v-6-h"
         | "5v0h3h13h14"
+        | "chat-product-home-enterprise-pricingv-0"
         | "classic-v-0"
         | "create-v-0-sdk-app"
         | "featuresv-0"

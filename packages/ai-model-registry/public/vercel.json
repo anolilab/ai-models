@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Vercel",
-        "lastUpdated": "2026-01-13T21:44:10.333Z",
+        "lastUpdated": "2026-03-02T07:56:54.926Z",
         "pricingUnit": "1K",
         "provider": "Vercel",
-        "totalModels": 116,
+        "totalModels": 154,
         "version": "0.0.0-development"
     },
     "models": [
@@ -46,9 +46,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00018,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00054
             },
             "extendedThinking": false,
             "id": "alibaba/qwen-3-235b",
@@ -62,7 +62,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Qwen3 235B A22B Instruct 2507",
+            "name": "Qwen3-235B-A22B",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -167,7 +167,77 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Qwen 3.32B",
+            "name": "Qwen 3 32B",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/qwen3.5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen 3.5 Flash",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/qwen3.5-plus",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen 3.5 Plus",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -238,6 +308,41 @@
                 "output": ["text"]
             },
             "name": "Qwen 3 Coder 30B A3B Instruct",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/qwen3-coder-next",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 256000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3 Coder Next",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -406,7 +511,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 32768
+                "output": 65536
             },
             "modalities": {
                 "input": ["text"],
@@ -448,6 +553,41 @@
                 "output": ["text"]
             },
             "name": "Qwen3 Max Preview",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/qwen3-max-thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen 3 Max Thinking",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -545,8 +685,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": 129024
+                "context": 256000,
+                "output": 256000
             },
             "modalities": {
                 "input": ["text"],
@@ -580,14 +720,224 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": 32768
+                "context": 256000,
+                "output": 256000
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
             "name": "Qwen3 VL 235B A22B Thinking",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.5-t2v-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.5 Text-to-Video Preview",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.6-i2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.6 Image-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.6-i2v-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.6 Image-to-Video Flash",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.6-r2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.6 Reference-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.6-r2v-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.6 Reference-to-Video Flash",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/alibaba",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "alibaba/wan-v2.6-t2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Wan v2.6 Text-to-Video",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -768,6 +1118,41 @@
             "providerDoc": "https://sdk.vercel.ai/docs",
             "providerEnv": ["VERCEL_AI_API_KEY"],
             "providerId": "vercel/amazon",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "arcee-ai/trinity-large-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131000,
+                "output": 131000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Trinity Large Preview",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/arcee-ai",
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
@@ -973,6 +1358,216 @@
                 "output": ["text"]
             },
             "name": "Seed 1.6",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seed-1.8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Bytedance Seed 1.8",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seedance-v1.0-lite-i2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seedance v1.0 Lite Image-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seedance-v1.0-lite-t2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seedance v1.0 Lite Text-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seedance-v1.0-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seedance v1.0 Pro",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seedance-v1.0-pro-fast",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seedance v1.0 Pro Fast",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/bytedance",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "bytedance/seedance-v1.5-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Seedance v1.5 Pro",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -1521,6 +2116,146 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "google/veo-3.0-fast-generate-001",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Veo 3.0 Fast Generate",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/google",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "google/veo-3.0-generate-001",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Veo 3.0",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/google",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "google/veo-3.1-fast-generate-001",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Veo 3.1 Fast Generate",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/google",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "google/veo-3.1-generate-001",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Veo 3.1",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/google",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "inception/mercury-coder-small",
             "knowledge": null,
             "lastUpdated": null,
@@ -1538,6 +2273,251 @@
             "providerDoc": "https://sdk.vercel.ai/docs",
             "providerEnv": ["VERCEL_AI_API_KEY"],
             "providerId": "vercel/inception",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v2.5-turbo-i2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v2.5 Turbo Image-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v2.5-turbo-t2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v2.5 Turbo Text-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v2.6-i2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v2.6 Image-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v2.6-motion-control",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v2.6 Motion Control",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v2.6-t2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v2.6 Text-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v3.0-i2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v3.0 Image-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "klingai/kling-v3.0-t2v",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kling v3.0 Text-to-Video",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/klingai",
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
@@ -2540,14 +3520,14 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 60288,
-                "output": 16000
+                "context": 131072,
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Mistral Nemo",
+            "name": "Mistral Nemo 12B",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
@@ -2881,6 +3861,111 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-image-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT Image 1",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/openai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-image-1.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT Image 1.5",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/openai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-image-1-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT Image 1 Mini",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/openai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.00013,
                 "inputCacheHit": null,
                 "output": 0
@@ -2973,6 +4058,146 @@
             "providerDoc": "https://sdk.vercel.ai/docs",
             "providerEnv": ["VERCEL_AI_API_KEY"],
             "providerId": "vercel/openai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "recraft/recraft-v2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Recraft V2",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/recraft",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "recraft/recraft-v3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Recraft V3",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/recraft",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "recraft/recraft-v4",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Recraft V4",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/recraft",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "recraft/recraft-v4-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Recraft V4 Pro",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/recraft",
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
@@ -3796,23 +5021,58 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "xiaomi/mimo-v2-flash",
+            "id": "xai/grok-imagine-image-pro",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": 32000
+                "context": null,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "MiMo V2 Flash",
+            "name": "Grok Imagine Image Pro",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",
             "providerEnv": ["VERCEL_AI_API_KEY"],
-            "providerId": "vercel/xiaomi",
+            "providerId": "vercel/xai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "xai/grok-imagine-video",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Grok Imagine",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/xai",
             "providerModelsDevId": "vercel",
             "providerNpm": "@ai-sdk/vercel",
             "reasoning": false,
@@ -3906,7 +5166,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 65536,
-                "output": 66000
+                "output": 16384
             },
             "modalities": {
                 "input": ["text"],
@@ -4053,6 +5313,76 @@
                 "output": ["text"]
             },
             "name": "GLM 4.7",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/zai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai/glm-4.7-flashx",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM 4.7 FlashX",
+            "openWeights": false,
+            "provider": "Vercel",
+            "providerDoc": "https://sdk.vercel.ai/docs",
+            "providerEnv": ["VERCEL_AI_API_KEY"],
+            "providerId": "vercel/zai",
+            "providerModelsDevId": "vercel",
+            "providerNpm": "@ai-sdk/vercel",
+            "reasoning": false,
+            "releaseDate": "2025-08-21",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "vercel"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "zai/glm-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 202800,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-5",
             "openWeights": false,
             "provider": "Vercel",
             "providerDoc": "https://sdk.vercel.ai/docs",

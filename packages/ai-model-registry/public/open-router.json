@@ -1,19 +1,19 @@
 {
     "metadata": {
         "description": "AI Models API - Models from OpenRouter",
-        "lastUpdated": "2026-01-13T21:44:10.323Z",
+        "lastUpdated": "2026-03-02T07:56:54.909Z",
         "pricingUnit": "1K",
         "provider": "OpenRouter",
-        "totalModels": 438,
+        "totalModels": 476,
         "version": "0.0.0-development"
     },
     "models": [
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6.5e-7
             },
             "extendedThinking": false,
             "id": "google/gemma-2-27b-it",
@@ -21,7 +21,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 8192,
-                "output": null
+                "output": 2048
             },
             "modalities": {
                 "input": ["text"],
@@ -264,9 +264,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3.9e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.9e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-oss-120b",
@@ -299,9 +299,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.4e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-oss-20b",
@@ -309,7 +309,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -350,7 +350,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Shisa AI: Shisa V2 Llama 3.3 70B ",
+            "name": "Shisa AI: Shisa V2 Llama 3.3 70B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -369,9 +369,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000025
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-flash",
@@ -404,9 +404,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-pro",
@@ -439,9 +439,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.3e-7
             },
             "extendedThinking": false,
             "id": "google/gemma-3-12b-it",
@@ -449,7 +449,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": null
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -474,17 +474,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.5e-7
             },
             "extendedThinking": false,
             "id": "google/gemma-3-27b-it",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 96000,
-                "output": 96000
+                "context": 128000,
+                "output": 65536
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -509,16 +509,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8e-8
             },
             "extendedThinking": false,
             "id": "google/gemma-3-4b-it",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 96000,
+                "context": 131072,
                 "output": null
             },
             "modalities": {
@@ -544,9 +544,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.4e-7
             },
             "extendedThinking": false,
             "id": "microsoft/phi-4",
@@ -554,7 +554,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 16384,
-                "output": null
+                "output": 16384
             },
             "modalities": {
                 "input": ["text"],
@@ -649,9 +649,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "ai21/jamba-large-1.7",
@@ -719,9 +719,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000004,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "aion-labs/aion-1.0",
@@ -754,9 +754,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000014
             },
             "extendedThinking": false,
             "id": "aion-labs/aion-1.0-mini",
@@ -789,9 +789,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000016
+            },
+            "extendedThinking": false,
+            "id": "aion-labs/aion-2.0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "AionLabs: Aion-2.0",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 8e-7,
+                "inputCacheHit": null,
+                "output": 0.0000016
             },
             "extendedThinking": false,
             "id": "aion-labs/aion-rp-llama-3.1-8b",
@@ -824,9 +859,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "alfredpros/codellama-7b-instruct-solidity",
@@ -859,9 +894,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 9e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4.5e-7
             },
             "extendedThinking": false,
             "id": "alibaba/tongyi-deepresearch-30b-a3b",
@@ -894,9 +929,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
+            },
+            "extendedThinking": false,
+            "id": "allenai/molmo-2-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 36864,
+                "output": 36864
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "AllenAI: Molmo2 8B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-09",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-8,
+                "inputCacheHit": null,
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "allenai/olmo-2-0325-32b-instruct",
@@ -920,6 +990,41 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2025-03-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2e-7,
+                "inputCacheHit": null,
+                "output": 6e-7
+            },
+            "extendedThinking": false,
+            "id": "allenai/olmo-3.1-32b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "AllenAI: Olmo 3.1 32B Instruct",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-06",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -964,9 +1069,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "allenai/olmo-3-32b-think",
@@ -999,9 +1104,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "allenai/olmo-3-7b-instruct",
@@ -1034,9 +1139,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "allenai/olmo-3-7b-think",
@@ -1069,9 +1174,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00000375,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000075
             },
             "extendedThinking": false,
             "id": "alpindale/goliath-120b",
@@ -1104,9 +1209,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000025
             },
             "extendedThinking": false,
             "id": "amazon/nova-2-lite-v1",
@@ -1139,9 +1244,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.4e-7
             },
             "extendedThinking": false,
             "id": "amazon/nova-lite-v1",
@@ -1174,9 +1279,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3.5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.4e-7
             },
             "extendedThinking": false,
             "id": "amazon/nova-micro-v1",
@@ -1209,9 +1314,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000125
             },
             "extendedThinking": false,
             "id": "amazon/nova-premier-v1",
@@ -1244,9 +1349,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000032
             },
             "extendedThinking": false,
             "id": "amazon/nova-pro-v1",
@@ -1314,9 +1419,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000005
             },
             "extendedThinking": false,
             "id": "anthracite-org/magnum-v4-72b",
@@ -1349,9 +1454,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000004
             },
             "extendedThinking": false,
             "id": "anthropic/claude-3.5-haiku",
@@ -1419,9 +1524,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000006,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00003
             },
             "extendedThinking": false,
             "id": "anthropic/claude-3.5-sonnet",
@@ -1489,9 +1594,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "anthropic/claude-3.7-sonnet",
@@ -1559,9 +1664,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "anthropic/claude-3.7-sonnet:thinking",
@@ -1594,9 +1699,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000125
             },
             "extendedThinking": false,
             "id": "anthropic/claude-3-haiku",
@@ -1664,9 +1769,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000005
             },
             "extendedThinking": false,
             "id": "anthropic/claude-haiku-4.5",
@@ -1699,9 +1804,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000015,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000075
             },
             "extendedThinking": false,
             "id": "anthropic/claude-opus-4",
@@ -1734,9 +1839,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000015,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000075
             },
             "extendedThinking": false,
             "id": "anthropic/claude-opus-4.1",
@@ -1744,7 +1849,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": null
+                "output": 32000
             },
             "modalities": {
                 "input": ["image", "text", "file"],
@@ -1769,9 +1874,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000005,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000025
             },
             "extendedThinking": false,
             "id": "anthropic/claude-opus-4.5",
@@ -1779,7 +1884,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 32000
+                "output": 64000
             },
             "modalities": {
                 "input": ["file", "image", "text"],
@@ -1804,9 +1909,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000005,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000025
+            },
+            "extendedThinking": false,
+            "id": "anthropic/claude-opus-4.6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Anthropic: Claude Opus 4.6",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-04",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000003,
+                "inputCacheHit": null,
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "anthropic/claude-sonnet-4",
@@ -1839,9 +1979,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "anthropic/claude-sonnet-4.5",
@@ -1874,9 +2014,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
+            },
+            "extendedThinking": false,
+            "id": "anthropic/claude-sonnet-4.6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Anthropic: Claude Sonnet 4.6",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-17",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 8e-7
             },
             "extendedThinking": false,
             "id": "arcee-ai/coder-large",
@@ -1909,9 +2084,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 9e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000033
             },
             "extendedThinking": false,
             "id": "arcee-ai/maestro-reasoning",
@@ -1944,9 +2119,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.8e-7
             },
             "extendedThinking": false,
             "id": "arcee-ai/spotlight",
@@ -1982,6 +2157,41 @@
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
+            },
+            "extendedThinking": false,
+            "id": "arcee-ai/trinity-large-preview:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Arcee AI: Trinity Large Preview (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-27",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 4.5e-8,
+                "inputCacheHit": null,
+                "output": 1.5e-7
             },
             "extendedThinking": false,
             "id": "arcee-ai/trinity-mini",
@@ -2049,9 +2259,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "arcee-ai/virtuoso-large",
@@ -2154,9 +2364,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.8e-7
             },
             "extendedThinking": false,
             "id": "baidu/ernie-4.5-21b-a3b",
@@ -2189,9 +2399,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.8e-7
             },
             "extendedThinking": false,
             "id": "baidu/ernie-4.5-21b-a3b-thinking",
@@ -2224,9 +2434,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000011
             },
             "extendedThinking": false,
             "id": "baidu/ernie-4.5-300b-a47b",
@@ -2240,7 +2450,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Baidu: ERNIE 4.5 300B A47B ",
+            "name": "Baidu: ERNIE 4.5 300B A47B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -2259,9 +2469,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5.6e-7
             },
             "extendedThinking": false,
             "id": "baidu/ernie-4.5-vl-28b-a3b",
@@ -2294,9 +2504,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000125
             },
             "extendedThinking": false,
             "id": "baidu/ernie-4.5-vl-424b-a47b",
@@ -2310,7 +2520,7 @@
                 "input": ["image", "text"],
                 "output": ["text"]
             },
-            "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
+            "name": "Baidu: ERNIE 4.5 VL 424B A47B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -2329,9 +2539,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "bytedance-seed/seed-1.6",
@@ -2364,9 +2574,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "bytedance-seed/seed-1.6-flash",
@@ -2374,7 +2584,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 16384
+                "output": 32768
             },
             "modalities": {
                 "input": ["image", "text", "video"],
@@ -2399,9 +2609,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
+            },
+            "extendedThinking": false,
+            "id": "bytedance-seed/seed-2.0-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "ByteDance Seed: Seed-2.0-Mini",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1e-7,
+                "inputCacheHit": null,
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "bytedance/ui-tars-1.5-7b",
@@ -2415,7 +2660,7 @@
                 "input": ["image", "text"],
                 "output": ["text"]
             },
-            "name": "ByteDance: UI-TARS 7B ",
+            "name": "ByteDance: UI-TARS 7B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -2679,9 +2924,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "cohere/command-a",
@@ -2784,9 +3029,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "cohere/command-r-08-2024",
@@ -2819,9 +3064,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3.75e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.5e-7
             },
             "extendedThinking": false,
             "id": "cohere/command-r7b-12-2024",
@@ -2924,9 +3169,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "cohere/command-r-plus-08-2024",
@@ -2959,9 +3204,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000125
             },
             "extendedThinking": false,
             "id": "deepcogito/cogito-v2.1-671b",
@@ -3099,9 +3344,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8.9e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-chat",
@@ -3134,9 +3379,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 7.7e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-chat-v3-0324",
@@ -3144,7 +3389,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 163840,
-                "output": 65536
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -3204,9 +3449,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 7.5e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-chat-v3.1",
@@ -3274,17 +3519,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000025
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-r1",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 163840,
-                "output": 163840
+                "context": 64000,
+                "output": 16000
             },
             "modalities": {
                 "input": ["text"],
@@ -3309,9 +3554,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000215
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-r1-0528",
@@ -3484,9 +3729,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 7e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 8e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-r1-distill-llama-70b",
@@ -3494,7 +3739,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": 16384
             },
             "modalities": {
                 "input": ["text"],
@@ -3694,17 +3939,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.9e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.9e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-r1-distill-qwen-32b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": null
+                "context": 32768,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -3729,9 +3974,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 7.9e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-v3.1-terminus",
@@ -3764,9 +4009,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 7.9e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-v3.1-terminus:exacto",
@@ -3799,9 +4044,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-v3.2",
@@ -3809,7 +4054,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 163840,
-                "output": 65536
+                "output": 163840
             },
             "modalities": {
                 "input": ["text"],
@@ -3834,9 +4079,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4.1e-7
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-v3.2-exp",
@@ -3869,9 +4114,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "deepseek/deepseek-v3.2-speciale",
@@ -3939,9 +4184,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "eleutherai/llemma_7b",
@@ -3974,9 +4219,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.5e-7
             },
             "extendedThinking": false,
             "id": "essentialai/rnj-1-instruct",
@@ -4044,9 +4289,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "google/gemini-2.0-flash-001",
@@ -4114,9 +4359,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "google/gemini-2.0-flash-lite-001",
@@ -4149,9 +4394,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000025
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-flash-image",
@@ -4165,7 +4410,7 @@
                 "input": ["image", "text"],
                 "output": ["image", "text"]
             },
-            "name": "Google: Gemini 2.5 Flash Image (Nano Banana)",
+            "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -4219,9 +4464,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-flash-lite",
@@ -4289,9 +4534,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-flash-lite-preview-09-2025",
@@ -4299,7 +4544,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 1048576,
-                "output": 65536
+                "output": 65535
             },
             "modalities": {
                 "input": ["text", "image", "file", "audio", "video"],
@@ -4394,9 +4639,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-pro-preview",
@@ -4429,9 +4674,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "google/gemini-2.5-pro-preview-05-06",
@@ -4464,9 +4709,114 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000015
+            },
+            "extendedThinking": false,
+            "id": "google/gemini-3.1-flash-image-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["image", "text"]
+            },
+            "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000002,
+                "inputCacheHit": null,
+                "output": 0.000012
+            },
+            "extendedThinking": false,
+            "id": "google/gemini-3.1-pro-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["audio", "file", "image", "text", "video"],
+                "output": ["text"]
+            },
+            "name": "Google: Gemini 3.1 Pro Preview",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000002,
+                "inputCacheHit": null,
+                "output": 0.000012
+            },
+            "extendedThinking": false,
+            "id": "google/gemini-3.1-pro-preview-customtools",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "audio", "image", "video", "file"],
+                "output": ["text"]
+            },
+            "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000003
             },
             "extendedThinking": false,
             "id": "google/gemini-3-flash-preview",
@@ -4499,9 +4849,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000012
             },
             "extendedThinking": false,
             "id": "google/gemini-3-pro-image-preview",
@@ -4534,9 +4884,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000012
             },
             "extendedThinking": false,
             "id": "google/gemini-3-pro-preview",
@@ -4585,7 +4935,7 @@
                 "input": ["text", "image"],
                 "output": ["text"]
             },
-            "name": "Google: Gemini 1.5 Flash ",
+            "name": "Google: Gemini 1.5 Flash",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -4674,9 +5024,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 9e-8
             },
             "extendedThinking": false,
             "id": "google/gemma-2-9b-it",
@@ -4754,7 +5104,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": null
+                "output": 8192
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -4849,9 +5199,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-8
             },
             "extendedThinking": false,
             "id": "google/gemma-3n-e4b-it",
@@ -4919,9 +5269,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6e-8
             },
             "extendedThinking": false,
             "id": "gryphe/mythomax-l2-13b",
@@ -4929,7 +5279,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 4096,
-                "output": null
+                "output": 4096
             },
             "modalities": {
                 "input": ["text"],
@@ -4954,9 +5304,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.7e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.1e-7
             },
             "extendedThinking": false,
             "id": "ibm-granite/granite-4.0-h-micro",
@@ -4989,9 +5339,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "inception/mercury",
@@ -5024,9 +5374,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "inception/mercury-coder",
@@ -5094,9 +5444,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "inflection/inflection-3-pi",
@@ -5129,9 +5479,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "inflection/inflection-3-productivity",
@@ -5164,9 +5514,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.07e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8.28e-7
             },
             "extendedThinking": false,
             "id": "kwaipilot/kat-coder-pro",
@@ -5234,9 +5584,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-8,
                 "inputCacheHit": null,
+                "output": 1.2e-7
+            },
+            "extendedThinking": false,
+            "id": "liquid/lfm-2-24b-a2b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
                 "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "LiquidAI: LFM2-24B-A2B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1e-8,
+                "inputCacheHit": null,
+                "output": 2e-8
             },
             "extendedThinking": false,
             "id": "liquid/lfm-2.2-6b",
@@ -5250,7 +5635,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "LiquidAI/LFM2-2.6B",
+            "name": "LiquidAI: LFM2-2.6B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -5274,6 +5659,76 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "liquid/lfm-2.5-1.2b-instruct:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "liquid/lfm-2.5-1.2b-thinking:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32768,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-20",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1e-8,
+                "inputCacheHit": null,
+                "output": 2e-8
+            },
+            "extendedThinking": false,
             "id": "liquid/lfm2-8b-a1b",
             "knowledge": null,
             "lastUpdated": null,
@@ -5285,7 +5740,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "LiquidAI/LFM2-8B-A1B",
+            "name": "LiquidAI: LFM2-8B-A1B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -5409,9 +5864,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "mancer/weaver",
@@ -5444,9 +5899,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8e-7
             },
             "extendedThinking": false,
             "id": "meituan/longcat-flash-chat",
@@ -5454,7 +5909,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -5479,9 +5934,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000004,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000004
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.1-405b",
@@ -5514,16 +5969,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000004,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000004
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.1-405b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 10000,
+                "context": 131000,
                 "output": null
             },
             "modalities": {
@@ -5549,9 +6004,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.1-70b-instruct",
@@ -5584,9 +6039,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 5e-8
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.1-8b-instruct",
@@ -5619,9 +6074,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4.9e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 4.9e-8
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.2-11b-vision-instruct",
@@ -5654,9 +6109,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2.7e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.2-1b-instruct",
@@ -5689,9 +6144,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-8
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.2-3b-instruct",
@@ -5759,9 +6214,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 3.2e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3.3-70b-instruct",
@@ -5803,8 +6258,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": null
+                "context": 128000,
+                "output": 128000
             },
             "modalities": {
                 "input": ["text"],
@@ -5829,9 +6284,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 5.1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 7.4e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3-70b-instruct",
@@ -5839,7 +6294,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 8192,
-                "output": 16384
+                "output": 8000
             },
             "modalities": {
                 "input": ["text"],
@@ -5864,9 +6319,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 3e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 4e-8
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-3-8b-instruct",
@@ -5899,9 +6354,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-4-maverick",
@@ -5934,9 +6389,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 8e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-4-scout",
@@ -5969,9 +6424,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-guard-2-8b",
@@ -6004,9 +6459,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 6e-8
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-guard-3-8b",
@@ -6039,9 +6494,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1.8e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1.8e-7
             },
             "extendedThinking": false,
             "id": "meta-llama/llama-guard-4-12b",
@@ -6319,17 +6774,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6.2e-7
             },
             "extendedThinking": false,
             "id": "microsoft/wizardlm-2-8x22b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 65536,
-                "output": 16384
+                "context": 65535,
+                "output": 8000
             },
             "modalities": {
                 "input": ["text"],
@@ -6354,9 +6809,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000011
             },
             "extendedThinking": false,
             "id": "minimax/minimax-01",
@@ -6389,9 +6844,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000022
             },
             "extendedThinking": false,
             "id": "minimax/minimax-m1",
@@ -6424,9 +6879,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.55e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "minimax/minimax-m2",
@@ -6459,9 +6914,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 9.5e-7
             },
             "extendedThinking": false,
             "id": "minimax/minimax-m2.1",
@@ -6485,6 +6940,76 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2025-12-23",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.95e-7,
+                "inputCacheHit": null,
+                "output": 0.0000012
+            },
+            "extendedThinking": false,
+            "id": "minimax/minimax-m2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 196608,
+                "output": 196608
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax: MiniMax M2.5",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-12",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3e-7,
+                "inputCacheHit": null,
+                "output": 0.0000012
+            },
+            "extendedThinking": false,
+            "id": "minimax/minimax-m2-her",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 65536,
+                "output": 2048
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax: MiniMax M2-her",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-23",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -6529,9 +7054,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.3,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": 0.9
+                "output": 9e-7
             },
             "extendedThinking": false,
             "id": "mistralai/codestral-2508",
@@ -6564,9 +7089,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "mistralai/devstral-2512",
@@ -6574,7 +7099,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 65536
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -6634,9 +7159,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "mistralai/devstral-medium",
@@ -6669,16 +7194,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "mistralai/devstral-small",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
+                "context": 131072,
                 "output": null
             },
             "modalities": {
@@ -6879,9 +7404,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "mistralai/ministral-14b-2512",
@@ -6949,9 +7474,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1e-7
             },
             "extendedThinking": false,
             "id": "mistralai/ministral-3b-2512",
@@ -7019,9 +7544,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1.5e-7
             },
             "extendedThinking": false,
             "id": "mistralai/ministral-8b-2512",
@@ -7054,9 +7579,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-7b-instruct",
@@ -7064,7 +7589,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": 16384
+                "output": 4096
             },
             "modalities": {
                 "input": ["text"],
@@ -7089,9 +7614,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1.1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1.9e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-7b-instruct-v0.1",
@@ -7159,9 +7684,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-7b-instruct-v0.3",
@@ -7194,9 +7719,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-large",
@@ -7229,9 +7754,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-large-2407",
@@ -7264,9 +7789,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-large-2411",
@@ -7299,9 +7824,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 5e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.0000015
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-large-2512",
@@ -7334,9 +7859,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-medium-3",
@@ -7369,9 +7894,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-medium-3.1",
@@ -7404,9 +7929,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 4e-8
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-nemo",
@@ -7474,9 +7999,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-saba",
@@ -7544,9 +8069,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 5e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 8e-8
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-small-24b-instruct-2501",
@@ -7554,7 +8079,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": 32768
+                "output": 16384
             },
             "modalities": {
                 "input": ["text"],
@@ -7614,17 +8139,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 3.5e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 5.6e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-small-3.1-24b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": 131072
+                "context": 128000,
+                "output": null
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -7684,9 +8209,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 6e-8,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1.8e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-small-3.2-24b-instruct",
@@ -7754,9 +8279,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mistral-small-creative",
@@ -7824,9 +8349,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "mistralai/mixtral-8x22b-instruct",
@@ -7859,9 +8384,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 5.4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 5.4e-7
             },
             "extendedThinking": false,
             "id": "mistralai/mixtral-8x7b-instruct",
@@ -7929,9 +8454,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "mistralai/pixtral-large-2411",
@@ -7964,9 +8489,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "mistralai/voxtral-small-24b-2507",
@@ -8069,16 +8594,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000022
             },
             "extendedThinking": false,
             "id": "moonshotai/kimi-k2",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": 131000,
                 "output": null
             },
             "modalities": {
@@ -8104,17 +8629,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "moonshotai/kimi-k2-0905",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": 262144
+                "context": 131072,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -8139,9 +8664,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000025
             },
             "extendedThinking": false,
             "id": "moonshotai/kimi-k2-0905:exacto",
@@ -8169,6 +8694,41 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 4.5e-7,
+                "inputCacheHit": null,
+                "output": 0.0000022
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/kimi-k2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65535
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "MoonshotAI: Kimi K2.5",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-27",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
             "icon": "openrouter"
         },
         {
@@ -8209,17 +8769,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "moonshotai/kimi-k2-thinking",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": 65535
+                "context": 131072,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -8314,9 +8874,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "morph/morph-v3-fast",
@@ -8349,9 +8909,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 9e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000019
             },
             "extendedThinking": false,
             "id": "morph/morph-v3-large",
@@ -8384,9 +8944,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 9e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "neversleep/llama-3.1-lumimaid-8b",
@@ -8394,7 +8954,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 4096
             },
             "modalities": {
                 "input": ["text"],
@@ -8454,9 +9014,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000175
             },
             "extendedThinking": false,
             "id": "neversleep/noromaid-20b",
@@ -8464,7 +9024,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 4096,
-                "output": null
+                "output": 2048
             },
             "modalities": {
                 "input": ["text"],
@@ -8480,6 +9040,41 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2023-11-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.7e-7,
+                "inputCacheHit": null,
+                "output": 0.000001
+            },
+            "extendedThinking": false,
+            "id": "nex-agi/deepseek-v3.1-nex-n1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 163840
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Nex AGI: DeepSeek V3.1 Nex N1",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-12-08",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -8594,9 +9189,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1.4e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 1.4e-7
             },
             "extendedThinking": false,
             "id": "nousresearch/hermes-2-pro-llama-3-8b",
@@ -8604,7 +9199,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 8192,
-                "output": 2048
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -8629,9 +9224,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "nousresearch/hermes-3-llama-3.1-405b",
@@ -8699,9 +9294,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "nousresearch/hermes-3-llama-3.1-70b",
@@ -8709,7 +9304,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 65536,
-                "output": null
+                "output": 65536
             },
             "modalities": {
                 "input": ["text"],
@@ -8734,9 +9329,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000003
             },
             "extendedThinking": false,
             "id": "nousresearch/hermes-4-405b",
@@ -8769,9 +9364,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "nousresearch/hermes-4-70b",
@@ -8779,7 +9374,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -8839,9 +9434,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 0.0000012,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "nvidia/llama-3.1-nemotron-70b-instruct",
@@ -8979,9 +9574,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.0003,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.0003
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -9014,9 +9609,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "nvidia/nemotron-3-nano-30b-a3b",
@@ -9024,7 +9619,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 262144
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -9084,9 +9679,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "nvidia/nemotron-nano-12b-v2-vl",
@@ -9154,9 +9749,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1.6e-7
             },
             "extendedThinking": false,
             "id": "nvidia/nemotron-nano-9b-v2",
@@ -9294,9 +9889,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000015
             },
             "extendedThinking": false,
             "id": "openai/gpt-3.5-turbo",
@@ -9329,9 +9924,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "openai/gpt-3.5-turbo-0613",
@@ -9364,9 +9959,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000004
             },
             "extendedThinking": false,
             "id": "openai/gpt-3.5-turbo-16k",
@@ -9399,9 +9994,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000015,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "openai/gpt-3.5-turbo-instruct",
@@ -9434,9 +10029,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.00003,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00006
             },
             "extendedThinking": false,
             "id": "openai/gpt-4",
@@ -9469,9 +10064,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.00003,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00006
             },
             "extendedThinking": false,
             "id": "openai/gpt-4-0314",
@@ -9504,9 +10099,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "openai/gpt-4.1",
@@ -9539,9 +10134,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.00001,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00003
             },
             "extendedThinking": false,
             "id": "openai/gpt-4-1106-preview",
@@ -9574,9 +10169,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.0000016
             },
             "extendedThinking": false,
             "id": "openai/gpt-4.1-mini",
@@ -9609,9 +10204,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-4.1-nano",
@@ -9644,9 +10239,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o",
@@ -9679,9 +10274,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.000006,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.000018
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o:extended",
@@ -9714,9 +10309,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.000005,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-2024-05-13",
@@ -9749,9 +10344,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-2024-08-06",
@@ -9784,9 +10379,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-2024-11-20",
@@ -9819,9 +10414,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-audio-preview",
@@ -9833,7 +10428,7 @@
             },
             "modalities": {
                 "input": ["audio", "text"],
-                "output": ["text"]
+                "output": ["text", "audio"]
             },
             "name": "OpenAI: GPT-4o Audio",
             "openWeights": false,
@@ -9854,9 +10449,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-mini",
@@ -9889,9 +10484,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-mini-2024-07-18",
@@ -9924,9 +10519,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-mini-search-preview",
@@ -9959,9 +10554,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-4o-search-preview",
@@ -9994,9 +10589,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.00001,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00003
             },
             "extendedThinking": false,
             "id": "openai/gpt-4-turbo",
@@ -10029,9 +10624,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.03,
+                "input": 0.00001,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00003
             },
             "extendedThinking": false,
             "id": "openai/gpt-4-turbo-preview",
@@ -10064,9 +10659,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5",
@@ -10099,9 +10694,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.1",
@@ -10134,9 +10729,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.1-chat",
@@ -10169,9 +10764,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.1-codex",
@@ -10204,9 +10799,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.1-codex-max",
@@ -10239,9 +10834,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.1-codex-mini",
@@ -10274,9 +10869,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000175,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000014
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.2",
@@ -10309,9 +10904,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000175,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000014
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.2-chat",
@@ -10344,9 +10939,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000175,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000014
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-5.2-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "OpenAI: GPT-5.2-Codex",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000021,
+                "inputCacheHit": null,
+                "output": 0.000168
             },
             "extendedThinking": false,
             "id": "openai/gpt-5.2-pro",
@@ -10379,9 +11009,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000175,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000014
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-5.3-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "OpenAI: GPT-5.3-Codex",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-24",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000125,
+                "inputCacheHit": null,
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-chat",
@@ -10414,9 +11079,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00000125,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-codex",
@@ -10449,9 +11114,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.00001,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00001
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-image",
@@ -10484,9 +11149,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-image-mini",
@@ -10519,9 +11184,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-mini",
@@ -10554,9 +11219,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 5e-8,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-nano",
@@ -10589,9 +11254,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00125,
+                "input": 0.000015,
                 "inputCacheHit": null,
-                "output": 0.01
+                "output": 0.00012
             },
             "extendedThinking": false,
             "id": "openai/gpt-5-pro",
@@ -10624,9 +11289,79 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000025,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00001
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-audio",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text", "audio"],
+                "output": ["text", "audio"]
+            },
+            "name": "OpenAI: GPT Audio",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-7,
+                "inputCacheHit": null,
+                "output": 0.0000024
+            },
+            "extendedThinking": false,
+            "id": "openai/gpt-audio-mini",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": 16384
+            },
+            "modalities": {
+                "input": ["text", "audio"],
+                "output": ["text", "audio"]
+            },
+            "name": "OpenAI: GPT Audio Mini",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3.9e-8,
+                "inputCacheHit": null,
+                "output": 1.9e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-oss-120b:exacto",
@@ -10669,7 +11404,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": null
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],
@@ -10704,7 +11439,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": null
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],
@@ -10729,9 +11464,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "openai/gpt-oss-safeguard-20b",
@@ -10764,9 +11499,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 0.000015,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00006
             },
             "extendedThinking": false,
             "id": "openai/o1",
@@ -10869,9 +11604,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 0.00015,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.0006
             },
             "extendedThinking": false,
             "id": "openai/o1-pro",
@@ -10904,9 +11639,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "openai/o3",
@@ -10939,9 +11674,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00004
             },
             "extendedThinking": false,
             "id": "openai/o3-deep-research",
@@ -10974,9 +11709,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000011,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000044
             },
             "extendedThinking": false,
             "id": "openai/o3-mini",
@@ -11009,9 +11744,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000011,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000044
             },
             "extendedThinking": false,
             "id": "openai/o3-mini-high",
@@ -11044,9 +11779,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.00002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00008
             },
             "extendedThinking": false,
             "id": "openai/o3-pro",
@@ -11079,9 +11814,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000011,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000044
             },
             "extendedThinking": false,
             "id": "openai/o4-mini",
@@ -11114,9 +11849,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "openai/o4-mini-deep-research",
@@ -11149,9 +11884,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000011,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000044
             },
             "extendedThinking": false,
             "id": "openai/o4-mini-high",
@@ -11254,9 +11989,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": -1,
                 "inputCacheHit": null,
-                "output": null
+                "output": -1
             },
             "extendedThinking": false,
             "id": "openrouter/auto",
@@ -11267,8 +12002,8 @@
                 "output": null
             },
             "modalities": {
-                "input": ["text"],
-                "output": ["text"]
+                "input": ["text", "image", "audio", "file", "video"],
+                "output": ["text", "image"]
             },
             "name": "Auto Router",
             "openWeights": false,
@@ -11283,15 +12018,15 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
-            "vision": false,
+            "vision": true,
             "icon": "openrouter"
         },
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": -1,
                 "inputCacheHit": null,
-                "output": null
+                "output": -1
             },
             "extendedThinking": false,
             "id": "openrouter/bodybuilder",
@@ -11319,6 +12054,41 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "openrouter/free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Free Models Router",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
             "icon": "openrouter"
         },
         {
@@ -11359,9 +12129,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "perplexity/sonar",
@@ -11394,9 +12164,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "perplexity/sonar-deep-research",
@@ -11429,9 +12199,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "perplexity/sonar-pro",
@@ -11464,9 +12234,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "perplexity/sonar-pro-search",
@@ -11534,9 +12304,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.001,
+                "input": 0.000002,
                 "inputCacheHit": null,
-                "output": 0.001
+                "output": 0.000008
             },
             "extendedThinking": false,
             "id": "perplexity/sonar-reasoning-pro",
@@ -11569,9 +12339,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000011
             },
             "extendedThinking": false,
             "id": "prime-intellect/intellect-3",
@@ -11639,9 +12409,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3.9e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-2.5-72b-instruct",
@@ -11709,9 +12479,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-2.5-7b-instruct",
@@ -11744,9 +12514,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-2.5-coder-32b-instruct",
@@ -11754,7 +12524,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": 32768
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -11814,9 +12584,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 9e-8
             },
             "extendedThinking": false,
             "id": "qwen/qwen2.5-coder-7b-instruct",
@@ -11849,17 +12619,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen2.5-vl-32b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 16384,
-                "output": 16384
+                "context": 128000,
+                "output": null
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11919,9 +12689,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen2.5-vl-72b-instruct",
@@ -11989,9 +12759,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-2.5-vl-7b-instruct",
@@ -12094,9 +12864,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.4e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-14b",
@@ -12164,17 +12934,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.55e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000182
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-235b-a22b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 40960,
-                "output": 40960
+                "context": 131072,
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -12234,9 +13004,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7.1e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-235b-a22b-2507",
@@ -12278,8 +13048,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": 262144
+                "context": 131072,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -12304,9 +13074,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.8e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-30b-a3b",
@@ -12374,9 +13144,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 9e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-30b-a3b-instruct-2507",
@@ -12409,9 +13179,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5.1e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 3.4e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-30b-a3b-thinking-2507",
@@ -12444,9 +13214,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.4e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-32b",
@@ -12514,17 +13284,227 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000032
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-122b-a10b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5-122B-A10B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3e-7,
+                "inputCacheHit": null,
+                "output": 0.0000024
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-27b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5-27B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-35b-a3b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5-35B-A3B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5.5e-7,
+                "inputCacheHit": null,
+                "output": 0.0000035
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-397b-a17b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5 397B A17B",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-16",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1e-7,
+                "inputCacheHit": null,
+                "output": 4e-7
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-flash-02-23",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5-Flash",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-25",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 4e-7,
+                "inputCacheHit": null,
+                "output": 0.0000024
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3.5-plus-02-15",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3.5 Plus 2026-02-15",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-16",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-8,
+                "inputCacheHit": null,
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-8b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
-                "output": 20000
+                "context": 40960,
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -12584,9 +13564,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-coder",
@@ -12594,7 +13574,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 262144
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -12619,9 +13599,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000018
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-coder:exacto",
@@ -12689,9 +13669,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 7e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2.7e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-coder-30b-a3b-instruct",
@@ -12724,16 +13704,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000015
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-coder-flash",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
+                "context": 1000000,
                 "output": 65536
             },
             "modalities": {
@@ -12759,16 +13739,51 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 7.5e-7
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3-coder-next",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3 Coder Next",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-04",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000001,
+                "inputCacheHit": null,
+                "output": 0.000005
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-coder-plus",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
+                "context": 1000000,
                 "output": 65536
             },
             "modalities": {
@@ -12794,16 +13809,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000012,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000006
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-max",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 256000,
+                "context": 262144,
                 "output": 32768
             },
             "modalities": {
@@ -12829,9 +13844,44 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000012,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000006
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3-max-thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3 Max Thinking",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-09",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 9e-8,
+                "inputCacheHit": null,
+                "output": 0.0000011
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-next-80b-a3b-instruct",
@@ -12869,12 +13919,47 @@
                 "output": null
             },
             "extendedThinking": false,
-            "id": "qwen/qwen3-next-80b-a3b-thinking",
+            "id": "qwen/qwen3-next-80b-a3b-instruct:free",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 262144
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-09-11",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 1.5e-7,
+                "inputCacheHit": null,
+                "output": 0.0000012
+            },
+            "extendedThinking": false,
+            "id": "qwen/qwen3-next-80b-a3b-thinking",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -12899,9 +13984,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8.8e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-vl-235b-a22b-instruct",
@@ -12943,8 +14028,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": 262144
+                "context": 131072,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -12969,17 +14054,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5.2e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-vl-30b-a3b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": null
+                "context": 131072,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -13039,17 +14124,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.04e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4.16e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-vl-32b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 262144,
-                "output": null
+                "context": 131072,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -13074,9 +14159,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-vl-8b-instruct",
@@ -13109,16 +14194,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.17e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000001365
             },
             "extendedThinking": false,
             "id": "qwen/qwen3-vl-8b-thinking",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 256000,
+                "context": 131072,
                 "output": 32768
             },
             "modalities": {
@@ -13144,9 +14229,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000016,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000064
             },
             "extendedThinking": false,
             "id": "qwen/qwen-max",
@@ -13160,7 +14245,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Qwen: Qwen-Max ",
+            "name": "Qwen: Qwen-Max",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -13179,17 +14264,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "qwen/qwen-plus",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": 8192
+                "context": 1000000,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -13214,9 +14299,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "qwen/qwen-plus-2025-07-28",
@@ -13249,9 +14334,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000012
             },
             "extendedThinking": false,
             "id": "qwen/qwen-plus-2025-07-28:thinking",
@@ -13284,16 +14369,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5e-8,
                 "inputCacheHit": null,
-                "output": null
+                "output": 2e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-turbo",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 1000000,
+                "context": 131072,
                 "output": 8192
             },
             "modalities": {
@@ -13319,9 +14404,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000032
             },
             "extendedThinking": false,
             "id": "qwen/qwen-vl-max",
@@ -13329,7 +14414,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 8192
+                "output": 32768
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -13354,17 +14439,17 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6.3e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwen-vl-plus",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 7500,
-                "output": 1500
+                "context": 131072,
+                "output": 8192
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -13389,9 +14474,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "qwen/qwq-32b",
@@ -13399,7 +14484,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -13494,9 +14579,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.0000045,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000045
             },
             "extendedThinking": false,
             "id": "raifle/sorcererlm-8x22b",
@@ -13564,9 +14649,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 8.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000125
             },
             "extendedThinking": false,
             "id": "relace/relace-apply-3",
@@ -13599,9 +14684,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000001,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000003
             },
             "extendedThinking": false,
             "id": "relace/relace-search",
@@ -13634,9 +14719,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.000003
             },
             "extendedThinking": false,
             "id": "sao10k/l3.1-70b-hanami-x1",
@@ -13669,9 +14754,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 6.5e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 7.5e-7
             },
             "extendedThinking": false,
             "id": "sao10k/l3.1-euryale-70b",
@@ -13679,7 +14764,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -13704,9 +14789,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 6.5e-7,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 7.5e-7
             },
             "extendedThinking": false,
             "id": "sao10k/l3.3-euryale-70b",
@@ -13739,9 +14824,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 0.00000148,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 0.00000148
             },
             "extendedThinking": false,
             "id": "sao10k/l3-euryale-70b",
@@ -13774,9 +14859,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.015,
+                "input": 4e-8,
                 "inputCacheHit": null,
-                "output": 0.06
+                "output": 5e-8
             },
             "extendedThinking": false,
             "id": "sao10k/l3-lunaris-8b",
@@ -13949,9 +15034,79 @@
         {
             "attachment": false,
             "cost": {
+                "input": 1e-7,
+                "inputCacheHit": null,
+                "output": 3e-7
+            },
+            "extendedThinking": false,
+            "id": "stepfun/step-3.5-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 256000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "StepFun: Step 3.5 Flash",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
+            },
+            "extendedThinking": false,
+            "id": "stepfun/step-3.5-flash:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 256000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "StepFun: Step 3.5 Flash (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 8.5e-7,
+                "inputCacheHit": null,
+                "output": 0.0000034
             },
             "extendedThinking": false,
             "id": "switchpoint/router",
@@ -13984,9 +15139,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5.7e-7
             },
             "extendedThinking": false,
             "id": "tencent/hunyuan-a13b-instruct",
@@ -14124,9 +15279,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "thedrummer/cydonia-24b-v4.1",
@@ -14159,9 +15314,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.7e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4.3e-7
             },
             "extendedThinking": false,
             "id": "thedrummer/rocinante-12b",
@@ -14169,7 +15324,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -14194,9 +15349,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8e-7
             },
             "extendedThinking": false,
             "id": "thedrummer/skyfall-36b-v2",
@@ -14229,9 +15384,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 4e-7
             },
             "extendedThinking": false,
             "id": "thedrummer/unslopnemo-12b",
@@ -14239,7 +15394,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -14369,9 +15524,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8.5e-7
             },
             "extendedThinking": false,
             "id": "tngtech/deepseek-r1t2-chimera",
@@ -14579,9 +15734,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 6.5e-7
             },
             "extendedThinking": false,
             "id": "undi95/remm-slerp-l2-13b",
@@ -14589,7 +15744,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 6144,
-                "output": null
+                "output": 4096
             },
             "modalities": {
                 "input": ["text"],
@@ -14605,6 +15760,76 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2023-07-22",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "upstage/solar-pro-3:free",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 128000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Upstage: Solar Pro 3 (free)",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-27",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-7,
+                "inputCacheHit": null,
+                "output": 0.000006
+            },
+            "extendedThinking": false,
+            "id": "writer/palmyra-x5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1040000,
+                "output": 8192
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Writer: Palmyra X5",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-21",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -14684,9 +15909,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "x-ai/grok-3",
@@ -14719,9 +15944,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "x-ai/grok-3-beta",
@@ -14754,9 +15979,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "x-ai/grok-3-mini",
@@ -14789,9 +16014,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "x-ai/grok-3-mini-beta",
@@ -14824,9 +16049,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 0.000003,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000015
             },
             "extendedThinking": false,
             "id": "x-ai/grok-4",
@@ -14859,9 +16084,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "x-ai/grok-4.1-fast",
@@ -14894,9 +16119,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 5e-7
             },
             "extendedThinking": false,
             "id": "x-ai/grok-4-fast",
@@ -14929,9 +16154,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 2e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000015
             },
             "extendedThinking": false,
             "id": "x-ai/grok-code-fast-1",
@@ -14999,6 +16224,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": 9e-8,
+                "inputCacheHit": null,
+                "output": 2.9e-7
+            },
+            "extendedThinking": false,
+            "id": "xiaomi/mimo-v2-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Xiaomi: MiMo-V2-Flash",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2025-12-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": null,
                 "inputCacheHit": null,
                 "output": null
@@ -15034,9 +16294,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 1e-7
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4-32b",
@@ -15050,7 +16310,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4 32B ",
+            "name": "Z.ai: GLM 4 32B",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15069,23 +16329,23 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 5.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.000002
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.5",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": 65536
+                "context": 131000,
+                "output": 131000
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.5",
+            "name": "Z.ai: GLM 4.5",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15104,9 +16364,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 1.3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 8.5e-7
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.5-air",
@@ -15114,13 +16374,13 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": 98304
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.5 Air",
+            "name": "Z.ai: GLM 4.5 Air",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15155,7 +16415,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.5 Air (free)",
+            "name": "Z.ai: GLM 4.5 Air (free)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15174,9 +16434,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 6e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000018
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.5v",
@@ -15190,7 +16450,7 @@
                 "input": ["text", "image"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.5V",
+            "name": "Z.ai: GLM 4.5V",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15209,9 +16469,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3.5e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000171
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.6",
@@ -15219,13 +16479,13 @@
             "lastUpdated": null,
             "limit": {
                 "context": 202752,
-                "output": 65536
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.6",
+            "name": "Z.ai: GLM 4.6",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15244,9 +16504,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 4.4e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.00000176
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.6:exacto",
@@ -15260,7 +16520,7 @@
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.6 (exacto)",
+            "name": "Z.ai: GLM 4.6 (exacto)",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15279,9 +16539,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 9e-7
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.6v",
@@ -15295,7 +16555,7 @@
                 "input": ["image", "text", "video"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.6V",
+            "name": "Z.ai: GLM 4.6V",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15314,9 +16574,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": null,
+                "input": 3e-7,
                 "inputCacheHit": null,
-                "output": null
+                "output": 0.0000014
             },
             "extendedThinking": false,
             "id": "z-ai/glm-4.7",
@@ -15324,13 +16584,13 @@
             "lastUpdated": null,
             "limit": {
                 "context": 202752,
-                "output": 65535
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Z.AI: GLM 4.7",
+            "name": "Z.ai: GLM 4.7",
             "openWeights": false,
             "provider": "OpenRouter",
             "providerDoc": "https://openrouter.ai/docs",
@@ -15340,6 +16600,76 @@
             "providerNpm": "@ai-sdk/openrouter",
             "reasoning": false,
             "releaseDate": "2025-12-22",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-8,
+                "inputCacheHit": null,
+                "output": 4e-7
+            },
+            "extendedThinking": false,
+            "id": "z-ai/glm-4.7-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 202752,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Z.ai: GLM 4.7 Flash",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-01-19",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "openrouter"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 9.5e-7,
+                "inputCacheHit": null,
+                "output": 0.00000255
+            },
+            "extendedThinking": false,
+            "id": "z-ai/glm-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 131072
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Z.ai: GLM 5",
+            "openWeights": false,
+            "provider": "OpenRouter",
+            "providerDoc": "https://openrouter.ai/docs",
+            "providerEnv": ["OPENROUTER_API_KEY"],
+            "providerId": "open-router",
+            "providerModelsDevId": "openrouter",
+            "providerNpm": "@ai-sdk/openrouter",
+            "reasoning": false,
+            "releaseDate": "2026-02-11",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

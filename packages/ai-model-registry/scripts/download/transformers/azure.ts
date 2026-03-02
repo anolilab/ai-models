@@ -3,11 +3,10 @@ import axios from "axios";
 
 import type { Model } from "../../../src/schema.js";
 
-const AZURE_MODELS_URL = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/concepts/models.md";
+const AZURE_MODELS_URL = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/foundry/openai/includes/models-azure-direct-openai.md";
 const AZURE_CHAT_COMPLETIONS_URL =
-    "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/model-matrix/standard-chat-completions.md";
-const AZURE_RETIREMENT_URL =
-    "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/refs/heads/main/articles/ai-foundry/openai/includes/retirement/models.md";
+    "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/foundry/openai/includes/model-matrix/standard-chat-completions.md";
+const AZURE_RETIREMENT_URL = "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/foundry/concepts/model-lifecycle-retirement.md";
 
 /**
  * Parse training cutoff date from string.

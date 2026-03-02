@@ -91,9 +91,14 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
             open={open}
         >
             <PopoverTrigger asChild>
-                <Button className={cn(hasFilters && "w-fit")} variant="outline">
-                    <FilterIcon className="size-4" />
-                    {!hasFilters && <span>{t("filter", locale)}</span>}
+                <Button className="gap-1.5" variant="outline">
+                    <FilterIcon className="size-4 shrink-0" />
+                    <span>{t("filter", locale)}</span>
+                    {hasFilters && (
+                        <span className="bg-primary text-primary-foreground ml-0.5 inline-flex min-w-[1.125rem] items-center justify-center rounded-full px-1 py-px text-[10px] font-bold leading-none tabular-nums">
+                            {filters.length}
+                        </span>
+                    )}
                 </Button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-fit origin-(--radix-popover-content-transform-origin) p-0" side="bottom">

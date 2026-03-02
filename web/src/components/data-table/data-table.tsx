@@ -589,7 +589,9 @@ const DataTable = <TData extends ExportableData, TValue>({
             ...tableConfig.enablePagination
                 ? {
                     onPaginationChange: handlePaginationChange,
-                    pageCount: Math.ceil(dataItems.length / pagination.pageSize),
+                    // For client-side filtering, omit pageCount so TanStack calculates it from filtered rows.
+                    // For manual (server-side) mode, provide the total page count.
+                    ...(filterStrategyData !== "client" ? { pageCount: Math.ceil(dataItems.length / pagination.pageSize) } : {}),
                 }
                 : {},
             enableColumnFilters: true,
@@ -605,8 +607,10 @@ const DataTable = <TData extends ExportableData, TValue>({
                 return id != null ? String(id) : "";
             },
             getSortedRowModel: getSortedRowModel<TData>(),
-            manualFiltering: true,
-            manualPagination: true,
+            manualFiltering: filterStrategyData !== "client",
+            // When client-side filtering is active, let TanStack compute pageCount from filtered rows.
+            // For server-side mode (manual), the caller pre-paginates and provides pageCount.
+            manualPagination: filterStrategyData !== "client",
             manualSorting: true,
             onColumnFiltersChange: (
                 value: { id: string; value: unknown }[] | ((prev: { id: string; value: unknown }[]) => { id: string; value: unknown }[]),
@@ -645,10 +649,18 @@ const DataTable = <TData extends ExportableData, TValue>({
         handleRowSelectionChange,
         handleSortingChange,
         idField,
+        filterStrategyData,
     ]);
 
     // Set up the table with memoized configuration - React Compiler will optimize this
     const table = useReactTable<TData>(tableOptions);
+
+    // When client-side filtering is active, use the filtered row count for pagination display
+    const displayedItemCount = useMemo(
+        () => (filterStrategyData === "client" && filters.length > 0 ? table.getFilteredRowModel().rows.length : dataItems.length),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [filterStrategyData, filters, table, dataItems.length],
+    );
 
     // Create keyboard navigation handler
     const handleKeyDown = useCallback(
@@ -658,15 +670,19 @@ const DataTable = <TData extends ExportableData, TValue>({
         [],
     );
 
-    // Add an effect to validate page number when page size changes
+    // Add an effect to validate page number when page size or filter changes
     useEffect(() => {
-        // This effect ensures page is valid after page size changes
-        const totalPages = Math.ceil(dataItems.length / pagination.pageSize);
+        const totalPages = Math.ceil(displayedItemCount / pagination.pageSize);
 
         if (totalPages > 0 && pagination.page > totalPages) {
             dispatch({ payload: { page: 1 }, type: "SET_PAGINATION" });
         }
-    }, [dataItems.length, pagination.pageSize, pagination.page]);
+    }, [displayedItemCount, pagination.pageSize, pagination.page]);
+
+    // Reset to first page whenever filters change
+    useEffect(() => {
+        dispatch({ payload: { page: 1 }, type: "SET_PAGINATION" });
+    }, [filters]);
 
     // Clear selections when selection mode changes
     useEffect(() => {
@@ -752,7 +768,7 @@ const DataTable = <TData extends ExportableData, TValue>({
                     pageSizeOptions={pageSizeOptions || [10, 20, 30, 40, 50]}
                     size={tableConfig.size}
                     table={table}
-                    totalItems={dataItems.length}
+                    totalItems={displayedItemCount}
                     totalSelectedItems={totalSelectedItems}
                 />
             )}

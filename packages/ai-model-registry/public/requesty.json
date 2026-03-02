@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Requesty",
-        "lastUpdated": "2026-01-13T21:44:10.331Z",
+        "lastUpdated": "2026-03-02T07:56:54.923Z",
         "pricingUnit": "1K",
         "provider": "Requesty",
-        "totalModels": 373,
+        "totalModels": 441,
         "version": "0.0.0-development"
     },
     "models": [
@@ -283,6 +283,43 @@
             "providerModelsDevId": "requesty",
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": false,
+            "releaseDate": "2025-07-31T09:17:43.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-7,
+                "inputCacheHit": 6e-7,
+                "output": 0.0000036
+            },
+            "description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It delivers state-of-the-art performance comparable to leading-edge models across a wide range of tasks, including language understanding, logical reasoning, code generation, agent-based tasks, image understanding, video understanding, and graphical user interface (GUI) interactions. With its robust code-generation and agent capabilities, the model exhibits strong generalization across diverse agent.",
+            "extendedThinking": true,
+            "id": "alibaba-qwen-3-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "alibaba/qwen3.5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
             "releaseDate": "2025-07-31T09:17:43.000Z",
             "streamingSupported": true,
             "temperature": true,
@@ -772,6 +809,43 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.000005,
+                "inputCacheHit": 5e-7,
+                "output": 0.000025
+            },
+            "description": "Claude Opus 4.6 is Anthropic's most powerful model yet and the best coding model in the world.",
+            "extendedThinking": true,
+            "id": "anthropic-claude-opus-4-6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "anthropic/claude-opus-4-6",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T17:57:30.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.000003,
                 "inputCacheHit": 3e-7,
                 "output": 0.000015
@@ -837,6 +911,43 @@
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": true,
             "releaseDate": "2025-09-29T17:12:51.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000003,
+                "inputCacheHit": 3e-7,
+                "output": 0.000015
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "anthropic-claude-sonnet-4-6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "anthropic/claude-sonnet-4-6",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-17T18:00:51.000Z",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -1589,6 +1700,78 @@
                 "output": 0.00001
             },
             "extendedThinking": true,
+            "id": "azure-gpt-5-1-@eastus-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5.1@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-11-26T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000125,
+                "inputCacheHit": 1.25e-7,
+                "output": 0.00001
+            },
+            "extendedThinking": true,
+            "id": "azure-gpt-5-1-@francecentral",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5.1@francecentral",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-11-26T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000125,
+                "inputCacheHit": 1.25e-7,
+                "output": 0.00001
+            },
+            "extendedThinking": true,
             "id": "azure-gpt-5-1-@swedencentral",
             "knowledge": null,
             "lastUpdated": null,
@@ -1620,6 +1803,115 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "extendedThinking": true,
+            "id": "azure-gpt-5-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5.2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-01-26T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "extendedThinking": true,
+            "id": "azure-gpt-5-2-@eastus-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5.2@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-01-26T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "description": "GPT-5.3-Codex is OpenAI’s most advanced agentic coding model, combining the frontier software engineering performance of GPT-5.2-Codex with the broader reasoning and professional knowledge capabilities of GPT-5.2.",
+            "extendedThinking": true,
+            "id": "azure-gpt-5-3-codex@eastus-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5.3-codex@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-25T09:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.00000125,
                 "inputCacheHit": 1.25e-7,
                 "output": 0.00001
@@ -1637,6 +1929,42 @@
                 "output": ["text"]
             },
             "name": "azure/gpt-5@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-04-16T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000125,
+                "inputCacheHit": 1.25e-7,
+                "output": 0.00001
+            },
+            "extendedThinking": true,
+            "id": "azure-gpt-5-@francecentral",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5@francecentral",
             "openWeights": false,
             "ownedBy": "system",
             "provider": "Requesty",
@@ -1805,6 +2133,42 @@
                 "output": 0.000002
             },
             "extendedThinking": true,
+            "id": "azure-gpt-5-mini@francecentral",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5-mini@francecentral",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-04-16T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.5e-7,
+                "inputCacheHit": 2.5e-8,
+                "output": 0.000002
+            },
+            "extendedThinking": true,
             "id": "azure-gpt-5-mini@swedencentral",
             "knowledge": null,
             "lastUpdated": null,
@@ -1925,6 +2289,42 @@
                 "output": ["text"]
             },
             "name": "azure/gpt-5-nano@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-04-16T17:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-8,
+                "inputCacheHit": 5e-9,
+                "output": 4e-7
+            },
+            "extendedThinking": true,
+            "id": "azure-gpt-5-nano@francecentral",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 100000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure/gpt-5-nano@francecentral",
             "openWeights": false,
             "ownedBy": "system",
             "provider": "Requesty",
@@ -2757,6 +3157,43 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "description": "OpenAI's most intelligent coding model optimized for long-horizon, agentic coding tasks.",
+            "extendedThinking": true,
+            "id": "azure-openai-responses-gpt-5-2-codex@eastus-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "azure/openai-responses/gpt-5.2-codex@eastus2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-01-22T13:29:02.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.000003,
                 "inputCacheHit": 3e-7,
                 "output": 0.000015
@@ -3423,6 +3860,302 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@eu-central-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@eu-central-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@eu-north-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@eu-north-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@eu-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@eu-west-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@eu-west-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@eu-west-3",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@us-east-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@us-east-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@us-east-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@us-east-2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Premium model combining maximum intelligence with practical performance",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-5-@us-west-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-5@us-west-2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-01T22:17:16.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000005,
+                "inputCacheHit": 5e-7,
+                "output": 0.000025
+            },
+            "description": "Claude Opus 4.6 is Anthropic's most powerful model yet and the best coding model in the world.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-opus-4-6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-opus-4-6",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T18:20:10.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.000015,
                 "inputCacheHit": 0.0000015,
                 "output": 0.000075
@@ -3858,6 +4591,302 @@
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": true,
             "releaseDate": "2025-05-22T17:12:51.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000003,
+                "inputCacheHit": 3e-7,
+                "output": 0.000015
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@eu-central-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@eu-central-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@eu-north-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@eu-north-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@eu-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@eu-west-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@eu-west-3",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@eu-west-3",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@us-east-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@us-east-1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@us-east-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@us-east-2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000033,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000165
+            },
+            "description": "Claude Sonnet 4.6 is Anthropic's best coding model in the world, leading on SWE-bench Verified (77.2%) and OSWorld (61.4%). It delivers sustained autonomous performance on complex tasks for over 30 hours—up from seven hours for Opus 4—maintaining focus and reliability throughout the entire software development lifecycle, with enhanced capabilities in tool handling, memory management, and context processing that make it the strongest model for building complex agents.",
+            "extendedThinking": true,
+            "id": "bedrock-claude-sonnet-4-6-@us-west-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "bedrock/claude-sonnet-4-6@us-west-2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T11:01:33.000Z",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
@@ -6234,6 +7263,450 @@
             "attachment": false,
             "cost": {
                 "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@europe-central-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@europe-central2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@europe-north-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@europe-north1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@europe-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@europe-west1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@europe-west-4",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@europe-west4",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@europe-west-8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@europe-west8",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@us-central-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@us-central1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@us-east-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@us-east1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@us-east-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@us-east5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@us-south-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@us-south1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-flash-image-preview@us-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-flash-image-preview@us-west1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000002,
+                "inputCacheHit": 2e-7,
+                "output": 0.000012
+            },
+            "description": "Gemini 3.1 Pro is the next iteration in the Gemini 3 series of models, a suite of highly capable, natively multimodal reasoning models. As of this model card’s date of publication, Gemini 3.1 Pro is Google’s most advanced model for complex tasks. Geminin 3.1 Pro can comprehend vast datasets and challenging problems from massively multimodal information sources, including text, audio, images, video, and entire code repositories.",
+            "extendedThinking": true,
+            "id": "google-gemini-3-1-pro-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": 65535
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "google/gemini-3.1-pro-preview",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T18:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
                 "inputCacheHit": 5e-8,
                 "output": 0.000003
             },
@@ -6490,6 +7963,80 @@
             "attachment": false,
             "cost": {
                 "input": 3e-7,
+                "inputCacheHit": 6e-8,
+                "output": 0.0000012
+            },
+            "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1 to extend into general office work, reaching fluency in generating and operating Word, Excel, and Powerpoint files, context switching between diverse software environments, and working across different agent and human teams. Scoring 80.2% on SWE-Bench Verified, 51.3% on Multi-SWE-Bench, and 76.3% on BrowseComp, M2.5 is also more token efficient than previous generations, having been trained to optimize its actions and output through planning.",
+            "extendedThinking": true,
+            "id": "minimaxi-mini-max-m2-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "minimaxi/MiniMax-M2.5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-12T10:16:28.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-7,
+                "inputCacheHit": 6e-8,
+                "output": 0.0000024
+            },
+            "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1 to extend into general office work, reaching fluency in generating and operating Word, Excel, and Powerpoint files, context switching between diverse software environments, and working across different agent and human teams. Scoring 80.2% on SWE-Bench Verified, 51.3% on Multi-SWE-Bench, and 76.3% on BrowseComp, M2.5 is also more token efficient than previous generations, having been trained to optimize its actions and output through planning.",
+            "extendedThinking": true,
+            "id": "minimaxi-mini-max-m2-5-highspeed",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "minimaxi/MiniMax-M2.5-highspeed",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-12T10:16:28.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3e-7,
                 "inputCacheHit": 3e-7,
                 "output": 9e-7
             },
@@ -6670,9 +8217,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000002,
-                "inputCacheHit": 0.000002,
-                "output": 0.000006
+                "input": 5e-7,
+                "inputCacheHit": 5e-7,
+                "output": 0.0000015
             },
             "extendedThinking": false,
             "id": "mistral-mistral-large-latest",
@@ -6925,6 +8472,43 @@
             "attachment": false,
             "cost": {
                 "input": 6e-7,
+                "inputCacheHit": 1e-7,
+                "output": 0.000003
+            },
+            "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed visual and text tokens, it delivers strong performance in general reasoning, visual coding, and agentic tool-calling.",
+            "extendedThinking": true,
+            "id": "moonshot-kimi-k-2-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": 262144
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "moonshot/kimi-k2.5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T10:56:51.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 6e-7,
                 "inputCacheHit": 1.5e-7,
                 "output": 0.0000025
             },
@@ -7146,6 +8730,43 @@
         {
             "attachment": false,
             "cost": {
+                "input": 3e-7,
+                "inputCacheHit": 3e-7,
+                "output": 4.5e-7
+            },
+            "description": "A model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance.",
+            "extendedThinking": true,
+            "id": "nebius-deepseek-ai-deep-seek-v3-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 164000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "nebius/deepseek-ai/DeepSeek-V3.2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-28T12:44:04.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 1.3e-7,
                 "inputCacheHit": 1.3e-7,
                 "output": 4e-7
@@ -7178,6 +8799,80 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 3e-7,
+                "inputCacheHit": 3e-7,
+                "output": 0.0000012
+            },
+            "description": "Open-source agentic coding model built for polyglot development and precision refactoring, using interleaved-thinking tool calls to reliably execute long, multi-step coding and office workflows.",
+            "extendedThinking": true,
+            "id": "nebius-minimax-minimax-m-2-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "nebius/minimax/minimax-m2.1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-16T13:40:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": 5e-7,
+                "output": 0.0000025
+            },
+            "description": "Kimi K2.5 is an open-source, native multimodal agentic model built through continual pretraining on approximately 15 trillion mixed visual and text tokens atop Kimi-K2-Base",
+            "extendedThinking": true,
+            "id": "nebius-moonshotai-kimi-k-2-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "nebius/moonshotai/kimi-k2.5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-16T13:40:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
             "icon": "requesty"
         },
         {
@@ -7282,6 +8977,43 @@
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": false,
             "releaseDate": "2025-07-10T19:03:57.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 4e-7,
+                "inputCacheHit": 4e-7,
+                "output": 0.000002
+            },
+            "description": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements in executing complex agent tasks while delivering more natural conversational experiences and superior front-end aesthetics.",
+            "extendedThinking": true,
+            "id": "nebius-zai-org-glm-4-7",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "nebius/zai-org/GLM-4.7",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-16T13:40:00.000Z",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -7578,6 +9310,43 @@
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": false,
             "releaseDate": "2025-05-30T19:03:57.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 2.69e-7,
+                "inputCacheHit": 1.345e-7,
+                "output": 4e-7
+            },
+            "description": "DeepSeek-V3.2 is a next-generation foundation model designed to unify high computational efficiency with state-of-the-art reasoning and agentic performance. Built upon DeepSeek Sparse Attention (DSA) for efficient long-context reasoning, a scalable reinforcement learning framework reaching frontier-level performance, and a large-scale agentic task synthesis pipeline for reliable tool-use and multi-step decision-making.",
+            "extendedThinking": true,
+            "id": "novita-deepseek-deepseek-v-3-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 163840,
+                "output": 65536
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "novita/deepseek/deepseek-v3.2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-28T12:52:12.000Z",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -10031,6 +11800,43 @@
                 "inputCacheHit": 1.25e-7,
                 "output": 0.00001
             },
+            "description": "GPT-5.1 is our flagship model for coding and agentic tasks with configurable reasoning and non-reasoning effort.",
+            "extendedThinking": true,
+            "id": "openai-responses-gpt-5-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "openai-responses/gpt-5.1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-20T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000125,
+                "inputCacheHit": 1.25e-7,
+                "output": 0.00001
+            },
             "description": "GPT-5.1-Codex is a version of GPT-5 optimized for agentic coding tasks in Codex or similar environments",
             "extendedThinking": true,
             "id": "openai-responses-gpt-5-1-codex",
@@ -10055,6 +11861,117 @@
             "providerNpm": "@ai-sdk/requesty",
             "reasoning": true,
             "releaseDate": "2025-12-02T23:43:36.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "description": "The best model for coding and agentic tasks across industries",
+            "extendedThinking": true,
+            "id": "openai-responses-gpt-5-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "openai-responses/gpt-5.2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-11T17:08:26.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "description": "GPT-5.2-Codex is a version of GPT-5.2 optimized for agentic coding tasks in Codex or similar environments",
+            "extendedThinking": true,
+            "id": "openai-responses-gpt-5-2-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "openai-responses/gpt-5.2-codex",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2025-12-02T23:43:36.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00000175,
+                "inputCacheHit": 1.75e-7,
+                "output": 0.000014
+            },
+            "description": "GPT-5.3-Codex is OpenAI’s most advanced agentic coding model, combining the frontier software engineering performance of GPT-5.2-Codex with the broader reasoning and professional knowledge capabilities of GPT-5.2.",
+            "extendedThinking": true,
+            "id": "openai-responses-gpt-5-3-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "openai-responses/gpt-5.3-codex",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-25T09:00:00.000Z",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -11244,9 +13161,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000001,
-                "inputCacheHit": 1e-7,
-                "output": 0.000005
+                "input": 0.0000011,
+                "inputCacheHit": 1.1e-7,
+                "output": 0.0000055
             },
             "description": "Anthropic Haiku 4.5",
             "extendedThinking": false,
@@ -11281,9 +13198,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000001,
-                "inputCacheHit": 1e-7,
-                "output": 0.000005
+                "input": 0.0000011,
+                "inputCacheHit": 1.1e-7,
+                "output": 0.0000055
             },
             "description": "Anthropic Haiku 4.5",
             "extendedThinking": false,
@@ -11329,7 +13246,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11366,7 +13283,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11403,7 +13320,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11440,7 +13357,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11470,6 +13387,7 @@
                 "inputCacheHit": 5e-7,
                 "output": 0.000025
             },
+            "description": "Anthropic Opus 4.5",
             "extendedThinking": true,
             "id": "vertex-claude-opus-4-5",
             "knowledge": null,
@@ -11502,10 +13420,11 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000005,
-                "inputCacheHit": 5e-7,
-                "output": 0.000025
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
             },
+            "description": "Anthropic Opus 4.5",
             "extendedThinking": true,
             "id": "vertex-claude-opus-4-5-@europe-west-1",
             "knowledge": null,
@@ -11538,10 +13457,11 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000005,
-                "inputCacheHit": 5e-7,
-                "output": 0.000025
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
             },
+            "description": "Anthropic Opus 4.5",
             "extendedThinking": true,
             "id": "vertex-claude-opus-4-5-@us-east-5",
             "knowledge": null,
@@ -11574,6 +13494,117 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.000005,
+                "inputCacheHit": 5e-7,
+                "output": 0.000025
+            },
+            "description": "Claude Opus 4.6 is Anthropic's most powerful model yet and the best coding model in the world.",
+            "extendedThinking": true,
+            "id": "vertex-claude-opus-4-6",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/claude-opus-4-6",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T18:57:48.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Claude Opus 4.6 is Anthropic's most powerful model yet and the best coding model in the world.",
+            "extendedThinking": true,
+            "id": "vertex-claude-opus-4-6-@europe-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/claude-opus-4-6@europe-west1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T18:57:48.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0000055,
+                "inputCacheHit": 5.5e-7,
+                "output": 0.0000275
+            },
+            "description": "Claude Opus 4.6 is Anthropic's most powerful model yet and the best coding model in the world.",
+            "extendedThinking": true,
+            "id": "vertex-claude-opus-4-6-@us-east-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/claude-opus-4-6@us-east5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-05T18:57:48.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.000015,
                 "inputCacheHit": 0.0000015,
                 "output": 0.000075
@@ -11585,7 +13616,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11622,7 +13653,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 200000,
-                "output": 64000
+                "output": 32000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -11689,7 +13720,7 @@
                 "inputCacheHit": 3e-7,
                 "output": 0.000015
             },
-            "description": "Anthropic's most intelligent model. The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
+            "description": "The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
             "extendedThinking": true,
             "id": "vertex-claude-sonnet-4-5",
             "knowledge": null,
@@ -11722,11 +13753,11 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000003,
-                "inputCacheHit": 3e-7,
-                "output": 0.000015
+                "input": 0.0000033,
+                "inputCacheHit": 3.3e-7,
+                "output": 0.0000165
             },
-            "description": "Anthropic's most intelligent model. The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
+            "description": "The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
             "extendedThinking": true,
             "id": "vertex-claude-sonnet-4-5-@europe-west-1",
             "knowledge": null,
@@ -11759,11 +13790,11 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.000003,
-                "inputCacheHit": 3e-7,
-                "output": 0.000015
+                "input": 0.0000033,
+                "inputCacheHit": 3.3e-7,
+                "output": 0.0000165
             },
-            "description": "Anthropic's most intelligent model. The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
+            "description": "The first hybrid reasoning model on the market with the highest level of intelligence and capability with toggleable extended thinking. Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing.",
             "extendedThinking": true,
             "id": "vertex-claude-sonnet-4-5-@us-east-5",
             "knowledge": null,
@@ -12279,7 +14310,7 @@
             "cost": {
                 "input": 3e-7,
                 "inputCacheHit": 3e-7,
-                "output": 0.00003
+                "output": 0.0000025
             },
             "description": "Google's first hybrid reasoning model which supports a 1M token context window and has thinking budgets. Most balanced Gemini model, optimized for low latency use cases.",
             "extendedThinking": true,
@@ -13129,6 +15160,450 @@
             "attachment": false,
             "cost": {
                 "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@europe-central-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@europe-central2",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@europe-north-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@europe-north1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@europe-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@europe-west1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@europe-west-4",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@europe-west4",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@europe-west-8",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@europe-west8",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@us-central-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@us-central1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@us-east-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@us-east1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@us-east-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@us-east5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@us-south-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@us-south1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
+                "inputCacheHit": null,
+                "output": 0.000002
+            },
+            "description": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-flash-image-preview@us-west-1",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-flash-image-preview@us-west1",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-26T17:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000002,
+                "inputCacheHit": 2e-7,
+                "output": 0.000012
+            },
+            "description": "Gemini 3.1 Pro is the next iteration in the Gemini 3 series of models, a suite of highly capable, natively multimodal reasoning models. As of this model card’s date of publication, Gemini 3.1 Pro is Google’s most advanced model for complex tasks. Geminin 3.1 Pro can comprehend vast datasets and challenging problems from massively multimodal information sources, including text, audio, images, video, and entire code repositories.",
+            "extendedThinking": true,
+            "id": "vertex-gemini-3-1-pro-preview",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1048576,
+                "output": 65535
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "vertex/gemini-3.1-pro-preview",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-19T18:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 5e-7,
                 "inputCacheHit": 5e-8,
                 "output": 0.000003
             },
@@ -13243,7 +15718,7 @@
                 "inputCacheHit": 0.000002,
                 "output": 0.00001
             },
-            "description": "x AI's Our previous generation chat model.\n",
+            "description": "x AI's Our previous generation chat model.",
             "extendedThinking": false,
             "id": "xai-grok-2-1212",
             "knowledge": null,
@@ -13752,6 +16227,43 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
+            "icon": "requesty"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.000001,
+                "inputCacheHit": 2e-7,
+                "output": 0.0000032
+            },
+            "description": "GLM-5 is Zai’s new-generation flagship foundation model, designed for Agentic Engineering, capable of providing reliable productivity in complex system engineering and long-range Agent tasks. In terms of Coding and Agent capabilities, GLM-5 has achieved state-of-the-art (SOTA) performance in open source, with its usability in real programming scenarios approaching that of Claude Opus 4.5.",
+            "extendedThinking": true,
+            "id": "zai-glm-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "zai/GLM-5",
+            "openWeights": false,
+            "ownedBy": "system",
+            "provider": "Requesty",
+            "providerDoc": "https://docs.requesty.ai/",
+            "providerEnv": ["REQUESTY_API_KEY"],
+            "providerId": "requesty",
+            "providerModelsDevId": "requesty",
+            "providerNpm": "@ai-sdk/requesty",
+            "reasoning": true,
+            "releaseDate": "2026-02-11T16:00:00.000Z",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
             "icon": "requesty"
         }
     ]

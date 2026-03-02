@@ -1,85 +1,13 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Weights & Biases",
-        "lastUpdated": "2026-01-13T21:44:10.329Z",
+        "lastUpdated": "2026-03-02T08:33:57.694Z",
         "pricingUnit": "1K",
         "provider": "Weights & Biases",
-        "totalModels": 15,
+        "totalModels": 22,
         "version": "0.0.0-development"
     },
     "models": [
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00022,
-                "inputCacheHit": null,
-                "output": 0.00022
-            },
-            "description": "Efficient conversational model optimized for responsive multilingual chatbot interactions",
-            "extendedThinking": false,
-            "id": "meta-llama-llama-3-1-8b-instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 131072,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Meta Llama 3.1 8B",
-            "openWeights": false,
-            "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
-            "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
-            "providerModelsDevId": "weights-biases",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "weights & biases"
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": 0.00006,
-                "inputCacheHit": null,
-                "output": 0.00024
-            },
-            "description": "Dense multilingual instruction-tuned model with tool-use and structured output support",
-            "extendedThinking": false,
-            "id": "qwen-qwen-2-5-14b-instruct",
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": 8192,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "Qwen2.5 14B Instruct",
-            "openWeights": false,
-            "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
-            "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
-            "providerModelsDevId": "weights-biases",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": true,
-            "vision": false,
-            "icon": "weights & biases"
-        },
         {
             "attachment": false,
             "cost": {
@@ -87,14 +15,13 @@
                 "inputCacheHit": null,
                 "output": 0.0054
             },
-            "description": "Optimized for precise reasoning tasks including complex coding, math, and structured document analysis",
-            "extendedThinking": false,
-            "id": "deepseek-ai-deep-seek-r1-0528",
+            "extendedThinking": true,
+            "id": "deepseek-r1-0528",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 164864,
-                "output": 65536
+                "context": null,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -103,13 +30,13 @@
             "name": "DeepSeek R1-0528",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": true,
-            "releaseDate": "2025-05-28",
+            "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -123,13 +50,12 @@
                 "inputCacheHit": null,
                 "output": 0.00275
             },
-            "description": "Robust Mixture-of-Experts model tailored for high-complexity language processing and comprehensive document analysis",
             "extendedThinking": false,
-            "id": "deepseek-ai-deep-seek-v3-0324",
+            "id": "deepseek-v3-0324",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 164864,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -139,9 +65,9 @@
             "name": "DeepSeek V3-0324",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -159,13 +85,12 @@
                 "inputCacheHit": null,
                 "output": 0.00165
             },
-            "description": "A large hybrid model that supports both thinking and non-thinking modes via prompt templates",
             "extendedThinking": false,
-            "id": "deepseek-ai-deep-seek-v3-1",
+            "id": "deepseek-v3.1",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -175,9 +100,9 @@
             "name": "DeepSeek V3.1",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -195,13 +120,12 @@
                 "inputCacheHit": null,
                 "output": 0.0008
             },
-            "description": "Efficient conversational model optimized for responsive multilingual chatbot interactions",
             "extendedThinking": false,
-            "id": "meta-llama-llama-3-1-70b-instruct",
+            "id": "meta-llama-3.1-70b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -211,9 +135,44 @@
             "name": "Meta Llama 3.1 70B",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00022,
+                "inputCacheHit": null,
+                "output": 0.00022
+            },
+            "extendedThinking": false,
+            "id": "meta-llama-3.1-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Meta Llama 3.1 8B",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -231,13 +190,12 @@
                 "inputCacheHit": null,
                 "output": 0.00071
             },
-            "description": "Multilingual model excelling in conversational tasks, detailed instruction-following, and coding",
             "extendedThinking": false,
-            "id": "meta-llama-llama-3-3-70b-instruct",
+            "id": "meta-llama-3.3-70b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -247,9 +205,9 @@
             "name": "Meta Llama 3.3 70B",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -267,13 +225,12 @@
                 "inputCacheHit": null,
                 "output": 0.00066
             },
-            "description": "Multi-modal model integrating text and image understanding, ideal for visual tasks and combined analysis",
             "extendedThinking": false,
-            "id": "meta-llama-llama-4-scout-17b-16e-instruct",
+            "id": "meta-llama-4-scout-17bx16e",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 65536,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -283,9 +240,9 @@
             "name": "Meta Llama 4 Scout 17Bx16E",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -293,7 +250,7 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
-            "vision": true,
+            "vision": false,
             "icon": "weights & biases"
         },
         {
@@ -303,13 +260,12 @@
                 "inputCacheHit": null,
                 "output": 0.00035
             },
-            "description": "Compact, efficient model ideal for fast responses in resource-constrained environments",
             "extendedThinking": false,
-            "id": "microsoft-phi-4-mini-instruct",
+            "id": "microsoft-phi-4-mini-3.8b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -319,9 +275,114 @@
             "name": "Microsoft Phi 4 Mini 3.8B",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0012
+            },
+            "extendedThinking": false,
+            "id": "minimax-m2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax M2.5",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0005,
+                "inputCacheHit": null,
+                "output": 0.00285
+            },
+            "extendedThinking": false,
+            "id": "moonshot-ai-kimi-k2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Moonshot AI Kimi K2.5",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0006,
+                "inputCacheHit": null,
+                "output": 0.0025
+            },
+            "extendedThinking": false,
+            "id": "moonshot-ai-kimi-k2-instruct-0905",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Moonshot AI Kimi K2 Instruct 0905",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -339,13 +400,12 @@
                 "inputCacheHit": null,
                 "output": 0.004
             },
-            "description": "Mixture-of-Experts model optimized for complex tool use, reasoning, and code synthesis",
             "extendedThinking": false,
-            "id": "moonshotai-kimi-k2-instruct",
+            "id": "moonshotai-kimi-k2",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -355,16 +415,86 @@
             "name": "MoonshotAI Kimi K2",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": true,
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
-            "toolCall": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00015,
+                "inputCacheHit": null,
+                "output": 0.0006
+            },
+            "extendedThinking": false,
+            "id": "openai-gpt-oss-120b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "OpenAI GPT OSS 120B",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00005,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "extendedThinking": false,
+            "id": "openai-gpt-oss-20b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "OpenAI GPT OSS 20B",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
             "vision": false,
             "icon": "weights & biases"
         },
@@ -375,13 +505,12 @@
                 "inputCacheHit": null,
                 "output": 0.00022
             },
-            "description": "An efficient multilingual, dense, instruction-tuned model, optimized by OpenPipe for building agents with finetuning.",
             "extendedThinking": false,
-            "id": "open-pipe-qwen-3-14b-instruct",
+            "id": "openpipe-qwen3-14b-instruct",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 8192,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -391,9 +520,44 @@
             "name": "OpenPipe Qwen3 14B Instruct",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00006,
+                "inputCacheHit": null,
+                "output": 0.00024
+            },
+            "extendedThinking": false,
+            "id": "qwen2.5-14b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen2.5 14B Instruct",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
@@ -411,13 +575,12 @@
                 "inputCacheHit": null,
                 "output": 0.0001
             },
-            "description": "Efficient multilingual, Mixture-of-Experts, instruction-tuned model, optimized for logical reasoning",
             "extendedThinking": false,
-            "id": "qwen-qwen-3-235b-a22b-instruct-2507",
+            "id": "qwen3-235b-a22b-2507",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 268288,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -427,9 +590,44 @@
             "name": "Qwen3 235B A22B-2507",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0001,
+                "inputCacheHit": null,
+                "output": 0.0001
+            },
+            "extendedThinking": true,
+            "id": "qwen3-235b-a22b-thinking-2507",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen3 235B A22B Thinking-2507",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": true,
@@ -445,30 +643,29 @@
             "cost": {
                 "input": 0.0001,
                 "inputCacheHit": null,
-                "output": 0.0001
+                "output": 0.0003
             },
-            "description": "High-performance Mixture-of-Experts model optimized for structured reasoning, math, and long-form generation",
             "extendedThinking": false,
-            "id": "qwen-qwen-3-235b-a22b-thinking-2507",
+            "id": "qwen3-30b-a3b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 268288,
+                "context": null,
                 "output": null
             },
             "modalities": {
                 "input": ["text"],
                 "output": ["text"]
             },
-            "name": "Qwen3 235B A22B Thinking-2507",
+            "name": "Qwen3 30B A3B",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": true,
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
@@ -483,13 +680,12 @@
                 "inputCacheHit": null,
                 "output": 0.0015
             },
-            "description": "Mixture-of-Experts model optimized for coding tasks such as function calling, tooling use, and long-context reasoning",
             "extendedThinking": false,
-            "id": "qwen-qwen-3-coder-480b-a35b-instruct",
+            "id": "qwen3-coder-480b-a35b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 268288,
+                "context": null,
                 "output": null
             },
             "modalities": {
@@ -499,16 +695,16 @@
             "name": "Qwen3 Coder 480B A35B",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": true,
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
-            "toolCall": true,
+            "toolCall": false,
             "vision": false,
             "icon": "weights & biases"
         },
@@ -519,14 +715,13 @@
                 "inputCacheHit": null,
                 "output": 0.002
             },
-            "description": "Mixture-of-Experts model with user-controllable thinking/non-thinking modes for reasoning, code, and agents",
             "extendedThinking": false,
-            "id": "zai-org-glm-4-5",
+            "id": "z.ai-glm-4.5",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 134144,
-                "output": 65536
+                "context": null,
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -535,13 +730,48 @@
             "name": "Z.AI GLM 4.5",
             "openWeights": false,
             "provider": "Weights & Biases",
-            "providerDoc": "https://docs.wandb.ai/guides/inference/models/",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
             "providerEnv": ["WANDB_API_KEY"],
-            "providerId": "weights-biases",
+            "providerId": "weights-&-biases",
             "providerModelsDevId": "weights-biases",
             "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": true,
-            "releaseDate": "2025-07-25",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "weights & biases"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.001,
+                "inputCacheHit": null,
+                "output": 0.0032
+            },
+            "extendedThinking": false,
+            "id": "z.ai-glm-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Z.AI GLM 5",
+            "openWeights": false,
+            "provider": "Weights & Biases",
+            "providerDoc": "https://docs.wandb.ai/weave/guides/integrations/inference/",
+            "providerEnv": ["WANDB_API_KEY"],
+            "providerId": "weights-&-biases",
+            "providerModelsDevId": "weights-biases",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,

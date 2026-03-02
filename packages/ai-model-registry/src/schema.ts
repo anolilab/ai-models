@@ -89,6 +89,8 @@ export const ModelSchema = z
 
         temperature: z.boolean(),
 
+        thumbnail: z.string().trim().nullable().optional(), // Thumbnail image/video URL or local path
+
         toolCall: z.boolean(),
         trainingCutoff: z.string().trim().nullable().optional(),
         version: z.string().trim().nullable().optional(),

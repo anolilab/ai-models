@@ -12,6 +12,7 @@ type ModelName
         | "embeddings-for-text"
         | "gemini-2-5-flash-image"
         | "gemini-2-5-flash-with-gemini-live-api"
+        | "gemini-3-1-flash-image"
         | "gemini-3-pro-image"
         | "gemma"
         | "gemma-2"

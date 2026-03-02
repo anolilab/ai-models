@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import cn from "@/lib/utils";
 
 import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, FiltersState, FilterStrategy } from "../core/types";
 import { getColumn } from "../lib/helpers";
@@ -48,16 +49,28 @@ export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en"
 
 // Generic render function for a filter with type-safe value
 export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) => (
-    <div className="border-border bg-background flex items-center border text-xs shadow-xs">
-        <FilterSubject column={column} />
-        <Separator orientation="vertical" />
+    <div className="border-border animate-in fade-in-0 slide-in-from-left-2 flex h-8 items-center overflow-hidden rounded-md border bg-muted/30 text-xs duration-200 ease-out">
+        {/* Subject: column name with distinct tinted background */}
+        <div className="border-border flex h-full shrink-0 items-center gap-1.5 border-r bg-muted/50 px-2.5">
+            <column.icon className="text-muted-foreground size-3 shrink-0" />
+            <span className="font-medium">{column.displayName}</span>
+        </div>
+        {/* Operator — ghost button, opens operator change popover */}
         <FilterOperator actions={actions} column={column} filter={filter} locale={locale} />
         <Separator orientation="vertical" />
+        {/* Value — ghost button, opens value change popover */}
         <FilterValue actions={actions} column={column} filter={filter} locale={locale} strategy={strategy} />
-        <Separator orientation="vertical" />
-        <Button className="h-full text-xs" onClick={() => actions.removeFilter(filter.columnId)} variant="ghost">
-            <X className="size-4" />
-        </Button>
+        {/* Remove */}
+        <button
+            className={cn(
+                "border-border text-muted-foreground flex h-full items-center border-l px-2",
+                "transition-colors hover:bg-destructive/10 hover:text-destructive",
+            )}
+            onClick={() => actions.removeFilter(filter.columnId)}
+            type="button"
+        >
+            <X className="size-3" />
+        </button>
     </div>
 );
 

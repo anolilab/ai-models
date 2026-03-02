@@ -1,128 +1,122 @@
-import { kebabCase } from "@visulima/string";
 import axios from "axios";
-import { load } from "cheerio";
 
 import type { Model } from "../../../src/schema.js";
-import { parseContextLength, toNumber } from "../utils/index.js";
 
-const VENICE_API_URL = "https://api.venice.ai/v1/models";
+const VENICE_API_URL = "https://api.venice.ai/api/v1/models";
 const VENICE_DOCS_URL = "https://docs.venice.ai/";
 
 /**
- * Fetches Venice models from their API and documentation.
- * @returns Promise that resolves to an array of transformed models
+ * Raw model data from Venice API (OpenAI-compatible format with Venice extensions)
+ */
+interface VeniceModelSpec {
+    availableContextTokens?: number;
+    capabilities?: {
+        functionCalling?: boolean;
+        reasoning?: boolean;
+        vision?: boolean;
+        webSearch?: boolean;
+    };
+    inputCostPerMillionTokens?: null | string;
+    modelType?: string;
+    outputCostPerMillionTokens?: null | string;
+}
+
+interface VeniceRawModel {
+    created?: number;
+    id: string;
+    model_spec?: VeniceModelSpec;
+    object?: string;
+    owned_by?: string;
+    type?: string;
+}
+
+interface VeniceApiResponse {
+    data: VeniceRawModel[];
+    object: string;
+}
+
+const parseTokenCost = (val: null | string | undefined): null | number => {
+    if (!val || val === "0") {
+        return null;
+    }
+
+    const n = Number.parseFloat(val);
+
+    return Number.isNaN(n) ? null : n;
+};
+
+/**
+ * Transforms a single Venice API model entry into the normalized Model structure.
+ */
+export const transformVeniceModel = (rawModel: VeniceRawModel): Model => {
+    const spec = rawModel.model_spec;
+    const capabilities = spec?.capabilities;
+    const hasVision = capabilities?.vision ?? false;
+    const hasReasoning = capabilities?.reasoning ?? false;
+    const hasToolCall = capabilities?.functionCalling ?? false;
+
+    return {
+        attachment: false,
+        cost: {
+            input: parseTokenCost(spec?.inputCostPerMillionTokens),
+            inputCacheHit: null,
+            output: parseTokenCost(spec?.outputCostPerMillionTokens),
+        },
+        extendedThinking: hasReasoning,
+        id: rawModel.id,
+        knowledge: null,
+        lastUpdated: null,
+        limit: {
+            context: spec?.availableContextTokens ?? null,
+            output: null,
+        },
+        modalities: {
+            input: hasVision ? ["text", "image"] : ["text"],
+            output: ["text"],
+        },
+        name: rawModel.id,
+        openWeights: false,
+        provider: "Venice",
+        providerDoc: VENICE_DOCS_URL,
+        providerEnv: ["VENICE_API_KEY"],
+        providerModelsDevId: "venice",
+        providerNpm: "@ai-sdk/venice",
+        reasoning: hasReasoning,
+        releaseDate: null,
+        streamingSupported: true,
+        temperature: true,
+        toolCall: hasToolCall,
+        vision: hasVision || undefined,
+    };
+};
+
+/**
+ * Fetches models from the Venice AI API (OpenAI-compatible list format).
+ * @returns Promise resolving to an array of normalized Model objects
  */
 export const fetchVeniceModels = async (): Promise<Model[]> => {
-    console.log("[Venice] Fetching models from API and documentation...");
+    console.log("[Venice] Fetching models from API:", VENICE_API_URL);
 
     try {
-        const models: Model[] = [];
+        const response = await axios.get<VeniceApiResponse>(VENICE_API_URL, {
+            headers: {
+                Accept: "application/json",
+                "User-Agent": "Mozilla/5.0 (compatible; AI-Models-Bot/1.0)",
+            },
+            timeout: 10_000,
+        });
 
-        // Try to fetch from their API first
-        try {
-            console.log("[Venice] Attempting to fetch from API:", VENICE_API_URL);
-            const apiResponse = await axios.get(VENICE_API_URL);
+        const rawModels = response.data?.data;
 
-            if (apiResponse.data && Array.isArray(apiResponse.data)) {
-                console.log(`[Venice] Found ${apiResponse.data.length} models via API`);
+        if (!Array.isArray(rawModels) || rawModels.length === 0) {
+            console.warn("[Venice] No models returned from API");
 
-                for (const modelData of apiResponse.data) {
-                    const model: Model = {
-                        attachment: false,
-                        cost: {
-                            input: null,
-                            inputCacheHit: null,
-                            output: null,
-                        },
-                        extendedThinking: false,
-                        id: kebabCase(modelData.id || modelData.name),
-                        knowledge: null,
-                        lastUpdated: null,
-                        limit: {
-                            context: toNumber(modelData.context_length) || null,
-                            output: null,
-                        },
-                        modalities: {
-                            input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                            output: ["text"],
-                        },
-                        name: modelData.name || modelData.id,
-                        openWeights: false,
-                        provider: "Venice",
-                        providerDoc: VENICE_DOCS_URL,
-                        // Provider metadata
-                        providerEnv: ["VENICE_API_KEY"],
-                        providerModelsDevId: "venice",
-                        providerNpm: "@ai-sdk/venice",
-                        reasoning: false,
-                        releaseDate: null,
-                        streamingSupported: true,
-                        temperature: true,
-                        toolCall: false,
-                        vision: modelData.capabilities?.vision || false,
-                    };
-
-                    models.push(model);
-                }
-            }
-        } catch {
-            console.log("[Venice] API fetch failed, falling back to documentation scraping");
+            return [];
         }
 
-        // If API didn't work or returned no models, try scraping documentation
-        if (models.length === 0) {
-            console.log("[Venice] Scraping documentation for model information");
-            const docsModels = await scrapeVeniceDocs();
+        const models = rawModels.map(transformVeniceModel);
 
-            models.push(...docsModels);
-        }
-
-        // If still no models, add some common models as fallback
-        if (models.length === 0) {
-            console.log("[Venice] Adding fallback models");
-            const fallbackModels = ["venice-gpt-4", "venice-gpt-3.5-turbo", "venice-claude-3", "venice-claude-3.5-sonnet", "venice-gemini-pro"];
-
-            for (const modelName of fallbackModels) {
-                const model: Model = {
-                    attachment: false,
-                    cost: {
-                        input: null,
-                        inputCacheHit: null,
-                        output: null,
-                    },
-                    extendedThinking: false,
-                    id: kebabCase(modelName),
-                    knowledge: null,
-                    lastUpdated: null,
-                    limit: {
-                        context: null,
-                        output: null,
-                    },
-                    modalities: {
-                        input: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4") ? ["text", "image"] : ["text"],
-                        output: ["text"],
-                    },
-                    name: modelName,
-                    openWeights: false,
-                    provider: "Venice",
-                    providerDoc: VENICE_DOCS_URL,
-                    // Provider metadata
-                    providerEnv: ["VENICE_API_KEY"],
-                    providerModelsDevId: "venice",
-                    providerNpm: "@ai-sdk/venice",
-                    reasoning: false,
-                    releaseDate: null,
-                    streamingSupported: true,
-                    temperature: true,
-                    toolCall: false,
-                    vision: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4"),
-                };
-
-                models.push(model);
-            }
-        }
-
-        console.log(`[Venice] Total models found: ${models.length}`);
+        console.log(`[Venice] Found ${models.length} models`);
 
         return models;
     } catch (error) {
@@ -130,194 +124,4 @@ export const fetchVeniceModels = async (): Promise<Model[]> => {
 
         return [];
     }
-};
-
-/**
- * Scrapes Venice documentation for model information.
- */
-const scrapeVeniceDocs = async (): Promise<Model[]> => {
-    try {
-        const response = await axios.get(VENICE_DOCS_URL);
-        const $ = load(response.data);
-
-        const models: Model[] = [];
-
-        // Look for model tables or lists in the documentation
-        $("table, .model-list, .models-table").each((index, element) => {
-            const tableText = $(element).text().toLowerCase();
-
-            // Check if this table contains model information
-            if (tableText.includes("model") || tableText.includes("venice") || tableText.includes("gpt") || tableText.includes("claude")) {
-                console.log(`[Venice] Found potential model table ${index + 1}`);
-
-                $(element)
-                    .find("tr, .model-item")
-                    .each((_, row) => {
-                        const cells = $(row)
-                            .find("td, .model-cell")
-                            .map((_, td) => $(td).text().trim())
-                            .get();
-
-                        if (cells.length >= 2 && cells[0] && !cells[0].includes("model")) {
-                            const modelName = cells[0];
-
-                            console.log(`[Venice] Found model: ${modelName}`);
-
-                            const model: Model = {
-                                attachment: false,
-                                cost: {
-                                    input: null,
-                                    inputCacheHit: null,
-                                    output: null,
-                                },
-                                extendedThinking: false,
-                                id: kebabCase(modelName),
-                                knowledge: null,
-                                lastUpdated: null,
-                                limit: {
-                                    context: parseContextLength(cells[1] || cells[2]),
-                                    output: null,
-                                },
-                                modalities: {
-                                    input:
-                                        modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4") ? ["text", "image"] : ["text"],
-                                    output: ["text"],
-                                },
-                                name: modelName,
-                                openWeights: false,
-                                provider: "Venice",
-                                providerDoc: VENICE_DOCS_URL,
-                                // Provider metadata
-                                providerEnv: ["VENICE_API_KEY"],
-                                providerModelsDevId: "venice",
-                                providerNpm: "@ai-sdk/venice",
-                                reasoning: false,
-                                releaseDate: null,
-                                streamingSupported: true,
-                                temperature: true,
-                                toolCall: false,
-                                vision: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4"),
-                            };
-
-                            models.push(model);
-                        }
-                    });
-            }
-        });
-
-        // If no tables found, try to extract from text content
-        if (models.length === 0) {
-            const bodyText = $("body").text();
-            const modelMatches = bodyText.match(/([\w\-]+(?:venice|gpt|claude|gemini)[\w\-]*)/gi);
-
-            if (modelMatches) {
-                console.log(`[Venice] Found ${modelMatches.length} potential models in text`);
-
-                for (const match of modelMatches.slice(0, 20)) {
-                    // Limit to first 20 matches
-                    const modelName = match.trim();
-
-                    if (modelName.length > 3 && modelName.length < 50) {
-                        const model: Model = {
-                            attachment: false,
-                            cost: {
-                                input: null,
-                                inputCacheHit: null,
-                                output: null,
-                            },
-                            extendedThinking: false,
-                            id: kebabCase(modelName),
-                            knowledge: null,
-                            lastUpdated: null,
-                            limit: {
-                                context: null,
-                                output: null,
-                            },
-                            modalities: {
-                                input: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4") ? ["text", "image"] : ["text"],
-                                output: ["text"],
-                            },
-                            name: modelName,
-                            openWeights: false,
-                            provider: "Venice",
-                            providerDoc: VENICE_DOCS_URL,
-                            // Provider metadata
-                            providerEnv: ["VENICE_API_KEY"],
-                            providerModelsDevId: "venice",
-                            providerNpm: "@ai-sdk/venice",
-                            reasoning: false,
-                            releaseDate: null,
-                            streamingSupported: true,
-                            temperature: true,
-                            toolCall: false,
-                            vision: modelName.toLowerCase().includes("vision") || modelName.toLowerCase().includes("gpt-4"),
-                        };
-
-                        models.push(model);
-                    }
-                }
-            }
-        }
-
-        console.log(`[Venice] Scraped ${models.length} models from documentation`);
-
-        return models;
-    } catch (error) {
-        console.error("[Venice] Error scraping documentation:", error instanceof Error ? error.message : String(error));
-
-        return [];
-    }
-};
-
-/**
- * Transforms Venice model data into the normalized structure.
- * @param rawData Raw data from Venice API
- * @returns Array of normalized model objects
- */
-export const transformVeniceModels = (rawData: any): Model[] => {
-    const models: Model[] = [];
-
-    // This function is kept for interface compatibility but the main logic is in fetchVeniceModels
-    if (Array.isArray(rawData)) {
-        for (const modelData of rawData) {
-            const model: Model = {
-                attachment: false,
-                cost: {
-                    input: null,
-                    inputCacheHit: null,
-                    output: null,
-                },
-                extendedThinking: false,
-                id: kebabCase(modelData.id || modelData.name),
-                knowledge: null,
-                lastUpdated: null,
-                limit: {
-                    context: modelData.context_length || null,
-                    output: null,
-                },
-                modalities: {
-                    input: modelData.capabilities?.vision ? ["text", "image"] : ["text"],
-                    output: ["text"],
-                },
-                name: modelData.name || modelData.id,
-                openWeights: false,
-                provider: "Venice",
-                providerDoc: VENICE_DOCS_URL,
-                // Provider metadata
-                providerEnv: ["VENICE_API_KEY"],
-                providerModelsDevId: "venice",
-                providerNpm: "@ai-sdk/venice",
-                reasoning: false,
-                releaseDate: null,
-                streamingSupported: true,
-                temperature: true,
-                toolCall: false,
-                vision: modelData.capabilities?.vision || false,
-            };
-
-            models.push(model);
-        }
-    }
-
-    return models;
 };

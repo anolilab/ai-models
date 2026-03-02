@@ -1,13 +1,48 @@
 {
     "metadata": {
         "description": "AI Models API - Models from GitHub Copilot",
-        "lastUpdated": "2026-01-13T21:44:10.328Z",
+        "lastUpdated": "2026-03-02T07:56:54.921Z",
         "pricingUnit": "1K",
         "provider": "GitHub Copilot",
-        "totalModels": 15,
+        "totalModels": 20,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": true,
+            "id": "claude-opus-4-6-(fast-mode)-(preview)",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Claude Opus 4.6 (fast mode) (preview)",
+            "openWeights": false,
+            "provider": "GitHub Copilot",
+            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-copilot",
+            "providerModelsDevId": "github-copilot",
+            "providerNpm": "@ai-sdk/github-copilot",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "githubcopilot"
+        },
         {
             "attachment": false,
             "cost": {
@@ -156,6 +191,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "gemini-3-1-pro",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 3.1 Pro",
+            "openWeights": false,
+            "provider": "GitHub Copilot",
+            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-copilot",
+            "providerModelsDevId": "github-copilot",
+            "providerNpm": "@ai-sdk/github-copilot",
+            "reasoning": false,
+            "releaseDate": "2024-02-29",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "githubcopilot"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "gemini-3-flash",
             "knowledge": null,
             "lastUpdated": null,
@@ -215,6 +285,41 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
+            "vision": false,
+            "icon": "githubcopilot"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "goldeneye",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Goldeneye",
+            "openWeights": false,
+            "provider": "GitHub Copilot",
+            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-copilot",
+            "providerModelsDevId": "github-copilot",
+            "providerNpm": "@ai-sdk/github-copilot",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
             "vision": false,
             "icon": "githubcopilot"
         },
@@ -422,6 +527,76 @@
             "providerNpm": "@ai-sdk/github-copilot",
             "reasoning": false,
             "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "githubcopilot"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00125,
+                "inputCacheHit": null,
+                "output": 0.01
+            },
+            "extendedThinking": false,
+            "id": "gpt-5-2-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-5.2-Codex",
+            "openWeights": false,
+            "provider": "GitHub Copilot",
+            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-copilot",
+            "providerModelsDevId": "github-copilot",
+            "providerNpm": "@ai-sdk/github-copilot",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "githubcopilot"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00125,
+                "inputCacheHit": null,
+                "output": 0.01
+            },
+            "extendedThinking": false,
+            "id": "gpt-5-3-codex",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GPT-5.3-Codex",
+            "openWeights": false,
+            "provider": "GitHub Copilot",
+            "providerDoc": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+            "providerEnv": ["GITHUB_TOKEN"],
+            "providerId": "git-hub-copilot",
+            "providerModelsDevId": "github-copilot",
+            "providerNpm": "@ai-sdk/github-copilot",
+            "reasoning": false,
+            "releaseDate": "2024-02-29",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,

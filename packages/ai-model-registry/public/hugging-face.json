@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Hugging Face",
-        "lastUpdated": "2026-01-13T21:44:10.329Z",
+        "lastUpdated": "2026-03-02T07:56:54.922Z",
         "pricingUnit": "1K",
         "provider": "Hugging Face",
-        "totalModels": 31,
+        "totalModels": 39,
         "version": "0.0.0-development"
     },
     "models": [
@@ -436,6 +436,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "mlx-community-kimi-k2-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mlx-community/Kimi-K2.5",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "openai-community-gpt-2",
             "knowledge": null,
             "lastUpdated": null,
@@ -483,6 +518,76 @@
                 "output": ["text"]
             },
             "name": "openai-community/gpt2-large",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-2-1-5b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen2-1.5B-Instruct",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-2-5-0-5b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen2.5-0.5B-Instruct",
             "openWeights": true,
             "provider": "Hugging Face",
             "providerDoc": "https://huggingface.co/docs",
@@ -751,6 +856,41 @@
                 "output": null
             },
             "extendedThinking": false,
+            "id": "qwen-qwen-2-vl-2b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen2-VL-2B-Instruct",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
             "id": "qwen-qwen-3-0-6b",
             "knowledge": null,
             "lastUpdated": null,
@@ -807,6 +947,41 @@
             "providerNpm": "@ai-sdk/huggingface",
             "reasoning": false,
             "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00029,
+                "inputCacheHit": null,
+                "output": 0.00059
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-3-32b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 40960,
+                "output": 40960
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen3-32B",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": "2025-04-28",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
@@ -930,8 +1105,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
-                "output": 20000
+                "context": 40960,
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -1017,6 +1192,111 @@
             "providerNpm": "@ai-sdk/huggingface",
             "reasoning": false,
             "releaseDate": "2025-09-11",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-3-vl-2b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen3-VL-2B-Instruct",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00008,
+                "inputCacheHit": null,
+                "output": 0.0005
+            },
+            "extendedThinking": false,
+            "id": "qwen-qwen-3-vl-8b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "Qwen/Qwen3-VL-8B-Instruct",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": "2025-10-14",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "huggingface"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "trl-internal-testing-tiny-qwen-2-for-causal-lm-2-5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+            "openWeights": true,
+            "provider": "Hugging Face",
+            "providerDoc": "https://huggingface.co/docs",
+            "providerEnv": ["HUGGINGFACE_API_KEY"],
+            "providerId": "hugging-face",
+            "providerModelsDevId": "huggingface",
+            "providerNpm": "@ai-sdk/huggingface",
+            "reasoning": false,
+            "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,

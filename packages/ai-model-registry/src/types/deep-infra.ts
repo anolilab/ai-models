@@ -9,6 +9,7 @@
  */
 type ModelName
     = | "MiniMaxAI/MiniMax-M2"
+        | "MiniMaxAI/MiniMax-M2.5"
         | "PaddlePaddle/PaddleOCR-VL-0.9B"
         | "Qwen/Qwen3-Coder-480B-A35B-Instruct"
         | "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo"
@@ -31,8 +32,10 @@ type ModelName
         | "mistralai/Devstral-Small-2507"
         | "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
         | "moonshotai/Kimi-K2-Thinking"
+        | "moonshotai/Kimi-K2.5"
         | "nvidia/Nemotron-3-Nano-30B-A3B"
         | "zai-org/GLM-4.5"
-        | "zai-org/GLM-4.5V";
+        | "zai-org/GLM-4.5V"
+        | "zai-org/GLM-4.7-Flash";
 
 export default ModelName;

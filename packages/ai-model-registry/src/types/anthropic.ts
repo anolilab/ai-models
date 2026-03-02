@@ -9,15 +9,18 @@
  */
 type ModelName
     = | "claude-haiku-3"
+        | "claude-haiku-3-(deprecated)"
         | "claude-haiku-3-5"
         | "claude-haiku-4-5"
         | "claude-opus-3-(deprecated)"
         | "claude-opus-4"
         | "claude-opus-4-1"
         | "claude-opus-4-5"
+        | "claude-opus-4-6"
         | "claude-sonnet-3-5-(deprecated)"
         | "claude-sonnet-3-7"
         | "claude-sonnet-4"
-        | "claude-sonnet-4-5";
+        | "claude-sonnet-4-5"
+        | "claude-sonnet-4-6";
 
 export default ModelName;

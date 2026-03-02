@@ -1,5 +1,5 @@
 import { format, isEqual } from "date-fns";
-import { Ellipsis } from "lucide-react";
+import { Check, Ellipsis } from "lucide-react";
 import { cloneElement, isValidElement, memo, useCallback, useEffect, useMemo, useState } from "react";
 import type { DateRange } from "react-day-picker";
 
@@ -522,19 +522,53 @@ export function FilterValueDateController<TData>({ actions, column, filter }: Fi
 }
 
 export function FilterValueTextController<TData>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "text">) {
-    const changeText = (value: string | number) => {
-        actions.setFilterValue(column, [String(value)]);
+    // Drive the input directly from filter state — no local copy needed.
+    // External changes (e.g. clearing the chip) flow through automatically.
+    const filterValue = filter?.values[0] ?? "";
+
+    // Collect all unique text values sorted by frequency (most common first)
+    const allSuggestions = useMemo(() => {
+        const uniqueValues = column.getFacetedUniqueValues();
+
+        if (!uniqueValues || uniqueValues.size === 0)
+            return [];
+
+        return Array.from(uniqueValues.entries())
+            .sort(([, a], [, b]) => b - a)
+            .map(([value]) => value);
+    }, [column]);
+
+    // Narrow to suggestions containing the current input (max 8 shown)
+    const suggestions = useMemo(() => {
+        const query = filterValue.trim().toLowerCase();
+        const filtered = query ? allSuggestions.filter((s) => s.toLowerCase().includes(query)) : allSuggestions;
+
+        return filtered.slice(0, 8);
+    }, [allSuggestions, filterValue]);
+
+    const handleInputChange = (value: string) => {
+        actions.setFilterValue(column, value ? [value] : []);
+    };
+
+    const handleSelect = (suggestion: string) => {
+        actions.setFilterValue(column, [suggestion]);
     };
 
     return (
-        <Command>
-            <CommandList className="max-h-fit">
-                <CommandGroup>
-                    <CommandItem>
-                        <DebouncedInput autoFocus onChange={changeText} placeholder={t("search", locale)} value={filter?.values[0] ?? ""} />
-                    </CommandItem>
-                </CommandGroup>
-            </CommandList>
+        <Command className="min-w-[200px]" shouldFilter={false}>
+            <CommandInput autoFocus onValueChange={handleInputChange} placeholder={t("search", locale)} value={filterValue} />
+            {suggestions.length > 0 && (
+                <CommandList className="max-h-[200px]">
+                    <CommandGroup>
+                        {suggestions.map((suggestion) => (
+                            <CommandItem className="cursor-pointer" key={suggestion} onSelect={() => handleSelect(suggestion)} value={suggestion}>
+                                <span className="truncate">{suggestion}</span>
+                                {suggestion === filterValue && <Check className="text-primary ml-auto size-3.5 shrink-0" />}
+                            </CommandItem>
+                        ))}
+                    </CommandGroup>
+                </CommandList>
+            )}
         </Command>
     );
 }

@@ -33,6 +33,7 @@ type ModelName
         | "ministral-3b-↗"
         | "ministral-8b"
         | "ministral-8b-↗"
+        | "mistral-7b"
         | "mistral-7b-↗"
         | "mistral-embed"
         | "mistral-large-1-0-↗"

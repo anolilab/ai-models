@@ -8,18 +8,23 @@
  * Union type of all model IDs for GitHub Copilot.
  */
 type ModelName
-    = | "claude-sonnet-3-5"
+    = | "claude-opus-4-6-(fast-mode)-(preview)"
+        | "claude-sonnet-3-5"
         | "claude-sonnet-3-7-thinking"
         | "gemini-2-0-flash"
         | "gemini-2-5-pro"
+        | "gemini-3-1-pro"
         | "gemini-3-flash"
         | "gemini-3-pro"
+        | "goldeneye"
         | "gpt-4-1"
         | "gpt-5-1"
         | "gpt-5-1-codex"
         | "gpt-5-1-codex-max"
         | "gpt-5-1-codex-mini"
         | "gpt-5-2"
+        | "gpt-5-2-codex"
+        | "gpt-5-3-codex"
         | "o-3"
         | "o-4-mini"
         | "raptor-mini";

@@ -8,20 +8,27 @@
  * Union type of all model IDs for Weights & Biases.
  */
 type ModelName
-    = | "deepseek-ai-deep-seek-r1-0528"
-        | "deepseek-ai-deep-seek-v3-0324"
-        | "deepseek-ai-deep-seek-v3-1"
-        | "meta-llama-llama-3-1-70b-instruct"
-        | "meta-llama-llama-3-1-8b-instruct"
-        | "meta-llama-llama-3-3-70b-instruct"
-        | "meta-llama-llama-4-scout-17b-16e-instruct"
-        | "microsoft-phi-4-mini-instruct"
-        | "moonshotai-kimi-k2-instruct"
-        | "open-pipe-qwen-3-14b-instruct"
-        | "qwen-qwen-2-5-14b-instruct"
-        | "qwen-qwen-3-235b-a22b-instruct-2507"
-        | "qwen-qwen-3-235b-a22b-thinking-2507"
-        | "qwen-qwen-3-coder-480b-a35b-instruct"
-        | "zai-org-glm-4-5";
+    = | "deepseek-r1-0528"
+        | "deepseek-v3-0324"
+        | "deepseek-v3.1"
+        | "meta-llama-3.1-70b"
+        | "meta-llama-3.1-8b"
+        | "meta-llama-3.3-70b"
+        | "meta-llama-4-scout-17bx16e"
+        | "microsoft-phi-4-mini-3.8b"
+        | "minimax-m2.5"
+        | "moonshot-ai-kimi-k2-instruct-0905"
+        | "moonshot-ai-kimi-k2.5"
+        | "moonshotai-kimi-k2"
+        | "openai-gpt-oss-120b"
+        | "openai-gpt-oss-20b"
+        | "openpipe-qwen3-14b-instruct"
+        | "qwen2.5-14b-instruct"
+        | "qwen3-235b-a22b-2507"
+        | "qwen3-235b-a22b-thinking-2507"
+        | "qwen3-30b-a3b"
+        | "qwen3-coder-480b-a35b"
+        | "z.ai-glm-4.5"
+        | "z.ai-glm-5";
 
 export default ModelName;

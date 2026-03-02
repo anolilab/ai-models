@@ -1,13 +1,48 @@
 {
     "metadata": {
         "description": "AI Models API - Models from V0",
-        "lastUpdated": "2026-01-13T21:44:10.333Z",
+        "lastUpdated": "2026-03-02T07:16:22.612Z",
         "pricingUnit": "1K",
         "provider": "V0",
-        "totalModels": 12,
+        "totalModels": 14,
         "version": "0.0.0-development"
     },
     "models": [
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "14h91v0h127",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "14H91V0H127",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
         {
             "attachment": false,
             "cost": {
@@ -63,6 +98,41 @@
                 "output": ["text"]
             },
             "name": "5V0H3H13H14",
+            "openWeights": false,
+            "provider": "V0",
+            "providerDoc": "https://v0.dev/docs",
+            "providerEnv": ["V0_API_KEY"],
+            "providerId": "v0",
+            "providerModelsDevId": "v0",
+            "providerNpm": "@ai-sdk/v0",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "v0"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "chat-product-home-enterprise-pricingv-0",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "chatProductHomeEnterprisePricingv0",
             "openWeights": false,
             "provider": "V0",
             "providerDoc": "https://v0.dev/docs",

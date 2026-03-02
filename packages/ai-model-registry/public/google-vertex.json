@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Google Vertex",
-        "lastUpdated": "2026-01-13T21:44:10.329Z",
+        "lastUpdated": "2026-03-02T07:56:54.921Z",
         "pricingUnit": "1K",
         "provider": "Google Vertex",
-        "totalModels": 39,
+        "totalModels": 40,
         "version": "0.0.0-development"
     },
     "models": [
@@ -133,6 +133,41 @@
                 "output": ["text"]
             },
             "name": "Gemini 2.5 Flash with Gemini Live API",
+            "openWeights": false,
+            "provider": "Google Vertex",
+            "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+            "providerEnv": ["GOOGLE_VERTEX_PROJECT", "GOOGLE_VERTEX_LOCATION", "GOOGLE_APPLICATION_CREDENTIALS"],
+            "providerId": "google-vertex",
+            "providerModelsDevId": "google-vertex",
+            "providerNpm": "@ai-sdk/google-vertex",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "vertexai"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "gemini-3-1-flash-image",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Gemini 3.1 Flash Image",
             "openWeights": false,
             "provider": "Google Vertex",
             "providerDoc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",

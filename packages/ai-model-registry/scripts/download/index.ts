@@ -66,11 +66,11 @@ interface TransformerModule {
     fetchCerebrasModels?: () => Promise<Model[]>;
     fetchChutesModels?: () => Promise<Model[]>;
     fetchCloudflareModels?: () => Promise<Model[]>;
+    fetchFalModels?: () => Promise<Model[]>;
     fetchDeepInfraModels?: () => Promise<Model[]>;
     fetchDeepSeekModels?: () => Promise<Model[]>;
     fetchFireworksAIModels?: () => Promise<Model[]>;
     fetchGitHubCopilotModels?: () => Promise<Model[]>;
-    fetchGitHubModels?: () => Promise<Model[]>;
     fetchGoogleModels?: () => Promise<Model[]>;
     fetchGooglePartnerModels?: () => Promise<Model[]>;
     fetchGoogleVertexModels?: () => Promise<Model[]>;
@@ -81,7 +81,6 @@ interface TransformerModule {
     fetchLlamaModels?: () => Promise<Model[]>;
     fetchMistralModels?: () => Promise<Model[]>;
     fetchModelScopeModels?: () => Promise<Model[]>;
-    fetchMorphModels?: () => Promise<Model[]>;
     fetchOllamaModels?: () => Promise<Model[]>;
     fetchOpenAIModels?: () => Promise<Model[]>;
     fetchOpenRouterModels?: () => Promise<Model[]>;
@@ -169,11 +168,9 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     transformerModule.fetchDeepInfraModels ||
     transformerModule.fetchAlibabaModels ||
     transformerModule.fetchFireworksAIModels ||
-    transformerModule.fetchGitHubModels ||
     transformerModule.fetchGoogleVertexModels ||
     transformerModule.fetchGooglePartnerModels ||
     transformerModule.fetchMistralModels ||
-    transformerModule.fetchMorphModels ||
     transformerModule.fetchOllamaModels ||
     transformerModule.fetchRequestyModels ||
     transformerModule.fetchTogetherAIModels ||
@@ -183,6 +180,7 @@ const getFetchFunction = (transformerModule: TransformerModule): (() => Promise<
     transformerModule.fetchXAIModels ||
     transformerModule.fetchModelScopeModels ||
     transformerModule.fetchCloudflareModels ||
+    transformerModule.fetchFalModels ||
     transformerModule.fetchWeightsBiasesModels ||
     transformerModule.fetchCerebrasModels ||
     transformerModule.fetchChutesModels ||

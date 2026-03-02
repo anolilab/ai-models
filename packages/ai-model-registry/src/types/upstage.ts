@@ -24,6 +24,7 @@ type ModelName
         | "solar-pro2-250710"
         | "solar-pro2-250909"
         | "solar-pro2-251215"
-        | "solar-pro2-preview";
+        | "solar-pro2-preview"
+        | "solar-pro3-260126";
 
 export default ModelName;

@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from AIHubMix",
-        "lastUpdated": "2026-01-13T21:44:10.310Z",
+        "lastUpdated": "2026-03-02T07:56:54.895Z",
         "pricingUnit": "1K",
         "provider": "AIHubMix",
-        "totalModels": 597,
+        "totalModels": 658,
         "version": "0.0.0-development"
     },
     "models": [
@@ -1200,6 +1200,235 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.274,
+                "inputCacheHit": 0.0548,
+                "output": 0.411,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "alicloud-deepseek-v3.2",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-deepseek-v3.2",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.41096,
+                "inputCacheHit": 0.41096,
+                "output": 1.917786,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "alicloud-glm-4.7",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-glm-4.7",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.5634,
+                "inputCacheHit": 0.11268,
+                "output": 2.5353,
+                "videoGeneration": null
+            },
+            "description": "GLM-5 is an advanced, open-source large language model designed for developers tackling the toughest challenges. It excels at long-context reasoning, multi-step tool orchestration, and complex systems engineering, making it the ideal choice for powering sophisticated agents and applications that require high-level cognitive tasks.",
+            "extendedThinking": false,
+            "id": "alicloud-glm-5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-glm-5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.548,
+                "inputCacheHit": 0.0959,
+                "output": 2.877,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "alicloud-kimi-k2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 256000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-kimi-k2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.548,
+                "inputCacheHit": null,
+                "output": 2.192,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "alicloud-kimi-k2-thinking",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-kimi-k2-thinking",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.2876,
+                "inputCacheHit": null,
+                "output": 1.1504,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "alicloud-minimax-m2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "alicloud-minimax-m2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.58,
                 "inputCacheHit": null,
                 "output": 1.680028,
@@ -1257,6 +1486,44 @@
                 "output": ["text"]
             },
             "name": "azure-deepseek-v3.2-speciale",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.6,
+                "inputCacheHit": null,
+                "output": 3,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "azure-kimi-k2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 256000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "azure-kimi-k2.5",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -1975,7 +2242,7 @@
                 "output": 0.2,
                 "videoGeneration": null
             },
-            "description": "claude code ",
+            "description": "claude code",
             "extendedThinking": false,
             "id": "cc-doubao-seed-code-preview-latest",
             "imageGeneration": false,
@@ -2107,6 +2374,45 @@
                 "output": ["text"]
             },
             "name": "cc-glm-4.7",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.06,
+                "inputCacheHit": null,
+                "output": 0.22,
+                "videoGeneration": null
+            },
+            "description": "Supports Claude native interface, can be directly requested in Claude Code.",
+            "extendedThinking": false,
+            "id": "cc-glm-5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "cc-glm-5",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -2419,6 +2725,84 @@
                 "output": ["text"]
             },
             "name": "cc-minimax-m2.1",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.1,
+                "videoGeneration": null
+            },
+            "description": "For Claude Code only",
+            "extendedThinking": false,
+            "id": "cc-minimax-m2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "cc-minimax-m2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.1,
+                "videoGeneration": null
+            },
+            "description": "For Claude Code only",
+            "extendedThinking": false,
+            "id": "cc-minimax-m2.5-highspeed",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "cc-minimax-m2.5-highspeed",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -3322,6 +3706,84 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 5,
+                "inputCacheHit": 0.5,
+                "output": 25,
+                "videoGeneration": null
+            },
+            "description": "Claude Opus 4.5 does not enable reasoning mode by default. To access its deep reasoning capabilities, users would typically need to call the native Claude API. To make this capability available through an OpenAI-compatible interface, we provide the claude-opus-4-5-think model, which has reasoning mode pre-enabled and a default 32k-token context window, allowing it to be called directly via the OpenAI unified API.\nClaude Opus 4.5 Think is a reasoning-focused variant of Claude Opus 4.5 designed for advanced tasks that require rigorous reasoning, complex decision-making, and long-chain analysis. Aside from its enhanced reasoning mechanism, all other capabilities remain consistent with the standard Claude Opus 4.5 model, making it well suited for complex engineering problem decomposition, multi-stage planning, and logic-intensive analysis.",
+            "extendedThinking": true,
+            "id": "claude-opus-4-5-think",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["text"]
+            },
+            "name": "claude-opus-4-5-think",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 5,
+                "inputCacheHit": 0.5,
+                "output": 25,
+                "videoGeneration": null
+            },
+            "description": "Claude Opus 4.6 does not enable reasoning mode by default. To access its deep reasoning capabilities, users would typically need to call the native Claude API. To make this capability available through an OpenAI-compatible interface, we provide the claude-opus-4-6-think model, which has reasoning mode pre-enabled and a default 32k-token context window, allowing it to be called directly via the OpenAI unified API.\nClaude Opus 4.5 Think is a reasoning-focused variant of Claude Opus 4.6 designed for advanced tasks that require rigorous reasoning, complex decision-making, and long-chain analysis. Aside from its enhanced reasoning mechanism, all other capabilities remain consistent with the standard Claude Opus 4.6 model, making it well suited for complex engineering problem decomposition, multi-stage planning, and logic-intensive analysis.",
+            "extendedThinking": true,
+            "id": "claude-opus-4-6-think",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["text"]
+            },
+            "name": "claude-opus-4-6-think",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 3.3,
                 "inputCacheHit": 0.33,
                 "output": 16.5,
@@ -3342,6 +3804,84 @@
                 "output": ["text"]
             },
             "name": "claude-sonnet-4-0",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 3.3,
+                "inputCacheHit": 0.33,
+                "output": 16.5,
+                "videoGeneration": null
+            },
+            "description": "Claude Sonnet 4.5 does not enable reasoning mode by default. To access its deep reasoning capabilities, users would typically need to call the native Claude API. To make this capability available through an OpenAI-compatible interface, the claude-sonnet-4-5-think model is provided with reasoning mode pre-enabled and a default 64k-token context window, allowing it to be called directly via the OpenAI unified API. Claude Sonnet 4.5 Think is a reasoning-focused variant of Claude Sonnet 4.5 designed for advanced tasks that require rigorous reasoning, complex decision-making, and long-chain analysis; aside from its enhanced reasoning mechanism, all other capabilities remain consistent with the standard Claude Sonnet 4.5 model, making it well suited for complex problem decomposition, multi-step planning, and logic-intensive analysis.",
+            "extendedThinking": true,
+            "id": "claude-sonnet-4-5-think",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "claude-sonnet-4-5-think",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 3,
+                "inputCacheHit": 0.3,
+                "output": 15,
+                "videoGeneration": null
+            },
+            "description": "Claude sonnet 4.6 does not enable reasoning mode by default. To access its deep reasoning capabilities, users would typically need to call the native Claude API. To make this capability available through an OpenAI-compatible interface, we provide the claude-sonnet-4-6-think model, which has reasoning mode pre-enabled and a default 32k-token context window, allowing it to be called directly via the OpenAI unified API.\nClaude sonnet 4.5 Think is a reasoning-focused variant of Claude sonnet 4.6 designed for advanced tasks that require rigorous reasoning, complex decision-making, and long-chain analysis. Aside from its enhanced reasoning mechanism, all other capabilities remain consistent with the standard Claude sonnet 4.6 model, making it well suited for complex engineering problem decomposition, multi-stage planning, and logic-intensive analysis.",
+            "extendedThinking": true,
+            "id": "claude-sonnet-4-6-think",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 200000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["image", "text"],
+                "output": ["text"]
+            },
+            "name": "claude-sonnet-4-6-think",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -3631,6 +4171,84 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.06,
+                "inputCacheHit": 0.010998,
+                "output": 0.22,
+                "videoGeneration": null
+            },
+            "description": "Only supports OpenAI-compatible formats.",
+            "extendedThinking": true,
+            "id": "coding-glm-5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "coding-glm-5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "coding-glm-5-free is the open and free version of coding-glm-5. To ensure stable service performance, usage limits are in place: up to 5 requests per minute, 500 requests per day, and a daily token allowance of 1 million.",
+            "extendedThinking": true,
+            "id": "coding-glm-5-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "coding-glm-5-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.2,
                 "inputCacheHit": null,
                 "output": 0.2,
@@ -3740,6 +4358,121 @@
             "streamingSupported": true,
             "temperature": true,
             "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.2,
+                "inputCacheHit": null,
+                "output": 0.2,
+                "videoGeneration": null
+            },
+            "extendedThinking": true,
+            "id": "coding-minimax-m2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 13100
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "coding-minimax-m2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": null,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "coding-minimax-m2.5-free is a free and open version offered by AIHubMix specifically for MiniMax users. To maintain stable service operations, the following usage limits apply: a maximum of 5 requests per minute, 500 total requests per day, and a daily quota of 1 million tokens.",
+            "extendedThinking": false,
+            "id": "coding-minimax-m2.5-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 13100
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "coding-minimax-m2.5-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.2,
+                "inputCacheHit": null,
+                "output": 0.2,
+                "videoGeneration": null
+            },
+            "extendedThinking": true,
+            "id": "coding-minimax-m2.5-highspeed",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 13100
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "coding-minimax-m2.5-highspeed",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
             "vision": false,
             "icon": "aihubmix"
         },
@@ -4359,6 +5092,44 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.22,
+                "inputCacheHit": null,
+                "output": 0.33,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "daocloud-deepseek-v3.2",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "daocloud-deepseek-v3.2",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 20,
                 "inputCacheHit": null,
                 "output": 20,
@@ -4525,8 +5296,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 131072,
-                "output": null
+                "context": 32768,
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -5644,7 +6415,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 131072,
-                "output": 131072
+                "output": 16384
             },
             "modalities": {
                 "input": ["text"],
@@ -6984,6 +7755,162 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.4822,
+                "inputCacheHit": 0.09644,
+                "output": 2.411,
+                "videoGeneration": null
+            },
+            "description": "The Doubao 2.0 series is a coding model optimized for real programming environments, capable of reliably invoking tools in common IDEs such as Claude Code. The model is specially optimized for frontend capabilities and performs well with common frontend frameworks. The model supports using Skills and can work with various custom skills.",
+            "extendedThinking": true,
+            "id": "doubao-seed-2-0-code-preview",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "doubao-seed-2-0-code-preview",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.09041,
+                "inputCacheHit": 0.018082,
+                "output": 0.54246,
+                "videoGeneration": null
+            },
+            "description": "The Doubao 2.0 series is a balanced family of models targeted at high-frequency enterprise scenarios, balancing performance and cost, with overall capabilities surpassing the previous generation Doubao-Seed-1.8. They are suited for production tasks such as unstructured information processing, content creation, search and recommendation, and data analysis. The models support long-context processing, multi-source information fusion, multi-step instruction execution, and high-fidelity structured output. While ensuring stable performance, they significantly optimize costs.",
+            "extendedThinking": true,
+            "id": "doubao-seed-2-0-lite",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "doubao-seed-2-0-lite",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.030136,
+                "inputCacheHit": 0.006027,
+                "output": 0.30136,
+                "videoGeneration": null
+            },
+            "description": "Doubao 2.0 series is designed for low-latency, high-concurrency, and cost-sensitive scenarios, emphasizing fast responses and flexible inference deployment. Model performance is comparable to Doubao-Seed-1.6. It supports a 256k context window, four levels of thinking length, and multimodal understanding, making it suitable for lightweight tasks that prioritize cost and speed.",
+            "extendedThinking": true,
+            "id": "doubao-seed-2-0-mini",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "doubao-seed-2-0-mini",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.4822,
+                "inputCacheHit": 0.09644,
+                "output": 2.411,
+                "videoGeneration": null
+            },
+            "description": "Doubao flagship all-purpose general model, targeting complex reasoning and long-chain task execution scenarios in the Agent era. It emphasizes multimodal understanding, long-context reasoning, structured generation, and tool-augmented execution. It excels at handling complex instructions and multi-constraint execution, reliably addressing multi-step complex planning, intricate image-text reasoning, video content understanding, and high-difficulty analysis scenarios.",
+            "extendedThinking": true,
+            "id": "doubao-seed-2-0-pro",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "doubao-seed-2-0-pro",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.2,
                 "inputCacheHit": null,
                 "output": 0.2,
@@ -7082,6 +8009,45 @@
                 "output": ["image"]
             },
             "name": "doubao-seedream-4-5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": 2,
+                "input": 2,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "Doubao-Seedream-5.0-lite is the latest image-creation model released by ByteDance. For the first time, the model includes an online retrieval capability, allowing it to integrate real-time web information and improve the timeliness of generated images. At the same time, the model’s intelligence has been further upgraded, enabling it to accurately parse complex instructions and visual content. In addition, the model has been enhanced in terms of breadth of world knowledge, reference consistency, and generation quality in professional scenarios, better meeting enterprise-level visual-creation needs.",
+            "extendedThinking": false,
+            "id": "doubao-seedream-5.0-lite",
+            "imageGeneration": true,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "doubao-seedream-5.0-lite",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -7413,8 +8379,47 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.82192,
+                "inputCacheHit": 0.82192,
+                "output": 3.28768,
+                "videoGeneration": null
+            },
+            "description": "ERNIE 5.0 is the next-generation natively multimodal foundation model in the ERNIE family. Built on a unified multimodal architecture, it jointly learns from text, images, audio, and video to deliver broad multimodal capabilities.\n\nERNIE 5.0 features significantly upgraded core capabilities and shows strong performance across benchmarks, with notable gains in multimodal understanding, instruction following, creative writing, factual accuracy, and agent planning with tool use.",
+            "extendedThinking": true,
+            "id": "ernie-5.0-thinking-exp",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 119000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "ernie-5.0-thinking-exp",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.822,
-                "inputCacheHit": null,
+                "inputCacheHit": 0.822,
                 "output": 3.288,
                 "videoGeneration": null
             },
@@ -9280,13 +10285,208 @@
         {
             "attachment": false,
             "cost": {
+                "imageGeneration": 0.5,
+                "input": 0.5,
+                "inputCacheHit": 0.5,
+                "output": 3,
+                "videoGeneration": null
+            },
+            "description": "gemini-3.1-flash-image-preview (Nano Banana 2) features professional-grade visual intelligence, lightning-fast efficiency, and realistic, grounded generative capabilities. This model serves as the high-efficiency counterpart to Gemini 3 Pro Image, optimized for speed and high-volume developer use cases.",
+            "extendedThinking": false,
+            "id": "gemini-3.1-flash-image-preview",
+            "imageGeneration": true,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "gemini-3.1-flash-image-preview",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": 0,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "This model is the free trial version of gemini-3.1-flash-image-preview (officially marketed as Nano Banana 2). To ensure stable service operation, usage limits have been set and resources are limited and may not be available at all times. For a stable version, please choose the official release; the request name for the official release is: gemini-3.1-flash-image-preview.",
+            "extendedThinking": false,
+            "id": "gemini-3.1-flash-image-preview-free",
+            "imageGeneration": true,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["image"]
+            },
+            "name": "gemini-3.1-flash-image-preview-free",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 2,
+                "inputCacheHit": 0.2,
+                "output": 12,
+                "videoGeneration": null
+            },
+            "description": "Gemini 3.1 Pro Preview is designed to further optimize the performance and reliability of the Gemini 3 Pro series, offering improved reasoning capabilities, greater token efficiency, and a more robust, factually consistent user experience. It is optimized for software-engineering behaviors and usability, and is also suitable for agent workflows that require precise tool invocation and reliable multi-step execution, enabling stable operation across a variety of real-world scenarios.",
+            "extendedThinking": true,
+            "id": "gemini-3.1-pro-preview",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "audio", "video"],
+                "output": ["text"]
+            },
+            "name": "gemini-3.1-pro-preview",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 2,
+                "inputCacheHit": 0.2,
+                "output": 12,
+                "videoGeneration": null
+            },
+            "description": "gemini-3.1-pro-preview-customtools\n\nFor users who build applications mixing bash and custom tools, the Gemini 3.1 Pro preview provides a separate endpoint accessible via the API call gemini-3.1-pro-preview-customtools. This endpoint is better at prioritizing your custom tools (for example, view_file or search_code).\n\nPlease note that while gemini-3.1-pro-preview-customtools is optimized for agent workflows that use custom tools and Bash, you may experience quality fluctuations in some use cases that cannot benefit from these tools.",
+            "extendedThinking": true,
+            "id": "gemini-3.1-pro-preview-customtools",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "audio", "video"],
+                "output": ["text"]
+            },
+            "name": "gemini-3.1-pro-preview-customtools",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 2,
+                "inputCacheHit": 0.2,
+                "output": 12,
+                "videoGeneration": null
+            },
+            "description": "Gemini-3.1-pro-preview-search integrates Google's official search functionality; the search feature incurs an additional separate fee log directly incorporated into the scoring, but the log details are not displayed; this will be fixed in the future to show the details; it only supports OpenAI-compatible format calls and does not support the Gemini SDK; for the Gemini native SDK, please directly set the official search parameters.",
+            "extendedThinking": true,
+            "id": "gemini-3.1-pro-preview-search",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image", "audio", "video"],
+                "output": ["text"]
+            },
+            "name": "gemini-3.1-pro-preview-search",
+            "openWeights": false,
+            "preview": true,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "imageGeneration": null,
                 "input": 0.5,
                 "inputCacheHit": 0.05,
                 "output": 3,
                 "videoGeneration": null
             },
-            "description": "Gemini 3 Flash Preview is a low-latency model in the Gemini 3 family, designed for real-time and high-throughput inference. It retains Gemini 3’s core multimodal and reasoning capabilities while prioritizing responsiveness and execution efficiency.",
+            "description": "gemini-3-flash-preview is Google's latest released, most balanced model, excelling in speed, scale, and cutting-edge intelligence.",
             "extendedThinking": true,
             "id": "gemini-3-flash-preview",
             "imageGeneration": false,
@@ -9294,10 +10494,10 @@
             "lastUpdated": null,
             "limit": {
                 "context": 1048576,
-                "output": 65536
+                "output": null
             },
             "modalities": {
-                "input": ["text", "image", "audio", "video"],
+                "input": ["text", "image", "audio"],
                 "output": ["text"]
             },
             "name": "gemini-3-flash-preview",
@@ -9371,8 +10571,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": null,
-                "output": null
+                "context": 1048576,
+                "output": 1048576
             },
             "modalities": {
                 "input": ["text", "image", "audio"],
@@ -10364,6 +11564,45 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "The glm-4.7-flash free model has usage restrictions to ensure stable service operation: a maximum of 5 requests per minute, no more than 500 requests per day, and a daily usage quota of 1 million tokens.",
+            "extendedThinking": true,
+            "id": "glm-4.7-flash-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "glm-4.7-flash-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.1,
                 "inputCacheHit": null,
                 "output": 0.1,
@@ -11126,6 +12365,123 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "This free model API comes from the OpenAI model deployed on Azure. To prevent abuse, the external content filter provided by Azure has been enforced, which will result in additional delays. If you want to experience the full version of the model API without filters, please use the paid version and request the model name ID without \"-free\".",
+            "extendedThinking": false,
+            "id": "gpt-4.1-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4.1-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "This free model API comes from the OpenAI model deployed on Azure. To prevent abuse, the external content filter provided by Azure has been enforced, which will result in additional delays. If you want to experience the full version of the model API without filters, please use the paid version and request the model name ID without \"-free\".",
+            "extendedThinking": false,
+            "id": "gpt-4.1-mini-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4.1-mini-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "This free model API comes from the OpenAI model deployed on Azure. To prevent abuse, the external content filter provided by Azure has been enforced, which will result in additional delays. If you want to experience the full version of the model API without filters, please use the paid version and request the model name ID without \"-free\".",
+            "extendedThinking": false,
+            "id": "gpt-4.1-nano-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4.1-nano-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 60,
                 "inputCacheHit": null,
                 "output": 120,
@@ -11394,6 +12750,45 @@
         {
             "attachment": false,
             "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "This free model API comes from the OpenAI model deployed on Azure. To prevent abuse, the external content filter provided by Azure has been enforced, which will result in additional delays. If you want to experience the full version of the model API without filters, please use the paid version and request the model name ID without \"-free\".",
+            "extendedThinking": false,
+            "id": "gpt-4o-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 1047576,
+                "output": 32768
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-4o-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "imageGeneration": 3,
                 "input": 3,
                 "inputCacheHit": 0,
@@ -11626,9 +13021,9 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
-                "input": 15,
-                "inputCacheHit": null,
-                "output": 15,
+                "input": 0.6,
+                "inputCacheHit": 0.6,
+                "output": 12,
                 "videoGeneration": null
             },
             "description": "OpenAI’s latest TTS model, gpt-4o-mini-tts, uses the same API endpoint (/v1/audio/speech) as tts-1. However, OpenAI introduced a new pricing method without providing billing details via API, causing discrepancies between official pricing and aihubmix’s charges—some requests may cost more, others less. Avoid using this model if precise billing accuracy is essential.",
@@ -11979,7 +13374,7 @@
                 "output": 10,
                 "videoGeneration": null
             },
-            "description": "GPT-5.1-Codex is a version of GPT-5 optimized for agentic coding tasks in Codex or similar environments. It's available in the Responses API only and the underlying model snapshot will be regularly updated. ",
+            "description": "GPT-5.1-Codex is a version of GPT-5 optimized for agentic coding tasks in Codex or similar environments. It's available in the Responses API only and the underlying model snapshot will be regularly updated.",
             "extendedThinking": true,
             "id": "gpt-5.1-codex",
             "imageGeneration": false,
@@ -12096,7 +13491,7 @@
                 "output": 14,
                 "videoGeneration": null
             },
-            "description": "GPT‑5.2 builds on GPT‑5.1 with improvements that make interactions more reliable, flexible, and user-friendly. The focus is on delivering clearer responses, better adaptability, and enhanced control for diverse tasks. Key highlights include:\n\nAccelerate agent development: Build AI agents for analytics, decision support, code modernization, and data pipelines.\nGreater consistency: Produces more predictable and accurate outputs aligned with user instructions.\nAdaptive reasoning: Handles complex queries with improved depth while remaining efficient for simpler tasks.\nExpanded context handling: Supports longer inputs for multi-step workflows and richer conversations.\nRefined customization: Offers better control over tone, style, and structured output for tailored experiences.\nBroader applicability: Strengthens performance across a wide range of domains while maintaining clarity and safety.",
+            "description": "GPT-5.2 is an advanced general-purpose model that improves on GPT-5.1 with more reliable, flexible, and user-friendly interactions. It delivers clearer responses, stronger instruction-following, and adaptive reasoning that scales from simple requests to complex, multi-step tasks. With enhanced control over tone and structure and support for extended context, GPT-5.2 is well suited for agent workflows, analysis, coding, and cross-domain applications.",
             "extendedThinking": true,
             "id": "gpt-5.2",
             "imageGeneration": false,
@@ -12169,6 +13564,123 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 1.75,
+                "inputCacheHit": 0.175,
+                "output": 14,
+                "videoGeneration": null
+            },
+            "description": "GPT-5.2-Codex is an upgraded version of GPT-5.2, optimized for agentic coding tasks in Codex and similar execution environments. The model is specifically enhanced for code generation, modification, refactoring, and automated execution workflows, enabling more efficient participation in multi-step, tool-driven programming processes. GPT-5.2-Codex supports low, medium, high, and xhigh reasoning effort settings, allowing flexible trade-offs between latency, reasoning depth, and token usage depending on task complexity.",
+            "extendedThinking": true,
+            "id": "gpt-5.2-codex",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-5.2-codex",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 1.75,
+                "inputCacheHit": 0.175,
+                "output": 14,
+                "videoGeneration": null
+            },
+            "description": "GPT-5.2 supports configurable reasoning effort only through the /responses endpoint. To make higher-intensity reasoning available directly via the /chat interface, GPT-5.2-High is provided as a reasoning-enhanced variant of GPT-5.2 with reasoning_effort preset to high. It is designed for tasks that require deeper analysis, stronger result consistency, and greater controllability. By applying more aggressive reasoning strategies and more effective use of extended context, the model delivers clearer and more reliable responses, making it well suited for complex agent workflows, long-chain decision-making, and reliability-critical advanced applications.",
+            "extendedThinking": true,
+            "id": "gpt-5.2-high",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-5.2-high",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 1.75,
+                "inputCacheHit": 0.175,
+                "output": 14,
+                "videoGeneration": null
+            },
+            "description": "GPT-5.2 supports configuring reasoning strength only through the /responses endpoint. To make lower-overhead reasoning available directly in the /chat endpoint, the GPT-5.2-Low model is provided. This model is based on GPT-5.2 with reasoning_effort preset to low. This model is designed for use cases that are sensitive to response latency and cost. By adopting a lighter reasoning strategy, it delivers stable responses with lower latency and higher throughput. It is well suited for high-concurrency conversations, real-time interactions, basic Q&A, and scenarios where deep reasoning is not required.",
+            "extendedThinking": true,
+            "id": "gpt-5.2-low",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-5.2-low",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 21,
                 "inputCacheHit": 2.1,
                 "output": 168,
@@ -12189,6 +13701,45 @@
                 "output": ["text"]
             },
             "name": "gpt-5.2-pro",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 1.75,
+                "inputCacheHit": 0.175,
+                "output": 14,
+                "videoGeneration": null
+            },
+            "description": "GPT-5.3-Codex is optimized for agentic coding tasks in Codex or similar environments. GPT-5.3-Codex supports low, medium, high, and xhigh reasoning effort settings. If you want to learn more about prompting GPT-5.3-Codex, refer to our dedicated guide.",
+            "extendedThinking": true,
+            "id": "gpt-5.3-codex",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 400000,
+                "output": 128000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "gpt-5.3-codex",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -12882,7 +14433,7 @@
                 "videoGeneration": null
             },
             "description": "Grok, their latest and greatest flagship model, offers unparalleled performance in natural language, math, and reasoning – the perfect jack of all trades.\nThe current pointing model version is grok-4-0709.",
-            "extendedThinking": false,
+            "extendedThinking": true,
             "id": "grok-4",
             "imageGeneration": false,
             "knowledge": null,
@@ -12892,7 +14443,7 @@
                 "output": 64000
             },
             "modalities": {
-                "input": ["text"],
+                "input": ["text", "image"],
                 "output": ["text"]
             },
             "name": "grok-4",
@@ -12903,12 +14454,12 @@
             "providerEnv": ["AIHUBMIX_API_KEY"],
             "providerId": "ai-hub-mix",
             "providerNpm": "@aihubmix/ai-sdk-provider",
-            "reasoning": false,
+            "reasoning": true,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
-            "toolCall": false,
-            "vision": false,
+            "toolCall": true,
+            "vision": true,
             "icon": "aihubmix"
         },
         {
@@ -12921,7 +14472,7 @@
                 "videoGeneration": null
             },
             "description": "Grok 4.1 is a new conversational model with significant improvements in real-world usability, delivering exceptional performance in creative, emotional, and collaborative interactions. It is more perceptive to nuanced user intent, more engaging to converse with, and more coherent in personality, while fully preserving its core intelligence and reliability. Built on large-scale reinforcement learning infrastructure, the model is optimized for style, personality, helpfulness, and alignment, and leverages frontier agentic reasoning models as reward evaluators to autonomously assess and iterate on responses at scale, significantly enhancing overall interaction quality.",
-            "extendedThinking": true,
+            "extendedThinking": false,
             "id": "grok-4-1-fast-non-reasoning",
             "imageGeneration": false,
             "knowledge": null,
@@ -12942,7 +14493,7 @@
             "providerEnv": ["AIHUBMIX_API_KEY"],
             "providerId": "ai-hub-mix",
             "providerNpm": "@aihubmix/ai-sdk-provider",
-            "reasoning": true,
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
@@ -13083,8 +14634,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 2000000,
-                "output": 2000000
+                "context": 256000,
+                "output": 10000
             },
             "modalities": {
                 "input": ["text", "image"],
@@ -14316,6 +15867,84 @@
                 "output": 0.05,
                 "videoGeneration": null
             },
+            "description": "A 3.8-billion-parameter general vector model (embedding model) for state-of-the-art multilingual embeddings for edge deployment.",
+            "extendedThinking": false,
+            "id": "jina-embeddings-v5-text-nano",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["embedding"]
+            },
+            "name": "jina-embeddings-v5-text-nano",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.05,
+                "inputCacheHit": null,
+                "output": 0.05,
+                "videoGeneration": null
+            },
+            "description": "A 3.8-billion-parameter general vector (embedding) model providing state-of-the-art multilingual embeddings with task-specific adapters.",
+            "extendedThinking": false,
+            "id": "jina-embeddings-v5-text-small",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["embedding"]
+            },
+            "name": "jina-embeddings-v5-text-small",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.05,
+                "inputCacheHit": null,
+                "output": 0.05,
+                "videoGeneration": null
+            },
             "description": "Multimodal multilingual document reranker, 10K context, 2.4B parameters, for visual document sorting.",
             "extendedThinking": false,
             "id": "jina-reranker-m0",
@@ -14539,6 +16168,45 @@
             "temperature": true,
             "toolCall": true,
             "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.6,
+                "inputCacheHit": 0.105,
+                "output": 3,
+                "videoGeneration": null
+            },
+            "description": "Kimi K2.5 is the smartest model of Kimi to date, achieving open-source state-of-the-art (SoTA) performance in Agent, coding, visual understanding, and a series of general intelligent tasks. At the same time, Kimi K2.5 is also the most versatile model of Kimi so far, with a native multimodal architecture design that supports both visual and text input, thinking and non-thinking modes, as well as dialogue and Agent tasks.",
+            "extendedThinking": true,
+            "id": "kimi-k2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "kimi-k2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
             "icon": "aihubmix"
         },
         {
@@ -15629,7 +17297,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 10000,
+                "context": 131000,
                 "output": null
             },
             "modalities": {
@@ -16079,6 +17747,84 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.288,
+                "inputCacheHit": null,
+                "output": 1.152,
+                "videoGeneration": null
+            },
+            "description": "The MiniMax M2.5 is a flagship programming model built for real-world productivity. As a production-grade model natively designed for Agent scenarios, it has achieved state-of-the-art (SOTA) performance in coding, agentic tool use, search, and office work.",
+            "extendedThinking": false,
+            "id": "minimax-m2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 192000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "minimax-m2.5",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.288,
+                "inputCacheHit": null,
+                "output": 1.152,
+                "videoGeneration": null
+            },
+            "description": "• Same performance as minimax-m2.5\n• Significantly faster inference",
+            "extendedThinking": false,
+            "id": "minimax-m2.5-highspeed",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 204800,
+                "output": 192000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "minimax-m2.5-highspeed",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 3,
                 "inputCacheHit": null,
                 "output": 9,
@@ -16175,6 +17921,44 @@
                 "output": ["text"]
             },
             "name": "mm-minimax-m2.1",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.6,
+                "inputCacheHit": 0.105,
+                "output": 3,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "moonshot-kimi-k2.5",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "moonshot-kimi-k2.5",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",
@@ -16627,7 +18411,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 262144,
-                "output": 262144
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -16921,6 +18705,45 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 10,
+                "inputCacheHit": 2.5,
+                "output": 40,
+                "videoGeneration": null
+            },
+            "description": "Only supported through requests to the v1/responses interface.\no3-deep-research is OpenAI most advanced model for deep research, designed to tackle complex, multi-step research tasks. It can search and synthesize information from across the internet as well as from your own data—brought in through MCP connectors.",
+            "extendedThinking": false,
+            "id": "o3-deep-research",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "o3-deep-research",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 2,
                 "inputCacheHit": 0.5,
                 "output": 8,
@@ -17035,9 +18858,9 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
-                "input": 0.2,
+                "input": 0.02,
                 "inputCacheHit": null,
-                "output": 0.2,
+                "output": 0.02,
                 "videoGeneration": null
             },
             "extendedThinking": false,
@@ -17260,6 +19083,84 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.062,
+                "inputCacheHit": null,
+                "output": 0.248,
+                "videoGeneration": null
+            },
+            "description": "Qianfan-OCR-Fast is a multimodal large model specialized for OCR, trained primarily on OCR-domain data while retaining appropriate general multimodal capabilities, and it outperforms Qianfan-OCR.",
+            "extendedThinking": false,
+            "id": "qianfan-ocr",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32000,
+                "output": 28000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "qianfan-ocr",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.664,
+                "inputCacheHit": null,
+                "output": 2.738336,
+                "videoGeneration": null
+            },
+            "description": "Qianfan-OCR-Fast is a multimodal large model specialized for OCR, trained primarily on OCR-domain data while retaining appropriate general multimodal capabilities, and it outperforms Qianfan-OCR.",
+            "extendedThinking": false,
+            "id": "qianfan-ocr-fast",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 32000,
+                "output": 28000
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "qianfan-ocr-fast",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
             "icon": "aihubmix"
         },
         {
@@ -18230,6 +20131,240 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.1126,
+                "inputCacheHit": 0.1126,
+                "output": 0.9008,
+                "videoGeneration": null
+            },
+            "description": "The Qwen 3.5 native vision-language Plus model is built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In multiple task evaluations, the 3.5 series has demonstrated outstanding performance comparable to current leading frontier models, with leapfrog improvements over the 3 series in both pure-text and multimodal capabilities. This model version is functionally equivalent to the snapshot model qwen3.5-plus-2026-02-15.",
+            "extendedThinking": true,
+            "id": "qwen3.5-122b-a10b",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-122b-a10b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.0846,
+                "inputCacheHit": 0.0846,
+                "output": 0.6768,
+                "videoGeneration": null
+            },
+            "description": "The Qwen 3.5 native vision-language Plus model is built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In multiple task evaluations, the 3.5 series has demonstrated outstanding performance comparable to current leading frontier models, with leapfrog improvements over the 3 series in both pure-text and multimodal capabilities. This model version is functionally equivalent to the snapshot model qwen3.5-plus-2026-02-15.",
+            "extendedThinking": true,
+            "id": "qwen3.5-27b",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-27b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.0564,
+                "inputCacheHit": 0.0564,
+                "output": 0.4512,
+                "videoGeneration": null
+            },
+            "description": "The Qwen 3.5 native vision-language Plus model is built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In multiple task evaluations, the 3.5 series has demonstrated outstanding performance comparable to current leading frontier models, with leapfrog improvements over the 3 series in both pure-text and multimodal capabilities. This model version is functionally equivalent to the snapshot model qwen3.5-plus-2026-02-15.",
+            "extendedThinking": true,
+            "id": "qwen3.5-35b-a3b",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-35b-a3b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.1644,
+                "inputCacheHit": 0.1644,
+                "output": 0.9864,
+                "videoGeneration": null
+            },
+            "description": "The Qwen 3.5 native vision-language Plus model is built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In multiple task evaluations, the 3.5 series has demonstrated outstanding performance comparable to current leading frontier models, with leapfrog improvements over the 3 series in both pure-text and multimodal capabilities. This model version is functionally equivalent to the snapshot model qwen3.5-plus-2026-02-15.",
+            "extendedThinking": true,
+            "id": "qwen3.5-397b-a17b",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-397b-a17b",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.0282,
+                "inputCacheHit": 0.00282,
+                "output": 0.282,
+                "videoGeneration": null
+            },
+            "description": "The Qwen3.5 native vision-language Flash series models are designed with a hybrid architecture that integrates linear attention mechanisms and sparse mixture-of-experts models, achieving higher inference efficiency. Compared with the 3 series, the models deliver leapfrog improvements in both pure-text and multimodal performance; they respond quickly and combine inference speed with high performance.",
+            "extendedThinking": true,
+            "id": "qwen3.5-flash",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-flash",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.1096,
+                "inputCacheHit": 0.01096,
+                "output": 0.6576,
+                "videoGeneration": null
+            },
+            "description": "The Qwen 3.5 native vision-language Plus model is built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In multiple task evaluations, the 3.5 series has demonstrated outstanding performance comparable to current leading frontier models, with leapfrog improvements over the 3 series in both pure-text and multimodal capabilities. This model version is functionally equivalent to the snapshot model qwen3.5-plus-2026-02-15.",
+            "extendedThinking": true,
+            "id": "qwen3.5-plus",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 991000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3.5-plus",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.08,
                 "inputCacheHit": 0,
                 "output": 0.8,
@@ -18386,6 +20521,45 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
+                "input": 0.137,
+                "inputCacheHit": 0.137,
+                "output": 0.548,
+                "videoGeneration": null
+            },
+            "description": "The Qwen3 series is a next-generation code-generation model with results close to Qwen3-Coder-Plus while offering superior performance. The model is optimized for repository-level understanding, supports multi-turn tool interactions, and improves compatibility with agentic coding tools.",
+            "extendedThinking": false,
+            "id": "qwen3-coder-next",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2000000,
+                "output": 64000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen3-coder-next",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
                 "input": 0.54,
                 "inputCacheHit": 0.108,
                 "output": 2.16,
@@ -18471,49 +20645,6 @@
             },
             "description": "The Qwen3 Embedding model series is the latest proprietary model family from Qwen, specifically designed for text embedding and ranking tasks. Based on the dense base models of the Qwen3 series, it offers comprehensive text embedding and reranking models in various sizes (0.6B, 4B, and 8B). This series inherits the excellent multilingual capabilities, long-text understanding, and reasoning skills of its base models. The Qwen3 Embedding series demonstrates significant advancements in various text embedding and ranking tasks, including text retrieval, code retrieval, text classification, text clustering, and bilingual text mining.",
             "extendedThinking": false,
-            "id": "qwen3-embedding-0.6b",
-            "imageGeneration": false,
-            "knowledge": null,
-            "lastUpdated": null,
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["embedding"]
-            },
-            "name": "qwen3-embedding-0.6b",
-            "openWeights": false,
-            "preview": false,
-            "provider": "AIHubMix",
-            "providerDoc": "https://docs.aihubmix.com",
-            "providerEnv": ["AIHUBMIX_API_KEY"],
-            "providerId": "ai-hub-mix",
-            "providerNpm": "@aihubmix/ai-sdk-provider",
-            "reasoning": false,
-            "releaseDate": null,
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false,
-            "icon": "aihubmix",
-            "audioGeneration": false,
-            "structuredOutputs": true,
-            "supportsStructuredOutput": true,
-            "supportsTools": true
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "imageGeneration": null,
-                "input": 0.068,
-                "inputCacheHit": null,
-                "output": 0.068,
-                "videoGeneration": null
-            },
-            "description": "The Qwen3 Embedding model series is the latest proprietary model family from Qwen, specifically designed for text embedding and ranking tasks. Based on the dense base models of the Qwen3 series, it offers comprehensive text embedding and reranking models in various sizes (0.6B, 4B, and 8B). This series inherits the excellent multilingual capabilities, long-text understanding, and reasoning skills of its base models. The Qwen3 Embedding series demonstrates significant advancements in various text embedding and ranking tasks, including text retrieval, code retrieval, text classification, text clustering, and bilingual text mining.",
-            "extendedThinking": false,
             "id": "qwen3-embedding-4b",
             "imageGeneration": false,
             "knowledge": null,
@@ -18585,9 +20716,9 @@
             "attachment": false,
             "cost": {
                 "imageGeneration": null,
-                "input": 0.822,
-                "inputCacheHit": 0.822,
-                "output": 3.288,
+                "input": 0.34246,
+                "inputCacheHit": 0.34246,
+                "output": 1.36984,
                 "videoGeneration": null
             },
             "description": "The Tongyi Qianwen 3 series Max model has undergone special upgrades in intelligent agent programming and tool invocation compared to the preview version. The officially released model this time reaches SOTA level in the field and is adapted to more complex intelligent agent scenarios.",
@@ -18618,6 +20749,45 @@
             "temperature": true,
             "toolCall": true,
             "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.34246,
+                "inputCacheHit": 0.34246,
+                "output": 1.36984,
+                "videoGeneration": null
+            },
+            "description": "The snapshot version of the Tongyi Qianwen 3 series Max model is from January 23, 2026. By default, it does not require thinking, but thinking mode can be enabled through the enable_thinking parameter, as detailed in the code example. (After enabling thinking by passing parameters, it becomes: Qwen3-Max-Thinking). This model has a total parameter count exceeding one trillion (1T) and a pre-training data volume of up to 36T Tokens, making it the largest and most powerful reasoning model from Alibaba to date.",
+            "extendedThinking": true,
+            "id": "qwen3-max-2026-01-23",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 252000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "qwen3-max-2026-01-23",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
             "icon": "aihubmix"
         },
         {
@@ -19003,6 +21173,84 @@
             "providerId": "ai-hub-mix",
             "providerNpm": "@aihubmix/ai-sdk-provider",
             "reasoning": true,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.0206,
+                "inputCacheHit": 0.00412,
+                "output": 0.206,
+                "videoGeneration": null
+            },
+            "description": "The Qwen3 series of compact visual-understanding models achieves an effective fusion of thinking mode and non-thinking mode, outperforming the open-source Qwen3-VL-30B-A3B with faster response speeds. It comprehensively upgrades image and video understanding, supporting ultra-long contexts such as long videos and long documents, spatial awareness, and universal object recognition; it also possesses visual 2D/3D localization capabilities and is capable of handling complex real-world tasks.",
+            "extendedThinking": false,
+            "id": "qwen3-vl-flash",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 254000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3-vl-flash",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.0206,
+                "inputCacheHit": 0.0206,
+                "output": 0.206,
+                "videoGeneration": null
+            },
+            "description": "The Qwen3 series of compact visual-understanding models achieves an effective fusion of thinking mode and non-thinking mode, outperforming the open-source Qwen3-VL-30B-A3B with faster response speeds. It comprehensively upgrades image and video understanding, supporting ultra-long contexts such as long videos and long documents, spatial awareness, and universal object recognition; it also possesses visual 2D/3D localization capabilities and is capable of handling complex real-world tasks.",
+            "extendedThinking": false,
+            "id": "qwen3-vl-flash-2026-01-22",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 254000,
+                "output": 32000
+            },
+            "modalities": {
+                "input": ["text", "image", "video"],
+                "output": ["text"]
+            },
+            "name": "qwen3-vl-flash-2026-01-22",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
@@ -19607,7 +21855,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -19874,8 +22122,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 16384,
-                "output": 16384
+                "context": 128000,
+                "output": null
             },
             "modalities": {
                 "input": ["text", "image", "video"],
@@ -20147,8 +22395,8 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 128000,
-                "output": 20000
+                "context": 40960,
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -20186,7 +22434,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -20745,6 +22993,84 @@
             "temperature": true,
             "toolCall": false,
             "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0.1,
+                "inputCacheHit": null,
+                "output": 0.3,
+                "videoGeneration": null
+            },
+            "description": "step-3.5-flash is stepfun's flagship inference model, designed for high-complexity tasks that require deep reasoning and fast execution. It excels at decomposing multi-step problems, performing tool calls, and maintaining consistency across massive datasets. It is the preferred choice for complex workloads such as long-context agents, advanced software engineering, and end-to-end research automation.",
+            "extendedThinking": false,
+            "id": "step-3.5-flash",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "step-3.5-flash",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 0,
+                "inputCacheHit": 0,
+                "output": 0,
+                "videoGeneration": null
+            },
+            "description": "step-3.5-flash-free is the free, publicly available version of step-3.5-flash, offering the same model capabilities with usage limits in place to ensure service stability. Limits include up to 5 requests per minute, a maximum of 250 requests per day, and a daily quota of 500,000 tokens. Free usage is based on shared capacity and is limited in availability. This version is intended for testing and light usage; for consistent and reliable access, please switch to the paid model.",
+            "extendedThinking": false,
+            "id": "step-3.5-flash-free",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 256000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "step-3.5-flash-free",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": true,
             "icon": "aihubmix"
         },
         {
@@ -22296,7 +24622,7 @@
                 "output": 0,
                 "videoGeneration": 2
             },
-            "description": "Veo 3.1 is Google's state-of-the-art model for generating high-fidelity, 8-second 720p or 1080p videos featuring stunning realism and natively generated audio.",
+            "description": "Veo 3.1 is Google's state-of-the-art model for generating high-fidelity, 8-second 720p , 1080p or 4k videos featuring stunning realism and natively generated audio.",
             "extendedThinking": false,
             "id": "veo-3.1-fast-generate-preview",
             "imageGeneration": false,
@@ -22335,7 +24661,7 @@
                 "output": 2,
                 "videoGeneration": 2
             },
-            "description": "Veo 3.1 is Google's state-of-the-art model for generating high-fidelity, 8-second 720p or 1080p videos featuring stunning realism and natively generated audio.",
+            "description": "Veo 3.1 is Google's state-of-the-art model for generating high-fidelity, 8-second 720p , 1080p or 4k videos featuring stunning realism and natively generated audio.",
             "extendedThinking": false,
             "id": "veo-3.1-generate-preview",
             "imageGeneration": false,
@@ -22859,6 +25185,44 @@
                 "output": ["text"]
             },
             "name": "WizardLM/WizardCoder-Python-34B-V1.0",
+            "openWeights": false,
+            "preview": false,
+            "provider": "AIHubMix",
+            "providerDoc": "https://docs.aihubmix.com",
+            "providerEnv": ["AIHUBMIX_API_KEY"],
+            "providerId": "ai-hub-mix",
+            "providerNpm": "@aihubmix/ai-sdk-provider",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "aihubmix"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "imageGeneration": null,
+                "input": 3,
+                "inputCacheHit": null,
+                "output": 3,
+                "videoGeneration": null
+            },
+            "extendedThinking": false,
+            "id": "yi-large",
+            "imageGeneration": false,
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "yi-large",
             "openWeights": false,
             "preview": false,
             "provider": "AIHubMix",

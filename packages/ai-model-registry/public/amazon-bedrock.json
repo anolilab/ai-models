@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Amazon Bedrock",
-        "lastUpdated": "2026-01-13T21:44:10.327Z",
+        "lastUpdated": "2026-03-02T07:56:54.912Z",
         "pricingUnit": "1K",
         "provider": "Amazon Bedrock",
         "totalModels": 66,
@@ -1280,8 +1280,8 @@
             "lastUpdated": "2025-03-10",
             "launchDate": "3/10/2025",
             "limit": {
-                "context": 163840,
-                "output": 163840
+                "context": 64000,
+                "output": 16000
             },
             "modalities": {
                 "input": ["text"],

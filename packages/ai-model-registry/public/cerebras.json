@@ -1,7 +1,7 @@
 {
     "metadata": {
         "description": "AI Models API - Models from cerebras",
-        "lastUpdated": "2026-01-13T21:44:10.325Z",
+        "lastUpdated": "2026-03-02T07:56:54.911Z",
         "pricingUnit": "1K",
         "provider": "cerebras",
         "totalModels": 6,
@@ -11,16 +11,16 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.1,
+                "input": 0.0003,
                 "inputCacheHit": null,
-                "output": 0.1
+                "output": 0.0003
             },
-            "extendedThinking": true,
+            "extendedThinking": false,
             "id": "llama3.1-8b",
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": 4096,
+                "context": 8192,
                 "output": null
             },
             "modalities": {
@@ -34,12 +34,12 @@
             "providerEnv": ["CEREBRAS_API_KEY"],
             "providerId": "cerebras",
             "providerNpm": "@ai-sdk/cerebras",
-            "reasoning": true,
+            "reasoning": false,
             "releaseDate": null,
             "streamingSupported": true,
             "temperature": true,
-            "toolCall": true,
-            "vision": true,
+            "toolCall": false,
+            "vision": false,
             "icon": "cerebras",
             "description": "cerebras",
             "preview": false
@@ -91,7 +91,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 202752,
-                "output": 65535
+                "output": null
             },
             "modalities": {
                 "input": ["text"],
@@ -159,7 +159,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768,
-                "output": 65536
+                "output": 131072
             },
             "modalities": {
                 "input": ["text"],

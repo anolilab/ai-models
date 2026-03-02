@@ -12,7 +12,6 @@ import * as deepInfraProvider from "./providers/deep-infra";
 import * as deepSeekProvider from "./providers/deep-seek";
 import * as fireworksAiProvider from "./providers/fireworks-ai";
 import * as gitHubCopilotProvider from "./providers/git-hub-copilot";
-import * as gitHubModelsProvider from "./providers/git-hub-models";
 import * as googleProvider from "./providers/google";
 import * as googlePartnerProvider from "./providers/google-partner";
 import * as googleVertexProvider from "./providers/google-vertex";
@@ -23,7 +22,6 @@ import * as inferenceProvider from "./providers/inference";
 import * as metaProvider from "./providers/meta";
 import * as mistralProvider from "./providers/mistral";
 import * as modelScopeProvider from "./providers/model-scope";
-import * as morphProvider from "./providers/morph";
 import * as ollamaCloudProvider from "./providers/ollama-cloud";
 import * as openAiProvider from "./providers/open-ai";
 import * as openRouterProvider from "./providers/open-router";
@@ -52,7 +50,6 @@ const providerMap = new Map<ProviderName, { getModels: () => Model[] }>([
     ["DeepSeek", deepSeekProvider],
     ["Fireworks AI", fireworksAiProvider],
     ["GitHub Copilot", gitHubCopilotProvider],
-    ["GitHub Models", gitHubModelsProvider],
     ["Google", googleProvider],
     ["Google Partner", googlePartnerProvider],
     ["Google Vertex", googleVertexProvider],
@@ -63,7 +60,6 @@ const providerMap = new Map<ProviderName, { getModels: () => Model[] }>([
     ["Meta", metaProvider],
     ["Mistral", mistralProvider],
     ["ModelScope", modelScopeProvider],
-    ["Morph", morphProvider],
     ["Ollama Cloud", ollamaCloudProvider],
     ["OpenAI", openAiProvider],
     ["OpenRouter", openRouterProvider],

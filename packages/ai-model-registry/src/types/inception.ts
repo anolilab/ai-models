@@ -7,6 +7,6 @@
 /**
  * Union type of all model IDs for inception.
  */
-type ModelName = "mercury" | "mercury-coder";
+type ModelName = "mercury" | "mercury-2" | "mercury-coder" | "mercury-edit";
 
 export default ModelName;

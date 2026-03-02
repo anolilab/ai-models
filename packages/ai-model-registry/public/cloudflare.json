@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Cloudflare",
-        "lastUpdated": "2026-01-13T21:44:10.322Z",
+        "lastUpdated": "2026-03-02T07:56:54.908Z",
         "pricingUnit": "1K",
         "provider": "Cloudflare",
-        "totalModels": 76,
+        "totalModels": 82,
         "version": "0.0.0-development"
     },
     "models": [
@@ -92,6 +92,47 @@
         },
         {
             "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "The Qwen3 Embedding model series is the latest proprietary model of the Qwen family, specifically designed for text embedding and ranking tasks.",
+            "id": "qwen3-embedding-0.6b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 8192000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["embedding"]
+            },
+            "name": "qwen3-embedding-0.6b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare",
+            "extendedThinking": false,
+            "preview": false
+        },
+        {
+            "attachment": false,
             "audioGeneration": true,
             "cost": {
                 "input": null,
@@ -126,7 +167,7 @@
             "temperature": true,
             "toolCall": true,
             "version": null,
-            "vision": true,
+            "vision": false,
             "icon": "cloudflare"
         },
         {
@@ -165,7 +206,7 @@
             "temperature": true,
             "toolCall": true,
             "version": null,
-            "vision": true,
+            "vision": false,
             "icon": "cloudflare"
         },
         {
@@ -204,7 +245,7 @@
             "temperature": true,
             "toolCall": true,
             "version": null,
-            "vision": true,
+            "vision": false,
             "icon": "cloudflare"
         },
         {
@@ -259,7 +300,7 @@
             "knowledge": null,
             "lastUpdated": null,
             "limit": {
-                "context": null,
+                "context": 153600000,
                 "output": null
             },
             "modalities": {
@@ -534,7 +575,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 80000000,
-                "output": null
+                "output": 32768
             },
             "modalities": {
                 "input": ["text"],
@@ -951,6 +992,45 @@
         },
         {
             "attachment": false,
+            "audioGeneration": true,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "description": "GLM-4.7-Flash is a fast and efficient multilingual text generation model with a 131,072 token context window. Optimized for dialogue, instruction-following, and multi-turn tool calling across 100+ languages.",
+            "id": "glm-4.7-flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "glm-4.7-flash",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
             "audioGeneration": false,
             "cost": {
                 "input": 0.000017,
@@ -970,6 +1050,45 @@
                 "output": ["text"]
             },
             "name": "granite-4.0-h-micro",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "description": "Hermes 2 Pro on Mistral 7B is the new flagship 7B Hermes! Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.",
+            "id": "hermes-2-pro-mistral-7b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "hermes-2-pro-mistral-7b",
             "openWeights": false,
             "provider": "Cloudflare",
             "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
@@ -1538,6 +1657,45 @@
             "attachment": false,
             "audioGeneration": false,
             "cost": {
+                "input": 0.00004,
+                "inputCacheHit": null,
+                "output": 0.00004
+            },
+            "description": "Generation over generation, Meta Llama 3 demonstrates state-of-the-art performance on a wide range of industry benchmarks and offers new capabilities, including improved reasoning.",
+            "id": "llama-3-8b-instruct",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 7968000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-3-8b-instruct",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
                 "input": 0.0003,
                 "inputCacheHit": null,
                 "output": 0.0003
@@ -1563,6 +1721,46 @@
             "providerNpm": "@ai-sdk/cloudflare",
             "reasoning": false,
             "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.0002,
+                "inputCacheHit": null,
+                "output": 0.0002
+            },
+            "description": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification) and in LLM responses (response classification). It acts as an LLM – it generates text in its output that indicates whether a given prompt or response is safe or unsafe, and if unsafe, it also lists the content categories violated.",
+            "extendedThinking": false,
+            "id": "llama-guard-3-8b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 131072000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "llama-guard-3-8b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": "2025-02-12",
             "streamingSupported": true,
             "structuredOutputs": true,
             "supportsStructuredOutput": true,
@@ -2407,7 +2605,7 @@
             "lastUpdated": null,
             "limit": {
                 "context": 32768000,
-                "output": 32768
+                "output": 8192
             },
             "modalities": {
                 "input": ["text"],
@@ -2469,6 +2667,45 @@
             "toolCall": true,
             "version": null,
             "vision": false,
+            "icon": "cloudflare"
+        },
+        {
+            "attachment": false,
+            "audioGeneration": false,
+            "cost": {
+                "input": 0.00003,
+                "inputCacheHit": null,
+                "output": 0.00011
+            },
+            "description": "QwQ is the reasoning model of the Qwen series. Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks, especially hard problems. QwQ-32B is the medium-sized reasoning model, which is capable of achieving competitive performance against state-of-the-art reasoning models, e.g., DeepSeek-R1, o1-mini.",
+            "id": "qwq-32b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 24000000,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text", "image"],
+                "output": ["text"]
+            },
+            "name": "qwq-32b",
+            "openWeights": false,
+            "provider": "Cloudflare",
+            "providerDoc": "https://developers.cloudflare.com/workers-ai/models",
+            "providerEnv": ["CLOUDFLARE_API_TOKEN"],
+            "providerId": "cloudflare",
+            "providerNpm": "@ai-sdk/cloudflare",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "structuredOutputs": true,
+            "supportsStructuredOutput": true,
+            "supportsTools": true,
+            "temperature": true,
+            "toolCall": true,
+            "version": null,
+            "vision": true,
             "icon": "cloudflare"
         },
         {

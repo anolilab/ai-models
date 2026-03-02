@@ -7,80 +7,9 @@
 /**
  * Union type of all available AI model provider names
  */
-export type ProviderName
-    = | "AIHubMix"
-        | "Alibaba"
-        | "Amazon Bedrock"
-        | "Anthropic"
-        | "Azure OpenAI"
-        | "Cloudflare"
-        | "Deep Infra"
-        | "DeepSeek"
-        | "Fireworks AI"
-        | "GitHub Copilot"
-        | "GitHub Models"
-        | "Google"
-        | "Google Partner"
-        | "Google Vertex"
-        | "Groq"
-        | "Hugging Face"
-        | "Inference"
-        | "Meta"
-        | "Mistral"
-        | "ModelScope"
-        | "Morph"
-        | "Ollama Cloud"
-        | "OpenAI"
-        | "OpenRouter"
-        | "Requesty"
-        | "Together AI"
-        | "Upstage"
-        | "V0"
-        | "Venice"
-        | "Vercel"
-        | "Weights & Biases"
-        | "XAI"
-        | "cerebras"
-        | "chutes"
-        | "inception";
+export type ProviderName = "Weights & Biases";
 
 /**
  * Array of all available provider names
  */
-export const PROVIDER_NAMES = [
-    "AIHubMix",
-    "Alibaba",
-    "Amazon Bedrock",
-    "Anthropic",
-    "Azure OpenAI",
-    "Cloudflare",
-    "Deep Infra",
-    "DeepSeek",
-    "Fireworks AI",
-    "GitHub Copilot",
-    "GitHub Models",
-    "Google",
-    "Google Partner",
-    "Google Vertex",
-    "Groq",
-    "Hugging Face",
-    "Inference",
-    "Meta",
-    "Mistral",
-    "ModelScope",
-    "Morph",
-    "Ollama Cloud",
-    "OpenAI",
-    "OpenRouter",
-    "Requesty",
-    "Together AI",
-    "Upstage",
-    "V0",
-    "Venice",
-    "Vercel",
-    "Weights & Biases",
-    "XAI",
-    "cerebras",
-    "chutes",
-    "inception",
-] as const satisfies ReadonlyArray<ProviderName>;
+export const PROVIDER_NAMES = ["Weights & Biases"] as const satisfies ReadonlyArray<ProviderName>;

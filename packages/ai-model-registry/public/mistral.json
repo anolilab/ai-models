@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Mistral",
-        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "lastUpdated": "2026-03-02T07:56:54.923Z",
         "pricingUnit": "1K",
         "provider": "Mistral",
-        "totalModels": 62,
+        "totalModels": 63,
         "version": "0.0.0-development"
     },
     "models": [
@@ -868,6 +868,41 @@
                 "output": ["text"]
             },
             "name": "Ministral 8B ↗",
+            "openWeights": false,
+            "provider": "Mistral",
+            "providerDoc": "https://docs.mistral.ai/getting-started/models/",
+            "providerEnv": ["MISTRAL_API_KEY"],
+            "providerId": "mistral",
+            "providerModelsDevId": "mistral",
+            "providerNpm": "@ai-sdk/mistral",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "mistral"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.0003,
+                "inputCacheHit": null,
+                "output": 0.0003
+            },
+            "extendedThinking": false,
+            "id": "mistral-7b",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 2,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Mistral 7B",
             "openWeights": false,
             "provider": "Mistral",
             "providerDoc": "https://docs.mistral.ai/getting-started/models/",

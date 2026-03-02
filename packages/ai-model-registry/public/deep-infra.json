@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from Deep Infra",
-        "lastUpdated": "2026-01-13T21:44:10.328Z",
+        "lastUpdated": "2026-03-02T07:56:54.912Z",
         "pricingUnit": "1K",
         "provider": "Deep Infra",
-        "totalModels": 26,
+        "totalModels": 29,
         "version": "0.0.0-development"
     },
     "models": [
@@ -328,7 +328,7 @@
             "cost": {
                 "input": 0.00026,
                 "inputCacheHit": null,
-                "output": 0.00039
+                "output": 0.00038
             },
             "extendedThinking": false,
             "id": "deepseek-ai/DeepSeek-V3.2",
@@ -606,6 +606,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.00027,
+                "inputCacheHit": null,
+                "output": 0.00095
+            },
+            "extendedThinking": false,
+            "id": "MiniMaxAI/MiniMax-M2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 196608,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "MiniMax-M2.5",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.000007,
                 "inputCacheHit": null,
                 "output": 0.000028
@@ -676,6 +711,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": 0.00045,
+                "inputCacheHit": null,
+                "output": 0.00225
+            },
+            "extendedThinking": false,
+            "id": "moonshotai/Kimi-K2.5",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 262144,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "Kimi-K2.5",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.00047,
                 "inputCacheHit": null,
                 "output": 0.002
@@ -711,9 +781,9 @@
         {
             "attachment": false,
             "cost": {
-                "input": 0.00006,
+                "input": 0.00005,
                 "inputCacheHit": null,
-                "output": 0.00024
+                "output": 0.0002
             },
             "extendedThinking": false,
             "id": "nvidia/Nemotron-3-Nano-30B-A3B",
@@ -903,6 +973,41 @@
                 "output": ["text"]
             },
             "name": "GLM-4.5V",
+            "openWeights": false,
+            "provider": "Deep Infra",
+            "providerDoc": "https://deepinfra.com/docs",
+            "providerEnv": [],
+            "providerId": "deep-infra",
+            "providerModelsDevId": "deepinfra",
+            "providerNpm": "@deepinfra/sdk",
+            "reasoning": false,
+            "releaseDate": null,
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": false,
+            "vision": false,
+            "icon": "deepinfra"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": 0.00006,
+                "inputCacheHit": null,
+                "output": 0.0004
+            },
+            "extendedThinking": false,
+            "id": "zai-org/GLM-4.7-Flash",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": 202752,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "GLM-4.7-Flash",
             "openWeights": false,
             "provider": "Deep Infra",
             "providerDoc": "https://deepinfra.com/docs",

@@ -1,10 +1,10 @@
 {
     "metadata": {
         "description": "AI Models API - Models from inception",
-        "lastUpdated": "2026-01-13T21:44:10.330Z",
+        "lastUpdated": "2026-03-02T07:56:54.922Z",
         "pricingUnit": "1K",
         "provider": "inception",
-        "totalModels": 2,
+        "totalModels": 4,
         "version": "0.0.0-development"
     },
     "models": [
@@ -46,6 +46,41 @@
         {
             "attachment": false,
             "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mercury-2",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mercury-2",
+            "openWeights": false,
+            "provider": "inception",
+            "providerDoc": "https://platform.inceptionlabs.ai/docs",
+            "providerEnv": ["INCEPTION_API_KEY"],
+            "providerId": "inception",
+            "providerModelsDevId": "inception",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-04-01",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "inception"
+        },
+        {
+            "attachment": false,
+            "cost": {
                 "input": 0.00025,
                 "inputCacheHit": 0.00025,
                 "output": 0.001
@@ -72,6 +107,41 @@
             "providerNpm": "@ai-sdk/openai-compatible",
             "reasoning": false,
             "releaseDate": "2025-02-26",
+            "streamingSupported": true,
+            "temperature": true,
+            "toolCall": true,
+            "vision": false,
+            "icon": "inception"
+        },
+        {
+            "attachment": false,
+            "cost": {
+                "input": null,
+                "inputCacheHit": null,
+                "output": null
+            },
+            "extendedThinking": false,
+            "id": "mercury-edit",
+            "knowledge": null,
+            "lastUpdated": null,
+            "limit": {
+                "context": null,
+                "output": null
+            },
+            "modalities": {
+                "input": ["text"],
+                "output": ["text"]
+            },
+            "name": "mercury-edit",
+            "openWeights": false,
+            "provider": "inception",
+            "providerDoc": "https://platform.inceptionlabs.ai/docs",
+            "providerEnv": ["INCEPTION_API_KEY"],
+            "providerId": "inception",
+            "providerModelsDevId": "inception",
+            "providerNpm": "@ai-sdk/openai-compatible",
+            "reasoning": false,
+            "releaseDate": "2025-04-01",
             "streamingSupported": true,
             "temperature": true,
             "toolCall": true,
