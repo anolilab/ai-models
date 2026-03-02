@@ -1,3 +1,24 @@
+## @anolilab/ai-model-registry [4.1.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.2...@anolilab/ai-model-registry@4.1.0) (2026-03-02)
+
+### Features
+
+* **ai-model-registry:** overhaul provider transformers and remove deprecated providers ([8256dfa](https://github.com/anolilab/ai-models/commit/8256dfae11791a00d1064246a5d11d497f58f228))
+
+### Bug Fixes
+
+* **ai-model-registry:** fix ollama-cloud provider name mismatch ([3573a06](https://github.com/anolilab/ai-models/commit/3573a06421289e54082be25ee2fcb78ea75f93be))
+
+### Styles
+
+* cs fixes ([5b624a3](https://github.com/anolilab/ai-models/commit/5b624a32f5ce4baedee7adc783c3898a7b5f75df))
+
+### Miscellaneous Chores
+
+* clean up workspace and fix NX root project target inference ([605f2a9](https://github.com/anolilab/ai-models/commit/605f2a9e7b2f33b495136f3ca92283429af9bbca))
+* created jsr ([becf8a6](https://github.com/anolilab/ai-models/commit/becf8a6349f0ef00925dfd740a244c581d437492))
+* update dependencies across workspace ([8cf87fb](https://github.com/anolilab/ai-models/commit/8cf87fbe62e114370a7fa95940ba1764c8b5b025))
+* update dependencies and improve icon utilities in ai-model-registry ([79ce2a7](https://github.com/anolilab/ai-models/commit/79ce2a7c2731d4713e21e197c4fae8a19e33c781))
+
 ## @anolilab/ai-model-registry [4.0.2](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.1...@anolilab/ai-model-registry@4.0.2) (2026-01-13)
 
 ### Bug Fixes
