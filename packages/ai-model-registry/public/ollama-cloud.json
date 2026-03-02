@@ -1,182 +1,212 @@
 {
-    "metadata": {
-        "description": "AI Models API - Models from ollama-cloud",
-        "lastUpdated": "2026-03-02T07:56:54.923Z",
-        "pricingUnit": "1K",
-        "provider": "ollama-cloud",
-        "totalModels": 5,
-        "version": "0.0.0-development"
+  "metadata": {
+    "description": "AI Models API - Models from ollama-cloud",
+    "lastUpdated": "2026-03-02T07:56:54.923Z",
+    "pricingUnit": "1K",
+    "provider": "Ollama Cloud",
+    "totalModels": 5,
+    "version": "0.0.0-development"
+  },
+  "models": [
+    {
+      "attachment": false,
+      "cost": {
+        "input": null,
+        "inputCacheHit": null,
+        "output": null
+      },
+      "extendedThinking": false,
+      "id": "ollama/glm-5",
+      "knowledge": null,
+      "lastUpdated": "2026-02-11",
+      "limit": {
+        "context": null,
+        "output": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "name": "glm-5",
+      "openWeights": true,
+      "provider": "Ollama Cloud",
+      "providerDoc": "https://docs.ollama.com/cloud",
+      "providerEnv": [
+        "OLLAMA_API_KEY"
+      ],
+      "providerId": "ollama-cloud",
+      "providerModelsDevId": "ollama",
+      "providerNpm": "@ai-sdk/openai-compatible",
+      "reasoning": false,
+      "releaseDate": "2026-02-11",
+      "streamingSupported": true,
+      "temperature": true,
+      "toolCall": false,
+      "vision": false
     },
-    "models": [
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "ollama/glm-5",
-            "knowledge": null,
-            "lastUpdated": "2026-02-11",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "glm-5",
-            "openWeights": true,
-            "provider": "ollama-cloud",
-            "providerDoc": "https://docs.ollama.com/cloud",
-            "providerEnv": ["OLLAMA_API_KEY"],
-            "providerId": "ollama-cloud",
-            "providerModelsDevId": "ollama",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2026-02-11",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "ollama/kimi-k2.5",
-            "knowledge": null,
-            "lastUpdated": "2026-01-26",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "kimi-k2.5",
-            "openWeights": true,
-            "provider": "ollama-cloud",
-            "providerDoc": "https://docs.ollama.com/cloud",
-            "providerEnv": ["OLLAMA_API_KEY"],
-            "providerId": "ollama-cloud",
-            "providerModelsDevId": "ollama",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2026-01-26",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "ollama/minimax-m2.5",
-            "knowledge": null,
-            "lastUpdated": "2026-02-12",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "minimax-m2.5",
-            "openWeights": true,
-            "provider": "ollama-cloud",
-            "providerDoc": "https://docs.ollama.com/cloud",
-            "providerEnv": ["OLLAMA_API_KEY"],
-            "providerId": "ollama-cloud",
-            "providerModelsDevId": "ollama",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2026-02-12",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "ollama/qwen3.5:397b",
-            "knowledge": null,
-            "lastUpdated": "2026-02-16",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "qwen3.5:397b",
-            "openWeights": true,
-            "provider": "ollama-cloud",
-            "providerDoc": "https://docs.ollama.com/cloud",
-            "providerEnv": ["OLLAMA_API_KEY"],
-            "providerId": "ollama-cloud",
-            "providerModelsDevId": "ollama",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2026-02-16",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false
-        },
-        {
-            "attachment": false,
-            "cost": {
-                "input": null,
-                "inputCacheHit": null,
-                "output": null
-            },
-            "extendedThinking": false,
-            "id": "ollama/qwen3-coder-next",
-            "knowledge": null,
-            "lastUpdated": "2025-02-04",
-            "limit": {
-                "context": null,
-                "output": null
-            },
-            "modalities": {
-                "input": ["text"],
-                "output": ["text"]
-            },
-            "name": "qwen3-coder-next",
-            "openWeights": true,
-            "provider": "ollama-cloud",
-            "providerDoc": "https://docs.ollama.com/cloud",
-            "providerEnv": ["OLLAMA_API_KEY"],
-            "providerId": "ollama-cloud",
-            "providerModelsDevId": "ollama",
-            "providerNpm": "@ai-sdk/openai-compatible",
-            "reasoning": false,
-            "releaseDate": "2025-02-04",
-            "streamingSupported": true,
-            "temperature": true,
-            "toolCall": false,
-            "vision": false
-        }
-    ]
+    {
+      "attachment": false,
+      "cost": {
+        "input": null,
+        "inputCacheHit": null,
+        "output": null
+      },
+      "extendedThinking": false,
+      "id": "ollama/kimi-k2.5",
+      "knowledge": null,
+      "lastUpdated": "2026-01-26",
+      "limit": {
+        "context": null,
+        "output": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "name": "kimi-k2.5",
+      "openWeights": true,
+      "provider": "Ollama Cloud",
+      "providerDoc": "https://docs.ollama.com/cloud",
+      "providerEnv": [
+        "OLLAMA_API_KEY"
+      ],
+      "providerId": "ollama-cloud",
+      "providerModelsDevId": "ollama",
+      "providerNpm": "@ai-sdk/openai-compatible",
+      "reasoning": false,
+      "releaseDate": "2026-01-26",
+      "streamingSupported": true,
+      "temperature": true,
+      "toolCall": false,
+      "vision": false
+    },
+    {
+      "attachment": false,
+      "cost": {
+        "input": null,
+        "inputCacheHit": null,
+        "output": null
+      },
+      "extendedThinking": false,
+      "id": "ollama/minimax-m2.5",
+      "knowledge": null,
+      "lastUpdated": "2026-02-12",
+      "limit": {
+        "context": null,
+        "output": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "name": "minimax-m2.5",
+      "openWeights": true,
+      "provider": "Ollama Cloud",
+      "providerDoc": "https://docs.ollama.com/cloud",
+      "providerEnv": [
+        "OLLAMA_API_KEY"
+      ],
+      "providerId": "ollama-cloud",
+      "providerModelsDevId": "ollama",
+      "providerNpm": "@ai-sdk/openai-compatible",
+      "reasoning": false,
+      "releaseDate": "2026-02-12",
+      "streamingSupported": true,
+      "temperature": true,
+      "toolCall": false,
+      "vision": false
+    },
+    {
+      "attachment": false,
+      "cost": {
+        "input": null,
+        "inputCacheHit": null,
+        "output": null
+      },
+      "extendedThinking": false,
+      "id": "ollama/qwen3.5:397b",
+      "knowledge": null,
+      "lastUpdated": "2026-02-16",
+      "limit": {
+        "context": null,
+        "output": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "name": "qwen3.5:397b",
+      "openWeights": true,
+      "provider": "Ollama Cloud",
+      "providerDoc": "https://docs.ollama.com/cloud",
+      "providerEnv": [
+        "OLLAMA_API_KEY"
+      ],
+      "providerId": "ollama-cloud",
+      "providerModelsDevId": "ollama",
+      "providerNpm": "@ai-sdk/openai-compatible",
+      "reasoning": false,
+      "releaseDate": "2026-02-16",
+      "streamingSupported": true,
+      "temperature": true,
+      "toolCall": false,
+      "vision": false
+    },
+    {
+      "attachment": false,
+      "cost": {
+        "input": null,
+        "inputCacheHit": null,
+        "output": null
+      },
+      "extendedThinking": false,
+      "id": "ollama/qwen3-coder-next",
+      "knowledge": null,
+      "lastUpdated": "2025-02-04",
+      "limit": {
+        "context": null,
+        "output": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "name": "qwen3-coder-next",
+      "openWeights": true,
+      "provider": "Ollama Cloud",
+      "providerDoc": "https://docs.ollama.com/cloud",
+      "providerEnv": [
+        "OLLAMA_API_KEY"
+      ],
+      "providerId": "ollama-cloud",
+      "providerModelsDevId": "ollama",
+      "providerNpm": "@ai-sdk/openai-compatible",
+      "reasoning": false,
+      "releaseDate": "2025-02-04",
+      "streamingSupported": true,
+      "temperature": true,
+      "toolCall": false,
+      "vision": false
+    }
+  ]
 }

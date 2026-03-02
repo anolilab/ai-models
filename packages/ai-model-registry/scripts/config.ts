@@ -198,6 +198,7 @@ export const BRAND_NAME_MAP: Record<string, string> = {
     togetherai: "Together AI",
     upstage: "Upstage",
     ollama: "Ollama Cloud",
+    "ollama-cloud": "Ollama Cloud",
     aihubmix: "AIHubMix",
     fal: "Fal",
     v0: "V0",
