@@ -88,7 +88,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -140,7 +140,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -191,7 +191,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -242,7 +242,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -330,7 +330,7 @@ jobs:
                   run_install: false
 
             - name: "Use Node.js 22.x"
-              uses: "actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238" # v6.2.0
+              uses: "actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f" # v6.3.0
               with:
                   node-version: "22.22.0"
                   cache: "pnpm"
