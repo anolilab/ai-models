@@ -63,7 +63,7 @@
         "motion": "^12.34.3",
         "nanoid": "^5.1.6",
         "next-themes": "^0.4.6",
-        "posthog-js": "^1.356.1",
+        "posthog-js": "^1.357.1",
         "radix-ui": "latest",
         "react": "19.2.4",
         "react-day-picker": "^9.14.0",
