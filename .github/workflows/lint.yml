@@ -35,7 +35,7 @@ jobs:
             package_json_lintable: "${{ steps.changes.outputs.package_json_lintable }}"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -60,7 +60,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -88,7 +88,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -111,7 +111,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -140,7 +140,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -163,7 +163,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -191,7 +191,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -214,7 +214,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -242,7 +242,7 @@ jobs:
             # Temporary solution until Nx solve this https://github.com/nrwl/nx/issues/22259
             - name: "Get changed files"
               id: "files"
-              uses: "tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a" # v47.0.4
+              uses: "tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323" # v47.0.5
               with:
                   files_ignore_from_source_file: ".github/ignore-files-for-nx-affected.yml"
                   base_sha: "${{ steps.setSHAs.outputs.base }}"
@@ -265,7 +265,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -289,7 +289,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -314,7 +314,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
@@ -330,9 +330,9 @@ jobs:
                   run_install: false
 
             - name: "Use Node.js 22.x"
-              uses: "actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238" # v6.2.0
+              uses: "actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f" # v6.3.0
               with:
-                  node-version: "22.22.0"
+                  node-version: "22.22.1"
                   cache: "pnpm"
 
             - name: "Install packages"
@@ -361,7 +361,7 @@ jobs:
             # If any jobs we depend on fail, we will fail since this is a required check
             # NOTE: A timeout is considered a failure
             - name: "Harden Runner"
-              uses: "step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b" # v2.15.0
+              uses: "step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc" # v2.15.1
               with:
                   egress-policy: "audit"
 
