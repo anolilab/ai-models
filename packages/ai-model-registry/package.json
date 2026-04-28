@@ -114,10 +114,10 @@
     "devDependencies": {
         "@anolilab/eslint-config": "^22.0.2",
         "@anolilab/prettier-config": "^9.1.1",
-        "@anolilab/semantic-release-clean-package-json": "5.2.0",
+        "@anolilab/semantic-release-clean-package-json": "5.5.0",
         "@anolilab/semantic-release-pnpm": "^5.0.0",
         "@arethetypeswrong/cli": "^0.18.2",
-        "@lobehub/icons-static-svg": "^1.82.0",
+        "@lobehub/icons-static-svg": "^1.87.0",
         "@secretlint/secretlint-rule-preset-recommend": "^11.3.1",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "13.0.1",
