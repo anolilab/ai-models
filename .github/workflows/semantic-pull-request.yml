@@ -11,6 +11,6 @@ on: # yamllint disable-line rule:truthy
 
 jobs:
     stale-issues:
-        uses: "anolilab/workflows/.github/workflows/semantic-pull-request.yml@main"
+        uses: "anolilab/workflows/.github/workflows/semantic-pull-request.yml@5b10e6a2e712406be0b8317df4d437c69b1221ad" # main
         with:
             target-repo: "anolilab/ai-models"
