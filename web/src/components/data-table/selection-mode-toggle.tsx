@@ -16,15 +16,13 @@ const SelectionModeToggle: FC<SelectionModeToggleProps> = ({ currentMode, onMode
 
     return (
         <TooltipProvider>
-            <div className="flex items-center rounded-full border bg-muted/50 p-0.5">
+            <div className="bg-muted/50 flex items-center rounded-full border p-0.5">
                 <Tooltip>
                     <TooltipTrigger asChild>
                         <Button
                             className={cn(
                                 "h-7 rounded-full px-3 text-xs font-medium transition-all duration-150",
-                                isComparisonMode
-                                    ? "bg-background text-foreground shadow-sm"
-                                    : "bg-transparent text-muted-foreground hover:text-foreground",
+                                isComparisonMode ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground bg-transparent",
                             )}
                             onClick={() => onModeChange("comparison")}
                             variant="ghost"
@@ -42,9 +40,7 @@ const SelectionModeToggle: FC<SelectionModeToggleProps> = ({ currentMode, onMode
                         <Button
                             className={cn(
                                 "h-7 rounded-full px-3 text-xs font-medium transition-all duration-150",
-                                !isComparisonMode
-                                    ? "bg-background text-foreground shadow-sm"
-                                    : "bg-transparent text-muted-foreground hover:text-foreground",
+                                !isComparisonMode ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground bg-transparent",
                             )}
                             onClick={() => onModeChange("export")}
                             variant="ghost"

@@ -7,20 +7,20 @@
 /**
  * Union type of all model IDs for Venice.
  */
-type ModelName
-    = | "about-venice"
-        | "ask-venice"
-        | "askvenice"
-        | "character-slug"
-        | "disable-thinking"
-        | "enable-web-citations"
-        | "enable-web-scraping"
-        | "enable-web-search"
-        | "how-to-use-venice-api"
-        | "include-venice-system-prompt"
-        | "introducing-the-venice-token-vvv"
-        | "page-venice"
-        | "strip-thinking-response"
-        | "what-can-i-do-with-venice-api";
+type ModelName =
+    | "about-venice"
+    | "ask-venice"
+    | "askvenice"
+    | "character-slug"
+    | "disable-thinking"
+    | "enable-web-citations"
+    | "enable-web-scraping"
+    | "enable-web-search"
+    | "how-to-use-venice-api"
+    | "include-venice-system-prompt"
+    | "introducing-the-venice-token-vvv"
+    | "page-venice"
+    | "strip-thinking-response"
+    | "what-can-i-do-with-venice-api";
 
 export default ModelName;

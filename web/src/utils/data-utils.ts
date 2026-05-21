@@ -4,25 +4,21 @@ import type { ModelTableRow } from "@/hooks/use-table";
 import { formatModelCost } from "@/utils/format";
 
 const formatBoolean = (value: boolean | null | undefined): string => {
-    if (value === null || value === undefined)
-        return "-";
+    if (value === null || value === undefined) return "-";
 
     return value ? "Yes" : "No";
 };
 
 const formatNumber = (value: number | null | undefined): string => {
-    if (value === null || value === undefined)
-        return "-";
+    if (value === null || value === undefined) return "-";
 
-    if (value === 0)
-        return "-";
+    if (value === 0) return "-";
 
     return value.toLocaleString();
 };
 
 const formatModalities = (modalities: string[]): string => {
-    if (!modalities || modalities.length === 0)
-        return "-";
+    if (!modalities || modalities.length === 0) return "-";
 
     return modalities.join(", ");
 };

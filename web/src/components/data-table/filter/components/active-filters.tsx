@@ -1,7 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import cn from "@/lib/utils";
 
@@ -9,7 +8,6 @@ import type { Column, ColumnDataType, DataTableFilterActions, FilterModel, Filte
 import { getColumn } from "../lib/helpers";
 import type { Locale } from "../lib/i18n";
 import { FilterOperator } from "./filter-operator";
-import FilterSubject from "./filter-subject";
 import { FilterValue } from "./filter-value";
 
 interface ActiveFiltersProps<TData> {
@@ -49,9 +47,9 @@ export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en"
 
 // Generic render function for a filter with type-safe value
 export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) => (
-    <div className="border-border animate-in fade-in-0 slide-in-from-left-2 flex h-8 items-center overflow-hidden rounded-md border bg-muted/30 text-xs duration-200 ease-out">
+    <div className="border-border animate-in fade-in-0 slide-in-from-left-2 bg-muted/30 flex h-8 items-center overflow-hidden rounded-md border text-xs duration-200 ease-out">
         {/* Subject: column name with distinct tinted background */}
-        <div className="border-border flex h-full shrink-0 items-center gap-1.5 border-r bg-muted/50 px-2.5">
+        <div className="border-border bg-muted/50 flex h-full shrink-0 items-center gap-1.5 border-r px-2.5">
             <column.icon className="text-muted-foreground size-3 shrink-0" />
             <span className="font-medium">{column.displayName}</span>
         </div>
@@ -64,7 +62,7 @@ export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, col
         <button
             className={cn(
                 "border-border text-muted-foreground flex h-full items-center border-l px-2",
-                "transition-colors hover:bg-destructive/10 hover:text-destructive",
+                "hover:bg-destructive/10 hover:text-destructive transition-colors",
             )}
             onClick={() => actions.removeFilter(filter.columnId)}
             type="button"

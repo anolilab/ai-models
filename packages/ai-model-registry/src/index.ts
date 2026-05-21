@@ -113,7 +113,7 @@ const loadAllModels = async (): Promise<Model[]> => {
         return allModelsCache;
     }
 
-    allModelsCache = (await Promise.all((await loadProvidersList()).map(async (provider) => await loadProviderModels(provider) ?? []))).flat();
+    allModelsCache = (await Promise.all((await loadProvidersList()).map(async (provider) => (await loadProviderModels(provider)) ?? []))).flat();
 
     return allModelsCache;
 };
@@ -195,7 +195,7 @@ export const searchModels = async (criteria: {
     tool_call?: boolean;
     vision?: boolean;
 }): Promise<Model[]> => {
-    const modelsToSearch = criteria.provider ? await loadProviderModels(criteria.provider) ?? await loadAllModels() : await loadAllModels();
+    const modelsToSearch = criteria.provider ? ((await loadProviderModels(criteria.provider)) ?? (await loadAllModels())) : await loadAllModels();
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
     return modelsToSearch.filter((model) => {
@@ -247,7 +247,7 @@ export const searchModels = async (criteria: {
  * Retrieves all AI models from the registry for advanced filtering and processing.
  * @returns Promise that resolves to a copy of all models in the registry.
  */
-export const getAllModels = async (): Promise<Model[]> => [...await loadAllModels()];
+export const getAllModels = async (): Promise<Model[]> => [...(await loadAllModels())];
 
 /**
  * Retrieves statistics about AI model providers including their model counts.

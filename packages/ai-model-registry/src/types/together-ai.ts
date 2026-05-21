@@ -7,24 +7,24 @@
 /**
  * Union type of all model IDs for Together AI.
  */
-type ModelName
-    = | "1gpt-oss-120-b-llama"
-        | "2-b-together"
-        | "252-ftogetherai-52386018"
-        | "ai-together"
-        | "content-together"
-        | "how-to-use-qwen-code"
-        | "i-together"
-        | "maverick-qwen"
-        | "meta-llama"
-        | "meta-llama-3"
-        | "models-llama"
-        | "quickstart-llama"
-        | "salesforce-llamarank"
-        | "scout-qwen-2"
-        | "together-and-llamarank"
-        | "using-together-with-mastra"
-        | "using-together-with-vercels-ai-sdk"
-        | "workflows-together";
+type ModelName =
+    | "1gpt-oss-120-b-llama"
+    | "2-b-together"
+    | "252-ftogetherai-52386018"
+    | "ai-together"
+    | "content-together"
+    | "how-to-use-qwen-code"
+    | "i-together"
+    | "maverick-qwen"
+    | "meta-llama"
+    | "meta-llama-3"
+    | "models-llama"
+    | "quickstart-llama"
+    | "salesforce-llamarank"
+    | "scout-qwen-2"
+    | "together-and-llamarank"
+    | "using-together-with-mastra"
+    | "using-together-with-vercels-ai-sdk"
+    | "workflows-together";
 
 export default ModelName;

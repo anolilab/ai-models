@@ -7,14 +7,14 @@
 /**
  * Union type of all model IDs for Inference.
  */
-type ModelName
-    = | "2-vision"
-        | "3-gemma"
-        | "id-meta-fp-16-llama"
-        | "id-meta-fp-8-fp-16-llama"
-        | "id-meta-fp-8-llama"
-        | "id-mistral-fp-8-mistral"
-        | "instruct-llama"
-        | "instruct-mistral-ne-mo-12b-instruct";
+type ModelName =
+    | "2-vision"
+    | "3-gemma"
+    | "id-meta-fp-16-llama"
+    | "id-meta-fp-8-fp-16-llama"
+    | "id-meta-fp-8-llama"
+    | "id-mistral-fp-8-mistral"
+    | "instruct-llama"
+    | "instruct-mistral-ne-mo-12b-instruct";
 
 export default ModelName;

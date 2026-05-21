@@ -15,11 +15,7 @@ interface FilterActionsProps {
 }
 
 const filterActionsFn = ({ actions, hasFilters, locale = "en" }: FilterActionsProps) => (
-    <Button
-        className={cn(!hasFilters && "hidden", "text-muted-foreground hover:text-foreground")}
-        onClick={actions?.removeAllFilters}
-        variant="ghost"
-    >
+    <Button className={cn(!hasFilters && "hidden", "text-muted-foreground hover:text-foreground")} onClick={actions?.removeAllFilters} variant="ghost">
         <X className="size-4" />
         <span className="hidden md:block">{t("clear", locale)}</span>
     </Button>

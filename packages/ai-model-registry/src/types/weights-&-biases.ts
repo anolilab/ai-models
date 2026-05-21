@@ -7,28 +7,28 @@
 /**
  * Union type of all model IDs for Weights & Biases.
  */
-type ModelName
-    = | "deepseek-r1-0528"
-        | "deepseek-v3-0324"
-        | "deepseek-v3.1"
-        | "meta-llama-3.1-70b"
-        | "meta-llama-3.1-8b"
-        | "meta-llama-3.3-70b"
-        | "meta-llama-4-scout-17bx16e"
-        | "microsoft-phi-4-mini-3.8b"
-        | "minimax-m2.5"
-        | "moonshot-ai-kimi-k2-instruct-0905"
-        | "moonshot-ai-kimi-k2.5"
-        | "moonshotai-kimi-k2"
-        | "openai-gpt-oss-120b"
-        | "openai-gpt-oss-20b"
-        | "openpipe-qwen3-14b-instruct"
-        | "qwen2.5-14b-instruct"
-        | "qwen3-235b-a22b-2507"
-        | "qwen3-235b-a22b-thinking-2507"
-        | "qwen3-30b-a3b"
-        | "qwen3-coder-480b-a35b"
-        | "z.ai-glm-4.5"
-        | "z.ai-glm-5";
+type ModelName =
+    | "deepseek-r1-0528"
+    | "deepseek-v3-0324"
+    | "deepseek-v3.1"
+    | "meta-llama-3.1-70b"
+    | "meta-llama-3.1-8b"
+    | "meta-llama-3.3-70b"
+    | "meta-llama-4-scout-17bx16e"
+    | "microsoft-phi-4-mini-3.8b"
+    | "minimax-m2.5"
+    | "moonshot-ai-kimi-k2-instruct-0905"
+    | "moonshot-ai-kimi-k2.5"
+    | "moonshotai-kimi-k2"
+    | "openai-gpt-oss-120b"
+    | "openai-gpt-oss-20b"
+    | "openpipe-qwen3-14b-instruct"
+    | "qwen2.5-14b-instruct"
+    | "qwen3-235b-a22b-2507"
+    | "qwen3-235b-a22b-thinking-2507"
+    | "qwen3-30b-a3b"
+    | "qwen3-coder-480b-a35b"
+    | "z.ai-glm-4.5"
+    | "z.ai-glm-5";
 
 export default ModelName;

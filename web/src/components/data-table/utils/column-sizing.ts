@@ -22,8 +22,7 @@ export function extractDefaultColumnSizes<TData>(columns: ColumnDef<TData, any>[
  */
 export function initializeColumnSizes<TData>(columns: ColumnDef<TData, any>[], setColumnSizing: (sizes: Record<string, number>) => void): void {
     // Only proceed if we have columns to work with
-    if (columns.length === 0)
-        return;
+    if (columns.length === 0) return;
 
     // Extract default sizes from column definitions
     const defaultSizing = extractDefaultColumnSizes(columns);

@@ -31,8 +31,7 @@ const THRESHOLDS = {
  * This function safely captures events only when analytics consent is given
  */
 function captureWithConsent(eventName: string, properties: Record<string, any> = {}): void {
-    if (typeof window === "undefined")
-        return;
+    if (typeof window === "undefined") return;
 
     // Check if PostHog is available and consent is given
     // The AnalyticsProvider will handle consent checking, so if posthog is available, consent was given
@@ -51,11 +50,9 @@ function captureWithConsent(eventName: string, properties: Record<string, any> =
 export function getPerformanceRating(metric: keyof typeof THRESHOLDS, value: number): "good" | "needs-improvement" | "poor" {
     const threshold = THRESHOLDS[metric];
 
-    if (value <= threshold.good)
-        return "good";
+    if (value <= threshold.good) return "good";
 
-    if (value <= threshold.poor)
-        return "needs-improvement";
+    if (value <= threshold.poor) return "needs-improvement";
 
     return "poor";
 }
@@ -65,8 +62,7 @@ export function getPerformanceRating(metric: keyof typeof THRESHOLDS, value: num
  * Dynamically imports web-vitals to avoid bundling in SSR
  */
 export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void): Promise<void> {
-    if (typeof window === "undefined")
-        return;
+    if (typeof window === "undefined") return;
 
     try {
         const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import("web-vitals");
@@ -136,8 +132,7 @@ export class PerformanceTracker {
      * End measuring and return the duration
      */
     end(name: string): number | null {
-        if (typeof performance === "undefined")
-            return null;
+        if (typeof performance === "undefined") return null;
 
         const startTime = this.metrics.get(name);
 
@@ -247,10 +242,10 @@ export function getPerformanceInfo(): Record<string, any> {
         // Memory info (Chrome only)
         memoryUsage: (performance as any)?.memory
             ? {
-                limit: (performance as any).memory.jsHeapSizeLimit,
-                total: (performance as any).memory.totalJSHeapSize,
-                used: (performance as any).memory.usedJSHeapSize,
-            }
+                  limit: (performance as any).memory.jsHeapSizeLimit,
+                  total: (performance as any).memory.totalJSHeapSize,
+                  used: (performance as any).memory.usedJSHeapSize,
+              }
             : undefined,
     };
 }
@@ -259,8 +254,7 @@ export function getPerformanceInfo(): Record<string, any> {
  * Initialize performance monitoring
  */
 export function initPerformanceMonitoring(): void {
-    if (typeof window === "undefined")
-        return;
+    if (typeof window === "undefined") return;
 
     // Initialize Web Vitals
     initWebVitals();

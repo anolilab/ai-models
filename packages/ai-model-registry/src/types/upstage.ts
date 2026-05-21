@@ -7,24 +7,24 @@
 /**
  * Union type of all model IDs for Upstage.
  */
-type ModelName
-    = | "solar-10-7b-v1-0"
-        | "solar-docvision-preview"
-        | "solar-embedding-1-large-passage-beta"
-        | "solar-embedding-1-large-query-beta"
-        | "solar-llm"
-        | "solar-mini-240612"
-        | "solar-mini-250123"
-        | "solar-mini-250422"
-        | "solar-mini-ja-240612"
-        | "solar-mini-ja-250123"
-        | "solar-pro-241126"
-        | "solar-pro-250422"
-        | "solar-pro-preview"
-        | "solar-pro2-250710"
-        | "solar-pro2-250909"
-        | "solar-pro2-251215"
-        | "solar-pro2-preview"
-        | "solar-pro3-260126";
+type ModelName =
+    | "solar-10-7b-v1-0"
+    | "solar-docvision-preview"
+    | "solar-embedding-1-large-passage-beta"
+    | "solar-embedding-1-large-query-beta"
+    | "solar-llm"
+    | "solar-mini-240612"
+    | "solar-mini-250123"
+    | "solar-mini-250422"
+    | "solar-mini-ja-240612"
+    | "solar-mini-ja-250123"
+    | "solar-pro-241126"
+    | "solar-pro-250422"
+    | "solar-pro-preview"
+    | "solar-pro2-250710"
+    | "solar-pro2-250909"
+    | "solar-pro2-251215"
+    | "solar-pro2-preview"
+    | "solar-pro3-260126";
 
 export default ModelName;
