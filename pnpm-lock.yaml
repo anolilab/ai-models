@@ -464,7 +464,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       happy-dom:
-        specifier: ^20.7.0
+        specifier: ^20.7.2
         version: 20.8.9
       jsdom:
         specifier: ^28.1.0
