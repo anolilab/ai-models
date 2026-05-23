@@ -10,8 +10,8 @@ overrides:
   '@orpc/client@<=1.13.5': '>=1.13.6'
   '@orpc/openapi@<=1.13.8': '>=1.13.9'
   '@tanstack/start-server-core@<1.167.30': '>=1.168.4'
-  ajv@>=7.0.0-alpha.0 <8.18.0: '>=8.18.0'
-  basic-ftp@<5.2.0: '>=5.2.2'
+  ajv@>=7.0.0-alpha.0 <8.18.0: '>=8.20.0'
+  basic-ftp@<5.2.0: '>=5.3.1'
   brace-expansion@>=5.0.0 <5.0.6: '>=5.0.6'
   defu@<=6.1.4: '>=6.1.7'
   diff@<8.0.3: '>=8.0.4'
@@ -23,11 +23,11 @@ overrides:
   h3@>=2.0.0-beta.0 <=2.0.1-rc.16: '>=2.0.1-rc.22'
   h3@>=2.0.0-beta.4 <2.0.1-rc.18: '>=2.0.1-rc.22'
   h3@>=2.0.1-alpha.0 <=2.0.1-rc.16: '>=2.0.1-rc.22'
-  ip-address@<=10.1.0: '>=10.1.1'
+  ip-address@<=10.1.0: '>=10.2.0'
   js-yaml@<3.14.2: '>=3.14.2'
-  kysely@<=0.28.13: '>=0.28.17'
-  kysely@>=0.26.0 <0.28.17: '>=0.28.17'
-  kysely@>=0.26.0 <=0.28.11: '>=0.28.17'
+  kysely@<=0.28.13: '>=0.29.2'
+  kysely@>=0.26.0 <0.28.17: '>=0.29.2'
+  kysely@>=0.26.0 <=0.28.11: '>=0.29.2'
   lodash@>=4.0.0 <=4.17.22: '>=4.17.23'
   minimatch@<3.1.3: '>=3.1.5'
   minimatch@<3.1.4: '>=3.1.5'
@@ -39,7 +39,7 @@ overrides:
   minimatch@>=9.0.0 <9.0.7: '>=9.0.9'
   next@>=15.0.0 <15.2.3: '>=15.2.3'
   picomatch@>=4.0.0 <4.0.4: '>=4.0.4'
-  preact@>=10.27.0 <10.27.3: '>=10.27.3'
+  preact@>=10.27.0 <10.27.3: '>=10.29.2'
   rollup@>=4.0.0 <4.59.0: '>=4.59.0'
   tar@<7.5.7: '>=7.5.15'
   tar@<7.5.8: '>=7.5.15'
@@ -47,10 +47,10 @@ overrides:
   tar@<=7.5.2: '>=7.5.15'
   tar@<=7.5.3: '>=7.5.15'
   tmp@<=0.2.3: '>=0.2.5'
-  undici@<6.23.0: '>=6.23.0'
-  undici@>=7.0.0 <7.18.2: '>=7.18.2'
+  undici@<6.23.0: '>=6.25.0'
+  undici@>=7.0.0 <7.18.2: '>=7.25.0'
   vite: 8.0.0-beta.7
-  yaml@>=2.0.0 <2.8.3: '>=2.8.4'
+  yaml@>=2.0.0 <2.8.3: '>=2.9.0'
 
 importers:
 
@@ -123,18 +123,18 @@ importers:
   packages/ai-model-registry:
     dependencies:
       zod:
-        specifier: ^4.3.6
-        version: 4.3.6
+        specifier: ^4.4.3
+        version: 4.4.3
     devDependencies:
       '@anolilab/eslint-config':
         specifier: ^22.0.2
-        version: 22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)
+        version: 22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)
       '@anolilab/prettier-config':
         specifier: ^9.1.1
         version: 9.1.1(prettier@3.8.1)
       '@anolilab/semantic-release-clean-package-json':
-        specifier: 5.2.0
-        version: 5.2.0(yaml@2.9.0)
+        specifier: 5.5.7
+        version: 5.5.7(yaml@2.9.0)
       '@anolilab/semantic-release-pnpm':
         specifier: ^5.0.0
         version: 5.0.0(@types/node@25.9.1)(yaml@2.9.0)
@@ -142,8 +142,8 @@ importers:
         specifier: ^0.18.2
         version: 0.18.2
       '@lobehub/icons-static-svg':
-        specifier: ^1.82.0
-        version: 1.82.0
+        specifier: ^1.90.0
+        version: 1.90.0
       '@secretlint/secretlint-rule-preset-recommend':
         specifier: ^11.3.1
         version: 11.3.1
@@ -197,7 +197,7 @@ importers:
         version: 10.0.2(jiti@2.7.0)
       eslint-plugin-zod:
         specifier: ^3.3.0
-        version: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6)
+        version: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3)
       prettier:
         specifier: 3.8.1
         version: 3.8.1
@@ -263,7 +263,7 @@ importers:
         version: 5.2.8
       '@hookform/resolvers':
         specifier: ^5.2.2
-        version: 5.2.2(react-hook-form@7.71.2(react@19.2.4))
+        version: 5.2.2(react-hook-form@7.76.1(react@19.2.4))
       '@radix-ui/react-checkbox':
         specifier: ^1.3.3
         version: 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -331,11 +331,11 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       date-fns:
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^4.2.1
+        version: 4.3.0
       date-fns-tz:
         specifier: ^3.2.0
-        version: 3.2.0(date-fns@4.1.0)
+        version: 3.2.0(date-fns@4.3.0)
       lucide-react:
         specifier: ^0.577.0
         version: 0.577.0(react@19.2.4)
@@ -364,14 +364,14 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       react-hook-form:
-        specifier: ^7.71.2
-        version: 7.71.2(react@19.2.4)
+        specifier: ^7.76.0
+        version: 7.76.1(react@19.2.4)
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       tailwind-merge:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       tailwindcss:
         specifier: ^4.2.1
         version: 4.2.1
@@ -382,12 +382,12 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(react@19.2.4)
       zod:
-        specifier: ^4.3.6
-        version: 4.3.6
+        specifier: ^4.4.3
+        version: 4.4.3
     devDependencies:
       '@anolilab/eslint-config':
         specifier: 22.0.2
-        version: 22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)
+        version: 22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)
       '@anolilab/prettier-config':
         specifier: 9.1.1
         version: 9.1.1(prettier@3.8.3)
@@ -456,7 +456,7 @@ importers:
         version: 7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)
       eslint-plugin-zod:
         specifier: ^3.3.0
-        version: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6)
+        version: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3)
       favicons:
         specifier: ^7.2.0
         version: 7.2.0
@@ -473,8 +473,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.3
       prettier-plugin-tailwindcss:
-        specifier: 0.7.4
-        version: 0.7.4(prettier@3.8.3)
+        specifier: 0.8.0
+        version: 0.8.0(prettier@3.8.3)
       react-compiler-runtime:
         specifier: 19.1.0-rc.2
         version: 19.1.0-rc.2(react@19.2.4)
@@ -497,8 +497,8 @@ importers:
         specifier: ^6.1.1
         version: 6.1.1(typescript@5.9.3)(vite@8.0.0-beta.7(@types/node@25.9.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))
       web-vitals:
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.2.0
+        version: 5.2.0
 
 packages:
 
@@ -685,8 +685,8 @@ packages:
     resolution: {integrity: sha512-eOzkgkHpip/P2iwJbHe4dk6nC2/cx+GfqB4l2Xrl0hpORbE7KwFxkRi8rEUTGWMohJpId6LxfHTGBNsnx76ukQ==}
     engines: {node: ^22.14.0 || >=24.10.0}
 
-  '@anolilab/semantic-release-clean-package-json@5.2.0':
-    resolution: {integrity: sha512-hiZhrPJnCou7/xB6nnYMTFaEVVQy9LmvB0Dt2XM5q7ZAqI7tgilTh/c9iqUR7NSmWQL1ynOEjX4Pa9LyoJca7w==}
+  '@anolilab/semantic-release-clean-package-json@5.5.7':
+    resolution: {integrity: sha512-aTS1w8BJZOXIb8Oy0GIKyXNaptA8jZyE/MQsNlT9ZAb0RnFC5xXk55LE/benHbkt8GRAg84UckUWEgOm6pcQng==}
     engines: {node: ^22.14.0 || >=24.10.0}
 
   '@anolilab/semantic-release-pnpm@5.0.0':
@@ -1896,8 +1896,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@lobehub/icons-static-svg@1.82.0':
-    resolution: {integrity: sha512-9g5ZmlTpxIJVEXPghpe51y8xQyjYW3NtpacN6OLHwxV4Ujr5h5i1ETQzGYQs9DwcFNMpOo4K3SnTKsGMX2FIhA==}
+  '@lobehub/icons-static-svg@1.90.0':
+    resolution: {integrity: sha512-iy/OBllvvj1YOCN7NqCYJJKdLS0l02+PSSYAwXKUWpGb6i+7J5rIpLh8RaetrYcqoqSmxE2jE6w5zhhaTmPw7Q==}
 
   '@mapbox/node-pre-gyp@2.0.3':
     resolution: {integrity: sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg==}
@@ -5444,7 +5444,7 @@ packages:
     engines: {node: '>=18.0.0 <=23.x'}
     os: [darwin, linux, win32]
     peerDependencies:
-      yaml: '>=2.8.4'
+      yaml: '>=2.9.0'
     peerDependenciesMeta:
       yaml:
         optional: true
@@ -5454,7 +5454,7 @@ packages:
     engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
     peerDependencies:
-      yaml: '>=2.8.4'
+      yaml: '>=2.9.0'
     peerDependenciesMeta:
       yaml:
         optional: true
@@ -6025,7 +6025,7 @@ packages:
   ajv-errors@3.0.0:
     resolution: {integrity: sha512-V3wD15YHfHz6y0KdhYFjyy9vWtEVALT9UrxfN3zqlI6dMioHnJrqOYfyPKol3oqrnCM9uwkcdCwkJ0WUcbLMTQ==}
     peerDependencies:
-      ajv: '>=8.18.0'
+      ajv: '>=8.20.0'
 
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
@@ -6237,7 +6237,7 @@ packages:
     resolution: {integrity: sha512-UW+IsFycygIo7bclP9h5ugkNH8EjCSgqyFB/yQ4Hqqa1OEYDtb0uFIkYE0b6+CjkgJYVM5UKI/pJPxjYe9EZlA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
-      ajv: '>=8.18.0'
+      ajv: '>=8.20.0'
 
   bidi-js@1.0.3:
     resolution: {integrity: sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==}
@@ -6790,8 +6790,8 @@ packages:
     peerDependencies:
       date-fns: ^3.0.0 || ^4.0.0
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.3.0:
+    resolution: {integrity: sha512-OYcL+3N/jyWbYdFGqoMAhytDgxP9pbYPUUiRCOgn4Fewaadk9l/Wam4Avciiyp2BgkpfQyBV9B+ehnVJych+eQ==}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -7048,7 +7048,7 @@ packages:
       expo-sqlite: '>=14.0.0'
       gel: '>=2'
       knex: '*'
-      kysely: '>=0.28.17'
+      kysely: '>=0.29.2'
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
@@ -8593,12 +8593,12 @@ packages:
   kysely-typeorm@0.3.0:
     resolution: {integrity: sha512-xQDx6+HagVmtXeuYd3Sz2CPYc/jOo7JO1ALldYPdwRrbiwSs9GFyNPp5JbElkfZB+T4DRb+A53pKWKYjlgSFeA==}
     peerDependencies:
-      kysely: '>=0.28.17'
+      kysely: '>=0.29.2'
       typeorm: '>= 0.3.0 < 0.4.0'
 
-  kysely@0.28.17:
-    resolution: {integrity: sha512-nbD8lB9EB3wNdMhOCdx5Li8DxnLbvKByylRLcJ1h+4SkrowVeECAyZlyiKMThF7xFdRz0jSQ2MoJr+wXux2y0Q==}
-    engines: {node: '>=20.0.0'}
+  kysely@0.29.2:
+    resolution: {integrity: sha512-s6WVJyEZrbm6jhBpiKHsGHyePMrVQKJ85wZCFCr9W4QHv6WTjWIrdvTmO9hDEA3bNK0xkrE2DqrHsXMLWuZpQg==}
+    engines: {node: '>=22.0.0'}
 
   lambda-local@2.2.0:
     resolution: {integrity: sha512-bPcgpIXbHnVGfI/omZIlgucDqlf4LrsunwoKue5JdZeGybt8L6KyJz2Zu19ffuZwIwLj2NAI2ZyaqNT6/cetcg==}
@@ -9851,8 +9851,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-tailwindcss@0.7.4:
-    resolution: {integrity: sha512-UKii4RjY05SNt/WQi6/NcOn/LsT0/ILLXsxygjbRg5/YZelsSu5jTqorYHPDGq4nZy5q5hpCu+XdGZ1xaJEQgw==}
+  prettier-plugin-tailwindcss@0.8.0:
+    resolution: {integrity: sha512-V8ITGH87yuBDF6JpEZTOVlUz/saAwqb8f3HRgUj8Lh+tGCcrmorhsLpYqzygwFwK0PE2Ib6Mv3M7T/uE2tZV1g==}
     engines: {node: '>=20.19'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -10028,8 +10028,8 @@ packages:
     peerDependencies:
       react: ^19.2.4
 
-  react-hook-form@7.71.2:
-    resolution: {integrity: sha512-1CHvcDYzuRUNOflt4MOq3ZM46AronNJtQ1S7tnX6YN4y72qhgiUItpacZUAQ0TyWYci3yz1X+rXaSxiuEm86PA==}
+  react-hook-form@7.76.1:
+    resolution: {integrity: sha512-rYM7tPiWlu3nZchkR/ex7piyzui2vFPyaLnXnI/RnblB/L4qfMmyses8llJVtF1NpE9WBBsJlGtcSZzPCXW1qQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -10708,8 +10708,8 @@ packages:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
 
-  tailwind-merge@3.5.0:
-    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.2.1:
     resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
@@ -10939,10 +10939,6 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.4.3:
-    resolution: {integrity: sha512-AXSAQJu79WGc79/3e9/CR77I/KQgeY1AhNvcShIH4PTcGYyC4xv6H4R4AUOwkPS5799KlVDAu8zExeCrkGquiA==}
-    engines: {node: '>=20'}
-
   type-fest@5.6.0:
     resolution: {integrity: sha512-8ZiHFm91orbSAe2PSAiSVBVko18pbhbiB3U9GglSzF/zCGkR+rxpHx6sEMCUm4kxY4LjDIUGgCfUMtwfZfjfUA==}
     engines: {node: '>=20'}
@@ -10999,6 +10995,10 @@ packages:
   undici@7.24.1:
     resolution: {integrity: sha512-5xoBibbmnjlcR3jdqtY2Lnx7WbrD/tHlT01TmvqZUFVc9Q1w4+j5hbnapTqbcXITMH1ovjq/W7BkqBilHiVAaA==}
     engines: {node: '>=20.18.1'}
+
+  undici@8.3.0:
+    resolution: {integrity: sha512-TkUDgb6tl7KOGZ+7e8E3d2FYgUQgF6z5YypqjWmixVQSQERFcVrVg0ySADm2LVLRh5ljAaHTCR5Fmz3Q34rB7Q==}
+    engines: {node: '>=22.19.0'}
 
   unicode-emoji-modifier-base@1.0.0:
     resolution: {integrity: sha512-yLSH4py7oFH3oG/9K+XWrz1pSi3dfUrWEnInbxMfArOfc1+33BlGPQtLsOYwvdMy11AwUBetYuaRxSPqgkq+8g==}
@@ -11252,7 +11252,7 @@ packages:
       sugarss: ^5.0.0
       terser: ^5.16.0
       tsx: ^4.8.1
-      yaml: '>=2.8.4'
+      yaml: '>=2.9.0'
     peerDependenciesMeta:
       '@types/node':
         optional: true
@@ -11342,8 +11342,8 @@ packages:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
 
-  web-vitals@5.1.0:
-    resolution: {integrity: sha512-ArI3kx5jI0atlTtmV0fWU3fjpLmq/nD3Zr1iFFlJLaqa5wLBkUSzINwBPySCX/8jRyjlmy1Volw1kz1g9XE4Jg==}
+  web-vitals@5.2.0:
+    resolution: {integrity: sha512-i2z98bEmaCqSDiHEDu+gHl/dmR4Q+TxFmG3/13KkMO+o8UxQzCqWaDRCiLgEa41nlO4VpXSI0ASa1xWmO9sBlA==}
 
   web-worker@1.2.0:
     resolution: {integrity: sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==}
@@ -11575,9 +11575,6 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
-
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
@@ -11656,7 +11653,7 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@anolilab/eslint-config@22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)':
+  '@anolilab/eslint-config@22.0.2(@tanstack/eslint-plugin-query@5.91.4(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@types/node@25.9.1)(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3))(eslint@10.0.2(jiti@2.7.0))(jiti@2.7.0)(typescript@5.9.3)(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))(yaml@2.9.0)':
     dependencies:
       '@e18e/eslint-plugin': 0.2.0(eslint@10.0.2(jiti@2.7.0))
       '@eslint-community/eslint-plugin-eslint-comments': 4.6.0(eslint@10.0.2(jiti@2.7.0))
@@ -11716,7 +11713,7 @@ snapshots:
       '@tanstack/eslint-plugin-router': 1.162.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)
       eslint-plugin-react-compiler: 19.1.0-rc.2(eslint@10.0.2(jiti@2.7.0))
       eslint-plugin-testing-library: 7.16.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)
-      eslint-plugin-zod: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6)
+      eslint-plugin-zod: 3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3)
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@eslint/json'
@@ -11790,12 +11787,12 @@ snapshots:
     transitivePeerDependencies:
       - yaml
 
-  '@anolilab/semantic-release-clean-package-json@5.2.0(yaml@2.9.0)':
+  '@anolilab/semantic-release-clean-package-json@5.5.7(yaml@2.9.0)':
     dependencies:
       '@semantic-release/error': 4.0.0
       '@visulima/fs': 4.1.0(yaml@2.9.0)
       '@visulima/path': 2.0.5
-      type-fest: 5.4.3
+      type-fest: 5.6.0
     transitivePeerDependencies:
       - yaml
 
@@ -12096,9 +12093,9 @@ snapshots:
       '@orpc/zod': 1.13.13(@opentelemetry/api@1.9.0)(@orpc/contract@1.13.13(@opentelemetry/api@1.9.0))(@orpc/server@1.13.13(@opentelemetry/api@1.9.0)(ws@8.20.1))(ws@8.20.1)(zod@4.4.3)
       base-x: 5.0.1
       defu: 6.1.7
-      drizzle-orm: 0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.28.17)
-      fumadb: 0.1.2(drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.28.17))
-      kysely: 0.28.17
+      drizzle-orm: 0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.29.2)
+      fumadb: 0.1.2(drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.29.2))
+      kysely: 0.29.2
       neverthrow: 8.2.0
       superjson: 2.2.6
       zod: 4.4.3
@@ -12806,10 +12803,10 @@ snapshots:
       protobufjs: 7.6.0
       yargs: 17.7.2
 
-  '@hookform/resolvers@5.2.2(react-hook-form@7.71.2(react@19.2.4))':
+  '@hookform/resolvers@5.2.2(react-hook-form@7.76.1(react@19.2.4))':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.71.2(react@19.2.4)
+      react-hook-form: 7.76.1(react@19.2.4)
 
   '@html-eslint/core@0.56.0(jiti@2.7.0)':
     dependencies:
@@ -13127,7 +13124,7 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.1
 
-  '@lobehub/icons-static-svg@1.82.0': {}
+  '@lobehub/icons-static-svg@1.90.0': {}
 
   '@mapbox/node-pre-gyp@2.0.3':
     dependencies:
@@ -15835,7 +15832,7 @@ snapshots:
       p-filter: 4.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
       tinyglobby: 0.2.15
-      undici: 7.24.1
+      undici: 8.3.0
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
@@ -18275,11 +18272,11 @@ snapshots:
 
   date-fns-jalali@4.1.0-0: {}
 
-  date-fns-tz@3.2.0(date-fns@4.1.0):
+  date-fns-tz@3.2.0(date-fns@4.3.0):
     dependencies:
-      date-fns: 4.1.0
+      date-fns: 4.3.0
 
-  date-fns@4.1.0: {}
+  date-fns@4.3.0: {}
 
   debug@3.2.7:
     dependencies:
@@ -18477,11 +18474,11 @@ snapshots:
 
   dotenv@16.6.1: {}
 
-  drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.28.17):
+  drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.29.2):
     optionalDependencies:
       '@electric-sql/pglite': 0.3.16
       '@opentelemetry/api': 1.9.0
-      kysely: 0.28.17
+      kysely: 0.29.2
 
   dunder-proto@1.0.1:
     dependencies:
@@ -18959,13 +18956,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.3.6):
+  eslint-plugin-zod@3.3.0(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)(zod@4.4.3):
     dependencies:
       '@typescript-eslint/utils': 8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)
       eslint: 10.0.2(jiti@2.7.0)
       esquery: 1.7.0
     optionalDependencies:
-      zod: 4.3.6
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -19385,17 +19382,17 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadb@0.1.2(drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.28.17)):
+  fumadb@0.1.2(drizzle-orm@0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.29.2)):
     dependencies:
       '@clack/prompts': 0.11.0
       '@paralleldrive/cuid2': 2.3.1
       commander: 14.0.3
-      kysely: 0.28.17
-      kysely-typeorm: 0.3.0(kysely@0.28.17)
+      kysely: 0.29.2
+      kysely-typeorm: 0.3.0(kysely@0.29.2)
       semver: 7.8.1
       zod: 4.4.3
     optionalDependencies:
-      drizzle-orm: 0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.28.17)
+      drizzle-orm: 0.45.2(@electric-sql/pglite@0.3.16)(@opentelemetry/api@1.9.0)(kysely@0.29.2)
 
   function-bind@1.1.2: {}
 
@@ -20127,11 +20124,11 @@ snapshots:
 
   kuler@2.0.0: {}
 
-  kysely-typeorm@0.3.0(kysely@0.28.17):
+  kysely-typeorm@0.3.0(kysely@0.29.2):
     dependencies:
-      kysely: 0.28.17
+      kysely: 0.29.2
 
-  kysely@0.28.17: {}
+  kysely@0.29.2: {}
 
   lambda-local@2.2.0:
     dependencies:
@@ -21647,7 +21644,7 @@ snapshots:
       fflate: 0.4.8
       preact: 10.28.2
       query-selector-shadow-dom: 1.0.1
-      web-vitals: 5.1.0
+      web-vitals: 5.2.0
 
   powershell-utils@0.1.0: {}
 
@@ -21675,7 +21672,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-tailwindcss@0.7.4(prettier@3.8.3):
+  prettier-plugin-tailwindcss@0.8.0(prettier@3.8.3):
     dependencies:
       prettier: 3.8.3
 
@@ -21875,7 +21872,7 @@ snapshots:
     dependencies:
       '@date-fns/tz': 1.4.1
       '@tabby_ai/hijri-converter': 1.0.5
-      date-fns: 4.1.0
+      date-fns: 4.3.0
       date-fns-jalali: 4.1.0-0
       react: 19.2.4
 
@@ -21884,7 +21881,7 @@ snapshots:
       react: 19.2.4
       scheduler: 0.27.0
 
-  react-hook-form@7.71.2(react@19.2.4):
+  react-hook-form@7.76.1(react@19.2.4):
     dependencies:
       react: 19.2.4
 
@@ -22702,7 +22699,7 @@ snapshots:
 
   tagged-tag@1.0.0: {}
 
-  tailwind-merge@3.5.0: {}
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.2.1: {}
 
@@ -22915,10 +22912,6 @@ snapshots:
 
   type-fest@4.41.0: {}
 
-  type-fest@5.4.3:
-    dependencies:
-      tagged-tag: 1.0.0
-
   type-fest@5.6.0:
     dependencies:
       tagged-tag: 1.0.0
@@ -22965,6 +22958,8 @@ snapshots:
   undici@6.24.0: {}
 
   undici@7.24.1: {}
+
+  undici@8.3.0: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
@@ -23262,7 +23257,7 @@ snapshots:
 
   web-streams-polyfill@3.3.3: {}
 
-  web-vitals@5.1.0: {}
+  web-vitals@5.2.0: {}
 
   web-worker@1.2.0: {}
 
@@ -23482,8 +23477,6 @@ snapshots:
       zod: 3.25.76
 
   zod@3.25.76: {}
-
-  zod@4.3.6: {}
 
   zod@4.4.3: {}
 
