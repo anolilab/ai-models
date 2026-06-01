@@ -50,7 +50,6 @@ overrides:
   undici@<6.23.0: '>=6.25.0'
   undici@>=7.0.0 <7.18.2: '>=7.25.0'
   vite: 8.0.0-beta.7
-  vitest@<4.1.0: '>=4.1.0'
   yaml@>=2.0.0 <2.8.3: '>=2.9.0'
 
 importers:
@@ -230,7 +229,7 @@ importers:
         specifier: ^8.56.1
         version: 8.56.1(eslint@10.0.2(jiti@2.7.0))(typescript@5.9.3)
       vitest:
-        specifier: '>=4.1.0'
+        specifier: ^4.0.18
         version: 4.1.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@opentelemetry/api@1.9.0)(@types/node@25.9.1)(@vitest/coverage-v8@4.0.18)(happy-dom@20.8.9)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0)
 
   web:
@@ -641,7 +640,7 @@ packages:
       prettier: 3.8.3
       secretlint: ^11.0.0
       stylelint: ^16.x || ^17.x
-      vitest: '>=4.1.0'
+      vitest: ^3.x || ^4.x
     peerDependenciesMeta:
       eslint:
         optional: true
@@ -5820,7 +5819,7 @@ packages:
     resolution: {integrity: sha512-7i+N2i0+ME+2JFZhfuz7Tg/FqKtilHjGyGvoHYQ6iLV0zahbsJ9sljC9OcFcPDbhYKCet+sG8SsVqlyGvPflZg==}
     peerDependencies:
       '@vitest/browser': 4.0.18
-      vitest: '>=4.1.0'
+      vitest: 4.0.18
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
@@ -5831,7 +5830,7 @@ packages:
     peerDependencies:
       eslint: '>=8.57.0'
       typescript: '>=5.0.0'
-      vitest: '>=4.1.0'
+      vitest: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
