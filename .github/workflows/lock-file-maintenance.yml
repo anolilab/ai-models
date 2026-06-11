@@ -13,7 +13,7 @@ permissions:
 
 jobs:
     lock-file:
-        uses: "anolilab/workflows/.github/workflows/pnpm-lock-file-maintenance.yml@main"
+        uses: "anolilab/workflows/.github/workflows/pnpm-lock-file-maintenance.yml@d7d84717329a45c2b5ffbda19ae76d8604f61c00" # main
         with:
             target-repo: "anolilab/ai-models"
             node-version: "22.x"
