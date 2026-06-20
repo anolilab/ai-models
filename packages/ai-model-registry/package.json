@@ -129,6 +129,7 @@
         "@types/node": "^25.3.5",
         "@visulima/colorize": "1.4.29",
         "@visulima/packem": "2.0.0-alpha.92",
+        "@visulima/pail": "4.0.0-alpha.16",
         "@visulima/string": "2.0.6",
         "@vitest/coverage-v8": "^4.0.18",
         "axios": "^1.16.1",

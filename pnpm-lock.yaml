@@ -185,7 +185,10 @@ importers:
         version: 1.4.29
       '@visulima/packem':
         specifier: 2.0.0-alpha.92
-        version: 2.0.0-alpha.92(@arethetypeswrong/core@0.18.3)(@babel/core@7.29.7)(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)(@csstools/postcss-slow-plugins@3.0.0(postcss@8.5.15))(@tailwindcss/node@4.3.0)(@tailwindcss/oxide@4.3.0)(@ts-macro/tsc@0.3.7(rollup@4.62.2))(@visulima/css-style-inject@1.0.0-alpha.19)(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/packem-rollup@1.0.0-alpha.74(@ts-macro/tsc@0.3.7(rollup@4.62.2))(esbuild@0.28.1)(json5@2.2.3)(jsonc-parser@3.3.1)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(yaml@2.9.0))(esbuild@0.28.1)(github-slugger@2.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lightningcss@1.32.0)(package-manager-detector@1.6.0)(picomatch@4.0.4)(postcss@8.5.15)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(yaml@2.9.0)
+        version: 2.0.0-alpha.92(@arethetypeswrong/core@0.18.3)(@babel/core@7.29.7)(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)(@csstools/postcss-slow-plugins@3.0.0(postcss@8.5.15))(@tailwindcss/node@4.3.0)(@tailwindcss/oxide@4.3.0)(@ts-macro/tsc@0.3.7(rollup@4.62.2))(@visulima/css-style-inject@1.0.0-alpha.19)(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/packem-rollup@1.0.0-alpha.74(@ts-macro/tsc@0.3.7(rollup@4.62.2))(esbuild@0.28.1)(json5@2.2.3)(jsonc-parser@3.3.1)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(yaml@2.9.0))(@visulima/pail@4.0.0-alpha.16(@opentelemetry/api@1.9.0))(esbuild@0.28.1)(github-slugger@2.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lightningcss@1.32.0)(package-manager-detector@1.6.0)(picomatch@4.0.4)(postcss@8.5.15)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(yaml@2.9.0)
+      '@visulima/pail':
+        specifier: 4.0.0-alpha.16
+        version: 4.0.0-alpha.16(@opentelemetry/api@1.9.0)
       '@visulima/string':
         specifier: 2.0.6
         version: 2.0.6
@@ -5270,6 +5273,10 @@ packages:
       yaml:
         optional: true
 
+  '@visulima/interactive-manager@1.0.0-alpha.2':
+    resolution: {integrity: sha512-LyCXYqYL5l47d+33/DmGDzBEgxnpSxblN9uUP+kS3PGOAWlo37F48668WX85tB1CggmlWE+M9dMgkEC3tqmsUA==}
+    engines: {node: ^22.14.0 || >=24.10.0}
+
   '@visulima/is-ansi-color-supported@2.3.5':
     resolution: {integrity: sha512-lN42DAqpzI7ubcr/lUz9XSW+T3s/TNI31iwUMfb1nKU5c/zhYe04Nx+Jkw1x0yJOCyRSAO1tX1m6477mGHogng==}
     engines: {node: '>=18.0.0 <=25.x'}
@@ -5415,6 +5422,40 @@ packages:
       unplugin-vue:
         optional: true
       which-pm-runs:
+        optional: true
+
+  '@visulima/pail@4.0.0-alpha.16':
+    resolution: {integrity: sha512-CQXs5UyIUpL8eBDroXa4/yfYLkRA6YpBRI8dH50XLTutoQjfaxHHWNUIRZ5k8Pv8+CSHIQDU6o7+uAbXTSKJsQ==}
+    engines: {node: ^22.14.0 || >=24.10.0}
+    os: [darwin, linux, win32]
+    peerDependencies:
+      '@opentelemetry/api': ^1.9.1
+      '@sveltejs/kit': '>=2.0'
+      '@visulima/redact': 3.0.0-alpha.11
+      elysia: '>=1.0'
+      express: '>=4.0'
+      fastify: '>=4.0'
+      hono: '>=4.0'
+      next: '>=15.2.3'
+      rotating-file-stream: 3.2.9
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      '@visulima/redact':
+        optional: true
+      elysia:
+        optional: true
+      express:
+        optional: true
+      fastify:
+        optional: true
+      hono:
+        optional: true
+      next:
+        optional: true
+      rotating-file-stream:
         optional: true
 
   '@visulima/path@1.4.0':
@@ -16883,7 +16924,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@visulima/cerebro@3.0.0-alpha.25(@visulima/find-cache-dir@3.0.0-alpha.9)(github-slugger@2.0.0)':
+  '@visulima/cerebro@3.0.0-alpha.25(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/pail@4.0.0-alpha.16(@opentelemetry/api@1.9.0))(github-slugger@2.0.0)':
     dependencies:
       '@visulima/colorize': 2.0.0-alpha.11
       '@visulima/string': 3.0.0-alpha.13
@@ -16892,6 +16933,7 @@ snapshots:
       terminal-size: 4.0.1
     optionalDependencies:
       '@visulima/find-cache-dir': 3.0.0-alpha.9
+      '@visulima/pail': 4.0.0-alpha.16(@opentelemetry/api@1.9.0)
       github-slugger: 2.0.0
 
   '@visulima/colorize@1.4.29':
@@ -16936,6 +16978,8 @@ snapshots:
       jsonc-parser: 3.3.1
       smol-toml: 1.6.1
       yaml: 2.9.0
+
+  '@visulima/interactive-manager@1.0.0-alpha.2': {}
 
   '@visulima/is-ansi-color-supported@2.3.5': {}
 
@@ -17036,12 +17080,12 @@ snapshots:
       - smol-toml
       - yaml
 
-  '@visulima/packem@2.0.0-alpha.92(@arethetypeswrong/core@0.18.3)(@babel/core@7.29.7)(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)(@csstools/postcss-slow-plugins@3.0.0(postcss@8.5.15))(@tailwindcss/node@4.3.0)(@tailwindcss/oxide@4.3.0)(@ts-macro/tsc@0.3.7(rollup@4.62.2))(@visulima/css-style-inject@1.0.0-alpha.19)(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/packem-rollup@1.0.0-alpha.74(@ts-macro/tsc@0.3.7(rollup@4.62.2))(esbuild@0.28.1)(json5@2.2.3)(jsonc-parser@3.3.1)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(yaml@2.9.0))(esbuild@0.28.1)(github-slugger@2.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lightningcss@1.32.0)(package-manager-detector@1.6.0)(picomatch@4.0.4)(postcss@8.5.15)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(yaml@2.9.0)':
+  '@visulima/packem@2.0.0-alpha.92(@arethetypeswrong/core@0.18.3)(@babel/core@7.29.7)(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)(@csstools/postcss-slow-plugins@3.0.0(postcss@8.5.15))(@tailwindcss/node@4.3.0)(@tailwindcss/oxide@4.3.0)(@ts-macro/tsc@0.3.7(rollup@4.62.2))(@visulima/css-style-inject@1.0.0-alpha.19)(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/packem-rollup@1.0.0-alpha.74(@ts-macro/tsc@0.3.7(rollup@4.62.2))(esbuild@0.28.1)(json5@2.2.3)(jsonc-parser@3.3.1)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(yaml@2.9.0))(@visulima/pail@4.0.0-alpha.16(@opentelemetry/api@1.9.0))(esbuild@0.28.1)(github-slugger@2.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lightningcss@1.32.0)(package-manager-detector@1.6.0)(picomatch@4.0.4)(postcss@8.5.15)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(yaml@2.9.0)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@clack/prompts': 1.5.0
       '@rollup/pluginutils': 5.4.0(rollup@4.62.2)
-      '@visulima/cerebro': 3.0.0-alpha.25(@visulima/find-cache-dir@3.0.0-alpha.9)(github-slugger@2.0.0)
+      '@visulima/cerebro': 3.0.0-alpha.25(@visulima/find-cache-dir@3.0.0-alpha.9)(@visulima/pail@4.0.0-alpha.16(@opentelemetry/api@1.9.0))(github-slugger@2.0.0)
       '@visulima/packem-rollup': 1.0.0-alpha.74(@ts-macro/tsc@0.3.7(rollup@4.62.2))(esbuild@0.28.1)(json5@2.2.3)(jsonc-parser@3.3.1)(rolldown@1.0.3)(rollup@4.62.2)(smol-toml@1.6.1)(typescript@5.9.3)(vite@8.0.16(@types/node@25.9.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(yaml@2.9.0)
       '@visulima/packem-share': 1.0.0-alpha.50(json5@2.2.3)(jsonc-parser@3.3.1)(rollup@4.62.2)(smol-toml@1.6.1)(yaml@2.9.0)
       '@visulima/rollup-plugin-css': 1.0.0-alpha.54(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)(@csstools/postcss-slow-plugins@3.0.0(postcss@8.5.15))(@tailwindcss/node@4.3.0)(@tailwindcss/oxide@4.3.0)(@visulima/css-style-inject@1.0.0-alpha.19)(json5@2.2.3)(jsonc-parser@3.3.1)(lightningcss@1.32.0)(postcss@8.5.15)(rollup@4.62.2)(smol-toml@1.6.1)(yaml@2.9.0)
@@ -17096,6 +17140,13 @@ snapshots:
       - smol-toml
       - vue-tsc
       - yaml
+
+  '@visulima/pail@4.0.0-alpha.16(@opentelemetry/api@1.9.0)':
+    dependencies:
+      '@visulima/colorize': 2.0.0-alpha.11
+      '@visulima/interactive-manager': 1.0.0-alpha.2
+    optionalDependencies:
+      '@opentelemetry/api': 1.9.0
 
   '@visulima/path@1.4.0': {}
 
