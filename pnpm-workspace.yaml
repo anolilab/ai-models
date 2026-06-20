@@ -4,6 +4,15 @@ packages:
 
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
+# These pre-existing transitive versions lost provenance attestation upstream and
+# trip trustPolicy: no-downgrade under pnpm 11 (enforced at install, not just dedupe).
+# Allow-listed by exact version after review; revisit when provenance-attested releases land.
+trustPolicyExclude:
+  - semver@6.3.1
+  - chokidar@4.0.3
+  - "@netlify/edge-bundler@14.10.3"
+  - "@netlify/serverless-functions-api@2.16.0"
+  - "@netlify/zip-it-and-ship-it@14.7.0"
 blockExoticSubdeps: true
 
 onlyBuiltDependencies:
@@ -71,3 +80,13 @@ minimumReleaseAgeExclude:
   - undici@8.5.0
   # Renovate security update: tmp@0.2.7
   - tmp@0.2.7
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  core-js: set this to true or false
+  esbuild: set this to true or false
+  nx: set this to true or false
+  protobufjs: set this to true or false
+  puppeteer: set this to true or false
+  rs-module-lexer: set this to true or false
+  sharp: set this to true or false
+  unrs-resolver: set this to true or false
