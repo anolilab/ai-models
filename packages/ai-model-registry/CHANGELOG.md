@@ -1,3 +1,23 @@
+## @anolilab/ai-model-registry [4.1.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.1.0...@anolilab/ai-model-registry@4.1.1) (2026-06-20)
+
+### Bug Fixes
+
+* **ai-model-registry:** generate dts via oxc isolated-declarations to fix build OOM ([fea51a5](https://github.com/anolilab/ai-models/commit/fea51a53d1dfc07227966ea59009a5f08381a8a0))
+* **deps:** add @visulima/pail to satisfy @visulima/cerebro peer ([3e8e4e3](https://github.com/anolilab/ai-models/commit/3e8e4e318209fe4d651ba7209188462899f0b4e3))
+* **deps:** update eslint ([a5a9e64](https://github.com/anolilab/ai-models/commit/a5a9e64fb90e5bb3694ffae9fead82a07c09513b))
+* **deps:** update eslint ([52efa8a](https://github.com/anolilab/ai-models/commit/52efa8abed99c93c7dba78e89d7ba8ead75aebd4))
+* **deps:** update minor updates ([#51](https://github.com/anolilab/ai-models/issues/51)) ([0e65a80](https://github.com/anolilab/ai-models/commit/0e65a805adf6428cf0aa7c1edcfa1bcfcf7fa6c9))
+* **deps:** update patch updates ([#54](https://github.com/anolilab/ai-models/issues/54)) ([1e19c08](https://github.com/anolilab/ai-models/commit/1e19c08dc9b1f93125dd6f4810db9f9363aa6624))
+* **deps:** update type dependencies ([9df5c94](https://github.com/anolilab/ai-models/commit/9df5c942b761aafa53c47feac830bc565db6ccab))
+* **deps:** update visulima ([4a27d5d](https://github.com/anolilab/ai-models/commit/4a27d5d0e692d43a07f31f920c2de0fdb18b162a))
+* **deps:** update visulima ([#52](https://github.com/anolilab/ai-models/issues/52)) ([1fe3863](https://github.com/anolilab/ai-models/commit/1fe38635f5e8b7e44dc7ebf24f7df74bd83be0d8))
+
+### Miscellaneous Chores
+
+* **ai-model-registry:** bump semantic-release-pnpm to 8.x to fix release ([1b30f5a](https://github.com/anolilab/ai-models/commit/1b30f5a62ff1a6e9d01988c68c1e2dc46de506ac))
+* pnpm audit fix + dedupe ([4407da4](https://github.com/anolilab/ai-models/commit/4407da45665be51ec427624cdf09ea387d06edfd))
+* **security:** apply audit overrides ([9b5452d](https://github.com/anolilab/ai-models/commit/9b5452d4f3b038394c4647cde607464b222e3030))
+
 ## @anolilab/ai-model-registry [4.1.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.0.2...@anolilab/ai-model-registry@4.1.0) (2026-03-02)
 
 ### Features
