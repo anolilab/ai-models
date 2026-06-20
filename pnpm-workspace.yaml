@@ -71,3 +71,5 @@ minimumReleaseAgeExclude:
   - undici@8.5.0
   # Renovate security update: tmp@0.2.7
   - tmp@0.2.7
+  # Renovate security update: @babel/core@7.29.6
+  - "@babel/core@7.29.6"
