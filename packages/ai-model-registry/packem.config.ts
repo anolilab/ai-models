@@ -6,6 +6,12 @@ export default defineConfig({
     runtime: "node",
     cjsInterop: false,
     rollup: {
+        // Generate .d.ts via oxc isolated-declarations (per-file, no cross-entry
+        // TypeScript program) instead of the type-checking tsc path. This sidesteps
+        // the rollup-plugin-dts OOM that roots one TS program at all ~70 entries.
+        dts: {
+            oxc: true,
+        },
         license: {
             path: "./LICENSE.md",
         },
