@@ -91,6 +91,12 @@ minimumReleaseAgeExclude:
   - undici@8.5.0
   # Renovate security update: tmp@0.2.7
   - tmp@0.2.7
+  # Release blocker fix: semantic-release-pnpm 8.x uses `npm pkg set version=` for
+  # pnpm>=10 instead of `pnpm version`, which pnpm 11 rejects on the (intentionally)
+  # dirty tree the release pipeline creates. Allow-listed by exact version ahead of the
+  # 24h maturity window so ai-model-registry can publish.
+  - "@anolilab/semantic-release-pnpm@8.1.16"
+  - "@anolilab/rc@4.0.4"
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
