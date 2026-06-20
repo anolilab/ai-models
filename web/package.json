@@ -80,7 +80,7 @@
         "@anolilab/eslint-config": "22.0.2",
         "@anolilab/prettier-config": "9.1.1",
         "@anolilab/unplugin-favicons": "1.0.5",
-        "@babel/core": "7.29.0",
+        "@babel/core": "7.29.6",
         "@c15t/backend": "1.8.6",
         "@netlify/vite-plugin-tanstack-start": "^1.2.21",
         "@playwright/test": "^1.58.2",
