@@ -13,7 +13,7 @@ on: # yamllint disable-line rule:truthy
 
 jobs:
     allo-allo:
-        uses: "anolilab/workflows/.github/workflows/allo-allo.yml@acba5fb15ac98ad23dec1ad233e40e1bb79c1dae" # main
+        uses: "anolilab/workflows/.github/workflows/allo-allo.yml@58bf3316370d2f360af64c7154a4b5043ebb6131" # main
         with:
             target-repo: "anolilab/ai-models"
             onboarding-lead: "prisis"
