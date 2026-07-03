@@ -33,7 +33,7 @@ jobs:
 
             - name: "Setup resources and environment"
               id: "setup"
-              uses: "anolilab/workflows/step/setup@acba5fb15ac98ad23dec1ad233e40e1bb79c1dae" # main
+              uses: "anolilab/workflows/step/setup@7d86f5451bc5e671c0910428ee71e79ebadaf94e" # main
               with:
                   node-version: "22.x"
                   cache-prefix: "data-update"
@@ -54,7 +54,7 @@ jobs:
                   pnpm exec eslint --fix src/icons-sprite.ts
             - name: "Commit updated data"
               if: "${{ success() }} && steps.changes.outputs.no_changes == 'false'"
-              uses: "stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9" # v7.1.0
+              uses: "stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d" # v7.2.0
               with:
                   file_pattern: |
                       packages/ai-model-registry/public/api.json
