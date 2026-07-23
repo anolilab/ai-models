@@ -75,7 +75,7 @@ overrides:
   tar@<7.5.7: ">=7.5.15"
   tar@<7.5.8: ">=7.5.15"
   tar@<=7.5.10: ">=7.5.15"
-  tar@<=7.5.2: ">=7.5.15"
+  tar@<=7.5.2: ">=7.5.19"
   tar@<=7.5.3: ">=7.5.15"
   tmp@<0.2.6: ">=0.2.7"
   tmp@>=0.2.6 <0.2.7: ">=0.2.7"
@@ -97,6 +97,8 @@ minimumReleaseAgeExclude:
   # 24h maturity window so ai-model-registry can publish.
   - "@anolilab/semantic-release-pnpm@8.1.16"
   - "@anolilab/rc@4.0.4"
+  # Renovate security update: tar@7.5.19
+  - tar@7.5.19
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
