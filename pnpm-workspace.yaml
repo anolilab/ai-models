@@ -97,6 +97,8 @@ minimumReleaseAgeExclude:
   # 24h maturity window so ai-model-registry can publish.
   - "@anolilab/semantic-release-pnpm@8.1.16"
   - "@anolilab/rc@4.0.4"
+  # Renovate security update: axios@1.18.0
+  - axios@1.18.0
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
