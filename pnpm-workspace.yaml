@@ -73,7 +73,7 @@ overrides:
   protobufjs@<=7.6.2: ">=7.6.3"
   rollup@>=4.0.0 <4.59.0: ">=4.62.0"
   tar@<7.5.7: ">=7.5.15"
-  tar@<7.5.8: ">=7.5.15"
+  tar@<7.5.8: ">=7.5.22"
   tar@<=7.5.10: ">=7.5.15"
   tar@<=7.5.2: ">=7.5.15"
   tar@<=7.5.3: ">=7.5.15"
@@ -99,10 +99,12 @@ minimumReleaseAgeExclude:
   - "@anolilab/rc@4.0.4"
   # Renovate security update: nanoid@5.1.16
   - nanoid@5.1.16
-  # Renovate security update: nx@22.7.7
-  - nx@22.7.7
   # Renovate security update: ip-address@10.2.2
   - ip-address@10.2.2
+  # Renovate security update: nx@22.7.7
+  - nx@22.7.7
+  # Renovate security update: tar@7.5.22
+  - tar@7.5.22
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
