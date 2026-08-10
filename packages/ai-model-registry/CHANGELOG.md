@@ -1,3 +1,19 @@
+## @anolilab/ai-model-registry [5.0.0](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.1.1...@anolilab/ai-model-registry@5.0.0) (2026-08-10)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** updated dependencies to major versions
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+### Miscellaneous Chores
+
+* **deps:** add overrides to resolve pnpm audit vulnerabilities ([#113](https://github.com/anolilab/ai-models/issues/113)) ([df4e88a](https://github.com/anolilab/ai-models/commit/df4e88aae5349e6d07da54d5dd1f4151097c376e))
+
+### Continuous Integration
+
+* **deps:** update dependency typescript to v6 ([#85](https://github.com/anolilab/ai-models/issues/85)) ([89fec88](https://github.com/anolilab/ai-models/commit/89fec88242993a44da6c0a37a77b4d3dfef3b0ea))
+
 ## @anolilab/ai-model-registry [4.1.1](https://github.com/anolilab/ai-models/compare/@anolilab/ai-model-registry@4.1.0...@anolilab/ai-model-registry@4.1.1) (2026-06-20)
 
 ### Bug Fixes
