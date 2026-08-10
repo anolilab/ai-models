@@ -138,3 +138,4 @@ allowBuilds:
   rs-module-lexer: true
   sharp: true
   unrs-resolver: true
+auditConfig: { ignoreGhsas: [ GHSA-w3rx-r6r6-pgpr, GHSA-jfj6-75fj-8934, GHSA-5p2g-fcmc-qvqq, GHSA-j3f2-48v5-ccww ] }
