@@ -16,7 +16,7 @@ overrides:
   brace-expansion@>=5.0.0 <5.0.6: '>=5.0.6'
   defu@<=6.1.4: '>=6.1.7'
   diff@<8.0.3: '>=8.0.4'
-  dompurify@<3.4.11: '>=3.4.11'
+  dompurify@<3.4.11: '>=3.4.13'
   drizzle-orm@<0.45.2: '>=0.45.2'
   esbuild@>=0.27.3 <0.28.1: '>=0.28.1'
   form-data@>=4.0.0 <4.0.6: '>=4.0.6'
@@ -6889,8 +6889,8 @@ packages:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
-  dompurify@3.4.11:
-    resolution: {integrity: sha512-zhlUV12GsaRzMsf9q5M254YhA4+VuF0fG+QFqu6aYpoGlKtz+w8//jBcGVYBgQkR5GHjUomejY84AV+/uPbWdw==}
+  dompurify@3.4.13:
+    resolution: {integrity: sha512-2vmYIoqjze2d+kakP8S/nS5shfsl587kzwEjcGlTdiksUVgFHnFCsLYDVj/JNqJVOQZGSYBTmuycv0PodwmnMQ==}
 
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
@@ -18821,7 +18821,7 @@ snapshots:
     dependencies:
       domelementtype: 2.3.0
 
-  dompurify@3.4.11:
+  dompurify@3.4.13:
     optionalDependencies:
       '@types/trusted-types': 2.0.7
 
@@ -22288,7 +22288,7 @@ snapshots:
       '@posthog/core': 1.30.10
       '@posthog/types': 1.382.0
       core-js: 3.49.0
-      dompurify: 3.4.11
+      dompurify: 3.4.13
       fflate: 0.4.8
       preact: 10.29.2
       query-selector-shadow-dom: 1.0.1
