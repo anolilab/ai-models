@@ -99,6 +99,8 @@ minimumReleaseAgeExclude:
   - "@anolilab/rc@4.0.4"
   # Renovate security update: nanoid@5.1.16
   - nanoid@5.1.16
+  # Renovate security update: nx@22.7.7
+  - nx@22.7.7
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
