@@ -84,7 +84,7 @@
         "@c15t/backend": "1.8.6",
         "@netlify/vite-plugin-tanstack-start": "^1.2.21",
         "@playwright/test": "^1.58.2",
-        "@tanstack/eslint-plugin-query": "5.91.4",
+        "@tanstack/eslint-plugin-query": "5.91.5",
         "@tanstack/eslint-plugin-router": "1.162.0",
         "@tanstack/react-query-devtools": "^5.91.3",
         "@tanstack/react-router-devtools": "^1.167.0",
