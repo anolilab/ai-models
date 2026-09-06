@@ -4,7 +4,9 @@ on:
     schedule:
         - cron: "37 14 * * 6"
     push:
-        branches: ["main"]
+        # Every release branch semantic-release publishes from. The reusable
+        # workflow analyses only the default branch, which is all Scorecard supports.
+        branches: ["main", "master", "alpha", "beta"]
 permissions: {}
 jobs:
     scorecards:
