@@ -1,8 +1,24 @@
-import type { ContractsOutputs } from "@c15t/backend";
 import { baseTranslations } from "@c15t/translations/all";
 
 export type SupportedLanguage = keyof typeof baseTranslations;
-type JurisdictionCode = ContractsOutputs["showConsentBanner"]["jurisdiction"]["code"];
+
+/**
+ * Jurisdictions this module has a message for. c15t v2 stopped exporting the backend
+ * contract type these were derived from, and the set is fixed by JurisdictionMessages
+ * below, so it is spelled out here.
+ */
+type JurisdictionCode = "APPI" | "AU" | "BR" | "CH" | "GDPR" | "NONE" | "PIPA" | "PIPEDA";
+
+/**
+ * What this module answers: whether to show the banner, under which jurisdiction, and
+ * with which translations.
+ */
+interface ShowBannerDecision {
+    jurisdiction: { code: JurisdictionCode; message: string };
+    location: { countryCode: string | null; regionCode: string | null };
+    showConsentBanner: boolean;
+    translations: { language: SupportedLanguage; translations: (typeof baseTranslations)[SupportedLanguage] };
+}
 
 export const JurisdictionMessages: Record<JurisdictionCode, string> = {
     APPI: "Japan's APPI requires consent for data collection.",
@@ -130,7 +146,7 @@ export const checkJurisdiction = (countryCode: string | null) => {
     };
 };
 
-export const showBanner = (headers: Record<string, string>): ContractsOutputs["consent"]["showBanner"] => {
+export const showBanner = (headers: Record<string, string>): ShowBannerDecision => {
     const countryCode = extractCountryCode(headers);
     const regionCode = extractRegionCode(headers);
 

@@ -46,9 +46,9 @@ const RootDocument = () => {
             <body className="h-screen w-screen" suppressHydrationWarning={true}>
                 <ConsentManagerProvider
                     options={{
+                        consentCategories: ["measurement", "necessary"],
                         mode: "offline",
                         store: {
-                            initialGdprTypes: ["measurement", "necessary"],
                             translationConfig: {
                                 defaultLanguage: "en",
                                 disableAutoLanguageSwitch: true,

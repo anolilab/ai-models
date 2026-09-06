@@ -31,9 +31,7 @@ export default defineConfig({
         tailwindcss(),
         tanstackStart(),
         react({
-            babel: {
-                plugins: [["babel-plugin-react-compiler", { target: "19" }]],
-            },
+            compiler: { target: "19" },
         }),
         Unfonts({
             fontsource: {

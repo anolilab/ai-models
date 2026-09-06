@@ -531,10 +531,9 @@ export const FilterValueTextController = <TData,>({ actions, column, filter, loc
         if (!uniqueValues || uniqueValues.size === 0)
             return [];
 
-        return uniqueValues
-            .entries()
-            .toSorted(([, a], [, b]) => b - a)
-            .map(([value]) => value);
+        // Map.entries() is an iterator, and toSorted is an Array method — without
+        // materialising the entries first this throws at runtime.
+        return [...uniqueValues.entries()].toSorted(([, a], [, b]) => b - a).map(([value]) => value);
     }, [column]);
 
     // Narrow to suggestions containing the current input (max 8 shown)
