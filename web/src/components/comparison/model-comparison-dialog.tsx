@@ -14,6 +14,12 @@ import type { ColumnConfig, ModelTableRow } from "@/hooks/use-table";
 import { createComparisonConfig, getDefaultComparisonColumns, getTableColumns } from "@/hooks/use-table";
 import { ProviderIcon } from "@/utils/provider-icons";
 
+// Everything that is not a digit or decimal point.
+const NON_NUMERIC_PATTERN = /[^0-9.]/g;
+
+// Everything that is not a digit.
+const NON_DIGIT_PATTERN = /\D/g;
+
 interface ModelComparisonDialogProps {
     isOpen: boolean;
     onClose: () => void;
@@ -130,7 +136,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
         // For cost fields, find the lowest cost
         if (config.type === "cost") {
-            const numericValues = values.map((v) => (v === "-" ? Infinity : parseFloat(v.replace(/[^0-9.]/g, "")))).filter((v) => !isNaN(v));
+            const numericValues = values.map((v) => (v === "-" ? Infinity : parseFloat(v.replace(NON_NUMERIC_PATTERN, "")))).filter((v) => !isNaN(v));
 
             if (numericValues.length > 0) {
                 const minCost = Math.min(...numericValues);
@@ -141,7 +147,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
         // For number fields (like limits), find the highest value
         if (config.type === "number") {
-            const numericValues = values.map((v) => (v === "-" ? 0 : parseInt(v.replace(/\D/g, "")))).filter((v) => !isNaN(v));
+            const numericValues = values.map((v) => (v === "-" ? 0 : parseInt(v.replace(NON_DIGIT_PATTERN, "")))).filter((v) => !isNaN(v));
 
             if (numericValues.length > 0) {
                 const maxValue = Math.max(...numericValues);
@@ -240,12 +246,12 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                                                 .map((model) => {
                                                     const value = getFieldValue(model, field.id);
 
-                                                    return { model, numeric: parseFloat(value.replace(/[^0-9.]/g, "")) || 0, value };
+                                                    return { model, numeric: parseFloat(value.replace(NON_NUMERIC_PATTERN, "")) || 0, value };
                                                 })
                                                 .filter((item) => item.numeric > 0);
 
                                             const maxCost = Math.max(...allValues.map((item) => item.numeric));
-                                            const savings = maxCost - parseFloat(bestValue?.replace(/[^0-9.]/g, "") || "0");
+                                            const savings = maxCost - parseFloat(bestValue?.replace(NON_NUMERIC_PATTERN, "") || "0");
                                             const savingsPercent = maxCost > 0 ? ((savings / maxCost) * 100).toFixed(0) : 0;
 
                                             return { bestModel, bestValue, field, savings, savingsPercent };
@@ -333,7 +339,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                                                     .map((model) => {
                                                         const value = getFieldValue(model, field.id);
 
-                                                        return { model, numeric: parseInt(value.replace(/\D/g, "")) || 0, value };
+                                                        return { model, numeric: parseInt(value.replace(NON_DIGIT_PATTERN, "")) || 0, value };
                                                     })
                                                     .filter((item) => item.numeric > 0);
 

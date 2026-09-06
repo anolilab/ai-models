@@ -13,6 +13,12 @@ import type { TableConfig } from "./types";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import { exportData, exportToCSV, exportToJSON } from "./utils/export-utils";
 
+// Split camelCase and snake_case into words.
+const CAMEL_OR_SNAKE_BOUNDARY = /(?=[A-Z])|_/;
+
+// Characters an ISO timestamp cannot keep in a filename.
+const TIMESTAMP_SEPARATORS = /[:.]/g;
+
 interface DataTableExportProps<TData extends ExportableData> {
     columnMapping?: Record<string, string>;
     columnWidths?: { wch: number }[];
@@ -209,7 +215,7 @@ export function DataTableExport<TData extends ExportableData>({
                             } else {
                             // Fallback to formatted column ID
                                 mapping[column.id] = column.id
-                                    .split(/(?=[A-Z])|_/)
+                                    .split(CAMEL_OR_SNAKE_BOUNDARY)
                                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                     .join(" ");
                             }
@@ -320,7 +326,7 @@ export function DataTableExport<TData extends ExportableData>({
                         if (headers && headers.length > 0) {
                             headers.forEach((header) => {
                                 mapping[header] = header
-                                    .split(/(?=[A-Z])|_/)
+                                    .split(CAMEL_OR_SNAKE_BOUNDARY)
                                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                     .join(" ");
                             });
@@ -333,7 +339,7 @@ export function DataTableExport<TData extends ExportableData>({
                                     mapping[column.id] = headerText;
                                 } else {
                                     mapping[column.id] = column.id
-                                        .split(/(?=[A-Z])|_/)
+                                        .split(CAMEL_OR_SNAKE_BOUNDARY)
                                         .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                         .join(" ");
                                 }
@@ -350,7 +356,7 @@ export function DataTableExport<TData extends ExportableData>({
             });
 
             // Generate timestamp for filename
-            const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+            const timestamp = new Date().toISOString().replace(TIMESTAMP_SEPARATORS, "-");
             const filename = `${entityName}-all-pages-export-${timestamp}`;
 
             // Export based on type

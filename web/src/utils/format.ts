@@ -1,6 +1,13 @@
-/**
- * Utility functions for formatting data during export operations
- */
+// Trailing zeros, and the point if nothing follows it.
+const TRAILING_ZEROS_PATTERN = /\.?0+$/;
+
+// Each word, for title casing.
+const WORD_PATTERN = /\w\S*/g;
+
+// Everything that is not a digit.
+const NON_DIGIT_PATTERN = /\D/g;/**
+                                 * Utility functions for formatting data during export operations
+                                 */
 
 /**
  * Format ISO timestamp to readable date format (DD/MM/YYYY hh:mm A).
@@ -87,7 +94,7 @@ export const formatModelCost = (cost: number | null | undefined): string => {
 
     // For costs $1 and above per 1K tokens, show per 1K tokens
     // Remove trailing zeros for whole numbers
-    const formatted = decimalCost % 1 === 0 ? decimalCost.toFixed(0) : decimalCost.toFixed(4).replace(/\.?0+$/, "");
+    const formatted = decimalCost % 1 === 0 ? decimalCost.toFixed(0) : decimalCost.toFixed(4).replace(TRAILING_ZEROS_PATTERN, "");
 
     return `$${formatted}/1K tokens`;
 };
@@ -133,7 +140,7 @@ export const formatToTitleCase = (text: string | null | undefined): string => {
     if (!text)
         return "";
 
-    return text.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    return text.replace(WORD_PATTERN, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 };
 
 /**
@@ -156,7 +163,7 @@ export const formatPhoneNumber = (phone: string | null | undefined): string => {
         return "";
 
     // Remove all non-digits
-    const cleaned = phone.replace(/\D/g, "");
+    const cleaned = phone.replace(NON_DIGIT_PATTERN, "");
 
     // Format as (XXX) XXX-XXXX for US numbers
     if (cleaned.length === 10) {

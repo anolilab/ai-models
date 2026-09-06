@@ -10,6 +10,15 @@ import { ProviderIcon } from "@/utils/provider-icons";
 
 import useIsMobile from "./use-is-mobile";
 
+// A dollar amount, capturing the digits.
+const CURRENCY_AMOUNT_PATTERN = /\$([\d,]+\.?\d*)/;
+
+// The unit after the final slash, e.g. `/1M tokens`.
+const TRAILING_UNIT_PATTERN = /\/([^/]+)$/;
+
+// Everything that is not a digit.
+const NON_DIGIT_PATTERN = /\D/g;
+
 const modalityIconMap: Record<string, React.ReactNode> = {
     audio: <Music className="size-4" />,
     code: <Code className="size-4" />,
@@ -59,8 +68,8 @@ const renderCostCell = (props: any) => {
     }
 
     // Extract the numeric value and unit for tooltip
-    const numericMatch = value.match(/\$([\d,]+\.?\d*)/);
-    const unitMatch = value.match(/\/([^/]+)$/);
+    const numericMatch = value.match(CURRENCY_AMOUNT_PATTERN);
+    const unitMatch = value.match(TRAILING_UNIT_PATTERN);
 
     const numericValue = numericMatch ? numericMatch[1] : "";
     const unit = unitMatch ? unitMatch[1] : "";
@@ -83,7 +92,7 @@ const renderNumberCell = (props: any) => {
     let num: number;
 
     if (typeof value === "string") {
-        num = parseInt(value.replace(/\D/g, ""), 10);
+        num = parseInt(value.replace(NON_DIGIT_PATTERN, ""), 10);
     } else if (typeof value === "number") {
         num = value;
     } else {
@@ -123,7 +132,7 @@ const extractLimitValue = (limitString: string): number => {
     if (limitString === "-")
         return 0;
 
-    const numericValue = limitString.replace(/\D/g, "");
+    const numericValue = limitString.replace(NON_DIGIT_PATTERN, "");
 
     return parseInt(numericValue, 10) || 0;
 };

@@ -1,13 +1,25 @@
 import { useConsentManager } from "@c15t/react";
 
+/**
+ * The subset of the PostHog client this hook wraps. The instance is loaded lazily in the
+ * browser, so every call is still guarded at runtime; the type only describes what we use.
+ */
+interface PostHogClient {
+    alias: (alias: string, distinctId?: string) => void;
+    capture: (event: string, properties?: Record<string, unknown>) => void;
+    group: (groupType: string, groupKey: string, properties?: Record<string, unknown>) => void;
+    identify: (distinctId?: string, properties?: Record<string, unknown>) => void;
+    reset: () => void;
+}
+
 // Client-side hook loader
-let usePH: (() => unknown) | null = null;
+let usePH: (() => Partial<PostHogClient>) | null = null;
 
 // Initialize hook on client side
 if (globalThis.window !== undefined) {
     import("posthog-js/react").then(
         (posthogReact) => {
-            usePH = posthogReact.usePostHog;
+            usePH = posthogReact.usePostHog as () => Partial<PostHogClient>;
         },
         (error) => {
             // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
@@ -22,7 +34,7 @@ export const usePostHog = (): Record<string, unknown> => {
     const hasAnalyticsConsent = consents.measurement;
 
     // Always call the hook if available, but return empty object if not
-    const posthogInstance = usePH ? usePH() : {};
+    const posthogInstance: Partial<PostHogClient> = usePH ? usePH() : {};
 
     // Return a wrapped PostHog instance that respects consent
     return {

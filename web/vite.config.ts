@@ -13,6 +13,9 @@ import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
+// The proxy prefix stripped before forwarding.
+const POSTHOG_PROXY_PREFIX = /^\/pr\/posthog/;
+
 export default defineConfig({
     build: {
         target: "esnext",
@@ -61,7 +64,7 @@ export default defineConfig({
         proxy: {
             "/pr/posthog": {
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/pr\/posthog/, ""),
+                rewrite: (path) => path.replace(POSTHOG_PROXY_PREFIX, ""),
                 target: "https://eu.i.posthog.com",
             },
         },

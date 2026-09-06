@@ -1,5 +1,11 @@
 import { toast } from "sonner";
 
+// Double quotes, which CSV escapes by doubling.
+const DOUBLE_QUOTE_PATTERN = /"/g;
+
+// Characters an ISO timestamp cannot keep in a filename.
+const TIMESTAMP_SEPARATORS = /[:.]/g;
+
 // Generic type for exportable data - should have string keys and values that can be converted to string
 export type ExportableData = Record<string, string | number | boolean | null | undefined>;
 
@@ -23,7 +29,7 @@ const convertToCSV = <T extends ExportableData>(data: T[], headers: string[], co
             const mappedHeader = columnMapping[header] || header;
 
             // Escape quotes and wrap in quotes if contains comma
-            return mappedHeader.includes(",") || mappedHeader.includes("\"") ? `"${mappedHeader.replace(/"/g, "\"\"")}"` : mappedHeader;
+            return mappedHeader.includes(",") || mappedHeader.includes("\"") ? `"${mappedHeader.replace(DOUBLE_QUOTE_PATTERN, "\"\"")}"` : mappedHeader;
         });
 
         csvContent = `${headerRow.join(",")}\n`;
@@ -41,7 +47,7 @@ const convertToCSV = <T extends ExportableData>(data: T[], headers: string[], co
             // Convert all values to string and properly escape for CSV
             const cellValue = value === null || value === undefined ? "" : String(value);
             // Escape quotes and wrap in quotes if contains comma
-            const escapedValue = cellValue.includes(",") || cellValue.includes("\"") ? `"${cellValue.replace(/"/g, "\"\"")}"` : cellValue;
+            const escapedValue = cellValue.includes(",") || cellValue.includes("\"") ? `"${cellValue.replace(DOUBLE_QUOTE_PATTERN, "\"\"")}"` : cellValue;
 
             return escapedValue;
         });
@@ -201,7 +207,7 @@ export async function exportData<T extends ExportableData>(
         const entityName = options?.entityName || "items";
 
         // Generate timestamp for filename
-        const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+        const timestamp = new Date().toISOString().replace(TIMESTAMP_SEPARATORS, "-");
         const filename = `${entityName}-export-${timestamp}`;
 
         // Export based on type

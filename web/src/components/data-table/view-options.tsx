@@ -10,6 +10,9 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import cn from "@/lib/utils";
 
+// Underscores, shown to the reader as spaces.
+const UNDERSCORE_PATTERN = /_/g;
+
 interface DataTableViewOptionsProps<TData> {
     columnMapping?: Record<string, string>;
     size?: "sm" | "default" | "lg";
@@ -154,7 +157,7 @@ export const DataTableViewOptions = <TData,>({ columnMapping, size = "default", 
             return (
                 (column.columnDef.meta as { label?: string })?.label
                 // Finally fall back to formatted column ID
-                ?? column.id.replace(/_/g, " ")
+                ?? column.id.replace(UNDERSCORE_PATTERN, " ")
             );
         },
         [columnMapping],

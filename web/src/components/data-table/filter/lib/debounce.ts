@@ -93,7 +93,6 @@ export function debounce<T extends (...args: any[]) => any>(
         return result;
     };
 
-    // eslint-disable-next-line func-style -- a debounce forwards the caller's `this`,
     // which an arrow function cannot bind: it inherits `this` from the enclosing scope.
     function debounced(this: any, ...args: Parameters<T>): ReturnType<T> | undefined {
         const time = Date.now();
@@ -134,7 +133,7 @@ export function debounce<T extends (...args: any[]) => any>(
         timeout = null;
     };
 
-    debounced.flush = () => (timeout === null ? result : trailingEdge(Date.now()));
+    debounced.flush = () => timeout === null ? result : trailingEdge(Date.now());
 
     debounced.isPending = () => timeout !== null;
 

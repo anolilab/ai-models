@@ -1,6 +1,9 @@
 import type { Table } from "@tanstack/react-table";
 import type { KeyboardEvent } from "react";
 
+// The `row-` prefix on a rendered row id.
+const ROW_ID_PREFIX = /^row-/;
+
 /**
  * Creates a keyboard navigation handler for data tables.
  *
@@ -27,7 +30,7 @@ export const createKeyboardNavigationHandler = <TData>(table: Table<TData>, onRo
 
                 if (rowId) {
                     // Find the row by index and toggle its selection
-                    const rowIndex = Number.parseInt(rowId.replace(/^row-/, ""), 10);
+                    const rowIndex = Number.parseInt(rowId.replace(ROW_ID_PREFIX, ""), 10);
                     const row = table.getRowModel().rows[rowIndex];
 
                     if (row) {
