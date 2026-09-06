@@ -27,7 +27,7 @@ const THRESHOLDS = {
 } as const;
 
 /**
- * Consent-aware PostHog wrapper
+ * Consent-aware PostHog wrapper.
  * This function safely captures events only when analytics consent is given
  */
 const captureWithConsent = (eventName: string, properties: Record<string, any> = {}): void => {
@@ -40,13 +40,14 @@ const captureWithConsent = (eventName: string, properties: Record<string, any> =
         try {
             (window as any).posthog.capture(eventName, properties);
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("[Performance] Failed to capture analytics event:", error);
         }
     }
 };
 
 /**
- * Get performance rating based on metric value and thresholds
+ * Get performance rating based on metric value and thresholds.
  */
 export const getPerformanceRating = (metric: keyof typeof THRESHOLDS, value: number): "good" | "needs-improvement" | "poor" => {
     const threshold = THRESHOLDS[metric];
@@ -61,7 +62,7 @@ export const getPerformanceRating = (metric: keyof typeof THRESHOLDS, value: num
 };
 
 /**
- * Initialize Web Vitals monitoring
+ * Initialize Web Vitals monitoring.
  * Dynamically imports web-vitals to avoid bundling in SSR
  */
 export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void): Promise<void> {
@@ -79,6 +80,7 @@ export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void
 
             // Log to console in development
             if (process.env.NODE_ENV === "development") {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log(`[Web Vitals] ${metric.name}:`, webVitalsMetric);
             }
 
@@ -103,6 +105,7 @@ export async function initWebVitals(onMetric?: (metric: WebVitalsMetric) => void
         onTTFB(handleMetric);
         onINP(handleMetric);
     } catch (error) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.warn("[Performance] Failed to initialize Web Vitals:", error);
     }
 }
@@ -124,7 +127,7 @@ export class PerformanceTracker {
     }
 
     /**
-     * Start measuring a custom metric
+     * Start measuring a custom metric.
      */
     start(name: string): void {
         if (typeof performance !== "undefined") {
@@ -133,7 +136,7 @@ export class PerformanceTracker {
     }
 
     /**
-     * End measuring and return the duration
+     * End measuring and return the duration.
      */
     end(name: string): number | null {
         if (typeof performance === "undefined")
@@ -142,6 +145,7 @@ export class PerformanceTracker {
         const startTime = this.metrics.get(name);
 
         if (startTime === undefined) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn(`[Performance] No start time found for metric: ${name}`);
 
             return null;
@@ -153,6 +157,7 @@ export class PerformanceTracker {
 
         // Log in development
         if (process.env.NODE_ENV === "development") {
+            // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
             console.log(`[Performance] ${name}: ${duration.toFixed(2)}ms`);
         }
 
@@ -166,7 +171,7 @@ export class PerformanceTracker {
     }
 
     /**
-     * Measure a function execution time
+     * Measure a function execution time.
      */
     async measure<T>(name: string, fn: () => T | Promise<T>): Promise<T> {
         this.start(name);
@@ -185,7 +190,7 @@ export class PerformanceTracker {
 }
 
 /**
- * Performance observer for monitoring long tasks
+ * Performance observer for monitoring long tasks.
  */
 export const observeLongTasks = (threshold: number = 50, onLongTask?: (duration: number) => void): PerformanceObserver | null => {
     if (typeof window === "undefined" || !("PerformanceObserver" in window)) {
@@ -196,6 +201,7 @@ export const observeLongTasks = (threshold: number = 50, onLongTask?: (duration:
         const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
                 if (entry.duration > threshold) {
+                    // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                     console.warn(`[Performance] Long task detected: ${entry.duration.toFixed(2)}ms`);
 
                     if (onLongTask) {
@@ -215,6 +221,7 @@ export const observeLongTasks = (threshold: number = 50, onLongTask?: (duration:
 
         return observer;
     } catch (error) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.warn("[Performance] Failed to initialize long task observer:", error);
 
         return null;
@@ -222,7 +229,7 @@ export const observeLongTasks = (threshold: number = 50, onLongTask?: (duration:
 };
 
 /**
- * Get current performance information
+ * Get current performance information.
  */
 export const getPerformanceInfo = (): Record<string, any> => {
     if (typeof window === "undefined" || !window.performance) {
@@ -256,7 +263,7 @@ export const getPerformanceInfo = (): Record<string, any> => {
 };
 
 /**
- * Initialize performance monitoring
+ * Initialize performance monitoring.
  */
 export const initPerformanceMonitoring = (): void => {
     if (typeof window === "undefined")
@@ -271,6 +278,7 @@ export const initPerformanceMonitoring = (): void => {
     // Log performance info in development
     if (process.env.NODE_ENV === "development") {
         setTimeout(() => {
+            // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
             console.log("[Performance] Performance Info:", getPerformanceInfo());
         }, 1000);
     }

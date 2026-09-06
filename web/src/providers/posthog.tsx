@@ -12,6 +12,7 @@ if (typeof globalThis.window !== "undefined") {
             PostHogProvider = Provider;
         },
         (error) => {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to load PostHogProvider:", error);
         },
     );

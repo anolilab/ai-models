@@ -7,7 +7,7 @@ export type ExportableData = Record<string, string | number | boolean | null | u
 export type DataTransformFunction<T extends ExportableData> = (row: T) => ExportableData;
 
 /**
- * Convert array of objects to CSV string
+ * Convert array of objects to CSV string.
  */
 const convertToCSV = <T extends ExportableData>(data: T[], headers: string[], columnMapping?: Record<string, string>): string => {
     if (data.length === 0) {
@@ -53,7 +53,7 @@ const convertToCSV = <T extends ExportableData>(data: T[], headers: string[], co
 };
 
 /**
- * Download blob as file
+ * Download blob as file.
  */
 const downloadFile = (blob: Blob, filename: string) => {
     const link = document.createElement("a");
@@ -69,7 +69,7 @@ const downloadFile = (blob: Blob, filename: string) => {
 };
 
 /**
- * Export data to CSV file
+ * Export data to CSV file.
  */
 export function exportToCSV<T extends ExportableData>(
     data: T[],
@@ -79,6 +79,7 @@ export function exportToCSV<T extends ExportableData>(
     transformFunction?: DataTransformFunction<T>,
 ): boolean {
     if (data.length === 0) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.error("No data to export");
 
         return false;
@@ -109,6 +110,7 @@ export function exportToCSV<T extends ExportableData>(
 
         return true;
     } catch (error) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.error("Error creating CSV:", error);
 
         return false;
@@ -116,10 +118,11 @@ export function exportToCSV<T extends ExportableData>(
 }
 
 /**
- * Export data to JSON file
+ * Export data to JSON file.
  */
 export const exportToJSON = <T extends ExportableData>(data: T[], filename: string, transformFunction?: DataTransformFunction<T>): boolean => {
     if (data.length === 0) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.error("No data to export");
 
         return false;
@@ -139,6 +142,7 @@ export const exportToJSON = <T extends ExportableData>(data: T[], filename: stri
 
         return true;
     } catch (error) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.error("Error exporting to JSON:", error);
 
         return false;
@@ -146,7 +150,7 @@ export const exportToJSON = <T extends ExportableData>(data: T[], filename: stri
 };
 
 /**
- * Unified export function that handles loading states and error handling
+ * Unified export function that handles loading states and error handling.
  */
 export async function exportData<T extends ExportableData>(
     type: "csv" | "json",
@@ -225,6 +229,7 @@ export async function exportData<T extends ExportableData>(
 
         return success;
     } catch (error) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.error("Error exporting data:", error);
 
         toast.error("Export failed", {

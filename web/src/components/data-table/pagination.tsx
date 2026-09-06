@@ -49,6 +49,7 @@ export function DataTablePagination<TData>({
                             const numericValue = parseInt(value, 10);
 
                             if (isNaN(numericValue) || numericValue <= 0) {
+                                // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                                 console.error(`Invalid page size value: ${value}`);
 
                                 return;

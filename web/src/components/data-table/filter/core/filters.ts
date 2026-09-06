@@ -169,6 +169,7 @@ export function getColumnOptions<TData, TType extends ColumnDataType, TVal>(
     strategy: FilterStrategy,
 ): ColumnOption[] {
     if (!isAnyOf(column.type, ["option", "multiOption"])) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.warn("Column options can only be retrieved for option and multiOption columns");
 
         return [];
@@ -252,6 +253,7 @@ export function getFacetedUniqueValues<TData, TType extends ColumnDataType, TVal
     strategy: FilterStrategy,
 ): Map<string, number> | undefined {
     if (!isAnyOf(column.type, ["option", "multiOption"])) {
+        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
         console.warn("Faceted unique values can only be retrieved for option and multiOption columns");
 
         return new Map<string, number>();

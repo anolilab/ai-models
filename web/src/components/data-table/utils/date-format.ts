@@ -1,5 +1,5 @@
 /**
- * Format date to YYYY-MM-DD
+ * Format date to YYYY-MM-DD.
  */
 export const formatDate = (date: Date): string => {
     // Use local date components instead of UTC conversion

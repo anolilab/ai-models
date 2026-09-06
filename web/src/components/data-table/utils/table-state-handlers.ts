@@ -4,7 +4,7 @@ type StatePromise = Promise<URLSearchParams> | undefined;
 type SetStateFunction<T> = (value: T | ((prev: T) => T)) => StatePromise;
 
 /**
- * Handler for pagination changes in a data table
+ * Handler for pagination changes in a data table.
  */
 export function createPaginationHandler(
     setPage: SetStateFunction<number>,
@@ -22,7 +22,7 @@ export function createPaginationHandler(
 }
 
 /**
- * Handler for column sizing changes in a data table
+ * Handler for column sizing changes in a data table.
  */
 export const createColumnSizingHandler = (setColumnSizing: SetStateFunction<ColumnSizingState>, columnSizing: ColumnSizingState) => (updaterOrValue: ColumnSizingState | ((prev: ColumnSizingState) => ColumnSizingState)) => {
     // Handle both direct values and updater functions

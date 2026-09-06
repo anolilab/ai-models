@@ -1034,6 +1034,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return createExportConfig(columnConfigs, exportColumns);
         } catch (err) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to create export config:", err);
 
             return null;
@@ -1050,6 +1051,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return createFilterConfig(columnConfigs, filterColumns);
         } catch (err) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to create filter config:", err);
 
             return [];
@@ -1328,6 +1330,7 @@ export const useTablePersistence = (key: string, initialState: TableState): [Tab
                 return { ...initialState, ...parsed };
             }
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn(`Failed to load table state from localStorage (${key}):`, error);
         }
 
@@ -1342,6 +1345,7 @@ export const useTablePersistence = (key: string, initialState: TableState): [Tab
                 try {
                     localStorage.setItem(key, JSON.stringify(newState));
                 } catch (error) {
+                    // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                     console.warn(`Failed to save table state to localStorage (${key}):`, error);
                 }
             }

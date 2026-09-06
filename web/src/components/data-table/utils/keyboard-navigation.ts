@@ -2,7 +2,7 @@ import type { Table } from "@tanstack/react-table";
 import type { KeyboardEvent } from "react";
 
 /**
- * Creates a keyboard navigation handler for data tables
+ * Creates a keyboard navigation handler for data tables.
  *
  * Supports:
  * - Space to toggle selection

@@ -48,6 +48,15 @@ export default createConfig(
         },
     },
     {
+        // Playwright specs, not Testing Library ones. `page.getByRole(...)` is Playwright's
+        // locator API; the testing-library plugin sees the query names and suggests
+        // `screen.getByRole`, which does not exist here and would break the test.
+        files: ["**/*.e2e.spec.ts"],
+        rules: {
+            "testing-library/prefer-screen-queries": "off",
+        },
+    },
+    {
         files: ["src/models-data.ts"],
         rules: {
             "no-secrets/no-secrets": "off",

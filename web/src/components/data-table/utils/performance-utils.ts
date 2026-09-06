@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 /**
- * Custom hook for debounced search
+ * Custom hook for debounced search.
  * Improves performance by reducing the number of search operations
  */
 export const useDebouncedSearch = (searchValue: string, onSearchChange: (value: string) => void, delay: number = 300) => {
@@ -30,7 +30,7 @@ export const useDebouncedSearch = (searchValue: string, onSearchChange: (value: 
 };
 
 /**
- * Custom hook for lazy loading data
+ * Custom hook for lazy loading data.
  * Loads data in batches to improve initial render performance
  */
 export const useLazyLoading = <T>(data: T[], batchSize: number = 100, initialBatchSize: number = 50) => {
@@ -62,7 +62,7 @@ export const useLazyLoading = <T>(data: T[], batchSize: number = 100, initialBat
 };
 
 /**
- * Optimized row selection handler for large datasets
+ * Optimized row selection handler for large datasets.
  * Uses Set for O(1) lookups instead of object properties
  */
 export const createOptimizedRowSelectionHandler = <TData>(data: TData[], idField: keyof TData, onSelectionChange: (selectedIds: Set<string>) => void) => useCallback(
@@ -91,7 +91,7 @@ export const createOptimizedRowSelectionHandler = <TData>(data: TData[], idField
 );
 
 /**
- * Virtualization helper for calculating visible range
+ * Virtualization helper for calculating visible range.
  */
 export const calculateVisibleRange = (scrollTop: number, containerHeight: number, itemHeight: number, overscan: number = 5) => {
     const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
@@ -101,7 +101,7 @@ export const calculateVisibleRange = (scrollTop: number, containerHeight: number
 };
 
 /**
- * Performance monitoring utility
+ * Performance monitoring utility.
  */
 export const usePerformanceMonitor = (componentName: string) => {
     const renderCount = useRef(0);
@@ -113,6 +113,7 @@ export const usePerformanceMonitor = (componentName: string) => {
         const timeSinceLastRender = currentTime - lastRenderTime.current;
 
         if (import.meta.env.DEV) {
+            // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
             console.log(`${componentName} render #${renderCount.current} (${timeSinceLastRender.toFixed(2)}ms)`);
         }
 
@@ -126,7 +127,7 @@ export const usePerformanceMonitor = (componentName: string) => {
 };
 
 /**
- * Memoization helper for expensive computations
+ * Memoization helper for expensive computations.
  */
 export const useMemoizedValue = <T>(factory: () => T, deps: React.DependencyList, equalityFn?: (prev: T, next: T) => boolean): T => {
     const ref = useRef<T>();
@@ -146,7 +147,7 @@ export const useMemoizedValue = <T>(factory: () => T, deps: React.DependencyList
 };
 
 /**
- * Shallow equality check for dependency arrays
+ * Shallow equality check for dependency arrays.
  */
 const shallowEqual = (a: React.DependencyList, b: React.DependencyList): boolean => {
     if (a.length !== b.length)
@@ -161,7 +162,7 @@ const shallowEqual = (a: React.DependencyList, b: React.DependencyList): boolean
 };
 
 /**
- * Batch state updates for better performance
+ * Batch state updates for better performance.
  */
 export const useBatchedState = <T>(initialState: T) => {
     const [state, setState] = useState<T>(initialState);
@@ -190,7 +191,7 @@ export const useBatchedState = <T>(initialState: T) => {
 };
 
 /**
- * Intersection Observer hook for lazy loading
+ * Intersection Observer hook for lazy loading.
  */
 export const useIntersectionObserver = (callback: () => void, options: IntersectionObserverInit = {}) => {
     const observerRef = useRef<IntersectionObserver>();
@@ -236,7 +237,7 @@ const sortFunctions = {
 };
 
 /**
- * Creates an optimized sorting function for a specific column
+ * Creates an optimized sorting function for a specific column.
  */
 export const createOptimizedSortFunction = <T>(accessorKey: keyof T, dataType: "text" | "number" | "date" | "boolean" = "text") => (a: T, b: T) => {
     const valueA = a[accessorKey];
@@ -270,7 +271,7 @@ export const createOptimizedSortFunction = <T>(accessorKey: keyof T, dataType: "
 };
 
 /**
- * Debounced sorting to prevent excessive re-sorting during rapid changes
+ * Debounced sorting to prevent excessive re-sorting during rapid changes.
  */
 export const useDebouncedSorting = <T>(data: T[], sortConfig: { desc: boolean; id: string } | null, delay: number = 100) => {
     const [debouncedSortConfig, setDebouncedSortConfig] = useState(sortConfig);
@@ -296,7 +297,7 @@ export const useDebouncedSorting = <T>(data: T[], sortConfig: { desc: boolean; i
 };
 
 /**
- * Memoized sorting with stable references
+ * Memoized sorting with stable references.
  */
 export const useMemoizedSorting = <T>(data: T[], sortConfig: { desc: boolean; id: string } | null, sortFunctions: Record<string, (a: T, b: T) => number>) => useMemo(() => {
     if (!sortConfig || !data.length)
@@ -317,7 +318,7 @@ export const useMemoizedSorting = <T>(data: T[], sortConfig: { desc: boolean; id
 }, [data, sortConfig, sortFunctions]);
 
 /**
- * Optimized column sorting configuration
+ * Optimized column sorting configuration.
  */
 export const createOptimizedColumnSorting = <T>(columns: { accessorKey: keyof T; id: string; meta?: { sortType?: string } }[]) => {
     const sortFunctions: Record<string, (a: T, b: T) => number> = {};

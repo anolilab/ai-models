@@ -3,7 +3,7 @@
  */
 
 /**
- * Format ISO timestamp to readable date format (DD/MM/YYYY hh:mm A)
+ * Format ISO timestamp to readable date format (DD/MM/YYYY hh:mm A).
  */
 export const formatTimestampToReadable = (timestamp: string | null | undefined): string => {
     if (!timestamp)
@@ -29,7 +29,7 @@ export const formatTimestampToReadable = (timestamp: string | null | undefined):
 };
 
 /**
- * Format ISO date to readable date format (DD/MM/YYYY)
+ * Format ISO date to readable date format (DD/MM/YYYY).
  */
 export const formatDateToReadable = (date: string | null | undefined): string => {
     if (!date)
@@ -52,7 +52,7 @@ export const formatDateToReadable = (date: string | null | undefined): string =>
 };
 
 /**
- * Format AI model costs with appropriate units and precision
+ * Format AI model costs with appropriate units and precision.
  * @param cost Cost per 1K tokens as a decimal number (schema stores costs as per 1K tokens)
  * @returns Formatted cost string with appropriate units
  */
@@ -93,7 +93,7 @@ export const formatModelCost = (cost: number | null | undefined): string => {
 };
 
 /**
- * Format currency values with proper symbol and formatting
+ * Format currency values with proper symbol and formatting.
  */
 export const formatCurrency = (amount: number | string | null | undefined, currency = "USD"): string => {
     if (amount === null || amount === undefined || amount === "")
@@ -112,7 +112,7 @@ export const formatCurrency = (amount: number | string | null | undefined, curre
 };
 
 /**
- * Format numbers with thousand separators
+ * Format numbers with thousand separators.
  */
 export const formatNumber = (value: number | string | null | undefined): string => {
     if (value === null || value === undefined || value === "")
@@ -127,7 +127,7 @@ export const formatNumber = (value: number | string | null | undefined): string 
 };
 
 /**
- * Capitalize first letter of each word
+ * Capitalize first letter of each word.
  */
 export const formatToTitleCase = (text: string | null | undefined): string => {
     if (!text)
@@ -137,7 +137,7 @@ export const formatToTitleCase = (text: string | null | undefined): string => {
 };
 
 /**
- * Format boolean values to human-readable text
+ * Format boolean values to human-readable text.
  */
 export const formatBoolean = (value: boolean | string | null | undefined, options = { false: "No", true: "Yes" }): string => {
     if (value === null || value === undefined)
@@ -149,7 +149,7 @@ export const formatBoolean = (value: boolean | string | null | undefined, option
 };
 
 /**
- * Format phone numbers to a standard format
+ * Format phone numbers to a standard format.
  */
 export const formatPhoneNumber = (phone: string | null | undefined): string => {
     if (!phone)
@@ -168,7 +168,7 @@ export const formatPhoneNumber = (phone: string | null | undefined): string => {
 };
 
 /**
- * Truncate long text with ellipsis
+ * Truncate long text with ellipsis.
  */
 export const formatTruncatedText = (text: string | null | undefined, maxLength = 50): string => {
     if (!text)

@@ -80,6 +80,7 @@ export function DataTableExport<TData extends ExportableData>({
                     const sampleItem = sortedItems[0];
 
                     if (sampleItem && !(sortField in sampleItem)) {
+                        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                         console.warn(`Sort field "${sortField}" not found in data. Skipping sort.`);
 
                         return sortedItems;
@@ -106,6 +107,7 @@ export function DataTableExport<TData extends ExportableData>({
                             // For numeric and other comparable types
                             return isDescending ? valueB > valueA ? 1 : -1 : valueA > valueB ? 1 : -1;
                         } catch (sortError) {
+                            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                             console.error("Error during sorting:", sortError);
 
                             return 0; // Maintain original order on error
@@ -238,6 +240,7 @@ export function DataTableExport<TData extends ExportableData>({
                 },
             );
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.error("Error exporting data:", error);
             toast.error("Export failed", {
                 description: "There was a problem exporting. Please try again.",
@@ -366,6 +369,7 @@ export function DataTableExport<TData extends ExportableData>({
                 });
             }
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.error("Error exporting all pages:", error);
             toast.error("Export failed", {
                 description: "There was a problem exporting all pages. Please try again.",

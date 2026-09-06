@@ -10,6 +10,7 @@ if (globalThis.window !== undefined) {
             usePH = posthogReact.usePostHog;
         },
         (error) => {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to load PostHog hooks:", error);
         },
     );
@@ -35,6 +36,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog alias blocked - no measurement consent", { alias, distinctId });
             }
         },
@@ -46,6 +48,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog capture blocked - no measurement consent", { event, properties });
             }
         },
@@ -57,6 +60,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog group blocked - no measurement consent", { groupKey, groupType, properties });
             }
         },
@@ -68,6 +72,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog identify blocked - no measurement consent", { distinctId, properties });
             }
         },
@@ -79,6 +84,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog reset blocked - no measurement consent");
             }
         },
