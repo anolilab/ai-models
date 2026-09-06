@@ -93,7 +93,9 @@ export function debounce<T extends (...args: any[]) => any>(
         return result;
     };
 
-    const debounced = (this: any, ...args: Parameters<T>): ReturnType<T> | undefined => {
+    // eslint-disable-next-line func-style -- a debounce forwards the caller's `this`,
+    // which an arrow function cannot bind: it inherits `this` from the enclosing scope.
+    function debounced(this: any, ...args: Parameters<T>): ReturnType<T> | undefined {
         const time = Date.now();
         const isInvoking = shouldInvoke(time);
 
@@ -118,7 +120,7 @@ export function debounce<T extends (...args: any[]) => any>(
         }
 
         return result;
-    };
+    }
 
     debounced.cancel = () => {
         if (timeout !== null) {

@@ -1,5 +1,5 @@
 name: "Scorecards supply-chain security"
-on:
+on: # yamllint disable-line rule:truthy
     branch_protection_rule: # yamllint disable-line rule:empty-values
     schedule:
         - cron: "37 14 * * 6"
@@ -15,7 +15,7 @@ jobs:
             id-token: "write"
             actions: "read"
             contents: "read"
-        uses: "anolilab/workflows/.github/workflows/scorecards.yml@1d2834fe34a15bd35bf49a1b1071a8b71e8d6319" # main
+        uses: "anolilab/workflows/.github/workflows/scorecards.yml@9663c7c69bc7dac1a294407a44c30f68977303bb" # main
         with:
             branch: "main"
             publish_results: true
