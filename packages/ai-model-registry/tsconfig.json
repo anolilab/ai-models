@@ -12,8 +12,8 @@
         "outDir": "./dist",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-        "isolatedModules": true,
         "isolatedDeclarations": true,
+        "isolatedModules": true,
         "skipLibCheck": true
     },
     "include": ["src/**/*", "scripts/**/*"],
