@@ -1,5 +1,5 @@
 import type { ContractsOutputs } from "@c15t/backend";
-import { baseTranslations } from "@c15t/translations";
+import { baseTranslations } from "@c15t/translations/all";
 
 export type SupportedLanguage = keyof typeof baseTranslations;
 type JurisdictionCode = ContractsOutputs["showConsentBanner"]["jurisdiction"]["code"];

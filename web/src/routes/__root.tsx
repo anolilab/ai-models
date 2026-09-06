@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 import "unfonts.css";
 
-import { ConsentManagerDialog, ConsentManagerProvider, CookieBanner } from "@c15t/react";
-import { baseTranslations } from "@c15t/translations";
+import { ConsentBanner, ConsentDialog, ConsentManagerProvider } from "@c15t/react";
+import { baseTranslations } from "@c15t/translations/all";
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
@@ -60,8 +60,8 @@ const RootDocument = () => {
                         },
                     }}
                 >
-                    <CookieBanner />
-                    <ConsentManagerDialog />
+                    <ConsentBanner />
+                    <ConsentDialog />
                     <AnalyticsProvider>{isFetching ? <Loader /> : <Outlet />}</AnalyticsProvider>
                     <IconSpriteSheet />
                 </ConsentManagerProvider>
