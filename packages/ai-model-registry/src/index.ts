@@ -34,6 +34,11 @@ import * as vercelProvider from "./providers/vercel";
 import * as weightsBiasesProvider from "./providers/weights-&-biases";
 import * as xaiProvider from "./providers/xai";
 import type { Model } from "./schema";
+
+// Every function here returns Model values, so the type belongs on the package root
+// rather than only under the ./schema subpath.
+export type { Model } from "./schema";
+export type { ProviderName } from "./types/providers";
 import type { ProviderName } from "./types/providers";
 
 // Map provider names to their provider modules

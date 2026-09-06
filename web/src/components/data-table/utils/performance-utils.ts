@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
  * Improves performance by reducing the number of search operations
  */
 export const useDebouncedSearch = (searchValue: string, onSearchChange: (value: string) => void, delay: number = 300) => {
-    const timeoutRef = useRef<number>();
+    const timeoutRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         // Clear existing timeout
@@ -130,8 +130,8 @@ export const usePerformanceMonitor = (componentName: string) => {
  * Memoization helper for expensive computations.
  */
 export const useMemoizedValue = <T>(factory: () => T, deps: React.DependencyList, equalityFn?: (prev: T, next: T) => boolean): T => {
-    const ref = useRef<T>();
-    const depsRef = useRef<React.DependencyList>();
+    const ref = useRef<T | undefined>(undefined);
+    const depsRef = useRef<React.DependencyList | undefined>(undefined);
 
     if (!depsRef.current || !shallowEqual(depsRef.current, deps)) {
         const newValue = factory();
@@ -167,7 +167,7 @@ const shallowEqual = (a: React.DependencyList, b: React.DependencyList): boolean
 export const useBatchedState = <T>(initialState: T) => {
     const [state, setState] = useState<T>(initialState);
     const batchRef = useRef<T | null>(null);
-    const timeoutRef = useRef<NodeJS.Timeout>();
+    const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
     const batchedSetState = useCallback(
         (updater: T | ((prev: T) => T)) => {
@@ -194,7 +194,7 @@ export const useBatchedState = <T>(initialState: T) => {
  * Intersection Observer hook for lazy loading.
  */
 export const useIntersectionObserver = (callback: () => void, options: IntersectionObserverInit = {}) => {
-    const observerRef = useRef<IntersectionObserver>();
+    const observerRef = useRef<IntersectionObserver | undefined>(undefined);
     const elementRef = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
@@ -273,9 +273,11 @@ export const createOptimizedSortFunction = <T>(accessorKey: keyof T, dataType: "
 /**
  * Debounced sorting to prevent excessive re-sorting during rapid changes.
  */
-export const useDebouncedSorting = <T>(data: T[], sortConfig: { desc: boolean; id: string } | null, delay: number = 100) => {
+// The hook debounces the sort configuration only; it never reads the rows, so the
+// data parameter was dead weight on the signature.
+export const useDebouncedSorting = (sortConfig: { desc: boolean; id: string } | null, delay: number = 100) => {
     const [debouncedSortConfig, setDebouncedSortConfig] = useState(sortConfig);
-    const timeoutRef = useRef<number>();
+    const timeoutRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         if (timeoutRef.current) {
