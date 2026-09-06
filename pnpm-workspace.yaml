@@ -100,8 +100,8 @@ overrides:
   yaml@>=2.0.0 <2.8.3: ">=2.9.0"
   browserslist@<=4.28.6: ">=4.28.7"
   fast-uri: ">=4.1.3"
-  fflate@>=0.4.5 <0.4.9: ">=0.4.9 <0.5"
-  toml@<4.2.0: ">=4.2.0 <5"
+  fflate@>=0.4.5 <0.4.9: ">=0.4.9"
+  toml@<4.2.0: ">=4.2.0"
 minimumReleaseAgeExclude:
   # Renovate security update: undici@8.5.0 || 8.9.0
   - undici@8.5.0 || 8.9.0
