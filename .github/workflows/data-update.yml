@@ -3,7 +3,7 @@ name: "Data Update"
 on: # yamllint disable-line rule:truthy
     schedule:
         - cron: "0 2 * * *" # At 2:00 AM UTC every day
-    workflow_dispatch: # Allow manual triggering
+    workflow_dispatch: # yamllint disable-line rule:empty-values
 
 permissions:
     contents: "read" # for checkout

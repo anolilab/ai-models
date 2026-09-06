@@ -97,6 +97,9 @@ jobs:
               with:
                   node-version: "${{ matrix.node_version }}"
                   install-packages: "false"
+                  # npm@latest no longer supports every node version in this matrix,
+                  # and tests do not need it: the upgrade is for publish provenance.
+                  upgrade-npm-version: "false"
 
             - name: "Remove node-sass from unsupported node versions"
               shell: "bash"
@@ -140,7 +143,15 @@ jobs:
 
             - name: "Prepare nx cache"
               shell: "bash"
-              run: "tar -cf - .nx/cache | lz4 > /tmp/nx_cache.tar.lz4" # compress nx cache
+              # nx 23 no longer always writes .nx/cache (task results moved into
+              # .nx/workspace-data), so archive whatever .nx holds, and skip the
+              # step when a run produced nothing to cache.
+              run: |
+                  if [ -d .nx ]; then
+                      tar -cf - .nx | lz4 > /tmp/nx_cache.tar.lz4
+                  else
+                      echo "::notice::no .nx directory produced, nothing to cache"
+                  fi
 
             - name: "Upload code coverage to codecov"
               if: "matrix.os == 'ubuntu-latest' && matrix.node_version == 20"

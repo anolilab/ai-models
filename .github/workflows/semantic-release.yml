@@ -14,7 +14,7 @@ on: # yamllint disable-line rule:truthy
     workflow_dispatch: # yamllint disable-line rule:empty-values
 
 permissions:
-    id-token: write  # Required for OIDC
+    id-token: "write" # Required for OIDC
     contents: "read" # for checkout
 
 jobs:
@@ -70,7 +70,15 @@ jobs:
 
             - name: "Prepare nx cache"
               shell: "bash"
-              run: "tar -cf - .nx/cache | lz4 > /tmp/nx_cache.tar.lz4" # compress nx cache
+              # nx 23 no longer always writes .nx/cache (task results moved into
+              # .nx/workspace-data), so archive whatever .nx holds, and skip the
+              # step when a run produced nothing to cache.
+              run: |
+                  if [ -d .nx ]; then
+                      tar -cf - .nx | lz4 > /tmp/nx_cache.tar.lz4
+                  else
+                      echo "::notice::no .nx directory produced, nothing to cache"
+                  fi
 
             - name: "Upload code coverage to codecov"
               uses: "anolilab/workflows/step/codecov@b7c2014dc8b1f022a340111874e6c13346e17598" # main
