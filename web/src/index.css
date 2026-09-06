@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+/* Prebuilt consent component styles. c15t v1 injected these automatically;
+   v2 ships them as a stylesheet the app has to import. */
+@import "@c15t/react/styles.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
