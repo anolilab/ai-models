@@ -77,6 +77,8 @@ overrides:
   fflate@>=0.4.5 <0.4.9: '>=0.4.9'
   toml@<4.2.0: '>=4.2.0'
 
+packageExtensionsChecksum: sha256-0iAR7nOyXBvvKZxCJd/kCE1CG/uFkL66WMyKBrLD/iw=
+
 importers:
 
   .:
@@ -86,7 +88,7 @@ importers:
         version: 10.1.2(@commitlint/cli@21.2.2(@types/node@26.4.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2))(@types/node@26.4.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)
       '@anolilab/lint-staged-config':
         specifier: ^12.0.1
-        version: 12.0.1(husky@9.1.7)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lint-staged@17.5.0)(prettier@3.9.6)(secretlint@13.0.5(supports-color@7.2.0))(vitest@4.1.8)(yaml@2.9.0)
+        version: 12.0.1(@visulima/yaml@1.0.0)(husky@9.1.7)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lint-staged@17.5.0)(prettier@3.9.6)(secretlint@13.0.5(supports-color@7.2.0))(vitest@4.1.8)(yaml@2.9.0)
       '@anolilab/multi-semantic-release':
         specifier: ^4.4.9
         version: 4.4.9(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))(supports-color@7.2.0)
@@ -153,7 +155,7 @@ importers:
     devDependencies:
       '@anolilab/eslint-config':
         specifier: ^30.0.1
-        version: 30.0.1(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(supports-color@7.2.0)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)
+        version: 30.0.1(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@visulima/yaml@1.0.0)(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(supports-color@7.2.0)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)
       '@anolilab/prettier-config':
         specifier: ^10.0.3
         version: 10.0.3(prettier@3.9.6)
@@ -415,7 +417,7 @@ importers:
     devDependencies:
       '@anolilab/eslint-config':
         specifier: 30.0.1
-        version: 30.0.1(@tanstack/eslint-plugin-query@5.102.8(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)
+        version: 30.0.1(@tanstack/eslint-plugin-query@5.102.8(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@visulima/yaml@1.0.0)(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)
       '@anolilab/prettier-config':
         specifier: 10.0.3
         version: 10.0.3(prettier@3.9.6)
@@ -5481,6 +5483,10 @@ packages:
     engines: {node: ^22.14.0 || >=24.10.0}
     peerDependencies:
       vite: 8.2.2
+
+  '@visulima/yaml@1.0.0':
+    resolution: {integrity: sha512-06obI/5zlKRjScekXqHTtF06S5peqHE9J3AmEthJ5b40a4FuJAysbOJ9EVyznTpOVmy3IvL8cZu3QiNpgF/cbg==}
+    engines: {node: ^22.14.0 || >=24.10.0}
 
   '@vitejs/plugin-react@6.1.1':
     resolution: {integrity: sha512-yxLaQV9gkhS8ezJqCM6+ndU7mDY6gqAg75NQ+0IjwEI8IYOmQCgkRwHKVSfWXW076DsqMo0Dk+0FK1U+M5RgFw==}
@@ -11867,7 +11873,7 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@anolilab/eslint-config@30.0.1(@tanstack/eslint-plugin-query@5.102.8(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)':
+  '@anolilab/eslint-config@30.0.1(@tanstack/eslint-plugin-query@5.102.8(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(@visulima/yaml@1.0.0)(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)':
     dependencies:
       '@e18e/eslint-plugin': 0.8.0(eslint@10.10.0(jiti@2.7.0))
       '@eslint-community/eslint-plugin-eslint-comments': 4.7.2(eslint@10.10.0(jiti@2.7.0))
@@ -11881,8 +11887,8 @@ snapshots:
       '@typescript-eslint/parser': 8.66.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)
       '@typescript-eslint/types': 8.66.0
       '@visulima/fs': 5.0.5(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)
-      '@visulima/package': 5.0.19(ini@7.0.0)(jsonc-parser@3.3.1)
-      '@visulima/tsconfig': 3.2.13(ini@7.0.0)(json5@2.2.3)
+      '@visulima/package': 5.0.19(@visulima/yaml@1.0.0)(ini@7.0.0)(jsonc-parser@3.3.1)
+      '@visulima/tsconfig': 3.2.13(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)
       '@vitest/eslint-plugin': 1.6.27(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0))(typescript@7.0.2)(vitest@5.0.0)
       confusing-browser-globals: 1.0.11
       eslint: 10.10.0(jiti@2.7.0)
@@ -11946,7 +11952,7 @@ snapshots:
       - vitest
       - yaml
 
-  '@anolilab/eslint-config@30.0.1(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(supports-color@7.2.0)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)':
+  '@anolilab/eslint-config@30.0.1(@tanstack/eslint-plugin-router@1.162.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@typescript-eslint/utils@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(@visulima/yaml@1.0.0)(eslint-plugin-react-compiler@19.1.0-rc.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-testing-library@7.16.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint-plugin-zod@4.12.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2)(zod@4.5.4))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(supports-color@7.2.0)(ts-declaration-location@1.0.7(typescript@7.0.2))(typescript@7.0.2)(vitest@5.0.0)(yaml@2.9.0)':
     dependencies:
       '@e18e/eslint-plugin': 0.8.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))
       '@eslint-community/eslint-plugin-eslint-comments': 4.7.2(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))
@@ -11960,8 +11966,8 @@ snapshots:
       '@typescript-eslint/parser': 8.66.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.0.2)
       '@typescript-eslint/types': 8.66.0
       '@visulima/fs': 5.0.5(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)
-      '@visulima/package': 5.0.19(ini@7.0.0)(jsonc-parser@3.3.1)
-      '@visulima/tsconfig': 3.2.13(ini@7.0.0)(json5@2.2.3)
+      '@visulima/package': 5.0.19(@visulima/yaml@1.0.0)(ini@7.0.0)(jsonc-parser@3.3.1)
+      '@visulima/tsconfig': 3.2.13(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)
       '@vitest/eslint-plugin': 1.6.27(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2))(eslint@10.10.0(jiti@2.7.0)(supports-color@7.2.0))(typescript@7.0.2)(vitest@5.0.0)
       confusing-browser-globals: 1.0.11
       eslint: 10.10.0(jiti@2.7.0)(supports-color@7.2.0)
@@ -12024,10 +12030,10 @@ snapshots:
       - vitest
       - yaml
 
-  '@anolilab/lint-staged-config@12.0.1(husky@9.1.7)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lint-staged@17.5.0)(prettier@3.9.6)(secretlint@13.0.5(supports-color@7.2.0))(vitest@4.1.8)(yaml@2.9.0)':
+  '@anolilab/lint-staged-config@12.0.1(@visulima/yaml@1.0.0)(husky@9.1.7)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(lint-staged@17.5.0)(prettier@3.9.6)(secretlint@13.0.5(supports-color@7.2.0))(vitest@4.1.8)(yaml@2.9.0)':
     dependencies:
       '@visulima/fs': 5.0.5(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)
-      '@visulima/package': 5.0.19(ini@7.0.0)(jsonc-parser@3.3.1)
+      '@visulima/package': 5.0.19(@visulima/yaml@1.0.0)(ini@7.0.0)(jsonc-parser@3.3.1)
       husky: 9.1.7
       shell-quote: 1.10.0
       type-fest: 5.8.0
@@ -16803,6 +16809,7 @@ snapshots:
   '@visulima/fs@4.1.0(yaml@2.9.0)':
     dependencies:
       '@visulima/path': 2.0.5
+      '@visulima/yaml': 1.0.0
       type-fest: 5.9.0
     optionalDependencies:
       yaml: 2.9.0
@@ -16810,6 +16817,7 @@ snapshots:
   '@visulima/fs@5.0.2(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)':
     dependencies:
       '@visulima/path': 3.0.0
+      '@visulima/yaml': 1.0.0
     optionalDependencies:
       ini: 7.0.0
       json5: 2.2.3
@@ -16819,6 +16827,7 @@ snapshots:
   '@visulima/fs@5.0.5(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)':
     dependencies:
       '@visulima/path': 3.0.0
+      '@visulima/yaml': 1.0.0
     optionalDependencies:
       ini: 7.0.0
       json5: 2.2.3
@@ -16828,16 +16837,18 @@ snapshots:
   '@visulima/fs@5.1.0(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)(yaml@2.9.0)':
     dependencies:
       '@visulima/path': 3.1.0
+      '@visulima/yaml': 1.0.0
     optionalDependencies:
       ini: 7.0.0
       json5: 2.2.3
       jsonc-parser: 3.3.1
       yaml: 2.9.0
 
-  '@visulima/fs@6.0.6(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)':
+  '@visulima/fs@6.0.6(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)':
     dependencies:
       '@visulima/path': 4.0.0
     optionalDependencies:
+      '@visulima/yaml': 1.0.0
       ini: 7.0.0
       json5: 2.2.3
       jsonc-parser: 3.3.1
@@ -16875,10 +16886,10 @@ snapshots:
       - jsonc-parser
       - smol-toml
 
-  '@visulima/package@5.0.19(ini@7.0.0)(jsonc-parser@3.3.1)':
+  '@visulima/package@5.0.19(@visulima/yaml@1.0.0)(ini@7.0.0)(jsonc-parser@3.3.1)':
     dependencies:
       '@antfu/install-pkg': 2.0.1
-      '@visulima/fs': 6.0.6(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)
+      '@visulima/fs': 6.0.6(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)
       '@visulima/path': 4.0.0
       json5: 2.2.3
       normalize-package-data: 9.0.0
@@ -17119,9 +17130,9 @@ snapshots:
       - smol-toml
       - yaml
 
-  '@visulima/tsconfig@3.2.13(ini@7.0.0)(json5@2.2.3)':
+  '@visulima/tsconfig@3.2.13(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)':
     dependencies:
-      '@visulima/fs': 6.0.6(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)
+      '@visulima/fs': 6.0.6(@visulima/yaml@1.0.0)(ini@7.0.0)(json5@2.2.3)(jsonc-parser@3.3.1)
       '@visulima/path': 4.0.0
       jsonc-parser: 3.3.1
       resolve-pkg-maps: 1.0.0
@@ -17142,6 +17153,8 @@ snapshots:
       vite: 8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0)
     transitivePeerDependencies:
       - ai
+
+  '@visulima/yaml@1.0.0': {}
 
   '@vitejs/plugin-react@6.1.1(babel-plugin-react-compiler@19.1.0-rc.2)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))':
     dependencies:
