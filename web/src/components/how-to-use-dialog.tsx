@@ -1,9 +1,10 @@
 import type { Model } from "@anolilab/ai-model-registry/schema";
 import type { ProviderName } from "@anolilab/ai-model-registry/types/providers";
-import { ExternalLink, Github, Package } from "lucide-react";
+import { ExternalLink, Package } from "lucide-react";
 import type { FC } from "react";
 import { useState } from "react";
 
+import GithubIcon from "@/components/icons/github";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
@@ -183,7 +184,7 @@ const HowToUseDialog: FC<{ allModels: Model[]; allProviders: ProviderName[] }> =
                         <div className="flex gap-2">
                             <Button asChild size="sm" variant="outline">
                                 <a href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">
-                                    <Github className="mr-2 h-4 w-4" />
+                                    <GithubIcon className="mr-2 h-4 w-4" />
                                     View on GitHub
                                     <ExternalLink className="ml-2 h-3 w-3" />
                                 </a>
