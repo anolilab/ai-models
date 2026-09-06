@@ -12,4 +12,4 @@ export type ProviderName = "Weights & Biases";
 /**
  * Array of all available provider names
  */
-export const PROVIDER_NAMES = ["Weights & Biases"] as const satisfies ReadonlyArray<ProviderName>;
+export const PROVIDER_NAMES: readonly ProviderName[] = ["Weights & Biases"] as const;
