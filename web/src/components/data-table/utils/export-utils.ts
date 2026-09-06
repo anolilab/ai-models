@@ -9,7 +9,7 @@ export type DataTransformFunction<T extends ExportableData> = (row: T) => Export
 /**
  * Convert array of objects to CSV string
  */
-function convertToCSV<T extends ExportableData>(data: T[], headers: string[], columnMapping?: Record<string, string>): string {
+const convertToCSV = <T extends ExportableData>(data: T[], headers: string[], columnMapping?: Record<string, string>): string => {
     if (data.length === 0) {
         throw new Error("No data to export");
     }
@@ -23,7 +23,7 @@ function convertToCSV<T extends ExportableData>(data: T[], headers: string[], co
             const mappedHeader = columnMapping[header] || header;
 
             // Escape quotes and wrap in quotes if contains comma
-            return mappedHeader.includes(",") || mappedHeader.includes('"') ? `"${mappedHeader.replace(/"/g, '""')}"` : mappedHeader;
+            return mappedHeader.includes(",") || mappedHeader.includes("\"") ? `"${mappedHeader.replace(/"/g, "\"\"")}"` : mappedHeader;
         });
 
         csvContent = `${headerRow.join(",")}\n`;
@@ -41,7 +41,7 @@ function convertToCSV<T extends ExportableData>(data: T[], headers: string[], co
             // Convert all values to string and properly escape for CSV
             const cellValue = value === null || value === undefined ? "" : String(value);
             // Escape quotes and wrap in quotes if contains comma
-            const escapedValue = cellValue.includes(",") || cellValue.includes('"') ? `"${cellValue.replace(/"/g, '""')}"` : cellValue;
+            const escapedValue = cellValue.includes(",") || cellValue.includes("\"") ? `"${cellValue.replace(/"/g, "\"\"")}"` : cellValue;
 
             return escapedValue;
         });
@@ -50,12 +50,12 @@ function convertToCSV<T extends ExportableData>(data: T[], headers: string[], co
     }
 
     return csvContent;
-}
+};
 
 /**
  * Download blob as file
  */
-function downloadFile(blob: Blob, filename: string) {
+const downloadFile = (blob: Blob, filename: string) => {
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
 
@@ -66,7 +66,7 @@ function downloadFile(blob: Blob, filename: string) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}
+};
 
 /**
  * Export data to CSV file
@@ -118,7 +118,7 @@ export function exportToCSV<T extends ExportableData>(
 /**
  * Export data to JSON file
  */
-export function exportToJSON<T extends ExportableData>(data: T[], filename: string, transformFunction?: DataTransformFunction<T>): boolean {
+export const exportToJSON = <T extends ExportableData>(data: T[], filename: string, transformFunction?: DataTransformFunction<T>): boolean => {
     if (data.length === 0) {
         console.error("No data to export");
 
@@ -127,7 +127,7 @@ export function exportToJSON<T extends ExportableData>(data: T[], filename: stri
 
     try {
         // Apply transformation function if provided
-        const processedData = data.map((item) => (transformFunction ? transformFunction(item) : item));
+        const processedData = data.map((item) => transformFunction ? transformFunction(item) : item);
 
         // Convert to JSON string with pretty formatting
         const jsonContent = JSON.stringify(processedData, null, 2);
@@ -143,7 +143,7 @@ export function exportToJSON<T extends ExportableData>(data: T[], filename: stri
 
         return false;
     }
-}
+};
 
 /**
  * Unified export function that handles loading states and error handling
@@ -166,7 +166,8 @@ export async function exportData<T extends ExportableData>(
 
     try {
         // Start loading
-        if (onLoadingStart) onLoadingStart();
+        if (onLoadingStart)
+            onLoadingStart();
 
         // Show toast for long operations using consistent ID
         toast.loading("Preparing export...", {
@@ -234,6 +235,7 @@ export async function exportData<T extends ExportableData>(
         return false;
     } finally {
         // End loading regardless of result
-        if (onLoadingEnd) onLoadingEnd();
+        if (onLoadingEnd)
+            onLoadingEnd();
     }
 }

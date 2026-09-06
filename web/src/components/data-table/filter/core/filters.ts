@@ -127,13 +127,17 @@ class ColumnConfigBuilder<
     }
 
     build(): ColumnConfig<TData, TType, TVal, TId> {
-        if (!this.config.id) throw new Error("id is required");
+        if (!this.config.id)
+            throw new Error("id is required");
 
-        if (!this.config.accessor) throw new Error("accessor is required");
+        if (!this.config.accessor)
+            throw new Error("accessor is required");
 
-        if (!this.config.displayName) throw new Error("displayName is required");
+        if (!this.config.displayName)
+            throw new Error("displayName is required");
 
-        if (!this.config.icon) throw new Error("icon is required");
+        if (!this.config.icon)
+            throw new Error("icon is required");
 
         return this.config as ColumnConfig<TData, TType, TVal, TId>;
     }
@@ -149,7 +153,7 @@ interface FluentColumnConfigHelper<TData> {
 }
 
 // Factory function remains mostly the same
-export function createColumnConfigHelper<TData>(): FluentColumnConfigHelper<TData> {
+export const createColumnConfigHelper = <TData>(): FluentColumnConfigHelper<TData> => {
     return {
         date: () => new ColumnConfigBuilder<TData, "date", Date>("date"),
         multiOption: () => new ColumnConfigBuilder<TData, "multiOption", string[]>("multiOption"),
@@ -157,7 +161,7 @@ export function createColumnConfigHelper<TData>(): FluentColumnConfigHelper<TDat
         option: () => new ColumnConfigBuilder<TData, "option", string>("option"),
         text: () => new ColumnConfigBuilder<TData, "text", string>("text"),
     };
-}
+};
 
 export function getColumnOptions<TData, TType extends ColumnDataType, TVal>(
     column: ColumnConfig<TData, TType, TVal>,
@@ -197,14 +201,15 @@ export function getColumnOptions<TData, TType extends ColumnDataType, TVal>(
         return memoizedTransform();
     }
 
-    if (isColumnOptionArray(models)) return models;
+    if (isColumnOptionArray(models))
+        return models;
 
     throw new Error(
         `[data-table-filter] [${column.id}] Either provide static options, a transformOptionFn, or ensure the column data conforms to ColumnOption type`,
     );
 }
 
-export function getColumnValues<TData, TType extends ColumnDataType, TVal>(column: ColumnConfig<TData, TType, TVal>, data: TData[]) {
+export const getColumnValues = <TData, TType extends ColumnDataType, TVal>(column: ColumnConfig<TData, TType, TVal>, data: TData[]) => {
     // Memoize accessor calls
     const memoizedAccessor = memo(
         () => [data],
@@ -239,7 +244,7 @@ export function getColumnValues<TData, TType extends ColumnDataType, TVal>(colum
     throw new Error(
         `[data-table-filter] [${column.id}] Either provide static options, a transformOptionFn, or ensure the column data conforms to ColumnOption type`,
     );
-}
+};
 
 export function getFacetedUniqueValues<TData, TType extends ColumnDataType, TVal>(
     column: ColumnConfig<TData, TType, TVal>,
@@ -280,7 +285,8 @@ export function getFacetedMinMaxValues<TData, TType extends ColumnDataType, TVal
     data: TData[],
     strategy: FilterStrategy,
 ): [number, number] | undefined {
-    if (column.type !== "number") return undefined; // Only applicable to number columns
+    if (column.type !== "number")
+        return undefined; // Only applicable to number columns
 
     if (typeof column.min === "number" && typeof column.max === "number") {
         return [column.min, column.max];
@@ -316,7 +322,7 @@ export function createColumns<TData>(
 
         const getValues: () => ElementType<NonNullable<any>>[] = memo(
             () => [data, strategy],
-            () => (strategy === "client" ? getColumnValues(columnConfig, data) : []),
+            () => strategy === "client" ? getColumnValues(columnConfig, data) : [],
             { key: `values-${columnConfig.id}` },
         );
 

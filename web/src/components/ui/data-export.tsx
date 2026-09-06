@@ -19,7 +19,8 @@ const DataExport = ({ className = "", data, disabled = false, filename = "export
     const [isExporting, setIsExporting] = useState(false);
 
     const exportToCSV = () => {
-        if (!data || data.length === 0) return;
+        if (!data || data.length === 0)
+            return;
 
         setIsExporting(true);
 
@@ -36,8 +37,8 @@ const DataExport = ({ className = "", data, disabled = false, filename = "export
                             const value = row[header];
 
                             // Handle values that need quotes (contain commas, quotes, or newlines)
-                            if (typeof value === "string" && (value.includes(",") || value.includes('"') || value.includes("\n"))) {
-                                return `"${value.replace(/"/g, '""')}"`;
+                            if (typeof value === "string" && (value.includes(",") || value.includes("\"") || value.includes("\n"))) {
+                                return `"${value.replace(/"/g, "\"\"")}"`;
                             }
 
                             return value || "";
@@ -65,7 +66,8 @@ const DataExport = ({ className = "", data, disabled = false, filename = "export
     };
 
     const exportToJSON = () => {
-        if (!data || data.length === 0) return;
+        if (!data || data.length === 0)
+            return;
 
         setIsExporting(true);
 

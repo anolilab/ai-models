@@ -27,11 +27,11 @@ if (siteBaseUrl && !siteBaseUrl.endsWith("/")) {
 
 const siteName = "AI Models Registry | Anolilab";
 const defaultTitle = "AI Models Registry | Comprehensive Database of AI Models and Providers";
-const defaultDescription =
-    "Explore a comprehensive registry of AI models from leading providers. Find the perfect AI model for your project with detailed information, comparisons, and provider details.";
+const defaultDescription
+    = "Explore a comprehensive registry of AI models from leading providers. Find the perfect AI model for your project with detailed information, comparisons, and provider details.";
 const twitterHandle = "@anolilab";
-const defaultKeywords =
-    "AI models, artificial intelligence, machine learning, AI providers, OpenAI, Anthropic, Google AI, Hugging Face, AI comparison, model registry, AI development, LLM, large language models";
+const defaultKeywords
+    = "AI models, artificial intelligence, machine learning, AI providers, OpenAI, Anthropic, Google AI, Hugging Face, AI comparison, model registry, AI development, LLM, large language models";
 const defaultOgImage = `${siteBaseUrl}images/og.png`;
 const defaultTwitterImage = `${siteBaseUrl}images/og.png`;
 

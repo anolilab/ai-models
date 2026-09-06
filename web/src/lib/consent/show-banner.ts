@@ -63,7 +63,7 @@ const COUNTRY_HEADERS = ["cf-ipcountry", "x-vercel-ip-country", "x-amz-cf-ipcoun
 
 const REGION_HEADERS = ["x-vercel-ip-country-region", "x-region-code"] as const;
 
-function extractCountryCode(headers: Record<string, string>): string | null {
+const extractCountryCode = (headers: Record<string, string>): string | null => {
     for (const headerName of COUNTRY_HEADERS) {
         const value = headers[headerName];
 
@@ -73,9 +73,9 @@ function extractCountryCode(headers: Record<string, string>): string | null {
     }
 
     return null;
-}
+};
 
-function extractRegionCode(headers: Record<string, string>): string | null {
+const extractRegionCode = (headers: Record<string, string>): string | null => {
     for (const headerName of REGION_HEADERS) {
         const value = headers[headerName];
 
@@ -85,9 +85,9 @@ function extractRegionCode(headers: Record<string, string>): string | null {
     }
 
     return null;
-}
+};
 
-function getPreferredLanguage(acceptLanguage: string | null): SupportedLanguage {
+const getPreferredLanguage = (acceptLanguage: string | null): SupportedLanguage => {
     if (!acceptLanguage) {
         return "en";
     }
@@ -99,9 +99,9 @@ function getPreferredLanguage(acceptLanguage: string | null): SupportedLanguage 
     }
 
     return "en";
-}
+};
 
-export function checkJurisdiction(countryCode: string | null) {
+export const checkJurisdiction = (countryCode: string | null) => {
     // Early return for no country code (e.g. localhost)
     if (!countryCode) {
         return {
@@ -128,7 +128,7 @@ export function checkJurisdiction(countryCode: string | null) {
         message: JurisdictionMessages.NONE,
         showConsentBanner: false,
     };
-}
+};
 
 export const showBanner = (headers: Record<string, string>): ContractsOutputs["consent"]["showBanner"] => {
     const countryCode = extractCountryCode(headers);

@@ -1,6 +1,4 @@
-export function intersection<T>(a: T[], b: T[]): T[] {
-    return a.filter((x) => b.includes(x));
-}
+export const intersection = <T>(a: T[], b: T[]): T[] => a.filter((x) => b.includes(x));
 
 /**
  * Computes a stable hash string for any value using deep inspection.
@@ -8,11 +6,13 @@ export function intersection<T>(a: T[], b: T[]): T[] {
  * It uses a cache (WeakMap) to avoid rehashing the same object twice, which is
  * particularly beneficial if an object appears in multiple places.
  */
-function deepHash(value: any, cache = new WeakMap<object, string>()): string {
+const deepHash = (value: any, cache = new WeakMap<object, string>()): string => {
     // Handle primitives and null/undefined.
-    if (value === null) return "null";
+    if (value === null)
+        return "null";
 
-    if (value === undefined) return "undefined";
+    if (value === undefined)
+        return "undefined";
 
     const type = typeof value;
 
@@ -52,27 +52,32 @@ function deepHash(value: any, cache = new WeakMap<object, string>()): string {
 
     // Fallback if no case matched.
     return `${type}:${value.toString()}`;
-}
+};
 
 /**
  * Performs deep equality check for any two values.
  * This recursively checks primitives, arrays, and plain objects.
  */
-function deepEqual(a: any, b: any): boolean {
+const deepEqual = (a: any, b: any): boolean => {
     // Check strict equality first.
-    if (a === b) return true;
+    if (a === b)
+        return true;
 
     // If types differ, they’re not equal.
-    if (typeof a !== typeof b) return false;
+    if (typeof a !== typeof b)
+        return false;
 
-    if (a === null || b === null || a === undefined || b === undefined) return false;
+    if (a === null || b === null || a === undefined || b === undefined)
+        return false;
 
     // Check arrays.
     if (Array.isArray(a)) {
-        if (!Array.isArray(b) || a.length !== b.length) return false;
+        if (!Array.isArray(b) || a.length !== b.length)
+            return false;
 
         for (let i = 0; i < a.length; i++) {
-            if (!deepEqual(a[i], b[i])) return false;
+            if (!deepEqual(a[i], b[i]))
+                return false;
         }
 
         return true;
@@ -80,17 +85,21 @@ function deepEqual(a: any, b: any): boolean {
 
     // Check objects.
     if (typeof a === "object") {
-        if (typeof b !== "object") return false;
+        if (typeof b !== "object")
+            return false;
 
         const aKeys = Object.keys(a).sort();
         const bKeys = Object.keys(b).sort();
 
-        if (aKeys.length !== bKeys.length) return false;
+        if (aKeys.length !== bKeys.length)
+            return false;
 
         for (let i = 0; i < aKeys.length; i++) {
-            if (aKeys[i] !== bKeys[i]) return false;
+            if (aKeys[i] !== bKeys[i])
+                return false;
 
-            if (!deepEqual(a[aKeys[i]], b[bKeys[i]])) return false;
+            if (!deepEqual(a[aKeys[i]], b[bKeys[i]]))
+                return false;
         }
 
         return true;
@@ -98,7 +107,7 @@ function deepEqual(a: any, b: any): boolean {
 
     // For any other types (should be primitives by now), use strict equality.
     return false;
-}
+};
 
 /**
  * Returns a new array containing only the unique values from the input array.
@@ -106,7 +115,7 @@ function deepEqual(a: any, b: any): boolean {
  * @param arr The array of values to be filtered.
  * @returns A new array with duplicates removed.
  */
-export function uniq<T>(arr: T[]): T[] {
+export const uniq = <T>(arr: T[]): T[] => {
     // Use a Map where key is the deep hash and value is an array of items sharing the same hash.
     const seen = new Map<string, T[]>();
     const result: T[] = [];
@@ -138,24 +147,14 @@ export function uniq<T>(arr: T[]): T[] {
     }
 
     return result;
-}
+};
 
-export function take<T>(a: T[], n: number): T[] {
-    return a.slice(0, n);
-}
+export const take = <T>(a: T[], n: number): T[] => a.slice(0, n);
 
-export function flatten<T>(a: T[][]): T[] {
-    return a.flat();
-}
+export const flatten = <T>(a: T[][]): T[] => a.flat();
 
-export function addUniq<T>(arr: T[], values: T[]): T[] {
-    return uniq([...arr, ...values]);
-}
+export const addUniq = <T>(arr: T[], values: T[]): T[] => uniq([...arr, ...values]);
 
-export function removeUniq<T>(arr: T[], values: T[]): T[] {
-    return arr.filter((v) => !values.includes(v));
-}
+export const removeUniq = <T>(arr: T[], values: T[]): T[] => arr.filter((v) => !values.includes(v));
 
-export function isAnyOf<T>(value: T, values: T[]): boolean {
-    return values.includes(value);
-}
+export const isAnyOf = <T>(value: T, values: T[]): boolean => values.includes(value);

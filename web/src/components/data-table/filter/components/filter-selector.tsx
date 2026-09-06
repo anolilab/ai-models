@@ -1,5 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon, FilterIcon } from "lucide-react";
-import { Fragment, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, isValidElement, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -22,7 +22,7 @@ interface FilterSelectorProps<TData> {
     strategy: FilterStrategy;
 }
 
-const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strategy }: FilterSelectorProps<TData>) => {
+const FilterSelectorElement = <TData,>({ actions, columns, filters, locale = "en", strategy }: FilterSelectorProps<TData>) => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const [property, setProperty] = useState<string | undefined>(undefined);
@@ -41,7 +41,8 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
     }, [property]);
 
     useEffect(() => {
-        if (!open) setTimeout(setValue, 150, "");
+        if (!open)
+            setTimeout(setValue, 150, "");
     }, [open]);
 
     // biome-ignore lint/correctness/useExhaustiveDependencies: need filters to be updated
@@ -84,7 +85,8 @@ const FilterSelectorElement = ({ actions, columns, filters, locale = "en", strat
             onOpenChange={async (value) => {
                 setOpen(value);
 
-                if (!value) setTimeout(setProperty, 100, undefined);
+                if (!value)
+                    setTimeout(setProperty, 100, undefined);
             }}
             open={open}
         >
@@ -128,7 +130,8 @@ const QuickSearchFiltersElement = <TData,>({ actions, columns, filters, search }
                 const optionsCount = column.getFacetedUniqueValues();
 
                 const handleOptionSelect = (value: string, check: boolean) => {
-                    if (check) actions.addFilterValue(column, [value]);
+                    if (check)
+                        actions.addFilterValue(column, [value]);
                     else actions.removeFilterValue(column, [value]);
                 };
 
@@ -208,7 +211,8 @@ export const FilterableColumn = <TData, TType extends ColumnDataType, TVal>({
     useEffect(() => {
         const target = itemRef.current;
 
-        if (!target) return;
+        if (!target)
+            return;
 
         // Set up MutationObserver
         const observer = new MutationObserver((mutations) => {
@@ -216,7 +220,8 @@ export const FilterableColumn = <TData, TType extends ColumnDataType, TVal>({
                 if (mutation.type === "attributes") {
                     const isSelected = target.getAttribute("data-selected") === "true";
 
-                    if (isSelected) prefetch();
+                    if (isSelected)
+                        prefetch();
                 }
             }
         });

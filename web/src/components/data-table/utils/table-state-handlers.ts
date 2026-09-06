@@ -1,6 +1,5 @@
-import type { ColumnSizingState, PaginationState, SortingState } from "@tanstack/react-table";
+import type { ColumnSizingState, PaginationState } from "@tanstack/react-table";
 
-type SortingUpdater = (prev: SortingState) => SortingState;
 type StatePromise = Promise<URLSearchParams> | undefined;
 type SetStateFunction<T> = (value: T | ((prev: T) => T)) => StatePromise;
 
@@ -25,11 +24,9 @@ export function createPaginationHandler(
 /**
  * Handler for column sizing changes in a data table
  */
-export function createColumnSizingHandler(setColumnSizing: SetStateFunction<ColumnSizingState>, columnSizing: ColumnSizingState) {
-    return (updaterOrValue: ColumnSizingState | ((prev: ColumnSizingState) => ColumnSizingState)) => {
-        // Handle both direct values and updater functions
-        const newSizing = typeof updaterOrValue === "function" ? updaterOrValue(columnSizing) : updaterOrValue;
+export const createColumnSizingHandler = (setColumnSizing: SetStateFunction<ColumnSizingState>, columnSizing: ColumnSizingState) => (updaterOrValue: ColumnSizingState | ((prev: ColumnSizingState) => ColumnSizingState)) => {
+    // Handle both direct values and updater functions
+    const newSizing = typeof updaterOrValue === "function" ? updaterOrValue(columnSizing) : updaterOrValue;
 
-        setColumnSizing(newSizing);
-    };
-}
+    setColumnSizing(newSizing);
+};

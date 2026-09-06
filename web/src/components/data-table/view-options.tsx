@@ -16,7 +16,7 @@ interface DataTableViewOptionsProps<TData> {
     table: Table<TData>;
 }
 
-export function DataTableViewOptions<TData>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>) {
+export const DataTableViewOptions = <TData,>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>) => {
     // Get columns that can be hidden
     const columns = React.useMemo(() => table.getAllColumns().filter((column) => typeof column.accessorFn !== "undefined" && column.getCanHide()), [table]);
 
@@ -42,9 +42,11 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             const bIndex = columnOrder.indexOf(b.id);
 
             // If column isn't in the order array, put it at the end
-            if (aIndex === -1) return 1;
+            if (aIndex === -1)
+                return 1;
 
-            if (bIndex === -1) return -1;
+            if (bIndex === -1)
+                return -1;
 
             return aIndex - bIndex;
         });
@@ -101,7 +103,8 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
         (e: React.DragEvent, targetColumnId: string) => {
             e.preventDefault();
 
-            if (!draggedColumnId || draggedColumnId === targetColumnId) return;
+            if (!draggedColumnId || draggedColumnId === targetColumnId)
+                return;
 
             // Get current column order
             const currentOrder = table.getState().columnOrder.length > 0 ? [...table.getState().columnOrder] : table.getAllLeafColumns().map((d) => d.id);
@@ -110,7 +113,8 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             const draggedIndex = currentOrder.indexOf(draggedColumnId);
             const targetIndex = currentOrder.indexOf(targetColumnId);
 
-            if (draggedIndex === -1 || targetIndex === -1) return;
+            if (draggedIndex === -1 || targetIndex === -1)
+                return;
 
             // Create new order by moving the dragged column
             const newOrder = [...currentOrder];
@@ -148,9 +152,9 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
 
             // Then check for meta label
             return (
-                (column.columnDef.meta as { label?: string })?.label ??
+                (column.columnDef.meta as { label?: string })?.label
                 // Finally fall back to formatted column ID
-                column.id.replace(/_/g, " ")
+                ?? column.id.replace(/_/g, " ")
             );
         },
         [columnMapping],
@@ -198,4 +202,4 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             </PopoverContent>
         </Popover>
     );
-}
+};

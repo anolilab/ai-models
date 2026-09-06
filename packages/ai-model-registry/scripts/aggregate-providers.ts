@@ -909,7 +909,7 @@ ${providerNamesType};
 /**
  * Array of all available provider names
  */
-export const PROVIDER_NAMES: readonly ProviderName[] = ${JSON.stringify(providersList, null, 2)} as const;
+export const PROVIDER_NAMES: ReadonlyArray<ProviderName> = ${JSON.stringify(providersList, null, 2)} as const;
 `;
 
     writeFileSync(typesOutputPath, typesContent);

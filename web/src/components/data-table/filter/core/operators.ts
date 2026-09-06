@@ -323,15 +323,18 @@ export function determineNewOperator<TType extends ColumnDataType>(
 
     // If filter size has not transitioned from single to multiple (or vice versa)
     // or is unchanged, return the current operator.
-    if (a === b || (a >= 2 && b >= 2) || (a <= 1 && b <= 1)) return currentOperator;
+    if (a === b || (a >= 2 && b >= 2) || (a <= 1 && b <= 1))
+        return currentOperator;
 
     const opDetails = filterTypeOperatorDetails[type][currentOperator];
 
     // Handle transition from single to multiple filter values.
-    if (a < b && b >= 2) return opDetails.singularOf ?? currentOperator;
+    if (a < b && b >= 2)
+        return opDetails.singularOf ?? currentOperator;
 
     // Handle transition from multiple to single filter values.
-    if (a > b && b <= 1) return opDetails.pluralOf ?? currentOperator;
+    if (a > b && b <= 1)
+        return opDetails.pluralOf ?? currentOperator;
 
     return currentOperator;
 }

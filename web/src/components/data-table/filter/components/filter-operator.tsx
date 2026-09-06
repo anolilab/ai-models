@@ -140,7 +140,7 @@ export const FilterOperatorController = <TData, TType extends ColumnDataType>({
     }
 };
 
-function FilterOperatorOptionController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "option">) {
+const FilterOperatorOptionController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "option">) => {
     const filterDetails = optionFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(optionFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -159,7 +159,7 @@ function FilterOperatorOptionController<TData>({ actions, closeController, colum
             ))}
         </CommandGroup>
     );
-}
+};
 
 function FilterOperatorMultiOptionController<TData>({
     actions,
@@ -188,7 +188,7 @@ function FilterOperatorMultiOptionController<TData>({
     );
 }
 
-function FilterOperatorDateController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "date">) {
+const FilterOperatorDateController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "date">) => {
     const filterDetails = dateFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(dateFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -207,9 +207,9 @@ function FilterOperatorDateController<TData>({ actions, closeController, column,
             ))}
         </CommandGroup>
     );
-}
+};
 
-export function FilterOperatorTextController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "text">) {
+export const FilterOperatorTextController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "text">) => {
     const filterDetails = textFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(textFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -228,9 +228,9 @@ export function FilterOperatorTextController<TData>({ actions, closeController, 
             ))}
         </CommandGroup>
     );
-}
+};
 
-function FilterOperatorNumberController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "number">) {
+const FilterOperatorNumberController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "number">) => {
     const filterDetails = numberFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(numberFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -251,4 +251,4 @@ function FilterOperatorNumberController<TData>({ actions, closeController, colum
             </CommandGroup>
         </div>
     );
-}
+};

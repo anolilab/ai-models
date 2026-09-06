@@ -190,7 +190,8 @@ const TableHeadRow = <TData extends ExportableData>({
             {headersToRender.map((header) => {
                 const sortingState = table
                     .getState()
-                    .sorting.map((s) => `${s.id}-${s.desc}`)
+                    .sorting
+                    .map((s) => `${s.id}-${s.desc}`)
                     .join(",");
 
                 return <TableHeadCell enableColumnResizing={enableColumnResizing} header={header} key={`${header.id}-${sortingState}`} table={table} />;
@@ -214,7 +215,8 @@ const TableHead = <TData extends ExportableData>({
     // Create a key that changes when selection state or sorting changes
     const sortingState = table
         .getState()
-        .sorting.map((s) => `${s.id}-${s.desc}`)
+        .sorting
+        .map((s) => `${s.id}-${s.desc}`)
         .join(",");
     const headerKey = enableRowSelection ? `header-${JSON.stringify(table.getState().rowSelection)}-${sortingState}` : `header-${sortingState}`;
 
@@ -315,7 +317,8 @@ const TableBody = <TData extends ExportableData>({
                 // Include sorting state in key to force re-render when sorting changes
                 const sortingState = table
                     .getState()
-                    .sorting.map((s) => `${s.id}-${s.desc}`)
+                    .sorting
+                    .map((s) => `${s.id}-${s.desc}`)
                     .join(",");
                 const rowKey = enableRowSelection
                     ? `${row.id}-${virtualRow.index}-${row.getIsSelected()}-${sortingState}`
@@ -389,9 +392,9 @@ const VirtualizedTable = <TData extends ExportableData>({
                 // Safari-specific fixes for horizontal scrolling
                 WebkitOverflowScrolling: "touch",
                 WebkitTransform: "translateZ(0)",
-                ...(enableStickyHeader && {
+                ...enableStickyHeader && {
                     position: "relative",
-                }),
+                },
             }}
         >
             <BaseTable

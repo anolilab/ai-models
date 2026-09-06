@@ -10,7 +10,7 @@ interface CreateTSTColumns<TData> {
     configs: Column<TData>[];
 }
 
-export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<TData>) {
+export const createTSTColumns = <TData,>({ columns, configs }: CreateTSTColumns<TData>) => {
     const _cols: ColumnDef<TData>[] = [];
 
     for (const col of columns) {
@@ -46,7 +46,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"option">) => {
                 const value = row.getValue<unknown>(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (typeof value === "string") {
                     return optionFilterFn(value, filterValue);
@@ -66,7 +67,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
             col.filterFn = (row, columnId, filterValue: FilterModel<"multiOption">) => {
                 const value = row.getValue(columnId);
 
-                if (!value) return false;
+                if (!value)
+                    return false;
 
                 if (isStringArray(value)) {
                     return multiOptionFilterFn(value, filterValue);
@@ -92,10 +94,8 @@ export function createTSTColumns<TData>({ columns, configs }: CreateTSTColumns<T
     }
 
     return _cols;
-}
+};
 
-export function createTSTFilters(filters: FiltersState): ColumnFiltersState {
-    return filters.map((filter) => {
-        return { id: filter.columnId, value: filter };
-    });
-}
+export const createTSTFilters = (filters: FiltersState): ColumnFiltersState => filters.map((filter) => {
+    return { id: filter.columnId, value: filter };
+});
