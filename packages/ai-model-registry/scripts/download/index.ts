@@ -24,7 +24,8 @@ const supportsColors = process.stdout.isTTY && process.env.FORCE_COLOR !== "0";
  * Colored console output functions using @visulima/colorize
  */
 const consoleColors = {
-    error: (message: string) => console.error(supportsColors ? red(message) : message),
+    error: (message: string, detail?: unknown) =>
+        console.error(supportsColors ? red(message) : message, ...(detail === undefined ? [] : [detail])),
     highlight: (message: string) => console.log(supportsColors ? bold(cyan(message)) : message),
     info: (message: string) => console.log(supportsColors ? blue(message) : message),
     muted: (message: string) => console.log(supportsColors ? gray(message) : message),
@@ -349,9 +350,13 @@ const main = async (): Promise<void> => {
         // Progress tracking
         const startTime = Date.now();
         const updateProgress = () => {
-            const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+            const elapsedSeconds = (Date.now() - startTime) / 1000;
+            const elapsed = elapsedSeconds.toFixed(1);
             const progress = ((completedCount / providersToProcess.length) * 100).toFixed(1);
-            const eta = completedCount > 0 ? ((elapsed * (providersToProcess.length - completedCount)) / completedCount).toFixed(1) : "?";
+            const eta =
+                completedCount > 0
+                    ? ((elapsedSeconds * (providersToProcess.length - completedCount)) / completedCount).toFixed(1)
+                    : "?";
 
             consoleColors.info(
                 `Progress: ${completedCount}/${providersToProcess.length} (${progress}%) - ${runningCount} running - Elapsed: ${elapsed}s - ETA: ${eta}s`,

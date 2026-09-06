@@ -69,7 +69,11 @@ const parseOutputModalities = (modalitiesText: string): string[] => {
  * @param regionsCell Cheerio element containing regions data
  * @returns Array of parsed regions
  */
-const parseRegions = (regionsCell: cheerio.Cheerio<unknown>): string[] => {
+// cheerio does not re-export domhandler's AnyNode, so take the element type from the
+// API's own return type rather than adding a dependency for one annotation.
+type CheerioSelection = ReturnType<cheerio.CheerioAPI>;
+
+const parseRegions = (regionsCell: CheerioSelection): string[] => {
     const regionsArray: string[] = [];
 
     if (regionsCell.length > 0) {
@@ -78,8 +82,8 @@ const parseRegions = (regionsCell: cheerio.Cheerio<unknown>): string[] => {
 
         if (listItems.length > 0) {
             // Multiple regions in list format
-            listItems.each((index, item) => {
-                const region = regionsCell.find(item).text().trim();
+            listItems.each((index) => {
+                const region = listItems.eq(index).text().trim();
 
                 if (region && region !== "-" && region !== "") {
                     regionsArray.push(region);

@@ -30,8 +30,10 @@ export default defineConfig({
         }),
         tailwindcss(),
         tanstackStart(),
+        // v6 runs the React Compiler through oxc rather than babel, and its option set
+        // has no `target` — the compiler follows the installed React version.
         react({
-            compiler: { target: "19" },
+            compiler: true,
         }),
         Unfonts({
             fontsource: {

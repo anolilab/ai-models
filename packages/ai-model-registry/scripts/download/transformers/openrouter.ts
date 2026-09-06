@@ -91,7 +91,7 @@ export const transformOpenRouterModel = (model: OpenRouterModel): Model => {
         streamingSupported: true,
         temperature: true,
         toolCall: true,
-        vision: get(model.architecture, "input_modalities", []).includes("image"),
+        vision: get(model.architecture, "input_modalities", [] as string[]).includes("image"),
     };
 };
 

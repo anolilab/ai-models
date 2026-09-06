@@ -573,7 +573,7 @@ const EXCLUDED_FIELDS = new Set([
  * @returns A score from 0 to 1 indicating completeness
  */
 const calculateCompletenessScore = (model: Model): number => {
-    const modelObject = model as Record<string, unknown>;
+    const modelObject: Record<string, unknown> = { ...model };
     let totalFields = 0;
     let filledFields = 0;
 
@@ -608,8 +608,8 @@ const calculateCompletenessScore = (model: Model): number => {
  * @returns The enhanced target model
  */
 const mergeModelData = (target: Model, source: Model): Model => {
-    const targetObject = target as Record<string, unknown>;
-    const sourceObject = source as Record<string, unknown>;
+    const targetObject: Record<string, unknown> = { ...target };
+    const sourceObject: Record<string, unknown> = { ...source };
     const merged = { ...targetObject };
     let fieldsMerged = 0;
 
@@ -655,7 +655,9 @@ const mergeModelData = (target: Model, source: Model): Model => {
         console.log(`[SYNC] Merged ${fieldsMerged} fields from ${source.provider} to ${target.provider} for model ${target.id}`);
     }
 
-    return merged as Model;
+    // merged is target's fields with source's gaps filled, so it still satisfies Model;
+    // the compiler cannot follow that through the generic record.
+    return merged as unknown as Model;
 };
 
 /**

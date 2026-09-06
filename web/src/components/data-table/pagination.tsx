@@ -33,7 +33,6 @@ export function DataTablePagination<TData>({
     totalSelectedItems = 0,
 }: DataTablePaginationProps<TData>) {
     // Convert 'lg' size to 'default' for SelectTrigger since it only accepts 'sm' | 'default'
-    const selectSize = size === "lg" ? "default" : size;
 
     return (
         <div className="flex w-full flex-col items-center justify-between gap-4 overflow-auto px-2 py-1 sm:flex-row sm:gap-8">
@@ -63,7 +62,10 @@ export function DataTablePagination<TData>({
                         }}
                         value={`${table.getState().pagination.pageSize}`}
                     >
-                        <SelectTrigger className="cursor-pointer" size={selectSize}>
+                        {/* This copy of shadcn's SelectTrigger predates the `size` prop upstream
+                            added, so the trigger renders at its default size. Re-adding the
+                            component with the shadcn CLI would bring the prop with it. */}
+                        <SelectTrigger className="cursor-pointer">
                             <SelectValue placeholder={table.getState().pagination.pageSize} />
                         </SelectTrigger>
                         <SelectContent className="cursor-pointer" side="top">

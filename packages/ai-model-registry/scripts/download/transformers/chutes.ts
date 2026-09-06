@@ -5,6 +5,10 @@ import type { Model } from "../../../src/schema.js";
 /**
  * Chutes model data interface
  */
+interface ChutesApiResponse {
+    data: ChutesModelData[];
+}
+
 interface ChutesModelData {
     capabilities?: {
         reasoning?: boolean;
@@ -15,7 +19,13 @@ interface ChutesModelData {
     };
     context_length?: number;
     id: string;
+    // The API reports the window as max_model_len and the price under `price`;
+    // context_length/pricing are the older spelling, kept for payloads that still use it.
+    max_model_len?: number;
     name: string;
+    price?: {
+        usd?: number;
+    };
     pricing?: {
         input?: number;
         output?: number;
@@ -38,8 +48,9 @@ export const transformChutesModels = (modelsData: ChutesModelData[]): Model[] =>
         const contextLength = modelData.max_model_len ? modelData.max_model_len * 4 : null;
 
         // Convert price from USD per token to USD per 1K tokens
-        const inputPrice = modelData.price.usd > 0 ? modelData.price.usd * 1000 : null;
-        const outputPrice = modelData.price.usd > 0 ? modelData.price.usd * 1000 : null;
+        const usdPerToken = modelData.price?.usd ?? 0;
+        const inputPrice = usdPerToken > 0 ? usdPerToken * 1000 : null;
+        const outputPrice = usdPerToken > 0 ? usdPerToken * 1000 : null;
 
         const model: Model = {
             attachment: false,

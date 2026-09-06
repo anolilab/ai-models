@@ -511,7 +511,7 @@ export const FilterValueDateController = <TData,>({ actions, column, filter }: F
             <CommandList className="max-h-fit">
                 <CommandGroup>
                     <div>
-                        <Calendar defaultMonth={date?.from} initialFocus mode="range" numberOfMonths={1} onSelect={changeDateRange} selected={date} />
+                        <Calendar autoFocus defaultMonth={date?.from} mode="range" numberOfMonths={1} onSelect={changeDateRange} selected={date} />
                     </div>
                 </CommandGroup>
             </CommandList>

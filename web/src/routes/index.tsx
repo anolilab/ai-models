@@ -125,7 +125,7 @@ const HomeComponent = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                     <DropdownMenuItem asChild>
-                        <HowToUseDialog />
+                        <HowToUseDialog allModels={allModels} allProviders={allProviders} />
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                         <a className="w-full cursor-pointer" href="https://github.com/anolilab/ai-models" rel="noopener noreferrer" target="_blank">

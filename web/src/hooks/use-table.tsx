@@ -1031,7 +1031,7 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return [];
         }
-    }, [columnConfigs, options.enableFiltering, options.enableColumnHiding, options.enableColumnResizing, options.enableSorting, options.selectionMode]);
+    }, [columnConfigs, options.enableFiltering, options.enableColumnHiding, options.enableColumnResizing, options.enableSorting]);
 
     // Create export configuration
     const exportConfig = useMemo(() => {
@@ -1091,7 +1091,8 @@ export interface UseSelectionModeReturn {
     getValidationMessage: (count: number) => string;
     handleModeChange: (mode: SelectionMode) => void;
     isSelectionValid: (count: number) => boolean;
-    maxSelectionLimit: number;
+    // undefined in export mode: only comparison caps the selection
+    maxSelectionLimit: number | undefined;
     selectionMode: SelectionMode;
 }
 

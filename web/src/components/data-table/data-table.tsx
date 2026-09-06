@@ -231,7 +231,9 @@ const DataTable = <TData extends ExportableData, TValue>({
     }
 
     // Load table configuration with any overrides
-    const tableConfig = {
+    // Annotated so the literal keeps TableConfig's unions: without it `selectionMode`
+    // and `size` widen to string and no longer satisfy the components that take them.
+    const tableConfig: TableConfig = {
         allowExportNewColumns: true, // Allow new columns from transform function by default
         enableClickRowSelect: false, // Clicking row to select disabled by default
         enableColumnFilters: true, // Column filters enabled by default
