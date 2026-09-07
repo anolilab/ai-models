@@ -105,6 +105,7 @@
         "get-port-please": "^3.2.0",
         "happy-dom": "^20.14.0",
         "jsdom": "^30.0.1",
+        "oxc-transform-react": "^0.148.0",
         "prettier": "^3.9.6",
         "prettier-plugin-tailwindcss": "0.8.1",
         "react-compiler-runtime": "19.1.0-rc.2",
