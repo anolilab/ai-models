@@ -57,6 +57,15 @@ export default createConfig(
         },
     },
     {
+        // src/ is browser code. The node plugin checks builtins against a Node support
+        // range, so it flags fetch, Blob, URL.createObjectURL and localStorage — all of
+        // which are correct here. vite.config.ts and scripts/ do run in Node and keep it.
+        files: ["src/**"],
+        rules: {
+            "n/no-unsupported-features/node-builtins": "off",
+        },
+    },
+    {
         files: ["src/models-data.ts"],
         rules: {
             "no-secrets/no-secrets": "off",

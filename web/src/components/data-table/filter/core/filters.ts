@@ -22,7 +22,7 @@ class ColumnConfigBuilder<
 > {
     private config: Partial<ColumnConfig<TData, TType, TVal, TId>>;
 
-    constructor(type: TType) {
+    public constructor(type: TType) {
         this.config = { type } as Partial<ColumnConfig<TData, TType, TVal, TId>>;
     }
 
@@ -34,7 +34,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    id<TNewId extends string>(value: TNewId): ColumnConfigBuilder<TData, TType, TVal, TNewId> {
+    public id<TNewId extends string>(value: TNewId): ColumnConfigBuilder<TData, TType, TVal, TNewId> {
         const newInstance = this.clone() as any; // We'll refine this
 
         newInstance.config.id = value;
@@ -42,7 +42,7 @@ class ColumnConfigBuilder<
         return newInstance as ColumnConfigBuilder<TData, TType, TVal, TNewId>;
     }
 
-    accessor<TNewVal>(accessor: TAccessorFn<TData, TNewVal>): ColumnConfigBuilder<TData, TType, TNewVal, TId> {
+    public accessor<TNewVal>(accessor: TAccessorFn<TData, TNewVal>): ColumnConfigBuilder<TData, TType, TNewVal, TId> {
         const newInstance = this.clone() as any;
 
         newInstance.config.accessor = accessor;
@@ -50,7 +50,7 @@ class ColumnConfigBuilder<
         return newInstance as ColumnConfigBuilder<TData, TType, TNewVal, TId>;
     }
 
-    displayName(value: string): ColumnConfigBuilder<TData, TType, TVal, TId> {
+    public displayName(value: string): ColumnConfigBuilder<TData, TType, TVal, TId> {
         const newInstance = this.clone();
 
         newInstance.config.displayName = value;
@@ -58,7 +58,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    icon(value: any): ColumnConfigBuilder<TData, TType, TVal, TId> {
+    public icon(value: any): ColumnConfigBuilder<TData, TType, TVal, TId> {
         const newInstance = this.clone();
 
         newInstance.config.icon = value;
@@ -66,7 +66,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    min(value: number): ColumnConfigBuilder<TData, TType extends "number" ? TType : never, TVal, TId> {
+    public min(value: number): ColumnConfigBuilder<TData, TType extends "number" ? TType : never, TVal, TId> {
         if (this.config.type !== "number") {
             throw new Error("min() is only applicable to number columns");
         }
@@ -78,7 +78,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    max(value: number): ColumnConfigBuilder<TData, TType extends "number" ? TType : never, TVal, TId> {
+    public max(value: number): ColumnConfigBuilder<TData, TType extends "number" ? TType : never, TVal, TId> {
         if (this.config.type !== "number") {
             throw new Error("max() is only applicable to number columns");
         }
@@ -90,7 +90,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    options(value: ColumnOption[]): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
+    public options(value: ColumnOption[]): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("options() is only applicable to option or multiOption columns");
         }
@@ -102,7 +102,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    transformOptionFn(fn: TTransformOptionFn<TVal>): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
+    public transformOptionFn(fn: TTransformOptionFn<TVal>): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("transformOptionFn() is only applicable to option or multiOption columns");
         }
@@ -114,7 +114,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    orderFn(fn: TOrderFn<TVal>): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
+    public orderFn(fn: TOrderFn<TVal>): ColumnConfigBuilder<TData, TType extends "option" | "multiOption" ? TType : never, TVal, TId> {
         if (!isAnyOf(this.config.type, ["option", "multiOption"])) {
             throw new Error("orderFn() is only applicable to option or multiOption columns");
         }
@@ -126,7 +126,7 @@ class ColumnConfigBuilder<
         return newInstance;
     }
 
-    build(): ColumnConfig<TData, TType, TVal, TId> {
+    public build(): ColumnConfig<TData, TType, TVal, TId> {
         if (!this.config.id)
             throw new Error("id is required");
 

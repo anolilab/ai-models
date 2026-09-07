@@ -118,7 +118,7 @@ export class PerformanceTracker {
 
     private metrics = new Map<string, number>();
 
-    static getInstance(): PerformanceTracker {
+    public static getInstance(): PerformanceTracker {
         if (!PerformanceTracker.instance) {
             PerformanceTracker.instance = new PerformanceTracker();
         }
@@ -129,7 +129,7 @@ export class PerformanceTracker {
     /**
      * Start measuring a custom metric.
      */
-    start(name: string): void {
+    public start(name: string): void {
         if (typeof performance !== "undefined") {
             this.metrics.set(name, performance.now());
         }
@@ -138,7 +138,7 @@ export class PerformanceTracker {
     /**
      * End measuring and return the duration.
      */
-    end(name: string): number | null {
+    public end(name: string): number | null {
         if (typeof performance === "undefined")
             return null;
 
@@ -173,7 +173,7 @@ export class PerformanceTracker {
     /**
      * Measure a function execution time.
      */
-    async measure<T>(name: string, fn: () => T | Promise<T>): Promise<T> {
+    public async measure<T>(name: string, fn: () => T | Promise<T>): Promise<T> {
         this.start(name);
 
         try {
