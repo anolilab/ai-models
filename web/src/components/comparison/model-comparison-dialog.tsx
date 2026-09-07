@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ChevronDown, ChevronRight, Code, Database, File, FileText, Image, Music, Settings, Video, X } from "lucide-react";
+import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -26,7 +27,7 @@ interface ModelComparisonDialogProps {
     selectedModels: ModelTableRow[];
 }
 
-const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelComparisonDialogProps) => {
+const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelComparisonDialogProps): ReactElement | null => {
     const [showConfig, setShowConfig] = useState(false);
     const [comparisonFields, setComparisonFields] = useState<ColumnConfig<ModelTableRow>[]>([]);
     const [isSummaryExpanded, setIsSummaryExpanded] = useState(true);

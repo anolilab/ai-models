@@ -710,7 +710,10 @@ export interface ColumnFactoryOptions {
 
 export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] =>
     configs.map((config) => {
-        const column: ColumnDef<ModelTableRow> = {
+        // TanStack's ColumnDef is a union (accessor / display / group), so the definition
+        // cannot be built up field by field against that type. Assemble a record and
+        // assert once, rather than casting away the type on every assignment.
+        const column: Record<string, unknown> = {
             enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
             enableHiding: options.enableHiding !== false,
             enableResizing: options.enableResizing !== false,
@@ -723,29 +726,29 @@ export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], 
 
         // Set header
         if (config.header) {
-            (column as any).header = config.header;
+            column.header = config.header;
         } else {
-            (column as any).header = config.displayName;
+            column.header = config.displayName;
         }
 
         // Set accessor
         if (config.accessorKey) {
-            (column as any).accessorKey = config.accessorKey as string;
+            column.accessorKey = config.accessorKey as string;
         } else if (config.accessorFn) {
-            (column as any).accessorFn = config.accessorFn;
+            column.accessorFn = config.accessorFn;
         }
 
         // Set cell renderer
         if (config.cell) {
-            (column as any).cell = config.cell;
+            column.cell = config.cell;
         }
 
         // Set sorting function
         if (config.sort) {
-            (column as any).sortingFn = "basic";
+            column.sortingFn = "basic";
         }
 
-        return column;
+        return column as unknown as ColumnDef<ModelTableRow>;
     });
 
 export const createExportConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {

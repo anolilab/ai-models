@@ -2,6 +2,7 @@
 
 import type { Column, Table } from "@tanstack/react-table";
 import { Eye, EyeOff, GripVertical, RotateCcw, Settings2 } from "lucide-react";
+import type { ReactElement } from "react";
 import * as React from "react";
 import { useCallback, useMemo, useState } from "react";
 
@@ -19,7 +20,7 @@ interface DataTableViewOptionsProps<TData> {
     table: Table<TData>;
 }
 
-export const DataTableViewOptions = <TData,>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>) => {
+export const DataTableViewOptions = <TData,>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>): ReactElement => {
     // Get columns that can be hidden
     const columns = React.useMemo(() => table.getAllColumns().filter((column) => typeof column.accessorFn !== "undefined" && column.getCanHide()), [table]);
 

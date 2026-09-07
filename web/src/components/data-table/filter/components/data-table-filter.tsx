@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+
 import useIsMobile from "@/hooks/use-is-mobile";
 
 import type { Column, DataTableFilterActions, FiltersState, FilterStrategy } from "../core/types";
@@ -14,7 +16,7 @@ interface DataTableFilterProps<TData> {
     strategy: FilterStrategy;
 }
 
-const DataTableFilter = <TData,>({ actions, columns, filters, locale = "en", strategy }: DataTableFilterProps<TData>) => {
+const DataTableFilter = <TData,>({ actions, columns, filters, locale = "en", strategy }: DataTableFilterProps<TData>): ReactElement => {
     const isMobile = useIsMobile();
 
     if (isMobile) {

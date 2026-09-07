@@ -36,9 +36,9 @@ const captureWithConsent = (eventName: string, properties: Record<string, any> =
 
     // Check if PostHog is available and consent is given
     // The AnalyticsProvider will handle consent checking, so if posthog is available, consent was given
-    if ((window as any).posthog && typeof (window as any).posthog.capture === "function") {
+    if (globalThis.posthog && typeof globalThis.posthog.capture === "function") {
         try {
-            (window as any).posthog.capture(eventName, properties);
+            globalThis.posthog.capture(eventName, properties);
         } catch (error) {
             // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("[Performance] Failed to capture analytics event:", error);
@@ -252,11 +252,11 @@ export const getPerformanceInfo = (): Record<string, any> => {
         loadComplete: navigation?.loadEventEnd - navigation?.loadEventStart,
 
         // Memory info (Chrome only)
-        memoryUsage: (performance as any)?.memory
+        memoryUsage: performance.memory
             ? {
-                limit: (performance as any).memory.jsHeapSizeLimit,
-                total: (performance as any).memory.totalJSHeapSize,
-                used: (performance as any).memory.usedJSHeapSize,
+                limit: performance.memory.jsHeapSizeLimit,
+                total: performance.memory.totalJSHeapSize,
+                used: performance.memory.usedJSHeapSize,
             }
             : undefined,
     };

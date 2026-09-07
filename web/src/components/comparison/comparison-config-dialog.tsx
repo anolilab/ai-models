@@ -1,6 +1,7 @@
 "use client";
 
 import { RotateCcw, Save, Settings } from "lucide-react";
+import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -18,7 +19,7 @@ interface ComparisonConfigProps {
     onSave: (enabledColumns: string[]) => void;
 }
 
-const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: ComparisonConfigProps) => {
+const ComparisonConfig = ({ currentConfig, isOpen, onClose, onSave }: ComparisonConfigProps): ReactElement => {
     const [enabledColumns, setEnabledColumns] = useState<string[]>([]);
     const [hasChanges, setHasChanges] = useState(false);
 

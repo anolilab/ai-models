@@ -1,4 +1,5 @@
 import { X } from "lucide-react";
+import type { ReactElement } from "react";
 import { useEffect, useRef, useState } from "react";
 
 import { Separator } from "@/components/ui/separator";
@@ -26,7 +27,7 @@ interface ActiveFilterProps<TData, TType extends ColumnDataType> {
     strategy: FilterStrategy;
 }
 
-export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>) => (
+export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en", strategy }: ActiveFiltersProps<TData>): ReactElement => (
     <>
         {filters.map((filter) => {
             const id = filter.columnId;
@@ -46,7 +47,7 @@ export const ActiveFilters = <TData,>({ actions, columns, filters, locale = "en"
 );
 
 // Generic render function for a filter with type-safe value
-export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>) => (
+export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en", strategy }: ActiveFilterProps<TData, TType>): ReactElement => (
     <div className="border-border animate-in fade-in-0 slide-in-from-left-2 bg-muted/30 flex h-8 items-center overflow-hidden rounded-md border text-xs duration-200 ease-out">
         {/* Subject: column name with distinct tinted background */}
         <div className="border-border bg-muted/50 flex h-full shrink-0 items-center gap-1.5 border-r px-2.5">
@@ -72,7 +73,7 @@ export const ActiveFilter = <TData, TType extends ColumnDataType>({ actions, col
     </div>
 );
 
-export const ActiveFiltersMobileContainer = ({ children }: { children: React.ReactNode }) => {
+export const ActiveFiltersMobileContainer = ({ children }: { children: React.ReactNode }): ReactElement => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [showLeftBlur, setShowLeftBlur] = useState(false);
     const [showRightBlur, setShowRightBlur] = useState(true);

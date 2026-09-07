@@ -7,7 +7,7 @@ export async function e2eStartDummyServer(input: string) {
     return await localDummyServer(port);
 }
 
-export async function e2eStopDummyServer(input: string) {
+export async function e2eStopDummyServer(input: string): Promise<void> {
     const port = await getDummyServerPort(input);
 
     await fetch(`http://localhost:${port}/stop`, {

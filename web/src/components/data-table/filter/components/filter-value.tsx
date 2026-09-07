@@ -1,5 +1,6 @@
 import { format, isEqual } from "date-fns";
 import { Check, Ellipsis } from "lucide-react";
+import type { ReactElement } from "react";
 import { cloneElement, isValidElement, memo, useCallback, useEffect, useMemo, useState } from "react";
 import type { DateRange } from "react-day-picker";
 
@@ -52,7 +53,7 @@ interface FilterValueDisplayProps<TData, TType extends ColumnDataType> {
     locale?: Locale;
 }
 
-export const FilterValueDisplay = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en" }: FilterValueDisplayProps<TData, TType>) => {
+export const FilterValueDisplay = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en" }: FilterValueDisplayProps<TData, TType>): ReactElement | null => {
     switch (column.type) {
         case "date":
             return <FilterValueDateDisplay actions={actions} column={column as Column<TData, "date">} filter={filter as FilterModel<"date">} locale={locale} />;
@@ -90,7 +91,7 @@ export const FilterValueDisplay = <TData, TType extends ColumnDataType>({ action
     }
 };
 
-export const FilterValueOptionDisplay = <TData,>({ column, filter }: FilterValueDisplayProps<TData, "option">) => {
+export const FilterValueOptionDisplay = <TData,>({ column, filter }: FilterValueDisplayProps<TData, "option">): ReactElement => {
     const options = useMemo(() => column.getOptions(), [column]);
     const selected = options.filter((o) => filter?.values.includes(o.value));
 
@@ -134,7 +135,7 @@ export const FilterValueOptionDisplay = <TData,>({ column, filter }: FilterValue
     );
 };
 
-export const FilterValueMultiOptionDisplay = <TData,>({ column, filter }: FilterValueDisplayProps<TData, "multiOption">) => {
+export const FilterValueMultiOptionDisplay = <TData,>({ column, filter }: FilterValueDisplayProps<TData, "multiOption">): ReactElement => {
     const options = useMemo(() => column.getOptions(), [column]);
     const selected = options.filter((o) => filter.values.includes(o.value));
 
@@ -220,7 +221,7 @@ export const FilterValueTextDisplay = <TData,>({ filter }: FilterValueDisplayPro
     return <span>{value}</span>;
 };
 
-export const FilterValueNumberDisplay = <TData,>({ filter, locale = "en" }: FilterValueDisplayProps<TData, "number">) => {
+export const FilterValueNumberDisplay = <TData,>({ filter, locale = "en" }: FilterValueDisplayProps<TData, "number">): ReactElement | null => {
     if (!filter || !filter.values || filter.values.length === 0)
         return null;
 
@@ -346,7 +347,7 @@ const OptionItem = memo(({ onToggle, option }: OptionItemProps) => {
     );
 });
 
-export const FilterValueOptionController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "option">) => {
+export const FilterValueOptionController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "option">): ReactElement => {
     // Compute initial options once per mount
     const initialOptions = useMemo(() => {
         const counts = column.getFacetedUniqueValues();
@@ -416,7 +417,7 @@ export const FilterValueOptionController = <TData,>({ actions, column, filter, l
     );
 };
 
-export const FilterValueMultiOptionController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "multiOption">) => {
+export const FilterValueMultiOptionController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "multiOption">): ReactElement => {
     // Compute initial options once per mount
     const initialOptions = useMemo(() => {
         const counts = column.getFacetedUniqueValues();
@@ -488,7 +489,7 @@ export const FilterValueMultiOptionController = <TData,>({ actions, column, filt
     );
 };
 
-export const FilterValueDateController = <TData,>({ actions, column, filter }: FilterValueControllerProps<TData, "date">) => {
+export const FilterValueDateController = <TData,>({ actions, column, filter }: FilterValueControllerProps<TData, "date">): ReactElement => {
     const [date, setDate] = useState<DateRange | undefined>({
         from: filter?.values[0] ?? new Date(),
         to: filter?.values[1] ?? undefined,
@@ -519,7 +520,7 @@ export const FilterValueDateController = <TData,>({ actions, column, filter }: F
     );
 };
 
-export const FilterValueTextController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "text">) => {
+export const FilterValueTextController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "text">): ReactElement => {
     // Drive the input directly from filter state — no local copy needed.
     // External changes (e.g. clearing the chip) flow through automatically.
     const filterValue = filter?.values[0] ?? "";
@@ -571,7 +572,7 @@ export const FilterValueTextController = <TData,>({ actions, column, filter, loc
     );
 };
 
-export const FilterValueNumberController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "number">) => {
+export const FilterValueNumberController = <TData,>({ actions, column, filter, locale = "en" }: FilterValueControllerProps<TData, "number">): ReactElement => {
     const minMax = useMemo(() => column.getFacetedMinMaxValues(), [column]);
     const [sliderMin, sliderMax] = [minMax ? minMax[0] : 0, minMax ? minMax[1] : 0];
 
