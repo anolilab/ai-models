@@ -30,7 +30,7 @@ const THRESHOLDS = {
  * Consent-aware PostHog wrapper.
  * This function safely captures events only when analytics consent is given
  */
-const captureWithConsent = (eventName: string, properties: Record<string, any> = {}): void => {
+const captureWithConsent = (eventName: string, properties: Record<string, unknown> = {}): void => {
     if (typeof window === "undefined")
         return;
 
@@ -231,7 +231,7 @@ export const observeLongTasks = (threshold: number = 50, onLongTask?: (duration:
 /**
  * Get current performance information.
  */
-export const getPerformanceInfo = (): Record<string, any> => {
+export const getPerformanceInfo = (): Record<string, unknown> => {
     if (typeof window === "undefined" || !window.performance) {
         return {};
     }

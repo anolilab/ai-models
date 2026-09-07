@@ -784,7 +784,7 @@ export const createComparisonConfig = (configs: ColumnConfig<ModelTableRow>[], e
 export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
     const filterableConfigs = configs.filter((config) => config.visibility.filterable && enabledColumns.includes(config.id));
 
-    const iconMap: Record<string, any> = {
+    const iconMap: Record<string, unknown> = {
         boolean: CheckSquare,
         cost: DollarSign,
         date: Calendar,
@@ -930,7 +930,7 @@ export interface TableOptions {
 }
 
 export interface TableState {
-    filters: Record<string, any>;
+    filters: Record<string, unknown>;
     pageIndex: number;
     pageSize: number;
     searchTerm: string;
@@ -1229,7 +1229,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
 
 export interface UseTableStateReturn {
     resetState: () => void;
-    setFilters: (filters: Record<string, any>) => void;
+    setFilters: (filters: Record<string, unknown>) => void;
     setPageIndex: (index: number) => void;
     setPageSize: (size: number) => void;
     setSearchTerm: (term: string) => void;
@@ -1279,7 +1279,7 @@ export const useTableState = (): UseTableStateReturn => {
         });
     }, []);
 
-    const setFilters = useCallback((filters: Record<string, any>) => {
+    const setFilters = useCallback((filters: Record<string, unknown>) => {
         setState((prev) => {
             return { ...prev, filters };
         });

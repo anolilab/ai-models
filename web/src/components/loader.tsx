@@ -1,6 +1,5 @@
-import type { ReactElement } from "react";
-
 import { Loader2 } from "lucide-react";
+import type { ReactElement } from "react";
 
 export default function Loader(): ReactElement {
     return (

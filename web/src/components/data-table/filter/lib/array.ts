@@ -6,7 +6,7 @@ export const intersection = <T>(a: T[], b: T[]): T[] => a.filter((x) => b.includ
  * It uses a cache (WeakMap) to avoid rehashing the same object twice, which is
  * particularly beneficial if an object appears in multiple places.
  */
-const deepHash = (value: any, cache = new WeakMap<object, string>()): string => {
+const deepHash = (value: unknown, cache = new WeakMap<object, string>()): string => {
     // Handle primitives and null/undefined.
     if (value === null)
         return "null";
@@ -39,8 +39,9 @@ const deepHash = (value: any, cache = new WeakMap<object, string>()): string => 
             hash = `array:[${value.map((v) => deepHash(v, cache)).join(",")}]`;
         } else {
             // For objects, sort keys to ensure the representation is stable.
-            const keys = Object.keys(value).sort();
-            const props = keys.map((k) => `${k}:${deepHash(value[k], cache)}`).join(",");
+            const record = value as Record<string, unknown>;
+            const keys = Object.keys(record).sort();
+            const props = keys.map((k) => `${k}:${deepHash(record[k], cache)}`).join(",");
 
             hash = `object:{${props}}`;
         }
@@ -58,7 +59,7 @@ const deepHash = (value: any, cache = new WeakMap<object, string>()): string => 
  * Performs deep equality check for any two values.
  * This recursively checks primitives, arrays, and plain objects.
  */
-const deepEqual = (a: any, b: any): boolean => {
+const deepEqual = (a: unknown, b: unknown): boolean => {
     // Check strict equality first.
     if (a === b)
         return true;
@@ -98,7 +99,7 @@ const deepEqual = (a: any, b: any): boolean => {
             if (aKeys[i] !== bKeys[i])
                 return false;
 
-            if (!deepEqual(a[aKeys[i]], b[bKeys[i]]))
+            if (!deepEqual((a as Record<string, unknown>)[aKeys[i]], (b as Record<string, unknown>)[bKeys[i]]))
                 return false;
         }
 

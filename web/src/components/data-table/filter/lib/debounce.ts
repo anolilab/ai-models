@@ -18,7 +18,7 @@ export function debounce<T extends (...args: any[]) => any>(
     const { leading = false, maxWait, trailing = true } = options;
     let timeout: NodeJS.Timeout | null = null;
     let lastArgs: Parameters<T> | null = null;
-    let lastThis: any;
+    let lastThis: unknown;
     let result: ReturnType<T> | undefined;
     let lastCallTime: number | null = null;
     let lastInvokeTime = 0;

@@ -1,7 +1,6 @@
-import type { ReactElement } from "react";
-
 import { ArrowDownIcon, ArrowUpIcon, CaretSortIcon, EyeNoneIcon } from "@radix-ui/react-icons";
 import type { Column } from "@tanstack/react-table";
+import type { ReactElement } from "react";
 
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
