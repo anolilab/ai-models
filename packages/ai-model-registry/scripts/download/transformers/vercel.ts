@@ -86,7 +86,7 @@ export const transformVercelModel = (model: VercelModel): Model => {
         streamingSupported: true,
         temperature: true,
         toolCall: true,
-        vision: get(model, "input_modalities", []).includes("image"),
+        vision: get(model, "input_modalities", [] as string[]).includes("image"),
     };
 };
 

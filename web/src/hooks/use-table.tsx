@@ -10,6 +10,15 @@ import { ProviderIcon } from "@/utils/provider-icons";
 
 import useIsMobile from "./use-is-mobile";
 
+// A dollar amount, capturing the digits.
+const CURRENCY_AMOUNT_PATTERN = /\$([\d,]+\.?\d*)/;
+
+// The unit after the final slash, e.g. `/1M tokens`.
+const TRAILING_UNIT_PATTERN = /\/([^/]+)$/;
+
+// Everything that is not a digit.
+const NON_DIGIT_PATTERN = /\D/g;
+
 const modalityIconMap: Record<string, React.ReactNode> = {
     audio: <Music className="size-4" />,
     code: <Code className="size-4" />,
@@ -59,8 +68,8 @@ const renderCostCell = (props: any) => {
     }
 
     // Extract the numeric value and unit for tooltip
-    const numericMatch = value.match(/\$([\d,]+\.?\d*)/);
-    const unitMatch = value.match(/\/([^/]+)$/);
+    const numericMatch = value.match(CURRENCY_AMOUNT_PATTERN);
+    const unitMatch = value.match(TRAILING_UNIT_PATTERN);
 
     const numericValue = numericMatch ? numericMatch[1] : "";
     const unit = unitMatch ? unitMatch[1] : "";
@@ -83,7 +92,7 @@ const renderNumberCell = (props: any) => {
     let num: number;
 
     if (typeof value === "string") {
-        num = parseInt(value.replace(/\D/g, ""), 10);
+        num = parseInt(value.replace(NON_DIGIT_PATTERN, ""), 10);
     } else if (typeof value === "number") {
         num = value;
     } else {
@@ -120,15 +129,17 @@ const renderDateCell = (props: any) => {
 };
 
 const extractLimitValue = (limitString: string): number => {
-    if (limitString === "-") return 0;
+    if (limitString === "-")
+        return 0;
 
-    const numericValue = limitString.replace(/\D/g, "");
+    const numericValue = limitString.replace(NON_DIGIT_PATTERN, "");
 
     return parseInt(numericValue, 10) || 0;
 };
 
 const parseDate = (dateString: string): Date | null => {
-    if (dateString === "-") return null;
+    if (dateString === "-")
+        return null;
 
     const date = new Date(dateString);
 
@@ -699,7 +710,10 @@ export interface ColumnFactoryOptions {
 
 export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], options: ColumnFactoryOptions = {}): ColumnDef<ModelTableRow>[] =>
     configs.map((config) => {
-        const column: ColumnDef<ModelTableRow> = {
+        // TanStack's ColumnDef is a union (accessor / display / group), so the definition
+        // cannot be built up field by field against that type. Assemble a record and
+        // assert once, rather than casting away the type on every assignment.
+        const column: Record<string, unknown> = {
             enableColumnFilter: config.visibility.filterable && config.filter && options.enableFilter !== false,
             enableHiding: options.enableHiding !== false,
             enableResizing: options.enableResizing !== false,
@@ -712,29 +726,29 @@ export const createColumnsFromConfig = (configs: ColumnConfig<ModelTableRow>[], 
 
         // Set header
         if (config.header) {
-            (column as any).header = config.header;
+            column.header = config.header;
         } else {
-            (column as any).header = config.displayName;
+            column.header = config.displayName;
         }
 
         // Set accessor
         if (config.accessorKey) {
-            (column as any).accessorKey = config.accessorKey as string;
+            column.accessorKey = config.accessorKey as string;
         } else if (config.accessorFn) {
-            (column as any).accessorFn = config.accessorFn;
+            column.accessorFn = config.accessorFn;
         }
 
         // Set cell renderer
         if (config.cell) {
-            (column as any).cell = config.cell;
+            column.cell = config.cell;
         }
 
         // Set sorting function
         if (config.sort) {
-            (column as any).sortingFn = "basic";
+            column.sortingFn = "basic";
         }
 
-        return column;
+        return column as unknown as ColumnDef<ModelTableRow>;
     });
 
 export const createExportConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
@@ -770,7 +784,7 @@ export const createComparisonConfig = (configs: ColumnConfig<ModelTableRow>[], e
 export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabledColumns: string[]) => {
     const filterableConfigs = configs.filter((config) => config.visibility.filterable && enabledColumns.includes(config.id));
 
-    const iconMap: Record<string, any> = {
+    const iconMap: Record<string, unknown> = {
         boolean: CheckSquare,
         cost: DollarSign,
         date: Calendar,
@@ -803,25 +817,25 @@ export const createFilterConfig = (configs: ColumnConfig<ModelTableRow>[], enabl
         const options = config.filter?.options || (config.type === ColumnType.BOOLEAN ? booleanOptions : undefined);
 
         // For boolean columns, provide a transform function to convert boolean to ColumnOption
-        const transformOptionFn =
-            config.type === ColumnType.BOOLEAN
+        const transformOptionFn
+            = config.type === ColumnType.BOOLEAN
                 ? (value: boolean) => {
-                      return {
-                          label: value ? "Yes" : "No",
-                          value: String(value),
-                      };
-                  }
+                    return {
+                        label: value ? "Yes" : "No",
+                        value: String(value),
+                    };
+                }
                 : undefined;
 
-        const accessor =
-            config.accessorFn ||
-            ((row: ModelTableRow) => {
-                if (config.accessorKey) {
-                    return row[config.accessorKey];
-                }
+        const accessor
+            = config.accessorFn
+                || ((row: ModelTableRow) => {
+                    if (config.accessorKey) {
+                        return row[config.accessorKey];
+                    }
 
-                return undefined;
-            });
+                    return undefined;
+                });
 
         return {
             accessor,
@@ -916,7 +930,7 @@ export interface TableOptions {
 }
 
 export interface TableState {
-    filters: Record<string, any>;
+    filters: Record<string, unknown>;
     pageIndex: number;
     pageSize: number;
     searchTerm: string;
@@ -1020,17 +1034,19 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
             return [];
         }
-    }, [columnConfigs, options.enableFiltering, options.enableColumnHiding, options.enableColumnResizing, options.enableSorting, options.selectionMode]);
+    }, [columnConfigs, options.enableFiltering, options.enableColumnHiding, options.enableColumnResizing, options.enableSorting]);
 
     // Create export configuration
     const exportConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return null;
+        if (columnConfigs.length === 0)
+            return null;
 
         try {
             const exportColumns = getDefaultExportColumns();
 
             return createExportConfig(columnConfigs, exportColumns);
         } catch (err) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to create export config:", err);
 
             return null;
@@ -1039,13 +1055,15 @@ export const useModelTable = (models: Model[], options: TableOptions = {}): UseM
 
     // Create filter configuration
     const filterConfig = useMemo(() => {
-        if (columnConfigs.length === 0) return [];
+        if (columnConfigs.length === 0)
+            return [];
 
         try {
             const filterColumns = getDefaultColumnOrder();
 
             return createFilterConfig(columnConfigs, filterColumns);
         } catch (err) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to create filter config:", err);
 
             return [];
@@ -1076,14 +1094,15 @@ export interface UseSelectionModeReturn {
     getValidationMessage: (count: number) => string;
     handleModeChange: (mode: SelectionMode) => void;
     isSelectionValid: (count: number) => boolean;
-    maxSelectionLimit: number;
+    // undefined in export mode: only comparison caps the selection
+    maxSelectionLimit: number | undefined;
     selectionMode: SelectionMode;
 }
 
 export const useSelectionMode = (): UseSelectionModeReturn => {
     const [selectionMode, setSelectionMode] = useState<SelectionMode>("comparison");
 
-    const maxSelectionLimit = useMemo(() => (selectionMode === "comparison" ? 10 : undefined), [selectionMode]);
+    const maxSelectionLimit = useMemo(() => selectionMode === "comparison" ? 10 : undefined, [selectionMode]);
 
     const handleModeChange = useCallback((mode: SelectionMode) => {
         setSelectionMode(mode);
@@ -1154,7 +1173,8 @@ export const useTableHeight = (): UseTableHeightReturn => {
     const isMobile = useIsMobile();
 
     const updateHeight = useCallback(() => {
-        if (typeof window === "undefined") return;
+        if (typeof window === "undefined")
+            return;
 
         setIsResizing(true);
 
@@ -1209,7 +1229,7 @@ export const useTableHeight = (): UseTableHeightReturn => {
 
 export interface UseTableStateReturn {
     resetState: () => void;
-    setFilters: (filters: Record<string, any>) => void;
+    setFilters: (filters: Record<string, unknown>) => void;
     setPageIndex: (index: number) => void;
     setPageSize: (size: number) => void;
     setSearchTerm: (term: string) => void;
@@ -1259,7 +1279,7 @@ export const useTableState = (): UseTableStateReturn => {
         });
     }, []);
 
-    const setFilters = useCallback((filters: Record<string, any>) => {
+    const setFilters = useCallback((filters: Record<string, unknown>) => {
         setState((prev) => {
             return { ...prev, filters };
         });
@@ -1310,7 +1330,8 @@ export const useTableState = (): UseTableStateReturn => {
 
 export const useTablePersistence = (key: string, initialState: TableState): [TableState, (state: TableState) => void] => {
     const [state, setState] = useState<TableState>(() => {
-        if (typeof window === "undefined") return initialState;
+        if (typeof window === "undefined")
+            return initialState;
 
         try {
             const saved = localStorage.getItem(key);
@@ -1322,6 +1343,7 @@ export const useTablePersistence = (key: string, initialState: TableState): [Tab
                 return { ...initialState, ...parsed };
             }
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn(`Failed to load table state from localStorage (${key}):`, error);
         }
 
@@ -1336,6 +1358,7 @@ export const useTablePersistence = (key: string, initialState: TableState): [Tab
                 try {
                     localStorage.setItem(key, JSON.stringify(newState));
                 } catch (error) {
+                    // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                     console.warn(`Failed to save table state to localStorage (${key}):`, error);
                 }
             }
@@ -1371,7 +1394,8 @@ export const useTableSearch = (data: ModelTableRow[], searchFields: (keyof Model
             searchFields.some((field) => {
                 const value = row[field];
 
-                if (value == null) return false;
+                if (value == null)
+                    return false;
 
                 return String(value).toLowerCase().includes(term);
             }),

@@ -13,6 +13,9 @@ import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
+// The proxy prefix stripped before forwarding.
+const POSTHOG_PROXY_PREFIX = /^\/pr\/posthog/;
+
 export default defineConfig({
     build: {
         target: "esnext",
@@ -27,10 +30,10 @@ export default defineConfig({
         }),
         tailwindcss(),
         tanstackStart(),
+        // v6 runs the React Compiler through oxc rather than babel, and its option set
+        // has no `target` — the compiler follows the installed React version.
         react({
-            babel: {
-                plugins: [["babel-plugin-react-compiler", { target: "19" }]],
-            },
+            compiler: true,
         }),
         Unfonts({
             fontsource: {
@@ -61,7 +64,7 @@ export default defineConfig({
         proxy: {
             "/pr/posthog": {
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/pr\/posthog/, ""),
+                rewrite: (path) => path.replace(POSTHOG_PROXY_PREFIX, ""),
                 target: "https://eu.i.posthog.com",
             },
         },

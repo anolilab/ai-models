@@ -3,7 +3,7 @@
 // @ts-check
 import { execSync } from "node:child_process";
 import { join, dirname } from "node:path";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { env, exit } from "node:process";
 
@@ -22,17 +22,26 @@ const affectedRepoPackages = JSON.parse(json);
 
 // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const packagesPath = join(__dirname, "..", "packages");
+const workspaceRoot = join(__dirname, "..");
 
-const packages = affectedRepoPackages.map((path) => {
-    const packageJsonPath = join(packagesPath, path, "package.json");
+// Not every project lives under packages/: `web` sits at the repository root, so ask
+// nx where each one actually is rather than assuming a layout. Private projects are
+// skipped — an application is not something pkg-pr-new can publish.
+const packages = affectedRepoPackages
+    .map((name) => {
+        const project = JSON.parse(execSync(`pnpm exec nx show project ${name} --json`).toString("utf8"));
 
-    if (!existsSync(packageJsonPath)) {
-        throw new Error(`package.json not found at ${packageJsonPath}`);
-    }
+        return join(workspaceRoot, project.root);
+    })
+    .filter((packagePath) => {
+        const packageJsonPath = join(packagePath, "package.json");
 
-    return join(packagesPath, path);
-});
+        if (!existsSync(packageJsonPath)) {
+            throw new Error(`package.json not found at ${packageJsonPath}`);
+        }
+
+        return !JSON.parse(readFileSync(packageJsonPath, "utf8")).private;
+    });
 
 if (packages.length > 0) {
     execSync(`pnpm exec pkg-pr-new publish --comment="update" --pnpm ${packages.join(" ")}`, { stdio: "inherit" });

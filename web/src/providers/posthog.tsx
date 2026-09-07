@@ -12,6 +12,7 @@ if (typeof globalThis.window !== "undefined") {
             PostHogProvider = Provider;
         },
         (error) => {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to load PostHogProvider:", error);
         },
     );
@@ -30,11 +31,11 @@ export const AnalyticsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         if (
-            import.meta.env.DEV ||
-            globalThis.window === undefined ||
-            !import.meta.env.VITE_POSTHOG_API_KEY ||
-            !import.meta.env.VITE_POSTHOG_HOST ||
-            !hasAnalyticsConsent
+            import.meta.env.DEV
+                || globalThis.window === undefined
+                || !import.meta.env.VITE_POSTHOG_API_KEY
+                || !import.meta.env.VITE_POSTHOG_HOST
+                || !hasAnalyticsConsent
         ) {
             return;
         }

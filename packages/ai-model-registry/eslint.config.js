@@ -52,4 +52,15 @@ export default createConfig(
             "no-console": "off",
         },
     },
+    {
+        rules: {
+            // Prettier is the formatter of record for this package, and these two rules
+            // demand the opposite of what it emits: prettier writes `(await x) ?? y` and
+            // `[...(await x)]`, and puts `=` at the end of the line above a wrapped union
+            // type. Enforcing them would make `lint:eslint` and `lint:prettier` unfixable
+            // at the same time.
+            "@stylistic/no-extra-parens": "off",
+            "@stylistic/operator-linebreak": "off",
+        },
+    },
 );

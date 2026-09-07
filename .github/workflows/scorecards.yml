@@ -1,10 +1,12 @@
 name: "Scorecards supply-chain security"
-on:
-    branch_protection_rule:
+on: # yamllint disable-line rule:truthy
+    branch_protection_rule: # yamllint disable-line rule:empty-values
     schedule:
         - cron: "37 14 * * 6"
     push:
-        branches: ["main"]
+        # Every release branch semantic-release publishes from. The reusable
+        # workflow analyses only the default branch, which is all Scorecard supports.
+        branches: ["main", "master", "alpha", "beta"]
 permissions: {}
 jobs:
     scorecards:
@@ -13,7 +15,7 @@ jobs:
             id-token: "write"
             actions: "read"
             contents: "read"
-        uses: "anolilab/workflows/.github/workflows/scorecards.yml@5b340a228896b01f6d2b6f3bf3b574caed9ee89b" # v15.3.1+
+        uses: "anolilab/workflows/.github/workflows/scorecards.yml@9663c7c69bc7dac1a294407a44c30f68977303bb" # main
         with:
             branch: "main"
             publish_results: true

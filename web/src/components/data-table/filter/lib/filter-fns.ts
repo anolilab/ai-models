@@ -4,10 +4,12 @@ import { dateFilterOperators } from "../core/operators";
 import type { FilterModel } from "../core/types";
 import { intersection } from "./array";
 
-export function optionFilterFn<TData>(inputData: string, filterValue: FilterModel<"option">) {
-    if (!inputData) return false;
+export const optionFilterFn = <_TData>(inputData: string, filterValue: FilterModel<"option">) => {
+    if (!inputData)
+        return false;
 
-    if (filterValue.values.length === 0) return true;
+    if (filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toString().toLowerCase();
 
@@ -21,12 +23,14 @@ export function optionFilterFn<TData>(inputData: string, filterValue: FilterMode
         case "is not":
             return !found;
     }
-}
+};
 
-export function multiOptionFilterFn(inputData: string[], filterValue: FilterModel<"multiOption">) {
-    if (!inputData) return false;
+export const multiOptionFilterFn = (inputData: string[], filterValue: FilterModel<"multiOption">) => {
+    if (!inputData)
+        return false;
 
-    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0) return true;
+    if (filterValue.values.length === 0 || !filterValue.values[0] || filterValue.values[0].length === 0)
+        return true;
 
     const values = inputData;
     const filterValues = filterValue.values;
@@ -44,10 +48,11 @@ export function multiOptionFilterFn(inputData: string[], filterValue: FilterMode
         case "include all of":
             return intersection(values, filterValues).length === filterValues.length;
     }
-}
+};
 
-export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"date">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+export const dateFilterFn = <_TData>(inputData: Date, filterValue: FilterModel<"date">) => {
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     if (dateFilterOperators[filterValue.operator].target === "single" && filterValue.values.length > 1)
         throw new Error("Singular operators require at most one filter value");
@@ -85,15 +90,17 @@ export function dateFilterFn<TData>(inputData: Date, filterValue: FilterModel<"d
         case "is on or before":
             return isSameDay(value, d1) || isBefore(value, startOfDay(d1));
     }
-}
+};
 
-export function textFilterFn<TData>(inputData: string, filterValue: FilterModel<"text">) {
-    if (!filterValue || filterValue.values.length === 0) return true;
+export const textFilterFn = <_TData>(inputData: string, filterValue: FilterModel<"text">) => {
+    if (!filterValue || filterValue.values.length === 0)
+        return true;
 
     const value = inputData.toLowerCase().trim();
     const filterStr = filterValue.values[0].toLowerCase().trim();
 
-    if (filterStr === "") return true;
+    if (filterStr === "")
+        return true;
 
     const found = value.includes(filterStr);
 
@@ -103,9 +110,9 @@ export function textFilterFn<TData>(inputData: string, filterValue: FilterModel<
         case "does not contain":
             return !found;
     }
-}
+};
 
-export function numberFilterFn<TData>(inputData: number, filterValue: FilterModel<"number">) {
+export const numberFilterFn = <_TData>(inputData: number, filterValue: FilterModel<"number">) => {
     if (!filterValue || !filterValue.values || filterValue.values.length === 0) {
         return true;
     }
@@ -141,4 +148,4 @@ export function numberFilterFn<TData>(inputData: number, filterValue: FilterMode
         default:
             return true;
     }
-}
+};

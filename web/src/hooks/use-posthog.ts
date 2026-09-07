@@ -1,15 +1,28 @@
 import { useConsentManager } from "@c15t/react";
 
+/**
+ * The subset of the PostHog client this hook wraps. The instance is loaded lazily in the
+ * browser, so every call is still guarded at runtime; the type only describes what we use.
+ */
+interface PostHogClient {
+    alias: (alias: string, distinctId?: string) => void;
+    capture: (event: string, properties?: Record<string, unknown>) => void;
+    group: (groupType: string, groupKey: string, properties?: Record<string, unknown>) => void;
+    identify: (distinctId?: string, properties?: Record<string, unknown>) => void;
+    reset: () => void;
+}
+
 // Client-side hook loader
-let usePH: (() => unknown) | null = null;
+let usePH: (() => Partial<PostHogClient>) | null = null;
 
 // Initialize hook on client side
 if (globalThis.window !== undefined) {
     import("posthog-js/react").then(
         (posthogReact) => {
-            usePH = posthogReact.usePostHog;
+            usePH = posthogReact.usePostHog as () => Partial<PostHogClient>;
         },
         (error) => {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.warn("Failed to load PostHog hooks:", error);
         },
     );
@@ -21,7 +34,7 @@ export const usePostHog = (): Record<string, unknown> => {
     const hasAnalyticsConsent = consents.measurement;
 
     // Always call the hook if available, but return empty object if not
-    const posthogInstance = usePH ? usePH() : {};
+    const posthogInstance: Partial<PostHogClient> = usePH ? usePH() : {};
 
     // Return a wrapped PostHog instance that respects consent
     return {
@@ -35,6 +48,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog alias blocked - no measurement consent", { alias, distinctId });
             }
         },
@@ -46,6 +60,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog capture blocked - no measurement consent", { event, properties });
             }
         },
@@ -57,6 +72,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog group blocked - no measurement consent", { groupKey, groupType, properties });
             }
         },
@@ -68,6 +84,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog identify blocked - no measurement consent", { distinctId, properties });
             }
         },
@@ -79,6 +96,7 @@ export const usePostHog = (): Record<string, unknown> => {
             }
 
             if (import.meta.env.DEV) {
+                // eslint-disable-next-line no-console -- development-only diagnostic, already guarded by the check above
                 console.log("PostHog reset blocked - no measurement consent");
             }
         },

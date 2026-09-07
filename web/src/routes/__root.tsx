@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 import "unfonts.css";
 
-import { ConsentManagerDialog, ConsentManagerProvider, CookieBanner } from "@c15t/react";
-import { baseTranslations } from "@c15t/translations";
+import { ConsentBanner, ConsentDialog, ConsentManagerProvider } from "@c15t/react";
+import { baseTranslations } from "@c15t/translations/all";
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
@@ -27,11 +27,11 @@ if (siteBaseUrl && !siteBaseUrl.endsWith("/")) {
 
 const siteName = "AI Models Registry | Anolilab";
 const defaultTitle = "AI Models Registry | Comprehensive Database of AI Models and Providers";
-const defaultDescription =
-    "Explore a comprehensive registry of AI models from leading providers. Find the perfect AI model for your project with detailed information, comparisons, and provider details.";
+const defaultDescription
+    = "Explore a comprehensive registry of AI models from leading providers. Find the perfect AI model for your project with detailed information, comparisons, and provider details.";
 const twitterHandle = "@anolilab";
-const defaultKeywords =
-    "AI models, artificial intelligence, machine learning, AI providers, OpenAI, Anthropic, Google AI, Hugging Face, AI comparison, model registry, AI development, LLM, large language models";
+const defaultKeywords
+    = "AI models, artificial intelligence, machine learning, AI providers, OpenAI, Anthropic, Google AI, Hugging Face, AI comparison, model registry, AI development, LLM, large language models";
 const defaultOgImage = `${siteBaseUrl}images/og.png`;
 const defaultTwitterImage = `${siteBaseUrl}images/og.png`;
 
@@ -46,9 +46,9 @@ const RootDocument = () => {
             <body className="h-screen w-screen" suppressHydrationWarning={true}>
                 <ConsentManagerProvider
                     options={{
+                        consentCategories: ["measurement", "necessary"],
                         mode: "offline",
                         store: {
-                            initialGdprTypes: ["measurement", "necessary"],
                             translationConfig: {
                                 defaultLanguage: "en",
                                 disableAutoLanguageSwitch: true,
@@ -60,8 +60,8 @@ const RootDocument = () => {
                         },
                     }}
                 >
-                    <CookieBanner />
-                    <ConsentManagerDialog />
+                    <ConsentBanner />
+                    <ConsentDialog />
                     <AnalyticsProvider>{isFetching ? <Loader /> : <Outlet />}</AnalyticsProvider>
                     <IconSpriteSheet />
                 </ConsentManagerProvider>

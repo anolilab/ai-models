@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface SkeletonTableProps {
@@ -5,7 +7,7 @@ interface SkeletonTableProps {
     rows?: number;
 }
 
-const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps) => (
+const SkeletonTable = ({ columns = 19, rows = 10 }: SkeletonTableProps): ReactElement => (
     <div className="w-full">
         <div className="border">
             <div className="bg-muted/50 border-b">

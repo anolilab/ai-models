@@ -63,7 +63,7 @@ function Calendar({
                 range_middle: cn("rounded-none", defaultClassNames.range_middle),
                 range_start: cn("bg-accent", defaultClassNames.range_start),
                 root: cn("w-fit", defaultClassNames.root),
-                table: "w-full border-collapse",
+                month_grid: "w-full border-collapse",
                 today: cn("bg-accent text-accent-foreground data-[selected=true]:rounded-none", defaultClassNames.today),
                 week: cn("flex w-full mt-2", defaultClassNames.week),
                 week_number: cn("text-[0.8rem] select-none text-muted-foreground", defaultClassNames.week_number),

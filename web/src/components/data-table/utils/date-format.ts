@@ -1,7 +1,7 @@
 /**
- * Format date to YYYY-MM-DD
+ * Format date to YYYY-MM-DD.
  */
-export function formatDate(date: Date): string {
+export const formatDate = (date: Date): string => {
     // Use local date components instead of UTC conversion
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0"); // getMonth() is 0-based
@@ -10,4 +10,4 @@ export function formatDate(date: Date): string {
     const result = `${year}-${month}-${day}`;
 
     return result;
-}
+};

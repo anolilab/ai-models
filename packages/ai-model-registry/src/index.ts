@@ -264,3 +264,8 @@ export const getProviderStats = async (): Promise<Record<ProviderName, number>> 
 
     return stats;
 };
+
+// Every function here returns Model values, so the type belongs on the package root
+// rather than only under the ./schema subpath.
+export type { Model } from "./schema";
+export type { ProviderName } from "./types/providers";

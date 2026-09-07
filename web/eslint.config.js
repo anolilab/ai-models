@@ -19,6 +19,9 @@ export default createConfig(
             "data",
             "assets",
             "src/icons-sprite.ts",
+            // shadcn/ui components are generated and overwritten by the shadcn CLI
+            // (see components.json), so they are not ours to hand-edit.
+            "src/components/ui",
         ],
         jsx: false,
         react: false,
@@ -32,6 +35,34 @@ export default createConfig(
         files: ["**/__tests__"],
         rules: {
             "unicorn/prefer-module": "off",
+        },
+    },
+    {
+        // Test and test-support files: logging is how a dummy server reports what it did,
+        // and a regex inside an assertion is clearer next to the assertion than hoisted
+        // to module scope.
+        files: ["__tests__/**", "**/*.spec.ts", "**/*.test.ts", "**/*.test.tsx"],
+        rules: {
+            "e18e/prefer-static-regex": "off",
+            "no-console": "off",
+        },
+    },
+    {
+        // Playwright specs, not Testing Library ones. `page.getByRole(...)` is Playwright's
+        // locator API; the testing-library plugin sees the query names and suggests
+        // `screen.getByRole`, which does not exist here and would break the test.
+        files: ["**/*.e2e.spec.ts"],
+        rules: {
+            "testing-library/prefer-screen-queries": "off",
+        },
+    },
+    {
+        // src/ is browser code. The node plugin checks builtins against a Node support
+        // range, so it flags fetch, Blob, URL.createObjectURL and localStorage — all of
+        // which are correct here. vite.config.ts and scripts/ do run in Node and keep it.
+        files: ["src/**"],
+        rules: {
+            "n/no-unsupported-features/node-builtins": "off",
         },
     },
     {

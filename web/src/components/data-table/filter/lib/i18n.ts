@@ -8,6 +8,4 @@ const translations: Record<Locale, Translations> = {
     en,
 };
 
-export function t(key: string, locale: Locale): string {
-    return translations[locale][key] ?? key;
-}
+export const t = (key: string, locale: Locale): string => translations[locale][key] ?? key;

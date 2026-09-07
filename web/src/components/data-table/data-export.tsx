@@ -13,6 +13,12 @@ import type { TableConfig } from "./types";
 import type { DataTransformFunction, ExportableData } from "./utils/export-utils";
 import { exportData, exportToCSV, exportToJSON } from "./utils/export-utils";
 
+// Split camelCase and snake_case into words.
+const CAMEL_OR_SNAKE_BOUNDARY = /(?=[A-Z])|_/;
+
+// Characters an ISO timestamp cannot keep in a filename.
+const TIMESTAMP_SEPARATORS = /[:.]/g;
+
 interface DataTableExportProps<TData extends ExportableData> {
     columnMapping?: Record<string, string>;
     columnWidths?: { wch: number }[];
@@ -45,7 +51,8 @@ export function DataTableExport<TData extends ExportableData>({
     const [isLoading, setIsLoading] = useState(false);
 
     const handleExport = async (type: "csv" | "json") => {
-        if (isLoading) return; // Prevent multiple export requests
+        if (isLoading)
+            return; // Prevent multiple export requests
 
         // Create a data fetching function based on the current state
         const fetchExportData = async (): Promise<TData[]> => {
@@ -79,6 +86,7 @@ export function DataTableExport<TData extends ExportableData>({
                     const sampleItem = sortedItems[0];
 
                     if (sampleItem && !(sortField in sampleItem)) {
+                        // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                         console.warn(`Sort field "${sortField}" not found in data. Skipping sort.`);
 
                         return sortedItems;
@@ -89,19 +97,23 @@ export function DataTableExport<TData extends ExportableData>({
                             const valueA = a[sortField as keyof TData];
                             const valueB = b[sortField as keyof TData];
 
-                            if (valueA === valueB) return 0;
+                            if (valueA === valueB)
+                                return 0;
 
-                            if (valueA === null || valueA === undefined) return isDescending ? 1 : -1;
+                            if (valueA === null || valueA === undefined)
+                                return isDescending ? 1 : -1;
 
-                            if (valueB === null || valueB === undefined) return isDescending ? -1 : 1;
+                            if (valueB === null || valueB === undefined)
+                                return isDescending ? -1 : 1;
 
                             if (typeof valueA === "string" && typeof valueB === "string") {
                                 return isDescending ? valueB.localeCompare(valueA) : valueA.localeCompare(valueB);
                             }
 
                             // For numeric and other comparable types
-                            return isDescending ? (valueB > valueA ? 1 : -1) : valueA > valueB ? 1 : -1;
+                            return isDescending ? valueB > valueA ? 1 : -1 : valueA > valueB ? 1 : -1;
                         } catch (sortError) {
+                            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
                             console.error("Error during sorting:", sortError);
 
                             return 0; // Maintain original order on error
@@ -145,19 +157,21 @@ export function DataTableExport<TData extends ExportableData>({
 
             // Generate export options based on visible columns and respect column order
             const { columnOrder } = table.getState();
-            const orderedVisibleColumns =
-                columnOrder.length > 0
+            const orderedVisibleColumns
+                = columnOrder.length > 0
                     ? visibleColumns.toSorted((a, b) => {
-                          const aIndex = columnOrder.indexOf(a.id);
-                          const bIndex = columnOrder.indexOf(b.id);
+                        const aIndex = columnOrder.indexOf(a.id);
+                        const bIndex = columnOrder.indexOf(b.id);
 
-                          // If column isn't in the order array, put it at the end
-                          if (aIndex === -1) return 1;
+                        // If column isn't in the order array, put it at the end
+                        if (aIndex === -1)
+                            return 1;
 
-                          if (bIndex === -1) return -1;
+                        if (bIndex === -1)
+                            return -1;
 
-                          return aIndex - bIndex;
-                      })
+                        return aIndex - bIndex;
+                    })
                     : visibleColumns;
 
             // Generate export headers - always start with visible columns only
@@ -187,35 +201,35 @@ export function DataTableExport<TData extends ExportableData>({
             }
 
             // Auto-generate column mapping from table headers if not provided
-            const exportColumnMapping =
-                columnMapping ||
-                (() => {
-                    const mapping: Record<string, string> = {};
+            const exportColumnMapping
+                = columnMapping
+                    || (() => {
+                        const mapping: Record<string, string> = {};
 
-                    orderedVisibleColumns.forEach((column) => {
+                        orderedVisibleColumns.forEach((column) => {
                         // Try to get header text if available
-                        const headerText = column.columnDef.header as string;
+                            const headerText = column.columnDef.header as string;
 
-                        if (headerText && typeof headerText === "string") {
-                            mapping[column.id] = headerText;
-                        } else {
+                            if (headerText && typeof headerText === "string") {
+                                mapping[column.id] = headerText;
+                            } else {
                             // Fallback to formatted column ID
-                            mapping[column.id] = column.id
-                                .split(/(?=[A-Z])|_/)
-                                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                .join(" ");
-                        }
-                    });
+                                mapping[column.id] = column.id
+                                    .split(CAMEL_OR_SNAKE_BOUNDARY)
+                                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                    .join(" ");
+                            }
+                        });
 
-                    return mapping;
-                })();
+                        return mapping;
+                    })();
 
             // Filter column widths to match export headers
             const exportColumnWidths = columnWidths
                 ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
                 : exportHeaders.map(() => {
-                      return { wch: 15 };
-                  });
+                    return { wch: 15 };
+                });
 
             // Use the generic export function with proper options
             await exportData(
@@ -232,6 +246,7 @@ export function DataTableExport<TData extends ExportableData>({
                 },
             );
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.error("Error exporting data:", error);
             toast.error("Export failed", {
                 description: "There was a problem exporting. Please try again.",
@@ -242,7 +257,8 @@ export function DataTableExport<TData extends ExportableData>({
     };
 
     const exportAllPages = async (type: "csv" | "json") => {
-        if (isLoading || !getAllItems) return;
+        if (isLoading || !getAllItems)
+            return;
 
         setIsLoading(true);
 
@@ -301,43 +317,37 @@ export function DataTableExport<TData extends ExportableData>({
                 }
             }
 
-            const exportColumnMapping =
-                columnMapping ||
-                (() => {
-                    const mapping: Record<string, string> = {};
+            const exportColumnMapping
+                = columnMapping
+                    || (() => {
+                        const mapping: Record<string, string> = {};
 
-                    // If we have custom headers, generate mapping for them
-                    if (headers && headers.length > 0) {
-                        headers.forEach((header) => {
-                            mapping[header] = header
-                                .split(/(?=[A-Z])|_/)
-                                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                .join(" ");
-                        });
-                    } else {
-                        // Otherwise use visible columns
-                        visibleColumns.forEach((column) => {
-                            const headerText = column.columnDef.header as string;
-
-                            if (headerText && typeof headerText === "string") {
-                                mapping[column.id] = headerText;
-                            } else {
-                                mapping[column.id] = column.id
-                                    .split(/(?=[A-Z])|_/)
+                        // If we have custom headers, generate mapping for them
+                        if (headers && headers.length > 0) {
+                            headers.forEach((header) => {
+                                mapping[header] = header
+                                    .split(CAMEL_OR_SNAKE_BOUNDARY)
                                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                     .join(" ");
-                            }
-                        });
-                    }
+                            });
+                        } else {
+                        // Otherwise use visible columns
+                            visibleColumns.forEach((column) => {
+                                const headerText = column.columnDef.header as string;
 
-                    return mapping;
-                })();
+                                if (headerText && typeof headerText === "string") {
+                                    mapping[column.id] = headerText;
+                                } else {
+                                    mapping[column.id] = column.id
+                                        .split(CAMEL_OR_SNAKE_BOUNDARY)
+                                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                        .join(" ");
+                                }
+                            });
+                        }
 
-            const exportColumnWidths = columnWidths
-                ? exportHeaders.map((_, index) => columnWidths[index] || { wch: 15 })
-                : exportHeaders.map(() => {
-                      return { wch: 15 };
-                  });
+                        return mapping;
+                    })();
 
             // Update toast for processing
             toast.loading("Processing data...", {
@@ -346,7 +356,7 @@ export function DataTableExport<TData extends ExportableData>({
             });
 
             // Generate timestamp for filename
-            const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+            const timestamp = new Date().toISOString().replace(TIMESTAMP_SEPARATORS, "-");
             const filename = `${entityName}-all-pages-export-${timestamp}`;
 
             // Export based on type
@@ -365,6 +375,7 @@ export function DataTableExport<TData extends ExportableData>({
                 });
             }
         } catch (error) {
+            // eslint-disable-next-line no-console -- surfaces a failure that is otherwise silent in the browser
             console.error("Error exporting all pages:", error);
             toast.error("Export failed", {
                 description: "There was a problem exporting all pages. Please try again.",
@@ -382,22 +393,25 @@ export function DataTableExport<TData extends ExportableData>({
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button disabled={isLoading} size={size} variant="outline">
-                    {isLoading ? (
+                    {isLoading
+                        ? (
                         <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             Exporting...
                         </>
-                    ) : (
+                        )
+                        : (
                         <>
                             <DownloadIcon className="mr-2 h-4 w-4" />
                             Export
                             {hasSelection && <span className="ml-1">({selectedData?.length})</span>}
                         </>
-                    )}
+                        )}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                {hasSelection ? (
+                {hasSelection
+                    ? (
                     <>
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Selected as CSV
@@ -407,7 +421,8 @@ export function DataTableExport<TData extends ExportableData>({
                             Export Selected as JSON
                         </DropdownMenuItem>
                     </>
-                ) : (
+                    )
+                    : (
                     <>
                         <DropdownMenuItem disabled={isLoading} onClick={() => handleExport("csv")}>
                             Export Current Page as CSV
@@ -428,7 +443,7 @@ export function DataTableExport<TData extends ExportableData>({
                             </>
                         )}
                     </>
-                )}
+                    )}
             </DropdownMenuContent>
         </DropdownMenu>
     );

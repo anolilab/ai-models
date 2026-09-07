@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,7 @@ interface FilterOperatorProps<TData, TType extends ColumnDataType> {
 // Renders the filter operator display and menu for a given column filter
 // The filter operator display is the label and icon for the filter operator
 // The filter operator menu is the dropdown menu for the filter operator
-export const FilterOperator = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en" }: FilterOperatorProps<TData, TType>) => {
+export const FilterOperator = <TData, TType extends ColumnDataType>({ actions, column, filter, locale = "en" }: FilterOperatorProps<TData, TType>): ReactElement => {
     const [open, setOpen] = useState<boolean>(false);
 
     const close = () => setOpen(false);
@@ -83,7 +84,7 @@ export const FilterOperatorController = <TData, TType extends ColumnDataType>({
     column,
     filter,
     locale = "en",
-}: FilterOperatorControllerProps<TData, TType>) => {
+}: FilterOperatorControllerProps<TData, TType>): ReactElement | null => {
     switch (column.type) {
         case "date":
             return (
@@ -140,7 +141,7 @@ export const FilterOperatorController = <TData, TType extends ColumnDataType>({
     }
 };
 
-function FilterOperatorOptionController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "option">) {
+const FilterOperatorOptionController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "option">) => {
     const filterDetails = optionFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(optionFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -159,7 +160,7 @@ function FilterOperatorOptionController<TData>({ actions, closeController, colum
             ))}
         </CommandGroup>
     );
-}
+};
 
 function FilterOperatorMultiOptionController<TData>({
     actions,
@@ -188,7 +189,7 @@ function FilterOperatorMultiOptionController<TData>({
     );
 }
 
-function FilterOperatorDateController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "date">) {
+const FilterOperatorDateController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "date">) => {
     const filterDetails = dateFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(dateFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -207,9 +208,9 @@ function FilterOperatorDateController<TData>({ actions, closeController, column,
             ))}
         </CommandGroup>
     );
-}
+};
 
-export function FilterOperatorTextController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "text">) {
+export const FilterOperatorTextController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "text">): ReactElement => {
     const filterDetails = textFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(textFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -228,9 +229,9 @@ export function FilterOperatorTextController<TData>({ actions, closeController, 
             ))}
         </CommandGroup>
     );
-}
+};
 
-function FilterOperatorNumberController<TData>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "number">) {
+const FilterOperatorNumberController = <TData,>({ actions, closeController, column, filter, locale = "en" }: FilterOperatorControllerProps<TData, "number">) => {
     const filterDetails = numberFilterOperators[filter.operator];
 
     const relatedFilters = Object.values(numberFilterOperators).filter((o) => o.target === filterDetails.target);
@@ -251,4 +252,4 @@ function FilterOperatorNumberController<TData>({ actions, closeController, colum
             </CommandGroup>
         </div>
     );
-}
+};

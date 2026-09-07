@@ -59,7 +59,11 @@ jobs:
             matrix:
                 os:
                     - "ubuntu-latest"
-                node_version: ["20", "21", "22", "23", "24"]
+                # 21 and 23 are dropped: both are end-of-life non-LTS releases, and the
+                # build toolchain (vite, rolldown, oxc-parser) declares
+                # engines.node "^20.19.0 || >=22.12.0" and ships no native binding that
+                # loads on them — `packem build` dies on "Cannot find native binding".
+                node_version: ["20", "22", "24"]
                 # On the other platforms, we only test the lts node version
                 include:
                     - os: "macos-latest"
@@ -97,6 +101,9 @@ jobs:
               with:
                   node-version: "${{ matrix.node_version }}"
                   install-packages: "false"
+                  # npm@latest no longer supports every node version in this matrix,
+                  # and tests do not need it: the upgrade is for publish provenance.
+                  upgrade-npm-version: "false"
 
             - name: "Remove node-sass from unsupported node versions"
               shell: "bash"
@@ -140,7 +147,15 @@ jobs:
 
             - name: "Prepare nx cache"
               shell: "bash"
-              run: "tar -cf - .nx/cache | lz4 > /tmp/nx_cache.tar.lz4" # compress nx cache
+              # nx 23 no longer always writes .nx/cache (task results moved into
+              # .nx/workspace-data), so archive whatever .nx holds, and skip the
+              # step when a run produced nothing to cache.
+              run: |
+                  if [ -d .nx ]; then
+                      tar -cf - .nx | lz4 > /tmp/nx_cache.tar.lz4
+                  else
+                      echo "::notice::no .nx directory produced, nothing to cache"
+                  fi
 
             - name: "Upload code coverage to codecov"
               if: "matrix.os == 'ubuntu-latest' && matrix.node_version == 20"

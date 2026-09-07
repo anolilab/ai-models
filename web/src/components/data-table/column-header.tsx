@@ -1,5 +1,6 @@
 import { ArrowDownIcon, ArrowUpIcon, CaretSortIcon, EyeNoneIcon } from "@radix-ui/react-icons";
 import type { Column } from "@tanstack/react-table";
+import type { ReactElement } from "react";
 
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -10,7 +11,7 @@ interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes
     title: string;
 }
 
-const DataTableColumnHeader = <TData, TValue>({ className, column, title }: DataTableColumnHeaderProps<TData, TValue>) => {
+const DataTableColumnHeader = <TData, TValue>({ className, column, title }: DataTableColumnHeaderProps<TData, TValue>): ReactElement => {
     if (!column.getCanSort()) {
         return <div className={cn(className)}>{title}</div>;
     }
@@ -21,13 +22,17 @@ const DataTableColumnHeader = <TData, TValue>({ className, column, title }: Data
                 <DropdownMenuTrigger asChild>
                     <Button className="data-[state=open]:bg-accent -ml-3 h-8" size="sm" variant="ghost">
                         <span>{title}</span>
-                        {column.getIsSorted() === "desc" ? (
+                        {column.getIsSorted() === "desc"
+                            ? (
                             <ArrowDownIcon className="ml-2 h-4 w-4" />
-                        ) : column.getIsSorted() === "asc" ? (
+                            )
+                            : column.getIsSorted() === "asc"
+                                ? (
                             <ArrowUpIcon className="ml-2 h-4 w-4" />
-                        ) : (
+                                )
+                                : (
                             <CaretSortIcon className="ml-2 h-4 w-4" />
-                        )}
+                                )}
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">

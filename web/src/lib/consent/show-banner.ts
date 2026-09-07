@@ -1,8 +1,24 @@
-import type { ContractsOutputs } from "@c15t/backend";
-import { baseTranslations } from "@c15t/translations";
+import { baseTranslations } from "@c15t/translations/all";
 
 export type SupportedLanguage = keyof typeof baseTranslations;
-type JurisdictionCode = ContractsOutputs["showConsentBanner"]["jurisdiction"]["code"];
+
+/**
+ * Jurisdictions this module has a message for. c15t v2 stopped exporting the backend
+ * contract type these were derived from, and the set is fixed by JurisdictionMessages
+ * below, so it is spelled out here.
+ */
+type JurisdictionCode = "APPI" | "AU" | "BR" | "CH" | "GDPR" | "NONE" | "PIPA" | "PIPEDA";
+
+/**
+ * What this module answers: whether to show the banner, under which jurisdiction, and
+ * with which translations.
+ */
+interface ShowBannerDecision {
+    jurisdiction: { code: JurisdictionCode; message: string };
+    location: { countryCode: string | null; regionCode: string | null };
+    showConsentBanner: boolean;
+    translations: { language: SupportedLanguage; translations: (typeof baseTranslations)[SupportedLanguage] };
+}
 
 export const JurisdictionMessages: Record<JurisdictionCode, string> = {
     APPI: "Japan's APPI requires consent for data collection.",
@@ -63,7 +79,7 @@ const COUNTRY_HEADERS = ["cf-ipcountry", "x-vercel-ip-country", "x-amz-cf-ipcoun
 
 const REGION_HEADERS = ["x-vercel-ip-country-region", "x-region-code"] as const;
 
-function extractCountryCode(headers: Record<string, string>): string | null {
+const extractCountryCode = (headers: Record<string, string>): string | null => {
     for (const headerName of COUNTRY_HEADERS) {
         const value = headers[headerName];
 
@@ -73,9 +89,9 @@ function extractCountryCode(headers: Record<string, string>): string | null {
     }
 
     return null;
-}
+};
 
-function extractRegionCode(headers: Record<string, string>): string | null {
+const extractRegionCode = (headers: Record<string, string>): string | null => {
     for (const headerName of REGION_HEADERS) {
         const value = headers[headerName];
 
@@ -85,9 +101,9 @@ function extractRegionCode(headers: Record<string, string>): string | null {
     }
 
     return null;
-}
+};
 
-function getPreferredLanguage(acceptLanguage: string | null): SupportedLanguage {
+const getPreferredLanguage = (acceptLanguage: string | null): SupportedLanguage => {
     if (!acceptLanguage) {
         return "en";
     }
@@ -99,9 +115,9 @@ function getPreferredLanguage(acceptLanguage: string | null): SupportedLanguage 
     }
 
     return "en";
-}
+};
 
-export function checkJurisdiction(countryCode: string | null) {
+export const checkJurisdiction = (countryCode: string | null) => {
     // Early return for no country code (e.g. localhost)
     if (!countryCode) {
         return {
@@ -128,9 +144,9 @@ export function checkJurisdiction(countryCode: string | null) {
         message: JurisdictionMessages.NONE,
         showConsentBanner: false,
     };
-}
+};
 
-export const showBanner = (headers: Record<string, string>): ContractsOutputs["consent"]["showBanner"] => {
+export const showBanner = (headers: Record<string, string>): ShowBannerDecision => {
     const countryCode = extractCountryCode(headers);
     const regionCode = extractRegionCode(headers);
 

@@ -2,6 +2,7 @@
 
 import type { Column, Table } from "@tanstack/react-table";
 import { Eye, EyeOff, GripVertical, RotateCcw, Settings2 } from "lucide-react";
+import type { ReactElement } from "react";
 import * as React from "react";
 import { useCallback, useMemo, useState } from "react";
 
@@ -10,13 +11,16 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import cn from "@/lib/utils";
 
+// Underscores, shown to the reader as spaces.
+const UNDERSCORE_PATTERN = /_/g;
+
 interface DataTableViewOptionsProps<TData> {
     columnMapping?: Record<string, string>;
     size?: "sm" | "default" | "lg";
     table: Table<TData>;
 }
 
-export function DataTableViewOptions<TData>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>) {
+export const DataTableViewOptions = <TData,>({ columnMapping, size = "default", table }: DataTableViewOptionsProps<TData>): ReactElement => {
     // Get columns that can be hidden
     const columns = React.useMemo(() => table.getAllColumns().filter((column) => typeof column.accessorFn !== "undefined" && column.getCanHide()), [table]);
 
@@ -42,9 +46,11 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             const bIndex = columnOrder.indexOf(b.id);
 
             // If column isn't in the order array, put it at the end
-            if (aIndex === -1) return 1;
+            if (aIndex === -1)
+                return 1;
 
-            if (bIndex === -1) return -1;
+            if (bIndex === -1)
+                return -1;
 
             return aIndex - bIndex;
         });
@@ -101,7 +107,8 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
         (e: React.DragEvent, targetColumnId: string) => {
             e.preventDefault();
 
-            if (!draggedColumnId || draggedColumnId === targetColumnId) return;
+            if (!draggedColumnId || draggedColumnId === targetColumnId)
+                return;
 
             // Get current column order
             const currentOrder = table.getState().columnOrder.length > 0 ? [...table.getState().columnOrder] : table.getAllLeafColumns().map((d) => d.id);
@@ -110,7 +117,8 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             const draggedIndex = currentOrder.indexOf(draggedColumnId);
             const targetIndex = currentOrder.indexOf(targetColumnId);
 
-            if (draggedIndex === -1 || targetIndex === -1) return;
+            if (draggedIndex === -1 || targetIndex === -1)
+                return;
 
             // Create new order by moving the dragged column
             const newOrder = [...currentOrder];
@@ -148,9 +156,9 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
 
             // Then check for meta label
             return (
-                (column.columnDef.meta as { label?: string })?.label ??
+                (column.columnDef.meta as { label?: string })?.label
                 // Finally fall back to formatted column ID
-                column.id.replace(/_/g, " ")
+                ?? column.id.replace(UNDERSCORE_PATTERN, " ")
             );
         },
         [columnMapping],
@@ -198,4 +206,4 @@ export function DataTableViewOptions<TData>({ columnMapping, size = "default", t
             </PopoverContent>
         </Popover>
     );
-}
+};

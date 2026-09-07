@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ChevronDown, ChevronRight, Code, Database, File, FileText, Image, Music, Settings, Video, X } from "lucide-react";
+import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -14,13 +15,19 @@ import type { ColumnConfig, ModelTableRow } from "@/hooks/use-table";
 import { createComparisonConfig, getDefaultComparisonColumns, getTableColumns } from "@/hooks/use-table";
 import { ProviderIcon } from "@/utils/provider-icons";
 
+// Everything that is not a digit or decimal point.
+const NON_NUMERIC_PATTERN = /[^0-9.]/g;
+
+// Everything that is not a digit.
+const NON_DIGIT_PATTERN = /\D/g;
+
 interface ModelComparisonDialogProps {
     isOpen: boolean;
     onClose: () => void;
     selectedModels: ModelTableRow[];
 }
 
-const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelComparisonDialogProps) => {
+const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelComparisonDialogProps): ReactElement | null => {
     const [showConfig, setShowConfig] = useState(false);
     const [comparisonFields, setComparisonFields] = useState<ColumnConfig<ModelTableRow>[]>([]);
     const [isSummaryExpanded, setIsSummaryExpanded] = useState(true);
@@ -34,14 +41,16 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
     // Update comparison fields when config changes
     useEffect(() => {
-        if (selectedModels.length === 0) return;
+        if (selectedModels.length === 0)
+            return;
 
         const fields = columnConfigs.filter((config) => config.visibility.comparison && comparisonConfig.enabledColumns.includes(config.id));
 
         setComparisonFields(fields);
     }, [columnConfigs, comparisonConfig.enabledColumns, selectedModels.length]);
 
-    if (selectedModels.length === 0) return null;
+    if (selectedModels.length === 0)
+        return null;
 
     const handleConfigSave = (enabledColumns: string[]) => {
         // Save to localStorage
@@ -128,7 +137,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
         // For cost fields, find the lowest cost
         if (config.type === "cost") {
-            const numericValues = values.map((v) => (v === "-" ? Infinity : parseFloat(v.replace(/[^0-9.]/g, "")))).filter((v) => !isNaN(v));
+            const numericValues = values.map((v) => (v === "-" ? Infinity : parseFloat(v.replace(NON_NUMERIC_PATTERN, "")))).filter((v) => !isNaN(v));
 
             if (numericValues.length > 0) {
                 const minCost = Math.min(...numericValues);
@@ -139,7 +148,7 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
 
         // For number fields (like limits), find the highest value
         if (config.type === "number") {
-            const numericValues = values.map((v) => (v === "-" ? 0 : parseInt(v.replace(/\D/g, "")))).filter((v) => !isNaN(v));
+            const numericValues = values.map((v) => (v === "-" ? 0 : parseInt(v.replace(NON_DIGIT_PATTERN, "")))).filter((v) => !isNaN(v));
 
             if (numericValues.length > 0) {
                 const maxValue = Math.max(...numericValues);
@@ -187,11 +196,13 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                         <CollapsibleTrigger asChild>
                             <button className="hover:bg-muted/70 flex w-full items-center justify-between rounded-lg p-4 transition-colors">
                                 <h3 className="font-medium">Quick Summary</h3>
-                                {isSummaryExpanded ? (
+                                {isSummaryExpanded
+                                    ? (
                                     <ChevronDown className="text-muted-foreground h-4 w-4" />
-                                ) : (
+                                    )
+                                    : (
                                     <ChevronRight className="text-muted-foreground h-4 w-4" />
-                                )}
+                                    )}
                             </button>
                         </CollapsibleTrigger>
 
@@ -236,12 +247,12 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                                                 .map((model) => {
                                                     const value = getFieldValue(model, field.id);
 
-                                                    return { model, numeric: parseFloat(value.replace(/[^0-9.]/g, "")) || 0, value };
+                                                    return { model, numeric: parseFloat(value.replace(NON_NUMERIC_PATTERN, "")) || 0, value };
                                                 })
                                                 .filter((item) => item.numeric > 0);
 
                                             const maxCost = Math.max(...allValues.map((item) => item.numeric));
-                                            const savings = maxCost - parseFloat(bestValue?.replace(/[^0-9.]/g, "") || "0");
+                                            const savings = maxCost - parseFloat(bestValue?.replace(NON_NUMERIC_PATTERN, "") || "0");
                                             const savingsPercent = maxCost > 0 ? ((savings / maxCost) * 100).toFixed(0) : 0;
 
                                             return { bestModel, bestValue, field, savings, savingsPercent };
@@ -329,11 +340,12 @@ const ModelComparisonDialog = ({ isOpen, onClose, selectedModels }: ModelCompari
                                                     .map((model) => {
                                                         const value = getFieldValue(model, field.id);
 
-                                                        return { model, numeric: parseInt(value.replace(/\D/g, "")) || 0, value };
+                                                        return { model, numeric: parseInt(value.replace(NON_DIGIT_PATTERN, "")) || 0, value };
                                                     })
                                                     .filter((item) => item.numeric > 0);
 
-                                                if (values.length === 0) return null;
+                                                if (values.length === 0)
+                                                    return null;
 
                                                 const maxValue = Math.max(...values.map((item) => item.numeric));
                                                 const minValue = Math.min(...values.map((item) => item.numeric));

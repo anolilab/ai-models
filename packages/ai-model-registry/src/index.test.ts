@@ -229,7 +229,7 @@ describe("provider Registry", () => {
 
                 if (validSmallContextModels.length > 0) {
                     // eslint-disable-next-line vitest/no-conditional-expect
-                    expect(validSmallContextModels.every((model) => model.limit.context <= 10_000)).toBe(true);
+                    expect(validSmallContextModels.every((model) => (model.limit.context ?? 0) <= 10_000)).toBe(true);
                 }
             }
         });
@@ -381,7 +381,7 @@ describe("provider Registry", () => {
                 }
 
                 if (model.provider) {
-                    modelsByProvider.get(model.provider).push(model);
+                    modelsByProvider.get(model.provider)?.push(model);
                 }
             });
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- this middleware exists to log requests and responses. */
 import { createMiddleware } from "@tanstack/react-start";
 
 const preLogMiddleware = createMiddleware({ type: "function" })
