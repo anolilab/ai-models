@@ -4,6 +4,11 @@ on: # yamllint disable-line rule:truthy
     schedule:
         - cron: "0 0 * * *"
 
+permissions:
+    contents: "read" # to read the repository
+    issues: "write" # for the shared workflow to comment on and label issues
+    pull-requests: "write" # for the shared workflow to comment on and label pull requests
+
 jobs:
     stale-issues:
         uses: "anolilab/workflows/.github/workflows/stale-issues.yml@b7c2014dc8b1f022a340111874e6c13346e17598" # main
