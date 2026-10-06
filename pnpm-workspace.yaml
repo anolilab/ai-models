@@ -42,7 +42,7 @@ overrides:
   brace-expansion@>=5.0.0 <5.0.6: ">=5.0.12"
   defu@<=6.1.4: ">=6.1.7"
   diff@<8.0.3: ">=8.0.4"
-  dompurify@<3.4.11: ">=3.4.16"
+  dompurify@<3.4.16: ">=3.4.16"
   drizzle-orm@<0.45.2: ">=0.45.2"
   esbuild@>=0.27.3 <0.28.1: ">=0.28.1"
   form-data@>=4.0.0 <4.0.6: ">=4.0.6"
@@ -88,7 +88,7 @@ overrides:
   '@opentelemetry/propagator-jaeger@<2.9.0': ">=2.9.0"
   axios@<1.18.0: ">=1.20.0"
   brace-expansion@>=3.0.0 <5.0.7: ">=5.0.12"
-  brace-expansion@>=4.0.0 <5.0.8: ">=5.0.9"
+  brace-expansion@>=4.0.0 <5.0.8: ">=5.0.12"
   ip-address@<=10.3.0: ">=10.3.1"
   js-yaml@>=4.0.0 <4.3.1: "^4.3.1"
   protobufjs@>=8.0.0 <=8.6.5: ">=8.7.2"
@@ -101,9 +101,20 @@ overrides:
   browserslist@<=4.28.6: ">=4.28.7"
   # ajv declares fast-uri ^3.0.1, so it stays on the patched 3.x release; everything
   # else takes the patched 4.x. Both lines had advisories.
-  "ajv>fast-uri": ">=3.1.5 <4"
+  "ajv>fast-uri": ">=3.1.8 <4"
   fflate@>=0.4.5 <0.4.9: ">=0.4.9"
   toml@<4.2.0: ">=4.2.0"
+  "@fastify/busboy@<3.2.2": ">=3.2.2"
+  "@vitest/mocker@>=2.1.0 <4.1.11": ">=4.1.11"
+  axios@<1.20.0: ">=1.20.0"
+  brace-expansion@<1.1.21: ">=1.1.21 <2"
+  brace-expansion@>=4.0.0 <5.0.12: ">=5.0.12"
+  fast-uri@>=3.0.0 <3.1.8: ">=3.1.8 <4"
+  moment@>=2.29.2 <2.31.0: ">=2.31.0"
+  nx@>=23.0.0 <23.2.1: ">=23.2.1"
+  smol-toml@<1.8.1: ">=1.8.1"
+  source-map-js@<1.2.2: ">=1.2.2"
+  vitest@>=2.1.0 <4.1.11: ">=4.1.11"
 minimumReleaseAgeExclude:
   # Renovate security update: undici@8.5.0 || 8.9.0
   - undici@8.5.0 || 8.9.0
@@ -153,7 +164,11 @@ auditConfig:
         GHSA-jfj6-75fj-8934,
         GHSA-5p2g-fcmc-qvqq,
         GHSA-j3f2-48v5-ccww,
-        GHSA-jmr9-qjv8-65gv
+        GHSA-jmr9-qjv8-65gv,
+        # No released fix yet (latest published versions are still vulnerable).
+        GHSA-7pqw-9j4j-h8q3,
+        GHSA-86w9-cpqp-85rv,
+        GHSA-vfj7-8cjw-p6xm
       ]
   }
 
