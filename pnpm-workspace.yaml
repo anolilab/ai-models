@@ -145,6 +145,8 @@ minimumReleaseAgeExclude:
   - tar@7.5.22
   # Renovate security update: axios@1.20.0
   - axios@1.20.0
+  # Renovate security update: happy-dom@21.0.4
+  - happy-dom@21.0.4
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
