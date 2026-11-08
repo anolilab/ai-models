@@ -145,6 +145,8 @@ minimumReleaseAgeExclude:
   - tar@7.5.22
   # Renovate security update: axios@1.20.0
   - axios@1.20.0
+  # Renovate security update: zod@4.6.6
+  - zod@4.6.6
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
