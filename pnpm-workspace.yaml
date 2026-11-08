@@ -103,7 +103,7 @@ overrides:
   # else takes the patched 4.x. Both lines had advisories.
   "ajv>fast-uri": ">=3.1.8 <4"
   fflate@>=0.4.5 <0.4.9: ">=0.4.9"
-  toml@<4.2.0: ">=4.2.0"
+  toml@<4.2.0: ">=4.3.0"
   "@fastify/busboy@<3.2.2": ">=3.2.2"
   "@vitest/mocker@>=2.1.0 <4.1.11": ">=4.1.11"
   axios@<1.20.0: ">=1.20.0"
@@ -145,6 +145,8 @@ minimumReleaseAgeExclude:
   - tar@7.5.22
   # Renovate security update: axios@1.20.0
   - axios@1.20.0
+  # Renovate security update: toml@4.3.0
+  - toml@4.3.0
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
